@@ -16,19 +16,26 @@
 
 ## Project setup
 
-* Good README (find Yegor's post on this)
-* GitHub actions
-* Build wrappers (`./gradlew`, `./mvnw`) -- see
+* Provide a *good* README.  See
+  [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
+  * DO follow recommendations, for example, _batches_ (see below)
+* GitHub actions (TODO: What is GitLabs equivalent?)
+* Build wrappers (
+  [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html),
+  [`./mvnw`](https://github.com/takari/maven-wrapper)) -- see
   [Use Gradle or Maven](#use-gradle-or-maven)
 * Build JVM and plugin customizations goes in `config/`
 * Discuss tradeoffs with multi-module vs multi-repo projects
-* Do not commit IDE files except in specific circumstances.  Discuss
-  `.editorconfig`
+* Do not commit IDE files except in specific circumstances
+  * Discuss `.editorconfig`
+  * Discuss IDE config sharing options
 * Pick a common code style, and stay consistent; update tooling to complain
   on style violations
+  * Discuss variances in style -- Sun, Google, etc
 * IDE plugins:
   * Team consistency
   * Help for Gradle/Maven plugins
+  * How to discuss non-IntelliJ Plugins?
 
 ## Use Gradle or Maven
 
@@ -38,42 +45,49 @@ support modern tooling, and no longer updated.
 
 ## Keep local consistent with CI
 
-* Batect
+* [Batect](https://batect.dev/)
 * Do not use a JDK older than version 11
-* Discuss tradeoffs between LTS version and newer JDK versions
-* jEnv or equivalent
+  * Discuss OpenJDK
+  * Discuss Oracle readmap on Java
+  * Discuss tradeoffs between LTS version and newer JDK versions
+* [jEnv](https://www.jenv.be/) or equivalent
 
 ## Keep build current
 
 * OpenJDK
-* DependencyUpdate or Versions plugins
+  * Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
+* Discuss each "versions" update plugin
 * Team agreement on releases only, or non-release dependencies
 
 ## Generate code
 
-* Lombok (mention @Generated to lie to JaCoCo)
+* [Lombok](https://projectlombok.org/) (mention `@Generated` for lying to
+  JaCoCo)
 * (Brief mention of Kotlin)?
 
 ## Use linting
 
+Linting for Kotlin is brain-dead simple.  What about Java, Scala, Clojure?
+
 ## Use static code analysis
 
-* SpotBugs
+* [SpotBugs](https://spotbugs.github.io/)
 
 ## Leverage unit testing
 
-* JaCoCo
+* [JaCoCo](https://www.jacoco.org/jacoco/)
 * "Ratchet" to fail build when coverage drops
-* Fluent assertions -- lots of options in this area, AssertJ solid choice
+* Fluent assertions -- lots of options in this area,
+  [AssertJ](https://assertj.github.io/doc/) solid choice
 
 ## Use mutation testing
 
-* PITest
+* [PITest](http://pitest.org/)
 
 ## Use integration testing
 
-* TestContainers
+* [TestContainers](https://www.testcontainers.org/)
 
 ## Shift security left
 
-* DependencyCheck
+* [DependencyCheck](https://owasp.org/www-project-dependency-check/)
