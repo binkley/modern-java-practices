@@ -45,6 +45,10 @@ Projects using Ant should be updated.  The choice between Maven and Gradle
 depends on the team and other factors.  Ant is rather outdated, does not
 support modern tooling, and no longer updated.
 
+There are other options particular to specific projects such as
+[Buck](https://buck.build) (related to [Bazel](https://bazel.build)), et al.
+This article focuses on Gradle and Maven, which are by far more wide spread.
+
 ## Keep local consistent with CI
 
 * [Batect](https://batect.dev/)
