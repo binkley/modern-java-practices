@@ -20,6 +20,8 @@
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
   * DO follow recommendations, for example, _batches_ (see below)
 * GitHub actions (TODO: What is GitLabs equivalent?)
+  - Use caches for dependency downloads
+  - Exact details depend on Gradle vs Maven
 * Build wrappers (
   [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html),
   [`./mvnw`](https://github.com/takari/maven-wrapper)) -- see
@@ -56,6 +58,9 @@ support modern tooling, and no longer updated.
 
 * OpenJDK
   * Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
+  * Avoid Java 8, it is no longer supported
+  * Java 11 is "old" but supported
+  * Java 15 is the current supported version
 * Discuss each "versions" update plugin
 * Team agreement on releases only, or non-release dependencies
 
