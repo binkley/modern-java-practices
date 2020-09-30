@@ -38,13 +38,13 @@ recommended you review them, and decide what works best for you:
 * Provide a *good* README.  See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
   * DO follow recommendations, for example, _batches_ (see below)
-* GitHub actions (TODO: What is GitLabs equivalent?)
-  - Use caches for dependency downloads
-  - Exact details depend on Gradle vs Maven
 * Build wrappers (
   [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html),
   [`./mvnw`](https://github.com/takari/maven-wrapper)) -- see
   [Use Gradle or Maven](#use-gradle-or-maven)
+* GitHub actions (TODO: What is GitLabs equivalent?)
+  - Use caches for dependency downloads
+  - Exact details depend on Gradle vs Maven
 * Build JVM and plugin customizations goes in `config/`
 * Discuss tradeoffs with multi-module vs multi-repo projects
 * Do not commit IDE files except in specific circumstances
