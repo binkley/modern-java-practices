@@ -3,7 +3,6 @@
 ## TOC
 
 * [Goals](#goals)
-* [Alternatives](#alternatives)
 * [Project setup](#project-setup)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
@@ -35,55 +34,60 @@ recommended you review them, and decide what works best for you:
 
 ## Project setup
 
-* Provide a *good* README.  See
+* Provide a *good* README. See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-  * DO follow recommendations, for example, _batches_ (see below)
+    * DO follow recommendations, for example, _batches_ (see below)
 * Build wrappers (
-  [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html),
+  [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
+  ,
   [`./mvnw`](https://github.com/takari/maven-wrapper)) -- see
   [Use Gradle or Maven](#use-gradle-or-maven)
 * GitHub actions (TODO: What is GitLabs equivalent?)
-  - Use caches for dependency downloads
-  - Exact details depend on Gradle vs Maven
+    - Use caches for dependency downloads
+    - Exact details depend on Gradle vs Maven
 * Build JVM and plugin customizations goes in `config/`
 * Discuss tradeoffs with multi-module vs multi-repo projects
 * Do not commit IDE files except in specific circumstances
-  * Discuss `.editorconfig`
-  * Discuss IDE config sharing options
-* Pick a common code style, and stay consistent; update tooling to complain
-  on style violations
-  * Discuss variances in style -- Sun, Google, etc
+    * Discuss `.editorconfig`
+    * Discuss IDE config sharing options
+* Pick a common code style, and stay consistent; update tooling to complain on
+  style violations
+    * Discuss variances in style -- Sun, Google, etc
 * IDE plugins:
-  * Team consistency
-  * Help for Gradle/Maven plugins
-  * How to discuss non-IntelliJ Plugins?
+    * Team consistency
+    * Help for Gradle/Maven plugins
+    * How to discuss non-IntelliJ Plugins?
 
 ## Use Gradle or Maven
 
-Projects using Ant should be updated.  The choice between Maven and Gradle
-depends on the team and other factors.  Ant is rather outdated, does not
-support modern tooling, and no longer updated.
+Projects using Ant should be updated. The choice between Maven and Gradle
+depends on the team, and other factors. Ant is outdated, and does not support
+modern tooling.  *Consider Ant builds no longer supported, and a form of Tech
+Debt.*
 
-There are other options particular to specific projects such as
-[Buck](https://buck.build) (related to [Bazel](https://bazel.build)), et al.
-This article focuses on Gradle and Maven, which are by far more wide spread.
+There are alternative build choices for specific projects and circumstances
+such as [Buck](https://buck.build) (related to [Bazel](https://bazel.build)),
+et al. This article focuses on Gradle and Maven which are considered
+"standard" in the JVM community, wide-spread in use, and with much direct and
+indirect support for problems.
 
 ## Keep local consistent with CI
 
 * [Batect](https://batect.dev/)
 * Do not use a JDK older than version 11
-  * Discuss OpenJDK
-  * Discuss Oracle readmap on Java
-  * Discuss tradeoffs between LTS version and newer JDK versions
+    * **TODO**: Discuss OpenJDK
+    * **TODO**: Discuss Oracle readmap on Java
+    * **TODO**: Discuss tradeoffs between LTS version and newer JDK versions
 * [jEnv](https://www.jenv.be/) or equivalent
 
 ## Keep build current
 
 * OpenJDK
-  * Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
-  * Avoid Java 8, it is no longer supported
-  * Java 11 is "old" but supported
-  * Java 15 is the current supported version
+    * **TODO**: Pull out JDK discussions to a separate section
+    * **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
+    * Avoid Java 8, it is no longer supported
+    * Java 11 is "old" but supported
+    * Java 15 is the currently supported version
 * Discuss each "versions" update plugin
 * Team agreement on releases only, or non-release dependencies
 
@@ -95,7 +99,7 @@ This article focuses on Gradle and Maven, which are by far more wide spread.
 
 ## Use linting
 
-Linting for Kotlin is brain-dead simple.  What about Java, Scala, Clojure?
+Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 
 ## Use static code analysis
 
