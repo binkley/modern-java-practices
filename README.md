@@ -2,6 +2,8 @@
 
 ## TOC
 
+* [Goals](#goals)
+* [Alternatives](#alternatives)
 * [Project setup](#project-setup)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
@@ -13,6 +15,23 @@
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
 * [Shift security left](#shift-security-left)
+
+## Goals
+
+This project has simple goals:
+
+* Quick solutions for raising project quality and security in your build
+* Starters for Modern use of the JVM
+* Focused on Gradle or Maven
+* Agnostic on language (Java, Kotlin, et al)
+
+## Alternatives
+
+You may find other starters more helpful, depending on your circumstances. I
+recommended you review them, and decide what works best for you:
+
+- [JHipster](https://www.jhipster.tech/)
+- [Spring Start](https://start.spring.io/)
 
 ## Project setup
 
