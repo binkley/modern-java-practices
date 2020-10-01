@@ -11,6 +11,7 @@
 
     <properties>
         <!-- @formatter:off -->
+        <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
         <java.version>15</java.version>
         <junit.version>5.7.0</junit.version>
         <lombok.version>1.18.12</lombok.version>
@@ -71,6 +72,18 @@
                 <configuration>
                     <argLine>--enable-preview</argLine>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${dependency-check-maven.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
