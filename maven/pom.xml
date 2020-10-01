@@ -14,18 +14,20 @@
         <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
         <java.version>15</java.version>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
+        <java.charset>UTF-8</java.charset>
+        <java.version>15</java.version>
         <junit.version>5.7.0</junit.version>
         <lombok.version>1.18.12</lombok.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.parameters>true</maven.compiler.parameters>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven-versions-plugin.version>2.8.1</maven-versions-plugin.version>
         <mockito.version>3.5.13</mockito.version>
         <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
         <pitest-maven.version>1.5.2</pitest-maven.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <!-- @formatter:on -->
     </properties>
