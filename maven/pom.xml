@@ -13,6 +13,7 @@
         <!-- @formatter:off -->
         <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
         <java.version>15</java.version>
+        <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
         <junit.version>5.7.0</junit.version>
         <lombok.version>1.18.12</lombok.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -74,6 +75,43 @@
                 <configuration>
                     <argLine>--enable-preview</argLine>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-coverage</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>coverage-report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>check-coverage</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <limits>
+                                        <limit>
+                                            <minimum>100%</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.pitest</groupId>
