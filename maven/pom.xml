@@ -21,6 +21,8 @@
         <maven.compiler.target>15</maven.compiler.target>
         <maven-versions-plugin.version>2.8.1</maven-versions-plugin.version>
         <mockito.version>3.5.13</mockito.version>
+        <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
+        <pitest-maven.version>1.5.2</pitest-maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
@@ -72,6 +74,51 @@
                 <configuration>
                     <argLine>--enable-preview</argLine>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest-maven.version}</version>
+                <configuration>
+                    <avoidCallsTo>
+                        <avoidCallsTo>kotlin.jvm.internal</avoidCallsTo>
+                    </avoidCallsTo>
+                    <coverageThreshold>53</coverageThreshold>
+                    <excludedClasses>
+                        <excludedClass>hm.binkley.math.MainKt
+                        </excludedClass>
+                    </excludedClasses>
+                    <excludedMethods>
+                        <excludedMethod>byteValue</excludedMethod>
+                        <excludedMethod>doubleValue</excludedMethod>
+                        <excludedMethod>floatValue</excludedMethod>
+                        <excludedMethod>intValue</excludedMethod>
+                        <excludedMethod>longValue</excludedMethod>
+                        <excludedMethod>shortValue</excludedMethod>
+                    </excludedMethods>
+                    <jvmArgs>
+                        <jvmArg>-noverify</jvmArg>
+                        <jvmArg>-XX:TieredStopAtLevel=1</jvmArg>
+                    </jvmArgs>
+                    <!-- TODO: How to make mutation testing happy? -->
+                    <mutationThreshold>56</mutationThreshold>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>mutation-testing</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>${pitest-junit5-plugin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.owasp</groupId>
