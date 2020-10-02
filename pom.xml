@@ -127,7 +127,6 @@
                 <configuration>
                     <coverageThreshold>100</coverageThreshold>
                     <jvmArgs>
-                        <jvmArg>-noverify</jvmArg>
                         <jvmArg>-XX:TieredStopAtLevel=1</jvmArg>
                     </jvmArgs>
                     <mutationThreshold>100</mutationThreshold>
