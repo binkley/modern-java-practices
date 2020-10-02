@@ -105,6 +105,10 @@ Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 
 * [SpotBugs](https://spotbugs.github.io/)
 
+Shift security _left_ with:
+
+* [Find Security Bugs](https://find-sec-bugs.github.io/)
+
 ## Leverage unit testing
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
