@@ -1,16 +1,8 @@
 package demo;
 
-import lombok.Getter;
+import lombok.Data;
 
-public class DoTheFoo implements Foo {
-    public static final String THE_FOO = "I am the Foo!";
-
-    // TODO: Demonstrate testing STDOUT
-    @Getter
-    private String out;
-
-    @Override
-    public void doIt() {
-        out = THE_FOO;
-    }
+@Data
+public class DoTheFoo {
+    private final String foo;
 }
