@@ -28,6 +28,7 @@
         <pitest-maven.version>1.5.2</pitest-maven.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
+        <spotbugs.version>4.1.3</spotbugs.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <!-- @formatter:on -->
     </properties>
@@ -39,6 +40,13 @@
             <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+            <version>${spotbugs.version}</version>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <scope>test</scope>
             <groupId>org.junit.jupiter</groupId>
@@ -65,8 +73,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <source>${java.version}</source>
                     <release>${java.version}</release>
-                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
 
@@ -74,9 +82,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
-                <configuration>
-                    <argLine>--enable-preview</argLine>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -91,7 +96,6 @@
                     </execution>
                     <execution>
                         <id>coverage-report</id>
-                        <phase>post-integration-test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
