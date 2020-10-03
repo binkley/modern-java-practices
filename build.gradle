@@ -3,7 +3,8 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     id "build-dashboard"
     id "project-report"
-    id "info.solidsoft.pitest"
+    // TODO: Enable mutation tests
+    // id "info.solidsoft.pitest"
     id "com.github.ben-manes.versions"
     id "java"
     id "jacoco"
@@ -49,20 +50,20 @@ jacocoTestCoverageVerification {
     }
 }
 
-pitest {
-    coverageThreshold.set 82
-    junit5PluginVersion.set pitestJUnit5PluginVersion
-    mutationThreshold.set 100
-    timestampedReports.set false
-}
-
-tasks.named("pitest") {
-    dependsOn jacocoTestCoverageVerification
-}
+// pitest {
+//     coverageThreshold = 82
+//     junit5PluginVersion = pitestJUnit5PluginVersion
+//     mutationThreshold = 100
+//     timestampedReports = false
+// }
+// 
+// tasks.named("pitest") {
+//     dependsOn jacocoTestCoverageVerification
+// }
 
 check {
     dependsOn += jacocoTestCoverageVerification
-    dependsOn += "pitest"
+//     dependsOn += "pitest"
 }
 
 tasks.withType(DependencyUpdatesTask) {
