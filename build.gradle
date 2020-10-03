@@ -3,11 +3,12 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     id "build-dashboard"
     id "project-report"
-    // TODO: Enable mutation tests
-    // id "info.solidsoft.pitest"
     id "com.github.ben-manes.versions"
     id "java"
+    id "com.github.spotbugs"
     id "jacoco"
+    // TODO: Enable mutation tests
+    // id "info.solidsoft.pitest"
 }
 
 version = "0-SNAPSHOT"
@@ -28,12 +29,18 @@ dependencies {
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
+
+    spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 }
 
 test {
     useJUnitPlatform()
 
     finalizedBy jacocoTestReport
+}
+
+spotbugs {
+    toolVersion = spotbugsVersion
 }
 
 jacoco {
