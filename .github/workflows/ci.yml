@@ -1,0 +1,45 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    name: Builds and tests for Gradle and Maven
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: actions/cache@master
+        env:
+          cache-name: gradle-cache
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{hashFiles('**/build.gradle') }}
+          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - uses: actions/cache@master
+        env:
+          cache-name: maven-cache
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Set up JDK
+        uses: actions/setup-java@master
+        with:
+          java-version: 15
+
+      - name: Build and test with Gradle
+        run: ./gradlew build
+
+      - name: Build and test with Maven
+        run: ./mvnw -C verify

@@ -46,7 +46,8 @@ recommended you review them, and decide what works best for you:
   ,
   [`./mvnw`](https://github.com/takari/maven-wrapper)) -- see
   [Use Gradle or Maven](#use-gradle-or-maven)
-* GitHub actions (TODO: What is GitLabs equivalent?)
+* Run CI on push to a shared repository. For example, use GitHub actions
+  (TODO: What is GitLabs equivalent?)
     - Use caches for dependency downloads
     - Exact details depend on Gradle vs Maven
 * Build JVM and plugin customizations goes in `config/`
