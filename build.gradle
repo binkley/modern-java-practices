@@ -1,0 +1,88 @@
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+
+plugins {
+    id "build-dashboard"
+    id "project-report"
+    id "info.solidsoft.pitest"
+    id "com.github.ben-manes.versions"
+    id "java"
+    id "jacoco"
+}
+
+version = "0-SNAPSHOT"
+group = "hm.binkley.labs"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
+	
+	testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+	testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testImplementation "org.assertj:assertj-core:$assertJVersion"
+}
+
+test {
+    useJUnitPlatform()
+
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = jacocoVersion
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 1.00
+            }
+        }
+    }
+}
+
+pitest {
+    coverageThreshold.set 82
+    junit5PluginVersion.set pitestJUnit5PluginVersion
+    mutationThreshold.set 100
+    timestampedReports.set false
+}
+
+tasks.named("pitest") {
+    dependsOn jacocoTestCoverageVerification
+}
+
+check {
+    dependsOn += jacocoTestCoverageVerification
+    dependsOn += "pitest"
+}
+
+tasks.withType(DependencyUpdatesTask) {
+    rejectVersionIf {
+        !isStable(candidate.version) && isStable(currentVersion)
+    }
+}
+
+wrapper {
+    gradleVersion = gradleWrapperVersion
+    distributionType = "ALL"
+}
+
+def otherReleasePatterns = ~'^[0-9,.v-]+(-r)?$'
+
+def isStable(version) {
+    val stableKeyword = listOf "RELEASE", "FINAL", "GA".any {
+        version.toUpperCase .contains(it)
+    }
+    val otherReleasePattern = version ==~ otherReleasePatterns
+
+    return stableKeyword || otherReleasePattern
+}

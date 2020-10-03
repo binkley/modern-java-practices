@@ -1,0 +1,8 @@
+pluginManagement {
+    plugins {
+        id "info.solidsoft.pitest" version "${pitestPluginVersion}"
+        id "com.github.ben-manes.versions" version "${versionsPluginVersion}"
+    }
+}
+
+rootProject.name = "modern-java-practices"
