@@ -19,6 +19,9 @@
 * [Use integration testing](#use-integration-testing)
 * [Shift security left](#shift-security-left)
 
+This is a "work in progress". Much of it is bullet points, intending to flesh
+these out to full-written sections.
+
 ## Goals
 
 This project has simple goals:
