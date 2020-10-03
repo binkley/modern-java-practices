@@ -1,3 +1,7 @@
+<a href="LICENSE.md">
+<img src="https://unlicense.org/pd-icon.png" alt="Public Domain" align="right"/>
+</a>
+
 # Modern Java/JVM Build Practices
 
 ## TOC
@@ -76,7 +80,7 @@ indirect support for problems.
 * [Batect](https://batect.dev/)
 * Do not use a JDK older than version 11
     * **TODO**: Discuss OpenJDK
-    * **TODO**: Discuss Oracle readmap on Java
+    * **TODO**: Discuss Oracle roadmap on Java
     * **TODO**: Discuss tradeoffs between LTS version and newer JDK versions
 * [jEnv](https://www.jenv.be/) or equivalent
 
@@ -124,6 +128,6 @@ Shift security _left_ with:
 
 * [TestContainers](https://www.testcontainers.org/)
 
-## Shift security left
+## Shift security _left_
 
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
