@@ -2,11 +2,15 @@
 <img src="https://unlicense.org/pd-icon.png" alt="Public Domain" align="right"/>
 </a>
 
-# Modern Java/JVM Build Practices
+# Modern Java Build Practices
 
 [![build](https://github.com/binkley/modern-java-practices/workflows/build/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
+
+**Modern Java Build Practices** is an article on bootstrapping modern
+JVM-based projects with sample builds for Gradle and Maven, and focus on
+hygiene and best practices.
 
 ## TOC
 
