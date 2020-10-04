@@ -63,7 +63,6 @@ This article should provide enough information to update generated projects.
     * DO follow recommendations, for example, _batches_ (see below)
 * Use build wrappers committed into the project root:
     * [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
-      ,
     * [`./mvnw`](https://github.com/takari/maven-wrapper)
 * Run CI on push to a shared repository. For example, use GitHub actions
   (TODO: What is GitLabs equivalent?)
