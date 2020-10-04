@@ -58,6 +58,8 @@ This article should provide enough information to update generated projects.
 
 ## Project setup
 
+**TODO**: Pull IDE-related topics to a separate section
+
 * Provide a *good* README. See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
     * DO follow recommendations, for example, _batches_ (see below)
@@ -68,14 +70,15 @@ This article should provide enough information to update generated projects.
   (TODO: What is GitLabs equivalent?)
     * Use caches for dependency downloads
     * Exact details depend on Gradle vs Maven
-* Build JVM and plugin customizations goes in `config/`
-* Discuss tradeoffs with multi-module vs multi-repo projects
+* Build plugin customizations goes in `config/` (see [Lombok](#lombok) for an
+  exception)
 * Do not commit IDE files except in specific circumstances
     * Discuss `.editorconfig`
     * Discuss IDE config sharing options
 * Pick a common code style, and stay consistent; update tooling to complain on
   style violations
     * Discuss variances in style -- Sun, Google, etc
+    * See [Use linting](#use-linting)
 * IDE plugins:
     * Team consistency
     * Help for Gradle/Maven plugins
