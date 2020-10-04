@@ -44,23 +44,21 @@ This project has simple goals:
 You may find other starters more helpful, depending on your circumstances. I
 recommended you review them, and decide what works best for you:
 
-- [JHipster](https://www.jhipster.tech/)
-- [Spring Start](https://start.spring.io/)
+* [JHipster](https://www.jhipster.tech/)
+* [Spring Start](https://start.spring.io/)
 
 ## Project setup
 
 * Provide a *good* README. See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
     * DO follow recommendations, for example, _batches_ (see below)
-* Build wrappers (
-  [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
-  ,
-  [`./mvnw`](https://github.com/takari/maven-wrapper)) -- see
-  [Use Gradle or Maven](#use-gradle-or-maven)
+* Use build wrappers committed into the project root:
+    * [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html),
+    * [`./mvnw`](https://github.com/takari/maven-wrapper)
 * Run CI on push to a shared repository. For example, use GitHub actions
   (TODO: What is GitLabs equivalent?)
-    - Use caches for dependency downloads
-    - Exact details depend on Gradle vs Maven
+    * Use caches for dependency downloads
+    * Exact details depend on Gradle vs Maven
 * Build JVM and plugin customizations goes in `config/`
 * Discuss tradeoffs with multi-module vs multi-repo projects
 * Do not commit IDE files except in specific circumstances
@@ -102,15 +100,17 @@ alphabetical order.
 
 ## Keep build current
 
-* OpenJDK
-    * **TODO**: Pull out JDK discussions to a separate section
-    * **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
-    * Avoid Java 8, it is no longer supported
-    * Java 11 is "old" but supported
-    * Java 15 is the currently supported version
-* Discuss each "versions" update plugin
-    * [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
-    * [Maven](https://www.mojohaus.org/versions-maven-plugin/)
+### OpenJDK
+
+* **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
+* Avoid Java 8, it is no longer supported
+* Java 11 is "old" but supported
+* Java 15 is the currently supported version
+
+### Keep plugins and dependencies up-to-date
+
+* [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
+* [Maven](https://www.mojohaus.org/versions-maven-plugin/)
 * Team agreement on releases only, or non-release dependencies
 
 ## Generate code
