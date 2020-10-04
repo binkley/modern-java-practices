@@ -87,6 +87,10 @@ et al. This article focuses on Gradle and Maven which are considered
 "standard" in the JVM community, wide-spread in use, and with much direct and
 indirect support for problems.
 
+Throughout when covering both Gradle and Maven, Gradle will be discussed
+first, then Maven.  This is no expressing a preference!  It is neutral
+alphabetical order.
+
 ## Keep local consistent with CI
 
 * [Batect](https://batect.dev/)
@@ -105,6 +109,8 @@ indirect support for problems.
     * Java 11 is "old" but supported
     * Java 15 is the currently supported version
 * Discuss each "versions" update plugin
+    * [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
+    * [Maven](https://www.mojohaus.org/versions-maven-plugin/)
 * Team agreement on releases only, or non-release dependencies
 
 ## Generate code
