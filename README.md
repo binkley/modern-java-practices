@@ -90,8 +90,8 @@ This article should provide enough information to update generated projects.
 
 Projects using Ant should be updated. The choice between Maven and Gradle
 depends on the team, and other factors. Ant is outdated, and does not support
-modern tooling.  *Consider Ant builds no longer supported, and a form of Tech
-Debt.*
+modern tooling.  **Consider Ant builds no longer supported, and a form of
+[Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
 
 There are alternative build choices for specific projects and circumstances
 such as [Buck](https://buck.build) (related to [Bazel](https://bazel.build)),
