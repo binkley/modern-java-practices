@@ -11,6 +11,7 @@
 
     <properties>
         <!-- @formatter:off -->
+        <checkstyle.version>8.36.2</checkstyle.version>
         <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
         <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
         <java.version>15</java.version>
@@ -19,6 +20,7 @@
         <java.version>15</java.version>
         <junit.version>5.7.0</junit.version>
         <lombok.version>1.18.12</lombok.version>
+        <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -78,7 +80,33 @@
                     <release>${java.version}</release>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>config/checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

@@ -30,6 +30,7 @@ hygiene and best practices.
 * [Use integration testing](#use-integration-testing)
 * [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
 * [Shift security left](#shift-security-left)
+* [TODOs](#todos)
 
 This is a "work in progress". Much of it is bullet points, intending to flesh
 these out to full-written sections.
@@ -193,7 +194,8 @@ Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 ## The test pyramid
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
-* [_The Practical Test Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
+* [_The Practical Test
+  Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
 
 ---
 
@@ -224,6 +226,12 @@ Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 
 ## Shift security left
 
-* [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin 
-  for SpotBugs
+* [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
+  SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
+
+---
+
+## TODOs
+
+* Example _Integration Test_
