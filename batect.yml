@@ -1,0 +1,29 @@
+containers:
+  build-env:
+    image: adoptopenjdk:11-jdk-hotspot
+    volumes:
+      - local: .
+        container: /code
+        options: cached
+      - local: ~/.gradle
+        container: /home/container-user/.gradle
+        options: cached
+      - local: ~/.m2
+        container: /home/container-user/.m2
+        options: cached
+    working_directory: /code
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/container-user
+
+tasks:
+  build-gradle:
+    description: Build and test with Gradle
+    run:
+      container: build-env
+      command: ./gradlew build
+  build-maven:
+    description: Build and test with Maven
+    run:
+      container: build-env
+      command: ./mvnw -C verify
