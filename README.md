@@ -10,7 +10,7 @@
 
 **Modern Java Build Practices** is an article on bootstrapping modern
 JVM-based projects with sample builds for Gradle and Maven, and focus on
-hygiene and best practices.
+_hygiene_ and best practices.
 
 ---
 
@@ -127,8 +127,11 @@ alphabetical order.
 * **TODO**: Discuss Oracle LTS, and role of OpenJDK
 * **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
 * Avoid Java 8 or older: No longer supported, etc.
-* Java 11 is "old" but supported
+* Java 11 is "old" (this is a relative term) but solid and supported
 * Java 15 is the current LTS version
+
+These demonstration projects use Java 11 as tooling has not yet caught up to
+the recently released Java 15.
 
 ### Keep plugins and dependencies up-to-date
 
@@ -182,8 +185,8 @@ constructs. The term
 [derives from early UNIX](https://en.wikipedia.org/wiki/Lint_(software)).
 
 Linting for modern languages is simple: the compiler complains on your behalf.
-This is the case, for example, with Kotlin and Golang. Having common team
-agreements on style and formatting is a boon for avoiding
+This is the case, for example, Golang. Having common team agreements on style
+and formatting is a boon for avoiding
 [bikeshedding](https://en.wikipedia.org/wiki/Law_of_triviality), and aids in:
 
 * Reading a code base, relying on a similar style throughout
@@ -266,5 +269,6 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ## TODOs
 
+* Move to JDK 15 from 11 when tooling is ready
 * Example _Integration Test_
 * Discuss spotless plugin for Gradle and Maven -- update section on linting
