@@ -301,4 +301,5 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 * Move to JDK 15 from 11 when tooling is ready
 * Example _Integration Test_
-* Discuss spotless plugin for Gradle and Maven -- update section on linting
+* Discuss the spotless plugin for Gradle and Maven -- update section on
+  linting
