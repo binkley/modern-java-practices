@@ -177,10 +177,28 @@ Lines:
 
 ## Use linting
 
-Linting for more modern languages is simple: the compiler complains on your
-behalf. This is the case for Kotlin and Golang, for example.
+"Linting" is static code analysis with an eye towards style and dodgy code
+constructs. The term
+[derives from early UNIX](https://en.wikipedia.org/wiki/Lint_(software)).
 
-With Java, one needs to rely on external tooling. The most popular choice is:
+Linting for modern languages is simple: the compiler complains on your behalf.
+This is the case, for example, with Kotlin and Golang. Having common team
+agreements on style and formatting is a boon for avoiding
+[bikeshedding](https://en.wikipedia.org/wiki/Law_of_triviality), and aids in:
+
+* Reading a code base, relying on a similar style throughout
+* Code reviews, focusing on substantive over superficial changes
+* Merging code, avoiding trivial or irrelevant conflicts
+
+Code style and formatting are _entirely_ a matter of team discussion and
+agreement. In Java, there is no recommended style, and `javac` is good at
+parsing almost anything thrown at it. However, humans reading code are not as
+well-equipped.
+
+**Pick a team style, stick to it, and _enforce_ it with tooling.**
+
+With Java, one needs to rely on external tooling for linting. The most popular
+choice is:
 
 * [CheckStyle](https://checkstyle.sourceforge.io/)
     * [Gradle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
