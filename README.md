@@ -188,10 +188,6 @@ Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 
 * [SpotBugs](https://spotbugs.github.io/)
 
-Shift security _left_ with:
-
-* [Find Security Bugs](https://find-sec-bugs.github.io/)
-
 ---
 
 ## The test pyramid
@@ -228,4 +224,6 @@ Shift security _left_ with:
 
 ## Shift security left
 
+* [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin 
+  for SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
