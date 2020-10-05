@@ -6,6 +6,7 @@ plugins {
     id "com.github.ben-manes.versions"
     id "java"
     id "checkstyle"
+    id "pmd"
     id "com.github.spotbugs"
     id "jacoco"
     // TODO: Enable mutation tests
@@ -38,6 +39,11 @@ test {
     useJUnitPlatform()
 
     finalizedBy jacocoTestReport
+}
+
+pmd {
+    ignoreFailures = false
+    toolVersion = "${pmdVersion}"
 }
 
 spotbugs {

@@ -10,7 +10,12 @@
 
 **Modern Java Build Practices** is an article on bootstrapping modern
 JVM-based projects with sample builds for Gradle and Maven, and focus on
-_hygiene_ and best practices.
+_hygiene_ and best practices.  **TODO**: Link to article when it is published.
+
+**NB** &mdash; This sample project has both Gradle and Maven builds. Most
+IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
+code; [command-line](#project-setup)
+and [Batect](#keep-local-consistent-with-ci) usage work as expected.
 
 ---
 
@@ -106,6 +111,14 @@ Throughout when covering both Gradle and Maven, Gradle will be discussed
 first, then Maven. This is no expressing a preference!  It is neutral
 alphabetical order.
 
+### Tips
+
+* Gradle uses advanced terminal control, so you cannot always see what is
+  happening. To view Gradle steps plainly when debugging your build, use:
+  ```
+  $ ./gradlew <your targets> | cat
+  ```
+
 ---
 
 ## Keep local consistent with CI
@@ -116,8 +129,8 @@ Batect is a cool tool from Charles Korn. With some setup, it runs your build
 in a "CI-like" environment via Docker. This is one of your first lines of
 defence against "it runs on my box".
 
-See [`batect.yml`](./batect.yml) to configure.  For this project, there 
-are demonstration targets:
+See [`batect.yml`](./batect.yml) to configure. For this project, there are
+demonstration targets:
 
 ```
 $ ./batect gradle-build
@@ -238,6 +251,7 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ## Use static code analysis
 
+* [PMD](https://pmd.github.io/latest/)
 * [SpotBugs](https://spotbugs.github.io/)
 
 ---
