@@ -2,7 +2,7 @@ package demo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class DoTheFooTest {
     @Test
@@ -10,6 +10,6 @@ class DoTheFooTest {
         final var theFoo = "I am the Foo!";
         final var didTheFoo = new DoTheFoo(theFoo);
 
-        assertEquals(theFoo, didTheFoo.getFoo());
+        assertThat(didTheFoo.getFoo()).isEqualTo(theFoo);
     }
 }
