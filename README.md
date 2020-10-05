@@ -176,6 +176,10 @@ Lines:
 
 Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 
+* [CheckStyle](https://checkstyle.sourceforge.io/)
+    * [Gradle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
+    * [Maven plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html)
+
 ---
 
 ## Use static code analysis
