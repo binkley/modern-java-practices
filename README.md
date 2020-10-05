@@ -273,8 +273,11 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
 * "Ratchet" to fail build when coverage drops
-* Fluent assertions -- lots of options in this area,
-  [AssertJ](https://assertj.github.io/doc/) solid choice
+* Fluent assertions -- lots of options in this area
+  * [AssertJ](https://assertj.github.io/doc/) &mdash; -- solid choice
+  * Built assertions from Junit make is difficult for developers to 
+    distinguish "actual" values from "expected" values.  This is a 
+    limitation from Java as it lacks named parameters
 
 ---
 
