@@ -30,6 +30,7 @@ dependencies {
 	testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
 
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
