@@ -5,6 +5,7 @@ plugins {
     id "project-report"
     id "com.github.ben-manes.versions"
     id "java"
+    id "checkstyle"
     id "com.github.spotbugs"
     id "jacoco"
     // TODO: Enable mutation tests

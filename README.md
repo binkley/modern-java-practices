@@ -177,11 +177,25 @@ Lines:
 
 ## Use linting
 
-Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
+Linting for more modern languages is simple: the compiler complains on your
+behalf. This is the case for Kotlin and Golang, for example.
+
+With Java, one needs to rely on external tooling. The most popular choice is:
 
 * [CheckStyle](https://checkstyle.sourceforge.io/)
     * [Gradle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
     * [Maven plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html)
+
+However, unlike built-in solutions, Checkstyle will not auto-format code for
+you.
+
+The demonstration projects assume [checkstyle configuration] is located in
+[`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml).  
+This is the default location for Gradle, and configured in Maven.
+
+The Checkstyle configuration sample is stock
+[`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
+with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ---
 
@@ -235,3 +249,4 @@ Linting for Kotlin is brain-dead simple. What about Java, Scala, Clojure?
 ## TODOs
 
 * Example _Integration Test_
+* Discuss spotless plugin for Gradle and Maven -- update section on linting
