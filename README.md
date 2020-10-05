@@ -111,7 +111,23 @@ alphabetical order.
 ## Keep local consistent with CI
 
 * [Batect](https://batect.dev/)
-    * **TODO**: **BLOCKED** pending a released AdoptOpenJDK 15 Docker image
+
+Batect is a cool tool from Charles Korn. With some setup, it runs your build
+in a "CI-like" environment via Docker. This is one of your first lines of
+defence against "it runs on my box".
+
+See [`batect.yml`](./batect.yml) to configure.  For this project, there 
+are demonstration targets:
+
+```
+$ ./batect gradle-build
+[output omitted]
+$ ./batect maven-build
+[output ommitted]
+```
+
+**TODO:** Do these points go elsewhere?
+
 * Do not use a JDK older than version 11
     * **TODO**: Discuss OpenJDK
     * **TODO**: Discuss Oracle roadmap on Java
