@@ -24,9 +24,11 @@ hygiene and best practices.
 * [Generate code](#generate-code)
 * [Use linting](#use-linting)
 * [Use static code analysis](#use-static-code-analysis)
-* [Leverage unit testing](#leverage-unit-testing)
+* [The test pyramid](#the-test-pyramid)
+* [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
+* [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
 * [Shift security left](#shift-security-left)
 
 This is a "work in progress". Much of it is bullet points, intending to flesh
@@ -192,7 +194,14 @@ Shift security _left_ with:
 
 ---
 
-## Leverage unit testing
+## The test pyramid
+
+* [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
+* [_The Practical Test Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
+
+---
+
+## Leverage unit testing and coverage
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
 * "Ratchet" to fail build when coverage drops
@@ -210,6 +219,10 @@ Shift security _left_ with:
 ## Use integration testing
 
 * [TestContainers](https://www.testcontainers.org/)
+
+---
+
+## Use contract testing when appropriate
 
 ---
 
