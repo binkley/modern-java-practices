@@ -17,6 +17,11 @@ IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
 code; [command-line](#project-setup)
 and [Batect](#keep-local-consistent-with-ci) usage work as expected.
 
+**NB** &mdash; The sample Gradle and Maven build scripts often specify
+specific versions of the tooling, separate from the plugin versions. This is
+intentional. You should be able to update a tooling version to the latest even
+when the plugin has not yet caught up.
+
 ---
 
 ## TOC
