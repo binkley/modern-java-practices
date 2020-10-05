@@ -29,6 +29,7 @@
         <mockito.version>3.5.13</mockito.version>
         <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
         <pitest-maven.version>1.5.2</pitest-maven.version>
+        <pmd.version>6.28.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs.version>4.1.3</spotbugs.version>
@@ -121,6 +122,14 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <artifactId>pmd</artifactId>
+                        <version>${pmd.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>

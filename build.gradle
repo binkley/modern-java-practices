@@ -43,7 +43,7 @@ test {
 
 pmd {
     ignoreFailures = false
-    toolVersion = "${pmdVersion}"
+    toolVersion = "$pmdVersion"
 }
 
 spotbugs {
