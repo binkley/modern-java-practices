@@ -62,7 +62,7 @@ This article should provide enough information to update generated projects.
 
 * Provide a *good* README. See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-    * DO follow recommendations, for example, _batches_ (see below)
+    * DO follow recommendations, for example, _badges_ (see below)
 * Use build wrappers committed into the project root:
     * [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
     * [`./mvnw`](https://github.com/takari/maven-wrapper)
