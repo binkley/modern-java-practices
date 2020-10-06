@@ -374,6 +374,10 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
       distinguish "actual" values from "expected" values. This is a limitation
       from Java as it lacks named parameters
 
+(See [_suggestion : Ignore the generated
+code_](https://github.com/hcoles/pitest/issues/347) for a Lombok/PITest
+issue.)
+
 To see the coverage report (on passed or failed coverage), open:
 
 * For Gradle, `build/reports/jacoco/test/html/index.html`

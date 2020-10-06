@@ -9,12 +9,11 @@ plugins {
     id "pmd"
     id "com.github.spotbugs"
     id "jacoco"
-    // TODO: Enable mutation tests
-    // id "info.solidsoft.pitest"
+    id "info.solidsoft.pitest"
 }
 
 version = "0-SNAPSHOT"
-group = "hm.binkley.labs"
+group = "demo"
 
 repositories {
     mavenCentral()
@@ -22,12 +21,12 @@ repositories {
 }
 
 dependencies {
-	compileOnly "org.projectlombok:lombok:$lombokVersion"
-	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
-	
-	testCompileOnly "org.projectlombok:lombok:$lombokVersion"
-	testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
@@ -65,20 +64,22 @@ jacocoTestCoverageVerification {
     }
 }
 
-// pitest {
-//     coverageThreshold = 82
-//     junit5PluginVersion = pitestJUnit5PluginVersion
-//     mutationThreshold = 100
-//     timestampedReports = false
-// }
-// 
-// tasks.named("pitest") {
-//     dependsOn jacocoTestCoverageVerification
-// }
+pitest {
+    // TODO: Teach pitest to ignore Lombok code
+    coverageThreshold = 38
+    junit5PluginVersion = pitestJUnit5PluginVersion
+    mutationThreshold = 100
+    timestampedReports = false
+    verbose = true
+}
+
+tasks.named("pitest") {
+    dependsOn jacocoTestCoverageVerification
+}
 
 check {
     dependsOn += jacocoTestCoverageVerification
-//     dependsOn += "pitest"
+    dependsOn += "pitest"
 }
 
 tasks.withType(DependencyUpdatesTask) {
@@ -96,7 +97,7 @@ def otherReleasePatterns = ~'^[0-9,.v-]+(-r)?$'
 
 def isStable(version) {
     val stableKeyword = listOf "RELEASE", "FINAL", "GA".any {
-        version.toUpperCase .contains(it)
+        version.toUpperCase.contains(it)
     }
     val otherReleasePattern = version ==~ otherReleasePatterns
 
