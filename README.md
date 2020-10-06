@@ -40,7 +40,7 @@ $ ./mvnw verify
 
 * [TODOs](#todos)
 * [Introduction](#introduction)
-* [Project setup](#project-setup)
+* [Your project setup](#your-project-setup)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
 * [Keep build current](#keep-build-current)
@@ -60,6 +60,8 @@ $ ./mvnw verify
 ## TODOs
 
 * Article link when published
+* Update [Introduction](#introduction) &mdash; split out technical details
+  into their relevant section. Focus on _why_
 * Research http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
 * Section on supporting IDE plugins
 * Section on JDK version
@@ -103,15 +105,36 @@ you.
 
 ---
 
-## Project setup
+## Your project setup
+
+There are several helpful steps in setting up a new project, and in
+refurbishing an existing project. Some goals for your project:
+
+* Visitors and new developers get off to a quick start, and can understand
+  what the build does
+* Users of your project can trust it&mdash;it does what it says on the tin,
+  and feel safe using your project
+* You don't get peppered with questions that are answered "in the source"
+  &mdash;because not everyone wants to read the source
+* Development feels easy. Problems are _real_ problems, not nuisances because
+  of tools or plugins. Your code demonstrably provides value to others
+
+### Initial steps
 
 * Provide a *good* README. See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-    * DO follow recommendations, for example, _badges_ (see below)
+    * DO follow recommendations, for example, _badges_ and many others
+    * A good `README.md` answers visitors questions, so they don't spend time
+      asking you directly
 * Use build wrappers committed into the project root:
-    * [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
-    * [`./mvnw`](https://github.com/takari/maven-wrapper)
-* Run CI on push to a shared repository. For example, use GitHub actions
+    * Build wrappers mean a new contributor or developer does not need to
+      install more software: they can just build and go!
+    * For Gradle, this is
+      [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
+    * For Maven, this is [`./mvnw`](https://github.com/takari/maven-wrapper)
+
+* Always run CI on push to a shared repository. It's sad panda when someone is
+  excited about their commit, and it breaks the other developers
     * Use caches for dependency downloads
     * Exact details depend on Gradle vs Maven
 * Build plugin customizations goes in `config/` (see [Lombok](#lombok) for an
