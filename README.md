@@ -137,20 +137,27 @@ alphabetical order.
 
 ## Keep local consistent with CI
 
-* [Batect](https://batect.dev/)
+### Setup CI
 
-Batect is a cool tool from Charles Korn. With some setup, it runs your build
-in a "CI-like" environment via Docker. This is one of your first lines of
-defence against "it runs on my box".
+When using GitHub, a simple starting point is
+[`ci.yml`](./.github/workflows/ci.yml).  (GitLabs is similar, but as this
+project is hosted in GitHub, there is not a simple means to demonstrate CI at
+GitLabs).
+
+### Setup local CI
+
+[Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
+setup, it runs your build in a "CI-like" local environment via Docker. This is
+one of your first lines of defence against "it runs on my box".
 
 See [`batect.yml`](./batect.yml) to configure. For this project, there are
 demonstration targets:
 
 ```
 $ ./batect gradle-build
-[output omitted]
+# output ommitted
 $ ./batect maven-build
-[output ommitted]
+# output ommitted
 ```
 
 **TODO:** Do these points go elsewhere?
@@ -180,7 +187,21 @@ the recently released Java 15.
 
 * [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
 * [Maven](https://www.mojohaus.org/versions-maven-plugin/)
-* Team agreement on releases only, or non-release dependencies
+* Team agreement on releases only, or if non-release plugins and dependencies
+  are acceptable
+
+Example use:
+
+```
+$ ./gradlew dependencyUpdates
+# output ommitted
+$ ./mvnw versions:diplay-property-updates
+# output ommitted
+```
+
+Note that for Gradle, version numbers are kept in
+[`gradle.properties`](./gradle.properties) while Maven keeps them in
+[the POM](./pom.xml).
 
 ---
 
