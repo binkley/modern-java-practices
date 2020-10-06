@@ -171,6 +171,8 @@ refurbishing an existing project. Some goals for your project:
 ## The JDK
 
 **TODO** Bleh, just dumping here. Need discussion
+**TODO** Clarify language around JEnv -- not the JDK, a tool for picking an
+environment
 
 * Do not use a JDK older than version 11
     * **TODO**: Discuss OpenJDK
@@ -236,6 +238,9 @@ GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
 setup, it runs your build in a "CI-like" local environment via Docker. This is
 one of your first lines of defence against "it runs on my box".
+
+You would not run Batect in your CI pipeline itself: use GitHub Actions
+(or GitLab equivalent). Batect is for your local build.
 
 See [`batect.yml`](./batect.yml) to configure. For this project, there are
 demonstration targets:
@@ -558,6 +563,10 @@ Plugins:
 ## Use automated live testing when appropriate
 
 **TODO**: Needs discussion
+
+- "Out of process tests"
+- "System tests"
+- Contrast live tests with E2E tests
 
 * [TestContainers](https://www.testcontainers.org/)
 
