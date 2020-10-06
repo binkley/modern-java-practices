@@ -75,8 +75,8 @@ $ ./mvnw verify
 
 ## Introduction
 
-Hi!  I want you to have [awesome builds](https://modernagile.org/). If you're
-on Java or a JVM project, this article is for you.
+Hi!  I want you to have _awesome builds_. If you're on Java or a JVM project,
+this article is for you.
 
 My purpose is to highlight and provide examples for building modern Java/JVM
 projects with Gradle or Maven. I don't cover build features for JVM languages
@@ -89,16 +89,15 @@ This project has simple goals:
 * Starters for Modern use of Java/JVM builds
 * Focused on Gradle or Maven
 
-### Alternative starter tools
+I don't discuss alternative starter tools. This article helps you spin up a
+new Gradle or Maven project directly. For example, you may
+find [Spring Initializr](https://start.spring.io),
+[`mn` from Micronaut](https://micronaut.io/), or
+[JHipster](https://www.jhipster.tech/) (among others) more to your liking.
+That's great!  I believe this article still provides build help for you
+beyond "getting started".
 
-You may find other starters more helpful, depending on your circumstances. I
-recommended you review them, and decide what works best for you. Some examples
-include:
-
-* [JHipster](https://www.jhipster.tech/)
-* [Spring Start](https://start.spring.io/)
-
-This article should provide enough information to update generated projects.
+The goal: [_Make people awesome_](https://modernagile.org/).
 
 ---
 
