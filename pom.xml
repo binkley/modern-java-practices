@@ -108,9 +108,11 @@
                 <configuration>
                     <configLocation>config/checkstyle/checkstyle.xml
                     </configLocation>
-                    <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
+                    <encoding>UTF-8</encoding>
                     <failsOnError>true</failsOnError>
+                    <includeTestSourceDirectory>true
+                    </includeTestSourceDirectory>
                     <linkXRef>false</linkXRef>
                 </configuration>
                 <executions>
