@@ -385,6 +385,11 @@ To see the coverage report (on passed or failed coverage), open:
 
 * [PITest](http://pitest.org/)
 
+To see the mutation report (on passed or failed coverage), open:
+
+* For Gradle, `build/reports/pitest/index.html`
+* For Maven, `target/pit-reports/index.html`
+
 ---
 
 ## Use integration testing
