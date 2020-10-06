@@ -42,4 +42,4 @@ jobs:
         run: ./gradlew build
 
       - name: Build and test with Maven
-        run: ./mvnw -C verify
+        run: ./mvnw --strict-checksums verify

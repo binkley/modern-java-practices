@@ -26,4 +26,4 @@ tasks:
     description: Build and test with Maven
     run:
       container: build-env
-      command: ./mvnw -C clean verify
+      command: ./mvnw --strict-checksums clean verify

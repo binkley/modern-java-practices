@@ -389,7 +389,30 @@ upload!  Be a good netizen.
 
 * For Gradle, read more at [_Verifying
   dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
-* For Maven, _always_ run with the `--strict-checksums` (or `-C`) flag
+* For Maven, _always_ run with the `--strict-checksums` (or `-C`) flag. See
+  [_Maven Artifact Checksums -
+  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for
+  more information. This is easy to forget about at the local command line. An
+  alias helps:
+  ```
+  $ alias mvnw=`./mvnw --strict-checksums`
+  ```
+  However, for CI, this is easy!  The [Batect configuration](./batect.yml)
+  on this project says:
+  ```yaml
+  build-maven:
+    description: Build and test with Maven
+    run:
+      container: build-env
+      command: ./mvnw --strict-checksums clean verify
+  ```
+  and the GitHub action says:
+  ```yaml
+  - name: Build and test with Maven
+    run: ./mvnw --strict-checksums verify
+  ```
+  ([Batect](#keep-local-consistent-with-ci) and [GitHub Actions](#setup-ci)
+  are discussed both above.)
 
 ### Tips
 
