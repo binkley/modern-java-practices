@@ -60,6 +60,7 @@ $ ./mvnw verify
 ## TODOs
 
 * Article link when published
+* Research http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
 * Section on supporting IDE plugins
 * Section on JDK version
 * Move to JDK 15 from 11 when tooling is ready
@@ -381,6 +382,18 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 * [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
   SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
+
+Use checksums and signatures: verify what your project downloads!
+
+* For Gradle, read more at [_Verifying
+  dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
+* For Maven, _always_ run with the `--strict-checksums` (or `-C`) flag
+
+### Tips
+
+* Unfortunately, the Gradle ecosystem is not a mature as the Maven one in this
+  regard. For example, if you enable checksum verifications in Gradle, many or
+  most of your plugin and dependency downloads fail
 
 ---
 
