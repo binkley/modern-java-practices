@@ -383,7 +383,9 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
   SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
 
-Use checksums and signatures: verify what your project downloads!
+Use checksums and signatures: verify what your project downloads!  When you
+publish for consumption by others: provide MD5 (checksum) files in your
+upload!  Be a good netizen.
 
 * For Gradle, read more at [_Verifying
   dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
