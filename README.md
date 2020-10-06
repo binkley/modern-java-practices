@@ -59,6 +59,8 @@ $ ./mvnw verify
 
 ## TODOs
 
+**TODOs** will go away when this article is done.
+
 * Article link when published
 * Update [Introduction](#introduction) &mdash; split out technical details
   into their relevant section. Focus on _why_
