@@ -349,6 +349,8 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ## Use static code analysis
 
+**TODO**: Implemented for Gradle and Maven: needs discussion
+
 * [PMD](https://pmd.github.io/latest/)
 * [SpotBugs](https://spotbugs.github.io/)
 
@@ -395,6 +397,10 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 * [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
   SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
+
+**TODO**: How to automate the `-C` (checksum) flag in Maven? See
+[_Maven Artifact Checksums -
+What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j).
 
 ---
 
