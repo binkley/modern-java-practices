@@ -10,7 +10,7 @@
 
 **Modern Java Build Practices** is an article on bootstrapping modern
 JVM-based projects with sample builds for Gradle and Maven, and focus on
-_hygiene_ and best practices.  **TODO**: Link to article when it is published.
+_hygiene_ and best practices.
 
 **NB** &mdash; This is a "work in progress". Much of it is bullet points,
 intending to flesh these out to full-written sections.
@@ -38,6 +38,7 @@ $ ./mvnw verify
 
 ## TOC
 
+* [TODOs](#todos)
 * [Goals](#goals)
 * [Project setup](#project-setup)
 * [Use Gradle or Maven](#use-gradle-or-maven)
@@ -53,7 +54,21 @@ $ ./mvnw verify
 * [Use integration testing](#use-integration-testing)
 * [Use automated live testing when appropriate](#use-automated-live-testing-when-appropriate)
 * [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
-* [TODOs](#todos)
+
+---
+
+## TODOs
+
+* Article link when published
+* Section on supporting IDE plugins
+* Section on JDK version
+* Move to JDK 15 from 11 when tooling is ready
+* GitLabs equivalent for GitHub actions for CI
+* How to automate the `-C` (checksum) flag in Maven? See
+  [_Maven Artifact Checksums -
+  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j)
+* CPD for Gradle -- see https://github.com/aaschmid/gradle-cpd-plugin. CPD
+  works for Maven
 
 ---
 
@@ -81,8 +96,6 @@ This article should provide enough information to update generated projects.
 
 ## Project setup
 
-**TODO**: Pull IDE-related topics to a separate section
-
 * Provide a *good* README. See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
     * DO follow recommendations, for example, _badges_ (see below)
@@ -90,7 +103,6 @@ This article should provide enough information to update generated projects.
     * [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
     * [`./mvnw`](https://github.com/takari/maven-wrapper)
 * Run CI on push to a shared repository. For example, use GitHub actions
-  (TODO: What is GitLabs equivalent?)
     * Use caches for dependency downloads
     * Exact details depend on Gradle vs Maven
 * Build plugin customizations goes in `config/` (see [Lombok](#lombok) for an
@@ -165,8 +177,6 @@ $ ./batect build-maven
 # output ommitted
 ```
 
-**TODO:** Do these points go elsewhere?
-
 * Do not use a JDK older than version 11
     * **TODO**: Discuss OpenJDK
     * **TODO**: Discuss Oracle roadmap on Java
@@ -178,6 +188,8 @@ $ ./batect build-maven
 ## Keep build current
 
 ### OpenJDK
+
+**TODO:** Merge with JDK discussion above
 
 * **TODO**: Discuss Oracle LTS, and role of OpenJDK
 * **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
@@ -357,11 +369,9 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ## Use static code analysis
 
-**TODO**: Implemented for Gradle and Maven: needs discussion
+**TODO**: Needs discussion
 
 * [PMD](https://pmd.github.io/latest/)
-    * **TODO**: CPD for Gradle -- see
-      https://github.com/aaschmid/gradle-cpd-plugin. CPD works for Maven
 * [SpotBugs](https://spotbugs.github.io/)
 
 ---
@@ -371,10 +381,6 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 * [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
   SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
-
-**TODO**: How to automate the `-C` (checksum) flag in Maven? See
-[_Maven Artifact Checksums -
-What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j).
 
 ---
 
@@ -415,7 +421,7 @@ To see the coverage report (on passed or failed coverage), open:
 
 ## Use mutation testing
 
-**TODO**: Expand with description and reasoning.
+**TODO**: Needs discussion
 
 * [PITest](http://pitest.org/)
 
@@ -435,7 +441,7 @@ To see the mutation report (on passed or failed coverage), open:
 
 ## Use integration testing
 
-**TODO**: Text and description.
+**TODO**: Needs discussion
 
 Plugins:
 
@@ -466,9 +472,3 @@ Plugins:
 ---
 
 ## Use contract testing when appropriate
-
----
-
-## TODOs
-
-* Move to JDK 15 from 11 when tooling is ready
