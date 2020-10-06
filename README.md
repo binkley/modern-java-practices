@@ -97,7 +97,9 @@ find [Spring Initializr](https://start.spring.io),
 That's great!  I believe this article still provides build help for you
 beyond "getting started".
 
-The goal: [_Make people awesome_](https://modernagile.org/).
+The goal: [_Make people awesome_](https://modernagile.org/). I've tried a lot
+of things with Gradle and Maven builds, and want to share lessons learned with
+you.
 
 ---
 
