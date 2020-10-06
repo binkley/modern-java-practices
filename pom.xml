@@ -149,10 +149,6 @@
                 <version>${maven-testing-plugins.version}</version>
             </plugin>
             <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${maven-testing-plugins.version}</version>
-            </plugin>
-            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin.version}</version>
@@ -248,6 +244,18 @@
                     <execution>
                         <goals>
                             <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-testing-plugins.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
                         </goals>
                     </execution>
                 </executions>

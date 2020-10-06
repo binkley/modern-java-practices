@@ -424,6 +424,12 @@ Plugins:
 
 **NB** &mdash; Failsafe shares the version number with Surefire.
 
+### Tips
+
+* Baeldung
+  has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
+  on Maven Failsafe
+
 ---
 
 ## Use contract testing when appropriate

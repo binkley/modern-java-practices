@@ -87,6 +87,7 @@ tasks.named("pitest") {
 check {
     dependsOn += jacocoTestCoverageVerification
     dependsOn += "pitest"
+    dependsOn += integrationTest
 }
 
 tasks.withType(DependencyUpdatesTask) {
