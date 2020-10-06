@@ -2,9 +2,9 @@ package demo;
 
 import org.junit.jupiter.api.Test;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
 import static demo.Application.main;
 import static org.assertj.core.api.Assertions.assertThat;
-import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
 
 public class ApplicationIT {
     /** <strong>Use case</strong>: the application runs normally. */
