@@ -130,7 +130,11 @@ alphabetical order.
 * Gradle uses advanced terminal control, so you cannot always see what is
   happening. To view Gradle steps plainly when debugging your build, use:
   ```
-  $ ./gradlew <your targets> | cat
+  $ ./gradlew <your tasks> | cat
+  ```
+  or save the output to a file:
+  ```
+  $ ./gradlew <your tasks> | tee -o some-file
   ```
 
 ---
