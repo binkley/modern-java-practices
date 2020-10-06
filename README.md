@@ -12,6 +12,9 @@
 JVM-based projects with sample builds for Gradle and Maven, and focus on
 _hygiene_ and best practices.  **TODO**: Link to article when it is published.
 
+**NB** &mdash; This is a "work in progress". Much of it is bullet points,
+intending to flesh these out to full-written sections.
+
 **NB** &mdash; This sample project has both Gradle and Maven builds. Most
 IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
 code; [command-line](#project-setup)
@@ -50,9 +53,6 @@ $ ./mvnw verify
 * [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
 * [Shift security left](#shift-security-left)
 * [TODOs](#todos)
-
-This is a "work in progress". Much of it is bullet points, intending to flesh
-these out to full-written sections.
 
 ---
 
