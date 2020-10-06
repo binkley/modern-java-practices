@@ -347,9 +347,11 @@ The Checkstyle configuration used is stock
 [`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
 with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
-If you use Google Java coding conventions, consider
-[Spotless](https://github.com/diffplug/spotless) which can autoformat your
-code.
+### Tips
+
+* If you use Google Java coding conventions, consider
+  [Spotless](https://github.com/diffplug/spotless) which can autoformat your
+  code.
 
 ---
 
