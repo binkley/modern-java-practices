@@ -204,9 +204,41 @@ $ ./mvnw versions:diplay-property-updates
 # output ommitted
 ```
 
-Note that for Gradle, version numbers are kept in
-[`gradle.properties`](./gradle.properties) while Maven keeps them in
+In this project, version numbers for Gradle are kept in
+[`gradle.properties`](./gradle.properties), and for Maven in
 [the POM](./pom.xml).
+
+#### More on Gradle version numbers
+
+Your simplest approach to Gradle is to keep everything in `build.gradle`.  
+Even this unfortunately still requires a `settings.gradle` to define the
+project artifact name, and leaves duplicate version numbers for related
+dependencies scattered through `build.gradle`.
+
+Another approach is to rely on a Gradle plugin such as that from Spring Boot
+to manage dependecies for you. This unfortunately does not help with plugins
+at all, nor with dependencies that Spring Boot does not know about.
+
+This project uses a 3-file solution:
+
+* [`gradle.properties`](./gradle.properties) is the sole source of truth for
+  version numbers, both plugins and dependencies
+* [`settings.gradle`](./settings.gradle) configures plugin versions using the
+  properties
+* [`build.gradle`](./build.gradle) uses plugins without needing version
+  numbers, and dependencies refer to their version symbolically
+
+So to adjust a version, edit `gradle.properties`. To see this approach in
+action for dependencies, try:
+
+```
+$ grep junitVersion gradle.properties setttings.gradle build.gradle
+gradle.properties:junitVersion=5.7.0
+build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
+```
+
+With Gradle, there really is no "right" solution to this problem.
 
 ---
 

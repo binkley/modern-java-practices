@@ -1,8 +1,8 @@
 pluginManagement {
     plugins {
-        id "com.github.ben-manes.versions" version "${versionsPluginVersion}"
-        id "com.github.spotbugs" version "${spotbugsPluginVersion}"
-        id "info.solidsoft.pitest" version "${pitestPluginVersion}"
+        id "com.github.ben-manes.versions" version "$versionsPluginVersion"
+        id "com.github.spotbugs" version "$spotbugsPluginVersion"
+        id "info.solidsoft.pitest" version "$pitestPluginVersion"
     }
 }
 
