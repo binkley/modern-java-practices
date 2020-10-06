@@ -383,16 +383,11 @@ To see the coverage report (on passed or failed coverage), open:
 * For Gradle, `build/reports/jacoco/test/html/index.html`
 * For Maven, `target/site/jacoco/index.html`
 
-### Tips
-
-* Without further configuration, PITest defaults to mutating classes using
-  your _project group_ as the package base. Example: Set the _project group_
-  to "demo" for either Gradle or Maven if your classes are underneath the
-  "demo.*" package namespace.
-
 ---
 
 ## Use mutation testing
+
+**TODO**: Expand with description and reasoning.
 
 * [PITest](http://pitest.org/)
 
@@ -400,6 +395,13 @@ To see the mutation report (on passed or failed coverage), open:
 
 * For Gradle, `build/reports/pitest/index.html`
 * For Maven, `target/pit-reports/index.html`
+
+### Tips
+
+* Without further configuration, PITest defaults to mutating classes using
+  your _project group_ as the package base. Example: Set the _project group_
+  to "demo" for either Gradle or Maven if your classes are underneath the
+  "demo.*" package namespace.
 
 ---
 
