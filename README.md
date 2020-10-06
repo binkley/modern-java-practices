@@ -205,8 +205,8 @@ the recently released Java 15.
 
 * [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
 * [Maven](https://www.mojohaus.org/versions-maven-plugin/)
-* Team agreement on releases only, or if non-release plugins and dependencies
-  are acceptable
+* Team agreement about releases only, or if non-release plugins and
+  dependencies are acceptable
 
 Example use which shows outdated plugins and dependencies, but does not modify
 any project files:
