@@ -422,10 +422,15 @@ Plugins:
 * For Maven, use
   the [Maven Failsafe Plugin](https://maven.apache.org/failsafe/maven-failsafe-plugin/)
 
-**NB** &mdash; Failsafe shares the version number with Surefire.
-
 ### Tips
 
+* Failsafe shares the version number with Surefire. This project uses a
+  shared `maven-testing-plugins.version` property
+* Unlike `src/main/java` and `src/test/java`, there is no generally agreed
+  convention for where to put integration tests. This project keeps all tests
+  regardless of type in `src/test/java` for simplicity of presentation, naming
+  integration tests with "*IT.java". A more sophisticated approach may make
+  sense for your project
 * Baeldung
   has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
   on Maven Failsafe

@@ -32,6 +32,7 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
+    testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
 
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 }
@@ -46,6 +47,10 @@ testSets {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion = checkstyleVersion
 }
 
 pmd {
