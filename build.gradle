@@ -37,13 +37,15 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
-
     finalizedBy jacocoTestReport
 }
 
 testSets {
     integrationTest
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
 }
 
 pmd {
