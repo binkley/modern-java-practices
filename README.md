@@ -46,12 +46,13 @@ $ ./mvnw verify
 * [Generate code](#generate-code)
 * [Use linting](#use-linting)
 * [Use static code analysis](#use-static-code-analysis)
+* [Shift security left](#shift-security-left)
 * [The test pyramid](#the-test-pyramid)
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
+* [Use automated live testing when appropriate](#use-automated-live-testing-when-appropriate)
 * [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
-* [Shift security left](#shift-security-left)
 * [TODOs](#todos)
 
 ---
@@ -358,6 +359,18 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ---
 
+## Shift security left
+
+* [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
+  SpotBugs
+* [DependencyCheck](https://owasp.org/www-project-dependency-check/)
+
+**TODO**: How to automate the `-C` (checksum) flag in Maven? See
+[_Maven Artifact Checksums -
+What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j).
+
+---
+
 ## The test pyramid
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
@@ -415,7 +428,7 @@ To see the mutation report (on passed or failed coverage), open:
 
 ## Use integration testing
 
-* [TestContainers](https://www.testcontainers.org/)
+**TODO**: Text and description.
 
 Plugins:
 
@@ -439,25 +452,18 @@ Plugins:
 
 ---
 
-## Use contract testing when appropriate
+## Use automated live testing when appropriate
+
+* [TestContainers](https://www.testcontainers.org/)
 
 ---
 
-## Shift security left
-
-* [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
-  SpotBugs
-* [DependencyCheck](https://owasp.org/www-project-dependency-check/)
-
-**TODO**: How to automate the `-C` (checksum) flag in Maven? See
-[_Maven Artifact Checksums -
-What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j).
+## Use contract testing when appropriate
 
 ---
 
 ## TODOs
 
 * Move to JDK 15 from 11 when tooling is ready
-* Example _Integration Test_
 * Discuss the spotless plugin for Gradle and Maven -- update section on
   linting
