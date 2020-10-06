@@ -65,7 +65,9 @@ $ ./mvnw verify
 * Update [Introduction](#introduction) &mdash; split out technical details
   into their relevant section. Focus on _why_
 * Research http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
-* Section on supporting IDE plugins
+* Section on IDE setup
+* How to discuss non-IntelliJ Plugins? I don't know Eclipse, NetBeans, Vi, or
+  VSCode plugins
 * Section on JDK version
 * Move to JDK 15 from 11 when tooling is ready
 * GitLabs equivalent for GitHub actions for CI
@@ -120,21 +122,31 @@ refurbishing an existing project. Some goals for your project:
   &mdash;because not everyone wants to read the source
 * Development feels easy. Problems are _real_ problems, not nuisances because
   of tools or plugins. Your code demonstrably provides value to others
+* Your code passes all the "smell tests": you don't simple doubts, you aren't
+  embarrassed when folks look over the code. Hey! You're a professional.  
+  (This is one of my personal fears as a programmer.)
 
 ### Initial steps
 
-* Provide a *good* README. See
+* Provide a *good* `README.md`. This saves you a ton of time in the long run.
+  See
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-    * DO follow recommendations, for example, _badges_ and many others
-    * A good `README.md` answers visitors questions, so they don't spend time
-      asking you directly
-* Use build wrappers committed into the project root:
+  for guidelines.
+  [YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
+    * [Intelligent laziness is a virtue](http://threevirtues.com/). Time
+      invested in good documentation pays off
+    * A good [`README.md`](./README.md) answers visitors questions, so you
+      don't spend time answering trivial questions, and explains/justifies
+      your project to others.
+      Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
+      with communication!
+
+* Install build wrappers committed into the project root:
     * Build wrappers mean a new contributor or developer does not need to
-      install more software: they can just build and go!
+      install more software: they can just build and go
     * For Gradle, this is
       [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
     * For Maven, this is [`./mvnw`](https://github.com/takari/maven-wrapper)
-
 * Always run CI on push to a shared repository. It's sad panda when someone is
   excited about their commit, and it breaks the other developers
     * Use caches for dependency downloads
@@ -149,9 +161,9 @@ refurbishing an existing project. Some goals for your project:
     * Discuss variances in style -- Sun, Google, etc
     * See [Use linting](#use-linting)
 * IDE plugins:
+    * See **TODO** to move IDE concerns to their own section
     * Team consistency
     * Help for Gradle/Maven plugins
-    * How to discuss non-IntelliJ Plugins?
 
 ---
 
