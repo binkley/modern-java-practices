@@ -338,13 +338,18 @@ choice is:
 However, unlike built-in solutions, Checkstyle will not auto-format code for
 you.
 
-The demonstration projects assume [checkstyle configuration] is located in
+The demonstration projects assume checkstyle configuration at
 [`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml).  
-This is the default location for Gradle, and configured in Maven.
+This is the default location for Gradle, and configured for Maven in this
+project.
 
-The Checkstyle configuration sample is stock
+The Checkstyle configuration used is stock
 [`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
 with the addition of support for `@SuppressWarnings(checkstyle:...)`.
+
+If you use Google Java coding conventions, consider
+[Spotless](https://github.com/diffplug/spotless) which can autoformat your
+code.
 
 ---
 
@@ -465,5 +470,3 @@ Plugins:
 ## TODOs
 
 * Move to JDK 15 from 11 when tooling is ready
-* Discuss the spotless plugin for Gradle and Maven -- update section on
-  linting
