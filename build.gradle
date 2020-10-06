@@ -5,6 +5,7 @@ plugins {
     id "project-report"
     id "com.github.ben-manes.versions"
     id "java"
+    id "org.unbroken-dome.test-sets"
     id "checkstyle"
     id "pmd"
     id "com.github.spotbugs"
@@ -39,6 +40,10 @@ test {
     useJUnitPlatform()
 
     finalizedBy jacocoTestReport
+}
+
+testSets {
+    integrationTest
 }
 
 pmd {

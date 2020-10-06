@@ -1,6 +1,7 @@
 pluginManagement {
     plugins {
         id "com.github.ben-manes.versions" version "$versionsPluginVersion"
+        id "org.unbroken-dome.test-sets" version "$testsetsPluginVersion"
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
     }

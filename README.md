@@ -374,6 +374,12 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
       distinguish "actual" values from "expected" values. This is a limitation
       from Java as it lacks named parameters
 
+Plugins:
+
+* For Gradle this is part of the "java" plugin
+* For Maven, use
+  the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/)
+
 (See [_suggestion : Ignore the generated
 code_](https://github.com/hcoles/pitest/issues/347) for a Lombok/PITest
 issue.)
@@ -408,6 +414,15 @@ To see the mutation report (on passed or failed coverage), open:
 ## Use integration testing
 
 * [TestContainers](https://www.testcontainers.org/)
+
+Plugins:
+
+* For Gradle, use [_Gradle TestSets
+  Plugin_](https://github.com/unbroken-dome/gradle-testsets-plugin)
+* For Maven, use
+  the [Maven Failsafe Plugin](https://maven.apache.org/failsafe/maven-failsafe-plugin/)
+
+**NB** &mdash; Failsafe shares the version number with Surefire.
 
 ---
 
