@@ -39,7 +39,7 @@ $ ./mvnw verify
 ## TOC
 
 * [TODOs](#todos)
-* [Goals](#goals)
+* [Introduction](#introduction)
 * [Project setup](#project-setup)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
@@ -73,14 +73,21 @@ $ ./mvnw verify
 
 ---
 
-## Goals
+## Introduction
+
+Hi!  I want you to have [awesome builds](https://modernagile.org/). If you're
+on Java or a JVM project, this article is for you.
+
+My purpose is to highlight and provide examples for building modern Java/JVM
+projects with Gradle or Maven. I don't cover build features for JVM languages
+other than Java; for those happily using Kotlin, Clojure, Scala, JRuby, etc.,
+I still hope this article a good read.
 
 This project has simple goals:
 
 * Quick solutions for raising project quality and security in your build
-* Starters for Modern use of the JVM
+* Starters for Modern use of Java/JVM builds
 * Focused on Gradle or Maven
-* Agnostic on language (Java, Kotlin, et al)
 
 ### Alternative starter tools
 
