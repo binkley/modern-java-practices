@@ -351,7 +351,8 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 **TODO**: Implemented for Gradle and Maven: needs discussion
 
-* [PMD](https://pmd.github.io/latest/)
+* [PMD](https://pmd.github.io/latest/) &mdash; with CPD
+    * **TODO**: CPD for Gradle? It works for Maven
 * [SpotBugs](https://spotbugs.github.io/)
 
 ---
