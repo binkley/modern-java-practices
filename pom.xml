@@ -185,13 +185,13 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- TODO: Enable mutation
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>${pitest-maven.version}</version>
                 <configuration>
-                    <coverageThreshold>100</coverageThreshold>
+                    <!-- TODO: Teach pitest to ignore Lombok code -->
+                    <coverageThreshold>38</coverageThreshold>
                     <jvmArgs>
                         <jvmArg>-XX:TieredStopAtLevel=1</jvmArg>
                     </jvmArgs>
@@ -215,7 +215,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
