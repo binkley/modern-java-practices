@@ -467,8 +467,13 @@ Plugins:
 
 ## Use automated live testing when appropriate
 
+**TODO**: Needs discussion
+
 * [TestContainers](https://www.testcontainers.org/)
 
 ---
 
 ## Use contract testing when appropriate
+
+**TODO**: Needs discussion
+
