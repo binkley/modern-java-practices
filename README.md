@@ -41,6 +41,7 @@ $ ./mvnw verify
 * [TODOs](#todos)
 * [Introduction](#introduction)
 * [Your project setup](#your-project-setup)
+* [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
 * [Keep build current](#keep-build-current)
@@ -167,6 +168,29 @@ refurbishing an existing project. Some goals for your project:
 
 ---
 
+## The JDK
+
+**TODO** Bleh, just dumping here. Need discussion
+
+* Do not use a JDK older than version 11
+    * **TODO**: Discuss OpenJDK
+    * **TODO**: Discuss Oracle roadmap on Java
+    * **TODO**: Discuss tradeoffs between LTS version and newer JDK versions
+* [jEnv](https://www.jenv.be/) or equivalent
+
+### OpenJDK
+
+* **TODO**: Discuss Oracle LTS, and role of OpenJDK
+* **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
+* Avoid Java 8 or older: No longer supported, etc.
+* Java 11 is "old" (this is a relative term) but solid and supported
+* Java 15 is the current LTS version
+
+These demonstration projects use Java 11 as tooling has not yet caught up to
+the recently released Java 15.
+
+---
+
 ## Use Gradle or Maven
 
 Projects using Ant should be updated. The choice between Maven and Gradle
@@ -223,28 +247,11 @@ $ ./batect build-maven
 # output ommitted
 ```
 
-* Do not use a JDK older than version 11
-    * **TODO**: Discuss OpenJDK
-    * **TODO**: Discuss Oracle roadmap on Java
-    * **TODO**: Discuss tradeoffs between LTS version and newer JDK versions
-* [jEnv](https://www.jenv.be/) or equivalent
-
 ---
 
 ## Keep build current
 
-### OpenJDK
-
-**TODO:** Merge with JDK discussion above
-
-* **TODO**: Discuss Oracle LTS, and role of OpenJDK
-* **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
-* Avoid Java 8 or older: No longer supported, etc.
-* Java 11 is "old" (this is a relative term) but solid and supported
-* Java 15 is the current LTS version
-
-These demonstration projects use Java 11 as tooling has not yet caught up to
-the recently released Java 15.
+**TODO**: Needs discussion
 
 ### Keep plugins and dependencies up-to-date
 
