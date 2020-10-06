@@ -22,6 +22,15 @@ specific versions of the tooling, separate from the plugin versions. This is
 intentional. You should be able to update a tooling version to the latest even
 when the plugin has not yet caught up.
 
+Try out the builds:
+
+```
+$ ./gradlew build
+# Output ommitted
+$ ./mvnw verify
+# Output omitted
+```
+
 ---
 
 ## TOC
@@ -274,10 +283,10 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 * [JaCoCo](https://www.jacoco.org/jacoco/)
 * "Ratchet" to fail build when coverage drops
 * Fluent assertions -- lots of options in this area
-  * [AssertJ](https://assertj.github.io/doc/) &mdash; -- solid choice
-  * Built assertions from Junit make is difficult for developers to 
-    distinguish "actual" values from "expected" values.  This is a 
-    limitation from Java as it lacks named parameters
+    * [AssertJ](https://assertj.github.io/doc/) &mdash; -- solid choice
+    * Built assertions from Junit make is difficult for developers to
+      distinguish "actual" values from "expected" values. This is a limitation
+      from Java as it lacks named parameters
 
 ---
 
