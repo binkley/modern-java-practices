@@ -194,7 +194,8 @@ the recently released Java 15.
 * Team agreement on releases only, or if non-release plugins and dependencies
   are acceptable
 
-Example use:
+Example use which shows outdated plugins and dependencies, but does not modify
+any project files:
 
 ```
 $ ./gradlew dependencyUpdates
