@@ -21,9 +21,9 @@ tasks:
     description: Build and test with Gradle
     run:
       container: build-env
-      command: ./gradlew build
+      command: ./gradlew clean build
   build-maven:
     description: Build and test with Maven
     run:
       container: build-env
-      command: ./mvnw -C verify
+      command: ./mvnw -C clean verify
