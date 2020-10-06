@@ -374,6 +374,11 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
       distinguish "actual" values from "expected" values. This is a limitation
       from Java as it lacks named parameters
 
+To see the coverage report (on passed or failed coverage), open:
+
+* For Gradle, `build/reports/jacoco/test/html/index.html`
+* For Maven, `target/site/jacoco/index.html`
+
 ---
 
 ## Use mutation testing
