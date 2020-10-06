@@ -207,15 +207,41 @@ Note that for Gradle, version numbers are kept in
 
 ## Generate code
 
-Yada, yada, yada.
+When sensible, prefer to generate rather than write code for several reasons:
 
-(Mention Kotlin and other more modern languages which obviate much of this
-need.)
+* [Intelligent laziness is a virtue](http://threevirtues.com/)
+* Tools always work, unless they have bugs, and you can fix bugs.  
+  Programmers make typos, and fixing typos is a challenge when not obvious;
+  worse are [_thinkos_](https://en.wiktionary.org/wiki/thinko).
+* Generated code does need code review, only the source input for generation
+  needs review, and this is usually shorter and easier to understand
+* Generated code is usually ignored by tooling such as linting or code
+  coverage (and there are simple workarounds when this is not the case)
+
+Note that many features for which in Java one would use code generation
+(_eg_, Lombok's [`@Getter`](https://projectlombok.org/features/GetterSetter)
+or [`@ToString`](https://www.projectlombok.org/features/ToString)), can be
+built-in language features in other languages such as Kotlin (_eg_,
+[properties](https://kotlinlang.org/docs/reference/properties.html)
+or [data classes](https://kotlinlang.org/docs/reference/data-classes.html)).
 
 ### Lombok
 
-* [Lombok](https://projectlombok.org/)
-* `@Generated` for lying to JaCoCo
+[Lombok](https://projectlombok.org/) is by far the most popular tool in Java
+for code generation. It covers many common use cases, and does not have
+runtime dependencies. Also, there are plugins for popular IDEs to understand
+Lombok's code generation, and tooling integration such as for JaCoCo code
+coverage.
+
+#### Leverage Lombok to tweak code coverage
+
+Be sparing in disabling code coverage!  JaCoCo knows about Lombok's
+[`@Generated`](https://projectlombok.org/api/lombok/Generated.html), and will
+ignore annotated code.
+
+A typical use is for the `main()` method in a framework such as Spring Boot
+or [Micronaut](https://micronaut.io/). For a _command-line program_, you will
+want to test your `main()`.
 
 #### Lombok configuration
 
