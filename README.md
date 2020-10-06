@@ -146,7 +146,7 @@ alphabetical order.
 When using GitHub, a simple starting point is
 [`ci.yml`](./.github/workflows/ci.yml).  (GitLabs is similar, but as this
 project is hosted in GitHub, there is not a simple means to demonstrate CI at
-GitLabs).
+GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
 
 ### Setup local CI
 
