@@ -158,9 +158,9 @@ See [`batect.yml`](./batect.yml) to configure. For this project, there are
 demonstration targets:
 
 ```
-$ ./batect gradle-build
+$ ./batect build-gradle
 # output ommitted
-$ ./batect maven-build
+$ ./batect build-maven
 # output ommitted
 ```
 
