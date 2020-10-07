@@ -8,8 +8,8 @@
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-**Modern Java Build Practices** is an article on bootstrapping modern
-JVM-based projects with sample builds for Gradle and Maven, and focus on
+**Modern Java Build Practices** is an article on bootstrapping modern Java/JVM
+projects with sample builds for Gradle and Maven, and a focus on
 _hygiene_ and best practices.
 
 **NB** &mdash; This is a "work in progress". Much of it is bullet points,
@@ -82,13 +82,12 @@ $ ./mvnw verify
 
 ## Introduction
 
-Hi!  I want you to have _awesome builds_. If you're on Java or a JVM project,
-this article is for you.
+Hi!  I want you to have _awesome builds_. If you're on Java or a JVM project (
+Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
 
 My purpose is to highlight and provide examples for building modern Java/JVM
-projects with Gradle or Maven. I don't cover build features for JVM languages
-other than Java; for those happily using Kotlin, Clojure, Scala, JRuby, etc.,
-I still hope this article a good read.
+projects with Gradle or Maven. The article focuses on Java, but many points
+apply to _any_ JVM language build (well, perhaps not language code style).
 
 This project has simple goals:
 
@@ -102,7 +101,8 @@ find [Spring Initializr](https://start.spring.io),
 [`mn` from Micronaut](https://micronaut.io/), or
 [JHipster](https://www.jhipster.tech/) (among others) more to your liking.
 That's great!  I believe this article still provides build help for you
-beyond "getting started".
+beyond "getting started". You can pick and choose build features to add to
+your starter project.
 
 The goal: [_Make people awesome_](https://modernagile.org/). I've tried a lot
 of things with Gradle and Maven builds, and want to share lessons learned with
@@ -112,20 +112,22 @@ you.
 
 ## Your project setup
 
-There are several helpful steps in setting up a new project, and in
-refurbishing an existing project. Some goals for your project:
+There are several helpful steps in setting up a new project, or in
+refurbishing an existing project. Some things to strive for in your projects:
 
 * Visitors and new developers get off to a quick start, and can understand
-  what the build does
-* Users of your project can trust it&mdash;it does what it says on the tin,
-  and feel safe using your project
+  what the build does (if they are interested)
+* Users of your project trust it&mdash;the build does what it says on the
+  tin&mdash;, and they feel safe relying on your project
 * You don't get peppered with questions that are answered "in the source"
-  &mdash;because not everyone wants to read the source
-* Development feels easy. Problems are _real_ problems, not nuisances because
-  of tools or plugins. Your code demonstrably provides value to others
-* Your code passes all the "smell tests": you don't simple doubts, you aren't
-  embarrassed when folks look over the code. Hey! You're a professional.  
-  (This is one of my personal fears as a programmer.)
+  &mdash;because not everyone wants to read the source, and you'd rather be
+  coding than answering questions ☺
+* Coding should feel easy. Problems you solve are _real_ problems, not
+  nuisances because of tools or plugins. Your code demonstrably provides value
+  to others, and the build supports you
+* Your code passes all the "smell tests": no simple complaints, and you aren't
+  embarrassed when folks look over the code. Hey! You're a professional, and
+  it shows. (This is one of my personal fears as a programmer)
 
 ### Initial steps
 
