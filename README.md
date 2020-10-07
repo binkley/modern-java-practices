@@ -210,9 +210,12 @@ is a go-to choice for obtaining the JDK.
 
 One of the best tools for managing your Java environment in projects is
 [jEnv](https://www.jenv.be/). It supports both "global" (meaning you, the
-user) and "project" choices in which JDK installation to use. You may notice
-the [`.java-version`](./.java-version) file: this is a per-project file for
-jEnv to pick the project Java version.
+user) and "project" choices (particular to a directory and its children) in
+which JDK installation to use. You may notice the
+[`.java-version`](./.java-version) file: this is a per-project file for jEnv
+to pick the project Java version.
+
+For those on Windows, you may need to use WSL2 to use jEnv.
 
 ---
 
