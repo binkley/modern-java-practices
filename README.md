@@ -287,17 +287,17 @@ project artifact name, and leaves duplicate version numbers for related
 dependencies scattered through `build.gradle`.
 
 Another approach is to rely on a Gradle plugin such as that from Spring Boot
-to manage dependecies for you. This unfortunately does not help with plugins
+to manage dependencies for you. This unfortunately does not help with plugins
 at all, nor with dependencies that Spring Boot does not know about.
 
-This project uses a 3-file solution:
+This project uses a 3-file solution for Gradle versioning:
 
 * [`gradle.properties`](./gradle.properties) is the sole source of truth for
   version numbers, both plugins and dependencies
 * [`settings.gradle`](./settings.gradle) configures plugin versions using the
   properties
 * [`build.gradle`](./build.gradle) uses plugins without needing version
-  numbers, and dependencies refer to their version symbolically
+  numbers, and dependencies refer to their property versions
 
 So to adjust a version, edit `gradle.properties`. To see this approach in
 action for dependencies, try:
@@ -307,6 +307,14 @@ $ grep junitVersion gradle.properties setttings.gradle build.gradle
 gradle.properties:junitVersion=5.7.0
 build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
 build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
+```
+
+To update Gradle:
+
+```
+$ $EDITOR gradle.properties  # Change gradleWrapperVersion property
+$ ./gradlew wrapper  # Update
+$ ./gradlew wrapper  # Confirm
 ```
 
 With Gradle, there really is no "right" solution to this problem.
