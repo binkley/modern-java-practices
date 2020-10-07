@@ -136,6 +136,9 @@ To get a project off to a good start, consider these items. Even for existing
 projects, you an address these as you go along or while refurbishing an
 existing project:
 
+* **Team agreement comes first**. Make sure everyone is onboard and clear on
+  what build standards are, and understands&mdash;at least as an
+  outline&mdash;what the build does for them
 * Provide a *good* `README.md`. This saves you a ton of time in the long run.
   This is your _most important_ step. A good resource is Yegor's
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
