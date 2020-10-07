@@ -221,17 +221,24 @@ For those on Windows, you may need to use WSL2 to use jEnv.
 
 ## Use Gradle or Maven
 
-The choice between Gradle and Maven depends on the team, and other factors.
-Ant is outdated, and does not support modern tooling.  **Consider Ant builds
-no longer supported, and a form of
-[Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
+The choice between Gradle and Maven depends on the team, and other factors. In
+summary:
+
+* Gradle &mdash; written in Goovy or Kotlin, dynamic, imperative, and mutable;
+  requires debugging your build, but less verbose than Maven's XML
+* Maven &mdash; written in XML, declarative and immutable; verbose but
+  specific
+
+This article offers no preference between Gradle or Maven. You need to decide.
 
 Projects using Ant **should migrate**. It is true that Ant is
 well-maintained (latest version dates from September 2020). However, you will
 spend much effort in providing modern build tooling, and effort in migrating
 is repaid by much smaller work in integrating modern tools. Data point:
 consider the number of [Stackoverflow](https://stackoverflow.com/) posts
-providing Gradle or Maven answers to those for Ant.
+providing Gradle or Maven answers to those for Ant.  **Consider Ant builds no
+longer well-supported, and a form of
+[Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
 
 There are alternative build choices for specific projects and circumstances
 such as [Buck](https://buck.build) (related to [Bazel](https://bazel.build)),
