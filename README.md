@@ -261,6 +261,8 @@ alphabetical order.
   ```
   $ ./gradlew <your tasks> | tee -o some-file
   ```
+* Maven colorizes output, but does not use terminal control to overwrite
+  output
 
 ---
 
@@ -291,6 +293,17 @@ $ ./batect build-gradle
 $ ./batect build-maven
 # output ommitted
 ```
+
+### Tips
+
+* A simple way in CI to disable ASCII control sequences from colorizing or
+  Gradle's overwriting of lines (the control sequences can make for
+  hard-to-read CI logs) is to use the environment setting:
+  ```
+  TERM=dumb
+  ```
+  For example, with Gradle, this will log all the build steps without
+  attempting to overwrite earlier steps with later ones
 
 ---
 
