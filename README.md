@@ -14,11 +14,6 @@
 sample builds for Gradle and Maven with a focus on _hygiene_ and best build
 practices.
 
-**NB** &mdash; This sample project has both Gradle and Maven builds. Most
-IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
-code; [command-line](#project-setup)
-and [Batect](#keep-local-consistent-with-ci) usage work as expected.
-
 **NB** &mdash; The sample Gradle and Maven build scripts often specify
 specific versions of the tooling, separate from the plugin versions. This is
 intentional. You should be able to update a tooling version to the latest even
@@ -41,6 +36,7 @@ $ ./mvnw verify
 * [Introduction](#introduction)
 * [Your project](#your-project)
 * [Getting started](#getting-started)
+* [IDEs](#ides)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
@@ -66,7 +62,6 @@ $ ./mvnw verify
 * Update [Introduction](#introduction) &mdash; split out technical details
   into their relevant section. Focus on _why_
 * Research http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
-* Section on IDE setup
 * How to discuss non-IntelliJ Plugins? I don't know Eclipse, NetBeans, Vi, or
   VSCode plugins
 * Section on JDK version
@@ -183,6 +178,15 @@ existing project:
     * See **TODO** to move IDE concerns to their own section
     * Team consistency
     * Help for Gradle/Maven plugins
+
+---
+
+## IDEs
+
+**NB** &mdash; This sample project has both Gradle and Maven builds. Most
+IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
+code; [command-line](#project-setup)
+and [Batect](#keep-local-consistent-with-ci) usage work as expected.
 
 ---
 
