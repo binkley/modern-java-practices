@@ -8,12 +8,11 @@
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-**Modern Java Build Practices** is an article on bootstrapping modern Java/JVM
-projects with sample builds for Gradle and Maven, and a focus on
-_hygiene_ and best practices.
+**NB** &mdash; This is a "work in progress". Parts are still bullet points.
 
-**NB** &mdash; This is a "work in progress". Much of it is bullet points,
-intending to flesh these out to full-written sections.
+**Modern Java Build Practices** is an article on modern Java/JVM projects with
+sample builds for Gradle and Maven with a focus on _hygiene_ and best build
+practices.
 
 **NB** &mdash; This sample project has both Gradle and Maven builds. Most
 IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
@@ -324,7 +323,7 @@ any project files:
 ```
 $ ./gradlew dependencyUpdates
 # output ommitted
-$ ./mvnw versions:diplay-property-updates
+$ ./mvnw versions:display-property-updates
 # output ommitted
 ```
 
