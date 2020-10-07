@@ -142,8 +142,6 @@ existing project:
 * Provide a *good* `README.md`. This saves you a ton of time in the long run.
   This is your _most important_ step. A good resource is Yegor's
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-  .
-  [YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
     * [Intelligent laziness is a virtue](http://threevirtues.com/). Time
       invested in good documentation pays off
     * A good [`README.md`](./README.md) answers visitors questions, so you
@@ -151,7 +149,9 @@ existing project:
       your project to others.
       Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
       with communication!
-* Use build wrappers committed into the project root:
+* Use build wrappers committed into the project root. These run Gradle or
+  Maven, and coders should always invoke `./gradlew` or `./mvnw` (use shell
+  _aliases_ if these grow tiresome to type)
     * Build wrappers are shell scripts to run Gradle or Maven. The wrapper
       takes care of downloading needed tools without getting in the way. New
       contributors and developers can start right away; they do not need to
