@@ -189,26 +189,30 @@ existing project:
 
 ## The JDK
 
-**TODO** Bleh, just dumping here. Need discussion
-**TODO** Clarify language around JEnv -- not the JDK, a tool for picking an
-environment
+For any Java/JVM project, the first decision is _which version of Java
+(the JDK)_ to use? Some guidelines:
 
-* Do not use a JDK older than version 11
-    * **TODO**: Discuss OpenJDK
-    * **TODO**: Discuss Oracle roadmap on Java
-    * **TODO**: Discuss tradeoffs between LTS version and newer JDK versions
-* [jEnv](https://www.jenv.be/) or equivalent
+* Avoid Java 8 and older: These are no longer supported unless one
+  buys [paid support contracts from Oracle](https://www.oracle.com/java/technologies/java-se-support-roadmap.html)
+* Java 11 is "old" in a relative sense. If your project is critical, you may
+  still need a paid support contract from Oracle depending on your
+  circumstances.  [_IANAL_](https://en.wikipedia.org/wiki/IANAL)
+* Java 15 is the current LTS ("long-term support") version
 
-### OpenJDK
+In this project, you'll see the choice of Java 11. Better would be Java 15,
+however, some tooling is still catching up, and it would be poor form for the
+demonstrations to break for those not using a current Java release.
 
-* **TODO**: Discuss Oracle LTS, and role of OpenJDK
-* **TODO**: Discuss [AdoptOpenJDK](https://adoptopenjdk.net/)
-* Avoid Java 8 or older: No longer supported, etc.
-* Java 11 is "old" (this is a relative term) but solid and supported
-* Java 15 is the current LTS version
+In general, you will find that [AdoptOpenJDK](https://adoptopenjdk.net/)
+is a go-to choice for obtaining the JDK.
 
-These demonstration projects use Java 11 as tooling has not yet caught up to
-the recently released Java 15.
+### Managing your Java environment
+
+One of the best tools for managing your Java environment in projects is
+[jEnv](https://www.jenv.be/). It supports both "global" (meaning you, the
+user) and "project" choices in which JDK installation to use. You may notice
+the [`.java-version`](./.java-version) file: this is a per-project file for
+jEnv to pick the project Java version.
 
 ---
 
