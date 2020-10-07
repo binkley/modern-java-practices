@@ -40,7 +40,8 @@ $ ./mvnw verify
 
 * [TODOs](#todos)
 * [Introduction](#introduction)
-* [Your project setup](#your-project-setup)
+* [Your project](#your-project)
+* [Getting started](#getting-started)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
@@ -110,7 +111,7 @@ you.
 
 ---
 
-## Your project setup
+## Your project
 
 There are several helpful steps in setting up a new project, or in
 refurbishing an existing project. Some things to strive for in your projects:
@@ -129,12 +130,16 @@ refurbishing an existing project. Some things to strive for in your projects:
   embarrassed when folks look over the code. Hey! You're a professional, and
   it shows. (This is one of my personal fears as a programmer)
 
-### Initial steps
+## Getting started
+
+To get a project off to a good start, consider these items. Even for existing
+projects, you an address these as you go along or while refurbishing an
+existing project:
 
 * Provide a *good* `README.md`. This saves you a ton of time in the long run.
-  See
+  This is your _most important_ step. A good resource is Yegor's
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-  for guidelines.
+  .
   [YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
     * [Intelligent laziness is a virtue](http://threevirtues.com/). Time
       invested in good documentation pays off
@@ -143,17 +148,26 @@ refurbishing an existing project. Some things to strive for in your projects:
       your project to others.
       Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
       with communication!
-
-* Install build wrappers committed into the project root:
-    * Build wrappers mean a new contributor or developer does not need to
-      install more software: they can just build and go
-    * For Gradle, this is
+* Use build wrappers committed into the project root:
+    * Build wrappers are shell scripts to run Gradle or Maven. The wrapper
+      takes care of downloading needed tools without getting in the way. New
+      contributors and developers can start right away; they do not need to
+      install more software
+    * For Gradle, use
       [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
-    * For Maven, this is [`./mvnw`](https://github.com/takari/maven-wrapper)
-* Always run CI on push to a shared repository. It's sad panda when someone is
-  excited about their commit, and it breaks the other developers
-    * Use caches for dependency downloads
-    * Exact details depend on Gradle vs Maven
+      (part of Gradle)
+    * For Maven, use [`./mvnw`](https://github.com/takari/maven-wrapper)
+      (in progress with Apache to bundle as part of Maven)
+* Always run CI on push to a shared repository. It's a sad panda when someone
+  is excited about their commit, and then the commit breaks the other
+  developers
+    * In CI, use caches for dependency downloads; this speeds up the feedback
+      cycle from CI (see [below](#setup-ci))
+    * When sensible, move code quality and security checks into local builds
+      before changes hit CI (see [below](#setup-local-ci))
+
+**TODO**: These bits go into other sections
+
 * Build plugin customizations goes in `config/` (see [Lombok](#lombok) for an
   exception)
 * Do not commit IDE files except in specific circumstances
