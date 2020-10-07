@@ -317,7 +317,7 @@ $ ./gradlew wrapper  # Update
 $ ./gradlew wrapper  # Confirm
 ```
 
-With Gradle, there really is no "right" solution to this problem.
+With Gradle, there really is no "right" solution for hygienic versioning.
 
 ---
 
