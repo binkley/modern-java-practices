@@ -221,10 +221,17 @@ For those on Windows, you may need to use WSL2 to use jEnv.
 
 ## Use Gradle or Maven
 
-Projects using Ant should be updated. The choice between Maven and Gradle
-depends on the team, and other factors. Ant is outdated, and does not support
-modern tooling.  **Consider Ant builds no longer supported, and a form of
+The choice between Gradle and Maven depends on the team, and other factors.
+Ant is outdated, and does not support modern tooling.  **Consider Ant builds
+no longer supported, and a form of
 [Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
+
+Projects using Ant **should migrate**. It is true that Ant is
+well-maintained (latest version dates from September 2020). However, you will
+spend much effort in providing modern build tooling, and effort in migrating
+is repaid by much smaller work in integrating modern tools. Data point:
+consider the number of [Stackoverflow](https://stackoverflow.com/) posts
+providing Gradle or Maven answers to those for Ant.
 
 There are alternative build choices for specific projects and circumstances
 such as [Buck](https://buck.build) (related to [Bazel](https://bazel.build)),
