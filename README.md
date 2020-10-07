@@ -317,22 +317,25 @@ $ ./gradlew wrapper  # Update
 $ ./gradlew wrapper  # Confirm
 ```
 
-With Gradle, there really is no "right" solution for hygienic versioning.
+With Gradle, there is no "right" solution for hygienic versioning.
 
 ---
 
 ## Generate code
 
-When sensible, prefer to generate rather than write code for several reasons:
+When sensible, prefer to generate rather than write code. Here's why:
 
 * [Intelligent laziness is a virtue](http://threevirtues.com/)
 * Tools always work, unless they have bugs, and you can fix bugs.  
-  Programmers make typos, and fixing typos is a challenge when not obvious;
-  worse are [_thinkos_](https://en.wiktionary.org/wiki/thinko).
+  Programmers make typos, and fixing typos is a challenge when not obvious.
+  Worse are [_thinkos_](https://en.wiktionary.org/wiki/thinko); code
+  generation does not "think", so is immune to this problem
 * Generated code does need code review, only the source input for generation
-  needs review, and this is usually shorter and easier to understand
+  needs review, and this is usually shorter and easier to understand.  
+  Your hand-written code needs review
 * Generated code is usually ignored by tooling such as linting or code
-  coverage (and there are simple workarounds when this is not the case)
+  coverage (and there are simple workarounds when this is not the case). Your
+  hand-written code needs tooling to shift problems left
 
 Note that many features for which in Java one would use code generation
 (_eg_, Lombok's [`@Getter`](https://projectlombok.org/features/GetterSetter)
@@ -344,10 +347,17 @@ or [data classes](https://kotlinlang.org/docs/reference/data-classes.html)).
 ### Lombok
 
 [Lombok](https://projectlombok.org/) is by far the most popular tool in Java
-for code generation. It covers many common use cases, and does not have
-runtime dependencies. Also, there are plugins for popular IDEs to understand
-Lombok's code generation, and tooling integration such as for JaCoCo code
-coverage.
+for code generation. Lombok is an _annotation processor_, that is, a library (
+jar) which cooperates with the Java compiler.  ([_An introductory guide to
+annotations and annotation
+processors_](https://blog.frankel.ch/introductory-guide-annotation-processor/#handling-annotations-at-compile-time-annotation-processors)
+is a good article if you'd like to read more on how annotation processing
+works.)
+
+Lombok covers many common use cases, and does not have runtime dependencies,
+and there are plugins for popular IDEs to understand Lombok's code generation,
+and tooling integration such as provided by JaCoCo code coverage (see
+[below](#leverage-lombok-to-tweak-code-coverage)).
 
 #### Leverage Lombok to tweak code coverage
 
@@ -505,6 +515,9 @@ upload!  Be a good netizen.
       distinguish "actual" values from "expected" values. This is a limitation
       from Java as it lacks named parameters
 
+Unit testing and code coverage are foundations for code quality. Your build
+should help you with these as much as possible.
+
 Plugins:
 
 * For Gradle this is part of the "java" plugin
@@ -520,15 +533,42 @@ To see the coverage report (on passed or failed coverage), open:
 * For Gradle, `build/reports/jacoco/test/html/index.html`
 * For Maven, `target/site/jacoco/index.html`
 
+### Tips
+
+* See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to _
+  sparingly_ leverage the `@Generated` annotation for marking code that JaCoCo
+  should ignore
+* Discuss with your team the concept of a "coverage ratchet". This means, once
+  a baseline coverage percentage is agreed to, the build configuration will
+  only raise this value, not lower it. This is fairly simple to do by
+  periodically examining the JaCoCo report, and raising the build coverage
+  percentage over time to match improvements in the report
+* Unfortunately neither Gradle's nor Maven's JaCoCo plugin will fail your
+  build when coverage _rises_!  This would be helpful for supporting the
+  coverage ratchet
+
 ---
 
 ## Use mutation testing
 
-**TODO**: Needs discussion
+Unit testing is great for testing your production code. But have you thought
+about testing your unit tests? What that means is, how are you sure your tests
+really check what you meant them to? Fortunately, there is an automated way to
+do just that, no code from you required, only some build configuration.
 
-* [PITest](http://pitest.org/)
+Mutation testing is a simple concept: Go "break" some production code, and see
+if any unit tests fail. Production bytecode is changed during the build&mdash;
+for example, an `if (x)` is changed to `if (!x)`&mdash;, and the unit tests
+run. With good code coverage, there should now be a failing unit test.
 
-To see the mutation report (on passed or failed coverage), open:
+The best option for Java/JVM mutation testing is [PITest](http://pitest.org/).
+It is under active development, does some rather clever things with the
+production bytecode, and has Gradle and Maven plugins. The main drawback is
+that PITest is _noisy_, so there will be more build output than you might
+expect.
+
+After running a build using PITest, to see the mutation report (on passed or
+failed mutation coverage), open:
 
 * For Gradle, `build/reports/pitest/index.html`
 * For Maven, `target/pit-reports/index.html`
@@ -538,7 +578,8 @@ To see the mutation report (on passed or failed coverage), open:
 * Without further configuration, PITest defaults to mutating classes using
   your _project group_ as the package base. Example: Set the _project group_
   to "demo" for either Gradle or Maven if your classes are underneath the
-  "demo.*" package namespace.
+  "demo.*" package namespace, otherwise PITest may complain that there are no
+  classes to mutate, or no unit tests to run
 
 ---
 
