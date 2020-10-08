@@ -45,10 +45,10 @@ $ ./mvnw verify
 * [Use linting](#use-linting)
 * [Use static code analysis](#use-static-code-analysis)
 * [Shift security left](#shift-security-left)
-* [The test pyramid](#the-test-pyramid)
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
+* [The test pyramid](#the-test-pyramid)
 * [Use automated live testing when appropriate](#use-automated-live-testing-when-appropriate)
 * [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
 
@@ -553,14 +553,6 @@ upload!  Be a good netizen.
 
 ---
 
-## The test pyramid
-
-* [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
-* [_The Practical Test
-  Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
-
----
-
 ## Leverage unit testing and coverage
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
@@ -643,7 +635,14 @@ failed mutation coverage), open:
 
 **TODO**: Needs discussion
 
-Plugins:
+Unlike `src/main/java` and `src/test/java`, there is no generally agreed
+convention for where to put integration tests. This project keeps all tests
+regardless of type in `src/test/java` for simplicity of presentation, naming
+integration tests with "*IT.java". A more sophisticated approach may make
+sense for your project
+
+If you'd like to keep your integration tests in a separate source root from
+unit tests, consider these plugins:
 
 * For Gradle, use [_Gradle TestSets
   Plugin_](https://github.com/unbroken-dome/gradle-testsets-plugin)
@@ -654,14 +653,17 @@ Plugins:
 
 * Failsafe shares the version number with Surefire. This project uses a
   shared `maven-testing-plugins.version` property
-* Unlike `src/main/java` and `src/test/java`, there is no generally agreed
-  convention for where to put integration tests. This project keeps all tests
-  regardless of type in `src/test/java` for simplicity of presentation, naming
-  integration tests with "*IT.java". A more sophisticated approach may make
-  sense for your project
 * Baeldung
   has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
   on Maven Failsafe
+
+---
+
+## The test pyramid
+
+* [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
+* [_The Practical Test
+  Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
 
 ---
 
