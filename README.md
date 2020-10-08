@@ -759,4 +759,11 @@ circumstances. For example, with REST services and Spring Cloud, consider:
 * [_Consumer Driven Contracts_](https://spring.io/guides/gs/contract-rest/)
 
 There are many options in this area. Find the choices which work best for you
-and your project.  
+and your project.
+
+### Provide User Journey tests when applicable
+
+Another dimension to consider for local testing: _User Journey_ tests.
+
+* [_Why test the user
+  journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
