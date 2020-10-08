@@ -697,7 +697,7 @@ Can you do more to improve your build, and shift problems left (before they
 hit CI)? Of course!  Below are some topics to discuss with your team about
 making them part of the local build.
 
-### The test pyramid
+### The Test Pyramid
 
 **TODO**: Small, right-side, floating image of the test pyramid
 
