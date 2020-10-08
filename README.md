@@ -62,8 +62,7 @@ points
 * GitLabs equivalent for GitHub actions for CI
 * How to automate the `-C` (checksum) flag in Maven? See
   [_Maven Artifact Checksums -
-  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j).
-  See http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
+  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j)
 * CPD for Gradle -- see https://github.com/aaschmid/gradle-cpd-plugin. CPD
   works for Maven
 
