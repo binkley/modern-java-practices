@@ -244,7 +244,8 @@ ecosystem, and your project needs. In summary:
   interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
-This article offers no preference between Gradle or Maven. You need to decide.
+This article offers **no preference between Gradle or Maven**. You need to
+decide.
 
 Projects using Ant **should migrate**. It is true that Ant is
 well-maintained (latest version dates from September 2020). However, you will
