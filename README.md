@@ -13,9 +13,7 @@ align="right"/>
 sample builds for Gradle and Maven with a focus on _hygiene_ and best build
 practices.
 
-**NB** &mdash; This is a "work in progress". Parts are still bullet points.
-
-Try out the builds:
+Try out the Gradle and Maven builds:
 
 ```
 $ ./gradlew build
@@ -23,6 +21,8 @@ $ ./gradlew build
 $ ./mvnw verify
 # Output omitted
 ```
+
+**NB** &mdash; This is a "work in progress". Parts are still bullet points.
 
 ---
 
