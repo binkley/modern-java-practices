@@ -56,15 +56,14 @@ points
 * Article link when published
 * Update [Introduction](#introduction) &mdash; split out technical details
   into their relevant section. Focus on _why_
-* Research http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
 * How to discuss non-IntelliJ Plugins? I don't know Eclipse, NetBeans, Vi, or
   VSCode plugins
-* Section on JDK version
 * Move to JDK 15 from 11 when tooling is ready
 * GitLabs equivalent for GitHub actions for CI
 * How to automate the `-C` (checksum) flag in Maven? See
   [_Maven Artifact Checksums -
-  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j)
+  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j).
+  See http://checksum-maven-plugin.nicoulaj.net/ for `-C` alternative
 * CPD for Gradle -- see https://github.com/aaschmid/gradle-cpd-plugin. CPD
   works for Maven
 
