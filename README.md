@@ -671,11 +671,14 @@ failed mutation coverage), open:
 
 ## Use integration testing
 
-Here I say "integration testing". Your team may call it by another name.  
-This means bringing up your application, possibly with
+Here the project says "integration testing". Your team may call it by another
+name. This means bringing up your application, possibly with
 [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
 for external dependencies (databases, other services, _etc_), and running
-tests against high-level functionality.
+tests against high-level functionality, but _not_ starting up external
+dependencies themselves (_ie_, Docker, or manual comman-line steps).  
+Think of CI: what are called here "integration tests" are those which do
+_not_ need your CI to provide other services.
 
 An example is testing `STDOUT` and `STDERR` for a command-line application.
 (If you are in Spring Framework/Boot-land, use controller tests for your REST
@@ -702,6 +705,9 @@ unit tests, consider these plugins:
 * Baeldung
   has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
   on Maven Failsafe
+* There are alternatives to the "test pyramid" perspective. Consider
+  [swiss cheese](https://blog.korny.info/2020/01/20/the-swiss-cheese-model-and-acceptance-tests.html)
+  if it makes more sense for your project. The build techniques still apply
 
 ---
 
@@ -752,5 +758,10 @@ build:
 
 ### Use contract testing when appropriate
 
-**TODO**: Needs discussion
+Depending on your program, you may want additional testing specific to
+circumstances. For example, with REST services and Spring Cloud, consider:
 
+* [_Consumer Driven Contracts_](https://spring.io/guides/gs/contract-rest/)
+
+There are many options in this area. Find the choices which work best for you
+and your project.  
