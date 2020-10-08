@@ -79,22 +79,23 @@ apply to _any_ JVM language build (well, perhaps not language code style).
 
 This project has simple goals:
 
-* Quick solutions for raising project quality and security in your build
-* Starters for Modern use of Java/JVM builds
+* Starter build scripts for Modern Java/JVM builds
+* Quick solutions for raising project quality and security in your build,
+  including existing builds
 * Focused on Gradle or Maven
 
 I don't discuss alternative starter tools. This article helps you spin up a
-new Gradle or Maven project directly. For example, you may
-find [Spring Initializr](https://start.spring.io),
+new Gradle or Maven project directly. You may find
+[Spring Initializr](https://start.spring.io),
 [`mn` from Micronaut](https://micronaut.io/), or
-[JHipster](https://www.jhipster.tech/) (among others) more to your liking.
-That's great!  I believe this article still provides build help for you
-beyond "getting started". You can pick and choose build features to add to
-your starter project.
+[JHipster](https://www.jhipster.tech/) (among many others) more to your
+liking. That's great!  I still want to help you improve your build beyond
+"getting started". You pick and choose build features to add to your starter
+project, whatever makes most sense for your project.
 
-The goal: [_Make people awesome_](https://modernagile.org/). I've tried a lot
-of things with Gradle and Maven builds, and want to share lessons learned with
-you.
+**The goal**: [_Make people awesome_](https://modernagile.org/) (that means
+_you_). I've tried a lot of things with Gradle and Maven builds, and want to
+share lessons learned with you.
 
 ---
 
