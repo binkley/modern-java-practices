@@ -69,6 +69,8 @@ points
 
 ## Introduction
 
+**TODO**: More discussion on shift work left
+
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
 project (Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
 
@@ -672,6 +674,10 @@ This means bringing up your application, possibly with
 [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
 for external dependencies (databases, other services, _etc_), and running
 tests against high-level functionality.
+
+An example is testing `STDOUT` and `STDERR` for a command-line application.
+(If you are in Spring Framework/Boot-land, use controller tests for your REST
+services.)
 
 Unlike `src/main/java` and `src/test/java`, there is no generally agreed
 convention for where to put integration tests. This project keeps all tests
