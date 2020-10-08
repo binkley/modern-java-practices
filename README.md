@@ -699,27 +699,36 @@ making them part of the local build.
 
 ### The test pyramid
 
-**TODO**: Needs discussion
-
 **TODO**: Small, right-side, floating image of the test pyramid
+
+What is the "Test Pyramid"? This is an important conceptual framework for
+validating your project at multiple levels of interaction. Canonical resources
+describing the test pyramid include:
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
 * [_The Practical Test
   Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
 
+What this article calls ["integration tests"](#use-integration-testing) may
+have a different name for you.
+
 ### Use automated live testing when appropriate
 
 "Live testing" here means spinning up a database or other remote service for
-local tests.
+local tests, and not
+using [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
+. In these tests, your project calls on _real_ external dependencies, albeit
+dependencies spun up locally rather than in production or another environment.
 
-**TODO**: Needs discussion
+This is a complex topic. Some potentially useful resources to pull into your
+build:
 
-- "Out of process tests"
-- "System tests"
-- Contrast live tests with E2E tests
-
-* [LocalStack](https://github.com/localstack/localstack)
-* [TestContainers](https://www.testcontainers.org/)
+* [Flyway](https://flywaydb.org/) &mdash; Version your schema in production,
+  and version your test data
+* [LocalStack](https://github.com/localstack/localstack) &mdash; Local testing
+  for AWS services
+* [TestContainers](https://www.testcontainers.org/) &mdash; Local Docker for
+  real database instances, or any Docker-provided service
 
 ### Use contract testing when appropriate
 
