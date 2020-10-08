@@ -54,13 +54,6 @@ points
 **TODOs** will go away when this article is done.
 
 * Article link when published
-* Move to JDK 15 from 11 when tooling is ready
-* GitLabs equivalent for GitHub actions for CI
-* How to automate the `-C` (checksum) flag in Maven? See
-  [_Maven Artifact Checksums -
-  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j)
-* CPD for Gradle -- see https://github.com/aaschmid/gradle-cpd-plugin. CPD
-  works for Maven
 
 ---
 
@@ -214,6 +207,10 @@ to pick the project Java version.
 
 For those on Windows, you may need to use WSL2 to use jEnv.
 
+### TODOS
+
+* Move to JDK 15 from 11 when tooling is ready
+
 ---
 
 ## Use Gradle or Maven
@@ -280,6 +277,10 @@ When using GitHub, a simple starting point is
 [`ci.yml`](./.github/workflows/ci.yml).  (GitLabs is similar, but as this
 project is hosted in GitHub, there is not a simple means to demonstrate CI at
 GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
+
+### TODOs
+
+* GitLabs equivalent for GitHub actions for CI
 
 ---
 
@@ -531,6 +532,11 @@ The demonstration builds use these to help you:
 * [PMD](https://pmd.github.io/latest/)
 * [SpotBugs](https://spotbugs.github.io/)
 
+### TODOs
+
+* CPD for Gradle -- see https://github.com/aaschmid/gradle-cpd-plugin. CPD
+  works for Maven
+
 ---
 
 ## Shift security left
@@ -577,6 +583,12 @@ upload!  Be a good netizen.
 * Unfortunately, the Gradle ecosystem is not a mature as the Maven one in this
   regard. For example, if you enable checksum verifications in Gradle, many or
   most of your plugin and dependency downloads fail
+
+### TODOs
+
+* How to automate the `-C` (checksum) flag in Maven? See
+  [_Maven Artifact Checksums -
+  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j)
 
 ---
 
