@@ -9,16 +9,11 @@ align="right"/>
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-**NB** &mdash; This is a "work in progress". Parts are still bullet points.
-
 **Modern Java Build Practices** is an article on modern Java/JVM projects with
 sample builds for Gradle and Maven with a focus on _hygiene_ and best build
 practices.
 
-**NB** &mdash; The sample Gradle and Maven build scripts often specify
-specific versions of the tooling, separate from the plugin versions. This is
-intentional. You should be able to update a tooling version to the latest even
-when the plugin has not yet caught up.
+**NB** &mdash; This is a "work in progress". Parts are still bullet points.
 
 Try out the builds:
 
@@ -270,6 +265,10 @@ alphabetical order.
 
 ### Tips
 
+* The sample Gradle and Maven build scripts often specify specific versions of
+  the tooling, separate from the plugin versions. This is intentional. You
+  should be able to update the latest tool version even when the plugin has
+  not yet caught up
 * Gradle uses advanced terminal control, so you cannot always see what is
   happening. To view Gradle steps plainly when debugging your build, use:
   ```
