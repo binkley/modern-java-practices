@@ -48,9 +48,7 @@ $ ./mvnw verify
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
-* [The test pyramid](#the-test-pyramid)
-* [Use automated live testing when appropriate](#use-automated-live-testing-when-appropriate)
-* [Use contract testing when appropriate](#use-contract-testing-when-appropriate)
+* [Going further](#going-further)
 
 ---
 
@@ -659,15 +657,22 @@ unit tests, consider these plugins:
 
 ---
 
-## The test pyramid
+## Going further
+
+Can you do more to improve your build, and shift problems left (before they
+hit CI)? Of course!  Below are some topics to discuss with your team about
+making them part of the local build.
+
+### The test pyramid
+
+<img src="https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png"
+alt="The Test Pyramid" style="float: right; height=20%; width=20%"/>
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
 * [_The Practical Test
   Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
 
----
-
-## Use automated live testing when appropriate
+### Use automated live testing when appropriate
 
 **TODO**: Needs discussion
 
@@ -677,9 +682,7 @@ unit tests, consider these plugins:
 
 * [TestContainers](https://www.testcontainers.org/)
 
----
-
-## Use contract testing when appropriate
+### Use contract testing when appropriate
 
 **TODO**: Needs discussion
 
