@@ -69,7 +69,7 @@ points
 
 ## Introduction
 
-Hi!  I want you to have _awesome builds_. If you're on a Java or a JVM
+Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
 project (Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
 
 My purpose is to highlight and provide guidance for building modern Java/JVM
