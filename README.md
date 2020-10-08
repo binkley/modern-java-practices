@@ -177,14 +177,9 @@ existing project:
       cycle from CI (see [below](#setup-your-ci))
     * When sensible, move code quality and security checks into local builds
       before changes hit CI (see [below](#setup-local-ci))
-
-**TODO**: These bits go into other sections
-
-* Build plugin customizations goes in `config/` (see [Lombok](#lombok) for an
-  exception)
 * Pick a common code style, and stay consistent; update tooling to complain on
   style violations
-    * Discuss variances in style -- Sun, Google, etc
+    * The team should agree on a common code style, _eg_, SUN, Google, _et al_
     * See [Use linting](#use-linting)
 
 ---
@@ -520,7 +515,18 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ## Use static code analysis
 
-**TODO**: Needs discussion
+Important in your build is _static code analysis_. This is analysis of your
+source and compiled bytecode which finds known
+[issues](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html)
+ranging among other things:
+
+* Idioms that your team finds poor or hard to read
+* Dangerous anti-patterns (_eg_, missing `null` checks)
+* Insecure code (see [Shift security left](#shift-security-left))
+* Outdated code use (_eg_, Java 5 patterns better expressed with Java 11
+  improvements)
+
+The demonstration builds use these to help you:
 
 * [PMD](https://pmd.github.io/latest/)
 * [SpotBugs](https://spotbugs.github.io/)
