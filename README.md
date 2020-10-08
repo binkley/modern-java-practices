@@ -666,7 +666,7 @@ making them part of the local build.
 ### The test pyramid
 
 <img src="https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png"
-alt="The Test Pyramid" style="float: right; height=20%; width=20%"/>
+alt="The Test Pyramid" style="align: right; height=20%; width=20%"/>
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
 * [_The Practical Test
