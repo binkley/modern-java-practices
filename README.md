@@ -248,12 +248,12 @@ This article offers **no preference between Gradle or Maven**. You need to
 decide.
 
 Projects using Ant **should migrate**. It is true that Ant is
-well-maintained (latest version dates from September 2020). However, you will
-spend much effort in providing modern build tooling, and effort in migrating
-is repaid by much smaller work in integrating modern tools. Data point:
-consider the number of [Stackoverflow](https://stackoverflow.com/) posts
-providing Gradle or Maven answers to those for Ant.  **Consider Ant builds no
-longer well-supported, and a form of
+well-maintained (the latest version dates from September 2020). However, you
+will spend much effort in providing modern build tooling, and effort in
+migrating is repaid by much smaller work in integrating modern tools. Data
+point: consider the number of [Stackoverflow](https://stackoverflow.com/)
+posts providing Gradle or Maven answers to those for Ant.  **Consider Ant
+builds no longer well-supported, and a form of
 [Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
 
 There are alternative build choices for specific projects and circumstances
