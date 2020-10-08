@@ -36,6 +36,7 @@ points
 * [IDEs](#ides)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
+* [Setup your CI](#setup-your-ci)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
 * [Keep build current](#keep-build-current)
 * [Generate code](#generate-code)
@@ -54,8 +55,6 @@ points
 **TODOs** will go away when this article is done.
 
 * Article link when published
-* Update [Introduction](#introduction) &mdash; split out technical details
-  into their relevant section. Focus on _why_
 * How to discuss non-IntelliJ Plugins? I don't know Eclipse, NetBeans, Vi, or
   VSCode plugins
 * Move to JDK 15 from 11 when tooling is ready
@@ -70,26 +69,37 @@ points
 
 ## Introduction
 
-Hi!  I want you to have _awesome builds_. If you're on Java or a JVM project (
-Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
+Hi!  I want you to have _awesome builds_. If you're on a Java or a JVM
+project (Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
 
-My purpose is to highlight and provide examples for building modern Java/JVM
-projects with Gradle or Maven. The article focuses on Java, but many points
-apply to _any_ JVM language build (well, perhaps not language code style).
+My purpose is to highlight and provide guidance for building modern Java/JVM
+projects with Gradle or Maven. This article focuses on Java, but most points
+apply to _any_ JVM language build (linting is an example exception).
 
 This project has simple goals:
 
-* Starter build scripts for Modern Java/JVM builds
+* Starter build scripts for Modern Java/JVM builds in Gradle and Maven
 * Quick solutions for raising project quality and security in your build,
-  including existing builds
-* Focused on Gradle or Maven
+  including improving existing builds
+* The focus is on Gradle and Maven
 
-I don't discuss alternative starter tools. This article helps you spin up a
-new Gradle or Maven project directly. You may find
-[Spring Initializr](https://start.spring.io),
-[`mn` from Micronaut](https://micronaut.io/), or
+This article helps answer the question: I am at Day 1 on my project
+("day 0" for those pedants like myself ☺): How do I get a build going that
+supports real coding?
+
+For Java/JVM projects, **use Gradle or Maven**; I don't discuss alternative
+build tools: the
+[2020 market data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
+is overwhelming, and for good reason. Unless you are in a complex monorepo
+culture (Google, _etc_), or mandates from above, you need to select a build
+tool.
+
+This article helps you spin up a new _Gradle_ or _Maven_ project directly for
+a Java/JVM project. Though you may
+find [Spring Initializr](https://start.spring.io), [`mn`
+from Micronaut](https://micronaut.io/), or
 [JHipster](https://www.jhipster.tech/) (among many others) more to your
-liking. That's great!  I still want to help you improve your build beyond
+liking. That's great! I still want to help you improve your build beyond
 "getting started". You pick and choose build features to add to your starter
 project, whatever makes most sense for your project.
 
@@ -253,12 +263,6 @@ posts providing Gradle or Maven answers to those for Ant.  **Consider Ant
 builds no longer well-supported, and a form of
 [Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
 
-There are alternative build choices for specific projects and circumstances
-such as [Buck](https://buck.build) (related to [Bazel](https://bazel.build)),
-et al. This article focuses on Gradle and Maven which are considered
-"standard" in the JVM community, wide-spread in use, and with much direct and
-indirect support for problems.
-
 Throughout when covering both Gradle and Maven, Gradle will be discussed
 first, then Maven. This is no expressing a preference!  It is neutral
 alphabetical order.
@@ -283,14 +287,19 @@ alphabetical order.
 
 ---
 
-## Keep local consistent with CI
+## Setup your CI
 
-### Setup CI
+Your CI is your "source of truth" for successful builds. Your goal:
+_Everyone trusts a "green" CI build is solid_.
 
 When using GitHub, a simple starting point is
 [`ci.yml`](./.github/workflows/ci.yml).  (GitLabs is similar, but as this
 project is hosted in GitHub, there is not a simple means to demonstrate CI at
 GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
+
+---
+
+## Keep local consistent with CI
 
 ### Setup local CI
 
