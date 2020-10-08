@@ -1,7 +1,6 @@
-<link href="README.css" rel="stylesheet"></link>
-
 <a href="LICENSE.md">
-<img src="https://unlicense.org/pd-icon.png" alt="Public Domain"/>
+<img src="https://unlicense.org/pd-icon.png" alt="Public Domain" 
+align="right"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -563,6 +562,8 @@ upload!  Be a good netizen.
 
 ### Tips
 
+* With GitHub actions, consider adding a tool such
+  as [Dependabot](https://dependabot.com/)
 * Unfortunately, the Gradle ecosystem is not a mature as the Maven one in this
   regard. For example, if you enable checksum verifications in Gradle, many or
   most of your plugin and dependency downloads fail
