@@ -186,6 +186,8 @@ existing project:
 
 ## IDEs
 
+**TODO**: Needs discussion
+
 **NB** &mdash; This sample project has both Gradle and Maven builds. Most
 IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
 code; [command-line](#project-setup)
