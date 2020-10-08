@@ -69,8 +69,6 @@ points
 
 ## Introduction
 
-**TODO**: More discussion on shift work left
-
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
 project (Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
 
@@ -83,6 +81,10 @@ This project has simple goals:
 * Starter build scripts for Modern Java/JVM builds in Gradle and Maven
 * Quick solutions for raising project quality and security in your build,
   including improving existing builds
+* Shift _to the left_ (meaning early in the development cycle) as many issues
+  as possible, so you get feedback earlier while still having a fast local
+  build. Time spent fixing issues locally is better than waiting on CI to
+  fail, or worse, for production to fail
 * The focus is on Gradle and Maven
 
 I want to help with the question: I am at Day 1 on my project ("day 0" for
