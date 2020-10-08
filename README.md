@@ -120,6 +120,8 @@ refurbishing an existing project. Some things to strive for in your projects:
   embarrassed when folks look over the code. Hey! You're a professional, and
   it shows. (This is one of my personal fears as a programmer)
 
+---
+
 ## Getting started
 
 To get a project off to a good start, consider these items. Even for existing
