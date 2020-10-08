@@ -1,5 +1,7 @@
+<link href="README.css" rel="stylesheet"></link>
+
 <a href="LICENSE.md">
-<img src="https://unlicense.org/pd-icon.png" alt="Public Domain" align="right"/>
+<img src="https://unlicense.org/pd-icon.png" alt="Public Domain"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -665,8 +667,7 @@ making them part of the local build.
 
 ### The test pyramid
 
-<img src="https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png"
-alt="The Test Pyramid" style="align: right; max-height: 10%; width: auto"/>
+**TODO**: Small, right-side, floating image of the test pyramid
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
 * [_The Practical Test
