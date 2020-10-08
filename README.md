@@ -170,17 +170,10 @@ existing project:
 
 * Build plugin customizations goes in `config/` (see [Lombok](#lombok) for an
   exception)
-* Do not commit IDE files except in specific circumstances
-    * Discuss `.editorconfig`
-    * Discuss IDE config sharing options
 * Pick a common code style, and stay consistent; update tooling to complain on
   style violations
     * Discuss variances in style -- Sun, Google, etc
     * See [Use linting](#use-linting)
-* IDE plugins:
-    * See **TODO** to move IDE concerns to their own section
-    * Team consistency
-    * Help for Gradle/Maven plugins
 
 ---
 
@@ -192,6 +185,14 @@ existing project:
 IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
 code; [command-line](#project-setup)
 and [Batect](#keep-local-consistent-with-ci) usage work as expected.
+
+* Do not commit IDE files except in specific circumstances
+    * Discuss `.editorconfig`
+    * Discuss IDE config sharing options
+* IDE plugins:
+    * See **TODO** to move IDE concerns to their own section
+    * Team consistency
+    * Help for Gradle/Maven plugins
 
 ---
 
