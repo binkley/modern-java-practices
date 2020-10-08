@@ -677,12 +677,16 @@ making them part of the local build.
 
 ### Use automated live testing when appropriate
 
+"Live testing" here means spinning up a database or other remote service for
+local tests.
+
 **TODO**: Needs discussion
 
 - "Out of process tests"
 - "System tests"
 - Contrast live tests with E2E tests
 
+* [LocalStack](https://github.com/localstack/localstack)
 * [TestContainers](https://www.testcontainers.org/)
 
 ### Use contract testing when appropriate
