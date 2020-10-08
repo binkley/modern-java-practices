@@ -667,7 +667,11 @@ failed mutation coverage), open:
 
 ## Use integration testing
 
-**TODO**: Needs discussion
+Here I say "integration testing". Your team may call it by another name.  
+This means bringing up your application, possibly with
+[fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
+for external dependencies (databases, other services, _etc_), and running
+tests against high-level functionality.
 
 Unlike `src/main/java` and `src/test/java`, there is no generally agreed
 convention for where to put integration tests. This project keeps all tests
