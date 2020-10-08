@@ -143,6 +143,9 @@ existing project:
       your project to others.
       Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
       with communication!
+* Pick **Gradle** or **Maven**, and use only one. This project provides both
+  to demonstrate equivalent builds for each.
+  See [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
 * Use build wrappers committed into the project root. These run Gradle or
   Maven, and coders should always invoke `./gradlew` or `./mvnw` (use shell
   _aliases_ if these grow tiresome to type)
@@ -224,13 +227,22 @@ For those on Windows, you may need to use WSL2 to use jEnv.
 
 ## Use Gradle or Maven
 
-The choice between Gradle and Maven depends on the team, and other factors. In
-summary:
+The choice between Gradle and Maven depends on your team, your broader
+ecosystem, and your project needs. In summary:
 
-* Gradle &mdash; written in Goovy or Kotlin, dynamic, imperative, and mutable;
-  requires debugging your build, but less verbose than Maven's XML
-* Maven &mdash; written in XML, declarative and immutable; verbose but
-  specific
+* Gradle &mdash; written in Goovy or Kotlin; dynamic, imperative, and mutable;
+  requires debugging your build on occasion, but less verbose than Maven's
+  XML. Use of "parent Gradle" projects is possible but challenging. You can
+  locally extend your build script either _inline_ with build code, with
+  project plugins, or with plugins from a separate project (perhaps shared
+  across project for your team). If interested in custom plugins,
+  [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
+* Maven &mdash; written in XML; declarative and immutable; verbose but
+  specific; it either works or not. Use of "parent Maven" projects is simple
+  with built-in support. You can locally extend your build with plugins from a
+  separate project (perhaps shared across project for your team). If
+  interested in custom plugins,
+  [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 This article offers no preference between Gradle or Maven. You need to decide.
 
