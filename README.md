@@ -53,7 +53,7 @@ points
 
 **TODOs** will go away when this article is done.
 
-* Article link when published VSCode plugins
+* Article link when published
 * Move to JDK 15 from 11 when tooling is ready
 * GitLabs equivalent for GitHub actions for CI
 * How to automate the `-C` (checksum) flag in Maven? See
