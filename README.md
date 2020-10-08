@@ -667,6 +667,8 @@ making them part of the local build.
 
 ### The test pyramid
 
+**TODO**: Needs discussion
+
 **TODO**: Small, right-side, floating image of the test pyramid
 
 * [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
