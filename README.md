@@ -33,7 +33,6 @@ points
 * [Introduction](#introduction)
 * [Your project](#your-project)
 * [Getting started](#getting-started)
-* [IDEs](#ides)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Setup your CI](#setup-your-ci)
@@ -54,9 +53,7 @@ points
 
 **TODOs** will go away when this article is done.
 
-* Article link when published
-* How to discuss non-IntelliJ Plugins? I don't know Eclipse, NetBeans, Vi, or
-  VSCode plugins
+* Article link when published VSCode plugins
 * Move to JDK 15 from 11 when tooling is ready
 * GitLabs equivalent for GitHub actions for CI
 * How to automate the `-C` (checksum) flag in Maven? See
@@ -189,27 +186,6 @@ existing project:
   style violations
     * Discuss variances in style -- Sun, Google, etc
     * See [Use linting](#use-linting)
-
----
-
-## IDEs
-
-**TODO**: Needs discussion
-
-**TODO**: Clarify and clean up links for command line
-
-**NB** &mdash; This sample project has both Gradle and Maven builds. Most
-IDEs (_eg_, IntelliJ) may have issues with more than one way to build the
-code; `./gradlew`, `./mvnw`, and [Batect](#keep-local-consistent-with-ci)
-usage work as expected.
-
-* Do not commit IDE files except in specific circumstances
-    * Discuss `.editorconfig`
-    * Discuss IDE config sharing options
-* IDE plugins:
-    * See **TODO** to move IDE concerns to their own section
-    * Team consistency
-    * Help for Gradle/Maven plugins
 
 ---
 
