@@ -353,8 +353,9 @@ and dependencies up to date. This might be simply to address bug fixes
 (including bugs you weren't aware of), or might be mission-critical security
 fixes. The best policy is: _Stay current_. Others will have
 found&mdash;reported problems&mdash;, and 3<sup>rd</sup>-parties will have
-addressed these. Leverage the power of [_Linus' Law_](https://en.wikipedia.
-org/wiki/Linus%27s_law) ("given enough eyeballs, all bugs are shallow").
+addressed these. Leverage the power of [_Linus'
+Law_](https://en.wikipedia.org/wiki/Linus%27s_law) ("given enough eyeballs,
+all bugs are shallow").
 
 ### Keep plugins and dependencies up-to-date
 
