@@ -711,8 +711,14 @@ describing the test pyramid include:
 * [_The Practical Test
   Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
 
-What this article calls ["integration tests"](#use-integration-testing) may
-have a different name for you.
+As you move your testing "to the left" (helping local builds cover more
+concerns), you'll want to enhance your build with more testing at different
+levels of interaction. These are not covered in this article, so research is
+needed.
+
+**NB** &mdash; What this article calls
+["integration tests"](#use-integration-testing) may have a different name for
+your team.
 
 ### Use automated live testing when appropriate
 
