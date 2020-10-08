@@ -97,8 +97,8 @@ improvements for your build herein.
 
 This article aids you to spin up a new _Gradle_ or _Maven_ project directly
 for a Java/JVM project. You may
-find [Spring Initializr](https://start.spring.io) [*](#spring-boot), [`mn`
-from Micronaut](https://micronaut.io/), or
+find [Spring Initializr](https://start.spring.io),
+[`mn` from Micronaut](https://micronaut.io/), or
 [JHipster](https://www.jhipster.tech/) (among many others) more to your
 liking: they provide you with starter Gradle or Maven scripts specific for
 those frameworks. That's great! I still want to help you improve your build
@@ -173,7 +173,7 @@ existing project:
   is excited about their commit, and then the commit breaks the other
   developers
     * In CI, use caches for dependency downloads; this speeds up the feedback
-      cycle from CI (see [below](#setup-ci))
+      cycle from CI (see [below](#setup-your-ci))
     * When sensible, move code quality and security checks into local builds
       before changes hit CI (see [below](#setup-local-ci))
 
@@ -192,10 +192,12 @@ existing project:
 
 **TODO**: Needs discussion
 
+**TODO**: Clarify and clean up links for command line
+
 **NB** &mdash; This sample project has both Gradle and Maven builds. Most
-IDEs, _eg_, IntelliJ, may have issues with more than one way to build the
-code; [command-line](#project-setup)
-and [Batect](#keep-local-consistent-with-ci) usage work as expected.
+IDEs (_eg_, IntelliJ) may have issues with more than one way to build the
+code; `./gradlew`, `./mvnw`, and [Batect](#keep-local-consistent-with-ci)
+usage work as expected.
 
 * Do not commit IDE files except in specific circumstances
     * Discuss `.editorconfig`
@@ -572,8 +574,8 @@ upload!  Be a good netizen.
   - name: Build and test with Maven
     run: ./mvnw --strict-checksums verify
   ```
-  ([Batect](#keep-local-consistent-with-ci) and [GitHub Actions](#setup-ci)
-  are discussed both above.)
+  ([Batect](#keep-local-consistent-with-ci)
+  and [GitHub Actions](#setup-your-ci) are discussed both above.)
 
 ### Tips
 
