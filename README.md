@@ -83,29 +83,36 @@ This project has simple goals:
   including improving existing builds
 * The focus is on Gradle and Maven
 
-This article helps answer the question: I am at Day 1 on my project
-("day 0" for those pedants like myself ☺): How do I get a build going that
-supports real coding?
+I want to help with the question: I am at Day 1 on my project ("day 0" for
+those pedants like myself ☺): How do I get a build going that supports real
+coding? If I'm at "Day X", how do I improve my build?
 
-For Java/JVM projects, **use Gradle or Maven**; I don't discuss alternative
+For Java/JVM projects, **use Gradle or Maven**. I don't discuss alternative
 build tools: the
-[2020 market data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
+[data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
 is overwhelming, and for good reason. Unless you are in a complex monorepo
 culture (Google, _etc_), or mandates from above, you need to select a build
-tool.
+tool. However, for projects not using Gradle or Maven, you will still find
+improvements for your build herein.
 
-This article helps you spin up a new _Gradle_ or _Maven_ project directly for
-a Java/JVM project. Though you may
-find [Spring Initializr](https://start.spring.io), [`mn`
+This article aids you to spin up a new _Gradle_ or _Maven_ project directly
+for a Java/JVM project. You may
+find [Spring Initializr](https://start.spring.io) [*](#spring-boot), [`mn`
 from Micronaut](https://micronaut.io/), or
 [JHipster](https://www.jhipster.tech/) (among many others) more to your
-liking. That's great! I still want to help you improve your build beyond
-"getting started". You pick and choose build features to add to your starter
-project, whatever makes most sense for your project.
+liking: they provide you with starter Gradle or Maven scripts specific for
+those frameworks. That's great! I still want to help you improve your build
+beyond "getting started". You pick and choose build features to add to your
+starter project, whatever makes most sense for your project.
 
 **The goal**: [_Make people awesome_](https://modernagile.org/) (that means
 _you_). I've tried a lot of things with Gradle and Maven builds, and want to
 share lessons learned with you.
+
+<a id="spring-boot">[*]</a> Calling out Spring Boot. Spring does a
+particularly nice job for project setup for that ecosystem, leveraging
+benefits of Gradle and Maven. This article will help you improve the starter
+builds from Spring.
 
 ---
 
