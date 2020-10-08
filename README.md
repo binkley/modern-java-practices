@@ -29,7 +29,6 @@ points
 
 ## TOC
 
-* [TODOs](#todos)
 * [Introduction](#introduction)
 * [Your project](#your-project)
 * [Getting started](#getting-started)
@@ -46,14 +45,6 @@ points
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
 * [Going further](#going-further)
-
----
-
-## TODOs
-
-**TODOs** will go away when this article is done.
-
-* Article link when published
 
 ---
 
