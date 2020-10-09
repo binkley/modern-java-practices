@@ -168,6 +168,21 @@ existing project:
     * The team should agree on a common code style, _eg_, SUN, Google, _et al_
     * See [Use linting](#use-linting)
 
+### Tips
+
+* Consider using client-side Git hooks for `pre-push` to run a full, clean,
+  local build. This helps ensure "oopsies" from going to CI where they impact
+  everyone. The options are broad. Try web searches on:
+    * "gradle install git hooks"
+    * "maven install git hooks"
+
+  This article presently has no specific recommendations on choices of plugin
+  or approach
+
+### TODOs
+
+* Fill out an article section on Git setup, and automated hooks
+
 ---
 
 ## The JDK
