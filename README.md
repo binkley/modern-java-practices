@@ -391,6 +391,11 @@ With Gradle, there is no "right" solution for hygienic versioning.
 * The equivalent Maven approach for controlling the definition of "new" is to
   use [_Version number
   rules_](https://www.mojohaus.org/versions-maven-plugin/version-rules.html)
+* With the Gradle plugin, you can program your build to fail if dependencies
+  are outdated. Read at
+  [_Configuration option to fail build if stuff is out of
+  date_](https://github.com/ben-manes/gradle-versions-plugin/issues/431#issuecomment-703286879)
+  for details
 
 ---
 
