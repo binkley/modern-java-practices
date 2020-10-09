@@ -334,6 +334,14 @@ $ ./batect build-maven
   For example, with Gradle, this will log all the build steps without
   attempting to overwrite earlier steps with later ones
 
+### TODOs
+
+* Improve Gradle Docker mounting.  [`batect.yml`](./batect.yml) mounts
+  _all_ of `~/.gradle`. This is confusing for PIDs of daemons, etc, and other
+  mounted elements which are particular to your local computer: Docker
+  essentially runs as a separate box from our local computer (a separate Linux
+  kernel instance)
+
 ---
 
 ## Keep build current
