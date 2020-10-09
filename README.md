@@ -701,6 +701,12 @@ unit tests, consider these plugins:
 * For Maven, use
   the [Maven Failsafe Plugin](https://maven.apache.org/failsafe/maven-failsafe-plugin/)
 
+This project _duplicates_
+[`ApplicationIT.java`](./src/test/java/demo/ApplicationIT.java) and
+[`ApplicationTest.java`](./src/integrationTest/java/demo/ApplicationTest.java)
+reflecting the split in philosophy between Gradle and Maven for integration
+tests. Clearly in a production project, you would have only one of these.
+
 ### Tips
 
 * Failsafe shares the version number with Surefire. This project uses a
