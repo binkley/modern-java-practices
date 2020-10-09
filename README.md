@@ -385,7 +385,7 @@ With Gradle, there is no "right" solution for hygienic versioning.
 
 ### Tips
 
-* See the bottom of [`build.gradle`](./build.gradle) for an example on
+* See the bottom of [`build.gradle`](./build.gradle) for an example of
   customizing "new" versions reported by the Gradle `dependencyUpdates` task
 * The equivalent Maven approach for controlling the definition of "new" is to
   use [_Version number
