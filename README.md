@@ -22,8 +22,8 @@ $ ./mvnw verify
 # Output omitted
 ```
 
-**NB** &mdash; This is a "work in progress". Some sections are still bullet
-points
+**NB** &mdash; This is a _living document_, periodically updated to stay
+fresh.
 
 ---
 
