@@ -333,6 +333,13 @@ $ ./batect build-maven
   ```
   For example, with Gradle, this will log all the build steps without
   attempting to overwrite earlier steps with later ones
+* If you encounter issues with Gradle and Batect, try stopping the local
+  Gradle daemons before running Batect:
+  ```
+  $ ./gradlew --stop
+  $ ./batect <your Batect arguments>
+  ```
+
 
 ### TODOs
 
@@ -340,7 +347,7 @@ $ ./batect build-maven
   _all_ of `~/.gradle`. This is confusing for PIDs of daemons, etc, and other
   mounted elements which are particular to your local computer: Docker
   essentially runs as a separate box from our local computer (a separate Linux
-  kernel instance)
+  kernel instance), and Gradle does not always cope with this situation well
 
 ---
 
