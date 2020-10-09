@@ -9,9 +9,10 @@ align="right"/>
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-**Modern Java Build Practices** is an article on modern Java/JVM projects with
-sample builds for Gradle and Maven with a focus on _hygiene_ and best build
-practices.
+**Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
+with sample builds for Gradle and Maven, and a focus on _hygiene_ and best
+build practices.  _Shift problems left_: Find issues earlier in your
+development cycle, before they happen in production.
 
 Try out the Gradle and Maven builds:
 
@@ -22,8 +23,16 @@ $ ./mvnw verify
 # Output omitted
 ```
 
+If this does not work for you, please
+submit [an issue](https://github.com/binkley/modern-java-practices/issues).
+
 **NB** &mdash; This is a _living document_, periodically updated to stay
 fresh.
+
+### Contributing
+
+Please [file issues](https://github.com/binkley/modern-java-practices/issues),
+or contribute PRs!  I'd love a conversation with you.
 
 ---
 
