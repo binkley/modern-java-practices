@@ -175,16 +175,12 @@ existing project:
 For any Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
-* Avoid Java 8 and older: These are no longer supported unless one
+* Update from Java 8 and older: These are no longer supported unless one
   buys [paid support contracts from Oracle](https://www.oracle.com/java/technologies/java-se-support-roadmap.html)
-* Java 11 is "old" in a relative sense. If your project is critical, you may
-  still need a paid support contract from Oracle depending on your
-  circumstances.  [_IANAL_](https://en.wikipedia.org/wiki/IANAL)
-* Java 15 is the current LTS ("long-term support") version
+* Java 11 is the current LTS ("long-term support") version
 
-In this project, you'll see the choice of Java 11. Better would be Java 15,
-however, some tooling is still catching up, and it would be poor form for the
-demonstrations to break for those not using a current Java release.
+In this project, you'll see the choice of Java 11 as this is the version to
+recommend in production.
 
 In general, you will find that [AdoptOpenJDK](https://adoptopenjdk.net/)
 is a go-to choice for obtaining the JDK.
@@ -200,9 +196,14 @@ to pick the project Java version.
 
 For those on Windows, you may need to use WSL2 to use jEnv.
 
-### TODOS
+There are many ways to install the JDK, most are platform-dependent. In
+general, your team will be better off using a "managed" approach, rather than
+with each person using binary installers. Popular choices include:
 
-* Move to JDK 15 from 11 when tooling is ready
+* [Apt and friends](https://adoptopenjdk.net/installation.html#linux-pkg)
+  for Linux or WSL
+* [Homebrew](https://brew.sh/) for Mac
+* [SDKMAN](https://sdkman.io/jdks) for multiple platforms
 
 ---
 
