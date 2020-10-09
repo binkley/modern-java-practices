@@ -272,9 +272,9 @@ When using GitHub, a simple starting point is
 project is hosted in GitHub, there is not a simple means to demonstrate CI at
 GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
 
-### TODOs
-
-* GitLabs equivalent for GitHub actions for CI
+If you use GitLab, read about the equivalent in
+[_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
+[_Pipeline_](https://www.jenkins.io/doc/book/pipeline/).
 
 ---
 
