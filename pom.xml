@@ -11,6 +11,7 @@
 
     <properties>
         <!-- @formatter:off -->
+        <assertj.version>3.17.2</assertj.version>
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
         <checkstyle.version>8.36.2</checkstyle.version>
         <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
@@ -19,7 +20,7 @@
         <java.charset>UTF-8</java.charset>
         <java.version>11</java.version>
         <junit.version>5.7.0</junit.version>
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.14</lombok.version>
         <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
@@ -37,7 +38,6 @@
         <spotbugs.version>4.1.3</spotbugs.version>
         <system-lambda.version>1.1.0</system-lambda.version>
         <!-- @formatter:on -->
-        <assertj.version>3.12.2</assertj.version>
     </properties>
 
     <dependencies>
