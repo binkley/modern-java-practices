@@ -580,7 +580,7 @@ The demonstration builds use these to help you:
 
 ### TODOs
 
-* CPD for Gradle -- see https://github.com/aaschmid/gradle-cpd-plugin. CPD
+* CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin. CPD
   works for Maven
 
 ---
@@ -642,8 +642,8 @@ upload!  Be a good netizen.
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
 * "Ratchet" to fail build when coverage drops
-* Fluent assertions -- lots of options in this area
-    * [AssertJ](https://assertj.github.io/doc/) &mdash; -- solid choice
+* Fluent assertions &mdash; lots of options in this area
+    * [AssertJ](https://assertj.github.io/doc/) &mdash; solid choice
     * Built assertions from Junit make is difficult for developers to
       distinguish "actual" values from "expected" values. This is a limitation
       from Java as it lacks named parameters
