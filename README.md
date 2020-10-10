@@ -104,9 +104,10 @@ you improve your build beyond "getting started". You should pick and choose
 build features to add to your starter project, whatever makes sense for your
 project.
 
-**The goal**: [_Make people awesome_](https://modernagile.org/) (that means
-_you_). This project is based on lots of experience and experiments with
-Gradle and Maven builds, and shares with you lessons learned.
+**The top goal of this article**: [_Make people
+awesome_](https://modernagile.org/) (that means _you_). This project is based
+on lots of experience and experiments with Gradle and Maven builds, and shares
+with you lessons learned.
 
 ---
 
