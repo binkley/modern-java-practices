@@ -1,5 +1,5 @@
 <a href="LICENSE.md">
-<img src="https://unlicense.org/pd-icon.png" alt="Public Domain" 
+<img src="https://unlicense.org/pd-icon.png" alt="Public Domain"
 align="right"/>
 </a>
 
@@ -385,7 +385,7 @@ In this project, version numbers for Gradle are kept in
 
 #### More on Gradle version numbers
 
-Your simplest approach to Gradle is to keep everything in `build.gradle`.  
+Your simplest approach to Gradle is to keep everything in `build.gradle`.
 Even this unfortunately still requires a `settings.gradle` to define the
 project artifact name, and leaves duplicate version numbers for related
 dependencies scattered through `build.gradle`.
@@ -443,12 +443,12 @@ With Gradle, there is no "right" solution for hygienic versioning.
 When sensible, prefer to generate rather than write code. Here's why:
 
 * [Intelligent laziness is a virtue](http://threevirtues.com/)
-* Tools always work, unless they have bugs, and you can fix bugs.  
+* Tools always work, unless they have bugs, and you can fix bugs.
   Programmers make typos, and fixing typos is a challenge when not obvious.
   Worse are [_thinkos_](https://en.wiktionary.org/wiki/thinko); code
   generation does not "think", so is immune to this problem
 * Generated code does need code review, only the source input for generation
-  needs review, and this is usually shorter and easier to understand.  
+  needs review, and this is usually shorter and easier to understand.
   Your hand-written code needs review
 * Generated code is usually ignored by tooling such as linting or code
   coverage (and there are simple workarounds when this is not the case). Your
@@ -544,7 +544,7 @@ However, unlike built-in solutions, Checkstyle will not auto-format code for
 you.
 
 The demonstration projects assume checkstyle configuration at
-[`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml).  
+[`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml).
 This is the default location for Gradle, and configured for Maven in this
 project.
 
@@ -723,7 +723,7 @@ name. This means bringing up your application, possibly with
 [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
 for external dependencies (databases, other services, _etc_), and running
 tests against high-level functionality, but _not_ starting up external
-dependencies themselves (_ie_, Docker, or manual comman-line steps).  
+dependencies themselves (_ie_, Docker, or manual comman-line steps).
 Think of CI: what are called here "integration tests" are those which do
 _not_ need your CI to provide other services.
 
