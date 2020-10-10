@@ -40,7 +40,7 @@ or contribute PRs!  I'd love a conversation with you.
 
 * [Introduction](#introduction)
 * [You and your project](#you-and-your-project)
-* [Getting started](#getting-started)
+* [Getting your project started](#getting-your-project-started)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Setup your CI](#setup-your-ci)
@@ -131,7 +131,7 @@ Hopefully this article and the sample build scripts help you!
 
 ---
 
-## Getting started
+## Getting your project started
 
 To get a project off to a good start, consider these items. Even for existing
 projects, you an address these as you go along or while refurbishing an
