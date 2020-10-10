@@ -127,6 +127,8 @@ There are simple ways to make your project great. Some goals to strive for:
   what others see. _Hey!_ You're a professional, and it shows. (This is one of
   my personal fears as a programmer)
 
+Hopefully this article and the sample build scripts help you!
+
 ---
 
 ## Getting started
