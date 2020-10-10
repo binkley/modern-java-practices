@@ -39,7 +39,7 @@ or contribute PRs!  I'd love a conversation with you.
 ## TOC
 
 * [Introduction](#introduction)
-* [Your project](#your-project)
+* [You and your project](#you-and-your-project)
 * [Getting started](#getting-started)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
@@ -110,7 +110,7 @@ builds from Spring.
 
 ---
 
-## Your project
+## You and your project
 
 There are simple ways to make your project great. Some goals to strive for:
 
