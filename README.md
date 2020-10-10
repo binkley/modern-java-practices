@@ -66,47 +66,47 @@ My purpose is to highlight and provide guidance for building modern Java/JVM
 projects with Gradle or Maven. This article focuses on Java, but most points
 apply to _any_ JVM language build (linting is an example exception).
 
-This project has simple goals:
+This project has these goals:
 
-* Starter build scripts for Modern Java/JVM builds in Gradle and Maven
-* Quick solutions for raising project quality and security in your build,
-  including improving existing builds
-* Shift _to the left_ (meaning early in the development cycle) as many issues
-  as possible, so you get feedback earlier while still having a fast local
-  build. Time spent fixing issues locally is better than waiting on CI to
-  fail, or worse, for production to fail
-* The focus is on Gradle and Maven
+* Starter build scripts for Modern Java/JVM builds in Gradle and Maven,
+  helpful for new or existing projects
+* Quick solutions for raising project quality and security in your build
+* Shift _problems to the left_ ("to the left" meaning earlier in the
+  development cycle). You'll get feedback earlier while still having a fast
+  local build. Time spent fixing issues locally is better than waiting on CI
+  to fail, or worse, for production to fail
+* The article focus is on Gradle and Maven: these are the most used build
+  tools for Java/JVM projects
 
 I want to help with the question: I am at Day 1 on my project ("day 0" for
-those pedants like myself ☺): How do I get a build going that supports real
-coding? If I'm at "Day X", how do I improve my build?
+those pedants like myself ☺): How do I start with a build that supports real
+coding? And if I'm at "Day X" (`X` > 1), how do I improve my current build?
 
-For Java/JVM projects, **use Gradle or Maven**. I don't discuss alternative
-build tools: the
-[data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
-is overwhelming, and for good reason. Unless you are in a complex monorepo
-culture (Google, _etc_), or mandates from above, you need to select a build
-tool. However, for projects not using Gradle or Maven, you will still find
-improvements for your build herein.
+For Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
+alternative build tools:
+[solid data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
+shows Gradle or Maven are the build tools for most folks. Unless you find
+yourself in a complex monorepo culture (Google, _etc_), or there are mandates
+from above, you need to select one of Gradle or Maven. However, for projects
+not using Gradle or Maven, you will still find improvements for your build
+herein (though details will differ).
 
-This article aids you to spin up a new _Gradle_ or _Maven_ project directly
-for a Java/JVM project. You may
-find [Spring Initializr](https://start.spring.io),
+This article aids you in spinning up a new _Gradle_ or _Maven_ project
+immediately for a Java/JVM project, or aiding you in improving your existing
+build.
+
+For new projects, you may find [Spring Initializr](https://start.spring.io),
 [`mn` from Micronaut](https://micronaut.io/), or
-[JHipster](https://www.jhipster.tech/) (among many others) more to your
-liking: they provide you with starter Gradle or Maven scripts specific for
-those frameworks. That's great! I still want to help you improve your build
-beyond "getting started". You pick and choose build features to add to your
-starter project, whatever makes most sense for your project.
+[JHipster](https://www.jhipster.tech/), among many other project starters,
+more to your liking: they provide you with starter Gradle or Maven scripts
+specific for those frameworks. _That's great!_ This article should still help
+you improve your build beyond "getting started". You should pick and choose
+build features to add to your starter project, whatever makes sense for your
+project.
 
 **The goal**: [_Make people awesome_](https://modernagile.org/) (that means
-_you_). I've tried a lot of things with Gradle and Maven builds, and want to
-share lessons learned with you.
-
-<a id="spring-boot">[*]</a> Calling out Spring Boot. Spring does a
-particularly nice job for project setup for that ecosystem, leveraging
-benefits of Gradle and Maven. This article will help you improve the starter
-builds from Spring.
+_you_). This project is based on lots of experience and experiments with
+Gradle and Maven builds, and shares with you lessons learned.
 
 ---
 
