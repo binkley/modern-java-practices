@@ -23,11 +23,11 @@ $ ./mvnw verify
 # Output omitted
 ```
 
-If this does not work for you, please
-submit [an issue](https://github.com/binkley/modern-java-practices/issues).
+If you have comments or improvements, or find issues, please submit
+[a GitHub issue in this repo](https://github.com/binkley/modern-java-practices/issues)
+.
 
-**NB** &mdash; This is a _living document_, periodically updated to stay
-fresh.
+**NB** &mdash; This is a _living document_, updated to stay fresh.
 
 ### Contributing
 
@@ -112,8 +112,7 @@ builds from Spring.
 
 ## Your project
 
-There are several helpful steps in setting up a new project, or in
-refurbishing an existing project. Some things to strive for in your projects:
+There are simple ways to make your project great. Some goals to strive for:
 
 * Visitors and new developers get off to a quick start, and can understand
   what the build does (if they are interested)
@@ -122,12 +121,11 @@ refurbishing an existing project. Some things to strive for in your projects:
 * You don't get peppered with questions that are answered "in the source"
   &mdash;because not everyone wants to read the source, and you'd rather be
   coding than answering questions ☺
-* Coding should feel easy. Problems you solve are _real_ problems, not
-  nuisances because of tools or plugins. Your code demonstrably provides value
-  to others, and the build supports you
-* Your code passes all the "smell tests": no simple complaints, and you aren't
-  embarrassed when folks look over the code. Hey! You're a professional, and
-  it shows. (This is one of my personal fears as a programmer)
+* Coding should feel easy. You solve _real_ problems, and do not spend
+  overmuch much time on build details: your build supports you
+* Your code passes "smell tests": no simple complaints, and you are proud of
+  what others see. _Hey!_ You're a professional, and it shows. (This is one of
+  my personal fears as a programmer)
 
 ---
 
@@ -339,7 +337,6 @@ $ ./batect build-maven
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
   ```
-
 
 ### TODOs
 
