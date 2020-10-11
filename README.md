@@ -183,7 +183,7 @@ existing project:
     * "maven install git hooks"
 
   This article presently has no specific recommendations on choices of plugin
-  or approach
+  or approach for Git hooks.
 
 ### TODOs
 
@@ -381,10 +381,10 @@ In this project, version numbers for Gradle are kept in
 
 #### More on Gradle version numbers
 
-Your simplest approach to Gradle is to keep everything in `build.gradle`.
-Even this unfortunately still requires a `settings.gradle` to define the
-project artifact name, and leaves duplicate version numbers for related
-dependencies scattered through `build.gradle`.
+Your simplest approach to Gradle is to keep everything in `build.gradle`. Even
+this unfortunately still requires a `settings.gradle` to define the project
+artifact name, and leaves duplicate version numbers for related dependencies
+scattered through `build.gradle`.
 
 Another approach is to rely on a Gradle plugin such as that from Spring Boot
 to manage dependencies for you. This unfortunately does not help with plugins
@@ -439,13 +439,13 @@ With Gradle, there is no "right" solution for hygienic versioning.
 When sensible, prefer to generate rather than write code. Here's why:
 
 * [Intelligent laziness is a virtue](http://threevirtues.com/)
-* Tools always work, unless they have bugs, and you can fix bugs.
-  Programmers make typos, and fixing typos is a challenge when not obvious.
-  Worse are [_thinkos_](https://en.wiktionary.org/wiki/thinko); code
-  generation does not "think", so is immune to this problem
+* Tools always work, unless they have bugs, and you can fix bugs. Programmers
+  make typos, and fixing typos is a challenge when not obvious. Worse are [_
+  thinkos_](https://en.wiktionary.org/wiki/thinko); code generation does not "
+  think", so is immune to this problem
 * Generated code does need code review, only the source input for generation
-  needs review, and this is usually shorter and easier to understand.
-  Your hand-written code needs review
+  needs review, and this is usually shorter and easier to understand. Your
+  hand-written code needs review
 * Generated code is usually ignored by tooling such as linting or code
   coverage (and there are simple workarounds when this is not the case). Your
   hand-written code needs tooling to shift problems left
@@ -540,9 +540,8 @@ However, unlike built-in solutions, Checkstyle will not auto-format code for
 you.
 
 The demonstration projects assume checkstyle configuration at
-[`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml).
-This is the default location for Gradle, and configured for Maven in this
-project.
+[`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml). This
+is the default location for Gradle, and configured for Maven in this project.
 
 The Checkstyle configuration used is stock
 [`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
@@ -576,8 +575,8 @@ The demonstration builds use these to help you:
 
 ### TODOs
 
-* CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin. CPD
-  works for Maven
+* CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin.
+  CPD works for Maven
 
 ---
 
@@ -719,8 +718,8 @@ name. This means bringing up your application, possibly with
 [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
 for external dependencies (databases, other services, _etc_), and running
 tests against high-level functionality, but _not_ starting up external
-dependencies themselves (_ie_, Docker, or manual comman-line steps).
-Think of CI: what are called here "integration tests" are those which do
+dependencies themselves (_ie_, Docker, or manual comman-line steps). Think of
+CI: what are called here "integration tests" are those which do
 _not_ need your CI to provide other services.
 
 An example is testing `STDOUT` and `STDERR` for a command-line application.
