@@ -235,17 +235,17 @@ ecosystem, and your project needs. In summary:
 
 * Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
   imperative, and mutable; requires debugging your build on occasion, but less
-  verbose than Maven's XML. Use of "parent Gradle" projects is possible but
-  challenging. You can locally extend your build script either _inline_ with
-  build code, with project plugins, or with plugins from a separate project (
-  perhaps shared across project for your team). If interested in custom
-  plugins,
+  verbose than Maven's XML. Use of "parent" (umbrella) projects is possible
+  but challenging. You can locally extend your build script either _inline_
+  with build code, with project plugins, or with plugins from a separate
+  project (perhaps shared across project for your team). If interested in
+  custom plugins,
   [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
 * Maven &mdash; your build scripts is written in XML; declarative and
-  immutable; verbose but specific; it either works or not. Use of "parent
-  Maven" projects is simple with built-in support. You can locally extend your
-  build with plugins from a separate project (perhaps shared across project
-  for your team). If interested in custom plugins,
+  immutable; verbose but specific; it either works or not. Use of "parent"
+  (umbrella) projects is simple with built-in support. You can locally extend
+  your build with plugins from a separate project (perhaps shared across
+  project for your team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 This article offers **no preference between Gradle or Maven**. You need to
