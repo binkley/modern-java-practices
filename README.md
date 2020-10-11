@@ -233,18 +233,19 @@ with each person using binary installers. Popular choices include:
 The choice between Gradle and Maven depends on your team, your broader
 ecosystem, and your project needs. In summary:
 
-* Gradle &mdash; written in Goovy or Kotlin; dynamic, imperative, and mutable;
-  requires debugging your build on occasion, but less verbose than Maven's
-  XML. Use of "parent Gradle" projects is possible but challenging. You can
-  locally extend your build script either _inline_ with build code, with
-  project plugins, or with plugins from a separate project (perhaps shared
-  across project for your team). If interested in custom plugins,
+* Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
+  imperative, and mutable; requires debugging your build on occasion, but less
+  verbose than Maven's XML. Use of "parent Gradle" projects is possible but
+  challenging. You can locally extend your build script either _inline_ with
+  build code, with project plugins, or with plugins from a separate project (
+  perhaps shared across project for your team). If interested in custom
+  plugins,
   [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
-* Maven &mdash; written in XML; declarative and immutable; verbose but
-  specific; it either works or not. Use of "parent Maven" projects is simple
-  with built-in support. You can locally extend your build with plugins from a
-  separate project (perhaps shared across project for your team). If
-  interested in custom plugins,
+* Maven &mdash; your build scripts is written in XML; declarative and
+  immutable; verbose but specific; it either works or not. Use of "parent
+  Maven" projects is simple with built-in support. You can locally extend your
+  build with plugins from a separate project (perhaps shared across project
+  for your team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 This article offers **no preference between Gradle or Maven**. You need to
@@ -255,13 +256,13 @@ well-maintained (the latest version dates from September 2020). However, you
 will spend much effort in providing modern build tooling, and effort in
 migrating is repaid by much smaller work in integrating modern tools. Data
 point: consider the number of [Stackoverflow](https://stackoverflow.com/)
-posts providing Gradle or Maven answers to those for Ant.  **Consider Ant
+posts providing Gradle or Maven answers to those for Ant.  *Consider Ant
 builds no longer well-supported, and a form of
-[Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).**
+[Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).*
 
-Throughout when covering both Gradle and Maven, Gradle will be discussed
+Throughout, when covering both Gradle and Maven, Gradle will be discussed
 first, then Maven. This is no expressing a preference!  It is neutral
-alphabetical order.
+alphabetical ordering.
 
 ### Tips
 
@@ -280,6 +281,8 @@ alphabetical order.
   ```
 * Maven colorizes output, but does not use terminal control to overwrite
   output
+* See [Setup your CI](#setup-your-ci) for another approach to getting plain
+  text console output
 
 ---
 
@@ -296,6 +299,17 @@ GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
 If you use GitLab, read about the equivalent in
 [_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
 [_Pipeline_](https://www.jenkins.io/doc/book/pipeline/).
+
+### Tips
+
+* A simple way in CI to disable ASCII control sequences from colorizing or
+  Gradle's overwriting of lines (the control sequences can make for
+  hard-to-read CI logs) is to use the environment setting:
+  ```
+  TERM=dumb
+  ```
+  For example, with Gradle, this will log all the build steps without
+  attempting to overwrite earlier steps with later ones
 
 ---
 
@@ -322,14 +336,6 @@ $ ./batect build-maven
 
 ### Tips
 
-* A simple way in CI to disable ASCII control sequences from colorizing or
-  Gradle's overwriting of lines (the control sequences can make for
-  hard-to-read CI logs) is to use the environment setting:
-  ```
-  TERM=dumb
-  ```
-  For example, with Gradle, this will log all the build steps without
-  attempting to overwrite earlier steps with later ones
 * If you encounter issues with Gradle and Batect, try stopping the local
   Gradle daemons before running Batect:
   ```
@@ -353,8 +359,8 @@ An important part of _build hygiene_ is keeping your build system, plugins,
 and dependencies up to date. This might be simply to address bug fixes
 (including bugs you weren't aware of), or might be mission-critical security
 fixes. The best policy is: _Stay current_. Others will have
-found&mdash;reported problems&mdash;, and 3<sup>rd</sup>-parties will have
-addressed these. Leverage the power of [_Linus'
+found&mdash;reported problems&mdash;, and 3<sup>rd</sup>-parties may have
+addressed them. Leverage the power of [_Linus'
 Law_](https://en.wikipedia.org/wiki/Linus%27s_law) ("given enough eyeballs,
 all bugs are shallow").
 
