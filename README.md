@@ -478,6 +478,11 @@ and there are plugins for popular IDEs to understand Lombok's code generation,
 and tooling integration such as provided by JaCoCo code coverage (see
 [below](#leverage-lombok-to-tweak-code-coverage)).
 
+Do note though, Lombok is not a panacea, and has detractors. For example, to
+generate code as an annotation processor, it in places relies on internal JDK
+APIs, though the situation has improved as the JDK exposes those APIs in
+portable ways.
+
 #### Leverage Lombok to tweak code coverage
 
 Be sparing in disabling code coverage!  JaCoCo knows about Lombok's
