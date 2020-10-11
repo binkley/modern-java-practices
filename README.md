@@ -23,10 +23,6 @@ $ ./mvnw verify
 # Output omitted
 ```
 
-If you have comments or improvements, or find issues, please submit
-[a GitHub issue in this repo](https://github.com/binkley/modern-java-practices/issues)
-.
-
 **NB** &mdash; This is a _living document_, updated to stay fresh.
 
 ### Contributing
