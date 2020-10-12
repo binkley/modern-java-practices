@@ -324,6 +324,9 @@ If you use GitLab, read about the equivalent in
 setup, it runs your build in a "CI-like" local environment via Docker. This is
 one of your first lines of defence against "it runs on my box".
 
+_This is an important step_!  It's closer to your CI builds locally. You
+should strive to keep local as faithful as possible to CI and Production.
+
 You would not run Batect in your CI pipeline itself: use GitHub Actions
 (or GitLab equivalent). Batect is for your local build.
 
@@ -359,6 +362,11 @@ flag:
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
   ```
+
+### TODOs
+
+* Image of local-vs-production balance: striving to keep local builds as close
+  to production as possible
 
 ---
 
