@@ -337,6 +337,8 @@ $ ./batect build-maven
 # output ommitted
 ```
 
+#### Gradle
+
 It is important that your `batect.yml` calls Gradle with the `--no-daemon`
 flag:
 
