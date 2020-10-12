@@ -55,9 +55,9 @@ or contribute PRs!  I'd love a conversation with you.
 
 ## Introduction
 
-<a href="https://modernagile.org/">
-<img src="./images/modern-agile-wheel-english.png" title="Modern Agile" 
-align="right" width="30%" height="auto" alt="Make people awesome"/>
+<a href="https://modernagile.org/" title="Modern Agile">
+<img src="./images/modern-agile-wheel-english.png" alt="Modern Agile" 
+align="right" width="30%" height="auto"/>
 </a>
 
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
@@ -197,6 +197,11 @@ existing project:
 
 ---
 
+<a href="https://adoptopenjdk.net/" title="AdoptOpenJDK">
+<img src="./images/adoptopenjdk.png" alt="AdoptOpenJDK" align="right"
+width="30%" height="auto"/>
+</a>
+
 ## The JDK
 
 For any Java/JVM project, the first decision is _which version of Java
@@ -327,8 +332,8 @@ If you use GitLab, read about the equivalent in
 
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
-<img src="./images/pipeline.png" align="right" width="30%" height="auto"
-alt="Production vs Dev pipeline"/>
+<img src="./images/pipeline.png" alt="Production vs Dev pipeline"
+align="right" width="30%" height="auto"/>
 </a>
 
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
