@@ -199,7 +199,7 @@ existing project:
 
 <a href="https://adoptopenjdk.net/" title="AdoptOpenJDK">
 <img src="./images/adoptopenjdk.png" alt="AdoptOpenJDK" align="right"
-width="30%" height="auto"/>
+width="20%" height="auto"/>
 </a>
 
 ## The JDK
