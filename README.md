@@ -325,8 +325,10 @@ If you use GitLab, read about the equivalent in
 
 ### Setup local CI
 
+<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines.html">
 <img src="./pipeline.png" align="right" width="30%" height="auto"
 alt="Production vs Dev pipeline"/>
+</a>
 
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
 setup, it runs your build in a "CI-like" local environment via Docker. This is
