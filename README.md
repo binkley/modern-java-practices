@@ -64,9 +64,14 @@ Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
 project (Kotlin, Scala, Clojure, Groovy, JRuby, _et al_), this article is for
 you.
 
-My purpose is to highlight and provide guidance for building modern Java/JVM
-projects with Gradle or Maven. This article focuses on Java, but most points
-apply to _any_ JVM language build (linting is an example exception).
+This article's goal is to highlight and provide guidance for building modern
+Java/JVM projects with Gradle or Maven. The article focuses on Java, but most
+points apply to _any_ JVM language build (I use them for my personal Kotlin
+projects).
+
+(See the wheel to the right?  _No, you do not need to be agile!_  This article
+is for _you_ regardless of how your project approach software. The point is
+"make people awesome" under all circumstances.)
 
 This project has these goals:
 
@@ -156,7 +161,7 @@ existing project:
 * Pick **Gradle** or **Maven**, and use only one. This project provides both
   to demonstrate equivalent builds for each.
   See [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
-* Use build wrappers committed into the project root. These run Gradle or
+* Use build wrappers committed into your project root. These run Gradle or
   Maven, and coders should always invoke `./gradlew` or `./mvnw` (use shell
   _aliases_ if these grow tiresome to type)
     * Build wrappers are shell scripts to run Gradle or Maven. The wrapper
@@ -224,7 +229,8 @@ One of the best tools for managing your Java environment in projects is
 user) and "project" choices (particular to a directory and its children) in
 which JDK installation to use. You may notice the
 [`.java-version`](./.java-version) file: this is a per-project file for jEnv
-to pick the project Java version.
+to pick your project Java version. (Reminder: in general, prefer the latest
+LTS version of Java, which is 11.)
 
 For those on Windows, you may need to use WSL2 to use jEnv.
 
@@ -414,14 +420,14 @@ $ ./mvnw versions:display-property-updates
 # output ommitted
 ```
 
-In this project, version numbers for Gradle are kept in
+This project keeps Gradle version numbers in
 [`gradle.properties`](./gradle.properties), and for Maven in
-[the POM](./pom.xml).
+[the POM](./pom.xml), and you should do the same.
 
 #### More on Gradle version numbers
 
 Your simplest approach to Gradle is to keep everything in `build.gradle`. Even
-this unfortunately still requires a `settings.gradle` to define the project
+this unfortunately still requires a `settings.gradle` to define a project
 artifact name, and leaves duplicate version numbers for related dependencies
 scattered through `build.gradle`.
 
@@ -429,7 +435,8 @@ Another approach is to rely on a Gradle plugin such as that from Spring Boot
 to manage dependencies for you. This unfortunately does not help with plugins
 at all, nor with dependencies that Spring Boot does not know about.
 
-This project uses a 3-file solution for Gradle versioning:
+This project uses a 3-file solution for Gradle versioning, and you should
+consider doing the same:
 
 * [`gradle.properties`](./gradle.properties) is the sole source of truth for
   version numbers, both plugins and dependencies
@@ -585,7 +592,7 @@ you.
 
 The demonstration projects assume checkstyle configuration at
 [`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml). This
-is the default location for Gradle, and configured for Maven in this project.
+is the default location for Gradle, and configured for Maven in the project.
 
 The Checkstyle configuration used is stock
 [`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
@@ -645,7 +652,7 @@ upload!  Be a good netizen.
   $ alias mvnw=`./mvnw --strict-checksums`
   ```
   However, for CI, this is easy!  The [Batect configuration](./batect.yml)
-  on this project says:
+  on the project says:
   ```yaml
   build-maven:
     description: Build and test with Maven
