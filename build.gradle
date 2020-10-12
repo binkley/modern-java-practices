@@ -38,6 +38,8 @@ dependencies {
 }
 
 test {
+    // NB -- JaCoCo draws from _unit tests_, not integration tests
+    // When tests fail, you still have a coverage report
     finalizedBy jacocoTestReport
 }
 
@@ -46,6 +48,7 @@ testSets {
 }
 
 tasks.withType(Test) {
+    // This idiom ensures JUnit5 for integration tests, not just unit tests
     useJUnitPlatform()
 }
 
