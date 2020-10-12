@@ -56,7 +56,7 @@ or contribute PRs!  I'd love a conversation with you.
 ## Introduction
 
 <a href="https://modernagile.org/">
-<img src="./modern-agile-wheel-english.png" align="right" width="20%"
+<img src="./modern-agile-wheel-english.png" align="right" width="30%"
 height="auto" alt="Make people awesome"/>
 </a>
 
