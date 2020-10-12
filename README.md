@@ -53,12 +53,12 @@ or contribute PRs!  I'd love a conversation with you.
 
 ---
 
-## Introduction
-
 <a href="https://modernagile.org/" title="Modern Agile">
-<img src="./images/modern-agile-wheel-english.png" alt="Modern Agile" 
+<img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
 align="right" width="30%" height="auto"/>
 </a>
+
+## Introduction
 
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
 project (Kotlin, Scala, Clojure, Groovy, JRuby, _et al_), this article is for
@@ -328,13 +328,13 @@ If you use GitLab, read about the equivalent in
 
 ## Keep local consistent with CI
 
-### Setup local CI
-
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
 align="right" width="30%" height="auto"/>
 </a>
+
+### Setup local CI
 
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
 setup, it runs your build in a "CI-like" local environment via Docker. This is
