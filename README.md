@@ -320,6 +320,9 @@ If you use GitLab, read about the equivalent in
 
 ### Setup local CI
 
+<img src="./pipeline.png" align="right" width="30%" height="auto"
+alt="Production vs Dev pipeline"/>
+
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
 setup, it runs your build in a "CI-like" local environment via Docker. This is
 one of your first lines of defence against "it runs on my box".
@@ -339,9 +342,6 @@ $ ./batect build-gradle
 $ ./batect build-maven
 # output ommitted
 ```
-
-<img src="./pipeline.png" align="right" width="30%" height="auto"
-alt="Production vs Dev pipeline"/>
 
 #### Gradle
 
