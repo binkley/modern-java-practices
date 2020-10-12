@@ -340,6 +340,8 @@ $ ./batect build-maven
 # output ommitted
 ```
 
+<img src="./pipeline.png" align="right" width="20%" height="auto" alt="Production vs Dev pipeline"/>
+
 #### Gradle
 
 It is important that your `batect.yml` calls Gradle with the `--no-daemon`
