@@ -340,7 +340,8 @@ $ ./batect build-maven
 # output ommitted
 ```
 
-<img src="./pipeline.png" align="right" width="20%" height="auto" alt="Production vs Dev pipeline"/>
+<img src="./pipeline.png" align="right" width="30%" height="auto"
+alt="Production vs Dev pipeline"/>
 
 #### Gradle
 
