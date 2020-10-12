@@ -5,7 +5,7 @@ align="right"/>
 
 # Getting more from your team builds
 
-Teams should:
+For development teams to support the business and production the most:
 
 * _Shift problems left_: This means teams should find issues in development
   before they impact QA or production
@@ -13,7 +13,7 @@ Teams should:
   production should be rare, and surprising, something usually found earlier
   in the development process
 * _Treat security as a given_: Development should find security issues as
-  early as sensible; finding these in production is not best
+  early as sensible; finding these problems in production is not best
 * _Use standards when possible_: Standards are industry-tested, and new team
   members nor managers will not be caught by surprise when using standards
 
