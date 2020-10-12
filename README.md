@@ -55,7 +55,7 @@ or contribute PRs!  I'd love a conversation with you.
 
 ## Introduction
 
-<img src="./modern-agile-wheel-english" align="right" width="30%"
+<img src="./modern-agile-wheel-english.png" align="right" width="30%"
 height="auto" alt="Make people awesome"/>
 
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
