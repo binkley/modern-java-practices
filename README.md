@@ -23,6 +23,9 @@ $ ./mvnw verify
 # Output omitted
 ```
 
+For a non-programmer _high-level_ overview, please see the
+[executive summary](./SUMMARY.md).
+
 **NB** &mdash; This is a _living document_, updated to stay fresh.
 
 ### Contributing
