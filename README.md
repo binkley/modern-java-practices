@@ -284,6 +284,8 @@ alphabetical ordering.
   output
 * See [Setup your CI](#setup-your-ci) for another approach to getting plain
   text console output
+* If you like Maven, but XML isn't your thing, you might explore the
+  [_Polyglot for Maven_](https://github.com/takari/polyglot-maven) extension
 
 ---
 
