@@ -14,6 +14,9 @@ with sample builds for Gradle and Maven, and a focus on _hygiene_ and best
 build practices.  _Shift problems left_: Find issues earlier in your
 development cycle, before they happen in production.
 
+For a non-programmer _high-level_ overview, please see the
+[executive summary](./SUMMARY.md).
+
 Try out the Gradle and Maven builds:
 
 ```
@@ -22,9 +25,6 @@ $ ./gradlew build
 $ ./mvnw verify
 # Output omitted
 ```
-
-For a non-programmer _high-level_ overview, please see the
-[executive summary](./SUMMARY.md).
 
 **NB** &mdash; This is a _living document_, updated to stay fresh.
 
