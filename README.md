@@ -342,8 +342,10 @@ flag:
 
 * There is no point in spinning up a daemon for a Docker ephemeral container
 * With a daemon, the Docker container's Gradle may be confused by
-  `~/.gradle/daemon` and `/.gradle/workers` directories, as these refer to
-  processes in the host, not the container
+  `~/.gradle/daemon` and `/.gradle/workers` directories mounted by Batect from
+  your home directory, as these refer to processes in the host, not the
+  container (`batect.yml` mounts your `~/.gradle` to include caches of
+  already-downloaded dependencies, _et al_)
 * If you encounter troubles, run locally `./gradlew --stop` to kill any local
   daemons: This indicates a _bug_, and "stop" is a workaround
 
