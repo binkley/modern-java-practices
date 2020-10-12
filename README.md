@@ -56,8 +56,8 @@ or contribute PRs!  I'd love a conversation with you.
 ## Introduction
 
 <a href="https://modernagile.org/">
-<img src="./modern-agile-wheel-english.png" align="right" width="30%"
-height="auto" alt="Make people awesome"/>
+<img src="./modern-agile-wheel-english.png" title="Modern Agile" 
+align="right" width="30%" height="auto" alt="Make people awesome"/>
 </a>
 
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
@@ -325,7 +325,8 @@ If you use GitLab, read about the equivalent in
 
 ### Setup local CI
 
-<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines.html">
+<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
+title="On Pipelines">
 <img src="./pipeline.png" align="right" width="30%" height="auto"
 alt="Production vs Dev pipeline"/>
 </a>
