@@ -75,7 +75,7 @@ This project has these goals:
   tools for Java/JVM projects
 
 I want to help with the question: I am at Day 1 on my project ("day 0" for
-those pedants like myself ☺): How do I start with a build that supports real
+those pedants like myself): How do I start with a build that supports real
 coding? And if I'm at "Day X" (`X` > 1), how do I improve my current build?
 
 For Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
