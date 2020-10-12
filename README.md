@@ -56,7 +56,8 @@ or contribute PRs!  I'd love a conversation with you.
 ## Introduction
 
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
-project (Kotlin, Scala, Clojure, JRuby, _et al_), this article is for you.
+project (Kotlin, Scala, Clojure, Groovy, JRuby, _et al_), this article is for
+you.
 
 My purpose is to highlight and provide guidance for building modern Java/JVM
 projects with Gradle or Maven. This article focuses on Java, but most points
