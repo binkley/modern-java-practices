@@ -56,7 +56,7 @@ or contribute PRs!  I'd love a conversation with you.
 ## Introduction
 
 <a href="https://modernagile.org/">
-<img src="./modern-agile-wheel-english.png" title="Modern Agile" 
+<img src="./images/modern-agile-wheel-english.png" title="Modern Agile" 
 align="right" width="30%" height="auto" alt="Make people awesome"/>
 </a>
 
@@ -327,7 +327,7 @@ If you use GitLab, read about the equivalent in
 
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
-<img src="./pipeline.png" align="right" width="30%" height="auto"
+<img src="./images/pipeline.png" align="right" width="30%" height="auto"
 alt="Production vs Dev pipeline"/>
 </a>
 
