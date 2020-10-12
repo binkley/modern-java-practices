@@ -337,6 +337,16 @@ $ ./batect build-maven
 # output ommitted
 ```
 
+It is important that your `batect.yml` calls Gradle with the `--no-daemon`
+flag:
+
+* There is no point in spinning up a daemon for a Docker ephemeral container
+* With a daemon, the Docker container's Gradle may be confused by
+  `~/.gradle/daemon` and `/.gradle/workers` directories, as these refer to
+  processes in the host, not the container
+* If you encounter troubles, run locally `./gradlew --stop` to kill any local
+  daemons: This indicates a _bug_, and "stop" is a workaround
+
 ### Tips
 
 * If you encounter issues with Gradle and Batect, try stopping the local
@@ -345,14 +355,6 @@ $ ./batect build-maven
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
   ```
-
-### TODOs
-
-* Improve Gradle Docker mounting.  [`batect.yml`](./batect.yml) mounts
-  _all_ of `~/.gradle`. This is confusing for PIDs of daemons, etc, and other
-  mounted elements which are particular to your local computer: Docker
-  essentially runs as a separate box from our local computer (a separate Linux
-  kernel instance), and Gradle does not always cope with this situation well
 
 ---
 
