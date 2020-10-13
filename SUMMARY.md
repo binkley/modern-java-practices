@@ -18,8 +18,9 @@ align="right" width="30%" height="auto"/>
 For development teams to most support the business and production:
 
 * _Get off to a solid start_: Starting from Sprint #1, your teams should use
-  the tools to provide value and safety, and speed themselves up. Teams should
-  be able to discuss how the local build makes this possible
+  the tools to provide value and safety, and speed themselves up: _Technical
+  excellence_ matters. Teams should be able to discuss how the local build
+  makes these possible
 * _Avoid later slowdowns_: Avoid
   [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
   at the start, before it has a chance to build up. Technical debt is a major
@@ -34,10 +35,11 @@ For development teams to most support the business and production:
   production should be rare, and surprising, something usually found earlier
   in the development process
 * _Treat security as a given_: Development should find security issues as
-  early as sensible; finding these problems in production is not best
-* _Use standards when possible_: Standards are industry-tested, and new team
-  members nor managers will not be caught by surprise when using standards.
-  Standards lower cost and raise quality
+  early as sensible; finding these problems in production is not best.  
+  Customers and business partners only remember when security fails
+* _Use standards when possible_: Standards are industry-tested, and neither
+  new team members nor managers are caught by surprise when using standards.
+  Standards lower cost, and raise quality
 
 ## How does the local build reflect these principles?
 
