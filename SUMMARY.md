@@ -5,14 +5,31 @@ align="right"/>
 
 # Getting more from your team builds
 
-For development teams to support the business and production the most:
+<a
+href="https://flowdays.net/de/blog-de/2016/2/23/the-rfp-is-dead-meet-the-lean-proposal-canvas"
+title="Der RFP ist tot: Hallo Lean-Agile Evaluation &mdash; flowdays - Die
+agile Genossenschaft">
+<img src="./images/bug-costs.jpg"
+alt="Der RFP ist tot: Hallo Lean-Agile Evaluation &mdash; flowdays - Die agile
+Genossenschaft"
+align="right" width="30%" height="auto"/>
+</a>
 
-* _Get off to a solid start_: Starting with Sprint #1, your teams should have
-  the tools in place to provide value and safety, and speed them up. Avoid
+For development teams to most support the business and production:
+
+* _Get off to a solid start_: Starting from Sprint #1, your teams should use
+  the tools to provide value and safety, and speed themselves up. Teams should
+  be able to discuss how the local build makes this possible
+* _Avoid later slowdowns_: Avoid
   [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
-  at the start, before it has a chance to build up
-* _Shift problems left_: This means teams should find issues in development
-  before they impact QA or production
+  at the start, before it has a chance to build up. Technical debt is a major
+  factor in slowing down new work. The local build is one key to achieving
+  this: _The local build is your first firewall in ensuring issues do not
+  reach production_
+* _Shift problems left_:  This means simply: find problem _earlier_ in the
+  development process. Picture teams' development pipelines running from local
+  effort on the left to production on the right. Earlier work pays for itself
+  in avoiding later work, or worse, production issues
 * _Bake quality in_: Quality of code and execution are mainstays. Issues in
   production should be rare, and surprising, something usually found earlier
   in the development process
