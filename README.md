@@ -612,10 +612,11 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 * If you use Google Java coding conventions, consider
   [Spotless](https://github.com/diffplug/spotless) which can autoformat your
   code.
-* Consider use of [EditorConfig](https://editorconfig.org/). It is a cross-IDE
-  standard means of specifying code formatting, respected by
+* Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
+  editor choice is up to each developer. EditorConfig is a cross-IDE standard
+  means of specifying code formatting, respected by
   [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig)
-  and other major editors
+  , and other major editors
 
 ---
 
