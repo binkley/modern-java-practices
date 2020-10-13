@@ -19,8 +19,9 @@ For development teams to most support the business and production:
 
 * _Get off to a solid start_: Starting from Sprint #1, your teams should use
   the tools to provide value and safety, and speed themselves up: _Technical
-  excellence_ matters. Teams should be able to discuss how the local build
-  makes these possible
+  excellence_ matters. The local build is the _first_ thing that teams
+  provide. Teams should be able to discuss how the local build makes these
+  goals possible
 * _Avoid later slowdowns_: Avoid
   [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
   at the start, before it has a chance to build up. Technical debt is a major
@@ -29,23 +30,27 @@ For development teams to most support the business and production:
   reach production_
 * _Shift problems left_:  This means simply: find problem _earlier_ in the
   development process. Picture teams' development pipelines running from local
-  effort on the left to production on the right. Earlier work pays for itself
-  in avoiding later work, or worse, production issues
+  effort on the left to production on the right. The local build is the
+  earliest possible place to find problems. Earlier work pays for itself in
+  avoiding later work, or worse, production issues
 * _Bake quality in_: Quality of code and execution are mainstays. Issues in
   production should be rare, and surprising, something usually found earlier
-  in the development process
+  in the development process. A solid local build is the first step in Quality
 * _Treat security as a given_: Development should find security issues as
-  early as sensible; finding these problems in production is not best.  
+  early as sensible, in your local builds when sensible; finding these
+  problems in production is not best.  
   Customers and business partners only remember when security fails
 * _Use standards when possible_: Standards are industry-tested, and neither
   new team members nor managers are caught by surprise when using standards.
-  Standards lower cost, and raise quality
+  Your local builds should reuse hard-won industry know-how. Standards lower
+  cost, and raise quality
 
 ## How does the local build reflect these principles?
 
 **The key takeaway is to _shift problems left_.**
 
-The demonstration build scripts in this project focus on:
+The demonstration build scripts
+in [this project](https://github.com/binkley/modern-java-practices) focus on:
 
 * Bootstrapping projects and developers quickly, so teams do not work on
   addressing build shortcomings later on. They should be naturally led towards
