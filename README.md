@@ -73,8 +73,8 @@ points apply to _any_ JVM language build (I use them for my personal Kotlin
 projects).
 
 (See the wheel to the right?  _No, you do not need to be agile!_  This article
-is for _you_ regardless of how your project approach software. The point is
-"make people awesome" under all circumstances.)
+is for _you_ regardless of how your project approaches software. The point is
+"make people awesome" for any project.)
 
 This project has these goals:
 
