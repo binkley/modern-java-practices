@@ -828,7 +828,11 @@ making them part of the local build.
 
 ### The Test Pyramid
 
-**TODO**: Small, right-side, floating image of the test pyramid
+<a href="https://martinfowler.com/bliki/TestPyramid.html"
+title="TestPyramid">
+<img src="./images/test-pyramid.png" alt="The test pyramid"
+align="right" width="30%" height="auto"/>
+</a>
 
 What is the "Test Pyramid"? This is an important conceptual framework for
 validating your project at multiple levels of interaction. Canonical resources
