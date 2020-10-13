@@ -15,7 +15,7 @@ build practices.  _Shift problems left_: Find issues earlier in your
 development cycle, before they happen in production.
 
 For a non-programmer _high-level_ overview, please see the
-[executive summary](./SUMMARY.md).
+[executive summary](./SUMMARY.md) (in progress).
 
 Try out the Gradle and Maven builds:
 
