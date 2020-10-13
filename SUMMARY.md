@@ -45,7 +45,7 @@ For development teams to most support the business and production:
   Your local builds should reuse hard-won industry know-how. Standards lower
   cost, and raise quality
 
-## How does the local build reflect these principles?
+## How does the local build reflect these goals?
 
 **The key takeaway is to _shift problems left_.**
 
