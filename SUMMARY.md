@@ -36,7 +36,8 @@ For development teams to most support the business and production:
 * _Treat security as a given_: Development should find security issues as
   early as sensible; finding these problems in production is not best
 * _Use standards when possible_: Standards are industry-tested, and new team
-  members nor managers will not be caught by surprise when using standards
+  members nor managers will not be caught by surprise when using standards.
+  Standards lower cost and raise quality
 
 ## How does the local build reflect these principles?
 
