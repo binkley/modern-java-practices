@@ -223,7 +223,7 @@ For any Java/JVM project, the first decision is _which version of Java
   a paid support contracts from
   [Oracle](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
   . However, AdoptOpenJDK provides a distribution of OpenJDK 8, which is
-  through at
+  supported until at
   least [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
 
 In this project, you'll see the choice of Java 11 as this is the version to
