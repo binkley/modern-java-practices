@@ -7,6 +7,10 @@ align="right"/>
 
 For development teams to support the business and production the most:
 
+* _Get off to a solid start_: Starting with Sprint #1, your teams should have
+  the tools in place to provide value and safety, and speed them up. Avoid
+  [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
+  at the start, before it has a chance to build up
 * _Shift problems left_: This means teams should find issues in development
   before they impact QA or production
 * _Bake quality in_: Quality of code and execution are mainstays. Issues in
@@ -26,8 +30,9 @@ The demonstration build scripts in this project focus on:
 * Bootstrapping projects and developers quickly, so teams do not work on
   addressing build shortcomings later on. They should be naturally led towards
   the right directions. Later build changes should be focused on adding
-  additional features, not on paying down
+  additional features, not spending effort on paying down
   [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
+  with the local build
 * Using the right version of the JDK, which impacts which version of Java to
   pick (or another JVM language, such as Kotlin). This is important for
   licensing, project lifetime, and project lifecycle costs
