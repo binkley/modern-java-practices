@@ -50,7 +50,7 @@ For development teams to most support the business and production:
 **The key takeaway is to _shift problems left_.**
 
 The demonstration build scripts
-in [this project](https://github.com/binkley/modern-java-practices) focus on:
+[in this project](https://github.com/binkley/modern-java-practices) focus on:
 
 * Bootstrapping projects and developers quickly, so teams do not work on
   addressing build shortcomings later on. They should be naturally led towards
