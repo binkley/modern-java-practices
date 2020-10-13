@@ -79,18 +79,19 @@ is for _you_ regardless of how your project approaches software. The point is
 This project has these goals:
 
 * Starter build scripts for Modern Java/JVM builds in Gradle and Maven,
-  helpful for new or existing projects
-* Quick solutions for raising project quality and security in your build
+  helpful for new projects, or refurbishing existing projects
+* Quick solutions for raising project quality and security in your local build
 * Shift _problems to the left_ ("to the left" meaning earlier in the
-  development cycle). You'll get feedback earlier while still having a fast
+  development cycle). You'll get earlier feedback while still having a fast
   local build. Time spent fixing issues locally is better than waiting on CI
   to fail, or worse, for production to fail
-* The article focus is on Gradle and Maven: these are the most used build
-  tools for Java/JVM projects
+* The article focuses on Gradle and Maven: these are the most used build tools
+  for Java/JVM projects. However, if you use a different build tool, most
+  suggestions still can help you
 
-I want to help with the question: I am at Day 1 on my project ("day 0" for
-those pedants like myself): How do I start with a build that supports real
-coding? And if I'm at "Day X" (`X` > 1), how do I improve my current build?
+I want to help with the question: _I am at Day 1 on my project_: How do I
+begin with a local build that is supports my team through the project
+lifetime? And when I have an existing project, how to I catch up?
 
 For Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
 alternative build tools:
@@ -114,7 +115,7 @@ you improve your build beyond "getting started". You should pick and choose
 build features to add to your starter project, whatever makes sense for your
 project.
 
-**The top goal of this article**: [_Make people
+**The goal of this article**: [_Make people
 awesome_](https://modernagile.org/) (that means _you_). This project is based
 on lots of experience and experiments with Gradle and Maven builds, and shares
 with you lessons learned.
