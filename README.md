@@ -93,32 +93,10 @@ I want to help with the question: _I am at Day 1 on my project_: How do I
 begin with a local build that is supports my team through the project
 lifetime? And when I have an existing project, how to I catch up?
 
-For Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
-alternative build tools:
-[solid data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
-shows Gradle or Maven are the build tools for most folks. Unless you find
-yourself in a complex monorepo culture (Google, _etc_), or there are mandates
-from above, you need to select one of Gradle or Maven. However, for projects
-not using Gradle or Maven, you will still find improvements for your build
-herein (though details will differ).
-
-This article aids you in spinning up a new _Gradle_ or _Maven_ project
-immediately for a Java/JVM project, or aiding you in improving your existing
-build.
-
-For new projects, you may find [Spring Initializr](https://start.spring.io),
-[`mn` from Micronaut](https://micronaut.io/), or
-[JHipster](https://www.jhipster.tech/), among many other project starters,
-more to your liking: they provide you with starter Gradle or Maven scripts
-specific for those frameworks. _That's great!_ This article should still help
-you improve your build beyond "getting started". You should pick and choose
-build features to add to your starter project, whatever makes sense for your
-project.
-
 **The goal of this article**: [_Make people
 awesome_](https://modernagile.org/) (that means _you_). This project is based
-on lots of experience and experiments with Gradle and Maven builds, and shares
-with you lessons learned.
+on lots of experience and experiments with Java/JVM builds, and shares with
+you lessons learned.
 
 ---
 
@@ -275,6 +253,24 @@ ecosystem, and your project needs. In summary:
   your build with plugins from a separate project (perhaps shared across
   project for your team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
+
+For Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
+alternative build tools:
+[industry data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
+shows Gradle or Maven are the build tools for most folks. Unless you find
+yourself in a complex monorepo culture (Google, _etc_), or there are mandates
+from above, you need to select one of Gradle or Maven. However, for projects
+not using Gradle or Maven, you will still find improvements for your build
+herein (though details will differ).
+
+For new projects, you may find [Spring Initializr](https://start.spring.io),
+[`mn` from Micronaut](https://micronaut.io/), or
+[JHipster](https://www.jhipster.tech/), among many other project starters,
+more to your liking: they provide you with starter Gradle or Maven scripts
+specific for those frameworks. _That's great!_ This article should still help
+you improve your build beyond "getting started". You should pick and choose
+build features to add to your starter project, whatever makes sense for your
+project.
 
 This article offers **no preference between Gradle or Maven**. You need to
 decide.
