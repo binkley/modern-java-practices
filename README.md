@@ -116,6 +116,8 @@ There are simple ways to make your project great. Some goals to strive for:
 * Your code passes "smell tests": no simple complaints, and you are proud of
   what others see. _Hey!_ You're a professional, and it shows. (This is one of
   my personal fears as a programmer)
+* Your project is "standard", meaning, the build is easily grasped by those
+  familiar with standard techniques and tooling
 
 Hopefully this article and the sample build scripts help you!
 
