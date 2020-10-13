@@ -10,7 +10,7 @@ align="right"/>
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
-with sample builds for Gradle and Maven, and a focus on _hygiene_ and best
+with sample builds for _Gradle and Maven_, and a focus on _hygiene_ and best
 build practices.  _Shift problems left_: Find issues earlier in your
 development cycle, before they happen in production.
 
