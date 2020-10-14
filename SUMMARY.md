@@ -63,7 +63,7 @@ not best. Customers and business partners only remember when security fails.
 <a href="https://martinfowler.com/bliki/TestPyramid.html"
 title="TestPyramid">
 <img src="./images/test-pyramid.png" alt="The test pyramid"
-align="right" width="30%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 _Bake quality in_: Quality of code and execution are your mainstays. Issues in
