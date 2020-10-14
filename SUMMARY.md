@@ -86,19 +86,20 @@ The build scripts in
 focus on achieving these goals, with:
 
 * Bootstrapping projects and developers quickly, so teams do not work on
-  addressing build shortcomings later on. They should be naturally led towards
-  the right directions. Later build changes should be focused on adding
-  additional features, not spending effort on paying down
+  addressing build shortcomings later on. Teams should be led towards the
+  right directions. Later build updates should be focused on additional
+  features, not on paying down
   [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
-  with the local build
-* Using the right version of the JDK, which impacts which version of Java to
-  pick (or another JVM language, such as Kotlin). This is important for
-  licensing, project lifetime, and project lifecycle costs
+* Using the right version of the JDK. This means picking the right version of
+  Java. This is important for licensing, project lifetime, and project
+  lifecycle costs. This is key not just for Java, but other JVM languages,
+  such as Kotlin
 * Gradle and Maven. These are the two most common choices for project builds
   in Java or other JVM languages, and have the widest support. The vast
-  majority of Java/JVM developers know these already
-* Supporting CI (continuous integration) on GitHub, or related systems (such
-  as GitLab or Jenkins) off to a good start
+  majority of Java/JVM developers know these already. Pick one, and use your
+  choice throughout the project lifecycle
+* Supporting CI (continuous integration) on GitHub, or other CI systems (such
+  as GitLab or Jenkins), and get off to a good start
 * Keeping local builds as similar to CI as feasible, so problems happen
   locally before they happen in CI or later, and before those problems are
   shared with the whole team or wider audiences
