@@ -60,6 +60,12 @@ _Treat security as a given_: Development should find security issues as early
 as sensible: in your local builds; finding security issues in production is
 not best. Customers and business partners only remember when security fails.
 
+<a href="https://martinfowler.com/bliki/TestPyramid.html"
+title="TestPyramid">
+<img src="./images/test-pyramid.png" alt="The test pyramid"
+align="right" width="30%" height="auto"/>
+</a>
+
 _Bake quality in_: Quality of code and execution are your mainstays. Issues in
 production should be rare, and surprising, something expected to be found
 earlier in the development process. A solid local build is the first step in
