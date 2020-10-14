@@ -28,41 +28,48 @@ as they add new business features, and as you staff a project. And the local
 build should be _fast_: time spent by developers waiting the local build is
 time not spent where they are experts: programming your solution.
 
-To best enable development teams, and most support the business and
+To get the most from development teams, and most support the business and
 production, follow these guidelines:
 
 _Get off to a solid start_: Starting from Sprint #1, your teams should use the
-tools to provide value and safety, and speed themselves up: _Technical
+tools that provide value and safety, and speed themselves up: _Technical
 excellence_ matters. The local build is the _first_ thing that teams provide.
-Teams should be able to discuss how the local build makes these goals
-possible.
+Teams should be able to discuss how the local build makes your goals, and meet
+organization goals.
 
 _Avoid later slowdowns_: Avoid
 [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
-at the start, before it has a chance to build up. Technical debt is a major
-factor in slowing down new work. The local build is one key to achieving
-this: _The local build is your first firewall in ensuring issues do not reach
-production_.
+from the start, before it has a chance to build up. Technical debt is a major
+factor in slowing down new work. The local build is one of the keys to
+achieving this: _The local build is your first firewall in ensuring issues do
+not reach production_.
 
-_Shift problems left_:  This means simply: find problem _earlier_ in the
-development process. Picture teams' development pipelines running from local
-effort on the left to production on the right. The local build is the earliest
-possible place to find problems. Earlier work pays for itself in avoiding
-later work, or worse, production issues.
+<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
+title="On Pipelines">
+<img src="./images/pipeline.png" alt="Production vs Dev pipeline"
+align="right" width="30%" height="auto"/>
+</a>
+
+_Shift problems left_:  Simply put, find problem _earlier_ in the development
+process. Picture teams' development pipelines running from local effort on the
+left to production on the right. The local build is the earliest possible
+place to find problems. Earlier work pays for itself in avoiding later work,
+or worse, production issues.
 
 _Treat security as a given_: Development should find security issues as early
-as sensible, in your local builds when sensible; finding these problems in
-production is not best. Customers and business partners only remember when
-security fails.
+as sensible: in your local builds; finding security issues in production is
+not best. Customers and business partners only remember when security fails.
 
-_Bake quality in_: Quality of code and execution are mainstays. Issues in
-production should be rare, and surprising, something usually found earlier in
-the development process. A solid local build is the first step in Quality.
+_Bake quality in_: Quality of code and execution are your mainstays. Issues in
+production should be rare, and surprising, something expected to be found
+earlier in the development process. A solid local build is the first step in
+Quality.
 
 _Use standards when possible_: Standards are industry-tested, and neither new
-team members nor managers are caught by surprise when using standards. Your
-local builds should reuse hard-won industry know-how. Standards lower Cost,
-and raise Quality.
+team members nor managers should be caught by surprise when using standards.
+Your local builds should reuse hard-won industry know-how. Standards lower
+your Cost, raise your Quality, and match your Security to current best
+knowledge.
 
 ## How does the local build reflect these goals?
 
