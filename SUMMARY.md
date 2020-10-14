@@ -15,15 +15,18 @@ Genossenschaft"
 align="right" width="30%" height="auto"/>
 </a>
 
-Getting your teams off on a good footing is one of the key starting points in
-spinning up a new project, and the same advice applies to refurbishing
-existing projects. The most foundational technical component of a project is
-the _local build_. It is so foundational, it is often overlooked, and the
-local build is assumed to be solid. A team's local build should support key
-organization and business goals such as Quality and Security, and provide
-support to developers as they add new business features to a project. And the
-local build should be _fast_: time spent waiting on a local build to finish is
-time not spent by developers where they are experts: programming.
+Getting your teams on a good footing is one of the key goals in spinning up a
+new project. The same advice applies when refurbishing existing projects. The
+most foundational technical component of a project is the _local build_. It is
+so foundational, it is often overlooked. The local build is assumed solid, but
+this is rarely the case. At project start, the local build is usually a
+hodgepodge, just enough to showcase the project start.
+
+Your teams' local builds from the get-go should support key organization and
+business goals such as Maturity, Quality, and Security, and support developers
+as they add new business features, and as you staff a project. And the local
+build should be _fast_: time spent by developers waiting the local build is
+time not spent where they are experts: programming your solution.
 
 To best enable development teams, and most support the business and
 production, follow these guidelines:
