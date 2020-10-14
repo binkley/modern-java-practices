@@ -4,6 +4,7 @@ pluginManagement {
         id "org.unbroken-dome.test-sets" version "$testSetsPluginVersion"
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
+        id "org.owasp.dependencycheck" version "$dependencyCheckPluginVersion"
     }
 }
 

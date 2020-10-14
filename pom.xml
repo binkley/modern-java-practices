@@ -251,6 +251,10 @@
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
                 <version>${dependency-check-maven.version}</version>
+                <configuration>
+                    <failBuildOnAnyVulnerability>true
+                    </failBuildOnAnyVulnerability>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>

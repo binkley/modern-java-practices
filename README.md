@@ -353,7 +353,9 @@ align="right" width="30%" height="auto"/>
 
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
 setup, it runs your build in a "CI-like" local environment via Docker. This is
-one of your first lines of defence against "it runs on my box".
+one of your first lines of defence against "it runs on my box".  
+([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
+space.)
 
 _This is an important step_!  It's closer to your CI builds locally. You
 should strive to keep local as faithful as possible to CI and Production.
@@ -651,9 +653,9 @@ The demonstration builds use these to help you:
   SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
 
-Use checksums and signatures: verify what your project downloads!  When you
-publish for consumption by others: provide MD5 (checksum) files in your
-upload!  Be a good netizen.
+Use checksums and signatures: verify what your build and project downloads!  
+When publishing for consumption by others, provide MD5 (checksum) files in
+your upload: be a good netizen.
 
 * For Gradle, read more at [_Verifying
   dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
@@ -681,6 +683,17 @@ upload!  Be a good netizen.
   ```
   ([Batect](#keep-local-consistent-with-ci)
   and [GitHub Actions](#setup-your-ci) are discussed both above.)
+
+### Dependency check
+
+[DependencyCheck](https://owasp.org/www-project-dependency-check/) is a key
+tool in verifying that your project does not rely on libraries with known
+security issues. However, it does have an impact on local build times.  
+It is smart about caching, but will every few days take time to cache updates
+to the [CVE](https://cve.mitre.org/) list of known insecurities. You may
+consider moving this check to CI if you find local build times adversely
+impacted. Moving these checks to CI is a tradeoff between "shifting security
+left", and local time spent building.
 
 ### Tips
 

@@ -11,6 +11,7 @@ plugins {
     id "com.github.spotbugs"
     id "jacoco"
     id "info.solidsoft.pitest"
+    id "org.owasp.dependencycheck"
 }
 
 version = "0-SNAPSHOT"
@@ -88,14 +89,19 @@ pitest {
     verbose = true
 }
 
-tasks.named("pitest") {
+tasks.named("pitest") { // PITest plugin does not expose task as expected
     dependsOn jacocoTestCoverageVerification
+}
+
+dependencyCheck {
+    failBuildOnCVSS = 0
 }
 
 check {
     dependsOn += jacocoTestCoverageVerification
     dependsOn += "pitest"
     dependsOn += integrationTest
+    dependsOn += dependencyCheckAnalyze
 }
 
 tasks.withType(DependencyUpdatesTask) {
