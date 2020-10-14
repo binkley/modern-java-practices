@@ -15,8 +15,18 @@ Genossenschaft"
 align="right" width="30%" height="auto"/>
 </a>
 
-For development teams to most support the business and production, follow
-these guidelines:
+Getting your teams off on a good footing is one of the key starting points in
+spinning up a new project, and the same advice applies to refurbishing
+existing projects. The most foundational technical component of a project is
+the _local build_. It is so foundational, it is often overlooked, and the
+local build is assumed to be solid. A team's local build should support key
+organization and business goals such as Quality and Security, and provide
+support to developers as they add new business features to a project. And the
+local build should be _fast_: time spent waiting on a local build to finish is
+time not spent by developers where they are experts: programming.
+
+To best enable development teams, and most support the business and
+production, follow these guidelines:
 
 _Get off to a solid start_: Starting from Sprint #1, your teams should use the
 tools to provide value and safety, and speed themselves up: _Technical
