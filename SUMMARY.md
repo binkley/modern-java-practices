@@ -75,9 +75,9 @@ knowledge.
 
 **The key takeaway is to _shift problems left_.**
 
-The build scripts
-[in a demonstration project](https://github.com/binkley/modern-java-practices)
-focus on:
+The build scripts in
+[this demonstration project](https://github.com/binkley/modern-java-practices)
+focus on achieving these goals, with:
 
 * Bootstrapping projects and developers quickly, so teams do not work on
   addressing build shortcomings later on. They should be naturally led towards
