@@ -353,7 +353,7 @@ align="right" width="30%" height="auto"/>
 
 [Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
 setup, it runs your build in a "CI-like" local environment via Docker. This is
-one of your first lines of defence against "it runs on my box".  
+one of your first lines of defence against "it runs on my box".
 ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
 space.)
 
@@ -496,8 +496,8 @@ With Gradle, there is no "right" solution for hygienic versioning.
 
 ### Keep your build fast
 
-A fast local build is one of the best things you can do for your team.  
-There are variants of profiling your build for Gradle and Maven:
+A fast local build is one of the best things you can do for your team. There
+are variants of profiling your build for Gradle and Maven:
 
 * [Gradle build scan](https://scans.gradle.com/) with the `--scan` flag
 * [Maven profiler extension](https://github.com/jcgay/maven-profiler) with
@@ -680,7 +680,7 @@ The demonstration builds use these to help you:
   SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/)
 
-Use checksums and signatures: verify what your build and project downloads!  
+Use checksums and signatures: verify what your build and project downloads!
 When publishing for consumption by others, provide MD5 (checksum) files in
 your upload: be a good netizen.
 
@@ -715,7 +715,7 @@ your upload: be a good netizen.
 
 [DependencyCheck](https://owasp.org/www-project-dependency-check/) is a key
 tool in verifying that your project does not rely on libraries with known
-security issues. However, it does have an impact on local build times.  
+security issues. However, it does have an impact on local build times.
 It is smart about caching, but will every few days take time to cache updates
 to the [CVE](https://cve.mitre.org/) list of known insecurities. You may
 consider moving this check to CI if you find local build times adversely
