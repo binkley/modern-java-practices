@@ -712,7 +712,7 @@ your upload: be a good netizen, and help others trust code downloaded from you
   $ alias mvnw=`./mvnw --strict-checksums`
   ```
   However, for CI, this is easy!  The [Batect configuration](./batect.yml)
-  on the project says:
+  on the demonstration project in this repository says:
   ```yaml
   build-maven:
     description: Build and test with Maven
