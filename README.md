@@ -692,13 +692,14 @@ The demonstration builds use these to help you:
 
 ## Shift security left
 
-* [Find Security Bugs](https://find-sec-bugs.github.io/) &mdash; a plugin for
-  SpotBugs
-* [DependencyCheck](https://owasp.org/www-project-dependency-check/)
+* [Find known code security issues](https://find-sec-bugs.github.io/) &mdash;
+  a plugin for SpotBugs
+* [DependencyCheck](https://owasp.org/www-project-dependency-check/) &mdash;
+  verify your project dependencies against know security issues
 
 Use checksums and signatures: verify what your build and project downloads!
 When publishing for consumption by others, provide MD5 (checksum) files in
-your upload: be a good netizen.
+your upload: be a good netizen, and help others trust code downloaded from you
 
 * For Gradle, read more at [_Verifying
   dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
@@ -740,11 +741,14 @@ local time spent building.
 
 ### Tips
 
-* With GitHub actions, consider adding a tool such
-  as [Dependabot](https://dependabot.com/)
-* Unfortunately, the Gradle ecosystem is not a mature as the Maven one in this
-  regard. For example, if you enable checksum verifications in Gradle, many or
-  most of your plugin and dependency downloads fail
+* See the "Tips" section of [Gradle or Maven](#use-gradle-or-maven)
+* With GitHub actions, consider adding a tool such as
+  [Dependabot](https://dependabot.com/), which automatically files GitHub
+  issues for known dependency vulnerabilities
+* Unfortunately, the Gradle ecosystem is not a mature as the Maven ecosystem
+  for validating plugins/dependencies. For example, if you enable checksum
+  verifications in Gradle, many or most of your plugin and/or dependency
+  downloads may fail
 
 ### TODOs
 
