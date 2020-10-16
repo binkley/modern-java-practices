@@ -516,8 +516,11 @@ are variants of profiling your build for Gradle and Maven:
   [_mutation testing_](#use-mutation-testing)
   can take a while, depending on your project. If you find they slow your team
   local build too much, these are good candidates for moving to
-  [CI-only steps](#setup-your-ci). This project keeps them as part of the
-  local build, as the demonstration code is short
+  [CI-only steps](#setup-your-ci), such as a `-PCI` flag for Maven (see "Tips"
+  section of
+  [Use Gradle or Maven](#use-gradle-or-maven) for Gradle for an equivalent).
+  This project keeps them as part of the local build, as the demonstration
+  code is short
 * See the bottom of [`build.gradle`](./build.gradle) for an example of
   customizing "new" versions reported by the Gradle `dependencyUpdates` task
 * The equivalent Maven approach for controlling the definition of "new" is to
