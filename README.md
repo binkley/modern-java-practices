@@ -403,11 +403,6 @@ flag:
   $ ./batect <your Batect arguments>
   ```
 
-### TODOs
-
-* Image of local-vs-production balance: striving to keep local builds as close
-  to production as possible
-
 ---
 
 ## Maintain your build
@@ -712,7 +707,7 @@ your upload: be a good netizen, and help others trust code downloaded from you
   $ alias mvnw=`./mvnw --strict-checksums`
   ```
   However, for CI, this is easy. The [Batect configuration](./batect.yml)
-  for the demonstration project in this repository says:
+  for the demonstration project says:
   ```yaml
   build-maven:
     description: Build and test with Maven
