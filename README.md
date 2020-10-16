@@ -296,6 +296,13 @@ alphabetical ordering.
   the tooling, separate from the plugin versions. This is intentional. You
   should be able to update the latest tool version even when the plugin has
   not yet caught up
+* Gradle itself does not provide support for "profiles", a key Maven feature.
+  Profiles can be used in many ways, the most common is to enable/disable
+  build features on the command line, or tailor a build to a particular
+  deployment environment. If this feature is important for your team, you can
+  code `if/else` blocks directly in `build.gradle`, or use a plugin such as
+  [Kordamp Profiles Gradle plugin](https://kordamp.org/kordamp-gradle-plugins/#_org_kordamp_gradle_profiles)
+  (Kordamp has a suite of interesting Gradle plugins beyond this one)
 * Gradle uses advanced terminal control, so you cannot always see what is
   happening. To view Gradle steps plainly when debugging your build, use:
   ```
