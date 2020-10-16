@@ -44,7 +44,7 @@ or contribute PRs!  I'd love a conversation with you.
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Setup your CI](#setup-your-ci)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
-* [Keep build current](#keep-build-current)
+* [Maintain your build](#maintain-your-build)
 * [Generate code](#generate-code)
 * [Use linting](#use-linting)
 * [Use static code analysis](#use-static-code-analysis)
@@ -403,7 +403,25 @@ flag:
 
 ---
 
-## Keep build current
+## Maintain your build
+
+Treat your build as you would your codebase: Maintain it, refactor as needed,
+run performance testing, _et al_.
+
+### Know what your build does
+
+What does your build do exactly, and in what order? You can ask Gradle or
+Maven to find out:
+
+* [Gradle Task Tree plugin](https://github.com/dorongold/gradle-task-tree)
+  with `./gradlew some...tasks taskTree`
+* [Maven Buildplan plugin](https://buildplan.jcgay.fr/)
+  with `./mvnw buildplan:list` (see plugin documentation for other goals and
+  output format)
+
+Each of these have many options and features, and are worth exploring.
+
+### Keep your build current
 
 An important part of _build hygiene_ is keeping your build system, plugins,
 and dependencies up to date. This might be simply to address bug fixes
@@ -475,6 +493,15 @@ $ ./gradlew wrapper  # Confirm
 ```
 
 With Gradle, there is no "right" solution for hygienic versioning.
+
+### Keep your build fast
+
+A fast local build is one of the best things you can do for your team.  
+There are variants of profiling your build for Gradle and Maven:
+
+* [Gradle build scan](https://scans.gradle.com/) with the `--scan` flag
+* [Maven profiler extension](https://github.com/jcgay/maven-profiler) with
+  the `-Dprofile` flag L
 
 ### Tips
 
