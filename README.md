@@ -364,7 +364,7 @@ one of your first lines of defence against "it runs on my box".
 ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
 space.)
 
-_This is an important step_!  It's closer to your CI builds locally. You
+_This is an important step_!  It is closer to your CI builds locally. You
 should strive to keep local as faithful as possible to CI and Production.
 
 You would not run Batect in your CI pipeline itself: use GitHub Actions
@@ -402,6 +402,9 @@ flag:
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
   ```
+* The Batect builds _assume_ you've run local builds first.  Plesae run
+  `./gradlew build` or `./mvnw verify` at least once before running
+  `./batect ...` to ensure cached/shared downloads are present
 
 ---
 
