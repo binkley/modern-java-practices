@@ -12,7 +12,7 @@
     <properties>
         <!-- @formatter:off -->
         <assertj.version>3.17.2</assertj.version>
-        <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+        <buildplan-maven-plugin.version>1.4</buildplan-maven-plugin.version>
         <checkstyle.version>8.36.2</checkstyle.version>
         <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
         <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
@@ -92,6 +92,11 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${maven-versions-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>fr.jcgay.maven.plugins</groupId>
+                <artifactId>buildplan-maven-plugin</artifactId>
+                <version>${buildplan-maven-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
