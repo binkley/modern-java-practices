@@ -9,6 +9,28 @@
     <artifactId>modern-java-practice-maven</artifactId>
     <version>0-SNAPSHOT</version>
 
+    <name>Modern JAva/JVM build practices</name>
+    <description>
+        Advice on Modern Java/JVM Gradle and Maven builds
+    </description>
+    <url>https://github.com/binkley/modern-java-practices</url>
+    <licenses>
+        <license>
+            <name>Public Domain</name>
+            <url>https://unlicense.org/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/binkley/modern-java-practices/issues</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:git:git://github.com/binkley/modern-java-practices
+        </connection>
+        <url>https://github.com/binkley/modern-java-practices</url>
+    </scm>
+
     <properties>
         <!-- @formatter:off -->
         <assertj.version>3.17.2</assertj.version>
