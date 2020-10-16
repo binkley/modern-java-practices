@@ -3,6 +3,7 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     id "build-dashboard"
     id "project-report"
+    id "com.dorongold.task-tree"
     id "com.github.ben-manes.versions"
     id "java"
     id "org.unbroken-dome.test-sets"
@@ -106,7 +107,7 @@ check {
 
 tasks.withType(DependencyUpdatesTask) {
     rejectVersionIf {
-        !isStable(candidate.version) && isStable(currentVersion)
+        !isStable(it.candidate.version) && isStable(it.currentVersion)
     }
 }
 
@@ -115,13 +116,11 @@ wrapper {
     distributionType = "ALL"
 }
 
-def otherReleasePatterns = ~'^[0-9,.v-]+(-r)?$'
-
 def isStable(version) {
-    val stableKeyword = listOf "RELEASE", "FINAL", "GA".any {
-        version.toUpperCase.contains(it)
+    def stableKeyword = ["RELEASE", "FINAL", "GA"].any {
+        version.toUpperCase().contains(it)
     }
-    val otherReleasePattern = version ==~ otherReleasePatterns
+    def otherReleasePattern = version ==~ '^[0-9,.v-]+(-r)?$'
 
     return stableKeyword || otherReleasePattern
 }

@@ -1,10 +1,11 @@
 pluginManagement {
     plugins {
+        id "com.dorongold.task-tree" version "$taskTreePluginVersion"
         id "com.github.ben-manes.versions" version "$versionsPluginVersion"
-        id "org.unbroken-dome.test-sets" version "$testSetsPluginVersion"
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
         id "org.owasp.dependencycheck" version "$dependencyCheckPluginVersion"
+        id "org.unbroken-dome.test-sets" version "$testSetsPluginVersion"
     }
 }
 
