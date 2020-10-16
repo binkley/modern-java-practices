@@ -501,10 +501,16 @@ are variants of profiling your build for Gradle and Maven:
 
 * [Gradle build scan](https://scans.gradle.com/) with the `--scan` flag
 * [Maven profiler extension](https://github.com/jcgay/maven-profiler) with
-  the `-Dprofile` flag L
+  the `-Dprofile` flag
 
 ### Tips
 
+* Both [_dependency vulnerability checks_](#dependency-check) and
+  [_mutation testing_](#use-mutation-testing)
+  can take a while, depending on your project. If you find they slow your team
+  local build too much, these are good candidates for moving to
+  [CI-only steps](#setup-your-ci). This project keeps them as part of the
+  local build, as the demonstration code is short
 * See the bottom of [`build.gradle`](./build.gradle) for an example of
   customizing "new" versions reported by the Gradle `dependencyUpdates` task
 * The equivalent Maven approach for controlling the definition of "new" is to
@@ -715,12 +721,12 @@ your upload: be a good netizen.
 
 [DependencyCheck](https://owasp.org/www-project-dependency-check/) is a key
 tool in verifying that your project does not rely on libraries with known
-security issues. However, it does have an impact on local build times.
-It is smart about caching, but will every few days take time to cache updates
-to the [CVE](https://cve.mitre.org/) list of known insecurities. You may
-consider moving this check to CI if you find local build times adversely
-impacted. Moving these checks to CI is a tradeoff between "shifting security
-left", and local time spent building.
+security issues. However, it does have an impact on local build times. It is
+smart about caching, but will every few days take time to cache updates to
+the [CVE](https://cve.mitre.org/) list of known insecurities. You may consider
+moving this check to CI if you find local build times adversely impacted.
+Moving these checks to CI is a tradeoff between "shifting security left", and
+local time spent building.
 
 ### Tips
 
