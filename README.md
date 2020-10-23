@@ -318,6 +318,10 @@ alphabetical ordering.
   text console output
 * If you like Maven, but XML isn't your thing, you might explore the
   [_Polyglot for Maven_](https://github.com/takari/polyglot-maven) extension
+* If you have a multi-module Maven build, you might consider
+  [_Takari Smart
+  Builder_](http://takari.io/book/30-team-maven.html#takari-smart-builder)
+  to speed it up
 
 ---
 
@@ -402,7 +406,7 @@ flag:
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
   ```
-* The Batect builds _assume_ you've run local builds first.  Plesae run
+* The Batect builds _assume_ you've run local builds first. Plesae run
   `./gradlew build` or `./mvnw verify` at least once before running
   `./batect ...` to ensure cached/shared downloads are present
 
