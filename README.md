@@ -801,6 +801,19 @@ To see the coverage report (on passed or failed coverage), open:
 * Unfortunately neither Gradle's nor Maven's JaCoCo plugin will fail your
   build when coverage _rises_!  This would be helpful for supporting the
   coverage ratchet
+* You may find _mocking_ helpful for injection. The Java community is not of
+  one mind on mocking, so use your judgment
+    * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
+      dependency for the sample projects
+    * [PowerMock](https://powermock.github.io/) provides additional features;
+      however, Mockito normally covers use cases
+    * Other JVM languages &mdash; other JVM languages may have different
+      popular mocking libraries, _eg_, [MockK](https://mockk.io/) for Kotlin
+    * You might consider complementary libraries to Mockito for specific
+      circumstances, _eg_,
+      [System Lambda](https://github.com/stefanbirkner/system-lambda)
+      for checking STDOUT and STDERR (such as validating logging), also a
+      dependency for the sample projects
 
 ---
 
