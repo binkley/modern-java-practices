@@ -64,13 +64,13 @@ align="right" width="30%" height="auto"/>
 ## Introduction
 
 Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
-project (Kotlin, Scala, Clojure, Groovy, JRuby, _et al_), this article is for
+project (Clojure, Groovy, JRuby, Kotlin, Scala, _et al_), this article is for
 you.
 
 This article's goal is to highlight and provide guidance for building modern
 Java/JVM projects with Gradle or Maven. The article focuses on Java, but most
-points apply to _any_ JVM language build (I use them for my personal Kotlin
-projects).
+points apply to _any_ JVM language build (I use the demonstration builds for
+my personal projects).
 
 (See the wheel to the right?  _No, you do not need to be agile!_  This article
 is for _you_ regardless of how your project approaches software. The point is
@@ -555,7 +555,7 @@ When sensible, prefer to generate rather than write code. Here's why:
 Note that many features for which in Java one would use code generation
 (_eg_, Lombok's [`@Getter`](https://projectlombok.org/features/GetterSetter)
 or [`@ToString`](https://www.projectlombok.org/features/ToString)), can be
-built-in language features in other languages such as Kotlin (_eg_,
+built-in language features in other languages such as Kotlin or Scala (_eg_,
 [properties](https://kotlinlang.org/docs/reference/properties.html)
 or [data classes](https://kotlinlang.org/docs/reference/data-classes.html)).
 
@@ -669,18 +669,21 @@ with the addition of support for `@SuppressWarnings(checkstyle:...)`.
 
 ## Use static code analysis
 
-Important in your build is _static code analysis_. This is analysis of your
+_Static code analysis_ is important in your build. This is analysis of your
 source and compiled bytecode which finds known
 [issues](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html)
 ranging among other things:
 
 * Idioms that your team finds poor or hard to read
-* Dangerous anti-patterns (_eg_, missing `null` checks)
+* Dangerous anti-patterns (_eg_, missing `null` checks in Java; your language
+  may aid you in this, _eg_, Kotlin or Scala)
 * Insecure code (see [Shift security left](#shift-security-left))
-* Outdated code use (_eg_, Java 5 patterns better expressed with Java 11
-  improvements)
+* Use of outdated code patterns (_eg_, Java 5 patterns might be better
+  expressed with Java 11 improvements)
+* [Fail your build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
+  if issues are detected
 
-The demonstration builds use these to help you:
+The Gradle and Maven demonstration builds use these to help you:
 
 * [PMD](https://pmd.github.io/latest/)
 * [SpotBugs](https://spotbugs.github.io/)
