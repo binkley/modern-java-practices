@@ -812,8 +812,12 @@ To see the coverage report (on passed or failed coverage), open:
     * You might consider complementary libraries to Mockito for specific
       circumstances, _eg_,
       [System Lambda](https://github.com/stefanbirkner/system-lambda)
-      for checking STDOUT and STDERR (such as validating logging), also a
-      dependency for the sample projects
+      for checking STDOUT and STDERR, program exits, and use of system
+      properties (_eg_, validate logging), also a dependency for the sample
+      projects.  (*NB* &mdash; these are generally not parallelizable tests as
+      they alter the state of the JVM. If you need these, be cautious about
+      using parallel testing features, and avoiding
+      [Flaky Tests](https://hackernoon.com/flaky-tests-a-war-that-never-ends-9aa32fdef359))
 
 ---
 
