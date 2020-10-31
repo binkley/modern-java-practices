@@ -40,6 +40,12 @@ dependencies {
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
 test {
     // NB -- JaCoCo draws from _unit tests_, not integration tests
     // When tests fail, you still have a coverage report
