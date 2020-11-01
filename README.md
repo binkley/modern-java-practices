@@ -21,7 +21,7 @@ _best build practices_ and _project hygiene_. There are two recurring themes:
   hand
 
 For a non-programmer _high-level_ overview, please see the
-[executive summary](./SUMMARY.md), in progress.  (This is what I would present
+[Executive Summary](./SUMMARY.md), in progress.  (This is what I would present
 to non-programmer managers on the value of work that programmers put into the
 build, and why this work improves their business outcomes.)
 
