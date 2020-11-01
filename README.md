@@ -188,6 +188,8 @@ existing project:
 
 * Fill out an article section on Git setup, and automated hooks
 * Address multi-module repositories
+* Seek out and pull in more
+  ["in the field" advice](https://github.com/batect/batect/issues/706)
 
 ---
 
