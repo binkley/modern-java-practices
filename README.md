@@ -10,12 +10,20 @@ align="right"/>
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
-with sample builds for _Gradle and Maven_, and a focus on hygiene and best
-build practices.  _Shift problems left_: Find issues earlier in your
-development cycle, before they happen in production.
+with sample builds for
+[_Gradle_](https://docs.gradle.org/current/userguide/userguide.html) and
+[_Maven_](https://maven.apache.org/what-is-maven.html). The article focuses on
+_best build practices_ and _project hygiene_. There are two recurring themes:
+
+* _Shift problems left_ &mdash; Find build issues earlier in your development
+  cycle, before they happen in production
+* _Make developer life easier_ &mdash; Automate build tasks commonly done by
+  hand
 
 For a non-programmer _high-level_ overview, please see the
-[executive summary](./SUMMARY.md) (in progress).
+[executive summary](./SUMMARY.md), in progress.  (This is what I would present
+to non-programmer managers on the value of work that programmers put into the
+build, and why this work improves their business outcomes.)
 
 Try out the Gradle and Maven builds:
 
