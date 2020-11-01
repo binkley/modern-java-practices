@@ -3,6 +3,8 @@
 align="right"/>
 </a>
 
+**Summary**: _Your teams' builds impact the business and organization_
+
 # Getting more from your team builds
 
 **TODO**: Tidy up the reference. Right now it is just "hanging out"
@@ -18,37 +20,41 @@ align="right" width="30%" height="auto"/>
 </a>
 
 Getting your teams off to a good start is one of the key goals in spinning up
-a new project. The same advice applies when refurbishing existing projects.
+a new project. The same advice applies to refurbishing existing projects.
+
 The most foundational technical component of a project is the _local build_.
-It is so foundational, it is often overlooked. The local build is how your
-developers trust the work they do before sharing it with the rest of the team,
-or other outside teams. That the local build is "solid" is assumed, but this
-is sometimes not the case, and it leaves the team in a confused state. Many
-times at project start, the local build is a hodgepodge of "it worked on my
-machine", which is just enough to showcase the project start, but not a firm
-foundation for growing a project to success.
+It is so foundational, it is often overlooked even when it holds back faster
+delivery.
 
-Your teams' local builds from the get-go should support key organization and
-business goals such as Maturity, Quality, and Security, and support developers
-as they add new business features, and as you staff a project. And the local
-build should be _fast_: time spent by developers waiting the local build is
-time not spent where they are experts: programming your solution.
+The local build is how your developers come to trust the work they do before
+sharing it with the rest of the team, or with other outside teams. That the
+local build is "solid" is assumed by everyone, but when the local build is on
+poor foundations, it leaves the project team &mdash; and others &mdash; in a
+confused state. Often at project start, the local build is a hodgepodge of "it
+worked on my machine": enough to showcase project start, but with unexplained
+local pitfalls along the path to success as work proceeds.
 
-To get the most from development teams, and most support the business and
-production, follow these guidelines:
+Your teams' local builds from the outset should support key organization and
+business goals such as Features, Maturity, Quality, and Security, and enhance
+team productivity as developers add new business features.
 
-_Get off to a solid start_: Starting from Sprint #1, your teams should use the
-tools that provide value and safety, and speed themselves up: _Technical
-excellence_ matters. The local build is the _first_ thing that teams provide.
-Teams should be able to discuss how the local build makes your goals, and meet
-organization goals.
+This article addresses concerns of team local Java/JVM builds with a focus on
+organization and business value. To get the most from productive development
+teams, reuse of projects, and support of business and production, the general
+goals are:
 
-_Avoid later slowdowns_: Avoid
-[technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
-from the start, before it has a chance to build up. Technical debt is a major
-factor in slowing down new work. The local build is one of the keys to
-achieving this: _The local build is your first firewall in ensuring issues do
-not reach production_.
+* _Get off to a solid start_: Starting from the first Sprint, use the tools
+  that provide value and safety, and speed up developers:
+  _Technical excellence_ matters. The local build is the _first_ thing that
+  teams provide. The local build should let teams discuss how they reach
+  functional and non-functional organization and business goals
+
+* _Avoid later slowdowns_: Avoid
+  [technical debt](https://www.martinfowler.com/bliki/TechnicalDebt.html)
+  from the start, before it has a chance to build up. Technical debt is a
+  major factor in slowing down new work. The local build is one of the keys to
+  achieving this: _The local build is your first firewall in ensuring issues
+  do not reach production_, and that "nuisances" do not grow into issues
 
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
@@ -56,15 +62,16 @@ title="On Pipelines">
 align="right" width="30%" height="auto"/>
 </a>
 
-_Shift problems left_:  Simply put, find problem _earlier_ in the development
-process. Picture teams' development pipelines running from local effort on the
-left to production on the right. The local build is the earliest possible
-place to find problems. Earlier work pays for itself in avoiding later work,
-or worse, production issues.
+* _Shift problems left_:  Simply put, find problem _earlier_ in the
+  development process. Picture teams' development pipelines running from local
+  effort on the left to production on the right. The local build is the
+  earliest possible place to find problems. Earlier work pays for itself in
+  avoiding later work, or worse, production issues
 
-_Treat security as a given_: Development should find security issues as early
-as sensible: in your local builds; finding security issues in production is
-not best. Customers and business partners only remember when security fails.
+* _Treat security as a given_: Developers should find security issues as early
+  as sensible: in local builds on their machines. Finding security issues in
+  production can be problematic at best, catastrophic at worst. Customers and
+  business partners only remember when security fails, not when it works
 
 <a href="https://martinfowler.com/bliki/TestPyramid.html"
 title="TestPyramid">
@@ -72,16 +79,31 @@ title="TestPyramid">
 align="right" width="20%" height="auto"/>
 </a>
 
-_Bake quality in_: Quality of code and execution are your mainstays. Issues in
-production should be rare, and surprising, something expected to be found
-earlier in the development process. A solid local build is the first step in
-Quality.
+* _Bake quality in_: Quality of code and execution are your mainstays. Issues
+  in production should be rare, and unexpected, something you want found early
+  in the development process (something "shifted left"). A solid local build
+  is the first step in Quality, with local builds failing for bugs when
+  possible while it is the cheapest to find and fix
 
-_Use standards when possible_: Standards are industry-tested, and neither new
-team members nor managers should be caught by surprise when using standards.
-Your local builds should reuse hard-won industry know-how. Standards lower
-your Cost, raise your Quality, and match your Security to current best
-knowledge.
+* _Use standards and industry conventions when possible_: Standards and
+  industry conventions are "battle tested", and neither new team members nor
+  managers should be caught by surprise in reviewing your project's code when
+  using standards. In other words, avoid reimplementations of existing work.
+  Your local builds should reuse hard-won industry know-how. Standards lower
+  your Cost, raise your Quality, and match your Security to current best
+  knowledge  **TODO: Narrow this point to the _build_**
+
+## Is this advice for you?
+
+If your teams are individual or cross-team Java/JVM projects, the answer is
+_Yes_.
+
+If, for example, you are in an organization using a
+large [monorepo](https://en.wikipedia.org/wiki/Monorepo) approach with build
+tools such as [Bazel](https://www.bazel.build/), the answer is _Maybe_.  
+In this case, you should be aware of the technical changes resulting from the
+monorepo approach, and much of this advice _still_ applies: ask your technical
+leadership to evaluate and adjust accordingly.
 
 ## How does the local build reflect these goals?
 
