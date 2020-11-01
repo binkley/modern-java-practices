@@ -187,6 +187,7 @@ existing project:
 ### TODOs
 
 * Fill out an article section on Git setup, and automated hooks
+* Address multi-module repositories
 
 ---
 
