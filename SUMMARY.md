@@ -5,6 +5,8 @@ align="right"/>
 
 # Getting more from your team builds
 
+**TODO**: Tidy up the reference. Right now it is just "hanging out"
+
 <a
 href="https://flowdays.net/de/blog-de/2016/2/23/the-rfp-is-dead-meet-the-lean-proposal-canvas"
 title="Der RFP ist tot: Hallo Lean-Agile Evaluation &mdash; flowdays - Die
