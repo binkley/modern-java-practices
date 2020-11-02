@@ -33,13 +33,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Set up JDK
-        uses: actions/setup-java@master
-        with:
-          java-version: 11
-
       - name: Build and test with Gradle
-        run: ./gradlew build
+        run: ./batect build-gradle
 
       - name: Build and test with Maven
-        run: ./mvnw --strict-checksums verify
+        run: ./batect build-maven
