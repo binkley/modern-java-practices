@@ -327,12 +327,17 @@ alphabetical ordering.
   ```
   $ ./gradlew <your tasks> | tee -o some-file
   ```
+* If your source code is in Kotlin, so should be your build. Gradle provides
+  [a Kotlin DSL for build scripts](https://kotlinlang.org/docs/reference/using-gradle.html)
+  as a first-class counterpart to the traditional Groovy DSL
 * Maven colorizes output, but does not use terminal control to overwrite
   output
 * See [Setup your CI](#setup-your-ci) for another approach to getting plain
   text console output
 * If you like Maven, but XML isn't your thing, you might explore the
   [_Polyglot for Maven_](https://github.com/takari/polyglot-maven) extension
+  which provides the POM in multiple languages/formats (_eg_, Ruby, YAML, many
+  others)
 * If you have a multi-module Maven build, you might consider
   [_Takari Smart
   Builder_](http://takari.io/book/30-team-maven.html#takari-smart-builder)
