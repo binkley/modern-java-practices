@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
+      - name: Clone repository
+        uses: actions/checkout@master
 
-      - uses: actions/cache@master
+      - name: Restore Gradle caches
+        uses: actions/cache@master
         env:
           cache-name: gradle-cache
         with:
@@ -22,7 +24,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - uses: actions/cache@master
+      - name: Restore Maven caches
+        uses: actions/cache@master
         env:
           cache-name: maven-cache
         with:
@@ -33,7 +36,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - uses: actions/cache@master
+      - name: Restore Batect caches
+        uses: actions/cache@master
         env:
           cache-name: batect-cache
         with:
