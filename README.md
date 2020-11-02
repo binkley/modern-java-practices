@@ -391,11 +391,8 @@ space.)
 _This is an important step_!  It is closer to your CI builds locally. You
 should strive to keep local as faithful as possible to CI and Production.
 
-**Do not run Batect in your CI pipeline directly**: use GitHub Actions
-(or GitLab equivalent). Batect is for your local build.  (This is the
-classic "Docker in Docker" issue,
-and [there are ways address this](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
-, if it is important for your team.)
+See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
+for documentation on using Batect from within a dockerized CI environment.
 
 **NB** &mdash; local Batect and GitHub Actions CI are not strictly identical.
 For example, the sample [`ci.yml` for GitHub](./.github/workflows/ci.yml)
