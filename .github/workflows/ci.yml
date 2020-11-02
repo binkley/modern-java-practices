@@ -1,6 +1,6 @@
 name: build
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:
@@ -28,6 +28,17 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - uses: actions/cache@master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
