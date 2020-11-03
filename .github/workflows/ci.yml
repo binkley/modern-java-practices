@@ -36,18 +36,6 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Restore Docker caches  # Batect pulls down a Docker build image
-        uses: actions/cache@master
-        env:
-          cache-name: docker-cache
-        with:
-          path: /var/lib/docker
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.docker-cache') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
       - name: Restore Batect caches
         uses: actions/cache@master
         env:
