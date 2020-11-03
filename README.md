@@ -422,7 +422,9 @@ flag:
   container (`batect.yml` mounts your `~/.gradle` to include caches of
   already-downloaded dependencies, _et al_)
 * If you encounter troubles, run locally `./gradlew --stop` to kill any local
-  daemons: This indicates a _bug_, and "stop" is a workaround
+  daemons: This indicates a _bug_, and "stop" is a workaround.
+  See [a suggestion of a better approach](https://github.com/batect/batect/issues/680#issuecomment-719821099)
+  .
 
 ### Tips
 
