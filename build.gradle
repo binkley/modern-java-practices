@@ -90,7 +90,7 @@ jacocoTestCoverageVerification {
 
 pitest {
     // TODO: Teach pitest to ignore Lombok code
-    coverageThreshold = 38
+    coverageThreshold = 75
     junit5PluginVersion = pitestJUnit5PluginVersion
     mutationThreshold = 100
     timestampedReports = false

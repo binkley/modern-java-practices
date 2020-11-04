@@ -235,7 +235,7 @@
                 <version>${pitest-maven.version}</version>
                 <configuration>
                     <!-- TODO: Teach pitest to ignore Lombok code -->
-                    <coverageThreshold>38</coverageThreshold>
+                    <coverageThreshold>75</coverageThreshold>
                     <jvmArgs>
                         <jvmArg>-XX:TieredStopAtLevel=1</jvmArg>
                     </jvmArgs>
