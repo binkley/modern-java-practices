@@ -511,6 +511,10 @@ consider doing the same:
 * [`build.gradle`](./build.gradle) uses plugins without needing version
   numbers, and dependencies refer to their property versions
 
+The benefits of this approach grow for Gradle multi-project projects, where
+you may have plugin and dependency versions scattered across each
+`build.gradle` file for you project and subprojects.
+
 So to adjust a version, edit `gradle.properties`. To see this approach in
 action for dependencies, try:
 
