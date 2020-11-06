@@ -38,7 +38,8 @@ $ ./batect build-maven  # Reproduce CI, such as GitHub Actions
 # Output ommitted
 ```
 
-**NB** &mdash; This is a _living document_, updated to stay fresh.
+**NB** &mdash; This is a _living document_. Please see [Changelog](#changelog)
+for recent substantive changes.
 
 ### Contributing
 
@@ -65,6 +66,7 @@ or contribute PRs!  I'd love a conversation with you.
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
 * [Going further](#going-further)
+* [Changelog](#changelog)
 
 ---
 
@@ -1021,3 +1023,7 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 * [_Why test the user
   journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
+
+## Changelog
+
+* 2020-11-06 -- Call out Gradle issue with `toolVersion` property
