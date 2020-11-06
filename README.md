@@ -535,6 +535,23 @@ $ ./gradlew wrapper  # Confirm
 
 With Gradle, there is no "right" solution for hygienic versioning.
 
+#### Note on `toolVersion` property
+
+If you use the `toolVersion` property for a plugin to update the called tool
+separately from the plugin itself, _this is a convention_, not something the
+Gradle API provides to plugins. As a consequence, the Versions plugin is
+unable to know if your tool version is out of date. An example is the JaCoCo
+plugin distributed with Gradle.
+
+Two options:
+
+- Do not use the `toolVersion` property unless needed to address a discovered
+  build issue, and remove it once the plugin catches up to provide the tool
+  version you need
+- Continue using the `toolVersion` property, and as part of running
+  `./gradlew dependencyUpdates`, manually check all `toolVersion`
+  properties, and update `gradle.properties` as accordingly
+
 ### Keep your build fast
 
 A fast local build is one of the best things you can do for your team. There
