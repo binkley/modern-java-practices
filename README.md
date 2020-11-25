@@ -59,6 +59,7 @@ or contribute PRs!  I'd love a conversation with you.
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
 * [Maintain your build](#maintain-your-build)
 * [Generate code](#generate-code)
+* [Leverage the compiler](#leverage-the-compiler)
 * [Use linting](#use-linting)
 * [Use static code analysis](#use-static-code-analysis)
 * [Shift security left](#shift-security-left)
@@ -665,6 +666,35 @@ Lines:
 
 ---
 
+## Leverage the compiler
+
+Compilers targeting the JVM generally provide warning flags for dodgy code,
+and a flag to turn warnings into errors: Use them. The compiler is your first
+line of defense against code issues.
+
+For example, with `javac`, add these compiler flags:
+
+* `-Werror` -- turns warnings into errors, and fails the build
+* `-Xlint:all,-processing` -- enables all warnings except for annotation
+  processing
+
+Be judicious in disabling compiler warnings: they usually warn you for good
+reason. For `javac`, disabled warnings might include `serial` or
+`deprecation`.
+
+Most JVM compilers support `-Werror` (_eg_, `kotlinc`, `scalac`, _et al_);
+enabling/disabling specific warnings compiler-specific.
+
+### Tips
+
+Lombok annotation processing fails `-Xlint:all`. Use `-Xlint:all,-processing`
+to bypass warnings about annotation processing. In addition, using Lombok's
+configuration to add suppression annotations on generated code (so other tools
+will ignore generated code) needs the older Spotbugs annotations provided by a
+dependency.
+
+---
+
 ## Use linting
 
 "Linting" is static code analysis with an eye towards style and dodgy code
@@ -1026,4 +1056,5 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Changelog
 
+* 2020-11-25 -- Leverage the compiler
 * 2020-11-06 -- Call out Gradle issue with `toolVersion` property

@@ -37,6 +37,7 @@
         <buildplan-maven-plugin.version>1.4</buildplan-maven-plugin.version>
         <checkstyle.version>8.36.2</checkstyle.version>
         <dependency-check-maven.version>6.0.2</dependency-check-maven.version>
+        <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
@@ -75,6 +76,12 @@
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-annotations</artifactId>
             <version>${spotbugs.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>findbugs-annotations</artifactId>
+            <version>${findbugs-annotations.version}</version>
             <optional>true</optional>
         </dependency>
 
@@ -131,6 +138,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <compilerArgs>
+                        <arg>-Xlint:all,-processing</arg>
+                    </compilerArgs>
+                    <failOnWarning>true</failOnWarning>
                     <source>${java.version}</source>
                     <release>${java.version}</release>
                 </configuration>

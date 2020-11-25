@@ -27,9 +27,11 @@ dependencies {
     compileOnly "org.projectlombok:lombok:$lombokVersion"
     annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
+    compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
     testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
@@ -44,6 +46,10 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(11))
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ['-Werror', '-Xlint:all,-processing']
 }
 
 test {
