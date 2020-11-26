@@ -157,6 +157,8 @@ existing project:
       your project to others.
       Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
       with communication!
+* Pick a version of Java, and stick to it throughout your local build, CI
+  pipeline, and environment deployments. _Do not mix versions._
 * Pick **Gradle** or **Maven**, and use only one. This project provides both
   to demonstrate equivalent builds for each.
   See [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
@@ -230,6 +232,14 @@ recommend in production.
 
 In general, you will find that [AdoptOpenJDK](https://adoptopenjdk.net/)
 is a go-to choice for obtaining the JDK.
+
+### Tips
+
+* In Maven, use a property to _fix_ the version of Java in place. But note
+  naming for that property: `java.version` is defined by the JVM, and Maven
+  creates a matching property. Recommended is to define your Java version with
+  the `jdk.version` property, which has no collision with pre-defined
+  properties.
 
 ### Managing your Java environment
 
