@@ -1066,5 +1066,6 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Changelog
 
+* 2020-11-27 -- Run CI for pull requests in addition to pushes
 * 2020-11-25 -- Leverage the compiler
 * 2020-11-06 -- Call out Gradle issue with `toolVersion` property
