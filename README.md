@@ -797,18 +797,27 @@ Use checksums and signatures: verify what your build and project downloads!
 When publishing for consumption by others, provide MD5 (checksum) files in
 your upload: be a good netizen, and help others trust code downloaded from you
 
-* For Gradle, read more at [_Verifying
-  dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
-* For Maven, _always_ run with the `--strict-checksums` (or `-C`) flag. See
-  [_Maven Artifact Checksums -
-  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for
-  more information. This is easy to forget about at the local command line. An
-  alias helps:
+### Gradle
+
+Read more at [_Verifying
+dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
+.
+
+### Maven
+
+_Always_ run with the `--strict-checksums` (or `-C`) flag. See
+[_Maven Artifact Checksums -
+What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for
+more information. This is easy to forget about at the local command line. An
+alias helps:
+
   ```
   $ alias mvnw=`./mvnw --strict-checksums`
   ```
-  However, for CI, this is easy. The [Batect configuration](./batect.yml)
-  for the demonstration project says:
+
+However, for CI, this is easy. The [Batect configuration](./batect.yml)
+for the demonstration project says:
+
   ```yaml
   build-maven:
     description: Build and test with Maven
@@ -816,13 +825,16 @@ your upload: be a good netizen, and help others trust code downloaded from you
       container: build-env
       command: ./mvnw --strict-checksums clean verify
   ```
-  and the GitHub action says:
+
+and the GitHub action says:
+
   ```yaml
   - name: Build and test with Maven
     run: ./mvnw --strict-checksums verify
   ```
-  ([Batect](#keep-local-consistent-with-ci)
-  and [GitHub Actions](#setup-your-ci) are discussed both above.)
+
+([Batect](#keep-local-consistent-with-ci)
+and [GitHub Actions](#setup-your-ci) are discussed both above.)
 
 ### Dependency check
 
@@ -834,6 +846,9 @@ the [CVE](https://cve.mitre.org/) list of known insecurities. You may consider
 moving this check to CI if you find local build times adversely impacted.
 Moving these checks to CI is a tradeoff between "shifting security left", and
 local time spent building.
+
+**This project fails the build if finding any CVEs for the current version of
+any dependency.**
 
 ### Tips
 
