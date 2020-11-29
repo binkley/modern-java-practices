@@ -565,6 +565,8 @@ Two options:
   `./gradlew dependencyUpdates`, manually check all `toolVersion`
   properties, and update `gradle.properties` as accordingly
 
+**NB** &mdash; Maven handles this differently, and does not have this concern.
+
 ### Keep your build fast
 
 A fast local build is one of the best things you can do for your team. There
