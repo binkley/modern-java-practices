@@ -9,8 +9,8 @@ on:
       - README.md
 
 jobs:
-  build:
-    name: Builds and tests for Gradle and Maven
+  build-gradle:
+    name: Builds and tests for Gradle
     runs-on: ubuntu-latest
 
     steps:
@@ -29,6 +29,29 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
+      - name: Restore Batect caches
+        uses: actions/cache@master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Build and test with Gradle
+        run: ./batect build-gradle
+
+  build-maven:
+    name: Builds and tests for Maven
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@master
 
       - name: Restore Maven caches
         uses: actions/cache@master
@@ -53,9 +76,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
-      - name: Build and test with Gradle
-        run: ./batect build-gradle
 
       - name: Build and test with Maven
         run: ./batect build-maven
