@@ -1110,6 +1110,11 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Why is my local build slow?
 
+<a href="https://xkcd.com/303/" title="Compiling">
+<img src="./images/compiling.png" alt="Compiling" align="right" 
+width="30%" height="auto"/>
+</a>
+
 Both Gradle and Maven have tools to track performance time of steps in your
 build:
 
@@ -1121,11 +1126,6 @@ build:
   project includes the setup for [Maven extensions](.mvn/extensions.xml).
 
 ### My local build is too slow
-
-<a href="https://xkcd.com/303/" title="Compiling">
-<img src="./images/compiling.png" alt="Compiling" align="right" 
-width="30%" height="auto"/>
-</a>
 
 Congratulations!  You care, and you notice what is happening for your team.  
 Local build time is _important_: gone are the days when a multi-hour, or even
