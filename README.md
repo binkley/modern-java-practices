@@ -67,6 +67,7 @@ or contribute PRs!  I'd love a conversation with you.
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
 * [Going further](#going-further)
+* [Problems](#problems)
 * [Changelog](#changelog)
 
 ---
@@ -1095,6 +1096,31 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 * [_Why test the user
   journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
+
+## Problems
+
+### My local build is too slow
+
+<a href="https://xkcd.com/303/" title="Compiling">
+<img src="./images/compiling.png" alt="Compiling" align="right" 
+width="30%" height="auto"/>
+</a>
+
+Congratulations!  Local build time is _important_: gone are the days when a
+multi-hour, or even 30+ minute build, are viewed in most cases as the
+"cost of doing business". And "compiling" is rarely any longer where your
+project takes most local build time.
+
+If you find your local build is taking too long, consider testing moving these
+parts to CI with the cost to you of issues arising from delayed feedback:
+
+* [DependencyCheck](#shift-security-left)
+* [Integration tests](#use-integration-testing)
+* [Mutation testing](#use-mutation-testing)
+
+Every project is different; your team and stakeholders need to judge the value
+of quicker feedback to programmers of these concerns, and quicker feedback
+from a faster local build. There is no "one size fits all" recommendation.
 
 ## Changelog
 
