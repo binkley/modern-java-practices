@@ -506,6 +506,9 @@ This project keeps Gradle version numbers in
 [`gradle.properties`](./gradle.properties), and for Maven in
 [the POM](./pom.xml), and you should do the same.
 
+*NB* &mdash; [Dependabot](#dependabot) may prove more reliable for you.
+[YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
+
 #### More on Gradle version numbers
 
 Your simplest approach to Gradle is to keep everything in `build.gradle`. Even
@@ -869,6 +872,9 @@ GitHub (as well as others) provides
 which, among other things, can automatically issue PRs to your repository when
 security issues are discovered. This project uses Dependabot for Gradle and
 Maven.
+
+*NB* &mdash; Dependabot is more reliable than either the Gradle or Maven
+plugins for dependencies.
 
 ### Tips
 
