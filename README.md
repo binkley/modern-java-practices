@@ -1106,10 +1106,11 @@ Another dimension to consider for local testing: _User Journey_ tests.
 width="30%" height="auto"/>
 </a>
 
-Congratulations!  Local build time is _important_: gone are the days when a
-multi-hour, or even 30+ minute build, are viewed in most cases as the
-"cost of doing business". And "compiling" is rarely any longer where your
-project takes most local build time.
+Congratulations!  You care, and you notice what is happening for your team.  
+Local build time is _important_: gone are the days when a multi-hour, or even
+30+ minute build, are viewed in most cases as the "cost of doing business".
+And "compiling" is rarely any longer where your project takes most local build
+time.
 
 If you find your local build is taking too long, consider testing moving these
 parts to CI with the cost to you of issues arising from delayed feedback:
@@ -1120,7 +1121,7 @@ parts to CI with the cost to you of issues arising from delayed feedback:
 
 In the Gradle and Maven samples in this repository, _DependencyCheck_ and
 _Mutation testing_ are typically the slowest steps in a local build;
-_Integration Tests_ are fast only because this project very few.
+_Integration tests_ are fast only because this project very few.
 [YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
 
 Every project is different; your team and stakeholders need to judge the value
