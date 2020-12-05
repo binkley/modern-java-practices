@@ -1108,6 +1108,21 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Problems
 
+## Why is my local build slow?
+
+Both Gradle and Maven have tools to track performance time of steps in your
+build:
+
+* [Gradle build scans](https://scans.gradle.com/) &mdash; Not limited to
+  Enterprise licenses, just build with `./gradlew --scan <rest of tasks>`
+  and follow the link in the output
+* [Maven profiler](https://github.com/jcgay/maven-profiler) &mdash; run
+  with `./mvnw -Dprofile <goals>` and open the local link in the output
+
+### Maven
+
+This project includes the setup for [Maven extensions](.mvn/extensions.xml).
+
 ### My local build is too slow
 
 <a href="https://xkcd.com/303/" title="Compiling">
