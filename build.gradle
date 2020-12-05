@@ -129,7 +129,7 @@ wrapper {
     distributionType = "ALL"
 }
 
-def isStable(version) {
+static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {
         version.toUpperCase().contains(it)
     }
