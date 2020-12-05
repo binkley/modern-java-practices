@@ -506,7 +506,8 @@ This project keeps Gradle version numbers in
 [`gradle.properties`](./gradle.properties), and for Maven in
 [the POM](./pom.xml), and you should do the same.
 
-*NB* &mdash; [Dependabot](#dependabot) may prove more reliable for you.
+*NB* &mdash; [Dependabot](#dependabot) may prove speedier for you, but only
+runs in CI (GitHub).
 [YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
 
 #### More on Gradle version numbers
