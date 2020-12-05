@@ -84,16 +84,17 @@ Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* or a
 (Clojure, Groovy, JRuby, Jython, Kotlin, Scala, _et al_), this article is for
 you.
 
-This article's goal is to highlight and provide guidance for building modern
-Java/JVM projects with Gradle or Maven. The article focuses on Java, but most
-points apply to _any_ JVM language build (I use the demonstration builds for
-my personal projects).
+The goal of this article is to highlight building modern Java/JVM projects
+with Gradle or Maven, and provide guidance or at least food for thought. The
+sample Gradle and Maven projecdts use Java, but most recommendations apply to
+builds for _any_ JVM language.
 
 (See the wheel to the right?  _No, you do not need to be agile!_  This article
 is for _you_ regardless of how your project approaches software. The point is
-"make people awesome" for any project.)
+to "make people awesome" for any project, possibly the most key value of Agile
+approaches to software.)
 
-This project has these goals:
+Goals for this project:
 
 * Starter build scripts for Modern Java/JVM builds in Gradle and Maven,
   helpful for new projects, or refurbishing existing projects
@@ -103,8 +104,8 @@ This project has these goals:
   local build. Time spent fixing issues locally is better than waiting on CI
   to fail, or worse, for production to fail
 * The article focuses on Gradle and Maven: these are the most used build tools
-  for Java/JVM projects. However, if you use a different build tool, most
-  suggestions still can help you
+  for Modern Java/JVM projects. However, if you use a different build tool,
+  most suggestions still can help you
 
 I want to help with the question: _I am at Day 1 on my project_: How do I
 begin with a local build that is supports my team through the project
@@ -112,8 +113,8 @@ lifetime? And when I have an existing project, how to I catch up?
 
 **The goal of this article**: [_Make people
 awesome_](https://modernagile.org/) (that means _you_). This project is based
-on lots of experience and experiments with Java/JVM builds, and shares with
-you lessons learned.
+on lots of experience and experiments with Modern Java/JVM builds, and shares
+with you lessons learned.
 
 ---
 
@@ -215,7 +216,7 @@ width="20%" height="auto"/>
 
 ## The JDK
 
-For any Java/JVM project, the first decision is _which version of Java
+For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
 * Java 11 is the current LTS ("long-term support") version.  _This is the
@@ -286,8 +287,8 @@ ecosystem, and your project needs. In summary:
   project for your team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
-For Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
-alternative build tools:
+For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't
+cover alternative build tools:
 [industry data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
 shows Gradle or Maven are the build tools for most folks. Unless you find
 yourself in a complex monorepo culture (Google, _etc_), or there are mandates
@@ -930,13 +931,13 @@ To see the coverage report (on passed or failed coverage), open:
   build when coverage _rises_!  This would be helpful for supporting the
   coverage ratchet
 * You may find _mocking_ helpful for injection. The Java community is not of
-  one mind on mocking, so use your judgment
+  one mind on mocking, so use your judgment:
     * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
       dependency for the sample projects
     * [PowerMock](https://powermock.github.io/) provides additional features;
       however, Mockito normally covers use cases
-    * Other JVM languages &mdash; other JVM languages may have different
-      popular mocking libraries, _eg_, [MockK](https://mockk.io/) for Kotlin
+    * Other Modern JVM languages &mdash; these languages may prefer different
+      mocking libraries, _eg_, [MockK](https://mockk.io/) for Kotlin
     * You might consider complementary libraries to Mockito for specific
       circumstances, _eg_,
       [System Lambda](https://github.com/stefanbirkner/system-lambda)
@@ -961,11 +962,11 @@ if any unit tests fail. Production bytecode is changed during the build&mdash;
 for example, an `if (x)` is changed to `if (!x)`&mdash;, and the unit tests
 run. With good code coverage, there should now be a failing unit test.
 
-The best option for Java/JVM mutation testing is [PITest](http://pitest.org/).
-It is under active development, does some rather clever things with the
-production bytecode, and has Gradle and Maven plugins. The main drawback is
-that PITest is _noisy_, so there will be more build output than you might
-expect.
+The best option for Modern Java/JVM mutation testing is
+[PITest](http://pitest.org/). It is under active development, does rather
+clever things with compiled bytecode, and has Gradle and Maven plugins. The
+main drawback for your _local build_ is that PITest is _noisy_, so there might
+be more build output than you might expect.
 
 After running a build using PITest, to see the mutation report (on passed or
 failed mutation coverage), open:
