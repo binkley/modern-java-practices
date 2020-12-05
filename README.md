@@ -79,8 +79,9 @@ align="right" width="30%" height="auto"/>
 
 ## Introduction
 
-Hi!  I want you to have _awesome builds_ 🟢. If you're on a Java or a JVM
-project (Clojure, Groovy, JRuby, Kotlin, Scala, _et al_), this article is for
+Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* or a
+[JVM-language project](https://en.wikipedia.org/wiki/List_of_JVM_languages)
+(Clojure, Groovy, JRuby, Jython, Kotlin, Scala, _et al_), this article is for
 you.
 
 This article's goal is to highlight and provide guidance for building modern
