@@ -1118,6 +1118,11 @@ parts to CI with the cost to you of issues arising from delayed feedback:
 * [Integration tests](#use-integration-testing)
 * [Mutation testing](#use-mutation-testing)
 
+In the Gradle and Maven samples in this repository, _DependencyCheck_ and
+_Mutation testing_ are typically the slowest steps in a local build;
+_Integration Tests_ are fast only because this project very few.
+[YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
+
 Every project is different; your team and stakeholders need to judge the value
 of quicker feedback to programmers of these concerns, and quicker feedback
 from a faster local build. There is no "one size fits all" recommendation.
