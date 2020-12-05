@@ -1117,11 +1117,8 @@ build:
   Enterprise licenses, just build with `./gradlew --scan <rest of tasks>`
   and follow the link in the output
 * [Maven profiler](https://github.com/jcgay/maven-profiler) &mdash; run
-  with `./mvnw -Dprofile <goals>` and open the local link in the output
-
-### Maven
-
-This project includes the setup for [Maven extensions](.mvn/extensions.xml).
+  with `./mvnw -Dprofile <goals>` and open the local link in the output. This
+  project includes the setup for [Maven extensions](.mvn/extensions.xml).
 
 ### My local build is too slow
 
