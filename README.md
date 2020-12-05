@@ -1131,6 +1131,7 @@ from a faster local build. There is no "one size fits all" recommendation.
 
 ## Changelog
 
+* 2020-12-05 -- Handling slow local builds
 * 2020-11-27 -- Run CI for pull requests in addition to pushes
 * 2020-11-25 -- Leverage the compiler
 * 2020-11-06 -- Call out Gradle issue with `toolVersion` property
