@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-gradle:
-    name: Builds and tests for Gradle
+    name: Builds and tests for Gradle under Batect
     runs-on: ubuntu-latest
 
     steps:
@@ -42,11 +42,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Gradle
+      - name: Build and test with Gradle under Batect
         run: ./batect build-gradle
 
   build-maven:
-    name: Builds and tests for Maven
+    name: Builds and tests for Maven under Batect
     runs-on: ubuntu-latest
 
     steps:
@@ -77,5 +77,5 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Maven
+      - name: Build and test with Maven under Batect
         run: ./batect build-maven
