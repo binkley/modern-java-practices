@@ -852,6 +852,14 @@ local time spent building.
 **This project fails the build if finding any CVEs for the current version of
 any dependency.**
 
+### Dependabot
+
+GitHub (as well as others) provides
+[Dependabot](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/keeping-your-dependencies-updated-automatically)
+which, among other things, can automatically issue PRs to your repository when
+security issues are discovered. This project uses Dependabot for Gradle and
+Maven.
+
 ### Tips
 
 * See the "Tips" section of [Gradle or Maven](#use-gradle-or-maven)
