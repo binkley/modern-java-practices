@@ -736,8 +736,15 @@ choice is:
     * [Gradle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
     * [Maven plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html)
 
-However, unlike built-in solutions, Checkstyle will not auto-format code for
-you.
+However, Checkstyle will not auto-format code for you. For auto-formatting,
+consider, depending on your team preferences, any of these build plugins:
+
+* [Spotless](https://github.com/diffplug/spotless) &mdash; Focus on Google
+  style guides
+* [Rewrite for Gradle](https://github.com/openrewrite/rewrite-gradle-plugin)
+  &mdash; Focus on SUN style guides
+* [Rewrite for Maven](https://docs.openrewrite.org/java/checkstyle) &mdash;
+  Focus on SUN style guides
 
 The demonstration projects assume checkstyle configuration at
 [`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml). This
