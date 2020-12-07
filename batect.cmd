@@ -1,12 +1,12 @@
 @echo off
-rem This file is part of batect.
-rem Do not modify this file, it will be overwritten next time you upgrade batect.
+rem This file is part of Batect.
+rem Do not modify this file. It will be overwritten next time you upgrade Batect.
 rem You should commit this file to version control alongside the rest of your project. It should not be installed globally.
 rem For more information, visit https://github.com/batect/batect.
 
 setlocal EnableDelayedExpansion
 
-set "version=0.63.1"
+set "version=0.64.0"
 
 if "%BATECT_CACHE_DIR%" == "" (
     set "BATECT_CACHE_DIR=%USERPROFILE%\.batect\cache"
@@ -22,7 +22,7 @@ $ErrorActionPreference = 'Stop'^
 
 ^
 
-$Version='0.63.1'^
+$Version='0.64.0'^
 
 ^
 
@@ -48,7 +48,7 @@ $UrlEncodedVersion = [Uri]::EscapeDataString($Version)^
 
 $DownloadUrl = getValueOrDefault $env:BATECT_DOWNLOAD_URL "$DownloadUrlRoot/$UrlEncodedVersion/bin/batect-$UrlEncodedVersion.jar"^
 
-$ExpectedChecksum = getValueOrDefault $env:BATECT_DOWNLOAD_CHECKSUM '4d635a76ee0d93d16f9ebed58f4c0e8f74bf8065bc443fd33efd184dca15885d'^
+$ExpectedChecksum = getValueOrDefault $env:BATECT_DOWNLOAD_CHECKSUM '7c7969d05ab8f751cbed24c462fac7e49deb732de4de70bcbfb660c23757e0f0'^
 
 ^
 
@@ -92,7 +92,7 @@ function haveVersionCachedLocally() {^
 
 function download() {^
 
-    Write-Output "Downloading batect version $Version from $DownloadUrl..."^
+    Write-Output "Downloading Batect version $Version from $DownloadUrl..."^
 
 ^
 
@@ -146,7 +146,7 @@ function checkChecksum() {^
 
     if ($localChecksum -ne $expectedChecksum) {^
 
-        Write-Host -ForegroundColor Red "The downloaded version of batect does not have the expected checksum. Delete '$JarPath' and then re-run this script to download it again."^
+        Write-Host -ForegroundColor Red "The downloaded version of Batect does not have the expected checksum. Delete '$JarPath' and then re-run this script to download it again."^
 
         exit 1^
 
@@ -276,7 +276,7 @@ function checkJavaVersion([System.Management.Automation.CommandInfo]$java) {^
 
     if (-not ($versionInfo -match "64\-[bB]it")) {^
 
-        Write-Host -ForegroundColor Red "The version of Java that is available on your PATH is a 32-bit version, but batect requires a 64-bit Java runtime."^
+        Write-Host -ForegroundColor Red "The version of Java that is available on your PATH is a 32-bit version, but Batect requires a 64-bit Java runtime."^
 
         Write-Host -ForegroundColor Red "If you have a 64-bit version of Java installed, please make sure your PATH is set correctly."^
 
@@ -410,4 +410,4 @@ powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -File "%ps1Path%" %* &
 
 rem What's this for?
 rem This is so the tests for the wrapper has a way to ensure that the line above terminates the script correctly.
-echo WARNING: you should never see this, and if you do, then batect's wrapper script has a bug
+echo WARNING: you should never see this, and if you do, then Batect's wrapper script has a bug
