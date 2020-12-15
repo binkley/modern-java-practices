@@ -55,7 +55,7 @@
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <mockito.version>3.6.28</mockito.version>
         <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.5.2</pitest-maven.version>
+        <pitest-maven.version>1.6.1</pitest-maven.version>
         <pmd.version>6.30.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
