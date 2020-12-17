@@ -873,11 +873,11 @@ impact it may have, and if you are comfortable with a vulnerable dependency.
 
 ### Dependabot
 
-GitHub (as well as others) provides
+GitHub provides
 [Dependabot](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/keeping-your-dependencies-updated-automatically)
-which, among other things, can automatically issue PRs to your repository when
-security issues are discovered. This project uses Dependabot for Gradle and
-Maven.
+(other systems than GitHub may have similar robot tools) which, among other
+things, can automatically issue PRs to your repository when security issues
+are discovered. This project uses Dependabot for Gradle and Maven.
 
 *NB* &mdash; Dependabot is more reliable than either the Gradle or Maven
 plugins for dependencies.
