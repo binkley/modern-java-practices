@@ -506,9 +506,13 @@ This project keeps Gradle version numbers in
 [`gradle.properties`](./gradle.properties), and for Maven in
 [the POM](./pom.xml), and you should do the same.
 
-*NB* &mdash; [Dependabot](#dependabot) may prove speedier for you, but only
-runs in CI (GitHub).
-[YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
+### Dependabot
+
+*NB* &mdash; [Dependabot](#dependabot) may prove speedier for you, and runs in
+CI (GitHub) on a schedule you pick. It submits PRs to your repository when it
+finds out of date dependencies. See
+[`dependabot.yml`](./.github/dependabot.yml) for an example using a daily
+schedule.
 
 #### More on Gradle version numbers
 
@@ -887,7 +891,8 @@ plugins for dependencies.
 * See the "Tips" section of [Gradle or Maven](#use-gradle-or-maven)
 * With GitHub actions, consider adding a tool such as
   [Dependabot](https://dependabot.com/), which automatically files GitHub
-  issues for known dependency vulnerabilities
+  issues for known dependency vulnerabilities.
+  See [earlier in this document](#dependabot) for an example
 * Unfortunately, the Gradle ecosystem is not a mature as the Maven ecosystem
   for validating plugins/dependencies. For example, if you enable checksum
   verifications in Gradle, many or most of your plugin and/or dependency
