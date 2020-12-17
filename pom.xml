@@ -9,7 +9,7 @@
     <artifactId>modern-java-practice-maven</artifactId>
     <version>0-SNAPSHOT</version>
 
-    <name>Modern JAva/JVM build practices</name>
+    <name>Modern Java/JVM build practices</name>
     <description>
         Advice on Modern Java/JVM Gradle and Maven builds
     </description>
