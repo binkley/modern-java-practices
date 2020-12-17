@@ -809,17 +809,19 @@ The Gradle and Maven demonstration builds use these to help you:
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/) &mdash;
   verify your project dependencies against know security issues
 
+### Checking dependencies
+
 Use checksums and signatures: verify what your build and project downloads!
 When publishing for consumption by others, provide MD5 (checksum) files in
 your upload: be a good netizen, and help others trust code downloaded from you
 
-### Gradle
+#### Gradle
 
 Read more at [_Verifying
 dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
 .
 
-### Maven
+#### Maven
 
 _Always_ run with the `--strict-checksums` (or `-C`) flag. See
 [_Maven Artifact Checksums -
