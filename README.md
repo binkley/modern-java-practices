@@ -868,6 +868,9 @@ local time spent building.
 **This project fails the build if finding any CVEs for the current version of
 any dependency.**
 
+Your build should fail, too. It's a flag to you to consider the CVE, what
+impact it may have, and if you are comfortable with a vulnerable dependency.
+
 ### Dependabot
 
 GitHub (as well as others) provides
