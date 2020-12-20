@@ -49,13 +49,20 @@ java {
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs += ['-Werror', '-Xlint:all,-processing']
+    options.compilerArgs += ["-Werror", "-Xlint:all,-processing"]
 }
 
 test {
     // NB -- JaCoCo draws from _unit tests_, not integration tests
     // When tests fail, you still have a coverage report
     finalizedBy jacocoTestReport
+}
+
+tasks.withType(Test) {
+    // Quieter builds when JUL is in use (you or another library or tool)
+    // TODO: Keep builds noisy in CI
+    systemProperty "java.util.logging.config.file",
+            "$projectDir/config/logging.properties"
 }
 
 testSets {

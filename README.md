@@ -474,6 +474,28 @@ Maven to find out:
 
 Each of these have many options and features, and are worth exploring.
 
+### Keep local builds quiet
+
+It is frustrating for local devs when something horrible happened during the
+build (say a production with "ERROR" output during a test), but:
+
+1. The build is **GREEN**, and developers should trust that
+2. There is too much output in the local build, so developers don't spot
+   telltale signs of trouble
+
+There are many approaches to this problem. This project uses JDK logging as
+[an example](https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/FileHandler.html)
+, and keeps the build quiet in
+[`config/logging.properties`](config/logging.properties).
+
+### Keep CI builds noisy
+
+In CI, this is different, and there you want as much output as possible to
+diagnose the unexpected.
+
+**TODO** This section is under construction. I'm still spiking best practices
+for quiet local builds and noisy CI builds.
+
 ### Keep your build current
 
 An important part of _build hygiene_ is keeping your build system, plugins,
@@ -1162,6 +1184,7 @@ from a faster local build. There is no "one size fits all" recommendation.
 
 ## Changelog
 
+* 2020-12-21 -- Quieter builds
 * 2020-12-05 -- Handling slow local builds
 * 2020-11-27 -- Run CI for pull requests in addition to pushes
 * 2020-11-25 -- Leverage the compiler

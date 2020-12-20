@@ -223,6 +223,19 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-testing-plugins.version}</version>
+                <configuration>
+                    <!-- Quieter local builds when JUL is in use (you or
+                         another library or tool)
+                         TODO: Keep builds noisy in CI -->
+                    <systemProperties>
+                        <property>
+                            <name>java.util.logging.config.file</name>
+                            <value>
+                                ${project.basedir}/config/logging.properties
+                            </value>
+                        </property>
+                    </systemProperties>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -338,6 +351,19 @@
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${maven-testing-plugins.version}</version>
+                <configuration>
+                    <!-- Quieter local builds when JUL is in use (you or
+                         another library or tool)
+                         TODO: Keep builds noisy in CI -->
+                    <systemProperties>
+                        <property>
+                            <name>java.util.logging.config.file</name>
+                            <value>
+                                ${project.basedir}/config/logging.properties
+                            </value>
+                        </property>
+                    </systemProperties>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
