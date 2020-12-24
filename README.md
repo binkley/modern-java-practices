@@ -821,6 +821,9 @@ The Gradle and Maven demonstration builds use these to help you:
 * [PMD](https://pmd.github.io/latest/)
 * [SpotBugs](https://spotbugs.github.io/)
 
+And use the [Find Security Bugs](https://find-sec-bugs.github.io/) extension
+for [Spotbugs](https://spotbugs.github.io/).
+
 ### TODOs
 
 * CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin.
