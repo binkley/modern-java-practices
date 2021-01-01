@@ -35,7 +35,7 @@
         <!-- @formatter:off -->
         <assertj.version>3.18.1</assertj.version>
         <buildplan-maven-plugin.version>1.4</buildplan-maven-plugin.version>
-        <checkstyle.version>8.38</checkstyle.version>
+        <checkstyle.version>8.39</checkstyle.version>
         <dependency-check-maven.version>6.0.3</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
