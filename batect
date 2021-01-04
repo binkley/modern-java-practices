@@ -8,8 +8,8 @@
     # You should commit this file to version control alongside the rest of your project. It should not be installed globally.
     # For more information, visit https://github.com/batect/batect.
 
-    VERSION="0.64.1"
-    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-132172733acb2923a7cc4f373eee2f4eb4a06454e09cc8dceee569355b960b7a}"
+    VERSION="0.65.0"
+    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-a27668a8c33aa7a134b21e25a64221015493cbb4df2a90b0616c59acac9fc00b}"
     DOWNLOAD_URL_ROOT=${BATECT_DOWNLOAD_URL_ROOT:-"https://dl.bintray.com/batect/batect"}
     DOWNLOAD_URL=${BATECT_DOWNLOAD_URL:-"$DOWNLOAD_URL_ROOT/$VERSION/bin/batect-$VERSION.jar"}
     QUIET_DOWNLOAD=${BATECT_QUIET_DOWNLOAD:-false}
