@@ -17,6 +17,10 @@ containers:
       home_directory: /home/container-user
 
 tasks:
+  # NB -- build tasks need "clean", but CI (GitHub actions) does not
+  # This is because Docker copies in the local repo clone, including any
+  # artifacts such as build/ or target/ directories, where as CI starts
+  # from a fresh repository clone.
   build-gradle:
     description: Build and test with Gradle
     run:
