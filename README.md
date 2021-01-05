@@ -859,7 +859,7 @@ your upload: be a good netizen, and help others trust code downloaded from you
 
 Read more at [_Verifying
 dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
-.
+, an incubating feature.
 
 #### Maven
 
