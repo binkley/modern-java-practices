@@ -385,6 +385,8 @@ If you use GitLab, read about the equivalent in
   ```
   For example, with Gradle, this will log all the build steps without
   attempting to overwrite earlier steps with later ones
+* With Maven, use the `--no-transfer-progress` flag for CI: this avoids
+  spamming CI logs with download progress messages
 
 ---
 
