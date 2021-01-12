@@ -202,6 +202,7 @@
                 <version>${maven-pmd-plugin.version}</version>
                 <configuration>
                     <printFailingErrors>true</printFailingErrors>
+                    <targetJdk>${jdk.version}</targetJdk>
                 </configuration>
                 <executions>
                     <execution>

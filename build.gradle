@@ -80,6 +80,7 @@ checkstyle {
 
 pmd {
     ignoreFailures = false
+    // TODO: targetJdk = 11 -- there is no defined constant for this
     toolVersion = pmdVersion
 }
 
