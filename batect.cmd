@@ -6,7 +6,7 @@ rem For more information, visit https://github.com/batect/batect.
 
 setlocal EnableDelayedExpansion
 
-set "version=0.65.0"
+set "version=0.65.1"
 
 if "%BATECT_CACHE_DIR%" == "" (
     set "BATECT_CACHE_DIR=%USERPROFILE%\.batect\cache"
@@ -22,7 +22,7 @@ $ErrorActionPreference = 'Stop'^
 
 ^
 
-$Version='0.65.0'^
+$Version='0.65.1'^
 
 ^
 
@@ -48,7 +48,7 @@ $UrlEncodedVersion = [Uri]::EscapeDataString($Version)^
 
 $DownloadUrl = getValueOrDefault $env:BATECT_DOWNLOAD_URL "$DownloadUrlRoot/$UrlEncodedVersion/bin/batect-$UrlEncodedVersion.jar"^
 
-$ExpectedChecksum = getValueOrDefault $env:BATECT_DOWNLOAD_CHECKSUM 'a27668a8c33aa7a134b21e25a64221015493cbb4df2a90b0616c59acac9fc00b'^
+$ExpectedChecksum = getValueOrDefault $env:BATECT_DOWNLOAD_CHECKSUM '3f3669ed188790f203494b9cf4e3b5e40f5160c040b59c903d276a11f0b42480'^
 
 ^
 
