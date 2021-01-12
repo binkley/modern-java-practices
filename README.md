@@ -8,7 +8,6 @@ align="right"/>
 [![build](https://github.com/binkley/modern-java-practices/workflows/build/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
-[![dependencies](https://img.shields.io/librariesio/github/binkley/modern-java-practices)]()
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
