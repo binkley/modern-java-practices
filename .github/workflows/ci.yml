@@ -60,7 +60,7 @@ jobs:
         env:
           cache-name: maven-cache
         with:
-          path: ~/.m2/repository
+          path: ~/.m2
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
