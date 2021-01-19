@@ -412,20 +412,28 @@ should strive to keep local as faithful as possible to CI and Production.
 See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
 for documentation on using Batect from within a dockerized CI environment.
 
-**NB** &mdash; local Batect and GitHub Actions CI are not strictly identical.
-For example, the sample [`ci.yml` for GitHub](./.github/workflows/ci.yml)
-pulls an image for `ubuntu-latest`, and relies on GitHub to populate JDK 11,
-whereas [`batect.yml`](./batect.yml) pulls directly an image for
-[AdoptOpenJDK11](https://hub.docker.com/_/adoptopenjdk).
+**NB** &mdash; to be as consistent as possible, the sample
+[`ci.yml` for GitHub](./.github/workflows/ci.yml) uses Batect for the Gradle
+and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
+for [AdoptOpenJDK11](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
+not [setup JDK 11](https://github.com/actions/setup-java) directly, but relies
+on Batect.
 
-Configure your local CI in [`batect.yml`](./batect.yml). For this project,
-there are demonstration targets:
-
+Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks.
+For this project, there are example tasks:
 ```
-$ ./batect build-gradle
-# output ommitted
-$ ./batect build-maven
-# output ommitted
+$ ./batect -T
+Available tasks:
+- build-gradle: Build and test with Gradle
+- build-maven: Build and test with Maven
+```
+
+Another common task might be:
+```
+$ ./batect -T
+Available tasks:
+[ ... ]
+- run: Run the demo program
 ```
 
 #### Gradle
