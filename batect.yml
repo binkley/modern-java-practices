@@ -1,6 +1,14 @@
 containers:
   build-env:
     image: adoptopenjdk:11-jdk-hotspot
+    environment:
+      # See:
+      # - https://docs.gradle.org/6.8/userguide/gradle_daemon.html#sec:disabling_the_daemon
+      # - https://docs.gradle.org/6.8/userguide/build_environment.html#sec:configuring_jvm_memory
+      JAVA_OPTS: -Xmx512m -XX:MaxMetaspaceSize=256m
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/container-user
     volumes:
       - local: .
         container: /code
@@ -12,9 +20,6 @@ containers:
         container: /home/container-user/.m2
         options: cached
     working_directory: /code
-    run_as_current_user:
-      enabled: true
-      home_directory: /home/container-user
 
 tasks:
   # NB -- local build need "clean", but CI (GitHub actions) does not:
