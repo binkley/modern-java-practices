@@ -35,7 +35,7 @@ jobs:
         env:
           cache-name: batect-cache
         with:
-          path: ~/.batect/cache
+          path: ~/.batect
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -44,6 +44,8 @@ jobs:
 
       - name: Build and test with Gradle under Batect
         run: ./batect build-gradle
+        env:
+          BATECT_ENABLE_TELEMETRY: true
 
   build-maven:
     name: Builds and tests for Maven under Batect
@@ -70,7 +72,7 @@ jobs:
         env:
           cache-name: batect-cache
         with:
-          path: ~/.batect/cache
+          path: ~/.batect
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -79,3 +81,5 @@ jobs:
 
       - name: Build and test with Maven under Batect
         run: ./batect build-maven
+        env:
+          BATECT_ENABLE_TELEMETRY: true
