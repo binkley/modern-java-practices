@@ -35,3 +35,8 @@ tasks:
     run:
       container: build-env
       command: ./mvnw --no-transfer-progress --strict-checksums clean verify
+  shell:
+    description: Open a shell in the container
+    run:
+      container: build-env
+      command: /bin/bash

@@ -428,12 +428,13 @@ Available tasks:
 - build-maven: Build and test with Maven
 ```
 
-Another common task might be:
+Other common tasks might be:
 ```
 $ ./batect -T
 Available tasks:
 [ ... ]
 - run: Run the demo program
+- shell: Open a shell in the container
 ```
 
 #### Gradle
