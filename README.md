@@ -1,6 +1,6 @@
 <a href="./LICENSE.md">
 <img src="./images/public-domain.png" alt="Public Domain"
-align="right"/>
+align="right" width="30%" height="auto"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -211,7 +211,7 @@ existing project:
 
 <a href="https://adoptopenjdk.net/" title="AdoptOpenJDK">
 <img src="./images/adoptopenjdk.png" alt="AdoptOpenJDK" align="right"
-width="20%" height="auto"/>
+width="30%" height="auto"/>
 </a>
 
 ## The JDK
@@ -360,6 +360,12 @@ alphabetical ordering.
   to speed it up
 
 ---
+
+<a href="http://www.ambysoft.com/essays/whyAgileWorksFeedback.html"
+title="Why Agile Software Development Techniques Work: Improved Feedback">
+<img src="./images/bug-costs.jpg" alt="Length of Feedback Cycle"
+align="right" width="30%" height="auto"/>
+</a>
 
 ## Setup your CI
 
