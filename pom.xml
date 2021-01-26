@@ -33,7 +33,7 @@
 
     <properties>
         <!-- @formatter:off -->
-        <assertj.version>3.18.1</assertj.version>
+        <assertj.version>3.19.0</assertj.version>
         <buildplan-maven-plugin.version>1.4</buildplan-maven-plugin.version>
         <checkstyle.version>8.39</checkstyle.version>
         <dependency-check-maven.version>6.0.5</dependency-check-maven.version>
