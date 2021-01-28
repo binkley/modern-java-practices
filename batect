@@ -8,8 +8,8 @@
     # You should commit this file to version control alongside the rest of your project. It should not be installed globally.
     # For more information, visit https://github.com/batect/batect.
 
-    VERSION="0.65.1"
-    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-3f3669ed188790f203494b9cf4e3b5e40f5160c040b59c903d276a11f0b42480}"
+    VERSION="0.66.1"
+    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-635986dfc452d730afd4d512d55f17f9365cfce08afc6d5194b87c7dda3d75cb}"
     DOWNLOAD_URL_ROOT=${BATECT_DOWNLOAD_URL_ROOT:-"https://dl.bintray.com/batect/batect"}
     DOWNLOAD_URL=${BATECT_DOWNLOAD_URL:-"$DOWNLOAD_URL_ROOT/$VERSION/bin/batect-$VERSION.jar"}
     QUIET_DOWNLOAD=${BATECT_QUIET_DOWNLOAD:-false}
@@ -71,13 +71,22 @@
     function runApplication() {
         checkForJava
 
-        java_version=$(getJavaVersion)
+        java_version_info=$(getJavaVersionInfo)
+        checkJavaVersion "$java_version_info"
+
+        java_version=$(extractJavaVersion "$java_version_info")
         java_version_major=$(extractJavaMajorVersion "$java_version")
 
         if (( java_version_major >= 9 )); then
-            JAVA_OPTS="--add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
+            JAVA_OPTS=(--add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED)
         else
-            JAVA_OPTS=""
+            JAVA_OPTS=()
+        fi
+
+        if [[ "$(uname -o 2>&1)" == "Msys" ]] && hash winpty 2>/dev/null; then
+            GIT_BASH_PTY_WORKAROUND=(winpty)
+        else
+            GIT_BASH_PTY_WORKAROUND=()
         fi
 
         BATECT_WRAPPER_SCRIPT_DIR="$SCRIPT_PATH" \
@@ -85,9 +94,10 @@
         BATECT_WRAPPER_DID_DOWNLOAD="$BATECT_WRAPPER_DID_DOWNLOAD" \
         HOSTNAME="$HOSTNAME" \
         exec \
+            ${GIT_BASH_PTY_WORKAROUND[@]+"${GIT_BASH_PTY_WORKAROUND[@]}"} \
             java \
             -Djava.net.useSystemProxies=true \
-            $JAVA_OPTS \
+            ${JAVA_OPTS[@]+"${JAVA_OPTS[@]}"} \
             -jar "$JAR_PATH" \
             "$@"
     }
@@ -104,8 +114,11 @@
             echo "Java is not installed or not on your PATH. Please install it and try again." >&2
             exit 1
         fi
+    }
 
-        java_version=$(getJavaVersion)
+    function checkJavaVersion() {
+        java_version_info="$1"
+        java_version=$(extractJavaVersion "$java_version_info")
         java_version_major=$(extractJavaMajorVersion "$java_version")
         java_version_minor=$(extractJavaMinorVersion "$java_version")
 
@@ -114,10 +127,20 @@
             echo "If you have a newer version of Java installed, please make sure your PATH is set correctly."
             exit 1
         fi
+
+        if ! javaIs64Bit "$java_version_info"; then
+            echo "The version of Java that is available on your PATH is a 32-bit version, but Batect requires a 64-bit Java runtime."
+            echo "If you have a 64-bit version of Java installed, please make sure your PATH is set correctly."
+            exit 1
+        fi
     }
 
-    function getJavaVersion() {
-        java -version 2>&1 | grep version | sed -En ';s/.* version "([0-9]+)(\.([0-9]+))?.*".*/\1.\3/p;'
+    function getJavaVersionInfo() {
+        java -version 2>&1
+    }
+
+    function extractJavaVersion() {
+        echo "$1" | grep version | sed -En ';s/.* version "([0-9]+)(\.([0-9]+))?.*".*/\1.\3/p;'
     }
 
     function extractJavaMajorVersion() {
@@ -131,6 +154,10 @@
         java_version_minor="${java_version#*.}"
 
         echo "${java_version_minor:-0}"
+    }
+
+    function javaIs64Bit() {
+        echo "$1" | grep -q '64-[Bb]it'
     }
 
     main "$@"
