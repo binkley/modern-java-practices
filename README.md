@@ -267,6 +267,16 @@ with each person using binary installers. Popular choices include:
 
 ---
 
+<a href="https://gradle.org/" title="Gradle">
+<img src="./images/gradle.png" alt="Gradle"
+align="right" width="30%" height="auto"/>
+</a>
+<br/>
+<a href="https://maven.apache.org/" title="Maven">
+<img src="./images/maven.png" alt="Maven"
+align="right" width="30%" height="auto"/>
+</a>
+
 ## Use Gradle or Maven
 
 The choice between Gradle and Maven depends on your team, your broader
@@ -427,6 +437,7 @@ on Batect.
 
 Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks.
 For this project, there are example tasks:
+
 ```
 $ ./batect -T
 Available tasks:
@@ -435,6 +446,7 @@ Available tasks:
 ```
 
 Other common tasks might be:
+
 ```
 $ ./batect -T
 Available tasks:
