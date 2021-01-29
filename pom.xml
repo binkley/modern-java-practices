@@ -43,7 +43,7 @@
         <java.charset>UTF-8</java.charset>
         <jdk.version>11</jdk.version>
         <junit.version>5.7.0</junit.version>
-        <lombok.version>1.18.16</lombok.version>
+        <lombok.version>1.18.18</lombok.version>
         <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
