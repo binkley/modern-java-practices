@@ -59,7 +59,7 @@
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.2.0</spotbugs-maven-plugin.version>
-        <spotbugs.version>4.2.0</spotbugs.version>
+        <spotbugs.version>4.2.1</spotbugs.version>
         <system-lambda.version>1.2.0</system-lambda.version>
         <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
         <!-- @formatter:on -->
