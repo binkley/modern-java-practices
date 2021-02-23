@@ -52,7 +52,7 @@
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
         <maven.version>3.6.3</maven.version>
-        <mockito.version>3.7.7</mockito.version>
+        <mockito.version>3.8.0</mockito.version>
         <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.2</pitest-maven.version>
         <pmd.version>6.30.0</pmd.version>
