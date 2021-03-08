@@ -896,7 +896,12 @@ alias helps:
   $ alias mvnw=`./mvnw --strict-checksums`
   ```
 
-However, for CI, this is easy. The [Batect configuration](./batect.yml)
+An alternative is to declare _each_ repository in your user `settings.xml` and
+[set the checksum policy to
+"fail"](https://dzone.com/articles/maven-artifact-checksums-what).
+
+However, in CI this is easy; another example of why local builds should 
+repeat what CI builds do. The [Batect configuration](./batect.yml)
 for the demonstration project says:
 
   ```yaml
