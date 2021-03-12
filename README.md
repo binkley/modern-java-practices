@@ -545,13 +545,17 @@ any project files:
 ```
 $ ./gradlew dependencyUpdates
 # output ommitted
-$ ./mvnw versions:display-property-updates
+$ ./mvnw versions:update-properties  # Updates pom.xml in place
+$ ./mvnw versions:display-property-updates  # Just lists proposed updates
 # output ommitted
 ```
 
 This project keeps Gradle version numbers in
 [`gradle.properties`](./gradle.properties), and for Maven in
 [the POM](./pom.xml), and you should do the same.
+
+Since your `pom.xml` is in Git, `versions:update-properties` is _safe_ as 
+you can always revert changes, but some folks want to look before doing.
 
 ### Dependabot
 
