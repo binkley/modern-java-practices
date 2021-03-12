@@ -89,12 +89,25 @@ with Gradle or Maven, and provide guidance or at least food for thought. The
 sample Gradle and Maven projecdts use Java, but most recommendations apply to
 builds for _any_ JVM language.
 
-(See the wheel to the right?  _No, you do not need to be agile!_  This article
-is for _you_ regardless of how your project approaches software. The point is
-to "make people awesome" for any project, possibly the most key value of Agile
+(See the wheel to the right?  _No, you do not need to be agile!_ (But I
+encourage you to explore the benefits of Agile.)  This article is for _you_
+regardless of how your project approaches software. The point is to "make
+people awesome" for any project, possibly the most key value of Agile
 approaches to software.)
 
-Goals for this project:
+### Principles in designing these builds
+
+1. Make it work
+   - Can I as a Day 1 developer build the project locally?
+   - Can I hand the project off to someone else to try?
+2. Make it right
+   - Can I reproduce issues in the CI build, and fix it locally?
+   - Can I find code and security issues from running the build?
+3. Make it fast
+   - Can I run the local build as frequently as I like, and be productive?
+   - Can I have a fast cycle of code &amp; test?
+
+### Goals for this project
 
 * Starter build scripts for Modern Java/JVM builds in Gradle and Maven,
   helpful for new projects, or refurbishing existing projects
@@ -554,8 +567,8 @@ This project keeps Gradle version numbers in
 [`gradle.properties`](./gradle.properties), and for Maven in
 [the POM](./pom.xml), and you should do the same.
 
-Since your `pom.xml` is in Git, `versions:update-properties` is _safe_ as 
-you can always revert changes, but some folks want to look before doing.
+Since your `pom.xml` is in Git, `versions:update-properties` is _safe_ as you
+can always revert changes, but some folks want to look before doing.
 
 ### Dependabot
 
@@ -904,8 +917,8 @@ An alternative is to declare _each_ repository in your user `settings.xml` and
 [set the checksum policy to
 "fail"](https://dzone.com/articles/maven-artifact-checksums-what).
 
-However, in CI this is easy; another example of why local builds should 
-repeat what CI builds do. The [Batect configuration](./batect.yml)
+However, in CI this is easy; another example of why local builds should repeat
+what CI builds do. The [Batect configuration](./batect.yml)
 for the demonstration project says:
 
   ```yaml
