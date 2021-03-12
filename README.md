@@ -98,14 +98,14 @@ approaches to software.)
 ### Principles in designing these builds
 
 1. Make it work
-   - Can I as a Day 1 developer build the project locally?
-   - Can I hand the project off to someone else to try?
+    - Can I as a Day 1 developer build the project locally?
+    - Can I hand the project off to someone else to try?
 2. Make it right
-   - Can I reproduce issues in the CI build, and fix it locally?
-   - Can I find code and security issues from running the build?
+    - Can I reproduce issues in the CI build, and fix it locally?
+    - Can I find code and security issues from running the build?
 3. Make it fast
-   - Can I run the local build as frequently as I like, and be productive?
-   - Can I have a fast cycle of code &amp; test?
+    - Can I run the local build as frequently as I like, and be productive?
+    - Can I have a fast cycle of code &amp; test?
 
 ### Goals for this project
 
@@ -124,10 +124,11 @@ I want to help with the question: _I am at Day 1 on my project_: How do I
 begin with a local build that is supports my team through the project
 lifetime? And when I have an existing project, how to I catch up?
 
-**The goal of this article**: [_Make people
-awesome_](https://modernagile.org/) (that means _you_). This project is based
-on lots of experience and experiments with Modern Java/JVM builds, and shares
-with you lessons learned.
+### Goal of this article
+
+[_Make people awesome_](https://modernagile.org/) (that means _you_). This
+project is based on lots of experience and experiments with Modern Java/JVM
+builds, and shares with you lessons learned.
 
 ---
 
