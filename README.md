@@ -1016,6 +1016,9 @@ To see the coverage report (on passed or failed coverage), open:
 * For Gradle, `build/reports/jacoco/test/html/index.html`
 * For Maven, `target/site/jacoco/index.html`
 
+This project also provides the coverage report as part of Maven's project
+report.
+
 ### Tips
 
 * See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to _
@@ -1072,6 +1075,8 @@ failed mutation coverage), open:
 
 * For Gradle, `build/reports/pitest/index.html`
 * For Maven, `target/pit-reports/index.html`
+
+This project also provides the PIT report as part of Maven's project report.
 
 ### Tips
 
