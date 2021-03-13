@@ -47,7 +47,9 @@
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
+        <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <maven-pmd-plugin.version>3.14.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
@@ -156,6 +158,10 @@
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>${maven-clean-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -390,12 +396,80 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${maven-project-info-reports-plugin.version}</version>
+                <version>${maven-project-info-reports-plugin.version}
+                </version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${dependency-check-maven.version}</version>
+                <configuration>
+                    <name>Dependency Check Report</name>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>${maven-jxr-plugin.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>jxr</report>
+                        </reports>
+                    </reportSet>
+                    <reportSet>
+                        <reports>
+                            <report>test-jxr</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!-- Must specify to avoid aggregate report -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${maven-testing-plugins.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest-maven.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>taglist-maven-plugin</artifactId>
                 <version>${taglist-maven-plugin.version}</version>
+                <!-- See https://www.mojohaus.org/taglist-maven-plugin/usage.html -->
                 <configuration>
                     <tagListOptions>
                         <tagClasses>
