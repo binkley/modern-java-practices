@@ -35,7 +35,7 @@
         <!-- @formatter:off -->
         <assertj.version>3.19.0</assertj.version>
         <buildplan-maven-plugin.version>1.4</buildplan-maven-plugin.version>
-        <checkstyle.version>8.39</checkstyle.version>
+        <checkstyle.version>8.41</checkstyle.version>
         <dependency-check-maven.version>6.1.0</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
@@ -44,7 +44,7 @@
         <jdk.version>11</jdk.version>
         <junit.version>5.7.1</junit.version>
         <lombok.version>1.18.18</lombok.version>
-        <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
@@ -55,11 +55,11 @@
         <mockito.version>3.8.0</mockito.version>
         <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.2</pitest-maven.version>
-        <pmd.version>6.30.0</pmd.version>
+        <pmd.version>6.32.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.2.0</spotbugs-maven-plugin.version>
-        <spotbugs.version>4.2.0</spotbugs.version>
+        <spotbugs.version>4.2.2</spotbugs.version>
         <system-lambda.version>1.2.0</system-lambda.version>
         <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
         <!-- @formatter:on -->
