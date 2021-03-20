@@ -8,10 +8,10 @@
     # You should commit this file to version control alongside the rest of your project. It should not be installed globally.
     # For more information, visit https://github.com/batect/batect.
 
-    VERSION="0.66.1"
-    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-635986dfc452d730afd4d512d55f17f9365cfce08afc6d5194b87c7dda3d75cb}"
-    DOWNLOAD_URL_ROOT=${BATECT_DOWNLOAD_URL_ROOT:-"https://dl.bintray.com/batect/batect"}
-    DOWNLOAD_URL=${BATECT_DOWNLOAD_URL:-"$DOWNLOAD_URL_ROOT/$VERSION/bin/batect-$VERSION.jar"}
+    VERSION="0.69.0"
+    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-07cdf2ba12bdfe6b65196013f3f9a8c5548400c1e289329dd9b3edaa857ba780}"
+    DOWNLOAD_URL_ROOT=${BATECT_DOWNLOAD_URL_ROOT:-"https://updates.batect.dev/v1/files"}
+    DOWNLOAD_URL=${BATECT_DOWNLOAD_URL:-"$DOWNLOAD_URL_ROOT/$VERSION/batect-$VERSION.jar"}
     QUIET_DOWNLOAD=${BATECT_QUIET_DOWNLOAD:-false}
 
     BATECT_WRAPPER_CACHE_DIR=${BATECT_CACHE_DIR:-"$HOME/.batect/cache"}
@@ -111,9 +111,13 @@
 
     function checkForJava() {
         if ! hash java 2>/dev/null; then
-            echo "Java is not installed or not on your PATH. Please install it and try again." >&2
-            exit 1
+            showJavaNotInstalledError
         fi
+    }
+
+    function showJavaNotInstalledError() {
+        echo "Java is not installed or not on your PATH. Please install it and try again." >&2
+        exit 1
     }
 
     function checkJavaVersion() {
@@ -136,7 +140,7 @@
     }
 
     function getJavaVersionInfo() {
-        java -version 2>&1
+        java -version 2>&1 || showJavaNotInstalledError
     }
 
     function extractJavaVersion() {
