@@ -12,6 +12,7 @@ plugins {
     id "com.github.spotbugs"
     id "jacoco"
     id "info.solidsoft.pitest"
+    id "org.kordamp.gradle.jdeps"
     id "org.owasp.dependencycheck"
 }
 

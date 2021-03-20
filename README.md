@@ -513,6 +513,14 @@ Maven to find out:
 
 Each of these have many options and features, and are worth exploring.
 
+### Keep your build clean
+
+Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
+For example, leverage `jdeps` which
+[comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html)
+. It would spot, for example, if you have a multi-version jar as a dependency,
+and check that _your_ JDK version is included.  (An example of this is JUnit.)
+
 ### Keep local builds quiet
 
 It is frustrating for local devs when something horrible happened during the
@@ -573,9 +581,11 @@ can always revert changes, but some folks want to look before doing.
 
 ### Dependabot
 
-*NB* &mdash; [Dependabot](#dependabot) may prove speedier for you, and runs in
-CI (GitHub) on a schedule you pick. It submits PRs to your repository when it
-finds out of date dependencies. See
+*NB* &mdash;
+[Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/)
+may prove speedier for you than updating dependency versions locally, and runs
+in CI (GitHub) on a schedule you pick. It submits PRs to your repository when
+it finds out of date dependencies. See
 [`dependabot.yml`](./.github/dependabot.yml) for an example using a daily
 schedule.
 
