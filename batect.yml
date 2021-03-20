@@ -25,12 +25,12 @@ tasks:
   # NB -- local build need "clean", but CI (GitHub actions) does not:
   # Docker copies in the local repo clone, including any artifacts such as
   # build/ or target/ directories; CI starts from a fresh clone
-  build-gradle:
+  build-with-gradle:
     description: Build and test with Gradle
     run:
       container: build-env
       command: ./gradlew --no-daemon clean build
-  build-maven:
+  build-with-maven:
     description: Build and test with Maven
     run:
       container: build-env
