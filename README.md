@@ -521,6 +521,13 @@ For example, leverage `jdeps` which
 . It would spot, for example, if you have a multi-version jar as a dependency,
 and check that _your_ JDK version is included.  (An example of this is JUnit.)
 
+#### Gradle
+
+The [Kordamp plugin](https://github.com/kordamp/jdeps-gradle-plugin) used for
+Gradle does not fail the build when jdeps errors, and only generates a report
+text file. See
+[this issue](https://github.com/kordamp/jdeps-gradle-plugin/issues/16).
+
 ### Keep local builds quiet
 
 It is frustrating for local devs when something horrible happened during the
