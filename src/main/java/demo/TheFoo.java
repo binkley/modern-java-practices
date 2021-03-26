@@ -12,16 +12,16 @@ import static java.util.Objects.isNull;
 @EqualsAndHashCode
 @RequiredArgsConstructor
 @ToString
-public final class DoTheFoo {
+public final class TheFoo {
     /** The foo. */
-    private final String foo;
+    private final String label;
 
     /**
-     * Checks if {@link #foo} is valuable.
+     * Checks if {@link #label} is valuable.
      *
      * @return {@code true} if empty
      */
     public boolean isEmpty() {
-        return isNull(foo);
+        return isNull(label);
     }
 }

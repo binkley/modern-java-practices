@@ -17,6 +17,6 @@ public class Application {
      * @param args the command-line arguments
      */
     public static void main(final String... args) {
-        out.println(new DoTheFoo("I AM FOOCUTUS OF BORG"));
+        out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
     }
 }

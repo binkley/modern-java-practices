@@ -14,6 +14,6 @@ public class ApplicationTest {
             main("Hello", "world!");
         });
 
-        assertThat(out).isEqualTo("DoTheFoo(foo=I AM FOOCUTUS OF BORG)\n");
+        assertThat(out).isEqualTo("TheFoo(label=I AM FOOCUTUS OF BORG)\n");
     }
 }
