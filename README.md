@@ -258,6 +258,15 @@ is a go-to choice for obtaining the JDK.
   the `jdk.version` property, which has no collision with pre-defined
   properties.
 
+* In Maven, you may see issues with Java versions &gt; 11. These come from
+  Java moving to encapsulate the JDK, and asking you to use modules. An
+  example issue is:
+  ```
+  java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @a-hex-code) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @a-hex-code
+  ```
+  If so, use in your project the `--illegal-access=warn` example from 
+  `.mvn/jvm.config`.
+
 ### Managing your Java environment
 
 One of the best tools for managing your Java environment in projects is
@@ -702,9 +711,9 @@ When sensible, prefer to generate rather than write code. Here's why:
   make typos, and fixing typos is a challenge when not obvious. Worse are [_
   thinkos_](https://en.wiktionary.org/wiki/thinko); code generation does not "
   think", so is immune to this problem
-* Generated code does not need code review, only the source input for generation
-  needs review, and this is usually shorter and easier to understand. Your
-  hand-written code needs review
+* Generated code does not need code review, only the source input for
+  generation needs review, and this is usually shorter and easier to
+  understand. Your hand-written code needs review
 * Generated code is usually ignored by tooling such as linting or code
   coverage (and there are simple workarounds when this is not the case). Your
   hand-written code needs tooling to shift problems left
@@ -745,6 +754,11 @@ ignore annotated code.
 A typical use is for the `main()` method in a framework such as Spring Boot
 or [Micronaut](https://micronaut.io/). For a _command-line program_, you will
 want to test your `main()`.
+
+Do note that Lombok reflects on internal features of the JDK.  If you have 
+issues, for _Maven_: use in your project the `--illegal-access=warn` 
+example from `.mvn/jvm.config`, and look to address these.  The solutions 
+in the project are a "workaround" assuming Java 11-16.
 
 #### Lombok configuration
 
