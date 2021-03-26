@@ -702,7 +702,7 @@ When sensible, prefer to generate rather than write code. Here's why:
   make typos, and fixing typos is a challenge when not obvious. Worse are [_
   thinkos_](https://en.wiktionary.org/wiki/thinko); code generation does not "
   think", so is immune to this problem
-* Generated code does need code review, only the source input for generation
+* Generated code does not need code review, only the source input for generation
   needs review, and this is usually shorter and easier to understand. Your
   hand-written code needs review
 * Generated code is usually ignored by tooling such as linting or code
