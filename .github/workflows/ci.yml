@@ -43,7 +43,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Build and test with Gradle under Batect
-        run: ./batect --permanently-enable-telemetry build-gradle
+        run: ./batect --permanently-enable-telemetry build-with-gradle
 
   build-maven:
     name: Builds and tests for Maven under Batect
@@ -78,4 +78,4 @@ jobs:
             ${{ runner.os }}-
 
       - name: Build and test with Maven under Batect
-        run: ./batect --permanently-enable-telemetry build-maven
+        run: ./batect --permanently-enable-telemetry build-with-maven
