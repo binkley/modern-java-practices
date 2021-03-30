@@ -501,6 +501,11 @@ flag:
 * The Batect builds _assume_ you've run local builds first. Plesae run
   `./gradlew build` or `./mvnw verify` at least once before running
   `./batect ...` to ensure cached/shared downloads are present
+  
+* In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking 
+  a "Y/N" question.  This **must** be _separate step_ from running the 
+  build itself.  See [`ci.yml`](.github/workflows/ci.yml) for Gradle and 
+  Maven examples
 
 ---
 
