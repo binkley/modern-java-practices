@@ -29,7 +29,7 @@ tasks:
     description: Build and test with Gradle
     run:
       container: build-env
-      command: ./gradlew --no-daemon clean build
+      command: ./gradlew --no-daemon --warning-mode=all clean build
   build-with-maven:
     description: Build and test with Maven
     run:

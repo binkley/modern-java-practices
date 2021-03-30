@@ -420,6 +420,11 @@ If you use GitLab, read about the equivalent in
   ```
   For example, with Gradle, this will log all the build steps without
   attempting to overwrite earlier steps with later ones
+* With Gradle, use the `--warning-mode=all` flag for CI: this shows _all_
+  warnings Gradle generates, not just a summary. See
+  [_Showing or hiding
+  warnings_](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_warnings)
+  for details
 * With Maven, use the `--no-transfer-progress` flag for CI: this avoids
   spamming CI logs with download progress messages
 
@@ -501,11 +506,11 @@ flag:
 * The Batect builds _assume_ you've run local builds first. Plesae run
   `./gradlew build` or `./mvnw verify` at least once before running
   `./batect ...` to ensure cached/shared downloads are present
-  
-* In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking 
-  a "Y/N" question.  This **must** be _separate step_ from running the 
-  build itself.  See [`ci.yml`](.github/workflows/ci.yml) for Gradle and 
-  Maven examples
+
+* In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking a "
+  Y/N" question. This **must** be _separate step_ from running the build
+  itself. See [`ci.yml`](.github/workflows/ci.yml) for Gradle and Maven
+  examples
 
 ---
 
