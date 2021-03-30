@@ -118,6 +118,7 @@ tasks.named("pitest") { // PITest plugin does not expose task as expected
 
 jdepsReport {
     // TODO: Report shows a big mess with dependencies
+    // TODO: Why mess with multi-release jars?
     multiReleaseJars = [".*": "$jdkVersion"]
 }
 
