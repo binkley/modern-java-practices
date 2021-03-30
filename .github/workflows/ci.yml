@@ -9,7 +9,7 @@ on:
       - README.md
 
 jobs:
-  build-gradle:
+  build-with-gradle:
     name: Builds and tests for Gradle under Batect
     runs-on: ubuntu-latest
 
@@ -45,7 +45,7 @@ jobs:
       - name: Build and test with Gradle under Batect
         run: ./batect --permanently-enable-telemetry build-with-gradle
 
-  build-maven:
+  build-with-maven:
     name: Builds and tests for Maven under Batect
     runs-on: ubuntu-latest
 
