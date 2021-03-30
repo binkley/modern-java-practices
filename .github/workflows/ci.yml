@@ -17,33 +17,36 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@master
 
-#      - name: Restore Batect caches
-#        uses: actions/cache@master
-#        env:
-#          cache-name: batect-cache
-#        with:
-#          path: ~/.batect
-#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-build-${{ env.cache-name }}-
-#            ${{ runner.os }}-build-
-#            ${{ runner.os }}-
-#
-#      - name: Restore Gradle caches
-#        uses: actions/cache@master
-#        env:
-#          cache-name: gradle-cache
-#        with:
-#          path: ~/.gradle
-#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{hashFiles('**/build.gradle') }}
-#          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
-#          restore-keys: |
-#            ${{ runner.os }}-build-${{ env.cache-name }}-
-#            ${{ runner.os }}-build-
-#            ${{ runner.os }}-
+      - name: Restore Batect caches
+        uses: actions/cache@master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Manage Batect telemetry
+        run: ./batect --permanently-enable-telemetry
+
+      - name: Restore Gradle caches
+        uses: actions/cache@master
+        env:
+          cache-name: gradle-cache
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{hashFiles('**/build.gradle') }}
+          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: Build and test with Gradle under Batect
-        run: ./batect --permanently-enable-telemetry build-with-gradle
+        run: ./batect build-with-gradle
 
   build-with-maven:
     name: Builds and tests for Maven under Batect
@@ -53,29 +56,32 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@master
 
-#      - name: Restore Batect caches
-#        uses: actions/cache@master
-#        env:
-#          cache-name: batect-cache
-#        with:
-#          path: ~/.batect
-#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-build-${{ env.cache-name }}-
-#            ${{ runner.os }}-build-
-#            ${{ runner.os }}-
-#
-#      - name: Restore Maven caches
-#        uses: actions/cache@master
-#        env:
-#          cache-name: maven-cache
-#        with:
-#          path: ~/.m2
-#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-build-${{ env.cache-name }}-
-#            ${{ runner.os }}-build-
-#            ${{ runner.os }}-
+      - name: Restore Batect caches
+        uses: actions/cache@master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Manage Batect telemetry
+        run: ./batect --permanently-enable-telemetry
+
+      - name: Restore Maven caches
+        uses: actions/cache@master
+        env:
+          cache-name: maven-cache
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: Build and test with Maven under Batect
-        run: ./batect --permanently-enable-telemetry build-with-maven
+        run: ./batect build-with-maven
