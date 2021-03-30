@@ -125,6 +125,9 @@
 
     <build>
         <plugins>
+            <!-- TODO: Add wrapper plugin when available: See
+                  https://github.com/takari/maven-wrapper and
+                  https://maven.apache.org/plugins/maven-wrapper-plugin/ -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
