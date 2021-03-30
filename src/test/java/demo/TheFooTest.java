@@ -3,6 +3,7 @@ package demo;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class TheFooTest {
     @Test
@@ -13,17 +14,22 @@ class TheFooTest {
         assertThat(didTheFoo.getLabel()).isEqualTo(theFoo);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Test
-    void shouldBeFull() {
-        final var aFoo = new TheFoo("Bob the Builder");
-
-        assertThat(aFoo.isEmpty()).isFalse();
+    void shouldComplainWhenInvalid() {
+        assertThatThrownBy(() -> new TheFoo(null))
+                .isInstanceOf(NullPointerException.class);
     }
 
     @Test
-    void shouldBeEmpty() {
-        final var aFoo = new TheFoo(null);
+    void shouldRedAlert() {
+        assertThat(new TheFoo("We are the Borg.").isRedAlert())
+                .isTrue();
+    }
 
-        assertThat(aFoo.isEmpty()).isTrue();
+    @Test
+    void shouldNotRedAlert() {
+        assertThat(new TheFoo("My debt is repaid.").isRedAlert())
+                .isFalse();
     }
 }

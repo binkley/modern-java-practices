@@ -264,7 +264,7 @@ is a go-to choice for obtaining the JDK.
   ```
   java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @a-hex-code) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @a-hex-code
   ```
-  If so, use in your project the `--illegal-access=warn` example from 
+  If so, use in your project the `--illegal-access=warn` example from
   `.mvn/jvm.config`.
 
 ### Managing your Java environment
@@ -755,10 +755,10 @@ A typical use is for the `main()` method in a framework such as Spring Boot
 or [Micronaut](https://micronaut.io/). For a _command-line program_, you will
 want to test your `main()`.
 
-Do note that Lombok reflects on internal features of the JDK.  If you have 
-issues, for _Maven_: use in your project the `--illegal-access=warn` 
-example from `.mvn/jvm.config`, and look to address these.  The solutions 
-in the project are a "workaround" assuming Java 11-16.
+Do note that Lombok reflects on internal features of the JDK. If you have
+issues, for _Maven_: use in your project the `--illegal-access=warn`
+example from `.mvn/jvm.config`, and look to address these. The solutions in
+the project are a "workaround" assuming Java 11-16.
 
 #### Lombok configuration
 
@@ -868,7 +868,9 @@ is the default location for Gradle, and configured for Maven in the project.
 
 The Checkstyle configuration used is stock
 [`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
-with the addition of support for `@SuppressWarnings(checkstyle:...)`.
+with the addition of support for `@SuppressWarnings(checkstyle:...)`.  
+Note that this format is _overly aggressive_ for Javadocs, and needs tweaking
+for most projects.
 
 ### Tips
 

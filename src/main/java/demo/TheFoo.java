@@ -5,7 +5,11 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-import static java.util.Objects.isNull;
+import javax.annotation.Nonnull;
+import java.util.regex.Pattern;
+
+import static java.util.regex.Pattern.CASE_INSENSITIVE;
+import static java.util.regex.Pattern.compile;
 
 /** Demonstration class. */
 @Getter
@@ -13,15 +17,19 @@ import static java.util.Objects.isNull;
 @RequiredArgsConstructor
 @ToString
 public final class TheFoo {
+    /** Check for the Borg. */
+    private static final Pattern BORG = compile("BORG", CASE_INSENSITIVE);
+
     /** The foo. */
+    @Nonnull
     private final String label;
 
     /**
-     * Checks if {@link #label} is valuable.
+     * Is there danger?
      *
-     * @return {@code true} if empty
+     * @return if the ship should go onto red alert
      */
-    public boolean isEmpty() {
-        return isNull(label);
+    public boolean isRedAlert() {
+        return BORG.matcher(label).find();
     }
 }
