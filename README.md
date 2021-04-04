@@ -279,7 +279,9 @@ LTS version of Java, which is 11.)
 
 Do use `jenv enable-plugins export` and restart your shell.  This ensures 
 `JAVA_HOME` is exported to match your jEnv settings.  Several tools use 
-`JAVA_HOME` rather than `java` or `javac` found on `PATH`.
+`JAVA_HOME` rather than the `java` or `javac` found in your `PATH`.
+
+You may also find the `gradle` and `maven` plugins for jEnv useful.
 
 For those on Windows, you may need to use WSL2 to use jEnv.
 
