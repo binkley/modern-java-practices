@@ -56,7 +56,7 @@
         <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
-        <maven.version>3.6.3</maven.version>
+        <maven.version>3.8.1</maven.version>
         <mockito.version>3.8.0</mockito.version>
         <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.4</pitest-maven.version>
