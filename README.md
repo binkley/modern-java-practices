@@ -277,13 +277,15 @@ which JDK installation to use. You may notice the
 to pick your project Java version. (Reminder: in general, prefer the latest
 LTS version of Java, which is 11.)
 
-Do use `jenv enable-plugins export` and restart your shell.  This ensures 
-`JAVA_HOME` is exported to match your jEnv settings.  Several tools use 
+Do use `jenv enable-plugins export` and restart your shell. This ensures
+`JAVA_HOME` is exported to match your jEnv settings. Several tools use
 `JAVA_HOME` rather than the `java` or `javac` found in your `PATH`.
 
 You may also find the `gradle` and `maven` plugins for jEnv useful.
 
-For those on Windows, you may need to use WSL2 to use jEnv.
+For those on Windows, you may need to use Cygwin, Git for Windows, or WSL2 to
+use jEnv.  (I've not tested these: jEnv needs a Bash shell with supporting
+programs.)
 
 There are many ways to install the JDK, most are platform-dependent. In
 general, your team will be better off using a "managed" approach, rather than
