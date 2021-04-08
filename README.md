@@ -1086,7 +1086,10 @@ report.
 * You may find _mocking_ helpful for injection. The Java community is not of
   one mind on mocking, so use your judgment:
     * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
-      dependency for the sample projects
+      dependency for the sample projects. For "modern" versions of Mockito,
+      you should use the `mockito-inline` dependency rather than
+      `mockito-core`: it supports
+      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito)
     * [PowerMock](https://powermock.github.io/) provides additional features;
       however, Mockito normally covers use cases
     * Other Modern JVM languages &mdash; these languages may prefer different
