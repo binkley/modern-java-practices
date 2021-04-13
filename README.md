@@ -1276,9 +1276,9 @@ build:
   and follow the link in the output
 * [Maven profiler](https://github.com/jcgay/maven-profiler) &mdash; run
   with `./mvnw -Dprofile <goals>` and open the local link in the output. This
-  project includes the setup for [Maven extensions](.mvn/extensions.xml).
+  project includes the setup for [Maven extensions](.mvn/extensions.xml)
 
-### My local build is too slow
+### My local build is still too slow
 
 Congratulations!  You care, and you notice what is happening for your team.  
 Local build time is _important_: gone are the days when a multi-hour, or even
@@ -1292,6 +1292,10 @@ parts to CI with the cost to you of issues arising from delayed feedback:
 * [DependencyCheck](#shift-security-left)
 * [Integration tests](#use-integration-testing)
 * [Mutation testing](#use-mutation-testing)
+
+But _beware_!  Your local build is now drifting away from CI, so you are 
+pushing problems off later in your build pipeline.  And not everyone pays 
+close attention to CI failures until something bad happens.
 
 In the Gradle and Maven samples in this repository, _DependencyCheck_ and
 _Mutation testing_ are typically the slowest steps in a local build;
