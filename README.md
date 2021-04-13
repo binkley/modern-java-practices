@@ -1293,9 +1293,9 @@ parts to CI with the cost to you of issues arising from delayed feedback:
 * [Integration tests](#use-integration-testing)
 * [Mutation testing](#use-mutation-testing)
 
-But _beware_!  Your local build is now drifting away from CI, so you are 
-pushing problems off later in your build pipeline.  And not everyone pays 
-close attention to CI failures until something bad happens.
+But _beware_!  Your local build is now drifting away from CI, so you are
+pushing problems off later in your build pipeline. And not everyone pays close
+attention to CI failures until something bad happens.
 
 In the Gradle and Maven samples in this repository, _DependencyCheck_ and
 _Mutation testing_ are typically the slowest steps in a local build;
@@ -1306,3 +1306,17 @@ are samples only.
 Every project is different; your team and stakeholders need to judge the value
 of quicker feedback to programmers of these concerns, and quicker feedback
 from a faster local build. There is no "one size fits all" recommendation.
+
+### It fails in CI, but passes locally
+
+As much as you would like local builds to be identical to CI, this can still
+happen for reasons of environment. Examples can include:
+
+- Credentials needed in CI have changed: Update your CI configuration
+- Network routing has changed, and CI is in a different subnet from local:
+  Talk with your Infrastructure team
+- CI includes steps to push successful builds further down the line to other
+  environments, and something there went wrong: Talk with your Infrastructure
+  team
+- Dependencies break in CI: If CI uses an internal dependency repository,
+  check in with the maintainers of the repository
