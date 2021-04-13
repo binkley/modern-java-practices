@@ -68,7 +68,6 @@ or contribute PRs!  I'd love a conversation with you.
 * [Use integration testing](#use-integration-testing)
 * [Going further](#going-further)
 * [Problems](#problems)
-* [Changelog](#changelog)
 
 ---
 
@@ -1139,6 +1138,9 @@ This project also provides the PIT report as part of Maven's project report.
   to "demo" for either Gradle or Maven if your classes are underneath the
   "demo.*" package namespace, otherwise PITest may complain that there are no
   classes to mutate, or no unit tests to run
+* Read more about [_Mutation
+  Testing_](https://testing.googleblog.com/2021/04/mutation-testing.html) from
+  Google
 
 ---
 
@@ -1300,11 +1302,3 @@ are samples only.
 Every project is different; your team and stakeholders need to judge the value
 of quicker feedback to programmers of these concerns, and quicker feedback
 from a faster local build. There is no "one size fits all" recommendation.
-
-## Changelog
-
-* 2020-12-21 -- Quieter builds
-* 2020-12-05 -- Handling slow local builds
-* 2020-11-27 -- Run CI for pull requests in addition to pushes
-* 2020-11-25 -- Leverage the compiler
-* 2020-11-06 -- Call out Gradle issue with `toolVersion` property
