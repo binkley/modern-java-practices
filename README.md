@@ -342,7 +342,7 @@ build features to add to your starter project, whatever makes sense for your
 project.
 
 This article offers **no preference between Gradle or Maven**. You need to
-decide.
+decide with your team.
 
 Projects using Ant **should migrate**. It is true that Ant is
 well-maintained (the latest version dates from September 2020). However, you
@@ -394,6 +394,11 @@ alphabetical ordering.
   [_Takari Smart
   Builder_](http://takari.io/book/30-team-maven.html#takari-smart-builder)
   to speed it up
+* Maven best practice is to specify the version for each plugin, _even default
+  plugins_ that come with your version of Maven. This enforces
+  **reproducible builds**. See also
+  the [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
+  to exactly specify the version of Maven for your build
 
 ---
 
