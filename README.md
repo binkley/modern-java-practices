@@ -234,11 +234,11 @@ For any Modern Java/JVM project, the first decision is _which version of Java
 
 * Java 11 is the current LTS ("long-term support") version.  _This is the
   recommended version_ for production
-* There are more recent versions (12 to 15) with additional features to try
+* There are more recent versions (12 to 16) with additional features to try
   out. However, for production, these are not supported by Oracle
 * For Java 8 or older: These versions are no longer supported by Oracle unless
-  one
-  buys [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
+  one buys
+  [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
   . However, AdoptOpenJDK provides distributions of OpenJDK 8, supported until
   at least
   [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
@@ -616,6 +616,12 @@ This project keeps Gradle version numbers in
 
 Since your `pom.xml` is in Git, `versions:update-properties` is _safe_ as you
 can always revert changes, but some folks want to look before doing.
+
+#### Tips
+
+* Gradle and Maven provide _default versions_ of bundled plugins. In both
+  built tools, the version update plugins need you to be _explicit_ in stating
+  versions for bundled plugins, so those versions are visible for update
 
 ### Dependabot
 
