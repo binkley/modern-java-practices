@@ -1092,8 +1092,9 @@ report.
     * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
       dependency for the sample projects. For "modern" versions of Mockito,
       you should use the `mockito-inline` dependency rather than
-      `mockito-core`: it supports
+      `mockito-core` if relevant for your project: it supports
       [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito)
+      . See `TheFooTest.shouldRedAlertAsStaticMock` for an example
     * [PowerMock](https://powermock.github.io/) provides additional features;
       however, Mockito normally covers use cases
     * Other Modern JVM languages &mdash; these languages may prefer different
@@ -1104,8 +1105,9 @@ report.
       for checking STDOUT and STDERR, program exits, and use of system
       properties (_eg_, validate logging), also a dependency for the sample
       projects.  (*NB* &mdash; these are generally not parallelizable tests as
-      they alter the state of the JVM. If you need these, be cautious about
-      using parallel testing features, and avoiding
+      they alter the state of the JVM. Another is the
+      [JUnit Pioneer](https://junit-pioneer.org/) extension pack. If you need
+      these, be cautious about using parallel testing features, and avoiding
       [Flaky Tests](https://hackernoon.com/flaky-tests-a-war-that-never-ends-9aa32fdef359))
 
 ---

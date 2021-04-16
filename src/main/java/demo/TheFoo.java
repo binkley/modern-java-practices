@@ -30,6 +30,17 @@ public final class TheFoo {
      * @return if the ship should go onto red alert
      */
     public boolean isRedAlert() {
-        return BORG.matcher(label).find();
+        return checkRedAlert(label);
+    }
+
+    /**
+     * Checks text for the presence of the Borg.
+     *
+     * @param text the text to check
+     *
+     * @return {@code true} if Borg is found
+     */
+    public static boolean checkRedAlert(final String text) {
+        return BORG.matcher(text).find();
     }
 }
