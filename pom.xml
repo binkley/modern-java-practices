@@ -58,6 +58,7 @@
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
         <maven.version>3.8.1</maven.version>
         <mockito.version>3.9.0</mockito.version>
+        <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.4</pitest-maven.version>
         <pmd.version>6.33.0</pmd.version>
@@ -381,6 +382,7 @@
                 <configuration>
                     <failBuildOnAnyVulnerability>true
                     </failBuildOnAnyVulnerability>
+                    <skip>${owasp.skip}</skip>
                 </configuration>
                 <executions>
                     <execution>
