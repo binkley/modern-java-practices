@@ -50,7 +50,7 @@
         <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
-        <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
+        <maven-jxr-plugin.version>3.1.1</maven-jxr-plugin.version>
         <maven-pmd-plugin.version>3.14.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.1.1</maven-project-info-reports-plugin.version>
@@ -60,12 +60,12 @@
         <mockito.version>3.9.0</mockito.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.6.4</pitest-maven.version>
+        <pitest-maven.version>1.6.5</pitest-maven.version>
         <pmd.version>6.33.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.2.2</spotbugs-maven-plugin.version>
-        <spotbugs.version>4.2.2</spotbugs.version>
+        <spotbugs-maven-plugin.version>4.2.3</spotbugs-maven-plugin.version>
+        <spotbugs.version>4.2.3</spotbugs.version>
         <system-lambda.version>1.2.0</system-lambda.version>
         <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
         <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
