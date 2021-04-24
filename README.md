@@ -1,6 +1,5 @@
 <a href="./LICENSE.md">
-<img src="./images/public-domain.png" alt="Public Domain"
-align="right"/>
+<img src="./images/public-domain.png" alt="Public Domain" align="right"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -303,25 +302,24 @@ The choice between Gradle and Maven depends on your team, your broader
 ecosystem, and your project needs. In summary:
 
 * <a href="https://gradle.org/" title="Gradle">
-  <img src="./images/gradle.png" alt="Gradle"
-  align="right" width="15%" height="auto"/>
-  </a> Gradle &mdash; your build script is written in Groovy or Kotlin; 
-  dynamic, imperative, and mutable; requires debugging your build on 
-  occasion, but less verbose than Maven's XML. Use of "parent" (umbrella) 
-  projects is possible but challenging. You can locally extend your build 
-  script either _inline_ with build code, with project plugins, or with 
-  plugins from a separate project (perhaps shared across project for your 
-  team). If interested in custom plugins,
-  [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
+  <img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
+  height="auto"/></a> Gradle &mdash; your build script is written in 
+  Groovy or Kotlin; dynamic, imperative, and mutable; requires debugging your
+  build on occasion, but less verbose than Maven's XML. Use of "parent" 
+  (umbrella) projects is possible but challenging. You can locally extend 
+  your build script either _inline_ with build code, with project plugins,
+  or with  plugins from a separate project (perhaps shared across project 
+  for your team). If interested in custom plugins, [read more
+    here](https://docs.gradle.org/current/userguide/custom_plugins.html)
 * <a href="https://maven.apache.org/" title="Maven">
-  <img src="./images/maven.png" alt="Maven"
-  align="right" width="15%" height="auto"/>
-  </a> Maven &mdash; your build scripts is written in XML; declarative and
-  immutable; verbose but specific; it either works or not. Use of "parent"
-  (umbrella) projects is simple with built-in support. You can locally extend
-  your build with plugins from a separate project (perhaps shared across
-  project for your team). If interested in custom plugins,
-  [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
+  <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
+  height="auto"/></a> Maven &mdash; your build scripts is written in XML; 
+  declarative and immutable; verbose but specific; it either works or not. 
+  Use of "parent" (umbrella) projects is simple with built-in support. You 
+  can locally extend your build with plugins from a separate project 
+  (perhaps shared across project for your team). If interested in custom 
+  plugins, [read more
+  here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't
 cover alternative build tools:
@@ -369,7 +367,8 @@ alphabetical ordering.
   deployment environment. If this feature is important for your team, you can
   code `if/else` blocks directly in `build.gradle`, or use a plugin such as
   [Kordamp Profiles Gradle plugin](https://kordamp.org/kordamp-gradle-plugins/#_org_kordamp_gradle_profiles)
-  (Kordamp has a suite of interesting Gradle plugins beyond this one)
+  (Kordamp has a suite of interesting Gradle plugins beyond this one; read
+  more on that page)
 * Gradle uses advanced terminal control, so you cannot always see what is
   happening. To view Gradle steps plainly when debugging your build, use:
   ```
@@ -396,8 +395,8 @@ alphabetical ordering.
   to speed it up
 * Maven best practice is to specify the version for each plugin, _even default
   plugins_ that come with your version of Maven. This enforces
-  **reproducible builds**. See also
-  the [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
+  **reproducible builds**. See also the
+  [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
   to exactly specify the version of Maven for your build
 
 ---
