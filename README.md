@@ -76,7 +76,7 @@ or contribute PRs!  I'd love a conversation with you.
 ---
 
 <a href="https://modernagile.org/" title="Modern Agile">
-<img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
+<img src="./images/modern-agile-wheel-english-2.png" alt="Modern Agile"
 align="right" width="30%" height="auto"/>
 </a>
 
