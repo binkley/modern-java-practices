@@ -45,6 +45,14 @@ $ ./batect build-maven  # Reproduce CI, such as GitHub Actions
 
 **NB** &mdash; This is a _living document_.
 
+### Reusing this project
+
+Consider [_Clone git repository without
+history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
+to start at the current tip of this project.  For example, some images in
+`README.md` started overlarge in earlier versions, something you may not want
+in a clone.
+
 ### Contributing
 
 Please [file issues](https://github.com/binkley/modern-java-practices/issues),
