@@ -30,11 +30,6 @@ To sum up:
 - _Make it work, make it right, make it fast_ &mdash; [C2
   Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
-For a non-programmer _high-level_ overview, please see the
-[Executive Summary](./SUMMARY.md), in progress.  (This is what I would present
-to non-programmer managers on the value of work that programmers put into the
-build, and why this work improves organization and business outcomes.)
-
 Try out the Gradle and Maven builds:
 
 ```
