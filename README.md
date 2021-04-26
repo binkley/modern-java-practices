@@ -99,15 +99,16 @@ approaches to software.)
 
 ### Principles in designing these builds
 
-1. Make it work
+1. _Make it work_
     - Can I as a Day 1 developer build the project locally?
     - Can I hand the project off to someone else to try?
-2. Make it right
+2. _Make it right_
     - Can I reproduce issues in the CI build, and fix it locally?
     - Can I find code and security issues from running the build?
-3. Make it fast
+3. _Make it fast_
     - Can I run the local build as frequently as I like, and be productive?
     - Can I have a fast cycle of code &amp; test?
+    - Can I update my dependencies and plugins quickly and easily?
 
 ### Goals for this project
 
