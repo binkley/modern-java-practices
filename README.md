@@ -8,7 +8,6 @@
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-
 **NOTE:** If you use a Gradle build, please see [this issue with Gradle PMD
 plugin](https://github.com/binkley/modern-java-practices/issues/54).
 Resolution is awaiting fixes upstream from this project.
@@ -23,6 +22,13 @@ _best build practices_ and _project hygiene_. There are two recurring themes:
   cycle, before they happen in production
 * _Make developer life easier_ &mdash; Automate build tasks commonly done by
   hand
+
+To sum up:
+
+- _I'm not a great programmer; I'm just a good programmer with great habits._
+  &mdash; Kent Beck
+- _Make it work, make it right, make it fast_ &mdash; [C2
+  Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
 For a non-programmer _high-level_ overview, please see the
 [Executive Summary](./SUMMARY.md), in progress.  (This is what I would present
