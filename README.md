@@ -8,6 +8,11 @@
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![Public Domain](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
+
+**NOTE:** If you use a Gradle build, please see [this issue with Gradle PMD
+plugin](https://github.com/binkley/modern-java-practices/issues/54).
+Resolution is awaiting fixes upstream from this project.
+
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
 [_Gradle_](https://docs.gradle.org/current/userguide/userguide.html) and
@@ -37,8 +42,7 @@ $ ./batect build-maven  # Reproduce CI, such as GitHub Actions
 # Output ommitted
 ```
 
-**NB** &mdash; This is a _living document_. Please see [Changelog](#changelog)
-for recent substantive changes.
+**NB** &mdash; This is a _living document_.
 
 ### Contributing
 
