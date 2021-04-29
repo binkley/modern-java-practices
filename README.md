@@ -11,7 +11,8 @@
 **NOTE:** If you use a Gradle build, please see [this issue with Gradle PMD
 plugin](https://github.com/binkley/modern-java-practices/issues/54).
 Resolution is awaiting fixes upstream from this project.  This blocks
-upgrading to Gradle 7.0 for now.  This code base uses the latest 6.8.x Gradle.
+upgrading to Gradle 7.0 for now which is anticipated to resolve the CVE
+security failure.
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
