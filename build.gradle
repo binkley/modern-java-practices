@@ -86,6 +86,8 @@ pmd {
 }
 
 spotbugs {
+    effort = 'Max'
+    reportLevel = 'Low'
     toolVersion = spotbugsVersion
 }
 
