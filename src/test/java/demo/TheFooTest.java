@@ -1,5 +1,6 @@
 package demo;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mockStatic;
 
+@SuppressFBWarnings("NP_NONNULL_PARAM_VIOLATION")
 class TheFooTest {
     @Test
     void shouldKnowTheFoo() {

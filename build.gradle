@@ -1,4 +1,5 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import com.github.spotbugs.snom.SpotBugsTask
 
 plugins {
     id "build-dashboard"
@@ -41,6 +42,13 @@ dependencies {
     testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
 
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
+}
+
+// TODO: Work around GitHub issue #54
+configurations.pmd {
+    resolutionStrategy {
+        forcedModules = ["commons-io:commons-io:2.8.0"]
+    }
 }
 
 java {
@@ -89,6 +97,17 @@ spotbugs {
     effort = 'Max'
     reportLevel = 'Low'
     toolVersion = spotbugsVersion
+}
+
+tasks.withType(SpotBugsTask) {
+    reports {
+        html {
+            enabled = true
+        }
+        xml {
+            enabled = true
+        }
+    }
 }
 
 jacoco {

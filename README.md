@@ -13,7 +13,8 @@
 plugin](https://github.com/binkley/modern-java-practices/issues/54).
 Resolution is awaiting fixes upstream from this project.  This blocks
 upgrading to Gradle 7.0 for now which is anticipated to resolve the CVE
-security failure.  See unbroken-dome/gradle-testsets-plugin#117.
+security failure.  See unbroken-dome/gradle-testsets-plugin#117, and
+spotbugs/spotbugs/issues/724.
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
@@ -638,6 +639,8 @@ can always revert changes, but some folks want to look before doing.
 * Gradle and Maven provide _default versions_ of bundled plugins. In both
   built tools, the version update plugins need you to be _explicit_ in stating
   versions for bundled plugins, so those versions are visible for update
+* Enable _HTML reports_ for local use; enable _XML reports_ for CI use in
+  integrating with report tooling
 
 ### Dependabot
 
