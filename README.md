@@ -13,7 +13,7 @@
 plugin](https://github.com/binkley/modern-java-practices/issues/54).
 Resolution is awaiting fixes upstream from this project.  This blocks
 upgrading to Gradle 7.0 for now which is anticipated to resolve the CVE
-security failure.
+security failure.  See unbroken-dome/gradle-testsets-plugin#117.
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
