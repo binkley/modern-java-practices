@@ -39,11 +39,11 @@ Try out the Gradle and Maven builds:
 ```
 $ ./gradlew build
 # Output ommitted
-$ ./batect build-gradle  # Reproduce CI, such as GitHub Actions
+$ ./batect build-with-gradle  # Reproduce CI, such as GitHub Actions
 # Output ommitted
 $ ./mvnw verify
 # Output omitted
-$ ./batect build-maven  # Reproduce CI, such as GitHub Actions
+$ ./batect build-with-maven  # Reproduce CI, such as GitHub Actions
 # Output ommitted
 ```
 
@@ -494,8 +494,8 @@ For this project, there are example tasks:
 ```
 $ ./batect -T
 Available tasks:
-- build-gradle: Build and test with Gradle
-- build-maven: Build and test with Maven
+- build-with-gradle: Build and test with Gradle
+- build-with-maven: Build and test with Maven
 ```
 
 Other common tasks might be:
@@ -504,7 +504,6 @@ Other common tasks might be:
 $ ./batect -T
 Available tasks:
 [ ... ]
-- run: Run the demo program
 - shell: Open a shell in the container
 ```
 
