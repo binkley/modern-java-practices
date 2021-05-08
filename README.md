@@ -12,9 +12,9 @@
 **NOTE:** If you use a Gradle build, please see [this issue with Gradle PMD
 plugin](https://github.com/binkley/modern-java-practices/issues/54).
 Resolution is awaiting fixes upstream from this project.  This blocks
-upgrading to Gradle 7.0 for now which is anticipated to resolve the CVE
-security failure.  See unbroken-dome/gradle-testsets-plugin#117, and
-spotbugs/spotbugs/issues/724.
+upgrading to Gradle 7.0 for now because of an API incompatibility.  See
+unbroken-dome/gradle-testsets-plugin#117, and
+spotbugs/spotbugs#724.
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
