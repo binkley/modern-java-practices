@@ -318,24 +318,28 @@ with each person using binary installers. Popular choices include:
 The choice between Gradle and Maven depends on your team, your broader
 ecosystem, and your project needs. In summary:
 
-* <a href="https://gradle.org/" title="Gradle">
-  <img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
-  height="auto"/></a> Gradle &mdash; your build script is written in 
-  Groovy or Kotlin; dynamic, imperative, and mutable; requires debugging your
-  build on occasion, but less verbose than Maven's XML. Use of "parent" 
-  (umbrella) projects is possible but challenging. You can locally extend 
-  your build script either _inline_ with build code, with project plugins,
-  or with  plugins from a separate project (perhaps shared across project 
-  for your team). If interested in custom plugins,
+<a href="https://gradle.org/" title="Gradle">
+<img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
+height="auto"/></a> 
+
+* Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
+  imperative, and mutable; requires debugging your build on occasion, but less
+  verbose than Maven's XML. Use of "parent" (umbrella) projects is possible
+  but challenging. You can locally extend your build script either _inline_
+  with build code, with project plugins, or with plugins from a separate
+  project (perhaps shared across project for your team). If interested in
+  custom plugins,
   [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
-* <a href="https://maven.apache.org/" title="Maven">
-  <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
-  height="auto"/></a> Maven &mdash; your build scripts is written in 
-  XML; declarative and immutable; verbose but specific; it either works 
-  or not. Use of "parent" (umbrella) projects is simple with built-in 
-  support. You can locally extend your build with plugins from a separate 
-  project (perhaps shared across project for your team). If interested in custom 
-  plugins,
+
+<a href="https://maven.apache.org/" title="Maven">
+<img src="./images/maven.png" alt="Maven" align="right" width="15%" 
+height="auto"/></a>
+
+* Maven &mdash; your build scripts is written in XML; declarative and
+  immutable; verbose but specific; it either works or not. Use of "parent" (
+  umbrella) projects is simple with built-in support. You can locally extend
+  your build with plugins from a separate project (perhaps shared across
+  project for your team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't
