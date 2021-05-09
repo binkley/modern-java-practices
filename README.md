@@ -9,12 +9,11 @@
 [![vulnerabilities](https://snyk.io/test/github/binkley/modern-java-practices/badge.svg)](https://snyk.io/test/github/binkley/modern-java-practices)
 [![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-**NOTE:** If you use a Gradle build, please see [this issue with Gradle PMD
-plugin](https://github.com/binkley/modern-java-practices/issues/54).
-Resolution is awaiting fixes upstream from this project.  This blocks
-upgrading to Gradle 7.0 for now because of an API incompatibility.  See
-unbroken-dome/gradle-testsets-plugin#117, and
-spotbugs/spotbugs#724.
+**NOTE:** If you use a Gradle build, please
+see [this issue with Gradle PMD plugin](https://github.com/binkley/modern-java-practices/issues/54)
+. Resolution is awaiting fixes upstream from this project. This blocks
+upgrading to Gradle 7.0 for now because of an API incompatibility. See
+unbroken-dome/gradle-testsets-plugin#117, and spotbugs/spotbugs#724.
 
 **Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
 with sample builds for
@@ -31,8 +30,8 @@ To sum up:
 
 - _I'm not a great programmer; I'm just a good programmer with great habits._
   &mdash; Kent Beck
-- _Make it work, make it right, make it fast_ &mdash; [C2
-  Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
+- _Make it work, make it right, make it fast_
+  &mdash; [C2 Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
 Try out the Gradle and Maven builds:
 
@@ -53,7 +52,7 @@ $ ./batect build-with-maven  # Reproduce CI, such as GitHub Actions
 
 Consider [_Clone git repository without
 history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
-to start at the current tip of this project.  For example, some images in
+to start at the current tip of this project. For example, some images in
 `README.md` started overlarge in earlier versions, something you may not want
 in a clone.
 
@@ -327,17 +326,17 @@ ecosystem, and your project needs. In summary:
   (umbrella) projects is possible but challenging. You can locally extend 
   your build script either _inline_ with build code, with project plugins,
   or with  plugins from a separate project (perhaps shared across project 
-  for your team). If interested in custom plugins, [read more
-    here](https://docs.gradle.org/current/userguide/custom_plugins.html)
+  for your team). If interested in custom plugins,
+  [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
 * <a href="https://maven.apache.org/" title="Maven">
   <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
-  height="auto"/></a> Maven &mdash; your build scripts is written in XML; 
-  declarative and immutable; verbose but specific; it either works or not. 
-  Use of "parent" (umbrella) projects is simple with built-in support. You 
-  can locally extend your build with plugins from a separate project 
-  (perhaps shared across project for your team). If interested in custom 
-  plugins, [read more
-  here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
+  height="auto"/></a> Maven &mdash; your build scripts is written in 
+  XML; declarative and immutable; verbose but specific; it either works 
+  or not. Use of "parent" (umbrella) projects is simple with built-in 
+  support. You can locally extend your build with plugins from a separate 
+  project (perhaps shared across project for your team). If interested in custom 
+  plugins,
+  [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
 For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't
 cover alternative build tools:
@@ -1100,9 +1099,9 @@ report.
 
 ### Tips
 
-* See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to _
-  sparingly_ leverage the `@Generated` annotation for marking code that JaCoCo
-  should ignore
+* See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to
+  _sparingly_ leverage the `@Generated` annotation for marking code that
+  JaCoCo should ignore
 * Discuss with your team the concept of a "coverage ratchet". This means, once
   a baseline coverage percentage is agreed to, the build configuration will
   only raise this value, not lower it. This is fairly simple to do by
