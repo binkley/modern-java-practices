@@ -442,6 +442,12 @@ If you use GitLab, read about the equivalent in
 [_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
 [_Pipeline_](https://www.jenkins.io/doc/book/pipeline/).
 
+When publishing your project, consider
+[_Publishing Java packages with
+Maven_](https://docs.github.com/en/actions/guides/publishing-java-packages-with-maven)
+for GitHub, or equivalent for other CI systems.  **Do not publish from local
+builds.**
+
 ### Tips
 
 * A simple way in CI to disable ASCII control sequences from colorizing or
