@@ -446,7 +446,9 @@ When publishing your project, consider
 [_Publishing Java packages with
 Maven_](https://docs.github.com/en/actions/guides/publishing-java-packages-with-maven)
 for GitHub, or equivalent for other CI systems.  **Do not publish from local
-builds.**
+builds.**  For GitHub, note the limitations of
+[_Download from Github Package Registry without
+authentication_.](https://github.community/t/download-from-github-package-registry-without-authentication/14407)
 
 ### Tips
 
