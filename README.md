@@ -223,13 +223,6 @@ existing project:
   This article presently has no specific recommendations on choices of plugin
   or approach for Git hooks.
 
-### TODOs
-
-* Fill out an article section on Git setup, and automated hooks
-* Address multi-module repositories
-* Seek out and pull in more
-  ["in the field" advice](https://github.com/batect/batect/issues/706)
-
 ---
 
 <a href="https://adoptopenjdk.net/" title="AdoptOpenJDK">
@@ -959,8 +952,6 @@ The Gradle and Maven demonstration builds use these to help you:
 
 And use the [Find Security Bugs](https://find-sec-bugs.github.io/) extension
 for [Spotbugs](https://spotbugs.github.io/).
-
-### TODOs
 
 * CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin.
   CPD works for Maven
