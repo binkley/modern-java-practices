@@ -39,7 +39,7 @@
         <dependency-check-maven.version>6.1.6</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
-        <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>11</jdk.version>
         <junit.version>5.8.0-M1</junit.version>
