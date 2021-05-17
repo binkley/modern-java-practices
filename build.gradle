@@ -22,7 +22,6 @@ group = "demo"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
