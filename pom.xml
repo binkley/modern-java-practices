@@ -6,7 +6,7 @@
         xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
     <groupId>hm.binkley.md</groupId>
-    <artifactId>modern-java-practices-maven</artifactId>
+    <artifactId>modern-java-practices</artifactId>
     <version>0-SNAPSHOT</version>
 
     <name>Modern Java/JVM build practices</name>

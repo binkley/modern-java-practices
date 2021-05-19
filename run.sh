@@ -3,8 +3,9 @@
 
 # Edit these to suit
 readonly package=hm.binkley.md
-readonly artifactId=modern-java-practices-maven
+readonly artifactId=modern-java-practices
 readonly version=0-SNAPSHOT
+build_tool=maven # or gradle -- this sets the default
 
 # No editable parts below here
 
@@ -14,17 +15,26 @@ set -e
 set -u
 set -o pipefail
 
-readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
 readonly progname="${0##*/}"
+
+case $build_tool in
+gradle | maven) ;;
+*)
+    echo "$progname: BUG: Build with 'gradle' or 'maven': $build_tool" >&2
+    exit 2
+    ;;
+esac
 
 function print-help() {
     cat <<EOH
-Usage: $progname [-JXdh] [CLASS] [ARGUMENTS]
+Usage: $progname [-GJMXdh] [CLASS] [ARGUMENTS]
 Runs a single-jar Kotlin project.
 
 With no CLASS, assume the jar is executable.
 
+  -G, --gradle      build with Gradle$([[ gradle == "$build_tool" ]] && echo ' (default)')
   -J, --java        treat CLASS as a Java class
+  -M, --maven       build with Maven$([[ maven == "$build_tool" ]] && echo ' (default)')
   -X, --executable  stop processing command line
   -d, --debug       print script execution to STDERR
   -h, --help        display this help and exit
@@ -65,18 +75,24 @@ function mangle-kotlin-classname() {
 }
 
 function rebuild-if-needed() {
+    # TODO: Rebuild if build script is newer than jar
     [[ -e "$jar" && -z "$(find src/main -type f -newer "$jar")" ]] && return
 
-    ./mvnw -C -Dmaven.test.skip=true package
+    case $build_tool in
+    gradle) ./gradlew --warning-mode=all jar ;;
+    maven) ./mvnw -C -Dmaven.test.skip=true package ;;
+    esac
 }
 
 debug=false
 executable=false
 kotlin=true
-while getopts :JXdh-: opt; do
+while getopts :GJMXdh-: opt; do
     [[ $opt == - ]] && opt=${OPTARG%%=*} OPTARG=${OPTARG#*=}
     case $opt in
+    G | gradle) build_tool=gradle ;;
     J | java) kotlin=false ;;
+    M | maven) build_tool=maven ;;
     X | executable)
         executable=true
         break
@@ -93,6 +109,23 @@ while getopts :JXdh-: opt; do
     esac
 done
 shift $((OPTIND - 1))
+
+case $build_tool in
+gradle)
+    if [[ ! -f build.gradle && ! -f build.gradle.kts ]]; then
+        echo "$0: BUG: build tool 'gradle' build not supported" >&2
+        exit 2
+    fi
+    readonly jar=build/libs/$artifactId-$version.jar
+    ;;
+maven)
+    if [[ ! -f pom.xml ]]; then
+        echo "$0: BUG: build tool 'maven' build not supported" >&2
+        exit 2
+    fi
+    readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
+    ;;
+esac
 
 $debug && set -x
 ((0 == $#)) && executable=true

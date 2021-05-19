@@ -15,6 +15,7 @@ plugins {
     id "info.solidsoft.pitest"
     id "org.kordamp.gradle.jdeps"
     id "org.owasp.dependencycheck"
+    id "application"
 }
 
 version = "0-SNAPSHOT"
@@ -144,6 +145,13 @@ jdepsReport {
 
 dependencyCheck {
     failBuildOnCVSS = 0
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClass"
+        attributes 'Add-Opens': 'java.base/java.lang java.base/java.util java.base/java.lang.reflect'
+    }
 }
 
 check {

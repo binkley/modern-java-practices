@@ -41,7 +41,8 @@ $ ./batect build-with-maven  # Reproduce CI, such as GitHub Actions
 ```
 
 ```shell
-$ ./run.sh  # Builds with Maven, and runs `demo.Application`
+$ ./run.sh -G  # Builds with Gradle, and runs `demo.Application`
+$ ./run.sh -M  # Builds with Maven, and runs `demo.Application`
 ```
 
 **NB** &mdash; This is a _living document_.
