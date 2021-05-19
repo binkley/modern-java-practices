@@ -29,7 +29,7 @@ To sum up:
 
 Try out the Gradle and Maven builds:
 
-```
+```shell
 $ ./gradlew build
 # Output ommitted
 $ ./batect build-with-gradle  # Reproduce CI, such as GitHub Actions
@@ -38,6 +38,10 @@ $ ./mvnw verify
 # Output omitted
 $ ./batect build-with-maven  # Reproduce CI, such as GitHub Actions
 # Output ommitted
+```
+
+```shell
+$ ./run.sh  # Builds with Maven, and runs `demo.Application`
 ```
 
 **NB** &mdash; This is a _living document_.
@@ -379,11 +383,11 @@ alphabetical ordering.
   more on that page)
 * Gradle uses advanced terminal control, so you cannot always see what is
   happening. To view Gradle steps plainly when debugging your build, use:
-  ```
+  ```shell
   $ ./gradlew <your tasks> | cat
   ```
   or save the output to a file:
-  ```
+  ```shell
   $ ./gradlew <your tasks> | tee -o some-file
   ```
 * If your source code is in Kotlin, so should be your build. Gradle provides
@@ -442,7 +446,7 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 * A simple way in CI to disable ASCII control sequences from colorizing or
   Gradle's overwriting of lines (the control sequences can make for
   hard-to-read CI logs) is to use the environment setting:
-  ```
+  ```shell
   TERM=dumb
   ```
   For example, with Gradle, this will log all the build steps without
@@ -489,7 +493,7 @@ on Batect.
 Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks.
 For this project, there are example tasks:
 
-```
+```shell
 $ ./batect -T
 Available tasks:
 - build-with-gradle: Build and test with Gradle
@@ -498,7 +502,7 @@ Available tasks:
 
 Other common tasks might be:
 
-```
+```shell
 $ ./batect -T
 Available tasks:
 [ ... ]
@@ -525,7 +529,7 @@ flag:
 
 * If you encounter issues with Gradle and Batect, try stopping the local
   Gradle daemons before running Batect:
-  ```
+  ```shell
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
   ```
@@ -616,7 +620,7 @@ all bugs are shallow").
 Example use which shows outdated plugins and dependencies, but does not modify
 any project files:
 
-```
+```shell
 $ ./gradlew dependencyUpdates
 # output ommitted
 $ ./mvnw versions:update-properties  # Updates pom.xml in place
@@ -677,7 +681,7 @@ you may have plugin and dependency versions scattered across each
 So to adjust a version, edit `gradle.properties`. To see this approach in
 action for dependencies, try:
 
-```
+```shell
 $ grep junitVersion gradle.properties setttings.gradle build.gradle
 gradle.properties:junitVersion=5.7.0
 build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
@@ -686,7 +690,7 @@ build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter-params:$jun
 
 To update Gradle:
 
-```
+```shell
 $ $EDITOR gradle.properties  # Change gradleWrapperVersion property
 $ ./gradlew wrapper  # Update
 $ ./gradlew wrapper  # Confirm
@@ -810,7 +814,7 @@ the project are a "workaround" assuming Java 11-16.
 `src/lombok.config` rather than the project root or a separate `config`
 directory. At a minimum:
 
-```
+```properties
 config.stopBubbling = true
 lombok.addLombokGeneratedAnnotation = true
 lombok.anyConstructor.addConstructorProperties = true
@@ -985,7 +989,7 @@ What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for
 more information. This is easy to forget about at the local command line. An
 alias helps:
 
-  ```
+  ```shell
   $ alias mvnw=`./mvnw --strict-checksums`
   ```
 
