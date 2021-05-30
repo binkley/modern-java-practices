@@ -72,6 +72,7 @@ or contribute PRs!  I'd love a conversation with you.
 * [Setup your CI](#setup-your-ci)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
 * [Maintain your build](#maintain-your-build)
+* [Choose codestyle](#choose-codestyle)  
 * [Generate code](#generate-code)
 * [Leverage the compiler](#leverage-the-compiler)
 * [Use linting](#use-linting)
@@ -748,6 +749,21 @@ are variants of profiling your build for Gradle and Maven:
   [_Configuration option to fail build if stuff is out of
   date_](https://github.com/ben-manes/gradle-versions-plugin/issues/431#issuecomment-703286879)
   for details
+
+---
+
+## Choose codestyle
+
+Style is an often overlooked but very critical attribute of writing. The style of writing directly impacts the readability and understandability of the end product
+
+There are 2 main java code styles
+ - [Sun codestyle](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
+ - [Google codestyle](https://google.github.io/styleguide/javaguide.html)
+
+It is up to you which one you should choose. But the style should be chosen and the style should be the same for everyone.
+
+To maintain the same standard `config/ide/eclipse-java-google-style.xml` or `intellij-java-google-style.xml` should be imported to your IDE. 
+Checkstyle should be configured based on the chosen standard
 
 ---
 
