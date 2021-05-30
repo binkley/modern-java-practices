@@ -72,7 +72,7 @@ or contribute PRs!  I'd love a conversation with you.
 * [Setup your CI](#setup-your-ci)
 * [Keep local consistent with CI](#keep-local-consistent-with-ci)
 * [Maintain your build](#maintain-your-build)
-* [Choose codestyle](#choose-codestyle)  
+* [Choose your code style](#choose-your-code-style)
 * [Generate code](#generate-code)
 * [Leverage the compiler](#leverage-the-compiler)
 * [Use linting](#use-linting)
@@ -752,18 +752,23 @@ are variants of profiling your build for Gradle and Maven:
 
 ---
 
-## Choose codestyle
+## Choose your code style
 
-Style is an often overlooked but very critical attribute of writing. The style of writing directly impacts the readability and understandability of the end product
+Style is an often overlooked but very critical attribute of writing. The style
+of writing directly impacts the readability and understandability of the end
+product
 
 There are 2 main java code styles
- - [Sun codestyle](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
- - [Google codestyle](https://google.github.io/styleguide/javaguide.html)
 
-It is up to you which one you should choose. But the style should be chosen and the style should be the same for everyone.
+- [Sun code style](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
+- [Google code style](https://google.github.io/styleguide/javaguide.html)
 
-To maintain the same standard `config/ide/eclipse-java-google-style.xml` or `intellij-java-google-style.xml` should be imported to your IDE. 
-Checkstyle should be configured based on the chosen standard
+It is up to you which one you should choose. But the style should be chosen
+and the style should be the same for everyone.
+
+To maintain the same standard `config/ide/eclipse-java-google-style.xml`
+or `intellij-java-google-style.xml` should be imported to your IDE. Checkstyle
+should be configured based on the chosen standard
 
 ---
 
@@ -832,10 +837,10 @@ the project are a "workaround" assuming Java 11-16.
 directory. At a minimum:
 
 ```properties
-config.stopBubbling = true
-lombok.addLombokGeneratedAnnotation = true
-lombok.anyConstructor.addConstructorProperties = true
-lombok.extern.findbugs.addSuppressFBWarnings = true
+config.stopBubbling=true
+lombok.addLombokGeneratedAnnotation=true
+lombok.anyConstructor.addConstructorProperties=true
+lombok.extern.findbugs.addSuppressFBWarnings=true
 ```
 
 Lines:
