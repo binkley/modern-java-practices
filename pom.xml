@@ -199,7 +199,10 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
-                    <configLocation>config/checkstyle/checkstyle.xml
+                    <configLocation>
+                        config/checkstyle/checkstyle.xml
+<!--                    config/checkstyle/google_checks.xml    -->
+<!--                    config/checkstyle/sun_checks.xml    -->
                     </configLocation>
                     <consoleOutput>true</consoleOutput>
                     <encoding>UTF-8</encoding>

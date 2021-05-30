@@ -85,6 +85,12 @@ tasks.withType(Test) {
 
 checkstyle {
     toolVersion = checkstyleVersion
+    // default checkstyle config
+    configFile = project(':').file("config/checkstyle/checkstyle.xml")
+    // google style
+//    configFile = project(':').file("config/checkstyle/google_checks.xml")
+    // sun style
+//    configFile = project(':').file("config/checkstyle/sun_checks.xml")
 }
 
 pmd {
