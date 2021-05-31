@@ -64,7 +64,7 @@
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.6</pitest-maven.version>
-        <pmd.version>6.34.0</pmd.version>
+        <pmd.version>6.35.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.2.3</spotbugs-maven-plugin.version>
