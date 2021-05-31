@@ -120,6 +120,10 @@ jacoco {
     toolVersion = jacocoVersion
 }
 
+jacocoTestReport {
+    dependsOn test
+}
+
 jacocoTestCoverageVerification {
     violationRules {
         rule {
