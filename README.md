@@ -938,9 +938,10 @@ is the default location for Gradle, and configured for Maven in the project.
 
 The Checkstyle configuration used is stock
 [`sun_checks.xml`](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)
-with the addition of support for `@SuppressWarnings(checkstyle:...)`.  
-Note that this format is _overly aggressive_ for Javadocs, and needs tweaking
-for most projects.
+(this is SUN default style for Java) with the addition of support for
+`@SuppressWarnings(checkstyle:...)`. Note that this format is _overly
+aggressive_ for Javadocs, and needs tweaking for most projects. See comments
+in `build.gradle` about SUN _vs_ Google styles for Java.
 
 ### Tips
 
