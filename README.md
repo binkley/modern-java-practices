@@ -567,11 +567,11 @@ Each of these have many options and features, and are worth exploring.
 ### Keep your build clean
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
-For example, leverage `jdeps` which [comes with the
-JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html). Jdeps spots,
-for example, if you have a multi-version jar as a dependency that does not 
-include _your_ JDK version (an example of this may be is JUnit), or if your
-code depends on _internal_ (non-public) classes of the JDK.
+For example, leverage `jdeps`
+which [comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html)
+. Jdeps spots, for example, if you have a multi-version jar as a dependency
+that does not include _your_ JDK version (an example of this may be is JUnit),
+or if your code depends on _internal_ (non-public) classes of the JDK.
 
 #### Gradle
 
@@ -1282,9 +1282,8 @@ your team.
 
 "Live testing" here means spinning up a database or other remote service for
 local tests, and not
-using [fakes, stubs, mocks, spies, dummies, or 
-doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html).
-In these tests, your project calls on _real_ external dependencies, albeit
+using [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
+. In these tests, your project calls on _real_ external dependencies, albeit
 dependencies spun up locally rather than in production or another environment.
 These might be call "out of process" tests.
 
@@ -1345,13 +1344,21 @@ time.
 If you find your local build is taking too long, consider testing moving these
 parts to CI with the cost to you of issues arising from delayed feedback:
 
+* [Jdeps](#keep-your-build-clean)
 * [DependencyCheck](#shift-security-left)
 * [Integration tests](#use-integration-testing)
-* [Mutation testing](#use-mutation-testing)
+* [PITest](#use-mutation-testing)
 
 But _beware_!  Your local build is now drifting away from CI, so you are
-pushing problems off later in your build pipeline. And not everyone pays close
-attention to CI failures until something bad happens.
+pushing problems off later in your build pipeline. Not everyone pays close
+attention to CI failures until something bad happens in production.
+
+*IMPORTANT* &mdash; if you disable tools like the above in the _local_ build,
+ensure you retain them in your _CI_ build.  Your goal in this case is speed up
+the feedback cycle locally while retaining the benefits of automated tooling.
+You are making a bet: problems these tools find come up rarely (but can be 
+catastrophic when they do), so time saved locally repays time lost waiting to
+find the problems in CI.
 
 In the Gradle and Maven samples in this repository, _DependencyCheck_ and
 _Mutation testing_ are typically the slowest steps in a local build;
