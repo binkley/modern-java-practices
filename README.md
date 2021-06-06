@@ -1330,13 +1330,13 @@ build:
   Enterprise licenses, just build with `./gradlew --scan <rest of tasks>`
   and follow the link in the output.
   <a href="https://cdn.jsdelivr.net/gh/binkley/modern-java-practices/profile-run/gradle-profile.html"
-     title="Sample Gradle profile for this project">
+     title="Sample Gradle profile for this project" type="text/html">
   See a sample Gradle profile for this project</a>.
 * [Maven profiler](https://github.com/jcgay/maven-profiler) &mdash; run
   with `./mvnw -Dprofile <goals>` and open the local link in the output. This
   project includes the setup for [Maven extensions](.mvn/extensions.xml).
   <a href="https://cdn.jsdelivr.net/gh/binkley/modern-java-practices/profile-run/maven-profile.html"
-     title="Sample Maven profile for this project">
+     title="Sample Maven profile for this project" type="text/html">
   See a sample Maven profile for this project</a>.
 
 ### My local build is still too slow
