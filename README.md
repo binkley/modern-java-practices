@@ -567,10 +567,11 @@ Each of these have many options and features, and are worth exploring.
 ### Keep your build clean
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
-For example, leverage `jdeps` which
-[comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html)
-. It would spot, for example, if you have a multi-version jar as a dependency,
-and check that _your_ JDK version is included.  (An example of this is JUnit.)
+For example, leverage `jdeps` which [comes with the
+JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html). Jdeps spots,
+for example, if you have a multi-version jar as a dependency that does not 
+include _your_ JDK version (an example of this may be is JUnit), or if your
+code depends on _internal_ (non-public) classes of the JDK.
 
 #### Gradle
 
@@ -1281,8 +1282,9 @@ your team.
 
 "Live testing" here means spinning up a database or other remote service for
 local tests, and not
-using [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
-. In these tests, your project calls on _real_ external dependencies, albeit
+using [fakes, stubs, mocks, spies, dummies, or 
+doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html).
+In these tests, your project calls on _real_ external dependencies, albeit
 dependencies spun up locally rather than in production or another environment.
 These might be call "out of process" tests.
 
