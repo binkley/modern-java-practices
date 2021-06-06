@@ -1341,6 +1341,10 @@ Local build time is _important_: gone are the days when a multi-hour, or even
 And "compiling" is rarely any longer where your project takes most local build
 time.
 
+Use the Gradle or Maven instructions in [keep your build
+fast](#keep-your-build-fast) to profile your build, and spot where it spends
+time.
+
 If you find your local build is taking too long, consider testing moving these
 parts to CI with the cost to you of issues arising from delayed feedback:
 
@@ -1349,9 +1353,9 @@ parts to CI with the cost to you of issues arising from delayed feedback:
 * [Integration tests](#use-integration-testing)
 * [PITest](#use-mutation-testing)
 
-But _beware_!  Your local build is now drifting away from CI, so you are
+_But beware_!  Your local build is now drifting away from CI, so you are
 pushing problems off later in your build pipeline. Not everyone pays close
-attention to CI failures until something bad happens in production.
+attention to CI failures, that is until something bad happens in production.
 
 *IMPORTANT* &mdash; if you disable tools like the above in the _local_ build,
 ensure you retain them in your _CI_ build.  Your goal in this case is speed up
