@@ -1339,6 +1339,8 @@ build:
      title="Sample Maven profile for this project" type="text/html">
   See a sample Maven profile for this project</a>.
 
+**TODO**: Fix the sample profile links to display as pages, not as raw HTML.
+
 ### My local build is still too slow
 
 Congratulations!  You care, and you notice what is happening for your team.  
