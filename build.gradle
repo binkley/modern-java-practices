@@ -139,8 +139,9 @@ pitest {
     coverageThreshold = 75
     junit5PluginVersion = pitestJUnit5PluginVersion
     mutationThreshold = 100
-    // TODO: Pitest plugin should use latest tool version
-    // pitestVersion = "$pitestVersion"
+    // Cannot name this "pitestVersion" -- the plugin has a property of the same
+    // name, so this property needs to have a distinct name to satisfy Gradle
+    pitestVersion = "$pitestToolVersion"
     timestampedReports = false
     verbose = true
 }
