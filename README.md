@@ -1,6 +1,5 @@
 <a href="./LICENSE.md">
-<img src="./images/public-domain.png" alt="Public Domain" 
-style="float:right"/>
+<img src="./images/public-domain.png" alt="Public Domain" align="right"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -89,7 +88,7 @@ or contribute PRs!  I'd love a conversation with you.
 
 <a href="https://modernagile.org/" title="Modern Agile">
 <img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
-style="float:right" width="30%" height="auto"/>
+align="right" width="30%" height="auto"/>
 </a>
 
 ## Introduction
@@ -233,8 +232,8 @@ existing project:
 ---
 
 <a href="https://adoptopenjdk.net/" title="AdoptOpenJDK">
-<img src="./images/adoptopenjdk.png" alt="AdoptOpenJDK" 
-style="float:right" width="30%" height="auto"/>
+<img src="./images/adoptopenjdk.png" alt="AdoptOpenJDK" align="right"
+width="30%" height="auto"/>
 </a>
 
 ## The JDK
@@ -313,8 +312,8 @@ The choice between Gradle and Maven depends on your team, your broader
 ecosystem, and your project needs. In summary:
 
 <a href="https://gradle.org/" title="Gradle">
-<img src="./images/gradle.png" alt="Gradle" 
-style="float:right" width="15%" height="auto"/></a> 
+<img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
+height="auto"/></a> 
 
 * Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
   imperative, and mutable; requires debugging your build on occasion, but less
@@ -326,8 +325,8 @@ style="float:right" width="15%" height="auto"/></a>
   [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
 
 <a href="https://maven.apache.org/" title="Maven">
-<img src="./images/maven.png" alt="Maven" 
-style="float:right" width="15%" height="auto"/></a>
+<img src="./images/maven.png" alt="Maven" align="right" width="15%" 
+height="auto"/></a>
 
 * Maven &mdash; your build scripts is written in XML; declarative and
   immutable; verbose but specific; it either works or not. Use of "parent" (
@@ -419,7 +418,7 @@ alphabetical ordering.
 <a href="http://www.ambysoft.com/essays/whyAgileWorksFeedback.html"
 title="Why Agile Software Development Techniques Work: Improved Feedback">
 <img src="./images/bug-costs.jpg" alt="Length of Feedback Cycle"
-style="float:right" width="30%" height="auto"/>
+align="right" width="30%" height="auto"/>
 </a>
 
 ## Setup your CI
@@ -469,7 +468,7 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
-style="float:right" width="30%" height="auto"/>
+align="right" width="30%" height="auto"/>
 </a>
 
 ### Setup local CI
@@ -1259,7 +1258,7 @@ making them part of the local build.
 <a href="https://martinfowler.com/bliki/TestPyramid.html"
 title="TestPyramid">
 <img src="./images/test-pyramid.png" alt="The test pyramid"
-style="float:right" width="30%" height="auto"/>
+align="right" width="30%" height="auto"/>
 </a>
 
 What is the "Test Pyramid"? This is an important conceptual framework for
@@ -1320,8 +1319,8 @@ Another dimension to consider for local testing: _User Journey_ tests.
 ## Why is my local build slow?
 
 <a href="https://xkcd.com/303/" title="Compiling">
-<img src="./images/compiling.png" alt="Compiling" 
-style="float:right" width="30%" height="auto"/>
+<img src="./images/compiling.png" alt="Compiling" align="right" 
+width="30%" height="auto"/>
 </a>
 
 Both Gradle and Maven have tools to track performance time of steps in your
@@ -1355,9 +1354,9 @@ pushing problems off later in your build pipeline. Not everyone pays close
 attention to CI failures until something bad happens in production.
 
 *IMPORTANT* &mdash; if you disable tools like the above in the _local_ build,
-ensure you retain them in your _CI_ build. Your goal in this case is speed up
+ensure you retain them in your _CI_ build.  Your goal in this case is speed up
 the feedback cycle locally while retaining the benefits of automated tooling.
-You are making a bet: problems these tools find come up rarely (but can be
+You are making a bet: problems these tools find come up rarely (but can be 
 catastrophic when they do), so time saved locally repays time lost waiting for
 CI to find these problems.
 
