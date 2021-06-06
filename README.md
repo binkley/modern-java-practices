@@ -1329,11 +1329,11 @@ build:
 * [Gradle build scans](https://scans.gradle.com/) &mdash; Not limited to
   Enterprise licenses, just build with `./gradlew --scan <rest of tasks>`
   and follow the link in the output.
-  <a href="./profile-run/gradle-profile.html">See a sample Gradle profile</a>.
+  [See a sample Gradle profile](./profile-run/gradle-profile.html).
 * [Maven profiler](https://github.com/jcgay/maven-profiler) &mdash; run
   with `./mvnw -Dprofile <goals>` and open the local link in the output. This
   project includes the setup for [Maven extensions](.mvn/extensions.xml).
-  <a href="./profile-run/maven-profile.html">See a sample Maven profile</a>.
+  [See a sample Maven profile](./profile-run/maven-profile.html).
 
 ### My local build is still too slow
 
