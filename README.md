@@ -1357,8 +1357,8 @@ attention to CI failures until something bad happens in production.
 ensure you retain them in your _CI_ build.  Your goal in this case is speed up
 the feedback cycle locally while retaining the benefits of automated tooling.
 You are making a bet: problems these tools find come up rarely (but can be 
-catastrophic when they do), so time saved locally repays time lost waiting to
-find the problems in CI.
+catastrophic when they do), so time saved locally repays time lost waiting for
+CI to find these problems.
 
 In the Gradle and Maven samples in this repository, _DependencyCheck_ and
 _Mutation testing_ are typically the slowest steps in a local build;
