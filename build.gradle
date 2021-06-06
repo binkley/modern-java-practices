@@ -139,6 +139,8 @@ pitest {
     coverageThreshold = 75
     junit5PluginVersion = pitestJUnit5PluginVersion
     mutationThreshold = 100
+    // TODO: Pitest plugin should use latest tool version
+    // pitestVersion = "$pitestVersion"
     timestampedReports = false
     verbose = true
 }
