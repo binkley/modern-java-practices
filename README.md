@@ -646,7 +646,7 @@ can always revert changes, but some folks want to look before doing.
 * Enable _HTML reports_ for local use; enable _XML reports_ for CI use in
   integrating with report tooling
 
-### Dependabot
+### Automated dependency upgrade PRs
 
 *NB* &mdash;
 [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/)
@@ -655,6 +655,8 @@ in CI (GitHub) on a schedule you pick. It submits PRs to your repository when
 it finds out of date dependencies. See
 [`dependabot.yml`](./.github/dependabot.yml) for an example using a daily
 schedule.
+
+A similar choice is [Renovate](https://github.com/renovatebot/renovate).
 
 #### More on Gradle version numbers
 
