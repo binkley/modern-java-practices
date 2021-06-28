@@ -35,8 +35,8 @@
         <!-- @formatter:off -->
         <assertj.version>3.20.2</assertj.version>
         <buildplan-maven-plugin.version>1.4</buildplan-maven-plugin.version>
-        <checkstyle.version>8.43</checkstyle.version>
-        <dependency-check-maven.version>6.2.0</dependency-check-maven.version>
+        <checkstyle.version>8.44</checkstyle.version>
+        <dependency-check-maven.version>6.2.2</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
@@ -49,7 +49,7 @@
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
+        <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
@@ -64,7 +64,7 @@
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.7</pitest-maven.version>
-        <pmd.version>6.35.0</pmd.version>
+        <pmd.version>6.36.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.2.3</spotbugs-maven-plugin.version>
