@@ -699,7 +699,7 @@ To update Gradle:
 ```shell
 $ $EDITOR gradle.properties  # Change gradleWrapperVersion property
 $ ./gradlew wrapper  # Update
-$ ./gradlew wrapper  # Confirm
+$ ./gradlew wrapper  # Confirm, and download new jar if needed
 ```
 
 With Gradle, there is no "right" solution for hygienic versioning.
