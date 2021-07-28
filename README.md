@@ -571,7 +571,8 @@ For example, leverage `jdeps`
 which [comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html)
 . Jdeps spots, for example, if you have a multi-version jar as a dependency
 that does not include _your_ JDK version (an example of this may be is JUnit),
-or if your code depends on _internal_ (non-public) classes of the JDK.
+or if your code depends on _internal_ (non-public) classes of the JDK
+(important expecially when using the JDK module system).
 
 #### Gradle
 
