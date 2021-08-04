@@ -242,15 +242,20 @@ For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
 * Java 11 is the current LTS ("long-term support") version.  _This is the
-  recommended version_ for production
-* There are more recent versions (12 to 16) with additional features to try
-  out. However, for production, these are not supported by Oracle
+  recommended version_ for corporate production environments if you require 
+  Oracle support
+* There are more recent versions (12 to 16) with continuing improvements and
+  additional features to try out. However Oracle provides no paid support 
+  for these versions
+* If your personal or open-source project does not require a paid support 
+  contract, newer Java versions are a good choice
 * For Java 8 or older: These versions are no longer supported by Oracle unless
   one buys
   [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
-  . However, AdoptOpenJDK provides distributions of OpenJDK 8, supported until
-  at least
+  . However, [Adoptium](https://adoptium.net/) (formerly AdoptOpenJDK)
+  provides distributions of OpenJDK 8, and community support until at least
   [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
+  with commercial support available from IBM
 
 In this project, you'll see the choice of Java 11 as this is the version to
 recommend in production.
