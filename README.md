@@ -934,12 +934,23 @@ choice is:
 However, Checkstyle will not auto-format code for you. For auto-formatting,
 consider, depending on your team preferences, any of these build plugins:
 
-* [Spotless](https://github.com/diffplug/spotless) &mdash; Focus on Google
-  style guides
-* [Rewrite for Gradle](https://github.com/openrewrite/rewrite-gradle-plugin)
-  &mdash; Focus on SUN style guides
-* [Rewrite for Maven](https://docs.openrewrite.org/java/checkstyle) &mdash;
-  Focus on SUN style guides
+* [Spotless](https://github.com/diffplug/spotless) &mdash; Focus on Google style
+  guides for Java. For Gradle, use the `spotlessApply` task to reformat; for
+  Maven use the `spotless:apply` goal to reformat. It supports _many_
+  source languages, not just Java
+* [Rewrite](https://github.com/openrewrite/rewrite) &mdash; General framework
+  for transforming source code with many extensions and plugins for different
+  languages and frameworks. For Gradle, see
+  [Rewrite for Gradle](https://github.com/openrewrite/rewrite-gradle-plugin)
+  with a focus on SUN style guides for Java; for Maven, see
+  [Rewrite for Maven](https://docs.openrewrite.org/java/checkstyle) with a focus
+  on SUN style guides for Java
+
+For your editor, consider the sample [.editorconfig](./.editorconfig) file in
+this project. It is respected by IntelliJ and many other code editors.  
+(The sample uses 80-character line limits as IBM and Hollerith punch cards
+intended, and helpful for speed readers of code. A worth point of team 
+discussion.)
 
 The demonstration projects assume checkstyle configuration at
 [`config/checkstyle/checkstyle.xml`](./config/checkstyle/checkstyle.xml). This
