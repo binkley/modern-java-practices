@@ -484,6 +484,9 @@ one of your first lines of defence against "it runs on my box".
 ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
 space.)
 
+[Earthly](https://earthly.dev/) shares philosophy with Batect and with a 
+different approach to implementation.  They are _both good choices_.
+
 _This is an important step_!  It is closer to your CI builds locally. You
 should strive to keep local as faithful as possible to CI and Production.
 
