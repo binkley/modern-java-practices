@@ -201,8 +201,8 @@
                 <configuration>
                     <configLocation>
                         config/checkstyle/checkstyle.xml
-<!--                    config/checkstyle/google_checks.xml    -->
-<!--                    config/checkstyle/sun_checks.xml    -->
+                        <!--                    config/checkstyle/google_checks.xml    -->
+                        <!--                    config/checkstyle/sun_checks.xml    -->
                     </configLocation>
                     <consoleOutput>true</consoleOutput>
                     <encoding>UTF-8</encoding>
@@ -314,6 +314,7 @@
                 <version>${spotbugs-maven-plugin.version}</version>
                 <configuration>
                     <effort>Max</effort>
+                    <includeTests>true</includeTests>
                     <threshold>Low</threshold>
                     <plugins>
                         <plugin>

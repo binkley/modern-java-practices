@@ -39,6 +39,7 @@ class TheFooTest {
                 .isFalse();
     }
 
+    @SuppressFBWarnings("RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE")
     @Test
     void shouldRedAlertAsStaticMock() {
         final var label = "Some label, *mumble, mumble*. <IRRELEVANT>";
