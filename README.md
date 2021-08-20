@@ -556,6 +556,9 @@ flag:
 
 ---
 
+<img src="./images/maintain-build.png" alt="Maintain build" align="right" 
+width="30%" height="auto"/>
+
 ## Maintain your build
 
 Treat your build as you would your codebase: Maintain it, refactor as needed,
