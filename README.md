@@ -231,9 +231,9 @@ existing project:
 
 ---
 
-<a href="https://adoptopenjdk.net/" title="AdoptOpenJDK">
-<img src="./images/adoptopenjdk.png" alt="AdoptOpenJDK" align="right"
-width="30%" height="auto"/>
+<a href="https://adoptium.net/" title="Adoptium">
+<img src="./images/adoptium.png" alt="Adoptium" align="right" width="30%" 
+height="auto"/>
 </a>
 
 ## The JDK
@@ -251,8 +251,8 @@ For any Modern Java/JVM project, the first decision is _which version of Java
   contract, newer Java versions are a good choice
 * For Java 8 or older: These versions are no longer supported by Oracle unless
   one buys
-  [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
-  . However, [Adoptium](https://adoptium.net/) (formerly AdoptOpenJDK)
+  [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm).
+  However, [Adoptium](https://adoptium.net/) (formerly AdoptOpenJDK)
   provides distributions of OpenJDK 8, and community support until at least
   [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
   with commercial support available from IBM
@@ -260,8 +260,8 @@ For any Modern Java/JVM project, the first decision is _which version of Java
 In this project, you'll see the choice of Java 11 as this is the version to
 recommend in production.
 
-In general, you will find that [AdoptOpenJDK](https://adoptopenjdk.net/)
-is a go-to choice for obtaining the JDK.
+In general, you will find that [Adoptium](https://adoptium.net) is a go-to
+choice for obtaining the JDK.
 
 ### Tips
 
@@ -304,8 +304,8 @@ There are many ways to install the JDK, most are platform-dependent. In
 general, your team will be better off using a "managed" approach, rather than
 with each person using binary installers. Popular choices include:
 
-* [Apt and friends](https://adoptopenjdk.net/installation.html#linux-pkg)
-  for Linux or WSL
+* [Apt and friends](https://adoptium.net/installation.html#linux-pkg) for 
+  Linux or WSL
 * [Homebrew](https://brew.sh/) for Mac
 * [SDKMAN](https://sdkman.io/jdks) for multiple platforms
 
