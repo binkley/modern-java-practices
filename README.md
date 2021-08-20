@@ -88,7 +88,7 @@ or contribute PRs!  I'd love a conversation with you.
 
 <a href="https://modernagile.org/" title="Modern Agile">
 <img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
-align="right" width="30%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Introduction
@@ -232,7 +232,7 @@ existing project:
 ---
 
 <a href="https://adoptium.net/" title="Adoptium">
-<img src="./images/adoptium.png" alt="Adoptium" align="right" width="30%" 
+<img src="./images/adoptium.png" alt="Adoptium" align="right" width="20%" 
 height="auto"/>
 </a>
 
@@ -425,7 +425,7 @@ alphabetical ordering.
 <a href="http://www.ambysoft.com/essays/whyAgileWorksFeedback.html"
 title="Why Agile Software Development Techniques Work: Improved Feedback">
 <img src="./images/bug-costs.jpg" alt="Length of Feedback Cycle"
-align="right" width="30%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Setup your CI
@@ -475,7 +475,7 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
-align="right" width="30%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ### Setup local CI
@@ -557,7 +557,7 @@ flag:
 ---
 
 <img src="./images/maintain-build.jpg" alt="Maintain build" align="right" 
-width="30%" height="auto"/>
+width="20%" height="auto"/>
 
 ## Maintain your build
 
@@ -1285,7 +1285,7 @@ making them part of the local build.
 <a href="https://martinfowler.com/bliki/TestPyramid.html"
 title="TestPyramid">
 <img src="./images/test-pyramid.png" alt="The test pyramid"
-align="right" width="30%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 What is the "Test Pyramid"? This is an important conceptual framework for
@@ -1347,7 +1347,7 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 <a href="https://xkcd.com/303/" title="Compiling">
 <img src="./images/compiling.png" alt="Compiling" align="right" 
-width="30%" height="auto"/>
+width="20%" height="auto"/>
 </a>
 
 Both Gradle and Maven have tools to track performance time of steps in your
