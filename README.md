@@ -556,7 +556,7 @@ flag:
 
 ---
 
-<img src="./images/maintain-build.png" alt="Maintain build" align="right" 
+<img src="./images/maintain-build.jpg" alt="Maintain build" align="right" 
 width="30%" height="auto"/>
 
 ## Maintain your build
