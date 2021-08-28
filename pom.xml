@@ -60,7 +60,7 @@
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
         <maven.version>3.8.1</maven.version>
-        <mockito.version>3.12.0</mockito.version>
+        <mockito.version>3.12.4</mockito.version>
         <modernizer-maven-annotations.version>2.1.0</modernizer-maven-annotations.version>
         <modernizer-maven-plugin.version>2.3.0</modernizer-maven-plugin.version>
         <owasp.skip>false</owasp.skip>
