@@ -45,7 +45,7 @@ dependencies {
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 }
 
-// TODO: Work around GitHub issue #1 (Modernizer)
+// TODO: Work around GitHub issue #92
 configurations.modernizer {
     exclude group: "org.codehaus.plexus", module: "plexus-utils"
 }
