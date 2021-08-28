@@ -1101,6 +1101,12 @@ any dependency.**
 Your build should fail, too. It's a flag to you to consider the CVE, what
 impact it may have, and if you are comfortable with a vulnerable dependency.
 
+#### Tips
+
+* You can _temporarily_ disable OWASP dependency checking
+  via `-Dowasp.skip=true` for either Gradle or Maven, for example if the 
+  OWASP site is down for maintenance and you can't update the cache of CVEs
+
 ### Dependabot
 
 GitHub provides

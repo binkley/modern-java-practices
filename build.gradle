@@ -165,6 +165,7 @@ jdepsReport {
 
 dependencyCheck {
     failBuildOnCVSS = 0
+    skip = Boolean.getBoolean("owasp.skip")
 }
 
 jar {
