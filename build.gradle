@@ -38,7 +38,6 @@ dependencies {
     testCompileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
-    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
     testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
