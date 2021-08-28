@@ -31,7 +31,7 @@ dependencies {
     annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
     compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
-    compileOnly "org.gaul:modernizer-maven-annotations:$modernizerAnnotationsVersion"
+    compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
     testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
