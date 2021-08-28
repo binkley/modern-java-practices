@@ -8,8 +8,8 @@
     # You should commit this file to version control alongside the rest of your project. It should not be installed globally.
     # For more information, visit https://github.com/batect/batect.
 
-    VERSION="0.72.0"
-    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-477672af8d8d493bbb209269cb0392e4d054ffe527cf22d78b61d294b5adfdeb}"
+    VERSION="0.73.0"
+    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-1a9bb210e2904d571ba1f4073ab4a74ab54dc551d0c2f1e60eb5b6883b548b23}"
     DOWNLOAD_URL_ROOT=${BATECT_DOWNLOAD_URL_ROOT:-"https://updates.batect.dev/v1/files"}
     DOWNLOAD_URL=${BATECT_DOWNLOAD_URL:-"$DOWNLOAD_URL_ROOT/$VERSION/batect-$VERSION.jar"}
     QUIET_DOWNLOAD=${BATECT_QUIET_DOWNLOAD:-false}
@@ -83,7 +83,7 @@
             JAVA_OPTS=()
         fi
 
-        if [[ "$(uname -o 2>&1)" == "Msys" ]] && hash winpty 2>/dev/null; then
+        if [[ "$(uname -o 2>&1)" == "Msys" ]] && hash winpty 2>/dev/null && [ -t /dev/stdin ]; then
             GIT_BASH_PTY_WORKAROUND=(winpty)
         else
             GIT_BASH_PTY_WORKAROUND=()
