@@ -61,6 +61,8 @@
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
         <maven.version>3.8.1</maven.version>
         <mockito.version>3.12.0</mockito.version>
+        <modernizer-maven-annotations.version>2.1.0</modernizer-maven-annotations.version>
+        <modernizer-maven-plugin.version>2.3.0</modernizer-maven-plugin.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
         <pitest-maven.version>1.6.9</pitest-maven.version>
@@ -92,6 +94,12 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>findbugs-annotations</artifactId>
             <version>${findbugs-annotations.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.gaul</groupId>
+            <artifactId>modernizer-maven-annotations</artifactId>
+            <version>${modernizer-maven-annotations.version}</version>
             <optional>true</optional>
         </dependency>
 
@@ -335,6 +343,22 @@
                     <execution>
                         <goals>
                             <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.gaul</groupId>
+                <artifactId>modernizer-maven-plugin</artifactId>
+                <version>${modernizer-maven-plugin.version}</version>
+                <configuration>
+                    <javaVersion>${jdk.version}</javaVersion>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>modernizer</goal>
                         </goals>
                     </execution>
                 </executions>

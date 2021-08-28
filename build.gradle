@@ -10,6 +10,7 @@ plugins {
     id "org.unbroken-dome.test-sets"
     id "checkstyle"
     id "pmd"
+    id "com.github.andygoossens.gradle-modernizer-plugin"
     id "com.github.spotbugs"
     id "jacoco"
     id "info.solidsoft.pitest"
@@ -30,6 +31,7 @@ dependencies {
     annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
     compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
+    compileOnly "org.gaul:modernizer-maven-annotations:$modernizerAnnotationsVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
     testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
@@ -114,6 +116,12 @@ tasks.withType(SpotBugsTask) {
             enabled = true
         }
     }
+}
+
+modernizer {
+    failOnViolations = true
+    includeTestClasses = true
+    javaVersion = "$jdkVersion"
 }
 
 jacoco {

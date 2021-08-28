@@ -986,6 +986,8 @@ in `build.gradle` about SUN _vs_ Google styles for Java.
 
 ## Use static code analysis
 
+### Spotbugs
+
 _Static code analysis_ is important in your build. This is analysis of your
 source and compiled bytecode which finds known
 [issues](https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html)
@@ -1010,6 +1012,18 @@ for [Spotbugs](https://spotbugs.github.io/).
 
 * CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin.
   CPD works for Maven
+
+### Modernizer
+
+Another static code analysis tool is _Modernizer_ to check of use of obsolete
+APIs and types; this is related to but not identical to _deprecated_ APIs. 
+An example is moving to the JDK's `Objects.equals` from Guava's `Objects.equal`.
+
+Note that Modernizer works at the bytecode level (not source code), so is 
+suitable for any JVM language, not just Java.
+
+* [Gradle plugin](https://github.com/andygoossens/gradle-modernizer-plugin)
+* [Maven plugin](https://github.com/gaul/modernizer-maven-plugin)
 
 ---
 
