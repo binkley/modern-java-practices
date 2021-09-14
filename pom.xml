@@ -63,7 +63,7 @@
         <mockito.version>3.12.4</mockito.version>
         <modernizer.version>2.3.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
-        <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
+        <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
         <pitest-maven.version>1.7.0</pitest-maven.version>
         <pmd.version>6.38.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
