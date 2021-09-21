@@ -241,12 +241,15 @@ height="auto"/>
 For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
-* Java 11 is the current LTS ("long-term support") version.  _This is the
-  recommended version_ for corporate production environments if you require 
-  Oracle support
+* Java 17 is the most current LTS ("long-term support") version.  When it
+  is available through Adoptium, and GitHub actions supports this version,
+  the project will move to 17 from 11
+* Java 11 was the most recent LTS ("long-term support") version.  _This is
+  the recommended version_ for corporate production environments when you
+  require Oracle support
 * There are more recent versions (12 to 16) with continuing improvements and
   additional features to try out. However Oracle provides no paid support 
-  for these versions
+  for these versions.  These versions, however, are production-worthy
 * If your personal or open-source project does not require a paid support 
   contract, newer Java versions are a good choice
 * For Java 8 or older: These versions are no longer supported by Oracle unless
