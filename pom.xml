@@ -43,7 +43,7 @@
         <java.charset>UTF-8</java.charset>
         <jdk.version>11</jdk.version>
         <junit.version>5.8.1</junit.version>
-        <lombok.version>1.18.20</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
