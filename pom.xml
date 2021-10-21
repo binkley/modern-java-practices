@@ -43,7 +43,7 @@
         <java.charset>UTF-8</java.charset>
         <jdk.version>11</jdk.version>
         <junit.version>5.8.1</junit.version>
-        <lombok.version>1.18.20</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
@@ -60,7 +60,7 @@
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
         <maven.version>3.8.1</maven.version>
-        <mockito.version>3.12.4</mockito.version>
+        <mockito.version>4.0.0</mockito.version>
         <modernizer.version>2.3.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
