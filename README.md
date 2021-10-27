@@ -99,15 +99,15 @@ Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* or a
 you.
 
 The goal of this article is to highlight building modern Java/JVM projects
-with Gradle or Maven, and provide guidance or at least food for thought. The
-sample Gradle and Maven projecdts use Java, but most recommendations apply to
+with Gradle or Maven, and provide guidance, or at least food for thought. The
+sample Gradle and Maven projects use Java, but most recommendations apply to
 builds for _any_ JVM language.
 
-(See the wheel to the right?  _No, you do not need to be agile!_ (But I
-encourage you to explore the benefits of Agile.)  This article is for _you_
-regardless of how your project approaches software. The point is to "make
-people awesome" for any project, possibly the most key value of Agile
-approaches to software.)
+See the wheel to the right?  _No, you do not need to be agile!_ (But I
+encourage you to explore the benefits of Agile.)  This article is for you
+regardless of how your team approaches software. The point is to "make
+people awesome" for any project, possibly the most key value of the Agile
+approach to software.
 
 ### Principles in designing these builds
 
