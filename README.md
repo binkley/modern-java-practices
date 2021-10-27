@@ -32,11 +32,11 @@ Try out the Gradle and Maven builds:
 ```shell
 $ ./gradlew build
 # Output ommitted
-$ ./batect build-with-gradle  # Reproduce CI, such as GitHub Actions
+$ ./batect build-with-gradle  # Reproduce CI locally sans GitHub actions
 # Output ommitted
 $ ./mvnw verify
 # Output omitted
-$ ./batect build-with-maven  # Reproduce CI, such as GitHub Actions
+$ ./batect build-with-maven  # Reproduce CI locally sans GitHub actions
 # Output ommitted
 ```
 
