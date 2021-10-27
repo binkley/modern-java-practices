@@ -117,9 +117,11 @@ approach to software.
 2. _Make it right_
     - Can I reproduce issues in the CI build, and fix it locally?
     - Can I find code and security issues from running the build?
+    - Is the code clean?  Am I happy to explore the project?
 3. _Make it fast_
     - Can I run the local build as frequently as I like, and be productive?
-    - Can I have a fast cycle of code &amp; test?
+    - Can I have a fast cycle of code &amp; test?  What about 
+      red-green-refactor?
     - Can I update my dependencies and plugins quickly and easily?
 
 ### Goals for this project
@@ -133,7 +135,7 @@ approach to software.
   to fail, or worse, for production to fail
 * The article focuses on Gradle and Maven: these are the most used build tools
   for Modern Java/JVM projects. However, if you use a different build tool,
-  most suggestions still can help you
+  the principals still apply
 
 I want to help with the question: _I am at Day 1 on my project_: How do I
 begin with a local build that is supports my team through the project
