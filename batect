@@ -8,8 +8,8 @@
     # You should commit this file to version control alongside the rest of your project. It should not be installed globally.
     # For more information, visit https://github.com/batect/batect.
 
-    VERSION="0.74.0"
-    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-971041ba9b71e75948d9a2b0a432fa10e682438ff409efd87e496a3fa01d7083}"
+    VERSION="0.75.0"
+    CHECKSUM="${BATECT_DOWNLOAD_CHECKSUM:-7750a274008a3f3bdc18e80b8beb58f1e20048332eaf5a5279cd2650e3e33fc8}"
     DOWNLOAD_URL_ROOT=${BATECT_DOWNLOAD_URL_ROOT:-"https://updates.batect.dev/v1/files"}
     DOWNLOAD_URL=${BATECT_DOWNLOAD_URL:-"$DOWNLOAD_URL_ROOT/$VERSION/batect-$VERSION.jar"}
     QUIET_DOWNLOAD=${BATECT_QUIET_DOWNLOAD:-false}
@@ -69,9 +69,10 @@
     }
 
     function runApplication() {
-        checkForJava
+        java_path=$(getPathToJava)
+        checkForJava "$java_path"
 
-        java_version_info=$(getJavaVersionInfo)
+        java_version_info=$(getJavaVersionInfo "$java_path")
         checkJavaVersion "$java_version_info"
 
         java_version=$(extractJavaVersion "$java_version_info")
@@ -95,7 +96,7 @@
         HOSTNAME="$HOSTNAME" \
         exec \
             ${GIT_BASH_PTY_WORKAROUND[@]+"${GIT_BASH_PTY_WORKAROUND[@]}"} \
-            java \
+            "$java_path" \
             -Djava.net.useSystemProxies=true \
             ${JAVA_OPTS[@]+"${JAVA_OPTS[@]}"} \
             -jar "$JAR_PATH" \
@@ -109,14 +110,33 @@
         fi
     }
 
+    function getPathToJava() {
+        if useJavaHome; then
+            echo "$JAVA_HOME/bin/java"
+        else
+            echo "java"
+        fi
+    }
+
+    function useJavaHome() {
+        test -n "${JAVA_HOME+x}"
+    }
+
     function checkForJava() {
-        if ! hash java 2>/dev/null; then
+        local java_path="$1"
+
+        if ! hash "$java_path" 2>/dev/null; then
             showJavaNotInstalledError
         fi
     }
 
     function showJavaNotInstalledError() {
-        echo "Java is not installed or not on your PATH. Please install it and try again." >&2
+        if useJavaHome; then
+            echo "JAVA_HOME is set to '$JAVA_HOME', but there is no Java executable at '$JAVA_HOME/bin/java'." >&2
+        else
+            echo "Java is not installed or not on your PATH. Please install it and try again." >&2
+        fi
+
         exit 1
     }
 
@@ -127,20 +147,36 @@
         java_version_minor=$(extractJavaMinorVersion "$java_version")
 
         if (( java_version_major < 1 || ( java_version_major == 1 && java_version_minor <= 7 ) )); then
-            echo "The version of Java that is available on your PATH is version $java_version, but version 1.8 or greater is required."
-            echo "If you have a newer version of Java installed, please make sure your PATH is set correctly."
+            if useJavaHome; then
+                echo "The version of Java that is available in JAVA_HOME is version $java_version, but version 1.8 or greater is required." >&2
+                echo "If you have a newer version of Java installed, please make sure JAVA_HOME is set correctly." >&2
+                echo "JAVA_HOME takes precedence over any versions of Java available on your PATH." >&2
+            else
+                echo "The version of Java that is available on your PATH is version $java_version, but version 1.8 or greater is required." >&2
+                echo "If you have a newer version of Java installed, please make sure your PATH is set correctly." >&2
+            fi
+
             exit 1
         fi
 
         if ! javaIs64Bit "$java_version_info"; then
-            echo "The version of Java that is available on your PATH is a 32-bit version, but Batect requires a 64-bit Java runtime."
-            echo "If you have a 64-bit version of Java installed, please make sure your PATH is set correctly."
+            if useJavaHome; then
+                echo "The version of Java that is available in JAVA_HOME is a 32-bit version, but Batect requires a 64-bit Java runtime." >&2
+                echo "If you have a 64-bit version of Java installed, please make sure JAVA_HOME is set correctly." >&2
+                echo "JAVA_HOME takes precedence over any versions of Java available on your PATH." >&2
+            else
+                echo "The version of Java that is available on your PATH is a 32-bit version, but Batect requires a 64-bit Java runtime." >&2
+                echo "If you have a 64-bit version of Java installed, please make sure your PATH is set correctly." >&2
+            fi
+
             exit 1
         fi
     }
 
     function getJavaVersionInfo() {
-        java -version 2>&1 || showJavaNotInstalledError
+        local java_path="$1"
+
+        "$java_path" -version 2>&1 || showJavaNotInstalledError
     }
 
     function extractJavaVersion() {

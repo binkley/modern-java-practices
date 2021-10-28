@@ -6,7 +6,7 @@ rem For more information, visit https://github.com/batect/batect.
 
 setlocal EnableDelayedExpansion
 
-set "version=0.74.0"
+set "version=0.75.0"
 
 if "%BATECT_CACHE_DIR%" == "" (
     set "BATECT_CACHE_DIR=%USERPROFILE%\.batect\cache"
@@ -22,7 +22,7 @@ $ErrorActionPreference = 'Stop'^
 
 ^
 
-$Version='0.74.0'^
+$Version='0.75.0'^
 
 ^
 
@@ -48,7 +48,7 @@ $UrlEncodedVersion = [Uri]::EscapeDataString($Version)^
 
 $DownloadUrl = getValueOrDefault $env:BATECT_DOWNLOAD_URL "$DownloadUrlRoot/$UrlEncodedVersion/batect-$UrlEncodedVersion.jar"^
 
-$ExpectedChecksum = getValueOrDefault $env:BATECT_DOWNLOAD_CHECKSUM '971041ba9b71e75948d9a2b0a432fa10e682438ff409efd87e496a3fa01d7083'^
+$ExpectedChecksum = getValueOrDefault $env:BATECT_DOWNLOAD_CHECKSUM '7750a274008a3f3bdc18e80b8beb58f1e20048332eaf5a5279cd2650e3e33fc8'^
 
 ^
 
@@ -228,7 +228,37 @@ function runApplication() {^
 
 ^
 
+function useJavaHome() {^
+
+    return ($env:JAVA_HOME -ne $null)^
+
+}^
+
+^
+
 function findJava() {^
+
+    if (useJavaHome) {^
+
+        $java = Get-Command "$env:JAVA_HOME\bin\java" -ErrorAction SilentlyContinue^
+
+^
+
+        if ($java -eq $null) {^
+
+            Write-Host -ForegroundColor Red "JAVA_HOME is set to '$env:JAVA_HOME', but there is no Java executable at '$env:JAVA_HOME\bin\java.exe'."^
+
+            exit 1^
+
+        }^
+
+^
+
+        return $java^
+
+    }^
+
+^
 
     $java = Get-Command "java" -ErrorAction SilentlyContinue^
 
@@ -264,9 +294,23 @@ function checkJavaVersion([System.Management.Automation.CommandInfo]$java) {^
 
     if ($parsedVersion -lt (New-Object Version -ArgumentList $minimumVersion)) {^
 
-        Write-Host -ForegroundColor Red "The version of Java that is available on your PATH is version $rawVersion, but version $minimumVersion or greater is required."^
+        if (useJavaHome) {^
 
-        Write-Host -ForegroundColor Red "If you have a newer version of Java installed, please make sure your PATH is set correctly."^
+            Write-Host -ForegroundColor Red "The version of Java that is available in JAVA_HOME is version $rawVersion, but version $minimumVersion or greater is required."^
+
+            Write-Host -ForegroundColor Red "If you have a newer version of Java installed, please make sure JAVA_HOME is set correctly."^
+
+            Write-Host -ForegroundColor Red "JAVA_HOME takes precedence over any versions of Java available on your PATH."^
+
+        } else {^
+
+            Write-Host -ForegroundColor Red "The version of Java that is available on your PATH is version $rawVersion, but version $minimumVersion or greater is required."^
+
+            Write-Host -ForegroundColor Red "If you have a newer version of Java installed, please make sure your PATH is set correctly."^
+
+        }^
+
+^
 
         exit 1^
 
@@ -276,9 +320,23 @@ function checkJavaVersion([System.Management.Automation.CommandInfo]$java) {^
 
     if (-not ($versionInfo -match "64\-[bB]it")) {^
 
-        Write-Host -ForegroundColor Red "The version of Java that is available on your PATH is a 32-bit version, but Batect requires a 64-bit Java runtime."^
+        if (useJavaHome) {^
 
-        Write-Host -ForegroundColor Red "If you have a 64-bit version of Java installed, please make sure your PATH is set correctly."^
+            Write-Host -ForegroundColor Red "The version of Java that is available in JAVA_HOME is a 32-bit version, but Batect requires a 64-bit Java runtime."^
+
+            Write-Host -ForegroundColor Red "If you have a 64-bit version of Java installed, please make sure JAVA_HOME is set correctly."^
+
+            Write-Host -ForegroundColor Red "JAVA_HOME takes precedence over any versions of Java available on your PATH."^
+
+        } else {^
+
+            Write-Host -ForegroundColor Red "The version of Java that is available on your PATH is a 32-bit version, but Batect requires a 64-bit Java runtime."^
+
+            Write-Host -ForegroundColor Red "If you have a 64-bit version of Java installed, please make sure your PATH is set correctly."^
+
+        }^
+
+^
 
         exit 1^
 
@@ -386,7 +444,9 @@ function escapeArgument([String]$argument) {^
 
 ^
 
-main @args
+main @args^
+
+
 
 if not exist "%cacheDir%" (
     mkdir "%cacheDir%"
