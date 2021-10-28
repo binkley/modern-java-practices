@@ -244,8 +244,8 @@ For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
 * Java 17 is the most current LTS ("long-term support") version.  When it
-  is available through Adoptium, and GitHub actions supports this version,
-  the project will move to 17 from 11
+  is available through Adoptium, GitHub actions supports this version, and
+  all plugins play nicely, the project will move to 17 from 11
 * Java 11 was the most recent LTS ("long-term support") version.  _This is
   the recommended version_ for corporate production environments when you
   require Oracle support
