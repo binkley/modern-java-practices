@@ -35,7 +35,7 @@
         <!-- @formatter:off -->
         <assertj.version>3.21.0</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
-        <checkstyle.version>9.0</checkstyle.version>
+        <checkstyle.version>9.1</checkstyle.version>
         <dependency-check-maven.version>6.5.0</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
@@ -64,11 +64,11 @@
         <modernizer.version>2.3.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.7.0</pitest-maven.version>
+        <pitest-maven.version>1.7.3</pitest-maven.version>
         <pmd.version>6.39.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.4.2</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.4.2.2</spotbugs-maven-plugin.version>
         <spotbugs.version>4.4.2</spotbugs.version>
         <system-lambda.version>1.2.0</system-lambda.version>
         <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
