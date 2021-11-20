@@ -60,7 +60,7 @@
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-testing-plugins.version>3.0.0-M5</maven-testing-plugins.version>
         <maven.version>3.8.1</maven.version>
-        <mockito.version>4.0.0</mockito.version>
+        <mockito.version>4.1.0</mockito.version>
         <modernizer.version>2.3.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>0.15</pitest-junit5-plugin.version>
@@ -68,7 +68,7 @@
         <pmd.version>6.40.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.4.2.2</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
         <spotbugs.version>4.5.0</spotbugs.version>
         <system-lambda.version>1.2.0</system-lambda.version>
         <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
