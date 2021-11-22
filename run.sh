@@ -5,6 +5,7 @@
 readonly package=hm.binkley.md
 readonly artifactId=modern-java-practices
 readonly version=0-SNAPSHOT
+readonly -a jvm_flags=()
 build_tool=maven # or gradle -- this sets the default
 
 # No editable parts below here
@@ -146,4 +147,4 @@ $debug && set -x # "set - ..." clears the -x flag
 
 rebuild-if-needed
 
-exec java -ea --enable-preview "$@"
+exec java "${jvm_flags[@]}" "$@"
