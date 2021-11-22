@@ -270,12 +270,9 @@ choice for obtaining the JDK.
 
 ### Tips
 
-* Hold off from JDK 17 until the plugin community can catch up.  For now, 
-  all recommended plugins work with JDK 11.  One result of the transition 
-  you can see is that the GitHub CI build is frequently broken of late for 
-  this project.  It will hold off moving from JDK 11 to JDK 17 until build 
-  is green.  The Maven build works fine; it is the Gradle build which causes 
-  concern
+* Hold off from JDK 17 until resolving why Gradle cannot launch Ant for the
+  checkstyle plugin from inside Batect, but it works calling Gradle directly
+  on the command line.  The Maven build works fine.
 
 * In Maven, use a property to _fix_ the version of Java in place. But note
   naming for that property: `java.version` is defined by the JVM, and Maven
