@@ -1249,6 +1249,8 @@ This project also provides the PIT report as part of Maven's project report.
   to "demo" for either Gradle or Maven if your classes are underneath the
   "demo.*" package namespace, otherwise PITest may complain that there are no
   classes to mutate, or no unit tests to run
+* If you need to open modules (_eg_, `--add-opens` flags), you need to include
+  these flags in "jvm args" configuration for the plugin
 * Read more about [_Mutation
   Testing_](https://testing.googleblog.com/2021/04/mutation-testing.html) from
   Google
