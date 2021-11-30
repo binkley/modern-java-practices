@@ -34,7 +34,7 @@ tasks:
     description: Build and test with Maven
     run:
       container: build-env
-      command: ./mvnw --no-transfer-progress --strict-checksums clean verify
+      command: ./mvnw --no-transfer-progress clean verify
   shell:
     description: Open a shell in the container
     run:
