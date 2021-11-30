@@ -1060,12 +1060,9 @@ dependencies_](https://docs.gradle.org/current/userguide/dependency_verification
 _Always_ run with the `--strict-checksums` (or `-C`) flag. See
 [_Maven Artifact Checksums -
 What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for
-more information. This is easy to forget about at the local command line. An
-alias helps:
-
-  ```shell
-  $ alias mvnw=`./mvnw --strict-checksums`
-  ```
+more information. This is easy to forget about at the local command line. The
+[`.mvn/maven.config`](https://maven.apache.org/configure.htm) file helps this
+be automatic, and can be checked into your project repository.
 
 An alternative is to declare _each_ repository in your user `settings.xml` and
 [set the checksum policy to
