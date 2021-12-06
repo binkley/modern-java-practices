@@ -147,8 +147,6 @@ jacocoTestCoverageVerification {
 }
 
 pitest {
-    // TODO: Teach pitest to ignore Lombok code
-    coverageThreshold = 80
     junit5PluginVersion = pitestJUnit5PluginVersion
     mutationThreshold = 100
     // Cannot name this "pitestVersion" -- the plugin has a property of the same
