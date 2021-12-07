@@ -35,6 +35,11 @@ tasks:
     run:
       container: build-env
       command: ./mvnw --no-transfer-progress clean verify
+  run:
+    description: Runs the demo program
+    run:
+      container: build-env
+      command: ./run.sh
   shell:
     description: Open a shell in the container
     run:
