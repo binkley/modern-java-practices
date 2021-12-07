@@ -89,6 +89,8 @@ jobs:
   run:
     name: Runs the program
     runs-on: ubuntu-latest
-      - name: Execute run script
+
+    steps:
+       - name: Execute run script
         # Default is to build Maven - edit `run.sh` for Gradle as build tool
         run: ./batect run
