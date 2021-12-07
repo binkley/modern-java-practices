@@ -5,9 +5,9 @@
 readonly package=hm.binkley.md
 readonly artifactId=modern-java-practices
 readonly version=0-SNAPSHOT
-readonly -a jvm_flags=()
 build_tool=maven # or gradle -- this sets the default
-
+language=java # or kotlin -- this sets the default
+jvm_flags=()
 # No editable parts below here
 
 export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
@@ -21,30 +21,62 @@ readonly progname="${0##*/}"
 case $build_tool in
 gradle | maven) ;;
 *)
-    echo "$progname: BUG: Build with 'gradle' or 'maven': $build_tool" >&2
+    echo "$progname: BUG: Pick 'gradle' or 'maven': $build_tool" >&2
+    exit 2
+    ;;
+esac
+
+case $language in
+java | kotlin) ;;
+*)
+    echo "$progname: BUG: Pick 'java' or 'kotlin': $language" >&2
     exit 2
     ;;
 esac
 
 function print-help() {
     cat <<EOH
-Usage: $progname [-GJMXdh] [CLASS] [ARGUMENTS]
-Runs a single-jar Kotlin project.
+Usage: $progname [OPTIONS] [-- ARGUMENTS]
+Runs a single-jar JVM project.
 
-With no CLASS, assume the jar is executable.
-
-  -G, --gradle      build with Gradle$([[ gradle == "$build_tool" ]] && echo ' (default)')
-  -J, --java        treat CLASS as a Java class
-  -M, --maven       build with Maven$([[ maven == "$build_tool" ]] && echo ' (default)')
-  -X, --executable  stop processing command line
-  -d, --debug       print script execution to STDERR
-  -h, --help        display this help and exit
+Options:
+  -B, --build-tool=TOOL
+                 builds the example using TOOL; tools:
+                    gradle$([[ gradle == "$build_tool" ]] && echo ' (default)')
+                    maven$([[ maven == "$build_tool" ]] && echo ' (default)')
+  -C, --alt-class=CLASS
+                 execute CLASS as the alternate main class, otherwise assume
+                 the jar is executable
+  -L, --language=LANGUAGE
+                 runs the example for LANGUAGE; languages:
+                    java$([[ java == "$language" ]] && echo ' (default)')
+                    kotlin$([[ kotlin == "$language" ]] && echo ' (default)')
+  -d, --debug    print script execution to STDERR
+  -h, --help     display this help and exit
 
 Examples:
-  $progname            Runs the executable jar with no arguments to main
-  $progname -X an-arg  Runs the executable jar passing "an-arg" to main
-  $progname a-class    Runs the main from "a-class"
+  $progname              Runs the executable jar with no arguments to main
+  $progname -C a-class   Runs the main from "a-class"
+  $progname -- an-arg    Runs the executable jar passing "an-arg" to main
 EOH
+}
+
+function bad-build-tool() {
+    local tool="$1"
+
+    cat <<EOM
+$progname: invalid build tool -- '$tool'
+Try '$progname --help' for more information.
+EOM
+}
+
+function bad-language() {
+    local language="$1"
+
+    cat <<EOM
+$progname: invalid language -- '$language'
+Try '$progname --help' for more information.
+EOM
 }
 
 function bad-option() {
@@ -75,29 +107,43 @@ function mangle-kotlin-classname() {
     echo "${parts[*]}"
 }
 
+function runtime-classname() {
+    case "$language" in
+    java) echo "$package.$alt_class" ;;
+    kotlin) mangle-kotlin-classname "$package.$alt_class" ;;
+    esac
+}
+
 function rebuild-if-needed() {
     # TODO: Rebuild if build script is newer than jar
     [[ -e "$jar" && -z "$(find src/main -type f -newer "$jar")" ]] && return
 
     case $build_tool in
     gradle) ./gradlew --warning-mode=all jar ;;
-    maven) ./mvnw -C -Dmaven.test.skip=true package ;;
+    maven) ./mvnw --strict-checksums -Dmaven.test.skip=true package ;;
     esac
 }
 
+alt_class=''
 debug=false
-executable=false
-kotlin=true
-while getopts :GJMXdh-: opt; do
+while getopts :B:C:L:a:b:dhl:-: opt; do
     [[ $opt == - ]] && opt=${OPTARG%%=*} OPTARG=${OPTARG#*=}
     case $opt in
-    G | gradle) build_tool=gradle ;;
-    J | java) kotlin=false ;;
-    M | maven) build_tool=maven ;;
-    X | executable)
-        executable=true
-        break
-        ;;
+    B | build-tool) case "$OPTARG" in
+        gradle | maven) build_tool="$OPTARG" ;;
+        *)
+            bad-build-tool "$OPTARG"
+            exit 2
+            ;;
+        esac ;;
+    C | alt-class) alt_class=$OPTARG ;;
+    L | language) case "$OPTARG" in
+        java | kotlin) language="$OPTARG" ;;
+        *)
+            bad-language "$OPTARG"
+            exit 2
+            ;;
+        esac ;;
     d | debug) debug=true ;;
     h | help)
         print-help
@@ -111,39 +157,32 @@ while getopts :GJMXdh-: opt; do
 done
 shift $((OPTIND - 1))
 
+$debug && set -x
+
 case $build_tool in
 gradle)
-    if [[ ! -f build.gradle && ! -f build.gradle.kts ]]; then
-        echo "$0: BUG: build tool 'gradle' build not supported" >&2
+    if [[ ! -x "./gradlew" ]]; then
+        echo "$progname: Not executable: ./gradlew" >&2
         exit 2
     fi
     readonly jar=build/libs/$artifactId-$version.jar
     ;;
 maven)
-    if [[ ! -f pom.xml ]]; then
-        echo "$0: BUG: build tool 'maven' build not supported" >&2
+    if [[ ! -x "./mvnw" ]]; then
+        echo "$progname: Not executable: ./mvnw" >&2
         exit 2
     fi
     readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
     ;;
 esac
 
-$debug && set -x
-((0 == $#)) && executable=true
-
-if $executable; then
-    set - -jar "$jar" "$@"
-else
-    if $kotlin; then
-        readonly class="$(mangle-kotlin-classname "$package.$1")"
-    else
-        readonly class="$package.$1"
-    fi
-    shift
-    set - -cp "$jar" "$class" "$@"
-fi
-
-$debug && set -x # "set - ..." clears the -x flag
+case "$alt_class" in
+'') jvm_flags=("${jvm_flags[@]}" -jar "$jar") ;;
+*)
+    readonly runtime_classname="$(runtime-classname "$package.$alt_class")"
+    jvm_flags=("${jvm_flags[@]}" -cp "$jar" "$runtime_classname")
+    ;;
+esac
 
 rebuild-if-needed
 
