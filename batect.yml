@@ -35,11 +35,16 @@ tasks:
     run:
       container: build-env
       command: ./mvnw --no-transfer-progress clean verify
-  run:
-    description: Runs the demo program
+  run-with-gradle:
+    description: Runs the demo program assuming a Gradle build
     run:
       container: build-env
-      command: ./run.sh
+      command: ./run.sh -B gradle
+  run-with-maven:
+    description: Runs the demo program assuming a Maven build
+    run:
+      container: build-env
+      command: ./run.sh -B maven
   shell:
     description: Open a shell in the container
     run:
