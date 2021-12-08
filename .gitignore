@@ -1,5 +1,10 @@
+# Assumes use of IntelliJ -- adjust to editor of your choice
 *.iml
-/.gradle/
 /.idea/
+
+# Gradle -- pick this or Maven
+/.gradle/
 /build/
+
+# Maven -- pick this or Gradle
 /target/
