@@ -640,11 +640,16 @@ all bugs are shallow").
 
 * [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
 * [Maven](https://www.mojohaus.org/versions-maven-plugin/)
-* Team agreement about releases only, or if non-release plugins and
-  dependencies are acceptable
+* Team agreement on release updates only, or if non-release plugins and
+  dependencies make sense for your situation
+* Each of these plugins for Gradle or Maven have their quirks.  **Do not treat
+  them as sources of truth but as recommendations**. _Use your judgment_. In
+  parallel, take advantage of CI tooling such as
+  [Dependabot (Github)](https://github.com/dependabot) or
+  [Dependabot (Gitlab)](https://gitlab.com/dependabot-gitlab/dependabot)
 
-Example use which shows outdated plugins and dependencies, but does not modify
-any project files:
+An example use which shows most outdated plugins and dependencies (note that one
+Maven example modifies your `pom.xml`, a fact you can choose or avoid):
 
 ```shell
 $ ./gradlew dependencyUpdates
