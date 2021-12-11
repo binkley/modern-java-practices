@@ -43,6 +43,9 @@ dependencies {
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
     testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
 
+    // Quiet build -- build works without this, but JUnit complains
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 }
 
