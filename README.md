@@ -243,15 +243,11 @@ height="auto"/>
 For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
-* Java 17 is the most current LTS ("long-term support") version.  When it
-  is available through Adoptium, GitHub actions supports this version, and
-  all plugins play nicely, the project will move to 17 from 11
-* Java 11 was the most recent LTS ("long-term support") version.  _This is
-  the recommended version_ for corporate production environments when you
-  require Oracle support until your project can catchup to 17
-* There are more recent versions (12 to 16) with continuing improvements and
-  additional features to try out. However Oracle provides no paid support 
-  for these versions.  These versions, however, are production-worthy
+* Java 17 is the most current LTS ("long-term support") version; 11 was the 
+  previous LTS version
+* There are more recent versions (18+) with continuing improvements and
+  additional features to try out. However Oracle provides no paid support for
+  these versions. These versions, however, are production-worthy
 * If your personal or open-source project does not require a paid support 
   contract, newer Java versions are a good choice
 * For Java 8 or older: These versions are no longer supported by Oracle unless
@@ -262,7 +258,7 @@ For any Modern Java/JVM project, the first decision is _which version of Java
   [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
   with commercial support available from IBM
 
-In this project, you'll see the choice of Java 11 as this is the version to
+In this project, you'll see the choice of Java 17 as this is the version to
 recommend in production.
 
 In general, you will find that [Adoptium](https://adoptium.net) is a go-to
@@ -270,24 +266,8 @@ choice for obtaining the JDK.
 
 ### Tips
 
-* Hold off from JDK 17 until resolving why Gradle cannot launch Ant for the
-  checkstyle plugin from inside Batect, but it works calling Gradle directly
-  on the command line.  The Maven build works fine.
-
-* In Maven, use a property to _fix_ the version of Java in place. But note
-  naming for that property: `java.version` is defined by the JVM, and Maven
-  creates a matching property. Recommended is to define your Java version with
-  the `jdk.version` property, which has no collision with pre-defined
-  properties.
-
-* In Maven, you may see issues with Java versions &gt; 11. These come from
-  Java moving to encapsulate the JDK, and asking you to use modules. An
-  example issue is:
-  ```
-  java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @a-hex-code) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @a-hex-code
-  ```
-  If so, use in your project the `--illegal-access=warn` example from
-  `.mvn/jvm.config`.
+* With Maven, see [`jvm.config`](./.mvn/jvm.config) for addressing module 
+  access issues when using JDK 17
 
 ### Managing your Java environment
 
@@ -297,7 +277,7 @@ user) and "project" choices (particular to a directory and its children) in
 which JDK installation to use. You may notice the
 [`.java-version`](./.java-version) file: this is a per-project file for jEnv
 to pick your project Java version. (Reminder: in general, prefer the latest
-LTS version of Java, which is 11.)
+LTS version of Java, which is 17.)
 
 Do use `jenv enable-plugins export` and restart your shell. This ensures
 `JAVA_HOME` is exported to match your jEnv settings. Several tools use
@@ -502,14 +482,10 @@ _This is an important step_!  It is closer to your CI builds locally. You
 should strive to keep local as faithful as possible to CI and Production.
 
 See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
-for documentation on using Batect from within a dockerized CI environment.
-
-**NB** &mdash; to be as consistent as possible, the sample
-[`ci.yml` for GitHub](./.github/workflows/ci.yml) uses Batect for the Gradle
-and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
-for [AdoptOpenJDK11](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
-not [setup JDK 11](https://github.com/actions/setup-java) directly, but relies
-on Batect.
+for documentation on using Batect from within a dockerized CI environment.  
+Use the same JDK version for your Docker image as you use locally, so you can
+locally reproduce CI concerns unrelated to environment-specific issues
+(_eg_, credentials, remote connections, etc.)
 
 Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks.
 For this project, there are example tasks:
@@ -590,10 +566,10 @@ Each of these have many options and features, and are worth exploring.
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
 For example, leverage `jdeps`
-which [comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html)
-. Jdeps spots, for example, if you have a multi-version jar as a dependency
-that does not include _your_ JDK version (an example of this may be is JUnit),
-or if your code depends on _internal_ (non-public) classes of the JDK
+which [comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html).
+Jdeps spots, for example, if you have a multi-version jar as a dependency that
+does not include _your_ JDK version (an example of this may be is JUnit), or if
+your code depends on _internal_ (non-public) classes of the JDK
 (important expecially when using the JDK module system).
 
 #### Gradle
@@ -613,8 +589,8 @@ build (say a production with "ERROR" output during a test), but:
    telltale signs of trouble
 
 There are many approaches to this problem. This project uses JDK logging as
-[an example](https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/FileHandler.html)
-, and keeps the build quiet in
+[an example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html),
+and keeps the build quiet in
 [`config/logging.properties`](config/logging.properties).
 
 ### Keep CI builds noisy
@@ -856,11 +832,6 @@ A typical use is for the `main()` method in a framework such as Spring Boot
 or [Micronaut](https://micronaut.io/). For a _command-line program_, you will
 want to test your `main()`.
 
-Do note that Lombok reflects on internal features of the JDK. If you have
-issues, for _Maven_: use in your project the `--illegal-access=warn`
-example from `.mvn/jvm.config`, and look to address these. The solutions in
-the project are a "workaround" assuming Java 11-16.
-
 #### Lombok configuration
 
 [Configure Lombok](https://projectlombok.org/features/configuration) in
@@ -1012,7 +983,7 @@ ranging among other things:
   may aid you in this, _eg_, Kotlin or Scala)
 * Insecure code (see [Shift security left](#shift-security-left))
 * Use of outdated code patterns (_eg_, Java 5 patterns might be better
-  expressed with Java 11 improvements)
+  expressed with Java 17 improvements)
 * [Fail your build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
   if issues are detected
 
