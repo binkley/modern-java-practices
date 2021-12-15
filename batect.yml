@@ -1,6 +1,6 @@
 containers:
   build-env:
-    image: eclipse-temurin:17-jdk-focal
+    image: adoptopenjdk:11-jdk-hotspot
     environment:
       # See:
       # - https://docs.gradle.org/6.8/userguide/gradle_daemon.html#sec:disabling_the_daemon

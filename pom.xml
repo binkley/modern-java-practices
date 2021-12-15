@@ -41,7 +41,7 @@
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
-        <jdk.version>17</jdk.version>
+        <jdk.version>11</jdk.version>
         <junit.version>5.8.2</junit.version>
         <lombok.version>1.18.22</lombok.version>
         <main.class>demo.Application</main.class>
