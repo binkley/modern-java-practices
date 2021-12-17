@@ -627,14 +627,13 @@ for quiet local builds and noisy CI builds.
 
 ### Keep your build current
 
-An important part of _build hygiene_ is keeping your build system, plugins,
-and dependencies up to date. This might be simply to address bug fixes
-(including bugs you weren't aware of), or might be mission-critical security
-fixes. The best policy is: _Stay current_. Others will have
-found&mdash;reported problems&mdash;, and 3<sup>rd</sup>-parties may have
-addressed them. Leverage the power of [_Linus'
-Law_](https://en.wikipedia.org/wiki/Linus%27s_law) ("given enough eyeballs,
-all bugs are shallow").
+An important part of _build hygiene_ is keeping your build system, plugins, and
+dependencies up to date. This might be simply to address bug fixes
+(including bugs you weren't aware of), or might be critical security fixes. The
+best policy is: _Stay current_. Others will have found&mdash;reported
+problems&mdash;, and 3<sup>rd</sup>-parties may have addressed them. Leverage
+the power of [_Linus' Law_](https://en.wikipedia.org/wiki/Linus%27s_law) ("given
+enough eyeballs, all bugs are shallow").
 
 ### Keep plugins and dependencies up-to-date
 
@@ -1112,12 +1111,6 @@ any dependency.**
 Your build should fail, too. It's a flag to you to consider the CVE, what
 impact it may have, and if you are comfortable with a vulnerable dependency.
 
-#### Tips
-
-* You can _temporarily_ disable OWASP dependency checking
-  via `-Dowasp.skip=true` for either Gradle or Maven, for example if the 
-  OWASP site is down for maintenance and you can't update the cache of CVEs
-
 ### Dependabot
 
 GitHub provides
@@ -1133,13 +1126,16 @@ plugins for dependencies.
 
 * See the "Tips" section of [Gradle or Maven](#use-gradle-or-maven)
 * With GitHub actions, consider adding a tool such as
-  [Dependabot](https://dependabot.com/), which automatically files GitHub
-  issues for known dependency vulnerabilities.
-  See [earlier in this document](#dependabot) for an example
-* Unfortunately, the Gradle ecosystem is not a mature as the Maven ecosystem
-  for validating plugins/dependencies. For example, if you enable checksum
-  verifications in Gradle, many or most of your plugin and/or dependency
-  downloads may fail
+  [Dependabot](https://dependabot.com/), which automatically files GitHub issues
+  for known dependency vulnerabilities. See
+  [earlier in this document](#dependabot) for an example
+* You can _temporarily_ disable OWASP dependency checking via
+  `-Dowasp.skip=true` for either Gradle or Maven, for example if the OWASP site
+  is down for maintenance, and you cannot update the local CVE cache
+* The [log4shell security bug](https://nvd.nist.gov/vuln/detail/CVE-2021-44228)
+  is extremely severe. Although this project does not use `log4j`, local testing
+  shows that ther `DependencyCheck` plugin for either Gradle or Maven fails
+  build when you use an older, insecure version of `log4j`
 
 ### TODOs
 
