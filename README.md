@@ -52,8 +52,8 @@ $ ./run.sh -B maven  # Builds with Maven, and runs `demo.Application`
 Consider [_Clone git repository without
 history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
 to start at the current tip of this project. For example, some images in
-`README.md` started overlarge in earlier versions, something you may not want
-in a clone.
+`README.md` started overlarge in earlier versions, something you may not want in
+a clone.
 
 ### Contributing
 
@@ -98,16 +98,15 @@ Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* or a
 (Clojure, Groovy, JRuby, Jython, Kotlin, Scala, _et al_), this article is for
 you.
 
-The goal of this article is to highlight building modern Java/JVM projects
-with Gradle or Maven, and provide guidance, or at least food for thought. The
-sample Gradle and Maven projects use Java, but most recommendations apply to
-builds for _any_ JVM language.
+The goal of this article is to highlight building modern Java/JVM projects with
+Gradle or Maven, and provide guidance, or at least food for thought. The sample
+Gradle and Maven projects use Java, but most recommendations apply to builds
+for _any_ JVM language.
 
-See the wheel to the right?  _No, you do not need to be agile!_ (But I
-encourage you to explore the benefits of Agile.)  This article is for you
-regardless of how your team approaches software. The point is to "make
-people awesome" for any project, possibly the most key value of the Agile
-approach to software.
+See the wheel to the right?  _No, you do not need to be agile!_ (But I encourage
+you to explore the benefits of Agile.)  This article is for you regardless of
+how your team approaches software. The point is to "make people awesome" for any
+project, possibly the most key value of the Agile approach to software.
 
 ### Principles in designing these builds
 
@@ -117,29 +116,28 @@ approach to software.
 2. _Make it right_
     - Can I reproduce issues in the CI build, and fix it locally?
     - Can I find code and security issues from running the build?
-    - Is the code clean?  Am I happy to explore the project?
+    - Is the code clean? Am I happy to explore the project?
 3. _Make it fast_
     - Can I run the local build as frequently as I like, and be productive?
-    - Can I have a fast cycle of code &amp; test?  What about 
-      red-green-refactor?
+    - Can I have a fast cycle of code &amp; test? What about red-green-refactor?
     - Can I update my dependencies and plugins quickly and easily?
 
 ### Goals for this project
 
-* Starter build scripts for Modern Java/JVM builds in Gradle and Maven,
-  helpful for new projects, or refurbishing existing projects
+* Starter build scripts for Modern Java/JVM builds in Gradle and Maven, helpful
+  for new projects, or refurbishing existing projects
 * Quick solutions for raising project quality and security in your local build
-* Shift _problems to the left_ ("to the left" meaning earlier in the
-  development cycle). You'll get earlier feedback while still having a fast
-  local build. Time spent fixing issues locally is better than waiting on CI
-  to fail, or worse, for production to fail
+* Shift _problems to the left_ ("to the left" meaning earlier in the development
+  cycle). You'll get earlier feedback while still having a fast local build.
+  Time spent fixing issues locally is better than waiting on CI to fail, or
+  worse, for production to fail
 * The article focuses on Gradle and Maven: these are the most used build tools
-  for Modern Java/JVM projects. However, if you use a different build tool,
-  the principals still apply
+  for Modern Java/JVM projects. However, if you use a different build tool, the
+  principals still apply
 
-I want to help with the question: _I am at Day 1 on my project_: How do I
-begin with a local build that is supports my team through the project
-lifetime? And when I have an existing project, how to I catch up?
+I want to help with the question: _I am at Day 1 on my project_: How do I begin
+with a local build that is supports my team through the project lifetime? And
+when I have an existing project, how to I catch up?
 
 ### Goal of this article
 
@@ -153,15 +151,15 @@ builds, and shares with you lessons learned.
 
 There are simple ways to make your project great. Some goals to strive for:
 
-* Visitors and new developers get off to a quick start, and can understand
-  what the build does (if they are interested)
+* Visitors and new developers get off to a quick start, and can understand what
+  the build does (if they are interested)
 * Users of your project trust it&mdash;the build does what it says on the
   tin&mdash;, and they feel safe relying on your project
 * You don't get peppered with questions that are answered "in the source"
   &mdash;because not everyone wants to read the source, and you'd rather be
   coding than answering questions ☺
-* Coding should feel easy. You solve _real_ problems, and do not spend
-  overmuch much time on build details: your build supports you
+* Coding should feel easy. You solve _real_ problems, and do not spend overmuch
+  much time on build details: your build supports you
 * Your code passes "smell tests": no simple complaints, and you are proud of
   what others see. _Hey!_ You're a professional, and it shows. (This is one of
   my personal fears as a programmer)
@@ -175,7 +173,7 @@ Hopefully this article and the sample build scripts help you!
 ## Getting your project started
 
 To get a project off to a good start, consider these items. Even for existing
-projects, you an address these as you go along or while refurbishing an
+projects, you should address these as you go along or while refurbishing an
 existing project:
 
 * **Team agreement comes first**. Make sure everyone is onboard and clear on
@@ -186,21 +184,21 @@ existing project:
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
     * [Intelligent laziness is a virtue](http://threevirtues.com/). Time
       invested in good documentation pays off
-    * A good [`README.md`](./README.md) answers visitors questions, so you
-      don't spend time answering trivial questions, and explains/justifies
-      your project to others.
-      Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law)
-      with communication!
+    * A good [`README.md`](./README.md) answers visitors questions, so you don't
+      spend time answering trivial questions, and explains/justifies your
+      project to others.
+    * Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law) with
+      communication!
 * Pick a version of Java, and stick to it throughout your local build, CI
   pipeline, and environment deployments. _Do not mix versions._
-* Pick **Gradle** or **Maven**, and use only one. This project provides both
-  to demonstrate equivalent builds for each.
-  See [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
+* Pick **Gradle** or **Maven**, and use only one. This project provides both to
+  demonstrate equivalent builds for each.  See
+  [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
 * Use build wrappers committed into your project root. These run Gradle or
   Maven, and coders should always invoke `./gradlew` or `./mvnw` (use shell
   _aliases_ if these grow tiresome to type)
-    * Build wrappers are shell scripts to run Gradle or Maven. The wrapper
-      takes care of downloading needed tools without getting in the way. New
+    * Build wrappers are shell scripts to run Gradle or Maven. The wrapper takes
+      care of downloading needed tools without getting in the way. New
       contributors and developers can start right away; they do not need to
       install more software
     * For Gradle, use
@@ -208,9 +206,8 @@ existing project:
       (part of Gradle)
     * For Maven, use [`./mvnw`](https://github.com/takari/maven-wrapper)
       (in progress with Apache to bundle as part of Maven)
-* Always run CI on push to a shared repository. It's a sad panda when someone
-  is excited about their commit, and then the commit breaks the other
-  developers
+* Always run CI on push to a shared repository. It's a sad panda when someone is
+  excited about their commit, and then the commit breaks the other developers
     * In CI, use caches for dependency downloads; this speeds up the feedback
       cycle from CI (see [below](#setup-your-ci))
     * When sensible, move code quality and security checks into local builds
@@ -228,8 +225,8 @@ existing project:
     * "gradle install git hooks"
     * "maven install git hooks"
 
-  This article presently has no specific recommendations on choices of plugin
-  or approach for Git hooks.
+  This article presently has no specific recommendations on choices of plugin or
+  approach for Git hooks.
 
 ---
 
@@ -243,16 +240,16 @@ height="auto"/>
 For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
-* Java 17 is the most current LTS ("long-term support") version.  When it
-  is available through Adoptium, GitHub actions supports this version, and
-  all plugins play nicely, the project will move to 17 from 11
-* Java 11 was the most recent LTS ("long-term support") version.  _This is
-  the recommended version_ for corporate production environments when you
-  require Oracle support until your project can catchup to 17
+* Java 17 is the most current LTS ("long-term support") version. When it is
+  available through Adoptium, GitHub actions supports this version, and all
+  plugins play nicely, the project will move to 17 from 11
+* Java 11 was the most recent LTS ("long-term support") version.  _This is the
+  recommended version_ for corporate production environments when you require
+  Oracle support until your project can catchup to 17
 * There are more recent versions (12 to 16) with continuing improvements and
-  additional features to try out. However Oracle provides no paid support 
-  for these versions.  These versions, however, are production-worthy
-* If your personal or open-source project does not require a paid support 
+  additional features to try out. However Oracle provides no paid support for
+  these versions. These versions, however, are production-worthy
+* If your personal or open-source project does not require a paid support
   contract, newer Java versions are a good choice
 * For Java 8 or older: These versions are no longer supported by Oracle unless
   one buys
@@ -271,8 +268,8 @@ choice for obtaining the JDK.
 ### Tips
 
 * Hold off from JDK 17 until resolving why Gradle cannot launch Ant for the
-  checkstyle plugin from inside Batect, but it works calling Gradle directly
-  on the command line.  The Maven build works fine.
+  checkstyle plugin from inside Batect, but it works calling Gradle directly on
+  the command line. The Maven build works fine.
 
 * In Maven, use a property to _fix_ the version of Java in place. But note
   naming for that property: `java.version` is defined by the JVM, and Maven
@@ -280,9 +277,9 @@ choice for obtaining the JDK.
   the `jdk.version` property, which has no collision with pre-defined
   properties.
 
-* In Maven, you may see issues with Java versions &gt; 11. These come from
-  Java moving to encapsulate the JDK, and asking you to use modules. An
-  example issue is:
+* In Maven, you may see issues with Java versions &gt; 11. These come from Java
+  moving to encapsulate the JDK, and asking you to use modules. An example issue
+  is:
   ```
   java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @a-hex-code) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @a-hex-code
   ```
@@ -292,12 +289,11 @@ choice for obtaining the JDK.
 ### Managing your Java environment
 
 One of the best tools for managing your Java environment in projects is
-[jEnv](https://www.jenv.be/). It supports both "global" (meaning you, the
-user) and "project" choices (particular to a directory and its children) in
-which JDK installation to use. You may notice the
-[`.java-version`](./.java-version) file: this is a per-project file for jEnv
-to pick your project Java version. (Reminder: in general, prefer the latest
-LTS version of Java, which is 11.)
+[jEnv](https://www.jenv.be/). It supports both "global" (meaning you, the user)
+and "project" choices (particular to a directory and its children) in which JDK
+installation to use. You may notice the [`.java-version`](./.java-version)
+file: this is a per-project file for jEnv to pick your project Java version.
+(Reminder: in general, prefer the latest LTS version of Java, which is 11.)
 
 Do use `jenv enable-plugins export` and restart your shell. This ensures
 `JAVA_HOME` is exported to match your jEnv settings. Several tools use
@@ -309,12 +305,12 @@ For those on Windows, you may need to use Cygwin, Git for Windows, or WSL2 to
 use jEnv.  (I've not tested these: jEnv needs a Bash shell with supporting
 programs.)
 
-There are many ways to install the JDK, most are platform-dependent. In
-general, your team will be better off using a "managed" approach, rather than
-with each person using binary installers. Popular choices include:
+There are many ways to install the JDK, most are platform-dependent. In general,
+your team will be better off using a "managed" approach, rather than with each
+person using binary installers. Popular choices include:
 
-* [Apt and friends](https://adoptium.net/installation.html#linux-pkg) for 
-  Linux or WSL
+* [Apt and friends](https://adoptium.net/installation.html#linux-pkg) for Linux
+  or WSL
 * [Homebrew](https://brew.sh/) for Mac
 * [SDKMAN](https://sdkman.io/jdks) for multiple platforms
 
@@ -331,72 +327,71 @@ height="auto"/></a>
 
 * Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
   imperative, and mutable; requires debugging your build on occasion, but less
-  verbose than Maven's XML. Use of "parent" (umbrella) projects is possible
-  but challenging. You can locally extend your build script either _inline_
+  verbose than Maven's XML. Use of "parent" (umbrella) projects is possible but
+  challenging. You can locally extend your build script either _inline_
   with build code, with project plugins, or with plugins from a separate
-  project (perhaps shared across project for your team). If interested in
-  custom plugins,
+  project (perhaps shared across project for your team). If interested in custom
+  plugins,
   [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
 
 <a href="https://maven.apache.org/" title="Maven">
 <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
 height="auto"/></a>
 
-* Maven &mdash; your build scripts is written in XML; declarative and
-  immutable; verbose but specific; it either works or not. Use of "parent" (
-  umbrella) projects is simple with built-in support. You can locally extend
-  your build with plugins from a separate project (perhaps shared across
-  project for your team). If interested in custom plugins,
+* Maven &mdash; your build scripts is written in XML; declarative and immutable;
+  verbose but specific; it either works or not. Use of "parent" (umbrella)
+  projects is simple with built-in support. You can locally extend your build
+  with plugins from a separate project (perhaps shared across project for your
+  team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
-For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't
-cover alternative build tools:
+For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
+alternative build tools:
 [industry data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
 shows Gradle or Maven are the build tools for most folks. Unless you find
 yourself in a complex monorepo culture (Google, _etc_), or there are mandates
-from above, you need to select one of Gradle or Maven. However, for projects
-not using Gradle or Maven, you will still find improvements for your build
-herein (though details will differ).
+from above, you need to select one of Gradle or Maven. However, for projects not
+using Gradle or Maven, you will still find improvements for your build herein
+(though details will differ).
 
 For new projects, you may find [Spring Initializr](https://start.spring.io),
 [`mn` from Micronaut](https://micronaut.io/), or
-[JHipster](https://www.jhipster.tech/), among many other project starters,
-more to your liking: they provide you with starter Gradle or Maven scripts
-specific for those frameworks. _That's great!_ This article should still help
-you improve your build beyond "getting started". You should pick and choose
-build features to add to your starter project, whatever makes sense for your
-project.
+[JHipster](https://www.jhipster.tech/), among many other project starters, more
+to your liking: they provide you with starter Gradle or Maven scripts specific
+for those frameworks. _That's great!_ This article should still help you improve
+your build beyond "getting started". You should pick and choose build features
+to add to your starter project, whatever makes sense for your project.
 
 This article offers **no preference between Gradle or Maven**. You need to
 decide with your team.
 
-Projects using Ant **should migrate**. It is true that Ant is
-well-maintained (the latest version dates from September 2020). However, you
-will spend much effort in providing modern build tooling, and effort in
-migrating is repaid by much smaller work in integrating modern tools. Data
-point: consider the number of [Stackoverflow](https://stackoverflow.com/)
-posts providing Gradle or Maven answers to those for Ant.  *Consider Ant
-builds no longer well-supported, and a form of
+Projects using Ant **should migrate**. It is true that Ant is well-maintained
+(the latest version dates from September 2020). However, you will spend much
+effort in providing modern build tooling, and effort in migrating is repaid by
+much smaller work in integrating modern tools. Data point: consider the number
+of [Stackoverflow](https://stackoverflow.com/)
+posts providing Gradle or Maven answers to those for Ant.  *Consider Ant builds
+no longer well-supported, and a form of
 [Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).*
 
-Throughout, when covering both Gradle and Maven, Gradle will be discussed
-first, then Maven. This is no expressing a preference!  It is neutral
-alphabetical ordering.
+Throughout, when covering both Gradle and Maven, Gradle will be discussed first,
+then Maven. This is no expressing a preference!  It is neutral alphabetical
+ordering.
 
 ### Tips
 
 * The sample Gradle and Maven build scripts often specify specific versions of
   the tooling, separate from the plugin versions. This is intentional. You
-  should be able to update the latest tool version even when the plugin has
-  not yet caught up
+  should be able to update the latest tool version even when the plugin has not
+  yet caught up
 * Gradle itself does not provide support for "profiles", a key Maven feature.
-  Profiles can be used in many ways, the most common is to enable/disable
-  build features on the command line, or tailor a build to a particular
-  deployment environment. If this feature is important for your team, you can
+  Profiles can be used in many ways, the most common is to enable/disable build
+  features on the command line, or tailor a build to a particular deployment
+  environment. If this feature is important for your team, you can
   code `if/else` blocks directly in `build.gradle`, or use a plugin such as
   [Kordamp Profiles Gradle plugin](https://kordamp.org/kordamp-gradle-plugins/#_org_kordamp_gradle_profiles)
-  (Kordamp has a suite of interesting Gradle plugins beyond this one; read
-  more on that page)
+  (Kordamp has a suite of interesting Gradle plugins beyond this one; read more
+  on that page)
 * Gradle uses advanced terminal control, so you cannot always see what is
   happening. To view Gradle steps plainly when debugging your build, use:
   ```shell
@@ -409,10 +404,9 @@ alphabetical ordering.
 * If your source code is in Kotlin, so should be your build. Gradle provides
   [a Kotlin DSL for build scripts](https://kotlinlang.org/docs/reference/using-gradle.html)
   as a first-class counterpart to the traditional Groovy DSL
-* Maven colorizes output, but does not use terminal control to overwrite
-  output
-* See [Setup your CI](#setup-your-ci) for another approach to getting plain
-  text console output
+* Maven colorizes output, but does not use terminal control to overwrite output
+* See [Setup your CI](#setup-your-ci) for another approach to getting plain text
+  console output
 * [The Maven Notifier](https://github.com/jcgay/maven-notifier) may be to your
   liking
 * If you like Maven, but XML isn't your thing, you might explore the
@@ -462,20 +456,20 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 ### Tips
 
 * A simple way in CI to disable ASCII control sequences from colorizing or
-  Gradle's overwriting of lines (the control sequences can make for
-  hard-to-read CI logs) is to use the environment setting:
+  Gradle's overwriting of lines (the control sequences can make for hard-to-read
+  CI logs) is to use the environment setting:
   ```shell
   TERM=dumb
   ```
-  For example, with Gradle, this will log all the build steps without
-  attempting to overwrite earlier steps with later ones
+  This does not make sense for local builds, and your CI system (_eg_, 
+  GitHub) may manage this already
 * With Gradle, use the `--warning-mode=all` flag for CI: this shows _all_
   warnings Gradle generates, not just a summary. See
   [_Showing or hiding
   warnings_](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_warnings)
   for details
-* With Maven, use the `--no-transfer-progress` flag for CI: this avoids
-  spamming CI logs with download progress messages
+* With Maven, use the `--no-transfer-progress` flag for CI: this avoids spamming
+  CI logs with download progress messages
 
 ---
 
@@ -489,30 +483,30 @@ align="right" width="20%" height="auto"/>
 
 ### Setup local CI
 
-[Batect](https://batect.dev/) is a cool tool from Charles Korn. With some
-setup, it runs your build in a "CI-like" local environment via Docker. This is
-one of your first lines of defence against "it runs on my box".
+[Batect](https://batect.dev/) is a cool tool from Charles Korn. With some setup,
+it runs your build in a "CI-like" local environment via Docker. This is one of
+your first lines of defence against "it runs on my box".
 ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
 space.)
 
-[Earthly](https://earthly.dev/) shares philosophy with Batect and with a 
-different approach to implementation.  They are _both good choices_.
+[Earthly](https://earthly.dev/) shares philosophy with Batect and with a
+different approach to implementation. They are _both good choices_.
 
-_This is an important step_!  It is closer to your CI builds locally. You
-should strive to keep local as faithful as possible to CI and Production.
+_This is an important step_!  It is closer to your CI builds locally. You should
+strive to keep local as faithful as possible to CI and Production.
 
 See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
 for documentation on using Batect from within a dockerized CI environment.
 
 **NB** &mdash; to be as consistent as possible, the sample
-[`ci.yml` for GitHub](./.github/workflows/ci.yml) uses Batect for the Gradle
-and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
+[`ci.yml` for GitHub](./.github/workflows/ci.yml) uses Batect for the Gradle and
+Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
 for [AdoptOpenJDK11](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
 not [setup JDK 11](https://github.com/actions/setup-java) directly, but relies
 on Batect.
 
-Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks.
-For this project, there are example tasks:
+Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks. For
+this project, there are example tasks:
 
 ```shell
 $ ./batect -T
@@ -548,8 +542,8 @@ flag:
 
 ### Tips
 
-* If you encounter issues with Gradle and Batect, try stopping the local
-  Gradle daemons before running Batect:
+* If you encounter issues with Gradle and Batect, try stopping the local Gradle
+  daemons before running Batect:
   ```shell
   $ ./gradlew --stop
   $ ./batect <your Batect arguments>
@@ -558,14 +552,13 @@ flag:
   `./gradlew build` or `./mvnw verify` at least once before running
   `./batect ...` to ensure cached/shared downloads are present
 
-* In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking a "
-  Y/N" question. This **must** be _separate step_ from running the build
-  itself. See [`ci.yml`](.github/workflows/ci.yml) for Gradle and Maven
-  examples
+* In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking a
+  "Y/N" question. This **must** be _separate step_ from running the build
+  itself. See [`ci.yml`](.github/workflows/ci.yml) for Gradle and Maven examples
 
 ---
 
-<img src="./images/maintain-build.jpg" alt="Maintain build" align="right" 
+<img src="./images/maintain-build.jpg" alt="Maintain build" align="right"
 width="20%" height="auto"/>
 
 ## Maintain your build
@@ -575,8 +568,8 @@ run performance testing, _et al_.
 
 ### Know what your build does
 
-What does your build do exactly, and in what order? You can ask Gradle or
-Maven to find out:
+What does your build do exactly, and in what order? You can ask Gradle or Maven
+to find out:
 
 * [Gradle Task Tree plugin](https://github.com/dorongold/gradle-task-tree)
   with `./gradlew some...tasks taskTree`
@@ -589,11 +582,11 @@ Each of these have many options and features, and are worth exploring.
 ### Keep your build clean
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
-For example, leverage `jdeps`
-which [comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html)
-. Jdeps spots, for example, if you have a multi-version jar as a dependency
-that does not include _your_ JDK version (an example of this may be is JUnit),
-or if your code depends on _internal_ (non-public) classes of the JDK
+For example, leverage `jdeps` which
+[comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html).
+Jdeps spots, for example, if you have a multi-version jar as a dependency that
+does not include _your_ JDK version (an example of this may be is JUnit), or if
+your code depends on _internal_ (non-public) classes of the JDK
 (important expecially when using the JDK module system).
 
 #### Gradle
@@ -613,8 +606,8 @@ build (say a production with "ERROR" output during a test), but:
    telltale signs of trouble
 
 There are many approaches to this problem. This project uses JDK logging as
-[an example](https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/FileHandler.html)
-, and keeps the build quiet in
+[an example](https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/FileHandler.html),
+and keeps the build quiet in
 [`config/logging.properties`](config/logging.properties).
 
 ### Keep CI builds noisy
@@ -667,8 +660,8 @@ can always revert changes, but some folks want to look before doing.
 
 #### Tips
 
-* Gradle and Maven provide _default versions_ of bundled plugins. In both
-  built tools, the version update plugins need you to be _explicit_ in stating
+* Gradle and Maven provide _default versions_ of bundled plugins. In both built
+  tools, the version update plugins need you to be _explicit_ in stating
   versions for bundled plugins, so those versions are visible for update
 * Enable _HTML reports_ for local use; enable _XML reports_ for CI use in
   integrating with report tooling
@@ -678,8 +671,8 @@ can always revert changes, but some folks want to look before doing.
 *NB* &mdash;
 [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/)
 may prove speedier for you than updating dependency versions locally, and runs
-in CI (GitHub) on a schedule you pick. It submits PRs to your repository when
-it finds out of date dependencies. See
+in CI (GitHub) on a schedule you pick. It submits PRs to your repository when it
+finds out of date dependencies. See
 [`dependabot.yml`](./.github/dependabot.yml) for an example using a daily
 schedule.
 
@@ -692,9 +685,9 @@ this unfortunately still requires a `settings.gradle` to define a project
 artifact name, and leaves duplicate version numbers for related dependencies
 scattered through `build.gradle`.
 
-Another approach is to rely on a Gradle plugin such as that from Spring Boot
-to manage dependencies for you. This unfortunately does not help with plugins
-at all, nor with dependencies that Spring Boot does not know about.
+Another approach is to rely on a Gradle plugin such as that from Spring Boot to
+manage dependencies for you. This unfortunately does not help with plugins at
+all, nor with dependencies that Spring Boot does not know about.
 
 This project uses a 3-file solution for Gradle versioning, and you should
 consider doing the same:
@@ -703,15 +696,15 @@ consider doing the same:
   version numbers, both plugins and dependencies
 * [`settings.gradle`](./settings.gradle) configures plugin versions using the
   properties
-* [`build.gradle`](./build.gradle) uses plugins without needing version
-  numbers, and dependencies refer to their property versions
+* [`build.gradle`](./build.gradle) uses plugins without needing version numbers,
+  and dependencies refer to their property versions
 
-The benefits of this approach grow for Gradle multi-project projects, where
-you may have plugin and dependency versions scattered across each
-`build.gradle` file for you project and subprojects.
+The benefits of this approach grow for Gradle multi-project projects, where you
+may have plugin and dependency versions scattered across each `build.gradle` 
+file for you project and subprojects.
 
-So to adjust a version, edit `gradle.properties`. To see this approach in
-action for dependencies, try:
+So to adjust a version, edit `gradle.properties`. To see this approach in action
+for dependencies, try:
 
 ```shell
 $ grep junitVersion gradle.properties setttings.gradle build.gradle
@@ -734,9 +727,9 @@ With Gradle, there is no "right" solution for hygienic versioning.
 
 If you use the `toolVersion` property for a plugin to update the called tool
 separately from the plugin itself, _this is a convention_, not something the
-Gradle API provides to plugins. As a consequence, the Versions plugin is
-unable to know if your tool version is out of date. An example is the JaCoCo
-plugin distributed with Gradle.
+Gradle API provides to plugins. As a consequence, the Versions plugin is unable
+to know if your tool version is out of date. An example is the JaCoCo plugin
+distributed with Gradle.
 
 Two options:
 
@@ -751,8 +744,8 @@ Two options:
 
 ### Keep your build fast
 
-A fast local build is one of the best things you can do for your team. There
-are variants of profiling your build for Gradle and Maven:
+A fast local build is one of the best things you can do for your team. There are
+variants of profiling your build for Gradle and Maven:
 
 * [Gradle build scan](https://scans.gradle.com/) with the `--scan` flag
 * [Maven profiler extension](https://github.com/jcgay/maven-profiler) with
@@ -765,17 +758,16 @@ are variants of profiling your build for Gradle and Maven:
   can take a while, depending on your project. If you find they slow your team
   local build too much, these are good candidates for moving to
   [CI-only steps](#setup-your-ci), such as a `-PCI` flag for Maven (see "Tips"
-  section of
-  [Use Gradle or Maven](#use-gradle-or-maven) for Gradle for an equivalent).
-  This project keeps them as part of the local build, as the demonstration
-  code is short
+  section of [Use Gradle or Maven](#use-gradle-or-maven) for Gradle for an 
+  equivalent). This project keeps them as part of the local build, as the 
+  demonstration code is short
 * See the bottom of [`build.gradle`](./build.gradle) for an example of
   customizing "new" versions reported by the Gradle `dependencyUpdates` task
 * The equivalent Maven approach for controlling the definition of "new" is to
   use [_Version number
   rules_](https://www.mojohaus.org/versions-maven-plugin/version-rules.html)
-* With the Gradle plugin, you can program your build to fail if dependencies
-  are outdated. Read at
+* With the Gradle plugin, you can program your build to fail if dependencies are
+  outdated. Read at
   [_Configuration option to fail build if stuff is out of
   date_](https://github.com/ben-manes/gradle-versions-plugin/issues/431#issuecomment-703286879)
   for details
@@ -793,8 +785,8 @@ There are 2 main java code styles
 - [Sun code style](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
 - [Google code style](https://google.github.io/styleguide/javaguide.html)
 
-It is up to you which one you should choose. But the style should be chosen
-and the style should be the same for everyone.
+It is up to you which one you should choose. But the style should be chosen and
+the style should be the same for everyone.
 
 To maintain the same standard `config/ide/eclipse-java-google-style.xml`
 or `intellij-java-google-style.xml` should be imported to your IDE. Checkstyle
@@ -811,9 +803,9 @@ When sensible, prefer to generate rather than write code. Here's why:
   make typos, and fixing typos is a challenge when not obvious. Worse are [_
   thinkos_](https://en.wiktionary.org/wiki/thinko); code generation does not "
   think", so is immune to this problem
-* Generated code does not need code review, only the source input for
-  generation needs review, and this is usually shorter and easier to
-  understand. Your hand-written code needs review
+* Generated code does not need code review, only the source input for generation
+  needs review, and this is usually shorter and easier to understand. Only your
+  hand-written code needs review
 * Generated code is usually ignored by tooling such as linting or code
   coverage (and there are simple workarounds when this is not the case). Your
   hand-written code needs tooling to shift problems left
@@ -827,17 +819,17 @@ or [data classes](https://kotlinlang.org/docs/reference/data-classes.html)).
 
 ### Lombok
 
-[Lombok](https://projectlombok.org/) is by far the most popular tool in Java
-for code generation. Lombok is an _annotation processor_, that is, a library (
-jar) which cooperates with the Java compiler.  ([_An introductory guide to
+[Lombok](https://projectlombok.org/) is by far the most popular tool in Java for
+code generation. Lombok is an _annotation processor_, that is, a library (jar)
+which cooperates with the Java compiler.  ([_An introductory guide to
 annotations and annotation
 processors_](https://blog.frankel.ch/introductory-guide-annotation-processor/#handling-annotations-at-compile-time-annotation-processors)
 is a good article if you'd like to read more on how annotation processing
 works.)
 
-Lombok covers many common use cases, and does not have runtime dependencies,
-and there are plugins for popular IDEs to understand Lombok's code generation,
-and tooling integration such as provided by JaCoCo code coverage (see
+Lombok covers many common use cases, and does not have runtime dependencies, and
+there are plugins for popular IDEs to understand Lombok's code generation, and
+tooling integration such as provided by JaCoCo code coverage (see
 [below](#leverage-lombok-to-tweak-code-coverage)).
 
 Do note though, Lombok is not a panacea, and has detractors. For example, to
@@ -856,9 +848,12 @@ or [Micronaut](https://micronaut.io/). For a _command-line program_, you will
 want to test your `main()`.
 
 Do note that Lombok reflects on internal features of the JDK. If you have
-issues, for _Maven_: use in your project the `--illegal-access=warn`
-example from `.mvn/jvm.config`, and look to address these. The solutions in
-the project are a "workaround" assuming Java 11-16.
+issues, for _Maven_: use in your project the
+`--add-opens java.base/java.lang=ALL-UNNAMED`
+example from `.mvn/jvm.config`, and look to address these. The solutions in the
+project are a "workaround" assuming Java 11-16. This is a two-edged sword:
+as the JVM improves access controls, you may find, especially dependencies, that
+there are times you want deep reflection
 
 #### Lombok configuration
 
@@ -875,12 +870,12 @@ lombok.extern.findbugs.addSuppressFBWarnings=true
 
 Lines:
 
-1. `stopBubbling` tells Lombok that there are no more configuration files
-   higher in the directory tree
+1. `stopBubbling` tells Lombok that there are no more configuration files higher
+   in the directory tree
 2. `addLombokGeneratedAnnotation` helps JaCoCo ignore code generated by Lombok
 3. `addConstructorProperties` helps JSON/XML frameworks such as Jackson
-   (this may not be relevant for your project, but is generally harmless, so
-   the benefit comes for free)
+   (this may not be relevant for your project, but is generally harmless, so the
+   benefit comes for free)
 4. `addSuppressFBWarnings` helps SpotBugs ignore code generated by Lombok
 
 ### More examples
@@ -896,9 +891,9 @@ Lines:
 
 ## Leverage the compiler
 
-Compilers targeting the JVM generally provide warning flags for dodgy code,
-and a flag to turn warnings into errors: Use them. The compiler is your first
-line of defense against code issues.
+Compilers targeting the JVM generally provide warning flags for dodgy code, and
+a flag to turn warnings into errors: Use them. The compiler is your first line
+of defense against code issues.
 
 For example, with `javac`, add these compiler flags:
 
@@ -970,7 +965,7 @@ consider, depending on your team preferences, any of these build plugins:
 For your editor, consider the sample [.editorconfig](./.editorconfig) file in
 this project. It is respected by IntelliJ and many other code editors.  
 (The sample uses 80-character line limits as IBM and Hollerith punch cards
-intended, and helpful for speed readers of code. A worth point of team 
+intended, and helpful for speed readers of code. A worth point of team
 discussion.)
 
 The demonstration projects assume checkstyle configuration at
@@ -988,12 +983,12 @@ in `build.gradle` about SUN _vs_ Google styles for Java.
 
 * If you use Google Java coding conventions, consider
   [Spotless](https://github.com/diffplug/spotless) which can autoformat your
-  code.
+  code
 * Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
   editor choice is up to each developer. EditorConfig is a cross-IDE standard
   means of specifying code formatting, respected by
-  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig)
-  , and other major editors
+  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig), 
+  and other major editors
 
 ---
 
@@ -1010,8 +1005,8 @@ ranging among other things:
 * Dangerous anti-patterns (_eg_, missing `null` checks in Java; your language
   may aid you in this, _eg_, Kotlin or Scala)
 * Insecure code (see [Shift security left](#shift-security-left))
-* Use of outdated code patterns (_eg_, Java 5 patterns might be better
-  expressed with Java 11 improvements)
+* Use of outdated code patterns (_eg_, Java 5 patterns might be better expressed
+  with Java 11 improvements)
 * [Fail your build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
   if issues are detected
 
@@ -1023,16 +1018,16 @@ The Gradle and Maven demonstration builds use these to help you:
 And use the [Find Security Bugs](https://find-sec-bugs.github.io/) extension
 for [Spotbugs](https://spotbugs.github.io/).
 
-* CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin.
-  CPD works for Maven
+* CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin. CPD
+  works for Maven
 
 ### Modernizer
 
 Another static code analysis tool is _Modernizer_ to check of use of obsolete
-APIs and types; this is related to but not identical to _deprecated_ APIs. 
-An example is moving to the JDK's `Objects.equals` from Guava's `Objects.equal`.
+APIs and types; this is related to but not identical to _deprecated_ APIs. An
+example is moving to the JDK's `Objects.equals` from Guava's `Objects.equal`.
 
-Note that Modernizer works at the bytecode level (not source code), so is 
+Note that Modernizer works at the bytecode level (not source code), so is
 suitable for any JVM language, not just Java.
 
 * [Gradle plugin](https://github.com/andygoossens/gradle-modernizer-plugin)
@@ -1042,16 +1037,16 @@ suitable for any JVM language, not just Java.
 
 ## Shift security left
 
-* [Find known code security issues](https://find-sec-bugs.github.io/) &mdash;
-  a plugin for SpotBugs
+* [Find known code security issues](https://find-sec-bugs.github.io/) &mdash; a
+  plugin for SpotBugs
 * [DependencyCheck](https://owasp.org/www-project-dependency-check/) &mdash;
   verify your project dependencies against know security issues
 
 ### Checking dependencies
 
 Use checksums and signatures: verify what your build and project downloads!
-When publishing for consumption by others, provide MD5 (checksum) files in
-your upload: be a good netizen, and help others trust code downloaded from you
+When publishing for consumption by others, provide MD5 (checksum) files in your
+upload: be a good netizen, and help others trust code downloaded from you
 
 #### Gradle
 
@@ -1063,10 +1058,10 @@ dependencies_](https://docs.gradle.org/current/userguide/dependency_verification
 
 _Always_ run with the `--strict-checksums` (or `-C`) flag. See
 [_Maven Artifact Checksums -
-What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for
-more information. This is easy to forget about at the local command line. The
-[`.mvn/maven.config`](https://maven.apache.org/configure.htm) file helps this
-be automatic, and can be checked into your project repository.
+What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for more
+information. This is easy to forget about at the local command line. The
+[`.mvn/maven.config`](https://maven.apache.org/configure.htm) file helps this be
+automatic, and can be checked into your project repository.
 
 An alternative is to declare _each_ repository in your user `settings.xml` and
 [set the checksum policy to
@@ -1096,31 +1091,31 @@ and [GitHub Actions](#setup-your-ci) are discussed both above.)
 
 ### Dependency check
 
-[DependencyCheck](https://owasp.org/www-project-dependency-check/) is a key
-tool in verifying that your project does not rely on libraries with known
-security issues. However, it does have an impact on local build times. It is
-smart about caching, but will every few days take time to cache updates to
+[DependencyCheck](https://owasp.org/www-project-dependency-check/) is a key tool
+in verifying that your project does not rely on libraries with known security
+issues. However, it does have an impact on local build times. It is smart about
+caching, but will every few days take time to cache updates to
 the [CVE](https://cve.mitre.org/) list of known insecurities. You may consider
-moving this check to CI if you find local build times adversely impacted.
-Moving these checks to CI is a tradeoff between "shifting security left", and
-local time spent building.
+moving this check to CI if you find local build times adversely impacted. Moving
+these checks to CI is a tradeoff between "shifting security left", and local
+time spent building.
 
 **This project fails the build if finding any CVEs for the current version of
 any dependency.**
 
-Your build should fail, too. It's a flag to you to consider the CVE, what
-impact it may have, and if you are comfortable with a vulnerable dependency.
+Your build should fail, too. It's a flag to you to consider the CVE, what impact
+it may have, and if you are comfortable with a vulnerable dependency.
 
 ### Dependabot
 
 GitHub provides
 [Dependabot](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/keeping-your-dependencies-updated-automatically)
 (other systems than GitHub may have similar robot tools) which, among other
-things, can automatically issue PRs to your repository when security issues
-are discovered. This project uses Dependabot for Gradle and Maven.
+things, can automatically issue PRs to your repository when security issues are
+discovered. This project uses Dependabot for Gradle and Maven.
 
-*NB* &mdash; Dependabot is more reliable than either the Gradle or Maven
-plugins for dependencies.
+*NB* &mdash; Dependabot is more reliable than either the Gradle or Maven plugins
+for dependencies.
 
 ### Tips
 
@@ -1134,8 +1129,8 @@ plugins for dependencies.
   is down for maintenance, and you cannot update the local CVE cache
 * The [log4shell security bug](https://nvd.nist.gov/vuln/detail/CVE-2021-44228)
   is extremely severe. Although this project does not use `log4j`, local testing
-  shows that ther `DependencyCheck` plugin for either Gradle or Maven fails
-  build when you use an older, insecure version of `log4j`
+  shows that the `DependencyCheck` plugin for either Gradle or Maven fails build
+  when you use an older, insecure version of `log4j`
 
 ### TODOs
 
@@ -1165,8 +1160,7 @@ Plugins:
   the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/)
 
 (See [_suggestion : Ignore the generated
-code_](https://github.com/hcoles/pitest/issues/347) for a Lombok/PITest
-issue.)
+code_](https://github.com/hcoles/pitest/issues/347) for a Lombok/PITest issue.)
 
 To see the coverage report (on passed or failed coverage), open:
 
@@ -1179,24 +1173,24 @@ report.
 ### Tips
 
 * See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to
-  _sparingly_ leverage the `@Generated` annotation for marking code that
-  JaCoCo should ignore
-* Discuss with your team the concept of a "coverage ratchet". This means, once
-  a baseline coverage percentage is agreed to, the build configuration will
-  only raise this value, not lower it. This is fairly simple to do by
-  periodically examining the JaCoCo report, and raising the build coverage
-  percentage over time to match improvements in the report
-* Unfortunately neither Gradle's nor Maven's JaCoCo plugin will fail your
-  build when coverage _rises_!  This would be helpful for supporting the
-  coverage ratchet
-* You may find _mocking_ helpful for injection. The Java community is not of
-  one mind on mocking, so use your judgment:
+  _sparingly_ leverage the `@Generated` annotation for marking code that JaCoCo
+  should ignore
+* Discuss with your team the concept of a "coverage ratchet". This means, once a
+  baseline coverage percentage is agreed to, the build configuration will only
+  raise this value, not lower it. This is fairly simple to do by periodically
+  examining the JaCoCo report, and raising the build coverage percentage over
+  time to match improvements in the report
+* Unfortunately neither Gradle's nor Maven's JaCoCo plugin will fail your build
+  when coverage _rises_!  This would be helpful for supporting the coverage
+  ratchet
+* You may find _mocking_ helpful for injection. The Java community is not of one
+  mind on mocking, so use your judgment:
     * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
-      dependency for the sample projects. For "modern" versions of Mockito,
-      you should use the `mockito-inline` dependency rather than
-      `mockito-core` if relevant for your project: it supports
-      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito)
-      . See `TheFooTest.shouldRedAlertAsStaticMock` for an example
+      dependency for the sample projects. For "modern" versions of Mockito, you
+      should use the `mockito-inline` dependency rather than `mockito-core` 
+      if relevant for your project: it supports
+      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito).
+      See `TheFooTest.shouldRedAlertAsStaticMock` for an example
     * [PowerMock](https://powermock.github.io/) provides additional features;
       however, Mockito normally covers use cases
     * Other Modern JVM languages &mdash; these languages may prefer different
@@ -1223,14 +1217,14 @@ do just that, no code from you required, only some build configuration.
 
 Mutation testing is a simple concept: Go "break" some production code, and see
 if any unit tests fail. Production bytecode is changed during the build&mdash;
-for example, an `if (x)` is changed to `if (!x)`&mdash;, and the unit tests
-run. With good code coverage, there should now be a failing unit test.
+for example, an `if (x)` is changed to `if (!x)`&mdash;, and the unit tests run.
+With good code coverage, there should now be a failing unit test.
 
 The best option for Modern Java/JVM mutation testing is
-[PITest](http://pitest.org/). It is under active development, does rather
-clever things with compiled bytecode, and has Gradle and Maven plugins. The
-main drawback for your _local build_ is that PITest is _noisy_, so there might
-be more build output than you might expect.
+[PITest](http://pitest.org/). It is under active development, does rather clever
+things with compiled bytecode, and has Gradle and Maven plugins. The main
+drawback for your _local build_ is that PITest is _noisy_, so there might be
+more build output than you might expect.
 
 After running a build using PITest, to see the mutation report (on passed or
 failed mutation coverage), open:
@@ -1260,10 +1254,10 @@ This project also provides the PIT report as part of Maven's project report.
 Here the project says "integration testing". Your team may call it by another
 name. This means bringing up your application, possibly with
 [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
-for external dependencies (databases, other services, _etc_), and running
-tests against high-level functionality, but _not_ starting up external
-dependencies themselves (_ie_, Docker, or manual comman-line steps). Think of
-CI: what are called here "integration tests" are those which do
+for external dependencies (databases, other services, _etc_), and running tests
+against high-level functionality, but _not_ starting up external dependencies
+themselves (_ie_, Docker, or manual comman-line steps). Think of CI: what are
+called here "integration tests" are those which do
 _not_ need your CI to provide other services.
 
 An example is testing `STDOUT` and `STDERR` for a command-line application.
@@ -1273,11 +1267,11 @@ services.)
 Unlike `src/main/java` and `src/test/java`, there is no generally agreed
 convention for where to put integration tests. This project keeps all tests
 regardless of type in `src/test/java` for simplicity of presentation, naming
-integration tests with "*IT.java". A more sophisticated approach may make
-sense for your project
+integration tests with "*IT.java". A more sophisticated approach may make sense
+for your project.
 
-If you'd like to keep your integration tests in a separate source root from
-unit tests, consider these plugins:
+If you'd like to keep your integration tests in a separate source root from unit
+tests, consider these plugins:
 
 * For Gradle, use [_Gradle TestSets
   Plugin_](https://github.com/unbroken-dome/gradle-testsets-plugin)
@@ -1305,9 +1299,9 @@ tests. Clearly in a production project, you would have only one of these.
 
 ## Going further
 
-Can you do more to improve your build, and shift problems left (before they
-hit CI)? Of course!  Below are some topics to discuss with your team about
-making them part of the local build.
+Can you do more to improve your build, and shift problems left (before they hit
+CI)? Of course!  Below are some topics to discuss with your team about making
+them part of the local build.
 
 ### The Test Pyramid
 
@@ -1346,8 +1340,8 @@ These might be call "out of process" tests.
 This is a complex topic. Some potentially useful resources to pull into your
 build:
 
-* [Flyway](https://flywaydb.org/) &mdash; Version your schema in production,
-  and version your test data
+* [Flyway](https://flywaydb.org/) &mdash; Version your schema in production, and
+  version your test data
 * [LocalStack](https://github.com/localstack/localstack) &mdash; Local testing
   for AWS services
 * [TestContainers](https://www.testcontainers.org/) &mdash; Local Docker for
@@ -1383,16 +1377,18 @@ Both Gradle and Maven have tools to track performance time of steps in your
 build:
 
 * [Gradle build scans](https://scans.gradle.com/) &mdash; Not limited to
-  Enterprise licenses, just build with `./gradlew --scan <tasks>` and 
-  follow the link in the output.
-  <a href="https://cdn.jsdelivr.net/gh/binkley/modern-java-practices/docs/profile-run/gradle-profile.html"
-     title="A sample Gradle profile for this project" type="text/html">
+  Enterprise licenses, just build with `./gradlew --scan <tasks>` and follow the
+  link in the output.
+  <a
+  href="https://cdn.jsdelivr.net/gh/binkley/modern-java-practices/docs/profile-run/gradle-profile.html"
+  title="A sample Gradle profile for this project" type="text/html">
   See a sample Gradle profile for this project</a>.
 * [Maven profiler](https://github.com/jcgay/maven-profiler) &mdash; run
   with `./mvnw -Dprofile <goals>` and open the local link in the output. This
   project includes the setup for [Maven extensions](.mvn/extensions.xml).
-  <a href="https://cdn.jsdelivr.net/gh/binkley/modern-java-practices/docs/profile-run/maven-profile.html"
-     title="A sample Maven profile for this project" type="text/html">
+  <a
+  href="https://cdn.jsdelivr.net/gh/binkley/modern-java-practices/docs/profile-run/maven-profile.html"
+  title="A sample Maven profile for this project" type="text/html">
   See a sample Maven profile for this project</a>.
 
 **TODO**: Fix the sample profile links to display as pages, not as raw HTML.
@@ -1405,9 +1401,9 @@ Local build time is _important_: gone are the days when a multi-hour, or even
 And "compiling" is rarely any longer where your project takes most local build
 time.
 
-Use the Gradle or Maven instructions in [keep your build
-fast](#keep-your-build-fast) to profile your build, and spot where it spends
-time.
+Use the Gradle or Maven instructions
+in [keep your build fast](#keep-your-build-fast) to profile your build, and spot
+where it spends time.
 
 If you find your local build is taking too long, consider testing moving these
 parts to CI with the cost to you of issues arising from delayed feedback:
@@ -1417,26 +1413,26 @@ parts to CI with the cost to you of issues arising from delayed feedback:
 * [Integration tests](#use-integration-testing)
 * [PITest](#use-mutation-testing)
 
-_But beware_!  Your local build is now drifting away from CI, so you are
-pushing problems off later in your build pipeline. Not everyone pays close
-attention to CI failures, that is until something bad happens in production.
+_But beware_!  Your local build is now drifting away from CI, so you are pushing
+problems off later in your build pipeline. Not everyone pays close attention to
+CI failures, that is until something bad happens in production.
 
 *IMPORTANT* &mdash; if you disable tools like the above in the _local_ build,
-ensure you retain them in your _CI_ build.  Your goal in this case is speed up
+ensure you retain them in your _CI_ build. Your goal in this case is speed up
 the feedback cycle locally while retaining the benefits of automated tooling.
-You are making a bet: problems these tools find come up rarely (but can be 
+You are making a bet: problems these tools find come up rarely (but can be
 catastrophic when they do), so time saved locally repays time lost waiting for
 CI to find these problems.
 
 In the Gradle and Maven samples in this repository, _DependencyCheck_ and
 _Mutation testing_ are typically the slowest steps in a local build;
-_Integration tests_ are fast only because this project has very few (1), and
-are samples only.
+_Integration tests_ are fast only because this project has very few (1), and are
+samples only.
 [YMMV](http://www.catb.org/jargon/html/Y/Your-mileage-may-vary.html)
 
 Every project is different; your team and stakeholders need to judge the value
-of quicker feedback to programmers of these concerns, and quicker feedback
-from a faster local build. There is no "one size fits all" recommendation.
+of quicker feedback to programmers of these concerns, and quicker feedback from
+a faster local build. There is no "one size fits all" recommendation.
 
 ### It fails in CI, but passes locally
 
@@ -1449,5 +1445,5 @@ happen for reasons of environment. Examples can include:
 - CI includes steps to push successful builds further down the line to other
   environments, and something there went wrong: Talk with your Infrastructure
   team
-- Dependencies break in CI: If CI uses an internal dependency repository,
-  check in with the maintainers of the repository
+- Dependencies break in CI: If CI uses an internal dependency repository, check
+  in with the maintainers of the repository
