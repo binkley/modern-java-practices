@@ -240,12 +240,7 @@ height="auto"/>
 For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
-* Java 17 is the most current LTS ("long-term support") version. When it is
-  available through Adoptium, GitHub actions supports this version, and all
-  plugins play nicely, the project will move to 17 from 11
-* Java 11 was the most recent LTS ("long-term support") version.  _This is the
-  recommended version_ for corporate production environments when you require
-  Oracle support until your project can catchup to 17
+* Java 17 is the most current LTS ("long-term support") version
 * There are more recent versions (12 to 16) with continuing improvements and
   additional features to try out. However Oracle provides no paid support for
   these versions. These versions, however, are production-worthy
@@ -259,7 +254,7 @@ For any Modern Java/JVM project, the first decision is _which version of Java
   [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
   with commercial support available from IBM
 
-In this project, you'll see the choice of Java 11 as this is the version to
+In this project, you'll see the choice of Java 17 as this is the version to
 recommend in production.
 
 In general, you will find that [Adoptium](https://adoptium.net) is a go-to
@@ -277,15 +272,6 @@ choice for obtaining the JDK.
   the `jdk.version` property, which has no collision with pre-defined
   properties.
 
-* In Maven, you may see issues with Java versions &gt; 11. These come from Java
-  moving to encapsulate the JDK, and asking you to use modules. An example issue
-  is:
-  ```
-  java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @a-hex-code) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @a-hex-code
-  ```
-  If so, use in your project the `--illegal-access=warn` example from
-  `.mvn/jvm.config`.
-
 ### Managing your Java environment
 
 One of the best tools for managing your Java environment in projects is
@@ -293,7 +279,7 @@ One of the best tools for managing your Java environment in projects is
 and "project" choices (particular to a directory and its children) in which JDK
 installation to use. You may notice the [`.java-version`](./.java-version)
 file: this is a per-project file for jEnv to pick your project Java version.
-(Reminder: in general, prefer the latest LTS version of Java, which is 11.)
+(Reminder: in general, prefer the latest LTS version of Java, which is 17.)
 
 Do use `jenv enable-plugins export` and restart your shell. This ensures
 `JAVA_HOME` is exported to match your jEnv settings. Several tools use
@@ -501,8 +487,8 @@ for documentation on using Batect from within a dockerized CI environment.
 **NB** &mdash; to be as consistent as possible, the sample
 [`ci.yml` for GitHub](./.github/workflows/ci.yml) uses Batect for the Gradle and
 Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
-for [AdoptOpenJDK11](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
-not [setup JDK 11](https://github.com/actions/setup-java) directly, but relies
+for [AdoptOpenJDK17](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
+not [setup JDK 17](https://github.com/actions/setup-java) directly, but relies
 on Batect.
 
 Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks. For
@@ -526,8 +512,7 @@ Available tasks:
 
 #### Gradle
 
-It is important that your `batect.yml` calls Gradle with the `--no-daemon`
-flag:
+It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 
 * There is no point in spinning up a daemon for a Docker ephemeral container
 * With a daemon, the Docker container's Gradle may be confused by
@@ -537,8 +522,8 @@ flag:
   already-downloaded dependencies, _et al_)
 * If you encounter troubles, run locally `./gradlew --stop` to kill any local
   daemons: This indicates a _bug_, and "stop" is a workaround.
-  See [a suggestion of a better approach](https://github.com/batect/batect/issues/680#issuecomment-719821099)
-  .
+  See [a suggestion of a better
+  approach](https://github.com/batect/batect/issues/680#issuecomment-719821099).
 
 ### Tips
 
@@ -583,7 +568,7 @@ Each of these have many options and features, and are worth exploring.
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
 For example, leverage `jdeps` which
-[comes with the JDK](https://docs.oracle.com/en/java/javase/11/tools/jdeps.html).
+[comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html).
 Jdeps spots, for example, if you have a multi-version jar as a dependency that
 does not include _your_ JDK version (an example of this may be is JUnit), or if
 your code depends on _internal_ (non-public) classes of the JDK
@@ -606,7 +591,8 @@ build (say a production with "ERROR" output during a test), but:
    telltale signs of trouble
 
 There are many approaches to this problem. This project uses JDK logging as
-[an example](https://docs.oracle.com/en/java/javase/11/docs/api/java.logging/java/util/logging/FileHandler.html),
+[an
+example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html),
 and keeps the build quiet in
 [`config/logging.properties`](config/logging.properties).
 
@@ -851,9 +837,9 @@ Do note that Lombok reflects on internal features of the JDK. If you have
 issues, for _Maven_: use in your project the
 `--add-opens java.base/java.lang=ALL-UNNAMED`
 example from `.mvn/jvm.config`, and look to address these. The solutions in the
-project are a "workaround" assuming Java 11-16. This is a two-edged sword:
+project are a "workaround" assuming Java 17. This is a two-edged sword:
 as the JVM improves access controls, you may find, especially dependencies, that
-there are times you want deep reflection
+there are times you want deep reflection.
 
 #### Lombok configuration
 
@@ -1006,7 +992,7 @@ ranging among other things:
   may aid you in this, _eg_, Kotlin or Scala)
 * Insecure code (see [Shift security left](#shift-security-left))
 * Use of outdated code patterns (_eg_, Java 5 patterns might be better expressed
-  with Java 11 improvements)
+  with Java 17 improvements)
 * [Fail your build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
   if issues are detected
 

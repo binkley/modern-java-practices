@@ -1,11 +1,9 @@
 containers:
   build-env:
-    image: adoptopenjdk:11-jdk-hotspot
+    image: eclipse-temurin:17-jdk-focal
     environment:
-      # See:
-      # - https://docs.gradle.org/6.8/userguide/gradle_daemon.html#sec:disabling_the_daemon
-      # - https://docs.gradle.org/6.8/userguide/build_environment.html#sec:configuring_jvm_memory
-      JAVA_OPTS: -Xmx512m -XX:MaxMetaspaceSize=256m
+      # Needed for Gradle: Maven handles this via `.mvn/jvm.config`
+      JAVA_OPTS: --add-opens java.base/java.lang=ALL-UNNAMED
     run_as_current_user:
       enabled: true
       home_directory: /home/container-user
