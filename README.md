@@ -1328,6 +1328,7 @@ build:
 
 * [Flyway](https://flywaydb.org/) &mdash; Version your schema in production, and
   version your test data
+* [Rumba](https://www.dbinvent.com/) &mdash; Similar to Flyway but does not depend on JVM  
 * [LocalStack](https://github.com/localstack/localstack) &mdash; Local testing
   for AWS services
 * [TestContainers](https://www.testcontainers.org/) &mdash; Local Docker for
