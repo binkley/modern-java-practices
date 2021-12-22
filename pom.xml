@@ -68,7 +68,7 @@
         <pmd.version>6.41.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.5.2.0</spotbugs-maven-plugin.version>
         <spotbugs.version>4.5.2</spotbugs.version>
         <system-lambda.version>1.2.0</system-lambda.version>
         <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
