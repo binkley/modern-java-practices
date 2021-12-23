@@ -1092,6 +1092,19 @@ any dependency.**
 Your build should fail, too. It's a flag to you to consider the CVE, what impact
 it may have, and if you are comfortable with a vulnerable dependency.
 
+#### Note on `DependencyCheck`
+
+For non-Windows platforms, you may see this warning when `DependencyCheck` runs:
+
+```
+.NET Assembly Analyzer could not be initialized and at least one 'exe' or 'dll' was scanned. The 'dotnet' executable could not be found on the path; either disable the Assembly Analyzer or add the path to dotnet core in the configuration.
+```
+
+In most situations, you are running in a Linux-based Docker container, or using
+local Linux or Mac command line.  **In a Windows project, this is an issue to
+address, and may be a serious security concern** indicating you are missing
+critical Windows components. For other platforms, this is a nuisance message.
+
 ### Dependabot
 
 GitHub provides
