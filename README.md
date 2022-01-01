@@ -1343,8 +1343,8 @@ using [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com
 dependencies spun up locally rather than in production or another environment.
 These might be call "out of process" tests.
 
-This is a complex topic. Some potentially useful resources to pull into your
-build:
+This is a complex topic, and this document is no guide on these. Some
+potentially useful resources to pull into your build:
 
 * [Flyway](https://flywaydb.org/) &mdash; Version your schema in production, and
   version your test data
