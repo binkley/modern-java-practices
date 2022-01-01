@@ -813,9 +813,9 @@ processors_](https://blog.frankel.ch/introductory-guide-annotation-processor/#ha
 is a good article if you'd like to read more on how annotation processing
 works.)
 
-Lombok covers many common use cases, and does not have runtime dependencies, and
-there are plugins for popular IDEs to understand Lombok's code generation, and
-tooling integration such as provided by JaCoCo code coverage (see
+Lombok covers many common use cases, does not have runtime dependencies, there
+are plugins for popular IDEs that understand Lombok's code generation, and has
+tooling integration for JaCoCo's output code coverage (see
 [below](#leverage-lombok-to-tweak-code-coverage)).
 
 Do note though, Lombok is not a panacea, and has detractors. For example, to
@@ -1152,13 +1152,18 @@ for dependencies.
       from Java as it lacks named parameters
 
 Unit testing and code coverage are foundations for code quality. Your build
-should help you with these as much as possible.
+should help you with these as much as possible. 100% coverage may seem absurd;
+however, levels of coverage like this come with unexpected benefits such as
+finding dead code in your project or helping refactoring to be simple. An
+example: with high coverage (say 95%+, your experience will vary)
+simplifying your covered code may lower your coverage as uncovered code becomes
+more prominent in the total ratio.
 
-Plugins:
+Setup for needed plugins:
 
-* For Gradle this is part of the "java" plugin
-* For Maven, use
-  the [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/)
+* For Gradle use the `java` plugin
+* For Maven, use more recent versions of the
+  [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/)
 
 (See [_suggestion : Ignore the generated
 code_](https://github.com/hcoles/pitest/issues/347) for a Lombok/PITest issue.)
