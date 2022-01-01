@@ -262,10 +262,6 @@ choice for obtaining the JDK.
 
 ### Tips
 
-* Hold off from JDK 17 until resolving why Gradle cannot launch Ant for the
-  checkstyle plugin from inside Batect, but it works calling Gradle directly on
-  the command line. The Maven build works fine.
-
 * In Maven, use a property to _fix_ the version of Java in place. But note
   naming for that property: `java.version` is defined by the JVM, and Maven
   creates a matching property. Recommended is to define your Java version with
@@ -469,9 +465,9 @@ align="right" width="20%" height="auto"/>
 
 ### Setup local CI
 
-[Batect](https://batect.dev/) is a cool tool from Charles Korn. With some setup,
-it runs your build in a "CI-like" local environment via Docker. This is one of
-your first lines of defence against "it runs on my box".
+[Batect](https://batect.dev/) is a solid tool from Charles Korn. It runs your
+build in a "CI-like" local environment via Docker. This is one of your first
+lines of defence against "it runs on my box".
 ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
 space.)
 
@@ -480,6 +476,10 @@ different approach to implementation. They are _both good choices_.
 
 _This is an important step_!  It is closer to your CI builds locally. You should
 strive to keep local as faithful as possible to CI and Production.
+
+You may decide not to use CI-like tooling for local builds. However, consider
+that use of them raises your confidence that CI will succeed. Local CI-like
+tooling is part of the theme of _shifting left_ for problems.
 
 See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
 for documentation on using Batect from within a dockerized CI environment.
