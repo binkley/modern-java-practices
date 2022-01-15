@@ -72,7 +72,7 @@ dependencies {
 // TODO: Work around GitHub issue #54
 configurations.pmd {
     resolutionStrategy {
-        forcedModules = ["commons-io:commons-io:2.8.0"]
+        forcedModules = ["commons-io:commons-io:2.11.0"]
     }
 }
 
@@ -110,17 +110,17 @@ tasks.withType(Test) {
 
 checkstyle {
     toolVersion = checkstyleVersion
-    // default checkstyle config
+    // default checkstyle config -- specific to your team agreement
     configFile = project(":").file("config/checkstyle/checkstyle.xml")
-    // google style
+    // Google style (idiosyncratic to Google):
     // configFile = project(":").file("config/checkstyle/google_checks.xml")
-    // sun style
+    // SUN style (closest to modern Java styles) -- the basis for this project:
     // configFile = project(":").file("config/checkstyle/sun_checks.xml")
 }
 
 pmd {
     ignoreFailures = false
-    // TODO: targetJdk = 11 -- there is no defined constant for this
+    // TODO: targetJdk = 17 -- there is no defined property for this
     toolVersion = pmdVersion
 }
 
