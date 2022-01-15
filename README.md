@@ -1089,10 +1089,16 @@ time spent building.
 **This project fails the build if finding any CVEs for the current version of
 any dependency.**
 
-**This is CRITICAL if you have any dependency on Log4j**
+Your build should fail, too. It is a _red flag_ to you to consider the
+CVE, what impact the vulnerable dependency has, and if you are comfortable with
+a vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
+version of a dependency.
 
-Your build should fail, too. It's a flag to you to consider the CVE, what impact
-it may have, and if you are comfortable with a vulnerable dependency.
+**This is CRITICAL if you have any direct, indirect, or through-plugin 
+dependencies on Log4j.  Beyond your project, it impacts services you might 
+call**
+
+The log4shell
 
 #### Note on `DependencyCheck`
 
@@ -1128,10 +1134,16 @@ for dependencies.
 * You can _temporarily_ disable OWASP dependency checking via
   `-Dowasp.skip=true` for either Gradle or Maven, for example if the OWASP site
   is down for maintenance, and you cannot update the local CVE cache
-* The [log4shell security bug](https://nvd.nist.gov/vuln/detail/CVE-2021-44228)
-  is extremely severe. Although this project does not use `log4j`, local testing
-  shows that the `DependencyCheck` plugin for either Gradle or Maven fails build
-  when you use an older, insecure version of `log4j`
+* The *log4shell security vulnerabilities*
+  ([CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228),
+  [CVE-2021-45046]((https://nvd.nist.gov/vuln/detail/CVE-2021-45046)),
+  [CVE-2021-45105]((https://nvd.nist.gov/vuln/detail/CVE-2021-45105))
+  are extremely severe. They are so severe, this should be a top priority for
+  you to address regardless of other priorities. Although this project does not
+  use `log4j`, local testing shows that the `DependencyCheck` plugin for either
+  Gradle or Maven fails build when you use an older, insecure version
+  of `log4j-core` indirectly. Note that Gradle 7.3.3+ itself fails your 
+  build if it detect a dependency on a vulnerable version of `log4j-core`
 
 ### TODOs
 
