@@ -35,7 +35,7 @@ point for new projects, and advise on updating your existing project.
 
 This is you!  Become a programmer with great habits.
 
-**Try it**
+### Try it
 
 After cloning this project on your machine:
 
@@ -61,6 +61,12 @@ recommendations. This is part of what _great habits_ looks like. See
 [_Reusing this project_](#reusing-this-project) for tips on pulling in updates.
 
 ### Reusing this project
+
+Don't forget to [_fork 
+me!_](https://github.com/binkley/modern-java-practices/fork)
+(No, really, this is
+[_Public Domain_](http://unlicense.org/) software. This project is meant to be
+reused by you.)
 
 Two sensible approaches:
 
