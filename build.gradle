@@ -46,6 +46,11 @@ dependencies {
     // Quiet build -- build works without this, but JUnit complains
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 
+    // TODO: Work around GitHub issue #92 -- advise from
+    // https://github.com/andygoossens/gradle-modernizer-plugin/issues/1
+    modernizer "org.gaul:modernizer-maven-plugin:$modernizerMavenPluginVersion"
+    modernizer "org.codehaus.plexus:plexus-utils:$plexusUtilsVersion"
+
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 
     constraints {
@@ -57,11 +62,6 @@ dependencies {
             because("CVE-2021-44228: Log4j vulnerable to remote code execution")
         }
     }
-}
-
-// TODO: Work around GitHub issue #92
-configurations.modernizer {
-    exclude group: "org.codehaus.plexus", module: "plexus-utils"
 }
 
 // TODO: Work around GitHub issue #54
