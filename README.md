@@ -60,34 +60,6 @@ pick up new dependency versions and improved practices; this README updates
 recommendations. This is part of what _great habits_ looks like. See
 [_Reusing this project_](#reusing-this-project) for tips on pulling in updates.
 
-### Reusing this project
-
-Don't forget to [_fork 
-me!_](https://github.com/binkley/modern-java-practices/fork)
-(No, really, this is
-[_Public Domain_](http://unlicense.org/) software. This project is meant to be
-reused by you.)
-
-Two sensible approaches:
-
-- Clone this project to a new repository, and work from there, especially if 
-  starting a new project
-- Read through this repositories's code, and update your own repository by 
-  hand, especially for applying advice to an existing respository
-
-If you cloned this project as a starter, you may want to stay updated on
-improvements:
-
-```
-git remote add upstream https://github.com/binkley/modern-java-practices.git
-git fetch upstream
-git merge master/upstream
-```
-
-Once you are happy with your project, you should think about removing the
-upstream remote, and reviewing changes in this repository by hand. Your decision
-might depend on what merge conflicts you encounter.
-
 ### Contributing
 
 Please [file issues](https://github.com/binkley/modern-java-practices/issues),
@@ -106,6 +78,7 @@ or contribute PRs!  I'd love a conversation with you.
 ## TOC
 
 * [Introduction](#introduction)
+* [Reusing this project](#reusing-this-project)
 * [You and your project](#you-and-your-project)
 * [Getting your project started](#getting-your-project-started)
 * [The JDK](#the-jdk)
@@ -134,15 +107,22 @@ align="right" width="20%" height="auto"/>
 
 ## Introduction
 
-Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* or a
-[JVM-language project](https://en.wikipedia.org/wiki/List_of_JVM_languages)
-(Clojure, Groovy, JRuby, Jython, Kotlin, Scala, _et al_), this article is for
-you.
+Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* project, or a
+project on any
+*[JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages)*
+(Clojure, Groovy, JRuby, Java, Jython, Kotlin, Scala, _et al_), this article is
+for you. This article assumes you are using Gradle or Maven for your build
+locally, and in CI.  Some of you are using other build systems native to 
+your source language.  Please follow along!  I'd love conversations on 
+supporting that.
 
-The goal of this article is to highlight building modern Java/JVM projects with
-Gradle or Maven, and provide guidance, or at least food for thought. The sample
-Gradle and Maven projects use Java, but most recommendations apply to builds
-for _any_ JVM language.
+**What is the goal of this article?** I want to highlight modern practies in
+building Java/JVM projects with Gradle or Maven, and provide guidance, or at
+least food for thought. The sample Gradle and Maven projects use Java, but most
+recommendations apply to builds for _any_ JVM language. I'll never be as clever
+or as talented as [_why the lucky stiff_](http://poignant.guide/book/), but I
+hope this writing helps you have a JVM build that makes you, developers, and 
+others happy.
 
 See the wheel to the right?  _No, you do not need to be agile!_ (But I encourage
 you to explore the benefits of Agile.)  This article is for you regardless of
@@ -185,6 +165,35 @@ when I have an existing project, how to I catch up?
 [_Make people awesome_](https://modernagile.org/) (that means _you_). This
 project is based on lots of experience and experiments with Modern Java/JVM
 builds, and shares with you lessons learned.
+
+---
+
+## Reusing this project
+
+Don't forget to [_fork
+me!_](https://github.com/binkley/modern-java-practices/fork) (No, really, this
+is [_Public Domain_](http://unlicense.org/) software. This project is meant to
+be reused by you however is sensible.)
+
+Two sensible approaches:
+
+- Clone this project to a new repository, and work from there, especially if
+  starting a new project
+- Read through this repositories's code, and update your own repository by
+  hand, especially for applying advice to an existing respository
+
+If you cloned this project as a starter, you may want to stay updated on
+improvements:
+
+```
+git remote add upstream https://github.com/binkley/modern-java-practices.git
+git fetch upstream
+git merge master/upstream
+```
+
+Once you are happy with your project, you should think about removing the
+upstream remote, and reviewing changes in this repository by hand. Your decision
+might depend on what merge conflicts you encounter.
 
 ---
 
