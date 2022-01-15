@@ -12,53 +12,88 @@
 **Modern Java/JVM Build Practices** is an article on building modern Java/JVM
 projects with samples for
 [_Gradle_](https://docs.gradle.org/current/userguide/userguide.html) and
-[_Maven_](https://maven.apache.org/what-is-maven.html). The article focuses on
-_best build practices_ and _project hygiene_. There are two recurring themes:
+[_Maven_](https://maven.apache.org/what-is-maven.html). The focus is on
+_best build practices_ and _project hygiene_.
 
-* _Shift problems left_ &mdash; Find build issues earlier in your development
-  cycle, before they happen in production
+There are two recurring themes:
+
+* _Shift problems left_ &mdash; Find issues earlier in your development cycle
+  through the build before they happen to you in production
 * _Make developer life easier_ &mdash; Automate build tasks commonly done by
-  hand
+  hand: get your build to complain (fail) more often outside of typing code
 
-To sum up:
+Summing up the goals:
 
 - _I'm not a great programmer; I'm just a good programmer with great habits._
-  &mdash; Kent Beck
+  &mdash;
+  [Kent Beck](https://www.goodreads.com/quotes/532211-i-m-not-a-great-programmer-i-m-just-a-good-programmer)
 - _Make it work, make it right, make it fast_
   &mdash; [C2 Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
-Try out the Gradle and Maven builds:
+A key goal of this project is to be _reuseable_. It should be a good starting
+point for new projects, and advise on updating your existing project.
+
+This is you!  Become a programmer with great habits.
+
+**Try it**
+
+After cloning this project on your machine:
 
 ```shell
-$ ./gradlew build
+$ ./gradlew build  # Local build experience
 # Output ommitted
-$ ./batect build-with-gradle  # Reproduce CI locally sans GitHub actions
+$ ./batect build-with-gradle  # Reproduce locally what CI does
 # Output ommitted
-$ ./mvnw verify
+$ ./mvnw verify  # Local build experience
 # Output omitted
-$ ./batect build-with-maven  # Reproduce CI locally sans GitHub actions
+$ ./batect build-with-maven  # Reproduce locally what CI does
 # Output ommitted
 ```
 
 ```shell
-$ ./run.sh -B gradle  # Builds with Gradle, and runs `demo.Application`
-$ ./run.sh -B maven  # Builds with Maven, and runs `demo.Application`
+$ ./run.sh -B gradle  # Run the demo with Gradle
+$ ./run.sh -B maven  # Run the demo with Maven
 ```
 
-**NB** &mdash; This is a _living document_.
+**NB** &mdash; This is a _living document_. The project is frequently updated to
+pick up new dependency versions and improved practices; this README updates
+recommendations. This is part of what _great habits_ looks like. See
+[_Reusing this project_](#reusing-this-project) for tips on pulling in updates.
 
 ### Reusing this project
 
-Consider [_Clone git repository without
-history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
-to start at the current tip of this project. For example, some images in
-`README.md` started overlarge in earlier versions, something you may not want in
-a clone.
+Two sensible approaches:
+
+- Clone this project to a new repository, and work from there, especially if 
+  starting a new project
+- Read through this repositories's code, and update your own repository by 
+  hand, especially for applying advice to an existing respository
+
+If you cloned this project as a starter, you may want to stay updated on
+improvements:
+
+```
+git remote add upstream https://github.com/binkley/modern-java-practices.git
+git fetch upstream
+git merge master/upstream
+```
+
+Once you are happy with your project, you should think about removing the
+upstream remote, and reviewing changes in this repository by hand. Your decision
+might depend on what merge conflicts you encounter.
 
 ### Contributing
 
 Please [file issues](https://github.com/binkley/modern-java-practices/issues),
 or contribute PRs!  I'd love a conversation with you.
+
+### Tips
+
+* Consider [_Clone git repository without
+  history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
+  to start at the current tip of this project. For example, some images in
+  `README.md` started overlarge in earlier versions, something you may not want
+  in a clone.
 
 ---
 
@@ -192,7 +227,7 @@ existing project:
 * Pick a version of Java, and stick to it throughout your local build, CI
   pipeline, and environment deployments. _Do not mix versions._
 * Pick **Gradle** or **Maven**, and use only one. This project provides both to
-  demonstrate equivalent builds for each.  See
+  demonstrate equivalent builds for each. See
   [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
 * Use build wrappers committed into your project root. These run Gradle or
   Maven, and coders should always invoke `./gradlew` or `./mvnw` (use shell
@@ -248,8 +283,8 @@ For any Modern Java/JVM project, the first decision is _which version of Java
   contract, newer Java versions are a good choice
 * For Java 8 or older: These versions are no longer supported by Oracle unless
   one buys
-  [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm).
-  However, [Adoptium](https://adoptium.net/) (formerly AdoptOpenJDK)
+  [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
+  . However, [Adoptium](https://adoptium.net/) (formerly AdoptOpenJDK)
   provides distributions of OpenJDK 8, and community support until at least
   [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
   with commercial support available from IBM
@@ -443,8 +478,8 @@ authentication_.](https://github.community/t/download-from-github-package-regist
   ```shell
   TERM=dumb
   ```
-  This does not make sense for local builds, and your CI system (_eg_, 
-  GitHub) may manage this already
+  This does not make sense for local builds, and your CI system (_eg_, GitHub)
+  may manage this already
 * With Gradle, use the `--warning-mode=all` flag for CI: this shows _all_
   warnings Gradle generates, not just a summary. See
   [_Showing or hiding
@@ -522,8 +557,8 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
   already-downloaded dependencies, _et al_)
 * If you encounter troubles, run locally `./gradlew --stop` to kill any local
   daemons: This indicates a _bug_, and "stop" is a workaround.
-  See [a suggestion of a better
-  approach](https://github.com/batect/batect/issues/680#issuecomment-719821099).
+  See [a suggestion of a better approach](https://github.com/batect/batect/issues/680#issuecomment-719821099)
+  .
 
 ### Tips
 
@@ -568,8 +603,8 @@ Each of these have many options and features, and are worth exploring.
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
 For example, leverage `jdeps` which
-[comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html).
-Jdeps spots, for example, if you have a multi-version jar as a dependency that
+[comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html)
+. Jdeps spots, for example, if you have a multi-version jar as a dependency that
 does not include _your_ JDK version (an example of this may be is JUnit), or if
 your code depends on _internal_ (non-public) classes of the JDK
 (important expecially when using the JDK module system).
@@ -591,9 +626,8 @@ build (say a production with "ERROR" output during a test), but:
    telltale signs of trouble
 
 There are many approaches to this problem. This project uses JDK logging as
-[an
-example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html),
-and keeps the build quiet in
+[an example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html)
+, and keeps the build quiet in
 [`config/logging.properties`](config/logging.properties).
 
 ### Keep CI builds noisy
@@ -686,7 +720,7 @@ consider doing the same:
   and dependencies refer to their property versions
 
 The benefits of this approach grow for Gradle multi-project projects, where you
-may have plugin and dependency versions scattered across each `build.gradle` 
+may have plugin and dependency versions scattered across each `build.gradle`
 file for you project and subprojects.
 
 So to adjust a version, edit `gradle.properties`. To see this approach in action
@@ -744,8 +778,8 @@ variants of profiling your build for Gradle and Maven:
   can take a while, depending on your project. If you find they slow your team
   local build too much, these are good candidates for moving to
   [CI-only steps](#setup-your-ci), such as a `-PCI` flag for Maven (see "Tips"
-  section of [Use Gradle or Maven](#use-gradle-or-maven) for Gradle for an 
-  equivalent). This project keeps them as part of the local build, as the 
+  section of [Use Gradle or Maven](#use-gradle-or-maven) for Gradle for an
+  equivalent). This project keeps them as part of the local build, as the
   demonstration code is short
 * See the bottom of [`build.gradle`](./build.gradle) for an example of
   customizing "new" versions reported by the Gradle `dependencyUpdates` task
@@ -973,8 +1007,8 @@ in `build.gradle` about SUN _vs_ Google styles for Java.
 * Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
   editor choice is up to each developer. EditorConfig is a cross-IDE standard
   means of specifying code formatting, respected by
-  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig), 
-  and other major editors
+  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig)
+  , and other major editors
 
 ---
 
@@ -1095,9 +1129,9 @@ best.
 **This project fails the build if finding any CVEs for the current version of
 any dependency.**
 
-Your build should fail, too. It is a _red flag_ to you to consider the
-CVE, what impact the vulnerable dependency has, and if you are comfortable with
-a vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
+Your build should fail, too. It is a _red flag_ to you to consider the CVE, what
+impact the vulnerable dependency has, and if you are comfortable with a
+vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
 version of a dependency.
 
 The log4shell
@@ -1144,8 +1178,8 @@ for dependencies.
   you to address regardless of other priorities. Although this project does not
   use `log4j`, local testing shows that the `DependencyCheck` plugin for either
   Gradle or Maven fails build when you use an older, insecure version
-  of `log4j-core` indirectly. Note that Gradle 7.3.3+ itself fails your 
-  build if it detect a dependency on a vulnerable version of `log4j-core`
+  of `log4j-core` indirectly. Note that Gradle 7.3.3+ itself fails your build if
+  it detect a dependency on a vulnerable version of `log4j-core`
 
 ### TODOs
 
@@ -1207,10 +1241,10 @@ report.
   mind on mocking, so use your judgment:
     * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
       dependency for the sample projects. For "modern" versions of Mockito, you
-      should use the `mockito-inline` dependency rather than `mockito-core` 
+      should use the `mockito-inline` dependency rather than `mockito-core`
       if relevant for your project: it supports
-      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito).
-      See `TheFooTest.shouldRedAlertAsStaticMock` for an example
+      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito)
+      . See `TheFooTest.shouldRedAlertAsStaticMock` for an example
     * [PowerMock](https://powermock.github.io/) provides additional features;
       however, Mockito normally covers use cases
     * Other Modern JVM languages &mdash; these languages may prefer different
