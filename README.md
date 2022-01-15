@@ -72,8 +72,17 @@ or contribute PRs!  I'd love a conversation with you.
   to start at the current tip of this project. For example, some images in
   `README.md` started overlarge in earlier versions, something you may not want
   in a clone.
+* _Caution_: Not all the images used in [`README.md`](./README.md) may be in the
+  Public Domain (this is challenging to research). Do due diligence before
+  sharing your clone, and other licenses may apply for these images in a 
+  global context
 
 ---
+
+<a title="Table of Contents">
+<img src="./images/table-of-contents.png" alt="Table of Contents"
+align="right" width="20%" height="auto"/>
+</a>
 
 ## TOC
 
@@ -168,10 +177,15 @@ builds, and shares with you lessons learned.
 
 ---
 
+<a title="Reuse">
+<img src="./images/reuse.png" alt="Reuse" align="right" width="20%" 
+height="auto"/>
+</a>
+
 ## Reusing this project
 
 Don't forget to [_fork
-me!_](https://github.com/binkley/modern-java-practices/fork) (No, really, this
+me_](https://github.com/binkley/modern-java-practices/fork)! (No, really, this
 is [_Public Domain_](http://unlicense.org/) software. This project is meant to
 be reused by you however is sensible.)
 
@@ -350,12 +364,16 @@ person using binary installers. Popular choices include:
 
 ## Use Gradle or Maven
 
-The choice between Gradle and Maven depends on your team, your broader
-ecosystem, and your project needs. In summary:
-
+<!-- TODO better formating for images vs text -->
+<a href="https://maven.apache.org/" title="Maven">
+<img src="./images/maven.png" alt="Maven" align="right" width="15%" 
+height="auto"/></a>
 <a href="https://gradle.org/" title="Gradle">
 <img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
 height="auto"/></a> 
+
+The choice between Gradle and Maven depends on your team, your broader
+ecosystem, and your project needs. In summary:
 
 * Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
   imperative, and mutable; requires debugging your build on occasion, but less
@@ -365,10 +383,6 @@ height="auto"/></a>
   project (perhaps shared across project for your team). If interested in custom
   plugins,
   [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
-
-<a href="https://maven.apache.org/" title="Maven">
-<img src="./images/maven.png" alt="Maven" align="right" width="15%" 
-height="auto"/></a>
 
 * Maven &mdash; your build scripts is written in XML; declarative and immutable;
   verbose but specific; it either works or not. Use of "parent" (umbrella)
