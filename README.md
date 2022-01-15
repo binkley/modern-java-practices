@@ -1077,14 +1077,20 @@ and [GitHub Actions](#setup-your-ci) are discussed both above.)
 
 ### Dependency check
 
-[DependencyCheck](https://owasp.org/www-project-dependency-check/) is a key tool
-in verifying that your project does not rely on libraries with known security
-issues. However, it does have an impact on local build times. It is smart about
-caching, but will every few days take time to cache updates to
-the [CVE](https://cve.mitre.org/) list of known insecurities. You may consider
-moving this check to CI if you find local build times adversely impacted. Moving
-these checks to CI is a tradeoff between "shifting security left", and local
-time spent building.
+**This is CRITICAL if you have any direct, indirect, or through-plugin
+dependencies on Log4j. Beyond your project, you may be impacted by services you
+call, so check with your organization or external services**
+
+[DependencyCheck](https://owasp.org/www-project-dependency-check/) is the
+current _best tool_ for JVM projects to verify that your project does not rely
+on external code with known security vulnerabilities ([CVEs](https://cve.mitre.
+org/)). That said, DependencyCheck does impact local build times. It is smart
+about caching, but will once a day may take time to download data on any new
+CVEs, and occasionally the site is down for maintenance. You may consider moving
+this check to CI if you find local build times overly impacted. Moving these
+checks to CI is a tradeoff between "shifting security left", and speed for local
+builds. I lean towards _security first_, however, you know your circumstances
+best.
 
 **This project fails the build if finding any CVEs for the current version of
 any dependency.**
@@ -1093,10 +1099,6 @@ Your build should fail, too. It is a _red flag_ to you to consider the
 CVE, what impact the vulnerable dependency has, and if you are comfortable with
 a vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
 version of a dependency.
-
-**This is CRITICAL if you have any direct, indirect, or through-plugin 
-dependencies on Log4j.  Beyond your project, it impacts services you might 
-call**
 
 The log4shell
 
