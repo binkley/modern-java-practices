@@ -9,8 +9,8 @@
 [![vulnerabilities](https://snyk.io/test/github/binkley/modern-java-practices/badge.svg)](https://snyk.io/test/github/binkley/modern-java-practices)
 [![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
-**Modern Java/JVM Build Practices** is an article on modern Java/JVM projects
-with sample builds for
+**Modern Java/JVM Build Practices** is an article on building modern Java/JVM
+projects with samples for
 [_Gradle_](https://docs.gradle.org/current/userguide/userguide.html) and
 [_Maven_](https://maven.apache.org/what-is-maven.html). The article focuses on
 _best build practices_ and _project hygiene_. There are two recurring themes:
