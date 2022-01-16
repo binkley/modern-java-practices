@@ -334,7 +334,9 @@ choice for obtaining the JDK.
 
 ### Managing your Java environment
 
-One of the best tools for managing your Java environment in projects is
+#### Jenv
+
+One of the best tools to manage your JDK environment in projects is
 [jEnv](https://www.jenv.be/). It supports both "global" (meaning you, the user)
 and "project" choices (particular to a directory and its children) in which JDK
 installation to use. You may notice the [`.java-version`](./.java-version)
@@ -359,6 +361,14 @@ person using binary installers. Popular choices include:
   or WSL
 * [Homebrew](https://brew.sh/) for Mac
 * [SDKMAN](https://sdkman.io/jdks) for multiple platforms
+
+#### Direnv
+
+Another excellent, and more general tool to manage your JDK environment in
+projects is [direnv](https://direnv.net/). Rather than specifying a Java
+version, you edit a `.envrc` file and add JDK-specific environment settings
+(and another other environment settings) just as you would on the command-line.
+Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 ---
 
