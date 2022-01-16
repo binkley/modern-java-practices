@@ -334,24 +334,32 @@ choice for obtaining the JDK.
 
 ### Managing your Java environment
 
+Two best-of-class tools come to mind to manage your JDK environment in projects:
+
+* [jEnv](#jenv)
+* [Direnv](#direnv)
+
+Both assume UNIX-type shells (Bash, Zsh, etc).
+
+For those on Windows, you may need to use Cygwin, Git for Windows, or WSL2 to
+use these.
+
+(Reminder: in general, when setting up your project environment, prefer the 
+latest LTS version of Java, which is 17.)
+
 #### Jenv
 
-One of the best tools to manage your JDK environment in projects is
-[jEnv](https://www.jenv.be/). It supports both "global" (meaning you, the user)
-and "project" choices (particular to a directory and its children) in which JDK
-installation to use. You may notice the [`.java-version`](./.java-version)
-file: this is a per-project file for jEnv to pick your project Java version.
-(Reminder: in general, prefer the latest LTS version of Java, which is 17.)
+[jEnv](https://www.jenv.be/) supports both "global" (meaning you, the user)
+and "project" choices of JDK (particular to a directory and its children) in
+which JDK installation to use. You may notice the
+[`.java-version`](./.java-version) file: this is a per-project file for jEnv to
+pick your project Java version.
 
 Do use `jenv enable-plugins export` and restart your shell. This ensures
 `JAVA_HOME` is exported to match your jEnv settings. Several tools use
 `JAVA_HOME` rather than the `java` or `javac` found in your `PATH`.
 
 You may also find the `gradle` and `maven` plugins for jEnv useful.
-
-For those on Windows, you may need to use Cygwin, Git for Windows, or WSL2 to
-use jEnv.  (I've not tested these: jEnv needs a Bash shell with supporting
-programs.)
 
 There are many ways to install the JDK, most are platform-dependent. In general,
 your team will be better off using a "managed" approach, rather than with each
@@ -364,8 +372,7 @@ person using binary installers. Popular choices include:
 
 #### Direnv
 
-Another excellent, and more general tool to manage your JDK environment in
-projects is [direnv](https://direnv.net/). Rather than specifying a Java
+[direnv](https://direnv.net/) is more general. Rather than specifying a Java
 version, you edit a `.envrc` file and add JDK-specific environment settings
 (and another other environment settings) just as you would on the command-line.
 Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
