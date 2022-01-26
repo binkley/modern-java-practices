@@ -1180,9 +1180,17 @@ impact the vulnerable dependency has, and if you are comfortable with a
 vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
 version of a dependency.
 
-The log4shell
+#### Notes on `DependencyCheck`
 
-#### Note on `DependencyCheck`
+DependencyCheck may be your slowest quality check in local builds (competing
+with mutation testing for that ignominious title). Sometimes it may fail when
+the upstream source for CVEs is offline. If this is a recurring problem for you,
+consider moving this check into CI. The downside that local work might use an
+insecure dependency for a while. Checking daily for updated dependencies can
+lessen this risk:
+
+- Gradle: `./gradlew dependencyUpdates`
+- Maven: `./mvnw versions:update-properties`
 
 For non-Windows platforms, you may see this warning when `DependencyCheck` runs:
 
