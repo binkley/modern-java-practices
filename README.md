@@ -51,8 +51,8 @@ $ ./batect build-with-maven  # Reproduce locally what CI does
 ```
 
 ```shell
-$ ./run.sh -B gradle  # Run the demo with Gradle
-$ ./run.sh -B maven  # Run the demo with Maven
+$ ./run-with-gradle.sh
+$ ./run-with-maven.sh
 ```
 
 **NB** &mdash; This is a _living document_. The project is frequently updated to
@@ -426,7 +426,12 @@ your build beyond "getting started". You should pick and choose build features
 to add to your starter project, whatever makes sense for your project.
 
 This article offers **no preference between Gradle or Maven**. You need to
-decide with your team.
+decide with your team. After picking your build tool, you might rename
+[run-with-gradle.sh](./run-with-gradle.sh) or
+[run-with-maven.sh](./run-with-maven.sh) to just "run.sh".
+[run-with-generic-build-tool.sh](./run-with-generic-build-tool.sh) is provided
+as an example of supporting both tools in the same project, and to give you 
+ideas on a runscript.
 
 Projects using Ant **should migrate**. It is true that Ant is well-maintained
 (the latest version dates from September 2020). However, you will spend much

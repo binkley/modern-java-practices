@@ -32,7 +32,7 @@ tasks:
     description: Runs the demo program assuming a Gradle build
     run:
       container: build-env
-      command: ./run.sh -B gradle
+      command: ./run-with-gradle.sh
   build-with-maven:
     description: Build and test with Maven
     run:
@@ -42,7 +42,7 @@ tasks:
     description: Runs the demo program assuming a Maven build
     run:
       container: build-env
-      command: ./run.sh -B maven
+      command: ./run-with-maven.sh
   shell:
     description: Open a shell in the container
     run:
