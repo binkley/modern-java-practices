@@ -28,16 +28,16 @@ tasks:
     run:
       container: build-env
       command: ./gradlew --no-daemon --warning-mode=all clean build
-  build-with-maven:
-    description: Build and test with Maven
-    run:
-      container: build-env
-      command: ./mvnw --no-transfer-progress clean verify
   run-with-gradle:
     description: Runs the demo program assuming a Gradle build
     run:
       container: build-env
       command: ./run.sh -B gradle
+  build-with-maven:
+    description: Build and test with Maven
+    run:
+      container: build-env
+      command: ./mvnw --no-transfer-progress clean verify site
   run-with-maven:
     description: Runs the demo program assuming a Maven build
     run:
