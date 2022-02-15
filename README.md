@@ -122,8 +122,7 @@ project on any
 (Clojure, Groovy, JRuby, Java, Jython, Kotlin, Scala, _et al_), this article is
 for you. This article assumes you are using Gradle or Maven for your build
 locally, and in CI.  Some of you are using other build systems native to 
-your source language.  Please follow along!  I'd love conversations on 
-supporting that.
+your source language.  Please follow along!
 
 **What is the goal of this article?** I want to highlight modern practies in
 building Java/JVM projects with Gradle or Maven, and provide guidance, or at
@@ -431,7 +430,9 @@ decide with your team. After picking your build tool, you might rename
 [run-with-maven.sh](./run-with-maven.sh) to just "run.sh".
 [run-with-generic-build-tool.sh](./run-with-generic-build-tool.sh) is provided
 as an example of supporting both tools in the same project, and to give you 
-ideas on a runscript.
+ideas on a runscript.  These scripts assume Java is your language.  See
+[run-with-generic-build-tool.sh](./run-with-generic-build-tool.sh) for an 
+example of working with Java and Kotlin in the same project.
 
 Projects using Ant **should migrate**. It is true that Ant is well-maintained
 (the latest version dates from September 2020). However, you will spend much
