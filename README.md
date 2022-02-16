@@ -1342,13 +1342,22 @@ things with compiled bytecode, and has Gradle and Maven plugins. The main
 drawback for your _local build_ is that PITest is _noisy_, so there might be
 more build output than you might expect.
 
+Mutation testing is one of the slowest parts of a local build. You might
+consider moving mutation testing to CI-only to speed up local 
+_red-green-refactor_ cycle
+([_Red, Green, Refactor!](https://medium.com/@tunkhine126/red-green-refactor-42b5b643b506),
+[_The Cycles of
+TDD_](https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html)).
+Use your judgment on the value of the CI build never or rarely failing (modulo 
+external resources) when local build passes _vs_ the speed of pushing good code.
+
 After running a build using PITest, to see the mutation report (on passed or
 failed mutation coverage), open:
 
-* For Gradle, `build/reports/pitest/index.html`
-* For Maven, `target/pit-reports/index.html`
+* For Gradle, open `build/reports/pitest/index.html`
+* For Maven, open `target/pit-reports/index.html`
 
-This project also provides the PIT report as part of Maven's project report.
+This project provides the PIT report as part of Maven's project report.
 
 ### Tips
 
