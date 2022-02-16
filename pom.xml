@@ -212,7 +212,6 @@
                         <!--                    config/checkstyle/sun_checks.xml    -->
                     </configLocation>
                     <consoleOutput>true</consoleOutput>
-                    <encoding>UTF-8</encoding>
                     <failsOnError>true</failsOnError>
                     <includeTestSourceDirectory>true
                     </includeTestSourceDirectory>
@@ -580,12 +579,12 @@
                                 <displayName>Todo Work</displayName>
                                 <tags>
                                     <tag>
-                                        <matchString>todo</matchString>
+                                        <matchString>TODO</matchString>
                                         <matchType>ignoreCase</matchType>
                                     </tag>
                                     <tag>
                                         <matchString>FIXME</matchString>
-                                        <matchType>exact</matchType>
+                                        <matchType>ignoreCase</matchType>
                                     </tag>
                                 </tags>
                             </tagClass>
