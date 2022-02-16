@@ -370,6 +370,7 @@
                         <jvmArg>-XX:TieredStopAtLevel=1</jvmArg>
                     </jvmArgs>
                     <mutationThreshold>100</mutationThreshold>
+                    <withHistory>true</withHistory>
                     <timestampedReports>false</timestampedReports>
                 </configuration>
                 <executions>
