@@ -25,11 +25,33 @@
         <system>GitHub</system>
         <url>https://github.com/binkley/modern-java-practices/issues</url>
     </issueManagement>
+    <ciManagement>
+        <system>GitHub</system>
+        <url>https://github.com/binkley/modern-java-practices/actions</url>
+    </ciManagement>
+
     <scm>
         <connection>scm:git:git://github.com/binkley/modern-java-practices
         </connection>
         <url>https://github.com/binkley/modern-java-practices</url>
     </scm>
+
+    <developers>
+        <developer>
+            <id>binkley</id>
+            <name>Brian Oxley</name>
+            <email>binkley@alumni.rice.edu</email>
+            <roles>
+                <role>owner</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>America/Chicago</timezone>
+            <properties>
+                <picUrl>https://avatars.githubusercontent.com/u/186421?s=60&amp;v=4</picUrl>
+            </properties>
+        </developer>
+    </developers>
 
     <properties>
         <!-- @formatter:off -->
@@ -533,11 +555,11 @@
                     </reportSet>
                 </reportSets>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-dependency-plugin</artifactId>-->
-<!--                <version>${maven-dependency-plugin.version}</version>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+            </plugin>
             <!-- To enable this report, ensure your Docker image includes git:
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
