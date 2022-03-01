@@ -825,6 +825,14 @@ variants of profiling your build for Gradle and Maven:
 * [Maven profiler extension](https://github.com/jcgay/maven-profiler) with
   the `-Dprofile` flag
 
+### Keep your developers fast
+
+Some shortcuts to speed up the red-green-refactor cycle:
+
+* Just validate code coverage; do not run other parts of the build:
+  - Gradle: `./gradlew clean jacocoTestReport jacocoTestCoverageVerification`
+  - Maven: `./mvnw clean test jacoco:report jacoco:check`
+
 ### Tips
 
 * Both [_dependency vulnerability checks_](#dependency-check) and
