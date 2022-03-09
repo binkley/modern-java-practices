@@ -46,11 +46,6 @@ dependencies {
     // Quiet build -- build works without this, but JUnit complains
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 
-    // TODO: Work around GitHub issue #92 -- advise from
-    // https://github.com/andygoossens/gradle-modernizer-plugin/issues/1
-    modernizer "org.gaul:modernizer-maven-plugin:$modernizerMavenPluginVersion"
-    modernizer "org.codehaus.plexus:plexus-utils:$plexusUtilsVersion"
-
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 
     // Give special attention to https://blog.gradle.org/log4j-vulnerability
