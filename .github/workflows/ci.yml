@@ -49,9 +49,7 @@ jobs:
         run: ./batect build-with-gradle
 
       - name: Execute run script asuming build with Gradle
-        # This assumes Maven is your default choice of build tool
-        # Move this to the `build-with-gradle` block if that is your choice
-        run: ./batect run-with-gradle
+        run: ./batect -o quiet run-with-gradle
 
   build-with-maven:
     name: Builds and tests for Maven under Batect
@@ -92,6 +90,4 @@ jobs:
         run: ./batect build-with-maven
 
       - name: Execute run script asuming build with Maven
-        # This assumes Maven is your default choice of build tool
-        # Move this to the `build-with-gradle` block if that is your choice
-        run: ./batect run-with-maven
+        run: ./batect -o quiet run-with-maven
