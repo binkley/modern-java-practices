@@ -378,8 +378,6 @@ Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 ---
 
-## Use Gradle or Maven
-
 <!--- TODO better formating for images vs text -->
 <a href="https://maven.apache.org/" title="Maven">
 <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
@@ -387,6 +385,8 @@ height="auto"/></a>
 <a href="https://gradle.org/" title="Gradle">
 <img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
 height="auto"/></a> 
+
+## Use Gradle or Maven
 
 The choice between Gradle and Maven depends on your team, your broader
 ecosystem, and your project needs. In summary:
@@ -547,13 +547,13 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 
 ---
 
-## Keep local consistent with CI
-
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
 align="right" width="20%" height="auto"/>
 </a>
+
+## Keep local consistent with CI
 
 ### Setup local CI
 
@@ -1502,12 +1502,12 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Problems
 
-## Why is my local build slow?
-
 <a href="https://xkcd.com/303/" title="Compiling">
 <img src="./images/compiling.png" alt="Compiling" align="right" 
 width="20%" height="auto"/>
 </a>
+
+## Why is my local build slow?
 
 Both Gradle and Maven have tools to track performance time of steps in your
 build:
