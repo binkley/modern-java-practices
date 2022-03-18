@@ -380,7 +380,7 @@ Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 ## Use Gradle or Maven
 
-<!-- TODO better formating for images vs text -->
+<!--- TODO better formating for images vs text -->
 <a href="https://maven.apache.org/" title="Maven">
 <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
 height="auto"/></a>
@@ -449,6 +449,9 @@ ordering.
 
 ### Tips
 
+* Take advantage of your shell's tab completion:
+  - [Gradle completion](https://github.com/gradle/gradle-completion)
+  - [Maven completion](https://github.com/juven/maven-bash-completion)
 * The sample Gradle and Maven build scripts often specify specific versions of
   the tooling, separate from the plugin versions. This is intentional. You
   should be able to update the latest tool version even when the plugin has not
