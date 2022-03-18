@@ -1222,6 +1222,12 @@ local Linux or Mac command line.  **In a Windows project, this is an issue to
 address, and may be a serious security concern** indicating you are missing
 critical Windows components. For other platforms, this is a nuisance message.
 
+On Gradle when updating to version 7.x.x of DependencyCheck from 6.x.x or 
+earlier, first run `./gradlew dependencyCheckPurge` to clear out the local 
+cache schema of CVEs.
+DependencyCheck moved to schema v2 in 7.x.x from v1 in 6.x.x and earlier, 
+and the 7.0.0 Gradle plugin fails with the older schema version.
+
 ### Dependabot
 
 GitHub provides
