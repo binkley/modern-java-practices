@@ -150,7 +150,7 @@ while getopts :B:C:L:a:b:dhl:-: opt; do
         exit 0
         ;;
     *)
-        bad-option "$opt"
+        bad-option "$OPTARG"
         exit 2
         ;;
     esac
