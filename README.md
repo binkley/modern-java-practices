@@ -378,15 +378,15 @@ Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 ---
 
-## Use Gradle or Maven
-
-<!-- TODO better formating for images vs text -->
+<!--- TODO better formating for images vs text -->
 <a href="https://maven.apache.org/" title="Maven">
 <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
 height="auto"/></a>
 <a href="https://gradle.org/" title="Gradle">
 <img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
 height="auto"/></a> 
+
+## Use Gradle or Maven
 
 The choice between Gradle and Maven depends on your team, your broader
 ecosystem, and your project needs. In summary:
@@ -449,6 +449,9 @@ ordering.
 
 ### Tips
 
+* Take advantage of your shell's tab completion:
+  - [Gradle completion](https://github.com/gradle/gradle-completion)
+  - [Maven completion](https://github.com/juven/maven-bash-completion)
 * The sample Gradle and Maven build scripts often specify specific versions of
   the tooling, separate from the plugin versions. This is intentional. You
   should be able to update the latest tool version even when the plugin has not
@@ -544,13 +547,13 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 
 ---
 
-## Keep local consistent with CI
-
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
 align="right" width="20%" height="auto"/>
 </a>
+
+## Keep local consistent with CI
 
 ### Setup local CI
 
@@ -1219,6 +1222,12 @@ local Linux or Mac command line.  **In a Windows project, this is an issue to
 address, and may be a serious security concern** indicating you are missing
 critical Windows components. For other platforms, this is a nuisance message.
 
+On Gradle when updating to version 7.x.x of DependencyCheck from 6.x.x or 
+earlier, first run `./gradlew dependencyCheckPurge` to clear out the local 
+cache schema of CVEs.
+DependencyCheck moved to schema v2 in 7.x.x from v1 in 6.x.x and earlier, 
+and the 7.0.0 Gradle plugin fails with the older schema version.
+
 ### Dependabot
 
 GitHub provides
@@ -1499,12 +1508,12 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Problems
 
-## Why is my local build slow?
-
 <a href="https://xkcd.com/303/" title="Compiling">
 <img src="./images/compiling.png" alt="Compiling" align="right" 
 width="20%" height="auto"/>
 </a>
+
+## Why is my local build slow?
 
 Both Gradle and Maven have tools to track performance time of steps in your
 build:

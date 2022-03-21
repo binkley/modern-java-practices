@@ -27,6 +27,8 @@ tasks:
     description: Build and test with Gradle
     run:
       container: build-env
+      # One time only when updating to DependencyCheck plugin 7.0.0:
+      # command: ./gradlew --no-daemon --warning-mode=all dependencyCheckPurge clean build
       command: ./gradlew --no-daemon --warning-mode=all clean build
   run-with-gradle:
     description: Runs the demo program assuming a Gradle build
