@@ -131,7 +131,7 @@ function build-config-outdated-maven() {
 
 function rebuild-if-needed() {
     if jar-outdated || build-config-outdated-$build_tool; then
-        case $build_tool in
+        case "$build_tool" in
         gradle) ./gradlew --warning-mode=all jar ;;
         maven) ./mvnw -Dmaven.test.skip=true package ;;
         esac
@@ -174,7 +174,7 @@ shift $((OPTIND - 1))
 
 $debug && set -x
 
-case $build_tool in
+case "$build_tool" in
 gradle)
     if [[ ! -x "./gradlew" ]]; then
         echo "$progname: Not executable: ./gradlew" >&2
@@ -195,7 +195,7 @@ maven)
     ;;
 esac
 
-case $language in
+case "$language" in
 java | kotlin) ;;
 *)
     echo "$progname: Language not supported: $language" >&2
