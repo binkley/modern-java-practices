@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2214,SC2215
 
+export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
+
 # Edit these to suit
 readonly package=hm.binkley.md
 readonly artifactId=modern-java-practices
@@ -8,9 +10,8 @@ readonly version=0-SNAPSHOT
 build_tool=maven # or gradle -- this sets the default
 language=java # or kotlin -- this sets the default
 jvm_flags=()
-# No editable parts below here
 
-export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
+# No editable parts below here
 
 set -e
 set -u
@@ -47,6 +48,8 @@ Options:
   -C, --alt-class=CLASS
                  execute CLASS as the alternate main class, otherwise assume
                  the jar is executable
+  -J, --jvm-option=OPTION
+                 adds OPTION to the JVM options
   -L, --language=LANGUAGE
                  runs the example for LANGUAGE; languages:
                     java$([[ java == "$language" ]] && echo ' (default)')
@@ -114,19 +117,46 @@ function runtime-classname() {
     esac
 }
 
-function rebuild-if-needed() {
-    # TODO: Rebuild if build script is newer than jar
-    [[ -e "$jar" && -z "$(find src/main -type f -newer "$jar")" ]] && return
+function outdated-to-jar() {
+    local compare="$1"
+    [[ -n "$(find "$compare" -type f -newer "$jar")" ]]
+}
 
-    case $build_tool in
-    gradle) ./gradlew --warning-mode=all jar ;;
-    maven) ./mvnw --strict-checksums -Dmaven.test.skip=true package ;;
-    esac
+function jar-outdated() {
+    [[ ! -e "$jar" ]] || outdated-to-jar src/main
+}
+
+function build-config-outdated-gradle() {
+    [[ -e settings.gradle.kts ]] &&
+        local settings=settings.gradle.kts ||
+        local settings=settings.gradle
+    [[ -e build.gradle.kts ]] &&
+        local build=build.gradle.kts ||
+        local build=build.gradle
+
+    for f in gradle.properties "$settings" "$build"; do
+        [[ -e "$f" ]] && outdated-to-jar "$f" && return
+    done
+
+    false
+}
+
+function build-config-outdated-maven() {
+    outdated-to-jar pom.xml
+}
+
+function rebuild-if-needed() {
+    if jar-outdated || build-config-outdated-$build_tool; then
+        case $build_tool in
+        gradle) ./gradlew --warning-mode=all jar ;;
+        maven) ./mvnw -Dmaven.test.skip=true package ;;
+        esac
+    fi
 }
 
 alt_class=''
 debug=false
-while getopts :B:C:L:a:b:dhl:-: opt; do
+[[ -z "${SCRIPT_FLAGS+x}" ]] || while getopts :B:C:J:L:dh-: opt; do
     [[ $opt == - ]] && opt=${OPTARG%%=*} OPTARG=${OPTARG#*=}
     case $opt in
     B | build-tool) case "$OPTARG" in
@@ -137,6 +167,7 @@ while getopts :B:C:L:a:b:dhl:-: opt; do
             ;;
         esac ;;
     C | alt-class) alt_class=$OPTARG ;;
+    J | jvm-option) jvm_flags=("${jvm_flags[@]}" "$OPTARG") ;;
     L | language) case "$OPTARG" in
         java | kotlin) language="$OPTARG" ;;
         *)

@@ -1,26 +1,21 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2214,SC2215
 
+export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
+
 # Edit these to suit
 readonly package=hm.binkley.md
 readonly artifactId=modern-java-practices
 readonly version=0-SNAPSHOT
 jvm_flags=()
-# No editable parts below here
 
-export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
+# No editable parts below here
 
 set -e
 set -u
 set -o pipefail
 
 readonly progname="${0##*/}"
-readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
-
-if [[ ! -x "./mvnw" ]]; then
-    echo "$progname: Not executable: ./mvnw" >&2
-    exit 2
-fi
 
 function print-help() {
     cat <<EOH
@@ -31,6 +26,8 @@ Options:
   -C, --alt-class=CLASS
                  execute CLASS as the alternate main class, otherwise assume
                  the jar is executable
+  -J, --jvm-option=OPTION
+                 adds OPTION to the JVM options
   -d, --debug    print script execution to STDERR
   -h, --help     display this help and exit
 
@@ -50,42 +47,36 @@ Try '$progname --help' for more information.
 EOM
 }
 
-function mangle-kotlin-classname() {
-    local IFS=.
-
-    local -a parts
-    read -r -a parts <<<"$1"
-    local last="${parts[-1]}"
-
-    case "$last" in
-    *Kt) ;;
-    *) last="${last}Kt" ;;
-    esac
-    last="${last//-/_}"
-    last=""${last^}
-
-    parts[-1]="$last"
-
-    echo "${parts[*]}"
-}
-
 function runtime-classname() {
     echo "$package.$alt_class"
 }
 
-function rebuild-if-needed() {
-    # TODO: Rebuild if build script is newer than jar
-    [[ -e "$jar" && -z "$(find src/main -type f -newer "$jar")" ]] && return
+function outdated-to-jar() {
+    local compare="$1"
+    [[ -n "$(find "$compare" -type f -newer "$jar")" ]]
+}
 
-    ./mvnw -Dmaven.test.skip=true package
+function jar-outdated() {
+    [[ ! -e "$jar" ]] || outdated-to-jar src/main
+}
+
+function build-config-outdated-maven() {
+    outdated-to-jar pom.xml
+}
+
+function rebuild-if-needed() {
+    if jar-outdated || build-config-outdated-maven; then
+        ./mvnw -Dmaven.test.skip=true package
+    fi
 }
 
 alt_class=''
 debug=false
-while getopts :C:a:b:dhl:-: opt; do
+[[ -z "${SCRIPT_FLAGS+x}" ]] || while getopts :C:J:dh-: opt; do
     [[ $opt == - ]] && opt=${OPTARG%%=*} OPTARG=${OPTARG#*=}
     case $opt in
     C | alt-class) alt_class=$OPTARG ;;
+    J | jvm-option) jvm_flags=("${jvm_flags[@]}" "$OPTARG") ;;
     d | debug) debug=true ;;
     h | help)
         print-help
@@ -100,6 +91,12 @@ done
 shift $((OPTIND - 1))
 
 $debug && set -x
+
+if [[ ! -x "./mvnw" ]]; then
+    echo "$progname: Not executable: ./mvnw" >&2
+    exit 2
+fi
+readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
 
 case "$alt_class" in
 '') jvm_flags=("${jvm_flags[@]}" -jar "$jar") ;;
