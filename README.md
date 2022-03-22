@@ -106,7 +106,7 @@ align="right" width="20%" height="auto"/>
 * [Use integration testing](#use-integration-testing)
 * [Going further](#going-further)
 * [Problems](#problems)
-* [Credits][#credits]
+* [Credits](#credits)
 
 ---
 
