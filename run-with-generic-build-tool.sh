@@ -19,22 +19,6 @@ set -o pipefail
 
 readonly progname="${0##*/}"
 
-case $build_tool in
-gradle | maven) ;;
-*)
-    echo "$progname: BUG: Pick 'gradle' or 'maven': $build_tool" >&2
-    exit 2
-    ;;
-esac
-
-case $language in
-java | kotlin) ;;
-*)
-    echo "$progname: BUG: Pick 'java' or 'kotlin': $language" >&2
-    exit 2
-    ;;
-esac
-
 function print-help() {
     cat <<EOH
 Usage: $progname [OPTIONS] [-- ARGUMENTS]
@@ -204,6 +188,18 @@ maven)
         exit 2
     fi
     readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
+    ;;
+*)
+    echo "$progname: Build tool not supported: $build_tool" >&2
+    exit 2
+    ;;
+esac
+
+case $language in
+java | kotlin) ;;
+*)
+    echo "$progname: Language not supported: $language" >&2
+    exit 2
     ;;
 esac
 
