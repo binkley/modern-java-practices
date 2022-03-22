@@ -117,6 +117,17 @@ pmd {
     ignoreFailures = false
     // TODO: targetJdk = 17 -- there is no defined property for this
     toolVersion = pmdVersion
+
+    consoleOutput = true
+    rulesMinimumPriority = 5
+
+
+    // custom-rules.xml contains editable rule set
+    // you can use it to adjust rules for your own project
+    ruleSets = [
+            rootProject.file("config/pmd/custom-rules.xml")
+    ]
+
 }
 
 spotbugs {

@@ -10,7 +10,14 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mockStatic;
 
+/**
+ * An example of test class.
+ */
 @SuppressFBWarnings("NP_NONNULL_PARAM_VIOLATION")
+@SuppressWarnings({
+        "PMD.TooManyStaticImports",
+        "PMD.AtLeastOneConstructor"
+})
 class TheFooTest {
     @Test
     void shouldKnowTheFoo() {
