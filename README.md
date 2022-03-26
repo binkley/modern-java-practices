@@ -106,6 +106,7 @@ align="right" width="20%" height="auto"/>
 * [Use integration testing](#use-integration-testing)
 * [Going further](#going-further)
 * [Problems](#problems)
+* [Credits](#credits)
 
 ---
 
@@ -1589,3 +1590,9 @@ happen for reasons of environment. Examples can include:
   team
 - Dependencies break in CI: If CI uses an internal dependency repository, check
   in with the maintainers of the repository
+
+## Credits
+
+* [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche) &mdash; 
+  Proofreading
+* [Sergei Bukharov](https://github.com/Bukharovsi) &mdash; PMD enhancements
