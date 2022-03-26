@@ -265,6 +265,10 @@
                 <configuration>
                     <printFailingErrors>true</printFailingErrors>
                     <targetJdk>${jdk.version}</targetJdk>
+                    <includeTests>true</includeTests>
+                    <rulesets>
+                        <ruleset>config/pmd/custom-rules.xml</ruleset>
+                    </rulesets>
                 </configuration>
                 <executions>
                     <execution>
