@@ -683,9 +683,9 @@ build (say a production with "ERROR" output during a test), but:
 2. There is too much output in the local build, so developers don't spot
    telltale signs of trouble
 
-There are many approaches to this problem. This project uses JDK logging as
-[an example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html)
-, and keeps the build quiet in
+There are many approaches to this problem. This project uses JDK logging as [an
+example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html),
+and keeps the build quiet in
 [`config/logging.properties`](config/logging.properties).
 
 ### Keep CI builds noisy
@@ -1093,7 +1093,8 @@ ranging among other things:
 * Insecure code (see [Shift security left](#shift-security-left))
 * Use of outdated code patterns (_eg_, Java 5 patterns might be better expressed
   with Java 17 improvements)
-* [Fail your build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
+* [Fail your 
+  build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
   if issues are detected
 
 The Gradle and Maven demonstration builds use these to help you:
@@ -1106,6 +1107,11 @@ for [Spotbugs](https://spotbugs.github.io/).
 
 * CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin. CPD
   works for Maven
+
+#### Tips
+
+* Edit [`config/pmd/custom-rules.xml`](config/pmd/custom-rules.xml) to adjust
+  how PMD reviews your code (the sample in this project is from the PMD website)
 
 ### Modernizer
 
