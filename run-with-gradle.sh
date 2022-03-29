@@ -57,12 +57,8 @@ function outdated-to-jar() {
 }
 
 function build-config-outdated-gradle() {
-    [[ -e settings.gradle.kts ]] &&
-        local settings=settings.gradle.kts ||
-        local settings=settings.gradle
-    [[ -e build.gradle.kts ]] &&
-        local build=build.gradle.kts ||
-        local build=build.gradle
+    local settings=settings.gradle
+    local build=build.gradle
 
     for f in gradle.properties "$settings" "$build"; do
         [[ -e "$f" ]] && outdated-to-jar "$f" && return

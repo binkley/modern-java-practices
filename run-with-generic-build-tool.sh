@@ -8,8 +8,8 @@ readonly package=hm.binkley.md
 readonly artifactId=modern-java-practices
 readonly version=0-SNAPSHOT
 build_tool=maven # or gradle -- this sets the default
-language=java # or kotlin -- this sets the default
-jvm_flags=()
+language=java    # or kotlin -- this sets the default
+jvm_flags=()     # Default JVM flags such as --add-opens
 
 # No editable parts below here
 
@@ -111,12 +111,16 @@ function jar-outdated() {
 }
 
 function build-config-outdated-gradle() {
-    [[ -e settings.gradle.kts ]] &&
-        local settings=settings.gradle.kts ||
+    if [[ -e settings.gradle.kts ]]; then
+        local settings=settings.gradle.kts
+    else
         local settings=settings.gradle
-    [[ -e build.gradle.kts ]] &&
-        local build=build.gradle.kts ||
+    fi
+    if [[ -e build.gradle.kts ]]; then
+        local build=build.gradle.kts
+    else
         local build=build.gradle
+    fi
 
     for f in gradle.properties "$settings" "$build"; do
         [[ -e "$f" ]] && outdated-to-jar "$f" && return
