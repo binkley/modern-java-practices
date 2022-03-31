@@ -743,6 +743,9 @@ can always revert changes, but some folks want to look before doing.
   versions for bundled plugins, so those versions are visible for update
 * Enable _HTML reports_ for local use; enable _XML reports_ for CI use in
   integrating with report tooling
+* To open the report for Jdeps, build locally and use the
+  `<project root>/build/reports/jdeps/` (Gradle) path.
+  The path shown in a Docker build is relative to the interior of the container
 
 ### Automated dependency upgrade PRs
 
@@ -1073,8 +1076,11 @@ in `build.gradle` about SUN _vs_ Google styles for Java.
 * Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
   editor choice is up to each developer. EditorConfig is a cross-IDE standard
   means of specifying code formatting, respected by
-  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig)
-  , and other major editors
+  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig),
+  and other major editors
+* To open the report for Checkstyle, build locally and use the
+  `<project root>/build/reports/checkstyle/` path.
+  The path shown in a Docker build is relative to the interior of the container
 
 ---
 
@@ -1112,6 +1118,13 @@ for [Spotbugs](https://spotbugs.github.io/).
 
 * Edit [`config/pmd/custom-rules.xml`](config/pmd/custom-rules.xml) to adjust
   how PMD reviews your code (the sample in this project is from the PMD website)
+* To open the report for Spotbugs, build locally and use the
+  `<project root>/build/reports/spotbugs/` (Gradle) path.
+  The path shown in a Docker build is relative to the interior of the container
+* To open the report for PMD, build locally and use the
+  `<project root>/build/reports/pmd/` (Gradle) or
+  `<project root/target/site/` (Maven) path.
+  The path shown in a Docker build is relative to the interior of the container
 
 ### Modernizer
 
@@ -1205,6 +1218,14 @@ Your build should fail, too. It is a _red flag_ to you to consider the CVE, what
 impact the vulnerable dependency has, and if you are comfortable with a
 vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
 version of a dependency.
+
+#### Tips
+
+* To open the report for DependencyCheck, build locally and use the
+  `<project root>/build/reports/` (Gradle) or
+  `<project root/target/` (Maven) path.
+  The path shown in a Docker build is relative to the interior of the container
+
 
 #### Notes on `DependencyCheck`
 
@@ -1345,6 +1366,9 @@ report.
       [JUnit Pioneer](https://junit-pioneer.org/) extension pack. If you need
       these, be cautious about using parallel testing features, and avoiding
       [Flaky Tests](https://hackernoon.com/flaky-tests-a-war-that-never-ends-9aa32fdef359))
+* To open the report for JaCoCo, build locally and use the
+  `<project root>/build/reports/jacoco/test/html/` path.
+  The path shown in a Docker build is relative to the interior of the container
 
 ---
 
@@ -1395,6 +1419,10 @@ This project provides the PIT report as part of Maven's project report.
 * Read more about [_Mutation
   Testing_](https://testing.googleblog.com/2021/04/mutation-testing.html) from
   Google
+* To open the report for PITest, build locally and use the
+  `<project root>/build/reports/pitest/` (Gradle) or
+  `<project root>/target/pit-reports/` (Maven) path.
+  The path shown in a Docker build is relative to the interior of the container
 
 ---
 
