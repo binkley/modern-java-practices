@@ -1119,7 +1119,9 @@ for [Spotbugs](https://spotbugs.github.io/).
 * Edit [`config/pmd/custom-rules.xml`](config/pmd/custom-rules.xml) to adjust
   how PMD reviews your code (the sample in this project is from the PMD website)
 * To open the report for Spotbugs, build locally and use the
-  `<project root>/build/reports/spotbugs/` (Gradle) path.
+  `<project root>/build/reports/spotbugs/` (Gradle) or
+  `<project root>/target/site/` (Maven) path.
+  Run `./mvnw site` for the latter.
   The path shown in a Docker build is relative to the interior of the container
 * To open the report for PMD, build locally and use the
   `<project root>/build/reports/pmd/` (Gradle) or
