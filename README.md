@@ -1333,6 +1333,12 @@ To see the coverage report (on passed or failed coverage), open:
 This project also provides the coverage report as part of Maven's project
 report.
 
+The [`coverage`](./coverage) script is helpful for checking your current
+coverage state: try `./coverage -f all`.
+Current limitations:
+- Maven builds only
+- Single module builds only
+
 ### Tips
 
 * See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to
