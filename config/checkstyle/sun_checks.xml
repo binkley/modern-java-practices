@@ -95,7 +95,12 @@
     <!--   <property name="fileExtensions" value="java"/> -->
     <!-- </module> -->
 
+   <module name="SuppressWarningsFilter"/>
+        
     <module name="TreeWalker">
+            
+        <module name="SuppressWarningsHolder"/>
+
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See https://checkstyle.org/config_javadoc.html -->

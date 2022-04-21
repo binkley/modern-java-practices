@@ -45,9 +45,13 @@
         <property name="max" value="100"/>
         <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
     </module>
+        
+   <module name="SuppressWarningsFilter"/>
+     
 
     <module name="TreeWalker">
         <module name="OuterTypeFilename"/>
+        <module name="SuppressWarningsHolder"/>    
         <module name="IllegalTokenText">
             <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL"/>
             <property name="format"
