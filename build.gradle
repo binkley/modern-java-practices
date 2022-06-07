@@ -12,7 +12,8 @@ plugins {
     id "checkstyle" // To check that code follow style standards
     id "pmd" // Static analysis based on source (does not check compiled code)
     id "com.github.spotbugs" // Static analysis based on compiled code (does not check source)
-    id "com.github.andygoossens.gradle-modernizer-plugin"
+    // TODO: https://github.com/binkley/modern-java-practices/issues/204
+    // id "com.github.andygoossens.gradle-modernizer-plugin"
     id "jacoco" // To run test coverage
     id "info.solidsoft.pitest" // To run mutation testing
     id "org.kordamp.gradle.jdeps"
@@ -32,7 +33,8 @@ dependencies {
     annotationProcessor "org.projectlombok:lombok:$lombokVersion"
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
     compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
-    compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
+    // TODO: https://github.com/binkley/modern-java-practices/issues/204
+    // compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
     testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
@@ -147,11 +149,14 @@ tasks.withType(SpotBugsTask) {
     }
 }
 
+/*
+TODO: https://github.com/binkley/modern-java-practices/issues/204
 modernizer {
     failOnViolations = true
     includeTestClasses = true
     javaVersion = "$jdkVersion"
 }
+*/
 
 jacoco {
     toolVersion = jacocoVersion
