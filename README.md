@@ -38,11 +38,6 @@ Summing up:
 - _Make it work, make it right, make it fast_
   &mdash; [C2 Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
-A key goal of this project is to be _reuseable_. It should be a good starting
-point for new projects, and advise on updating your existing project.
-
-This is you!  Become a programmer with great habits.
-
 ### Try it
 
 After cloning this project on your machine:
