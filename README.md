@@ -188,16 +188,23 @@ height="auto"/>
 ## Reusing this project
 
 Don't forget to [_fork
-me_](https://github.com/binkley/modern-java-practices/fork)! (No, really, this
-is [_Public Domain_](http://unlicense.org/) software. This project is meant to
-be reused by you however is sensible.)
+me_](https://github.com/binkley/modern-java-practices/fork) or _clone_ me! This
+is [_Public Domain_](http://unlicense.org/) software: it is meant to be reused
+by you however is sensible.  If you fork, I take care that upstream pulls 
+work, but I'd like to [hear from
+you](https://github.com/binkley/modern-java-practices/issues) if you have
+trouble.  See also: [_Cleaning
+up_](https://github.com/binkley/modern-java-practices#cleaning-up).
 
-Two sensible approaches:
+Sensible approaches:
 
-- Clone this project to a new repository, and work from there, especially if
-  starting a new project
-- Read through this repositories's code, and update your own repository by
-  hand, especially for applying advice to an existing respository
+- Fork this project, and work from there, pulling down improvements (usually 
+  version bumps on tools and dependencies)
+- Clone this project to a new repository, and work from there. Manually pull 
+  over improvements (there is [tooling to
+  help](https://github.com/binkley/modern-java-practices#keep-plugins-and-dependencies-up-to-date))
+- Read through this repository's code and changes, and update your own 
+  repository by hand, useful for existing respositories
 
 If you cloned this project as a starter, you may want to stay updated on
 improvements:
