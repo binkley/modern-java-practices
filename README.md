@@ -422,16 +422,16 @@ using Gradle or Maven, you will still find improvements for your build herein
 
 For new projects, you may find [Spring Initializr](https://start.spring.io),
 [`mn` from Micronaut](https://micronaut.io/), or
-[JHipster](https://www.jhipster.tech/), among many other project starters, more
-to your liking: they provide you with starter Gradle or Maven scripts specific
-for those frameworks. _That's great!_ This article should still help you improve
-your build beyond "getting started". You should pick and choose build features
-to add to your starter project, whatever makes sense for your project.
+[JHipster](https://www.jhipster.tech/), among many other project excellent 
+starters, more to your liking: they provide you with starter Gradle or Maven 
+scripts specific for those frameworks. _That's great!_ This article should 
+still help you improve your build beyond "getting started". You should pick 
+and choose build features as makes sense to you and your circumstances.
 
 This article offers **no preference between Gradle or Maven**. You need to
-decide with your team. After picking your build tool, you might rename
-[run-with-gradle.sh](./run-with-gradle.sh) or
-[run-with-maven.sh](./run-with-maven.sh) to just "run.sh".
+decide with your team and circumstances. After picking your build tool, you 
+might rename [run-with-gradle.sh](./run-with-gradle.sh) or
+[runs-with-maven.sh](./run-with-maven.sh) to just "run.sh".
 [run-with-generic-build-tool.sh](./run-with-generic-build-tool.sh) is provided
 as an example of supporting both tools in the same project, and to give you 
 ideas on a runscript.  These scripts assume Java is your language.  See
@@ -439,17 +439,32 @@ ideas on a runscript.  These scripts assume Java is your language.  See
 example of working with Java and Kotlin in the same project.
 
 Projects using Ant **should migrate**. It is true that Ant is well-maintained
-(the latest version dates from September 2020). However, you will spend much
-effort in providing modern build tooling, and effort in migrating is repaid by
-much smaller work in integrating modern tools. Data point: consider the number
-of [Stackoverflow](https://stackoverflow.com/)
-posts providing Gradle or Maven answers to those for Ant.  *Consider Ant builds
-no longer well-supported, and a form of
+(the latest version dates from 2021). However, you will spend much effort in 
+providing modern build tooling, and effort in migrating from Ant is repaid in 
+smaller work for integrating modern tools. Data point: consider the number of
+[Stackoverflow](https://stackoverflow.com/) posts providing Gradle or 
+Maven answers to those for Ant.  *Consider Ant builds to be no longer 
+well-supported, and a form of
 [Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).*
 
 Throughout, when covering both Gradle and Maven, Gradle will be discussed first,
 then Maven. This is no expressing a preference!  It is neutral alphabetical
 ordering.
+
+### Cleaning up
+
+Once you pick between Gradle or Maven, it is a good time to clean up.  If 
+you have cloned the project, these renames/deletions will help you:
+
+* [run-with-gradle.sh](./run-with-gradle.sh) or
+  [runs-with-maven.sh](./run-with-maven.sh) → just `run.sh` or `build.sh` or 
+  anything you like. Remember to document in `README.md` for others
+* [batect.yml](./batect.yml) &mdash; update the task names, and remove those not
+  relevant. Again, don't forget about `README.md` instructions
+* [ci.yml](./.github/workflows/ci.yml) &mdash; update the jobs, and remove those
+  not relevant. Did I mention `README.md`?
+
+You are ready to make great software.
 
 ### Tips
 
