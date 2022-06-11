@@ -15,14 +15,22 @@ projects with samples for
 [_Maven_](https://maven.apache.org/what-is-maven.html). The focus is on
 _best build practices_ and _project hygiene_.
 
-There are two recurring themes:
+As a _guide_ this project focuses on:
+
+* A quick starter for JVM projects using Gradle or Maven.  Fork me, clone me!
+* Illustrate sensible default practices; highlight good build tools and plugins
+* Document pitfalls that are not always written about (see "Tips" sections)
+* Do not be an "all-in-one" solution. You know your circumstances best: I hope 
+  this project helps you discover build improvements you love
+
+Two recurring themes:
 
 * _Shift problems left_ &mdash; Find issues earlier in your development cycle
   through the build before they happen to you in production
 * _Make developer life easier_ &mdash; Automate build tasks commonly done by
   hand: get your build to complain (fail) more often outside of typing code
 
-Summing up the goals:
+Summing up:
 
 - _I'm not a great programmer; I'm just a good programmer with great habits._
   &mdash;
