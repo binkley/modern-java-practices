@@ -634,6 +634,12 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
   "Y/N" question. This **must** be _separate step_ from running the build
   itself. See [`ci.yml`](.github/workflows/ci.yml) for Gradle and Maven examples
 
+* Run your local Gradle or Maven build before you run with Batect if you have
+  updated dependencies.  This is helpful when fetching the dependencies, and
+  sometimes avoids awkwardness (sometimes you may have different access rights
+  for the build tool caches when run as yourself directly _vs_ running in a
+  container)
+
 ---
 
 <img src="./images/maintain-build.jpg" alt="Maintain build" align="right"
