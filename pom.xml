@@ -73,11 +73,11 @@
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
-        <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
+        <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
         <maven-jxr-plugin.version>3.2.0</maven-jxr-plugin.version>
-        <maven-pmd-plugin.version>3.16.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.17.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
