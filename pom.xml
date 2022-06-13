@@ -77,11 +77,11 @@
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
         <maven-jxr-plugin.version>3.2.0</maven-jxr-plugin.version>
-        <maven-pmd-plugin.version>3.16.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.17.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>3.12.0</maven-site-plugin.version>
-        <maven-testing-plugins.version>3.0.0-M6</maven-testing-plugins.version>
+        <maven-testing-plugins.version>3.0.0-M7</maven-testing-plugins.version>
         <maven.version>3.8.4</maven.version>
         <mockito.version>4.6.1</mockito.version>
         <modernizer.version>2.4.0</modernizer.version>
