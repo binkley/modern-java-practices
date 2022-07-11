@@ -1,3 +1,5 @@
 [**]
+# Unless you are a Windows-only source code base, best to use linefeeds (`\n`)
 end_of_line = lf
+# Most teams will prefer 100 or 120 line limits, or no limits at all
 max_line_length = 80
