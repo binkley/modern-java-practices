@@ -42,6 +42,11 @@ Summing up:
 - _Make it work, make it right, make it fast_
   &mdash; [C2 Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
+**NB** &mdash; This is a _living document_. The project is frequently updated to
+pick up new dependency versions, and improved practices; this README updates
+recommendations. This is part of what _great habits_ look like. See
+[_Reusing this project_](#reusing-this-project) for tips on pulling in updates.
+
 ### Try it
 
 After cloning this project or a fork to your machine:
@@ -63,11 +68,6 @@ See what the runscript does:
 $ ./run-with-gradle.sh
 $ ./run-with-maven.sh
 ```
-
-**NB** &mdash; This is a _living document_. The project is frequently updated to
-pick up new dependency versions and improved practices; this README updates
-recommendations. This is part of what _great habits_ looks like. See
-[_Reusing this project_](#reusing-this-project) for tips on pulling in updates.
 
 ### Contributing
 
