@@ -19,7 +19,9 @@ alphabetical order (Gradle before Maven).
 
 As a _guide_ this project focuses on:
 
-* A quick starter for JVM projects using Gradle or Maven.  Fork me, clone me!
+* A quick starter for JVM projects using Gradle or Maven.
+  [Fork](https://github.com/binkley/modern-java-practices/fork) me,
+  [clone](https://github.com/binkley/modern-java-practices.git) me!
 * Illustrate sensible default practices; highlight good build tools and plugins
 * Document pitfalls that are not always written about (see "Tips" sections)
 * Do not be an "all-in-one" solution. You know your circumstances best: I hope 
