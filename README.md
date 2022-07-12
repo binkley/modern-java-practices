@@ -57,6 +57,8 @@ $ ./batect build-with-maven  # Reproduce locally what CI does
 # Output ommitted
 ```
 
+See what the runscript does:
+
 ```shell
 $ ./run-with-gradle.sh
 $ ./run-with-maven.sh
