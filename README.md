@@ -11,10 +11,10 @@
 
 **Modern Java/JVM Build Practices** is an article on building modern Java/JVM
 projects with samples for
-[_Gradle_](https://docs.gradle.org/current/userguide/userguide.html) and
-[_Maven_](https://maven.apache.org/what-is-maven.html). The focus is on
+[Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
+[Maven](https://maven.apache.org/what-is-maven.html). The focus is on
 _best build practices_ and _project hygiene_. This document is _agnostic_
-between Gradle and Maven; discussion in each section covers both, and is in
+between Gradle and Maven: discussion in each section covers both, and is in
 alphabetical order (Gradle before Maven).
 
 As a _guide_ this project focuses on:
