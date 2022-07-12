@@ -44,7 +44,7 @@ Summing up:
 
 ### Try it
 
-After cloning this project on your machine:
+After cloning this project or a fork to your machine:
 
 ```shell
 $ ./gradlew build  # Local build experience
