@@ -1474,7 +1474,7 @@ name. This means bringing up your application, possibly with
 [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
 for external dependencies (databases, other services, _etc_), and running tests
 against high-level functionality, but _not_ starting up external dependencies
-themselves (_ie_, Docker, or manual comman-line steps). Think of CI: what are
+themselves (_ie_, Docker, or manual command-line steps). Think of CI: what are
 called here "integration tests" are those which do
 _not_ need your CI to provide other services.
 
