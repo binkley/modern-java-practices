@@ -67,7 +67,7 @@
         <junit.version>5.8.2</junit.version>
         <lombok.version>1.18.24</lombok.version>
         <main.class>demo.Application</main.class>
-        <maven-assembly-plugin.version>3.4.1</maven-assembly-plugin.version>
+        <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
@@ -91,7 +91,7 @@
         <pmd.version>6.47.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.7.1.0</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.7.1.1</spotbugs-maven-plugin.version>
         <spotbugs.version>4.7.1</spotbugs.version>
         <system-lambda.version>1.2.1</system-lambda.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
