@@ -223,8 +223,31 @@ git merge master/upstream
 ```
 
 Once you are happy with your project, you should think about removing the
-upstream remote, and reviewing changes in this repository by hand. Your decision
-might depend on what merge conflicts you encounter.
+upstream remote, and reviewing changes in this repository by hand.
+Your decision might depend on what merge conflicts you encounter.
+
+### Irrelevant files
+
+This project includes files which are helpful for maintaining itself, but may 
+be irrelevant to you. Some, however, may prove helpful in specific contexts as 
+noted:
+- [`build-as-ci-does.sh`](./build-as-ci-does.sh)
+  Helpful when CI has steps that local developers do not, and you want to 
+  reproduce or explore locally a CI problem. The script should match the 
+  actions your CI takes on pushes (this project uses GitHub actions)
+- [`compare-tooling-versions-sh`](./compare-tooling-versions.sh)
+  If your project supports _both_ Gradle and Maven builds (unlikely), a 
+  quick way to look at dependency and plugin versions between the two
+- [`coverage`](./coverage)
+  Checks if the local code passes at given levels of code coverage.
+  The script is focused on Maven, but with edits would do the same for Gradle.
+  This supports the ["ratchet" pattern](#leverage-unit-testing-and-coverage)
+- [`run-with-gradle.sh`](./run-with-gradle.sh)
+  If you are a Gradle project, you will likely rename this to just `run` or 
+  similar
+- [`run-with-maven.sh`](./run-with-maven.sh)
+  If you are a Maven project, you will likely rename this to just `run` or
+  similar
 
 ---
 
@@ -1334,7 +1357,9 @@ for dependencies.
 ## Leverage unit testing and coverage
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
-* "Ratchet" to fail build when coverage drops
+* "Ratchet" pattern to fail build when coverage drops.
+  Robert Greiner talks more on this in [_Continuous Code Improvement Using 
+  Ratcheting_](https://robertgreiner.com/continuous-code-improvement-using-ratcheting/)
 * Fluent assertions &mdash; lots of options in this area
     * [AssertJ](https://assertj.github.io/doc/) &mdash; solid choice
     * Built assertions from Junit make is difficult for developers to
