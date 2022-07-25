@@ -14,8 +14,8 @@ Java/JVM projects using
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
 [Maven](https://maven.apache.org/what-is-maven.html). The focus is _best build
 practices_ and _project hygiene_. This document is _agnostic_ between Gradle
-and Maven: discussion in each section covers both, and is in alphabetical order
-(Gradle before Maven).
+and Maven: discussion in each section covers both tools (alphabetical order, 
+Gradle before Maven).
 
 As a _guide_ this project focuses on:
 
@@ -26,14 +26,18 @@ As a _guide_ this project focuses on:
 * Illustrate sensible default practices; highlight good build tools and plugins
 * Document pitfalls that are not always written about (see "Tips" sections)
 * Do not be an "all-in-one" solution. You know your circumstances best: I hope 
-  this project helps you discover build improvements you love
+  this project helps you discover build improvements you love (and please 
+  share those back with
+  [Issues](https://github.com/binkley/modern-java-practices/issues) or
+  [PRs](https://github.com/binkley/modern-java-practices/pulls))
 
 Two recurring themes:
 
 * _Shift problems left_ &mdash; Find issues earlier in your development cycle
-  through the build before they happen to you in production
+  through the build before they happen in production
 * _Make developer life easier_ &mdash; Automate build tasks commonly done by
-  hand: get your build to complain (fail) more often outside of typing code
+  hand: get your build to complain (fail) locally before sharing with your
+  team, or fail in CI before production 
 
 Summing up:
 
@@ -43,10 +47,12 @@ Summing up:
 - _Make it work, make it right, make it fast_
   &mdash; [C2 Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
-**NB** &mdash; This is a _living document_. The project is frequently updated to
-pick up new dependency versions, and improved practices; this README updates
-recommendations. This is part of what _great habits_ look like. See
-[_Reusing this project_](#reusing-this-project) for tips on pulling in updates.
+**NB** &mdash; This is a _living document_.
+The project is frequently updated to pick up new dependency or plugin 
+versions, and improved practices; this README updates recommendations.
+This is part of what _great habits_ look like.
+See [_Reusing this project_](#reusing-this-project) for tips on pulling in
+updates.
 
 ### Try it
 
@@ -63,7 +69,7 @@ $ ./batect build-with-maven  # Reproduce locally what CI does
 # Output ommitted
 ```
 
-See what the runscript does:
+See what the program does:
 
 ```shell
 $ ./run-with-gradle.sh
@@ -73,7 +79,9 @@ $ ./run-with-maven.sh
 ### Contributing
 
 Please [file issues](https://github.com/binkley/modern-java-practices/issues),
-or contribute PRs!  I'd love a conversation with you.
+or contribute [pull
+requests](https://github.com/binkley/modern-java-practices/pulls)!
+I'd love a conversation with you.
 
 ### Tips
 
@@ -1357,7 +1365,7 @@ for dependencies.
 ## Leverage unit testing and coverage
 
 * [JaCoCo](https://www.jacoco.org/jacoco/)
-* "Ratchet" pattern to fail build when coverage drops.
+* Use the "ratchet" pattern to fail the build when coverage drops.
   Robert Greiner talks more on this in [_Continuous Code Improvement Using 
   Ratcheting_](https://robertgreiner.com/continuous-code-improvement-using-ratcheting/)
   This follows the agile ["Boy Scout"
