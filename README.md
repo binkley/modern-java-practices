@@ -1360,6 +1360,8 @@ for dependencies.
 * "Ratchet" pattern to fail build when coverage drops.
   Robert Greiner talks more on this in [_Continuous Code Improvement Using 
   Ratcheting_](https://robertgreiner.com/continuous-code-improvement-using-ratcheting/)
+  This follows the agile ["Boy Scout"
+  principle](https://dzone.com/articles/the-boy-scout-software-development-principle)
 * Fluent assertions &mdash; lots of options in this area
     * [AssertJ](https://assertj.github.io/doc/) &mdash; solid choice
     * Built assertions from Junit make is difficult for developers to
