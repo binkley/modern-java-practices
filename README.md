@@ -78,6 +78,7 @@ $ ./run-with-maven.sh
 
 ### Contributing
 
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 Please [file issues](https://github.com/binkley/modern-java-practices/issues),
 or contribute [pull
 requests](https://github.com/binkley/modern-java-practices/pulls)!
