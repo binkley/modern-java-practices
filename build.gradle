@@ -198,14 +198,16 @@ jdepsReport {
 
 dependencyCheck {
     failBuildOnCVSS = 0
-    skip = Boolean.getBoolean("owasp.skip")
-    // Use this block when mirroring the NIST CVE data
-    cve {
-        urlBase = "https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-%d.json.gz"
-        // urlBase = "file:///PATH/TO/mirror/nvdcve-1.1-%d.json.gz"
-        urlModified = "https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-modified.json.gz"
-        // urlModified = "file:///PATH/TO/mirror/nvdcve-1.1-modified.json.gz"
-    }
+    skip = Boolean.getBoolean("owasp.skip") // DEFAULT is false
+    // Use this block when mirroring the NIST CVE data -- the data may suffer
+    // timeouts for downloading. GitHub, for example, maintains caches of the
+    // data, and you might see your local build fail for access, but pass in CI
+    // cve {
+    //     urlBase = "https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-%d.json.gz"
+    //     // urlBase = "file:///PATH/TO/mirror/nvdcve-1.1-%d.json.gz"
+    //     urlModified = "https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-modified.json.gz"
+    //     // urlModified = "file:///PATH/TO/mirror/nvdcve-1.1-modified.json.gz"
+    // }
 }
 
 jar {
