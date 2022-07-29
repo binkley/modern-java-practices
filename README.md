@@ -354,24 +354,21 @@ For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
 * Java 17 is the most current LTS ("long-term support") version
-* There are more recent versions (12 to 16) with continuing improvements and
-  additional features to try out. However Oracle provides no paid support for
-  these versions. These versions, however, are production-worthy
+* There are more recent versions with continuing improvements and additional 
+  features to try out
 * If your personal or open-source project does not require a paid support
   contract, newer Java versions are a good choice
-* For Java 8 or older: These versions are no longer supported by Oracle unless
-  one buys
-  [a paid support contract](https://www.oracle.com/java/technologies/java-se-support-roadmap.htm)
-  . However, [Adoptium](https://adoptium.net/) (formerly AdoptOpenJDK)
-  provides distributions of OpenJDK 8, and community support until at least
-  [May 2026](https://adoptopenjdk.net/support.html?variant=openjdk8&jvmVariant=hotspot)
-  with commercial support available from IBM
+* For a full breakdown of the current JDK landscape (as of Jul 2022), see
+  [_Which JDK Version and Vendor Should You Use on Your
+  Project?_](https://tomgregory.com/which-jdk-version-and-vendor/), and a short
+  list of recommendations at [_Which Version of JDK Should I
+  Use?_](https://whichjdk.com)
 
 In this project, you'll see the choice of Java 17 as this is the version to
 recommend in production.
 
 In general, you will find that [Adoptium](https://adoptium.net) is a go-to
-choice for obtaining the JDK.
+choice for the JDK.
 
 ### Tips
 
