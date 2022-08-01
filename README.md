@@ -601,6 +601,9 @@ authentication_.](https://github.community/t/download-from-github-package-regist
   for details
 * With Maven, use the `--no-transfer-progress` flag for CI: this avoids spamming
   CI logs with download progress messages
+* For GitHub Actions, you may find a tool like
+  [`act`](https://github.com/nektos/act) useful for running CI actions locally
+  (it may not work for all projects, however, depending on your actions)
 
 ---
 
