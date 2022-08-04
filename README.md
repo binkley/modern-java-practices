@@ -568,9 +568,9 @@ Your CI is your "source of truth" for successful builds. Your goal:
 _Everyone trusts a "green" CI build is solid_.
 
 When using GitHub, a simple starting point is
-[`ci.yml`](./.github/workflows/ci.yml).  (GitLabs is similar, but as this
+[`ci.yml`](./.github/workflows/ci.yml).  (GitLab is similar, but as this
 project is hosted in GitHub, there is not a simple means to demonstrate CI at
-GitLabs). This sample GitHub workflow builds with Gradle, and then with Maven.
+GitLab). This sample GitHub workflow builds with Gradle, and then with Maven.
 
 If you use GitLab, read about the equivalent in
 [_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
@@ -583,6 +583,15 @@ for GitHub, or equivalent for other CI systems.  **Do not publish from local
 builds.**  For GitHub, note the limitations of
 [_Download from Github Package Registry without
 authentication_.](https://github.community/t/download-from-github-package-registry-without-authentication/14407)
+
+### Example: Additional code quality checking
+
+This project uses JetBrain's Qodana as [an example tooling in
+CI](https://www.jetbrains.com/help/qodana/qodana-github-action.html) for raising 
+code quality.
+It is an example: there are many options available to you for additional CI 
+checks.
+See [`code-quality.yml`](./.github/workflows/code-quality.yml).
 
 ### Tips
 
@@ -781,7 +790,7 @@ enough eyeballs, all bugs are shallow").
   them as sources of truth but as recommendations**. _Use your judgment_. In
   parallel, take advantage of CI tooling such as
   [Dependabot (Github)](https://github.com/dependabot) or
-  [Dependabot (Gitlab)](https://gitlab.com/dependabot-gitlab/dependabot)
+  [Dependabot (GitLab)](https://gitlab.com/dependabot-gitlab/dependabot)
 
 An example use which shows most outdated plugins and dependencies (note that one
 Maven example modifies your `pom.xml`, a fact you can choose or avoid):
@@ -1012,8 +1021,9 @@ there are times you want deep reflection.
 #### Lombok configuration
 
 [Configure Lombok](https://projectlombok.org/features/configuration) in
-`src/lombok.config` rather than the project root or a separate `config`
-directory. At a minimum:
+[`src/lombok.config`](./src/lombok.config) rather than the project root or a
+separate `config` directory.
+At a minimum:
 
 ```properties
 config.stopBubbling=true
