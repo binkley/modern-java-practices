@@ -459,7 +459,7 @@ For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
 alternative build tools:
 [industry data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
 shows Gradle or Maven are the build tools for most folks. Unless you find
-yourself in a complex monorepo culture (Google, _etc_), or there are mandates
+yourself in a complex monorepo culture (Google, _etc._), or there are mandates
 from above, you need to select one of Gradle or Maven. However, for projects not
 using Gradle or Maven, you will still find improvements for your build herein
 (though details will differ).
@@ -601,14 +601,14 @@ edition.
 
 ### Tips
 
-* A simple way in CI to disable ASCII control sequences from colorizing or
-  Gradle's overwriting of lines (the control sequences can make for hard-to-read
-  CI logs) is to use the environment setting:
+* To disable ASCII colorizing printing as control sequences in CI, or
+  Gradle trying to overwrite lines (control sequences make for hard-to-read 
+  CI logs), a simple approach is to use an environment setting:
   ```shell
   TERM=dumb
   ```
   This does not make sense for local builds, and your CI system (_eg_, GitHub)
-  may manage this already
+  may manage this problem already
 * With Gradle, use the `--warning-mode=all` flag for CI: this shows _all_
   warnings Gradle generates, not just a summary. See
   [_Showing or hiding
