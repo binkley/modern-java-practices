@@ -500,7 +500,7 @@ you have cloned the project, these renames/deletions will help you:
   anything you like. Remember to document in `README.md` for others
 * [batect.yml](./batect.yml) &mdash; update the task names, and remove those not
   relevant. Again, don't forget about `README.md` instructions
-* [ci.yml](./.github/workflows/ci.yml) &mdash; update the jobs, and remove those
+* [ci.yml](./.github/workflows/ci-maven.yml) &mdash; update the jobs, and remove those
   not relevant. Did I mention `README.md`?
 
 You are ready to make great software.
@@ -569,9 +569,11 @@ Your CI is your "source of truth" for successful builds. Your goal:
 _Everyone trusts a "green" CI build is solid_.
 
 When using GitHub, a simple starting point is
-[`ci.yml`](./.github/workflows/ci.yml).  (GitLab is similar, but as this
-project is hosted in GitHub, there is not a simple means to demonstrate CI at
-GitLab). This sample GitHub workflow builds with Gradle, and then with Maven.
+[`ci.yml`](./.github/workflows/ci-maven.yml).
+(GitLab is similar, but as this project is hosted in GitHub, there is not a 
+simple means to demonstrate CI at GitLab).
+This project includes [a workflow for Gradle](./.github/workflows/ci-gradle.yml)
+and [one for Maven](./.github/workflows/ci-maven.yml) as examples.
 
 If you use GitLab, read about the equivalent in
 [_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
@@ -650,7 +652,7 @@ See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
 for documentation on using Batect from within a dockerized CI environment.
 
 **NB** &mdash; to be as consistent as possible, the sample
-[`ci.yml` for GitHub](./.github/workflows/ci.yml) uses Batect for the Gradle and
+[`ci.yml` for GitHub](./.github/workflows/ci-maven.yml) uses Batect for the Gradle and
 Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
 for [AdoptOpenJDK17](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
 not [setup JDK 17](https://github.com/actions/setup-java) directly, but relies
@@ -704,7 +706,7 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 
 * In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking a
   "Y/N" question. This **must** be _separate step_ from running the build
-  itself. See [`ci.yml`](.github/workflows/ci.yml) for Gradle and Maven examples
+  itself. See [`ci.yml`](.github/workflows/ci-maven.yml) for Gradle and Maven examples
 
 * Run your local Gradle or Maven build before you run with Batect if you have
   updated dependencies.  This is helpful when fetching the dependencies, and

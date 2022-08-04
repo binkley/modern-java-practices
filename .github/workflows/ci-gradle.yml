@@ -1,4 +1,4 @@
-name: build
+name: Build with Gradle
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - '*.md'
 
 jobs:
-  build-with-gradle:
+  build:
     name: Builds and tests for Gradle under Batect
     runs-on: ubuntu-latest
 
@@ -50,44 +50,3 @@ jobs:
 
       - name: Execute run script asuming build with Gradle
         run: ./batect -o quiet run-with-gradle
-
-  build-with-maven:
-    name: Builds and tests for Maven under Batect
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@master
-
-      - name: Restore Batect caches
-        uses: actions/cache@master
-        env:
-          cache-name: batect-cache
-        with:
-          path: ~/.batect
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Manage Batect telemetry
-        run: ./batect --permanently-enable-telemetry
-
-      - name: Restore Maven caches
-        uses: actions/cache@master
-        env:
-          cache-name: maven-cache
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Build and test with Maven under Batect
-        run: ./batect build-with-maven
-
-      - name: Execute run script asuming build with Maven
-        run: ./batect -o quiet run-with-maven
