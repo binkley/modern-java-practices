@@ -589,7 +589,7 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 
 ### Example: Additional code quality checking
 
-This project uses JetBrain's Qodan\[*] as [an example tooling in
+This project uses JetBrain's Qodana\[*] as [an example tooling in
 CI](https://www.jetbrains.com/help/qodana/qodana-github-action.html) for raising 
 code quality.
 It is an example: there are many options available to you for additional CI 
