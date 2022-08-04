@@ -5,9 +5,9 @@ Several scripts in the project root are to aid in contributing.
 - [`build-as-ci-does.sh`](./build-as-ci-does.sh) &mdash;
   Recreate locally the build used by CI in GitHub actions using Batect
   (Docker):
-  * Clean full build for Gradle
+  * Run a clean full build for Gradle
   * Run the Gradle-built demo program
-  * Clean full build for Maven
+  * Run a clean full build for Maven
   * Run the Maven-built demo program
   Helpful when CI has steps that local developers do not, and you want to 
   reproduce or explore locally a CI problem. The script should match the 
@@ -18,7 +18,7 @@ Several scripts in the project root are to aid in contributing.
 - [`coverage`](./coverage)
   Checks if the local code passes at given levels of code coverage.
   The script is focused on Maven, but with edits would do the same for Gradle.
-  This supports the ["ratchet" pattern](#leverage-unit-testing-and-coverage)
+  This supports the "ratchet" pattern.
 - [`run-with-gradle.sh`](./run-with-gradle.sh)
   If you are a Gradle project, you will likely rename this to just `run` or 
   similar

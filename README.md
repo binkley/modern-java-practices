@@ -17,7 +17,7 @@ practices_ and _project hygiene_. This document is _agnostic_ between Gradle
 and Maven: discussion in each section covers both tools (alphabetical order, 
 Gradle before Maven).
 
-As a _guide_ this project focuses on:
+As a _guide_, this project focuses on:
 
 * A quick starter for JVM projects using Gradle or Maven.
   [Fork](https://github.com/binkley/modern-java-practices/fork) me,
@@ -184,15 +184,15 @@ project, possibly the most key value of the Agile approach to software.
   for Modern Java/JVM projects. However, if you use a different build tool, the
   principals still apply
 
-I want to help with the question: _I am at Day 1 on my project_: How do I begin
-with a local build that is supports my team through the project lifetime? And
-when I have an existing project, how to I catch up?
+I want to help with the question: _I am in Day 1 on my project_: How do I begin
+with a local build that supports my team through the project lifetime?
+And when I have an existing project, how to I catch up?
 
 ### Goal of this article
 
 [_Make people awesome_](https://modernagile.org/) (that means _you_). This
-project is based on lots of experience and experiments with Modern Java/JVM
-builds, and shares with you lessons learned.
+project is based on the experiences of many, and experiments with Modern 
+Java/JVM builds, and shares lessons learned with you.
 
 ---
 
@@ -206,10 +206,11 @@ height="auto"/>
 Don't forget to [_fork
 me_](https://github.com/binkley/modern-java-practices/fork) or _clone_ me! This
 is [_Public Domain_](http://unlicense.org/) software: it is meant to be reused
-by you however is sensible.  If you fork, I take care that upstream pulls 
-work, but I'd like to [hear from
+by you however is sensible.
+If you fork, I take care that upstream pulls work, but I'd like to [hear from
 you](https://github.com/binkley/modern-java-practices/issues) if you have
-trouble.  See also: [_Cleaning
+trouble.
+See also: [_Cleaning
 up_](https://github.com/binkley/modern-java-practices#cleaning-up).
 
 Sensible approaches:
@@ -586,12 +587,15 @@ authentication_.](https://github.community/t/download-from-github-package-regist
 
 ### Example: Additional code quality checking
 
-This project uses JetBrain's Qodana as [an example tooling in
+This project uses JetBrain's Qodan\[*] as [an example tooling in
 CI](https://www.jetbrains.com/help/qodana/qodana-github-action.html) for raising 
 code quality.
 It is an example: there are many options available to you for additional CI 
 checks.
 See [`code-quality.yml`](./.github/workflows/code-quality.yml).
+
+\[*] Qodana runs the same code inspections as the IntelliJ IDE Community 
+edition.
 
 ### Tips
 
