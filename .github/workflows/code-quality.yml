@@ -1,4 +1,4 @@
-name: Code Quality Checks
+name: Check Code Quality
 on:
   workflow_dispatch:
   pull_request:
