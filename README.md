@@ -196,7 +196,7 @@ Java/JVM builds, and shares lessons learned with you.
 
 ---
 
-<a title="Reuse">
+<a href="https://github.com/binkley/modern-java-practices/fork" title="Reuse">
 <img src="./images/reuse.png" alt="Reuse" align="right" width="20%" 
 height="auto"/>
 </a>
@@ -1083,7 +1083,7 @@ enabling/disabling specific warnings compiler-specific.
 Lombok annotation processing fails `-Xlint:all`. Use `-Xlint:all,-processing`
 to bypass warnings about annotation processing. In addition, using Lombok's
 configuration to add suppression annotations on generated code (so other tools
-will ignore generated code) needs the older Spotbugs annotations provided by a
+will ignore generated code) needs the older Spotbugs annotations provided as a
 dependency.
 
 ---
