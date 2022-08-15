@@ -83,7 +83,7 @@
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
         <maven-testing-plugins.version>3.0.0-M7</maven-testing-plugins.version>
         <maven.version>3.8.4</maven.version>
-        <mockito.version>4.6.1</mockito.version>
+        <mockito.version>4.7.0</mockito.version>
         <modernizer.version>2.4.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.0.0</pitest-junit5-plugin.version>
