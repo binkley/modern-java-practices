@@ -1,5 +1,5 @@
 <a href="./LICENSE.md">
-<img src="./images/public-domain.png" alt="Public Domain" style="float: right"/>
+<img src="./images/public-domain.png" alt="Public Domain" align="right"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -100,7 +100,7 @@ I'd love a conversation with you.
 
 <a title="Table of Contents">
 <img src="./images/table-of-contents.png" alt="Table of Contents"
-style="float: right" width="20%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## TOC
@@ -131,7 +131,7 @@ style="float: right" width="20%" height="auto"/>
 
 <a href="https://modernagile.org/" title="Modern Agile">
 <img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
-style="float: right" width="20%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Introduction
@@ -197,8 +197,8 @@ Java/JVM builds, and shares lessons learned with you.
 ---
 
 <a href="https://github.com/binkley/modern-java-practices/fork" title="Reuse">
-<img src="./images/reuse.png" alt="Reuse"
-style="float: right" width="20%" height="auto"/>
+<img src="./images/reuse.png" alt="Reuse" align="right" width="20%" 
+height="auto"/>
 </a>
 
 ## Reusing this project
@@ -345,8 +345,8 @@ existing project:
 ---
 
 <a href="https://adoptium.net/" title="Adoptium">
-<img src="./images/adoptium.png" alt="Adoptium"
-style="float: right" width="20%" height="auto"/>
+<img src="./images/adoptium.png" alt="Adoptium" align="right" width="20%" 
+height="auto"/>
 </a>
 
 ## The JDK
@@ -428,11 +428,11 @@ Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 <!--- TODO better formating for images vs text -->
 <a href="https://maven.apache.org/" title="Maven">
-<img src="./images/maven.png" alt="Maven"
-style="float: right" width="15%" height="auto"/></a>
+<img src="./images/maven.png" alt="Maven" align="right" width="15%" 
+height="auto"/></a>
 <a href="https://gradle.org/" title="Gradle">
-<img src="./images/gradle.png" alt="Gradle"
-style="float: right" width="15%" height="auto"/></a> 
+<img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
+height="auto"/></a> 
 
 ## Use Gradle or Maven
 
@@ -560,7 +560,7 @@ You are ready to make great software.
 <a href="http://www.ambysoft.com/essays/whyAgileWorksFeedback.html"
 title="Why Agile Software Development Techniques Work: Improved Feedback">
 <img src="./images/bug-costs.jpg" alt="Length of Feedback Cycle"
-style="float: right" width="20%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Setup your CI
@@ -625,7 +625,7 @@ edition.
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
-style="float: right" width="20%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Keep local consistent with CI
@@ -716,8 +716,8 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 
 ---
 
-<img src="./images/maintain-build.jpg" alt="Maintain build"
-style="float: right" width="20%" height="auto"/>
+<img src="./images/maintain-build.jpg" alt="Maintain build" align="right"
+width="20%" height="auto"/>
 
 ## Maintain your build
 
@@ -1578,7 +1578,7 @@ them part of the local build.
 <a href="https://martinfowler.com/bliki/TestPyramid.html"
 title="TestPyramid">
 <img src="./images/test-pyramid.png" alt="The test pyramid"
-style="float: right" width="20%" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 What is the "Test Pyramid"? This is an important conceptual framework for
@@ -1637,8 +1637,8 @@ Another dimension to consider for local testing: _User Journey_ tests.
 ## Problems
 
 <a href="https://xkcd.com/303/" title="Compiling">
-<img src="./images/compiling.png" alt="Compiling"
-style="float: right" width="20%" height="auto"/>
+<img src="./images/compiling.png" alt="Compiling" align="right" 
+width="20%" height="auto"/>
 </a>
 
 ## Why is my local build slow?
