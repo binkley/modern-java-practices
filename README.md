@@ -594,8 +594,8 @@ download built jars from different CI runs for comparing their behavior
 between commits without needing to rebuild locally, and also to confirm that 
 your local build makes the same jars as CI does.
 
-The "Build with Gradle" and "Build with Maven" CI workflows each preserve a 
-"jars" downloadable ZIP file.
+The "Build with Gradle" and "Build with Maven" CI workflows each provide a 
+download named "jars", and the Maven build a "site" download.
 
 ### Example: Additional code quality checking
 
