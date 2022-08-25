@@ -587,6 +587,16 @@ builds.**  For GitHub, note the limitations of
 [_Download from Github Package Registry without
 authentication_.](https://github.community/t/download-from-github-package-registry-without-authentication/14407)
 
+### Save your CI artifacts
+
+It is helpful to preserve your build artifacts from CI, for example, to 
+download built jars from different CI runs for comparing their behavior 
+between commits without needing to rebuild locally, and also to confirm that 
+your local build makes the same jars as CI does.
+
+The "Build with Gradle" and "Build with Maven" CI workflows each preserve a 
+"jars" downloadable ZIP file.
+
 ### Example: Additional code quality checking
 
 This project uses JetBrain's Qodana\[*] as [an example tooling in

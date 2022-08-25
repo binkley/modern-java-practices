@@ -49,3 +49,15 @@ jobs:
 
       - name: Execute run script asuming build with Maven
         run: ./batect -o quiet run-with-maven
+
+      - name: Save artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: jars
+          path: target/modern-java-practices*.jar
+
+      - name: Save site
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: target/site/

@@ -50,3 +50,9 @@ jobs:
 
       - name: Execute run script asuming build with Gradle
         run: ./batect -o quiet run-with-gradle
+
+      - name: Save artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: jars
+          path: build/libs/modern-java-practices*.jar
