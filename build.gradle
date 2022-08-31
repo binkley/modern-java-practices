@@ -14,6 +14,7 @@ plugins {
     id "pmd" // Static analysis based on source (does not check compiled code)
     id "com.github.spotbugs" // Static analysis based on compiled code (does not check source)
     // TODO: https://github.com/binkley/modern-java-practices/issues/204
+    //       Depends on an *old* version of Maven
     // id "com.github.andygoossens.gradle-modernizer-plugin"
     id "jacoco" // To run test coverage
     id "info.solidsoft.pitest" // To run mutation testing
@@ -35,6 +36,7 @@ dependencies {
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
     compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
     // TODO: https://github.com/binkley/modern-java-practices/issues/204
+    //       Depends on an *old* version of Maven
     // compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
@@ -152,6 +154,7 @@ tasks.withType(SpotBugsTask) {
 
 /*
 TODO: https://github.com/binkley/modern-java-practices/issues/204
+      Depends on an *old* version of Maven
 modernizer {
     failOnViolations = true
     includeTestClasses = true
