@@ -1305,12 +1305,15 @@ call, so check with your organization or external services**
 [DependencyCheck](https://owasp.org/www-project-dependency-check/) is the
 current _best tool_ for JVM projects to verify that your project does not rely
 on external code with known security vulnerabilities ([CVEs](https://cve.mitre.
-org/)). That said, DependencyCheck does impact local build times. It is smart
-about caching, but will once a day may take time to download data on any new
-CVEs, and occasionally the site is down for maintenance. You may consider moving
-this check to CI if you find local build times overly impacted. Moving these
-checks to CI is a tradeoff between "shifting security left", and speed for local
-builds. I lean towards _security first_, however, you know your circumstances
+org/)) from the NVD.
+That said, DependencyCheck does impact build times.
+It is smart about caching, but will once a day may take time to download 
+data on any new NVD CVEs, and occasionally the site is down for maintenance.
+You may consider leaving this check in CI-only if you find local build times 
+overly impacted.
+Leaving these checks to CI-only is a tradeoff between "shifting security left", 
+and speed for local builds.
+I lean towards _security first_; however, you know your circumstances
 best.
 
 **This project fails the build if finding any CVEs for the current version of
@@ -1327,9 +1330,11 @@ version of a dependency.
   `<project root>/build/reports/` (Gradle) or
   `<project root/target/` (Maven) path.
   The path shown in a Docker build is relative to the interior of the container
+* Sometimes you may want to refresh your local cache of the NVD files:
+  - Gradle: `./gradlew dependencyCheckPurge depenedencyCheckUpdate`
+  - Maven: `./mvnw dependency-check:purge dependency-check:update-only`
 
-
-#### Notes on `DependencyCheck`
+#### Notes
 
 DependencyCheck may be your slowest quality check in local builds (competing
 with mutation testing for that ignominious title). Sometimes it may fail when
