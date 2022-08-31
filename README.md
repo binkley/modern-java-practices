@@ -569,11 +569,12 @@ Your CI is your "source of truth" for successful builds. Your goal:
 _Everyone trusts a "green" CI build is solid_.
 
 When using GitHub, a simple starting point is
-[`ci.yml`](./.github/workflows/ci-maven.yml).
+[`ci-gradle.yml`](./.github/workflows/ci-gradle.yml) or
+[`ci-maven.yml`](./.github/workflows/ci-maven.yml).
 (GitLab is similar, but as this project is hosted in GitHub, there is not a 
 simple means to demonstrate CI at GitLab).
-This project includes [a workflow for Gradle](./.github/workflows/ci-gradle.yml)
-and [one for Maven](./.github/workflows/ci-maven.yml) as examples.
+This project includes a workflow for Gradle and a workflow for Maven as
+examples.
 
 If you use GitLab, read about the equivalent in
 [_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
@@ -596,6 +597,14 @@ your local build makes the same jars as CI does.
 
 The "Build with Gradle" and "Build with Maven" CI workflows each provide a 
 download named "jars", and the Maven build a "site" download.
+
+There are services to provide links to the most recent build artifacts.
+One example is [nightly.link](https://nightly.link/) (this is not an 
+endorsement).
+You can use these links in your `README.md` or share as makes sense.
+An example is
+[downloading the Maven-built jar](https://nightly.link/binkley/modern-java-practices/workflows/ci-maven/master/jars.zip)
+from this project.
 
 ### Example: Additional code quality checking
 
