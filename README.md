@@ -606,18 +606,6 @@ An example is
 [downloading the Maven-built jar](https://nightly.link/binkley/modern-java-practices/workflows/ci-maven/master/jars.zip)
 from this project.
 
-### Example: Additional code quality checking
-
-This project uses JetBrain's Qodana\[*] as [an example tooling in
-CI](https://www.jetbrains.com/help/qodana/qodana-github-action.html) for raising 
-code quality.
-It is an example: there are many options available to you for additional CI 
-checks.
-See [`code-quality.yml`](./.github/workflows/code-quality.yml).
-
-\[*] Qodana runs the same code inspections as the IntelliJ IDE Community 
-edition.
-
 ### Tips
 
 * To disable ASCII colorizing printing as control sequences in CI, or
