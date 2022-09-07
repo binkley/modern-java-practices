@@ -1117,6 +1117,28 @@ well-equipped.
 
 **Pick a team style, stick to it, and _enforce_ it with tooling.**
 
+See the section [_Checkstyle_](#checkstyle) for more details on enforcement.
+
+### Tips
+
+* If you use Google Java coding conventions, consider
+  [Spotless](https://github.com/diffplug/spotless) which can autoformat your
+  code
+* Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
+  editor choice is up to each developer. EditorConfig is a cross-IDE standard
+  means of specifying code formatting, respected by
+  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig),
+  and other major editors
+* To open the report for Checkstyle, build locally and use the
+  `<project root>/build/reports/checkstyle/` path.
+  The path shown in a Docker build is relative to the interior of the container
+
+---
+
+## Use static code analysis
+
+### Checkstyle
+
 With Java, one needs to rely on external tooling for linting. The most popular
 choice is:
 
@@ -1155,24 +1177,6 @@ The Checkstyle configuration used is stock
 `@SuppressWarnings(checkstyle:...)`. Note that this format is _overly
 aggressive_ for Javadocs, and needs tweaking for most projects. See comments
 in `build.gradle` about SUN _vs_ Google styles for Java.
-
-### Tips
-
-* If you use Google Java coding conventions, consider
-  [Spotless](https://github.com/diffplug/spotless) which can autoformat your
-  code
-* Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
-  editor choice is up to each developer. EditorConfig is a cross-IDE standard
-  means of specifying code formatting, respected by
-  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig),
-  and other major editors
-* To open the report for Checkstyle, build locally and use the
-  `<project root>/build/reports/checkstyle/` path.
-  The path shown in a Docker build is relative to the interior of the container
-
----
-
-## Use static code analysis
 
 ### Spotbugs
 
