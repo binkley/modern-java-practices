@@ -17,6 +17,9 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@master
 
+      - name: Validate Batect wrapper scripts
+        uses: batect/batect-wrapper-validation-action@v0.4.0
+
       - name: Restore Batect caches
         uses: actions/cache@master
         env:
