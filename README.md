@@ -136,8 +136,8 @@ align="right" width="20%" height="auto"/>
 
 ## Introduction
 
-Hi!  I want you to have _awesome builds_ 🟢. If you're on *Java* project, or a
-project on any
+Hi! I want you to have _awesome builds_ 🟢. If you're on a *Java* project,
+or a project on any
 *[JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages)*
 (Clojure, Groovy, JRuby, Java, Jython, Kotlin, Scala, _et al_), this article is
 for you. This article assumes you are using Gradle or Maven for your build
