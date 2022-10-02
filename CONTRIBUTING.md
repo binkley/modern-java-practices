@@ -18,7 +18,8 @@ Several scripts in the project root are to aid in contributing.
 - [`coverage`](./coverage)
   Checks if the local code passes at given levels of code coverage.
   The script is focused on Maven, but with edits would do the same for Gradle.
-  This supports the "ratchet" pattern.
+  This supports the ["ratchet"
+  pattern](https://robertgreiner.com/continuous-code-improvement-using-ratcheting/).
 - [`run-with-gradle.sh`](./run-with-gradle.sh)
   If you are a Gradle project, you will likely rename this to just `run` or 
   similar
