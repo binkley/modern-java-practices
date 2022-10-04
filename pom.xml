@@ -82,6 +82,7 @@
         <maven-project-info-reports-plugin.version>3.4.1</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>4.0.0-M3</maven-site-plugin.version>
         <maven-testing-plugins.version>3.0.0-M7</maven-testing-plugins.version>
+        <maven-wrapper-plugin.version>3.1.1</maven-wrapper-plugin.version>
         <maven.version>3.8.6</maven.version>
         <mockito.version>4.8.0</mockito.version>
         <modernizer.version>2.4.0</modernizer.version>
@@ -159,9 +160,15 @@
 
     <build>
         <plugins>
-            <!-- TODO: Add wrapper plugin when available: See
-                  https://github.com/takari/maven-wrapper and
-                  https://maven.apache.org/plugins/maven-wrapper-plugin/ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-wrapper-plugin</artifactId>
+                <version>${maven-wrapper-plugin.version}</version>
+                <configuration>
+                    <distributionType>source</distributionType>
+                    <mavenVersion>${maven.version}</mavenVersion>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
