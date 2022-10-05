@@ -296,7 +296,7 @@ existing project:
 * Provide a *good* `README.md`. This saves you a ton of time in the long run.
   This is your _most important_ step. A good resource is Yegor's
   [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-    * [Intelligent laziness is a virtue](http://threevirtues.com/). Time
+    * [Intelligent laziness is a virtue](https://thethreevirtues.com/). Time
       invested in good documentation pays off
     * A good [`README.md`](./README.md) answers visitors questions, so you don't
       spend time answering trivial questions, and explains/justifies your
