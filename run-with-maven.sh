@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2214,SC2215
 
+if ((BASH_VERSINFO[0] < 4))
+then
+    cat <<EOM >&2
+$0: This script requires Bash 4.0 or higher.
+If you are on Mac, the native /bin/bash is from 2006 or older; consider using a
+more recent Bash from Homebrew.
+EOM
+    exit 3
+fi
+
 export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
 
 # Edit these to suit
