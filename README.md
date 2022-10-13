@@ -1072,18 +1072,24 @@ Compilers targeting the JVM generally provide warning flags for dodgy code, and
 a flag to turn warnings into errors: Use them. The compiler is your first line
 of defense against code issues.
 
-For example, with `javac`, add these compiler flags:
+The Maven build includes [_Error Prone_](https://errorprone.info/).
+The Gradle is in progress to support Error Prone.
+_Error Prone_ is an excellent compiler plugin to fail problems earlier: fail 
+at compile-time rather than a runtime. This speeds up your development workflow.
 
-* `-Werror` -- turns warnings into errors, and fails the build
-* `-Xlint:all,-processing` -- enables all warnings except for annotation
+For example, add these flags with `javac` (ignoring _Error Prone_; see
+[./.mvn/jvm.config](.mvn/jvm.config) for a full list of flags):
+
+* `-Werror` -- turn warnings into errors, and fails the build
+* `-Xlint:all,-processing` -- enable all warnings excluding annotation
   processing
 
 Be judicious in disabling compiler warnings: they usually warn you for good
-reason. For `javac`, disabled warnings might include `serial` or
+reasons. For `javac`, disabled warnings might include `serial` or
 `deprecation`.
 
-Most JVM compilers support `-Werror` (_eg_, `kotlinc`, `scalac`, _et al_);
-enabling/disabling specific warnings compiler-specific.
+JVM compilers support `-Werror` (_eg_, `javac`, `kotlinc`, `scalac`, _et al_);
+enabling/disabling specific warnings may be compiler-specific.
 
 ### Tips
 
