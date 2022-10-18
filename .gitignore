@@ -1,6 +1,7 @@
-# Assumes use of IntelliJ -- adjust to editor of your choice
+# Assumes use of IntelliJ or Fleet -- adjust to the editors you use
 *.iml
 /.idea/
+/.fleet/
 
 # Gradle -- pick this or Maven
 /.gradle/
