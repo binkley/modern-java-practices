@@ -89,7 +89,7 @@
         <modernizer.version>2.4.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.1.0</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.9.8</pitest-maven.version>
+        <pitest-maven.version>1.9.9</pitest-maven.version>
         <pmd.version>6.50.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
