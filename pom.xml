@@ -85,11 +85,11 @@
         <maven-testing-plugins.version>3.0.0-M7</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.1.1</maven-wrapper-plugin.version>
         <maven.version>3.8.6</maven.version>
-        <mockito.version>4.8.1</mockito.version>
+        <mockito.version>4.9.0</mockito.version>
         <modernizer.version>2.4.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.1.0</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.9.9</pitest-maven.version>
+        <pitest-maven.version>1.9.11</pitest-maven.version>
         <pmd.version>6.51.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
