@@ -1392,6 +1392,10 @@ for dependencies.
   Gradle or Maven fails build when you use an older, insecure version
   of `log4j-core` indirectly. Note that Gradle 7.3.3+ itself fails your build if
   it detect a dependency on a vulnerable version of `log4j-core`
+* The *BCEL security vulnerability*
+  ([CVE-2022-42920](https://www.opencve.io/cve/CVE-2022-42920)) is critical,
+  and should be a top priority to address. In this project, BCEL is used by
+  Spotbugs.
 
 ### TODOs
 
