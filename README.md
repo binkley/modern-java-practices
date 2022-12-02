@@ -1072,11 +1072,6 @@ Compilers targeting the JVM generally provide warning flags for dodgy code, and
 a flag to turn warnings into errors: Use them. The compiler is your first line
 of defense against code issues.
 
-The Maven build includes [_Error Prone_](https://errorprone.info/).
-The Gradle is in progress to support Error Prone.
-_Error Prone_ is an excellent compiler plugin to fail problems earlier: fail 
-at compile-time rather than a runtime. This speeds up your development workflow.
-
 For example, add these flags with `javac` (ignoring _Error Prone_; see
 [./.mvn/jvm.config](.mvn/jvm.config) for a full list of flags):
 
@@ -1093,11 +1088,14 @@ enabling/disabling specific warnings may be compiler-specific.
 
 ### Tips
 
-Lombok annotation processing fails `-Xlint:all`. Use `-Xlint:all,-processing`
-to bypass warnings about annotation processing. In addition, using Lombok's
-configuration to add suppression annotations on generated code (so other tools
-will ignore generated code) needs the older Spotbugs annotations provided as a
-dependency.
+* Consider using [_Error Prone_](https://errorprone.info/).
+  _Error Prone_ is an excellent compiler plugin to fail problems earlier: fail 
+  at compile-time rather than a runtime, however it can be overly strict
+* Lombok annotation processing fails `-Xlint:all`.
+  Use `-Xlint:all,-processing` to bypass warnings about annotation processing.
+  In addition, using Lombok's configuration to add suppression annotations on
+  generated code (so other tools will ignore generated code) needs the older
+  Spotbugs annotations provided as a dependency
 
 ---
 

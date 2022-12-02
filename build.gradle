@@ -9,6 +9,7 @@ plugins {
     id "com.dorongold.task-tree"
     id "com.github.ben-manes.versions" // Try the dependencyUpdates task
     id "java" // Gradle support for Java
+    // id "org.kordamp.gradle.errorprone" -- https://github.com/google/error-prone
     id "org.unbroken-dome.test-sets" // Alternative roots such an integration tests
     id "checkstyle" // To check that code follow style standards
     id "pmd" // Static analysis based on source (does not check compiled code)
