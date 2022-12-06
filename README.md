@@ -54,6 +54,9 @@ This is part of what _great habits_ look like.
 See [_Reusing this project_](#reusing-this-project) for tips on pulling in
 updates.
 
+(Credit to Yegor Bugayenko for [_Elegant
+READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
+
 ### Try it
 
 After cloning this project or a fork to your machine:
