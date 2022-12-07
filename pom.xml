@@ -376,7 +376,7 @@
                         <groupId>org.apache.bcel</groupId>
                         <artifactId>bcel</artifactId>
                         <!-- TODO: Remove this dep when spotbugs is fixed -->
-                        <version>6.6.1</version>
+                        <version>6.7.0</version>
                     </dependency>
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
