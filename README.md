@@ -288,6 +288,7 @@ I'd love a conversation with you.
 
 ---
 
+<!-- TODO: Should this section be moved or removed? It is awkward here -->
 ## You and your project
 
 There are simple ways to make your project great. Some goals to strive for:
@@ -453,7 +454,7 @@ Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 ---
 
-<!--- TODO better formating for images vs text -->
+<!--- TODO: better formating for images vs text -->
 <a href="https://maven.apache.org/" title="Maven">
 <img src="./images/maven.png" alt="Maven" align="right" width="15%" 
 height="auto"/></a>
@@ -807,8 +808,8 @@ and keeps the build quiet in
 In CI, this is different, and there you want as much output as possible to
 diagnose the unexpected.
 
-**TODO** This section is under construction. I'm still spiking best practices
-for quiet local builds and noisy CI builds.
+<!-- TODO: This section is under construction.
+Looking for input on quiet local builds and noisy CI builds. -->
 
 ### Keep your build current
 
