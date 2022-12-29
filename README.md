@@ -12,10 +12,10 @@
 **Modern Java/JVM Build Practices** is an article-as-repo on building modern
 Java/JVM projects using
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
-[Maven](https://maven.apache.org/what-is-maven.html). The focus is _best build
-practices_ and _project hygiene_. This document is _agnostic_ between Gradle
-and Maven: discussion in each section covers both tools (alphabetical order, 
-Gradle before Maven).
+[Maven](https://maven.apache.org/what-is-maven.html) and a _starter project_.
+The focus is _best build practices_ and _project hygiene_.
+This document is _agnostic_ between Gradle and Maven: discussion in each section
+covers both tools (alphabetical order, Gradle before Maven).
 
 As a _guide_, this project focuses on:
 
@@ -31,7 +31,7 @@ As a _guide_, this project focuses on:
   [Issues](https://github.com/binkley/modern-java-practices/issues) or
   [PRs](https://github.com/binkley/modern-java-practices/pulls))
 
-Two recurring themes:
+### Two recurring themes
 
 * _Shift problems left_ &mdash; Find issues earlier in your development cycle
   through the build before they happen in production
@@ -39,7 +39,22 @@ Two recurring themes:
   hand: get your build to complain (fail) locally before sharing with your
   team, or fail in CI before production 
 
-Summing up:
+### What is a _Starter_?
+
+A project starter has several goals:
+- Help a new project get up and running with minimal fuss
+
+This starter project is focused on _build_:
+- Easy on-ramp for new folks to try out your project for themselves
+- Support new contributors to your project that they become productive quickly
+- Support current contributors in the build, get out of their way, and make
+  everyday things easy
+
+This starter project has minimal dependencies.
+The focus is on Gradle and Maven plugins and configuration so that you and
+contributors can focus on the code, not on setting up the build.
+
+### Summing up
 
 - _I'm not a great programmer; I'm just a good programmer with great habits._
   &mdash;
@@ -57,7 +72,14 @@ updates.
 (Credit to Yegor Bugayenko for [_Elegant
 READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
 
-### Try it
+---
+
+<a title="Try it">
+<img src="./images/try-it.png" alt="Try it"
+align="right" width="20%" height="auto"/>
+</a>
+
+## Try it
 
 After cloning this project or a fork to your machine:
 
@@ -79,26 +101,6 @@ $ ./run-with-gradle.sh
 $ ./run-with-maven.sh
 ```
 
-### Contributing
-
-See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
-Please [file issues](https://github.com/binkley/modern-java-practices/issues),
-or contribute [pull
-requests](https://github.com/binkley/modern-java-practices/pulls)!
-I'd love a conversation with you.
-
-### Tips
-
-* Consider [_Clone git repository without
-  history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
-  to start at the current tip of this project. For example, some images in
-  `README.md` started overlarge in earlier versions, something you may not want
-  in a clone.
-* _Caution_: Not all the images used in [`README.md`](./README.md) may be in the
-  Public Domain (this is challenging to research). Do due diligence before
-  sharing your clone, and other licenses may apply for these images in a 
-  global context
-
 ---
 
 <a title="Table of Contents">
@@ -108,8 +110,10 @@ align="right" width="20%" height="auto"/>
 
 ## TOC
 
+* [Try it](#try-it)
 * [Introduction](#introduction)
 * [Reusing this project](#reusing-this-project)
+* [Contributing](#contributing)
 * [You and your project](#you-and-your-project)
 * [Getting your project started](#getting-your-project-started)
 * [The JDK](#the-jdk)
@@ -224,7 +228,7 @@ Sensible approaches:
   over improvements (there is [tooling to
   help](https://github.com/binkley/modern-java-practices#keep-plugins-and-dependencies-up-to-date))
 - Read through this repository's code and changes, and update your own 
-  repository by hand, useful for existing respositories
+  repository by hand, useful for existing repositories
 
 If you cloned this project as a starter, you may want to stay updated on
 improvements:
@@ -238,6 +242,18 @@ git merge master/upstream
 Once you are happy with your project, you should think about removing the
 upstream remote, and reviewing changes in this repository by hand.
 Your decision might depend on what merge conflicts you encounter.
+
+### Tips
+
+* Consider [_Clone git repository without
+  history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
+  to start at the current tip of this project. For example, some images in
+  `README.md` started overlarge in earlier versions, something you may not want
+  in a clone
+* _Caution_: Not all the images used in [`README.md`](./README.md) may be in the
+  Public Domain (this is challenging to research). Use due diligence before
+  sharing your clone, and other licenses may apply for these images in a
+  global context
 
 ### Irrelevant files
 
@@ -261,6 +277,14 @@ noted:
 - [`run-with-maven.sh`](./run-with-maven.sh)
   If you are a Maven project, you will likely rename this to just `run` or
   similar
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+Please [file issues](https://github.com/binkley/modern-java-practices/issues),
+or contribute [pull
+requests](https://github.com/binkley/modern-java-practices/pulls)!
+I'd love a conversation with you.
 
 ---
 
