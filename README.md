@@ -81,7 +81,7 @@ align="right" width="20%" height="auto"/>
 
 ## Try it
 
-After cloning this project or a fork to your machine:
+After cloning this project to your machine, or forking and cloning:
 
 ```shell
 $ ./gradlew build  # Local build experience
