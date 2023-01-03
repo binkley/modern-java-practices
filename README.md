@@ -346,8 +346,7 @@ existing project:
     * For Gradle, use
       [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
       (part of Gradle)
-    * For Maven, use [`./mvnw`](https://github.com/takari/maven-wrapper)
-      (in progress with Apache to bundle as part of Maven)
+    * For Maven, use [`./mvnw`](https://maven.apache.org/wrapper/) (a plugin)
 * Always run CI on push to a shared repository. It's a sad panda when someone is
   excited about their commit, and then the commit breaks the other developers
     * In CI, use caches for dependency downloads; this speeds up the feedback
@@ -520,8 +519,8 @@ ordering.
 
 ### Cleaning up
 
-Once you pick between Gradle or Maven, it is a good time to clean up.  If 
-you have cloned the project, these renames/deletions will help you:
+Once you pick between Gradle or Maven, it is a good time to clean up.
+If you have cloned the project, some renames/deletions to consider:
 
 * [run-with-gradle.sh](./run-with-gradle.sh) or
   [runs-with-maven.sh](./run-with-maven.sh) → just `run.sh` or `build.sh` or 
@@ -532,6 +531,29 @@ you have cloned the project, these renames/deletions will help you:
   not relevant. Did I mention `README.md`?
 
 You are ready to make great software.
+
+### Keeping Gradle or Maven up to date
+
+#### Gradle
+
+To update Gradle:
+
+```shell
+$ $EDITOR gradle.properties  # Update gradleWrapperVersion property
+$ ./gradlew wrapper  # Update scripts and supporting files
+$ ./gradlew wrapper  # Confirm, and download files if needed
+```
+
+#### Maven
+
+To update Maven:
+
+```shell
+$ $EDITOR pom.xml  # Update maven.version property
+```
+Note: There is no need to run `./mvnw wrapper:wrapper` when updating Maven as
+the wrapper is a plugin; however, when updating the plugin itself, you would
+rerun the wrapper goal to update any wrapper scripts.
 
 ### Tips
 
@@ -916,8 +938,6 @@ $ $EDITOR gradle.properties  # Change gradleWrapperVersion property
 $ ./gradlew wrapper  # Update
 $ ./gradlew wrapper  # Confirm, and download new jar if needed
 ```
-
-With Gradle, there is no "right" solution for hygienic versioning.
 
 #### Note on `toolVersion` property
 
