@@ -55,7 +55,7 @@
 
     <properties>
         <!-- @formatter:off -->
-        <assertj.version>3.24.0</assertj.version>
+        <assertj.version>3.24.1</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
         <checkstyle.version>10.6.0</checkstyle.version>
         <dependency-check-maven.version>7.4.4</dependency-check-maven.version>
@@ -65,7 +65,7 @@
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>17</jdk.version>
-        <junit.version>5.9.1</junit.version>
+        <junit.version>5.9.2</junit.version>
         <lombok.version>1.18.24</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
