@@ -1377,6 +1377,11 @@ version of a dependency.
 * Sometimes you may want to refresh your local cache of the NVD files:
   - Gradle: `./gradlew dependencyCheckPurge depenedencyCheckUpdate`
   - Maven: `./mvnw dependency-check:purge dependency-check:update-only`
+* Note that this project has updated to DependencyCheck 8.
+  As is the project worked without changes after updating.
+  See [_v8.0.0_ release
+  notes](https://github.com/jeremylong/DependencyCheck/releases/tag/v8.0.0)
+  when updating from DependencyCheck 8
 
 #### Notes
 
@@ -1517,8 +1522,8 @@ Current limitations:
       if relevant for your project: it supports
       [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito).
       See `TheFooTest.shouldRedAlertAsStaticMock` for an example.
-      Note that this project has updated to Mockito 5. See
-      [_v5.0.0_ release
+      Note that this project has updated to Mockito 5.
+      See [_v5.0.0_ release
       notes](https://github.com/mockito/mockito/releases/tag/v5.0.0) when
       updating from Mockito 4
     * [PowerMock](https://powermock.github.io/) provides additional features;
