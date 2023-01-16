@@ -1515,8 +1515,12 @@ Current limitations:
       dependency for the sample projects. For "modern" versions of Mockito, you
       should use the `mockito-inline` dependency rather than `mockito-core`
       if relevant for your project: it supports
-      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito)
-      . See `TheFooTest.shouldRedAlertAsStaticMock` for an example
+      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito).
+      See `TheFooTest.shouldRedAlertAsStaticMock` for an example.
+      Note that this project has updated to Mockito 5. See
+      [_v5.0.0_ release
+      notes](https://github.com/mockito/mockito/releases/tag/v5.0.0) when
+      updating from Mockito 4
     * [PowerMock](https://powermock.github.io/) provides additional features;
       however, Mockito normally covers use cases
     * Other Modern JVM languages &mdash; these languages may prefer different
