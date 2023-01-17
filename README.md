@@ -131,6 +131,7 @@ align="right" width="20%" height="auto"/>
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
+* [Samples](#samples)
 * [Going further](#going-further)
 * [Problems](#problems)
 * [Credits](#credits)
@@ -1716,6 +1717,12 @@ Another dimension to consider for local testing: _User Journey_ tests.
 * [_Why test the user
   journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
 
+## Samples
+
+(_In progress_)
+
+* [Spring Boot](samples/spring-boot/)
+
 ## Problems
 
 <a href="https://xkcd.com/303/" title="Compiling">
@@ -1723,7 +1730,7 @@ Another dimension to consider for local testing: _User Journey_ tests.
 width="20%" height="auto"/>
 </a>
 
-## Why is my local build slow?
+### Why is my local build slow?
 
 Both Gradle and Maven have tools to track performance time of steps in your
 build:
@@ -1801,6 +1808,8 @@ happen for reasons of environment. Examples can include:
   in with the maintainers of the repository
 
 ## Credits
+
+Many thanks to:
 
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche) &mdash; 
   Proofreading
