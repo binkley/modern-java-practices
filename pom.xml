@@ -55,7 +55,7 @@
 
     <properties>
         <!-- @formatter:off -->
-        <assertj.version>3.24.1</assertj.version>
+        <assertj.version>3.24.2</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
         <checkstyle.version>10.6.0</checkstyle.version>
         <dependency-check-maven.version>8.0.0</dependency-check-maven.version>
