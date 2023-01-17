@@ -14,7 +14,7 @@ fi
 export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
 
 # Edit these to suit
-readonly package=hm.binkley.md
+readonly package=demo
 readonly artifactId=modern-java-practices
 readonly version=0-SNAPSHOT
 jvm_flags=()
