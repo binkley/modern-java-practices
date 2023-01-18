@@ -1022,6 +1022,9 @@ should be configured based on the chosen standard
 
 ## Generate code
 
+<img src="./images/coffee-grinder.png" alt="Coffee grinder"
+align="right" width="20%" height="auto"/>
+
 When sensible, prefer to generate rather than write code. Here's why:
 
 * [Intelligent laziness is a virtue](http://threevirtues.com/)
@@ -1719,9 +1722,13 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ## Samples
 
-(_In progress_)
+<img src="./images/images.png" alt="Samples" align="right" 
+width="20%" height="auto"/>
 
-* [Spring Boot](samples/spring-boot/)
+### Spring Boot
+
+**In progress**.
+See [Spring Boot](samples/spring-boot/).
 
 ## Problems
 
