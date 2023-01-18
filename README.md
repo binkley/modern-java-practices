@@ -1050,9 +1050,10 @@ or [data classes](https://kotlinlang.org/docs/reference/data-classes.html)).
 ### Lombok
 
 [Lombok](https://projectlombok.org/) is by far the most popular tool in Java for
-code generation. Lombok is an _annotation processor_, that is, a library (jar)
-which cooperates with the Java compiler.  ([_An introductory guide to
-annotations and annotation
+code generation.
+Lombok is an _annotation processor_, that is, a library (jar) which 
+cooperates with the Java compiler.
+([_An introductory guide to annotations and annotation
 processors_](https://blog.frankel.ch/introductory-guide-annotation-processor/#handling-annotations-at-compile-time-annotation-processors)
 is a good article if you'd like to read more on how annotation processing
 works.)
@@ -1062,28 +1063,29 @@ are plugins for popular IDEs that understand Lombok's code generation, and has
 tooling integration for JaCoCo's output code coverage (see
 [below](#leverage-lombok-to-tweak-code-coverage)).
 
-Do note though, Lombok is not a panacea, and has detractors. For example, to
-generate code as an annotation processor, it in places relies on internal JDK
-APIs, though the situation has improved as the JDK exposes those APIs in
-portable ways.
+Do note though, Lombok is not a panacea, and has detractors.
+For example, to generate code as an annotation processor, it in places relies on
+internal JDK APIs, though the situation has improved as the JDK exposes those
+APIs in portable ways.
 
 #### Leverage Lombok to tweak code coverage
 
-Be sparing in disabling code coverage!  JaCoCo knows about Lombok's
+Be sparing in disabling code coverage!
+JaCoCo knows about Lombok's
 [`@Generated`](https://projectlombok.org/api/lombok/Generated.html), and will
 ignore annotated code.
 
 A typical use is for the `main()` method in a framework such as Spring Boot
-or [Micronaut](https://micronaut.io/). For a _command-line program_, you will
-want to test your `main()`.
+or [Micronaut](https://micronaut.io/).
+For a _command-line program_, you will want to test your `main()`.
 
-Do note that Lombok reflects on internal features of the JDK. If you have
-issues, for _Maven_: use in your project the
+Do note that Lombok reflects on internal features of the JDK.
+If you have issues, for _Maven_: use in your project the
 `--add-opens java.base/java.lang=ALL-UNNAMED`
-example from `.mvn/jvm.config`, and look to address these. The solutions in the
-project are a "workaround" assuming Java 17. This is a two-edged sword:
-as the JVM improves access controls, you may find, especially dependencies, that
-there are times you want deep reflection.
+example from `.mvn/jvm.config`, and look to address these.
+The solutions in the project are a "workaround" assuming Java 17.
+This is a two-edged sword: as the JVM improves access controls, you may find,
+especially dependencies, that there are times you want deep reflection.
 
 #### Lombok configuration
 
@@ -1120,11 +1122,14 @@ Lines:
 
 ---
 
+<img src="./images/gear.png" alt="Gear"
+align="right" width="20%" height="auto"/>
+
 ## Leverage the compiler
 
 Compilers targeting the JVM generally provide warning flags for dodgy code, and
-a flag to turn warnings into errors: Use them. The compiler is your first line
-of defense against code issues.
+a flag to turn warnings into errors: Use them.
+The compiler is your first line of defense against code issues.
 
 For example, add these flags with `javac` (ignoring _Error Prone_; see
 [./.mvn/jvm.config](.mvn/jvm.config) for a full list of flags):
@@ -1134,8 +1139,8 @@ For example, add these flags with `javac` (ignoring _Error Prone_; see
   processing
 
 Be judicious in disabling compiler warnings: they usually warn you for good
-reasons. For `javac`, disabled warnings might include `serial` or
-`deprecation`.
+reasons.
+For `javac`, disabled warnings might include `serial` or `deprecation`.
 
 JVM compilers support `-Werror` (_eg_, `javac`, `kotlinc`, `scalac`, _et al_);
 enabling/disabling specific warnings may be compiler-specific.
@@ -1169,9 +1174,10 @@ and formatting is a boon for avoiding
 * Merging code, avoiding trivial or irrelevant conflicts
 
 Code style and formatting are _entirely_ a matter of team discussion and
-agreement. In Java, there is no recommended style, and `javac` is good at
-parsing almost anything thrown at it. However, humans reading code are not as
-well-equipped.
+agreement.
+In Java, there is no recommended style, and `javac` is good at parsing almost
+anything thrown at it.
+However, humans reading code are not as well-equipped.
 
 **Pick a team style, stick to it, and _enforce_ it with tooling.**
 
