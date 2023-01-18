@@ -1722,7 +1722,7 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ---
 
-<img src="./images/sample.png" alt="Sample" align="right" 
+<img src="./images/sample.svg" alt="Sample" align="right" 
 width="20%" height="auto"/>
 
 ## Samples
