@@ -73,7 +73,7 @@ dependencies {
     constraints {
         spotbugs("org.apache.bcel:bcel") {
             version {
-                strictly("[6.6.0, 7[")
+                strictly("[6.7.0, 7[")
             }
             because("CVE-2022-42920: BCEL out-of-bounds but can create arbitrary bytecode")
         }
