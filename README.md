@@ -1,6 +1,6 @@
 <a href="./LICENSE.md">
 <img src="./images/public-domain.svg" alt="Public Domain"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -78,7 +78,7 @@ READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
 
 <a title="Try it">
 <img src="./images/try-it.png" alt="Try it"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Try it
@@ -107,7 +107,7 @@ $ ./run-with-maven.sh
 
 <a title="Table of Contents">
 <img src="./images/table-of-contents.png" alt="Table of Contents"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## TOC
@@ -141,7 +141,7 @@ align="right" width="20vw" height="auto"/>
 
 <a href="https://modernagile.org/" title="Modern Agile">
 <img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Introduction
@@ -208,7 +208,7 @@ Java/JVM builds, and shares lessons learned with you.
 
 <a href="https://github.com/binkley/modern-java-practices/fork" title="Reuse">
 <img src="./images/reuse.png" alt="Reuse"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Reusing this project
@@ -376,7 +376,7 @@ existing project:
 
 <a href="https://adoptium.net/" title="Adoptium">
 <img src="./images/adoptium.png" alt="Adoptium"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## The JDK
@@ -613,7 +613,7 @@ rerun the wrapper goal to update any wrapper scripts.
 <a href="http://www.ambysoft.com/essays/whyAgileWorksFeedback.html"
 title="Why Agile Software Development Techniques Work: Improved Feedback">
 <img src="./images/bug-costs.jpg" alt="Length of Feedback Cycle"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Setup your CI
@@ -685,7 +685,7 @@ from this project.
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Keep local consistent with CI
@@ -777,7 +777,7 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 ---
 
 <img src="./images/maintain-build.jpg" alt="Maintain build"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 
 ## Maintain your build
 
@@ -1022,7 +1022,7 @@ should be configured based on the chosen standard
 ---
 
 <img src="./images/coffee-grinder.png" alt="Coffee grinder"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 
 ## Generate code
 
@@ -1123,7 +1123,7 @@ Lines:
 ---
 
 <img src="./images/gear.png" alt="Gear"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 
 ## Leverage the compiler
 
@@ -1671,7 +1671,7 @@ them part of the local build.
 <a href="https://martinfowler.com/bliki/TestPyramid.html"
 title="TestPyramid">
 <img src="./images/test-pyramid.png" alt="The test pyramid"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 What is the "Test Pyramid"? This is an important conceptual framework for
@@ -1730,7 +1730,7 @@ Another dimension to consider for local testing: _User Journey_ tests.
 ---
 
 <img src="./images/sample.svg" alt="Sample"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 
 ## Samples
 
@@ -1758,7 +1758,7 @@ are frequently updated (espcially for dependency versions).
 
 <a href="https://xkcd.com/303/" title="Compiling">
 <img src="./images/compiling.png" alt="Compiling"
-align="right" width="20vw" height="auto"/>
+align="right" width="20%" height="auto"/>
 </a>
 
 ### Why is my local build slow?
