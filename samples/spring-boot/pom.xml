@@ -2,22 +2,67 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>demo</groupId>
     <artifactId>modern-java-practices-spring-boot-sample</artifactId>
     <version>0-SNAPSHOT</version>
-    <name>modern-java-practices-spring-boot-sample</name>
+
+    <name>Modern Java/JVM build practices Spring Boot sample</name>
     <description>
-         Advice on Modern Java/JVM Gradle and Maven builds for Spring Boot
+        Advice on Modern Java/JVM Gradle and Maven builds for Spring Boot
     </description>
+    <url>https://github.com/binkley/modern-java-practices</url>
+    <licenses>
+        <license>
+            <name>Public Domain</name>
+            <url>https://unlicense.org/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/binkley/modern-java-practices/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>GitHub</system>
+        <url>https://github.com/binkley/modern-java-practices/actions</url>
+    </ciManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/binkley/modern-java-practices
+        </connection>
+        <url>https://github.com/binkley/modern-java-practices</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>binkley</id>
+            <name>Brian Oxley</name>
+            <email>binkley@alumni.rice.edu</email>
+            <roles>
+                <role>owner</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>America/Chicago</timezone>
+            <properties>
+                <picUrl>https://avatars.githubusercontent.com/u/186421?s=60&amp;v=4</picUrl>
+            </properties>
+        </developer>
+    </developers>
+
     <properties>
+        <!-- Note that most library dependencies are managed by Spring Boot -->
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
