@@ -1727,19 +1727,25 @@ width="20%" height="auto"/>
 
 ## Samples
 
+These samples are external projects, are at varying states of maturity, and
+are frequently updated (espcially for dependency versions).
+
+### Kotlin
+
+- [KUnits](https://github.com/binkley/kunits) (Maven) is a pleasure project to 
+  represent units of measurement in Kotlin
+- [Kotlin Rational](https://github.com/binkley/kotlin-rational) (Maven) 
+  explores a math library for rationals (fractions) akin to `BigDecimal`
+- [Magic Bus](https://github.com/binkley/kotlin-magic-bus) (Gradle) is a 
+  library for using messaging patterns within a single application (it talks 
+  to itself)
+
 ### Spring Boot
 
-**In progress**.
-See [Spring Boot](samples/spring-boot/).
-This sample was built using [Spring Initializr](https://start.spring.io/) and
-these dependencies:
-
-- Spring Boot DevTools (developer tools)
-- Lombok (developer tools)
-- Spring Configuration Processor (developer tools)
-- Spring Web (web)
-- Spring Boot Actuator (ops)
-- Spring REST Docs (testing)
+- [Spring Boot HATEOAS
+  Database](https://github.com/binkley/kotlin-spring-boot-hateoas-database)
+  (Maven) looks at Spring Boot features for Open API (Swagger), REST APIs, 
+  HATEOAS, and GraphQL 
 
 ## Problems
 
