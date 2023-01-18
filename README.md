@@ -1,5 +1,6 @@
 <a href="./LICENSE.md">
-<img src="./images/public-domain.png" alt="Public Domain" align="right"/>
+<img src="./images/public-domain.png" alt="Public Domain"
+align="right" width="20%" height="auto"/>
 </a>
 
 # Modern Java/JVM Build Practices
@@ -206,8 +207,8 @@ Java/JVM builds, and shares lessons learned with you.
 ---
 
 <a href="https://github.com/binkley/modern-java-practices/fork" title="Reuse">
-<img src="./images/reuse.png" alt="Reuse" align="right" width="20%" 
-height="auto"/>
+<img src="./images/reuse.png" alt="Reuse"
+align="right" width="20%" height="auto"/>
 </a>
 
 ## Reusing this project
@@ -374,8 +375,8 @@ existing project:
 ---
 
 <a href="https://adoptium.net/" title="Adoptium">
-<img src="./images/adoptium.png" alt="Adoptium" align="right" width="20%" 
-height="auto"/>
+<img src="./images/adoptium.png" alt="Adoptium"
+align="right" width="20%" height="auto"/>
 </a>
 
 ## The JDK
@@ -457,11 +458,11 @@ Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
 
 <!--- TODO: better formating for images vs text -->
 <a href="https://maven.apache.org/" title="Maven">
-<img src="./images/maven.png" alt="Maven" align="right" width="15%" 
-height="auto"/></a>
+<img src="./images/maven.png" alt="Maven"
+align="right" width="15%" height="auto"/></a>
 <a href="https://gradle.org/" title="Gradle">
-<img src="./images/gradle.png" alt="Gradle" align="right" width="15%" 
-height="auto"/></a> 
+<img src="./images/gradle.png" alt="Gradle"
+align="right" width="15%" height="auto"/></a> 
 
 ## Use Gradle or Maven
 
@@ -775,8 +776,8 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 
 ---
 
-<img src="./images/maintain-build.jpg" alt="Maintain build" align="right"
-width="20%" height="auto"/>
+<img src="./images/maintain-build.jpg" alt="Maintain build"
+align="right" width="20%" height="auto"/>
 
 ## Maintain your build
 
@@ -1722,8 +1723,8 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 ---
 
-<img src="./images/sample.svg" alt="Sample" align="right" 
-width="20%" height="auto"/>
+<img src="./images/sample.svg" alt="Sample"
+align="right" width="20%" height="auto"/>
 
 ## Samples
 
@@ -1750,8 +1751,8 @@ are frequently updated (espcially for dependency versions).
 ## Problems
 
 <a href="https://xkcd.com/303/" title="Compiling">
-<img src="./images/compiling.png" alt="Compiling" align="right" 
-width="20%" height="auto"/>
+<img src="./images/compiling.png" alt="Compiling"
+align="right" width="20%" height="auto"/>
 </a>
 
 ### Why is my local build slow?
