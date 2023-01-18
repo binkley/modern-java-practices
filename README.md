@@ -1731,6 +1731,15 @@ width="20%" height="auto"/>
 
 **In progress**.
 See [Spring Boot](samples/spring-boot/).
+This sample was built using [Spring Initializr](https://start.spring.io/) and
+these dependencies:
+
+- Spring Boot DevTools (developer tools)
+- Lombok (developer tools)
+- Spring Configuration Processor (developer tools)
+- Spring Web (web)
+- Spring Boot Actuator (ops)
+- Spring REST Docs (testing)
 
 ## Problems
 
