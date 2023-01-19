@@ -1752,7 +1752,7 @@ are frequently updated (espcially for dependency versions).
 - [Spring Boot HATEOAS
   Database](https://github.com/binkley/kotlin-spring-boot-hateoas-database)
   (Maven) looks at Spring Boot features for Open API (Swagger), REST APIs, 
-  HATEOAS, and GraphQL 
+  HATEOAS, GraphQL, Prometheus, _et al_
 
 ## Problems
 
