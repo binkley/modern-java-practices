@@ -270,7 +270,7 @@ noted:
 - [`compare-tooling-versions-sh`](./compare-tooling-versions.sh)
   If your project supports _both_ Gradle and Maven builds (unlikely), a 
   quick way to look at dependency and plugin versions between the two
-- [`coverage`](./coverage)
+- [`coverage`](./coverage.sh)
   Checks if the local code passes at given levels of code coverage.
   The script is focused on Maven, but with edits would do the same for Gradle.
   This supports the ["ratchet" pattern](#leverage-unit-testing-and-coverage)
@@ -712,11 +712,11 @@ See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
 for documentation on using Batect from within a dockerized CI environment.
 
 **NB** &mdash; to be as consistent as possible, the sample
-[`ci.yml` for GitHub](./.github/workflows/ci-maven.yml) uses Batect for the Gradle and
-Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls an image
-for [AdoptOpenJDK17](https://hub.docker.com/_/adoptopenjdk). So `ci.yml` does
-not [setup JDK 17](https://github.com/actions/setup-java) directly, but relies
-on Batect.
+[`ci.yml` for GitHub](./.github/workflows/ci-maven.yml) uses Batect for the
+Gradle and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls 
+an image for [AdoptOpenJDK17](https://hub.docker.com/_/adoptopenjdk).
+So `ci.yml` does not [setup JDK 17](https://github.com/actions/setup-java)
+directly, but relies on Batect.
 
 Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks. For
 this project, there are example tasks:
@@ -801,11 +801,11 @@ Each of these have many options and features, and are worth exploring.
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
 For example, leverage `jdeps` which
-[comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html)
-. Jdeps spots, for example, if you have a multi-version jar as a dependency that
+[comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html).
+Jdeps spots, for example, if you have a multi-version jar as a dependency that
 does not include _your_ JDK version (an example of this may be is JUnit), or if
 your code depends on _internal_ (non-public) classes of the JDK
-(important expecially when using the JDK module system).
+(important especially when using the JDK module system).
 
 #### Gradle
 
@@ -1507,7 +1507,7 @@ To see the coverage report (on passed or failed coverage), open:
 This project also provides the coverage report as part of Maven's project
 report.
 
-The [`coverage`](./coverage) script is helpful for checking your current
+The [`coverage`](./coverage.sh) script is helpful for checking your current
 coverage state: try `./coverage -f all`.
 Current limitations:
 - Maven builds only
