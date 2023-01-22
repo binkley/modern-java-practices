@@ -69,7 +69,7 @@ dependencies {
     }
     */
     // Give special attention to a BCEL CVE triggered by Spotbugs
-    // TODO: Remove this when Spotbugs is fixed
+    // TODO: Update spotbugs for CVE-2022-42920
     constraints {
         spotbugs("org.apache.bcel:bcel") {
             version {
