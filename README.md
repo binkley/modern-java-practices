@@ -849,6 +849,11 @@ enough eyeballs, all bugs are shallow").
 ### Keep plugins and dependencies up-to-date
 
 * [Gradle](https://github.com/ben-manes/gradle-versions-plugin)
+  Benjamin Manes is kind enough in his plugin project to list alternatives.
+  If you are moving towards [Gradle version
+  catalogs](https://docs.gradle.org/current/userguide/platforms.html), you might
+  consider
+  [refreshVersions](https://jmfayard.github.io/refreshVersions/)
 * [Maven](https://www.mojohaus.org/versions-maven-plugin/)
 * Team agreement on release updates only, or if non-release plugins and
   dependencies make sense for your situation
