@@ -82,7 +82,7 @@ function rebuild-if-needed() {
 
 alt_class=''
 debug=false
-[[ -z "${SCRIPT_FLAGS+x}" ]] || while getopts :C:J:dh-: opt; do
+while getopts :C:J:j:dh-: opt; do
     [[ $opt == - ]] && opt=${OPTARG%%=*} OPTARG=${OPTARG#*=}
     case $opt in
     C | alt-class) alt_class=$OPTARG ;;

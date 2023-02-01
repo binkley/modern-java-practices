@@ -35,6 +35,19 @@ tasks:
     run:
       container: build-env
       command: ./run-with-gradle.sh
+  debug-with-gradle:
+    description: Runs the demo program in the foreground assuming a Gradle build
+    # -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n"
+    run:
+      container: build-env
+      # For a server program, set suspend=n; for command line, set suspend=y
+      # The "server=y" means the program provides the 5005 port for the IDE
+      command: ./run-with-gradle.sh --jvm-option="-Xdebug" --jvm-option="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"
+      ports:
+        - local: 8080
+          container: 8080
+        - local: 5005
+          container: 5005
   build-with-maven:
     description: Build and test with Maven
     run:
@@ -50,11 +63,9 @@ tasks:
 # -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n"
     run:
       container: build-env
-      command: ./run-with-maven.sh
-      environment:
-        # For a server program, set suspend=n; for command line, set suspend=y
-        # The "server=y" means the program provides the 5005 port for the IDE
-        JAVA_TOOL_OPTIONS: "-Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"
+      # For a server program, set suspend=n; for command line, set suspend=y
+      # The "server=y" means the program provides the 5005 port for the IDE
+      command: ./run-with-maven.sh --jvm-option="-Xdebug" --jvm-option="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"
       ports:
         - local: 8080
           container: 8080
