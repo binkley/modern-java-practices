@@ -132,6 +132,7 @@ align="right" width="20%" height="auto"/>
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
+* [Debugging](#debugging)
 * [Samples](#samples)
 * [Going further](#going-further)
 * [Problems](#problems)
@@ -1731,6 +1732,25 @@ Another dimension to consider for local testing: _User Journey_ tests.
 
 * [_Why test the user
   journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
+
+---
+
+<img src="./images/debugging.png" alt="Debugging in the container"
+align="right" width="20%" height="auto"/>
+
+## Debugging
+
+For direct debugging without a container follow your IDE's instructions.
+For debugging within the local Batect container, examples are in the Batect 
+tasks `debug-with-gradle` and `debug-with-maven`.
+Update `run-with-gradle.sh` or `run-with-maven.sh`, or write your own 
+similar script to run your program with the right JVM flags for _remote 
+debugging_ (the container is a remote process on "localhost" from the 
+perspective of your IDE).
+
+These example tasks assume a command-line program that exits when completed.
+See [the Spring Boot](#spring-boot) sample for the same approach with 
+long-running services.
 
 ---
 
