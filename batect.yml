@@ -45,6 +45,21 @@ tasks:
     run:
       container: build-env
       command: ./run-with-maven.sh
+  debug-with-maven:
+    description: Runs the demo program in the foreground assuming a Maven build
+# -p 5005:5005 -e JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n"
+    run:
+      container: build-env
+      command: ./run-with-maven.sh
+      environment:
+        # For a server program, set suspend=n; for command line, set suspend=y
+        # The "server=y" means the program provides the 5005 port for the IDE
+        JAVA_TOOL_OPTIONS: "-Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"
+      ports:
+        - local: 8080
+          container: 8080
+        - local: 5005
+          container: 5005
   shell:
     description: Open a shell in the container
     run:
