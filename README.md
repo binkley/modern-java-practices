@@ -1748,7 +1748,8 @@ similar script to run your program with the right JVM flags for _remote
 debugging_ (the container is a remote process on "localhost" from the 
 perspective of your IDE).
 
-These example tasks assume a command-line program that exits when completed.
+These Batect example tasks assume a command-line program that exits when
+completed.
 See [the Spring Boot](#spring-boot) sample for the same approach with 
 long-running services.
 
