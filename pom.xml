@@ -59,7 +59,7 @@
         <!-- TODO: Update spotbugs for CVE-2022-42920 -->
         <bcel.version>6.7.0</bcel.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
-        <checkstyle.version>10.6.0</checkstyle.version>
+        <checkstyle.version>10.7.0</checkstyle.version>
         <dependency-check-maven.version>8.0.2</dependency-check-maven.version>
         <error-prone.version>2.15.0</error-prone.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
