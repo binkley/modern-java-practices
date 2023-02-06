@@ -68,7 +68,7 @@
         <java.charset>UTF-8</java.charset>
         <jdk.version>17</jdk.version>
         <junit.version>5.9.2</junit.version>
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.26</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
