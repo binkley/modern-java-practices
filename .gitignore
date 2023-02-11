@@ -8,4 +8,5 @@
 /build/
 
 # Maven -- pick this or Gradle
+/.profiler/
 /target/
