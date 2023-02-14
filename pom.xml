@@ -84,7 +84,7 @@
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>4.0.0-M4</maven-site-plugin.version>
-        <maven-testing-plugins.version>3.0.0-M8</maven-testing-plugins.version>
+        <maven-testing-plugins.version>3.0.0-M9</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.1.1</maven-wrapper-plugin.version>
         <maven.version>3.9.0</maven.version>
         <mockito.version>5.1.1</mockito.version>
