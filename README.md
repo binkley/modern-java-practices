@@ -1274,7 +1274,17 @@ And use the [Find Security Bugs](https://find-sec-bugs.github.io/) extension
 for [Spotbugs](https://spotbugs.github.io/).
 
 * CPD for Gradle &mdash; see https://github.com/aaschmid/gradle-cpd-plugin. CPD
-  works for Maven
+  works for MavenA
+
+#### Security
+
+SpotBugs uses an outdated version of
+[BCEL](https://commons.apache.org/proper/commons-bcel/).
+There is a [CVE](https://nvd.nist.gov/vuln/detail/CVE-2022-42920)
+(vulnerability) aginst BCEL that is resolved, however SpotBugs uses a version
+of BCEL prior to the fix.
+This project uses a forced update of BCEL for SpotBugs, however that breaks
+the plugin (Gradle and Maven).
 
 #### Tips
 
