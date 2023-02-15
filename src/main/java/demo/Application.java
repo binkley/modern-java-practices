@@ -1,16 +1,12 @@
 package demo;
 
 import lombok.Generated;
-import lombok.experimental.UtilityClass;
 
 import static java.lang.System.out;
 
 /** Production class for integration test demonstration. */
-@Generated // Lie to JaCoCo
-// Checkstyle does not grok Lombok generated code
-@SuppressWarnings("checkstyle:hideutilityclassconstructor")
-@UtilityClass
-public class Application {
+@Generated // Lie to JaCoCo and PIT
+public final class Application {
     /**
      * Main entry point.
      *
@@ -19,4 +15,7 @@ public class Application {
     public static void main(final String... args) {
         out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
     }
+
+    // This is a "utility" class, ie, no instances, only static methods
+    private Application() { }
 }
