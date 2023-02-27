@@ -412,7 +412,7 @@ choice for the JDK.
 * In Gradle, use the `javaToolchains` task to investigate issues with
   mismatching or confusing build paths, project configuration, and Gradle
   sorting it out. This is an issue for local-only builds; local builds using a
-  container (such as via [_Batect_](#setup-local-ci) lower these concerns
+  container (such as via [_Batect_](#setup-local-ci)) lower these concerns
 
 ### Managing your Java environment
 
