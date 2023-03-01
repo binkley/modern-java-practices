@@ -1400,6 +1400,15 @@ impact the vulnerable dependency has, and if you are comfortable with a
 vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
 version of a dependency.
 
+### Automate scanning for secrets
+
+One key to shifting security left is avoiding secrets (passwords, private
+identifiers, etc.) in your source code, commit history, and so on.
+
+GitHub and other repository services offer secrets scanning out of the box:
+[Secret scanning alerts are now available (and free) for all public
+repositories](https://github.blog/2023-02-28-secret-scanning-alerts-are-now-available-and-free-for-all-public-repositories/).
+
 #### Tips
 
 * To open the report for DependencyCheck, build locally and use the
