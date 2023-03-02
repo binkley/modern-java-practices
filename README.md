@@ -719,18 +719,24 @@ for documentation on using Batect from within a dockerized CI environment.
 **NB** &mdash; to be as consistent as possible, the sample
 [`ci.yml` for GitHub](./.github/workflows/ci-maven.yml) uses Batect for the
 Gradle and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls 
-an image for [AdoptOpenJDK17](https://hub.docker.com/_/adoptopenjdk).
+an image for [AdoptOpenJDK](https://hub.docker.com/_/adoptopenjdk).
 So `ci.yml` does not [setup JDK 17](https://github.com/actions/setup-java)
 directly, but relies on Batect.
 
-Configure your local CI in [`batect.yml`](./batect.yml) with suitable tasks. For
-this project, there are example tasks:
+Configure your local CI in [`batect.yml`](./batect.yml) or in
+[`Earthfile`](./Earthfile) with suitable tasks.
+For this project, there are example tasks/targets:
 
 ```shell
 $ ./batect -T
 Available tasks:
 - build-with-gradle: Build and test with Gradle
 - build-with-maven: Build and test with Maven
+
+$ earthly ls
++base
++build-with-gradle
++build-with-maven
 ```
 
 Other common tasks might be:
