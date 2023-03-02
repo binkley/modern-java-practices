@@ -1,4 +1,4 @@
-name: Build with Maven
+name: Build with Gradle
 
 on:
   push:
@@ -11,15 +11,10 @@ on:
 
 jobs:
   build:
-    name: Builds and tests for Maven
+    name: Builds and tests for Gradle
     runs-on: ubuntu-latest
 
     steps:
-      - name: Use Earthly
-        uses: earthly/actions-setup@v1
-        with:
-          version: "latest"
-
       - name: Clone repository
         uses: actions/checkout@master
 
@@ -41,32 +36,27 @@ jobs:
       - name: Manage Batect telemetry
         run: ./batect --permanently-enable-telemetry
 
-      - name: Restore Maven caches
+      - name: Restore Gradle caches
         uses: actions/cache@master
         env:
-          cache-name: maven-cache
+          cache-name: gradle-cache
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          path: ~/.gradle
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{hashFiles('**/build.gradle') }}
+          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Maven under Batect
-        run: ./batect build-with-maven
+      - name: Build and test with Gradle under Batect
+        run: ./batect build-with-gradle
 
-      - name: Execute run script asuming build with Maven
-        run: ./batect -o quiet run-with-maven
+      - name: Execute run script asuming build with Gradle
+        run: ./batect -o quiet run-with-gradle
 
       - name: Save artifacts
         uses: actions/upload-artifact@v3
         with:
           name: jars
-          path: target/modern-java-practices*.jar
-
-      - name: Save site
-        uses: actions/upload-artifact@v3
-        with:
-          name: site
-          path: target/site/
+          path: build/libs/modern-java-practices*.jar

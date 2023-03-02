@@ -1,0 +1,39 @@
+name: Build with Maven
+
+on:
+  push:
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '*.md'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Builds and tests for Maven under Earthly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use Earthly
+        uses: earthly/actions-setup@v1
+        with:
+          version: "latest"
+
+      - name: Clone repository
+        uses: actions/checkout@master
+
+      - name: Restore Maven caches
+        uses: actions/cache@master
+        env:
+          cache-name: maven-cache
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Build and test with Maven under Batect
+        run: earthly +build-with-maven
