@@ -12,6 +12,11 @@ build-with-gradle:
     COPY src src
     RUN ./gradlew clean build
 
+run-with-gradle:
+    FROM +build-with-gradle
+    COPY run-with-gradle.sh .
+    RUN ./run-with-gradle.sh
+
 build-with-maven:
     COPY mvnw .
     COPY .mvn .mvn
@@ -19,3 +24,8 @@ build-with-maven:
     COPY config config
     COPY src src
     RUN ./mvnw clean verify
+
+run-with-maven:
+    FROM +build-with-maven
+    COPY run-with-maven.sh .
+    RUN ./run-with-maven.sh

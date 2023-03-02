@@ -35,5 +35,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Maven under Batect
+      - name: Build and test with Maven 
         run: earthly +build-with-maven
+
+      - name: Execute run script assuming build with Maven
+        run: earthly +run-with-maven

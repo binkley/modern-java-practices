@@ -38,3 +38,6 @@ jobs:
 
       - name: Build and test with Gradle under Earthly
         run: earthly +build-with-gradle
+
+      - name: Execute run script assuming build with Gradle
+        run: earthly +run-with-gradle

@@ -52,7 +52,7 @@ jobs:
       - name: Build and test with Gradle under Batect
         run: ./batect build-with-gradle
 
-      - name: Execute run script asuming build with Gradle
+      - name: Execute run script assuming build with Gradle
         run: ./batect -o quiet run-with-gradle
 
       - name: Save artifacts
