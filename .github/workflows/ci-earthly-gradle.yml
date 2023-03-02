@@ -1,4 +1,4 @@
-name: Build with Gradle
+name: Build with Gradle using Earthly
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    name: Builds and tests for Gradle under Earthly
+    name: Builds and tests
     runs-on: ubuntu-latest
 
     steps:
@@ -36,8 +36,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Gradle under Earthly
+      - name: Build and test
         run: earthly +build-with-gradle
 
-      - name: Execute run script assuming build with Gradle
+      - name: Execute run script
         run: earthly +run-with-gradle

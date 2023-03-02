@@ -1,4 +1,4 @@
-name: Build with Maven
+name: Build with Maven using Batect
 
 on:
   push:
@@ -48,10 +48,10 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Maven under Batect
+      - name: Build and test
         run: ./batect build-with-maven
 
-      - name: Execute run script assuming build with Maven
+      - name: Execute run script
         run: ./batect -o quiet run-with-maven
 
       - name: Save artifacts

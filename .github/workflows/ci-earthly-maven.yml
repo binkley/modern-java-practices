@@ -1,4 +1,4 @@
-name: Build with Maven
+name: Build with Maven using Earthly
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    name: Builds and tests for Maven under Earthly
+    name: Builds and tests
     runs-on: ubuntu-latest
 
     steps:
@@ -35,8 +35,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Build and test with Maven 
+      - name: Build and test
         run: earthly +build-with-maven
 
-      - name: Execute run script assuming build with Maven
+      - name: Execute run script
         run: earthly +run-with-maven
