@@ -695,19 +695,35 @@ align="right" width="20%" height="auto"/>
 
 ## Keep local consistent with CI
 
+What is "local CI"?
+That sounds like a contradition.
+Tooling helps you reproduce locally the same build that CI uses, so that you
+suffer less from version drift and other type problems, and minimize
+related environment issues.
+A common example is building on different JVM/JDK versions.
+Ideally, excepting truly environment-specific, your local build should fail
+when CI would also fail so that you can catch problems earlier in your
+development process before commits are shared.
+
 ### Setup local CI
 
-[Batect](https://batect.dev/) is a solid tool from Charles Korn. It runs your
-build in a "CI-like" local environment via Docker. This is one of your first
-lines of defence against "it runs on my box".
-([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
-space.)
+Reflecting the principle that local builds should be like CI builds, some
+tools that greatly help:
 
-[Earthly](https://earthly.dev/) shares philosophy with Batect and with a
-different approach to implementation. They are _both good choices_.
+* [Batect](https://batect.dev/) is a solid tool from Charles Korn.
+  It runs your build in a "CI-like" local environment via Docker.
+  This is one of your first lines of defence against "it runs on my box".
+  ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
+  space.)
 
-_This is an important step_!  It is closer to your CI builds locally. You should
-strive to keep local as faithful as possible to CI and Production.
+* [Earthly](https://earthly.dev/) shares philosophy with Batect and with a
+  different approach to implementation.
+
+They are _both good choices_, but not the only ones.
+
+_This is an important step_!
+It is closer to your CI builds locally.
+You should strive to keep local as faithful as possible to CI and Production.
 
 You may decide not to use CI-like tooling for local builds. However, consider
 that use of them raises your confidence that CI will succeed. Local CI-like
