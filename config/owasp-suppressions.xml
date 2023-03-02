@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions
+        xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes><![CDATA[
+        See https://github.com/google/guava/issues/4011
+        Unclear why this DependencyCheck failure has started now for a 2020 CVE,
+        and why it crops up for Gradle builds, but not for Maven builds
+        ]]></notes>
+        <cve>CVE-2020-8908</cve>
+    </suppress>
+</suppressions>
