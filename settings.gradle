@@ -3,7 +3,6 @@ pluginManagement {
         id "com.dorongold.task-tree" version "$taskTreePluginVersion"
         id "com.github.andygoossens.gradle-modernizer-plugin" version "$modernizerPluginVersion"
         id "com.github.ben-manes.versions" version "$versionsPluginVersion"
-        id "org.kordamp.gradle.errorprone" version "$errorPronePluginVersion"
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
         id "org.kordamp.gradle.jdeps" version "$jdepsPluginVersion"

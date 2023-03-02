@@ -1141,8 +1141,7 @@ Compilers targeting the JVM generally provide warning flags for dodgy code, and
 a flag to turn warnings into errors: Use them.
 The compiler is your first line of defense against code issues.
 
-For example, add these flags with `javac` (ignoring _Error Prone_; see
-[./.mvn/jvm.config](.mvn/jvm.config) for a full list of flags):
+For example, add these flags with `javac`:
 
 * `-Werror` -- turn warnings into errors, and fails the build
 * `-Xlint:all,-processing` -- enable all warnings excluding annotation
