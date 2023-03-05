@@ -212,7 +212,7 @@ Java/JVM builds, and shares lessons learned with you.
 ---
 
 <a href="https://github.com/binkley/modern-java-practices/fork" title="Reuse">
-<img src="./images/reuse.png" alt="Reuse"
+<img src="./images/download.png" alt="Reuse"
 align="right" width="20%" height="auto"/>
 </a>
 
