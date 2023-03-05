@@ -1,6 +1,6 @@
 VERSION 0.7
 FROM eclipse-temurin:17-jdk-focal
-WORKDIR /java-example
+WORKDIR /code
 
 build-with-gradle:
     COPY gradlew .
