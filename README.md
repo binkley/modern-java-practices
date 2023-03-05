@@ -759,15 +759,6 @@ $ earthly ls
 +build-with-maven
 ```
 
-Other common tasks might be:
-
-```shell
-$ ./batect -T
-Available tasks:
-[ ... ]
-- shell: Open a shell in the container
-```
-
 #### Gradle
 
 It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
