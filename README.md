@@ -84,20 +84,23 @@ align="right" width="20%" height="auto"/>
 
 ## Try it
 
-After cloning this project to your machine, or forking and cloning:
+After cloning or forking this project to your machine, try out the build
+combination that makes sense for you:
 
 ```shell
-$ ./gradlew build  # Local build experience
-# Output ommitted
-$ ./batect build-with-gradle  # Reproduce locally what CI does
-# Output ommitted
-$ ./mvnw verify  # Local build experience
-# Output omitted
-$ ./batect build-with-maven  # Reproduce locally what CI does
-# Output ommitted
+$ ./gradlew build  # Local-only build
+$ ./batect build-with-gradle  # CI build with Batect
+$ earthly +build-with-gradle  # CI build with Earthly
+$ ./mvnw verify  # Local-only build
+$ ./batect build-with-maven  # CI build with Batect
+$ earthly +build-with-maven  # CI build with Earthly
 ```
 
-See what the program does:
+(You may find that the "CI" build works great for you locally as part of your
+regular command line.
+Most IDEs would use the "local-only" build.)
+
+See what the starter program does:
 
 ```shell
 $ ./run-with-gradle.sh
