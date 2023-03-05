@@ -562,10 +562,13 @@ To update Maven:
 
 ```shell
 $ $EDITOR pom.xml  # Update maven.version property
+$ ./mvnw wrapper:wrapper  # Update scripts and supporting files
+$ ./mvnw wrapper:wra  # Confirm, and download files if neededpper
 ```
-Note: There is no need to run `./mvnw wrapper:wrapper` when updating Maven as
-the wrapper is a plugin; however, when updating the plugin itself, you would
-rerun the wrapper goal to update any wrapper scripts.
+
+Note that Maven wrapper is developing, and will be bundled with an upcoming
+Maven release.
+For now it is a separate plugin in your `pom.xml`.
 
 ### Tips
 
@@ -959,14 +962,6 @@ $ grep junitVersion gradle.properties setttings.gradle build.gradle
 gradle.properties:junitVersion=5.7.0
 build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
 build.gradle:    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
-```
-
-To update Gradle:
-
-```shell
-$ $EDITOR gradle.properties  # Change gradleWrapperVersion property
-$ ./gradlew wrapper  # Update
-$ ./gradlew wrapper  # Confirm, and download new jar if needed
 ```
 
 #### Note on `toolVersion` property
