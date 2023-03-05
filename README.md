@@ -78,7 +78,7 @@ READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
 ---
 
 <a title="Try it">
-<img src="./images/try-me.png" alt="Try me!"
+<img src="./images/try.png" alt="Try..."
 align="right" width="20%" height="auto"/>
 </a>
 
