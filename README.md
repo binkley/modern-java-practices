@@ -1735,8 +1735,9 @@ your team.
 
 "Live testing" here means spinning up a database or other remote service for
 local tests, and not
-using [fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
-. In these tests, your project calls on _real_ external dependencies, albeit
+using [fakes, stubs, mocks, spies, dummies, or
+doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html).
+In these tests, your project calls on _real_ external dependencies, albeit
 dependencies spun up locally rather than in production or another environment.
 These might be call "out of process" tests.
 
