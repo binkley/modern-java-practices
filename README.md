@@ -1906,3 +1906,7 @@ Many thanks to:
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche) &mdash; 
   Proofreading
 * [Sergei Bukharov](https://github.com/Bukharovsi) &mdash; PMD enhancements
+
+All suggestions and ideas welcome!
+Please [file an
+issue](https://github.com/binkley/modern-java-practices/issues). ☺
