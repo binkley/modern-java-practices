@@ -1904,8 +1904,8 @@ happen for reasons of environment. Examples can include:
 Many thanks to:
 
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche) &mdash; 
-  Proofreading
-* [Sergei Bukharov](https://github.com/Bukharovsi) &mdash; PMD enhancements
+  _Proofreading_
+* [Sergei Bukharov](https://github.com/Bukharovsi) &mdash; _PMD enhancements_
 
 All suggestions and ideas welcome!
 Please [file an
