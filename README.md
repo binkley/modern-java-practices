@@ -694,7 +694,7 @@ from this project.
 
 ---
 
-<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines"
+<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines.html"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
 align="right" width="20%" height="auto"/>
