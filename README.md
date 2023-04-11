@@ -563,7 +563,7 @@ To update Maven:
 ```shell
 $ $EDITOR pom.xml  # Update maven.version property
 $ ./mvnw wrapper:wrapper  # Update scripts and supporting files
-$ ./mvnw wrapper:wra  # Confirm, and download files if neededpper
+$ ./mvnw wrapper:wra  # Confirm, and download files if needed
 ```
 
 Note that Maven wrapper is developing, and will be bundled with an upcoming
