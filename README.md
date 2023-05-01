@@ -530,6 +530,11 @@ Throughout, when covering both Gradle and Maven, Gradle will be discussed first,
 then Maven. This is no expressing a preference!  It is neutral alphabetical
 ordering.
 
+**NB** &mdash; Gradle Enterprise provides additional features for Maven as
+well such as [build
+caching](https://docs.gradle.com/enterprise/maven-build-cache/) and [build
+scans](#keep-your-build-fast).
+
 ### Cleaning up
 
 Once you pick between Gradle or Maven, it is a good time to clean up.
