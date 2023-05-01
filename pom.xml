@@ -469,14 +469,11 @@
                     <!-- Quieter local builds when JUL is in use (you or
                          another library or tool)
                          TODO: Keep builds noisy in CI -->
-                    <systemProperties>
-                        <property>
-                            <name>java.util.logging.config.file</name>
-                            <value>
-                                ${project.basedir}/config/logging.properties
-                            </value>
-                        </property>
-                    </systemProperties>
+                    <systemPropertyVariables>
+                        <java.util.logging.config.file>
+                            ${project.basedir}/config/logging.properties
+                        </java.util.logging.config.file>
+                    </systemPropertyVariables>
                 </configuration>
                 <executions>
                     <execution>
