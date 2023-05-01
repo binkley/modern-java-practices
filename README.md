@@ -1003,6 +1003,12 @@ variants of profiling your build for Gradle and Maven:
 * [Maven profiler extension](https://github.com/jcgay/maven-profiler) with
   the `-Dprofile` flag
 
+See [an example build scan](https://scans.gradle.com/s/fik7c7bq25l3w) from May
+1, 2023.
+
+Note: [Build Scan](https://scans.gradle.com/) supports Maven as well for the
+paid enterprise version.
+
 ### Keep your developers fast
 
 Some shortcuts to speed up the red-green-refactor cycle:
