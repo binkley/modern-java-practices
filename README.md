@@ -767,7 +767,8 @@ $ earthly ls
 
 It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 
-* There is no point in spinning up a daemon for a Docker ephemeral container
+* There is no point in spinning up a daemon for a Docker ephemeral container;
+  but it is harmless either way
 * With a daemon, the Docker container's Gradle may be confused by
   `~/.gradle/daemon` and `/.gradle/workers` directories mounted by Batect from
   your home directory, as these refer to processes in the host, not the
