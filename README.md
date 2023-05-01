@@ -780,7 +780,13 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 * If you encounter troubles, run locally `./gradlew --stop` to kill any local
   daemons: This indicates a _bug_, and "stop" is a workaround.
   See [a suggestion of a better approach](https://github.com/batect/batect/issues/680#issuecomment-719821099)
-  .
+
+#### Earthly
+
+Earthly has its own caching strategies that apply to your build (such as
+Gradle or Maven dependency downloads) based around Docker layers. See
+[_Advanced local
+caching_](https://docs.earthly.dev/docs/guides/advanced-local-caching) for more information.
 
 ### Tips
 
