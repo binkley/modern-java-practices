@@ -722,10 +722,13 @@ tools that greatly help:
   It runs your build in a "CI-like" local environment via Docker.
   This is one of your first lines of defence against "it runs on my box".
   ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
-  space.)
+  space)
 
 * [Earthly](https://earthly.dev/) shares philosophy with Batect and with a
   different approach to implementation.
+  **Feedback on Earthly** is
+  [appreciated](https://github.com/binkley/modern-java-practices/issues/new/choose).
+  _Earthly is experimental_ for the template project in this repository
 
 They are _both good choices_, but not the only ones.
 
