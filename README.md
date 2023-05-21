@@ -156,22 +156,26 @@ Hi! I want you to have _awesome builds_ 🟢. If you're on a *Java* project,
 or a project on any
 *[JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages)*
 (Clojure, Groovy, JRuby, Java, Jython, Kotlin, Scala, _et al_), this article is
-for you. This article assumes you are using Gradle or Maven for your build
-locally, and in CI.  Some of you are using other build systems native to 
-your source language.  Please follow along!
+for you.
+This article assumes you are using Gradle or Maven for your build locally, and
+in CI.
+Some of you are using other build systems native to your source language.
+Please follow along!
 
 **What is the goal of this article?** I want to highlight modern practies in
 building Java/JVM projects with Gradle or Maven, and provide guidance, or at
-least food for thought. The sample Gradle and Maven projects use Java, but most
-recommendations apply to builds for _any_ JVM language. I'll never be as clever
-or as talented as [_why the lucky stiff_](http://poignant.guide/book/), but I
-hope this writing helps you have a JVM build that makes you, developers, and 
-others happy.
+least food for thought.
+The sample Gradle and Maven projects use Java, but most recommendations apply to
+builds for _any_ JVM language.
+I'll never be as clever or as talented as [_why the lucky stiff_](http://poignant.guide/book/), but I
+hope writing this makes you, developers, and others happy.
 
-See the wheel to the right?  _No, you do not need to be agile!_ (But I encourage
-you to explore the benefits of Agile.)  This article is for you regardless of
-how your team approaches software. The point is to "make people awesome" for any
-project, possibly the most key value of the Agile approach to software.
+See the wheel to the right?
+_No, you do not need to be agile!_
+(But I encourage you to explore the benefits of Agile.)
+This article is for you regardless of how your team approaches software.
+The point is to _"make people awesome"_ for any project, possibly the most key
+value of the Agile approach to software.
 
 ### Principles in designing these builds
 
@@ -854,6 +858,11 @@ The [Kordamp plugin](https://github.com/kordamp/jdeps-gradle-plugin) used for
 Gradle does not fail the build when jdeps errors, and only generates a report
 text file. See
 [this issue](https://github.com/kordamp/jdeps-gradle-plugin/issues/16).
+
+#### Maven
+
+Try Maven with `dependency:tree -Dverbose`.
+This will show conflicting versions of dependencies.
 
 ### Keep local builds quiet
 
@@ -1540,15 +1549,19 @@ for dependencies.
   principle](https://dzone.com/articles/the-boy-scout-software-development-principle)
 * Fluent assertions &mdash; lots of options in this area
     * [AssertJ](https://assertj.github.io/doc/) &mdash; solid choice
-    * Built assertions from Junit make is difficult for developers to
+    * Built assertions from Junit makes is difficult for developers to
       distinguish "actual" values from "expected" values. This is a limitation
-      from Java as it lacks named parameters
+      from Java as it lacks named parameters.
+      Other frameworks compatible with JUnit provide more fluent assertions such
+      as AssertJ.
+      Different choices make sense depending on your source language
 
-Unit testing and code coverage are foundations for code quality. Your build
-should help you with these as much as possible. 100% coverage may seem absurd;
+Unit testing and code coverage are foundations for code quality.
+Your build should help you with these as much as possible. 100% coverage may
+seem absurd;
 however, levels of coverage like this come with unexpected benefits such as
-finding dead code in your project or helping refactoring to be simple. An
-example: with high coverage (say 95%+, your experience will vary)
+finding dead code in your project or helping refactoring to be simple.
+An example: with high coverage (say 95%+, your experience will vary)
 simplifying your covered code may lower your coverage as uncovered code becomes
 more prominent in the total ratio.
 
@@ -1577,6 +1590,22 @@ Current limitations:
 
 ### Tips
 
+* With Maven, _do use_ the available BOM (bill of materials) for JUnit.
+  An example `pom.xml` block is:
+  ```xml
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    ```
+  This helps avoid dependency conflicts from other dependencies or plugins
 * See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to
   _sparingly_ leverage the `@Generated` annotation for marking code that JaCoCo
   should ignore
