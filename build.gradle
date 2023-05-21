@@ -7,7 +7,7 @@ plugins {
     // TODO: project-report is presently broken because of pitest task
     id "project-report" // Try the `projectReport` task
     id "com.dorongold.task-tree"
-    id "com.github.ben-manes.versions" // Try the dependencyUpdates task
+    id "com.github.ben-manes.versions" // Try the `dependencyUpdates` task
     id "java" // Gradle support for Java
     id "org.unbroken-dome.test-sets" // Alternative roots such an integration tests
     id "checkstyle" // To check that code follow style standards
