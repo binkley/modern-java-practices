@@ -245,7 +245,7 @@ wrapper {
 
 static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {
-        version.toUpperCase().contains(it)
+        version.uppercase().contains(it)
     }
     def otherReleasePattern = version ==~ '^[0-9,.v-]+(-r)?$'
 
