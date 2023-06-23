@@ -9,4 +9,12 @@
         ]]></notes>
         <cve>CVE-2020-8908</cve>
     </suppress>
+    <suppress>
+        <notes><![CDATA[
+        See https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2976
+        Unclear why this turns up for Gradle build, but not the Maven build.
+        Further, it is not yet an assigned CVE
+        ]]></notes>
+        <cve>CVE-2023-2976</cve>
+    </suppress>
 </suppressions>
