@@ -3,8 +3,8 @@
 Several scripts in the project root are to aid in contributing.
 
 - [`build-as-ci-does.sh`](./build-as-ci-does.sh) &mdash;
-  Recreate locally the build used by CI in GitHub actions using Batect
-  (Docker):
+  Recreate locally the build used by CI in GitHub actions using Batect and
+  Earthly (both use Docker):
   * Run a clean full build for Gradle
   * Run the Gradle-built demo program
   * Run a clean full build for Maven
