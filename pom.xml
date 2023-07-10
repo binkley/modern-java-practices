@@ -456,6 +456,8 @@
                 <artifactId>dependency-check-maven</artifactId>
                 <version>${dependency-check-maven.version}</version>
                 <configuration>
+                    <!-- This is not dotnet code -->
+                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
                     <failBuildOnCVSS>0</failBuildOnCVSS>
                     <skip>${owasp.skip}</skip>
                 </configuration>
