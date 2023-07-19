@@ -1727,8 +1727,8 @@ for your project.
 If you'd like to keep your integration tests in a separate source root from unit
 tests, consider these plugins:
 
-* For Gradle, use [_Gradle TestSets
-  Plugin_](https://github.com/unbroken-dome/gradle-testsets-plugin)
+* For Gradle, use [native Gradle to add new test
+  sets](https://docs.gradle.org/current/userguide/java_testing.html#sec:configuring_java_integration_tests)
 * For Maven, use
   the [Maven Failsafe Plugin](https://maven.apache.org/failsafe/maven-failsafe-plugin/)
 

@@ -9,7 +9,6 @@ plugins {
     id "com.dorongold.task-tree"
     id "com.github.ben-manes.versions" // Try the `dependencyUpdates` task
     id "java" // Gradle support for Java
-    id "org.unbroken-dome.test-sets" // Alternative roots such an integration tests
     id "checkstyle" // To check that code follow style standards
     id "pmd" // Static analysis based on source (does not check compiled code)
     id "com.github.spotbugs" // Static analysis based on compiled code (does not check source)
@@ -75,6 +74,20 @@ dependencies {
     }
 }
 
+sourceSets {
+    integrationTest {
+        compileClasspath += sourceSets.main.output
+        compileClasspath += sourceSets.test.output
+        runtimeClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.test.output
+    }
+}
+
+configurations {
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
 // TODO: Work around GitHub issue #54
 configurations.pmd {
     resolutionStrategy {
@@ -98,18 +111,26 @@ test {
     finalizedBy jacocoTestReport
 }
 
+tasks.register('integrationTest', Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    shouldRunAfter test
+
+    testLogging {
+        events "passed"
+    }
+}
+
+check.dependsOn integrationTest
+
 tasks.withType(Test) {
     // Quieter builds when JUL is in use (you or another library or tool)
     // TODO: Keep builds noisy in CI
     systemProperty "java.util.logging.config.file",
             "$projectDir/config/logging.properties"
-}
-
-testSets {
-    integrationTest
-}
-
-tasks.withType(Test) {
     // This idiom ensures JUnit5 for integration tests, not just unit tests
     useJUnitPlatform()
 }
