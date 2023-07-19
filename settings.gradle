@@ -7,7 +7,6 @@ pluginManagement {
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
         id "org.kordamp.gradle.jdeps" version "$jdepsPluginVersion"
         id "org.owasp.dependencycheck" version "$dependencyCheckPluginVersion"
-        id "org.unbroken-dome.test-sets" version "$testSetsPluginVersion"
     }
 }
 
