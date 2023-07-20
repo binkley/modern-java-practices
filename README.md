@@ -1749,17 +1749,16 @@ tests. Clearly in a production project, you would have only one of these.
 * Baeldung
   has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
   on Maven Failsafe
-* There are alternatives to the "test pyramid" perspective. Consider
-  [swiss cheese](https://blog.korny.info/2020/01/20/the-swiss-cheese-model-and-acceptance-tests.html)
-  if it makes more sense for your project. The build techniques still apply
 
 ---
 
 ## Going further
 
 Can you do more to improve your build, and shift problems left (before they hit
-CI)? Of course!  Below are some topics to discuss with your team about making
-them part of the local build.
+CI or production)?
+Of course!
+Below are some topics to discuss with your team about making them part of the
+local build.
 
 ### The Test Pyramid
 
@@ -1782,9 +1781,15 @@ concerns), you'll want to enhance your build with more testing at different
 levels of interaction. These are not covered in this article, so research is
 needed.
 
+There are alternatives to the "test pyramid" perspective. Consider
+[swiss cheese](https://blog.korny.info/2020/01/20/the-swiss-cheese-model-and-acceptance-tests.html)
+if it makes more sense for your project.
+The build techniques still apply.
+
 **NB** &mdash; What this article calls
 ["integration tests"](#use-integration-testing) may have a different name for
 your team.
+You may have "system tests" for example.
 
 ### Use automated live testing when appropriate
 
