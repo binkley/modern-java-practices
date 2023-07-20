@@ -15,13 +15,16 @@ align="right" width="20%" height="auto"/>
 Java/JVM projects using
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
 [Maven](https://maven.apache.org/what-is-maven.html), and a _starter project_
-for Java[^1].
+for Java.
+
 The focus is _best build practices_ and _project hygiene_.
 This document is _agnostic_ between Gradle and Maven: discussion in each section
 covers both tools (alphabetical order, Gradle before Maven).
 
-[^1]: I use this as a starter for my Kotlin projects, and substitute code
-  quality plugins suitable for the language.
+This is not a starter for just Java on JVM:
+I use it for starting my Kotlin projects, and substitute complilation and code
+quality plugins.
+Any language on the JVM can find practices and tips.
 
 As a _guide_, this project focuses on:
 
