@@ -46,11 +46,11 @@ As a _guide_, this project focuses on:
 
 ### Two recurring themes
 
-* _Shift problems left_ &mdash; Find issues earlier in your development cycle
-  through the build before they happen in production
-* _Make developer life easier_ &mdash; Automate build tasks commonly done by
-  hand: get your build to complain (fail) locally before sharing with your
-  team, or fail in CI before production 
+* _Shift problems left_ &mdash; Find issues earlier in your build&mdash;before
+  you see them in production
+* _Make developer life easier_ &mdash; Automate build tasks often done by
+  hand: get your build to complain (_fail_) locally before sharing with your
+  team, or fail in CI before deployment
 
 ### What is a _Starter_?
 
