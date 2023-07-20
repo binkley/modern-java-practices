@@ -76,8 +76,6 @@ updates.
 (Credit to Yegor Bugayenko for [_Elegant
 READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
 
----
-
 <a title="Try it">
 <img src="./images/try.png" alt="Try..."
 align="right" width="20%" height="auto"/>
@@ -110,6 +108,18 @@ $ ./run-with-maven.sh
 
 ---
 
+<a title="Changes">
+<img src="./images/changes.png" alt="Changes"
+align="right" width="20%" height="auto"/>
+</a>
+
+## Recent significant changes
+
+- Gradle: remove use of `testsets` plugin for integration testing in favor of
+  native Gradle. This is in support of Gradle 8
+
+---
+
 <a title="Table of Contents">
 <img src="./images/table-of-contents.png" alt="Table of Contents"
 align="right" width="20%" height="auto"/>
@@ -118,6 +128,7 @@ align="right" width="20%" height="auto"/>
 ## TOC
 
 * [Try it](#try-it)
+* [Recent significant changes](#recent-significant-changes)
 * [Introduction](#introduction)
 * [Reusing this project](#reusing-this-project)
 * [Contributing](#contributing)
