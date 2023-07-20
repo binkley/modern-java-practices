@@ -33,13 +33,16 @@ As a _guide_, this project focuses on:
   [clone](https://github.com/binkley/modern-java-practices.git) me, copy/paste
   freely!
   I am [_Public Domain_](http://unlicense.org/)
-* Illustrate sensible default practices; highlight good build tools and plugins
-* Document pitfalls that are not always written about (see "Tips" sections)
-* Do not be an "all-in-one" solution. You know your circumstances best: I hope 
-  this project helps you discover build improvements you love (and please 
-  share those back with
-  [Issues](https://github.com/binkley/modern-java-practices/issues) or
-  [PRs](https://github.com/binkley/modern-java-practices/pulls))
+* Discuss&mdash;and illustrate (through code)&mdash;sensible default practices;
+  highlight good build tools and plugins
+* Document pitfalls that turned up.
+  Some were easy to address after Internet search; some were challenging
+  (see "Tips" sections)
+* Do not be an "all-in-one" solution. You know your circumstances best.
+  I hope this project helps you discover build improvements you love.
+  Please share with others through
+  [issues](https://github.com/binkley/modern-java-practices/issues) or
+  [PRs](https://github.com/binkley/modern-java-practices/pulls).
 
 ### Two recurring themes
 
