@@ -42,7 +42,7 @@ As a _guide_, this project focuses on:
   I hope this project helps you discover build improvements you love.
   Please share with others through
   [issues](https://github.com/binkley/modern-java-practices/issues) or
-  [PRs](https://github.com/binkley/modern-java-practices/pulls).
+  [PRs](https://github.com/binkley/modern-java-practices/pulls)
 
 ### Two recurring themes
 
