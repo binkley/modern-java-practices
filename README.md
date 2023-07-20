@@ -1743,7 +1743,8 @@ tests. Clearly in a production project, you would have only one of these.
 
 ### Tips
 
-* For Maven projects, Failsafe shares the version number with Surefire.
+* For Maven projects, Apache maintains Failsafe and Surefire plugins as a pair,
+  and share the same version numbers.
   This project uses a shared `maven-testing-plugins.version` property
 * Baeldung
   has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
