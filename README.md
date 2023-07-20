@@ -21,7 +21,7 @@ The focus is _best build practices_ and _project hygiene_.
 This document is _agnostic_ between Gradle and Maven: discussion in each section
 covers both tools (alphabetical order, Gradle before Maven).
 
-This is not a starter for just Java on JVM:
+This is not a JVM starter for only Java:
 I use it for starting my Kotlin projects, and substitute complilation and code
 quality plugins.
 Any language on the JVM can find practices and tips.
