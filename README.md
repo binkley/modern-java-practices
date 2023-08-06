@@ -20,6 +20,8 @@ for Java.
 The focus is _best build practices_ and _project hygiene_.
 This document is _agnostic_ between Gradle and Maven: discussion in each section
 covers both tools (alphabetical order, Gradle before Maven).
+See [_My Final Take on Gradle (vs.
+Maven)_](https://blog.frankel.ch/final-take-gradle/) for an opinionated view.
 
 This is not a JVM starter for only Java:
 I use it for starting my Kotlin projects, and substitute complilation and code
