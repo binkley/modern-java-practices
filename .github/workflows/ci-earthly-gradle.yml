@@ -4,9 +4,11 @@ on:
   push:
     paths-ignore:
       - '*.md'
+      - 'images/**'
   pull_request:
     paths-ignore:
       - '*.md'
+      - 'images/**'
   workflow_dispatch:
 
 jobs:
