@@ -12,9 +12,27 @@
     <suppress>
         <notes><![CDATA[
         See https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2976
-        Unclear why this turns up for Gradle build, but not the Maven build.
+        Unclear why this crops up for Gradle build, but not the Maven build.
         Further, it is not yet an assigned CVE
         ]]></notes>
         <cve>CVE-2023-2976</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[
+        See https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4244
+        Unclear why this DependencyCheck failure has started now for a 2022 CVE,
+        and why it crops up for Gradle builds, but not for Maven builds,
+        and what it has to do with a simple Java project
+        ]]></notes>
+        <cve>CVE-2022-4244</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[
+        See https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4245
+        Unclear why this DependencyCheck failure has started now for a 2022 CVE,
+        and why it crops up for Gradle builds, but not for Maven builds,
+        and what it has to do with a simple Java project
+        ]]></notes>
+        <cve>CVE-2022-4245</cve>
     </suppress>
 </suppressions>
