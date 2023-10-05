@@ -35,9 +35,6 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Manage Batect telemetry
-        run: ./batect --permanently-enable-telemetry
-
       - name: Restore Gradle caches
         uses: actions/cache@master
         env:
