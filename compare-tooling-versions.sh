@@ -13,7 +13,7 @@
 # By default, this script adds color
 
 echo "LEFT is Gradle; RIGHT is Maven"
-diff --color=auto "$@" \
+diff --color=auto --minimal "$@" \
     <(sed -n 's,^\(.*\)Version=\(.*\),\1 \2,p' < gradle.properties \
     | tr '[:upper:]' '[:lower:]' \
     | tr -d - \

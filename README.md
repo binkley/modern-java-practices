@@ -301,7 +301,9 @@ noted:
   actions your CI takes on pushes (this project uses GitHub actions)
 - [`compare-tooling-versions-sh`](./compare-tooling-versions.sh)
   If your project supports _both_ Gradle and Maven builds (unlikely), a 
-  quick way to look at dependency and plugin versions between the two
+  quick way to look at dependency and plugin versions between the two.
+  Note that the ouput needs _human_ reading: the same tool version may appear
+  as different lines when comparing
 - [`coverage`](./coverage.sh)
   Checks if the local code passes at given levels of code coverage.
   The script is focused on Maven, but with edits would do the same for Gradle.
