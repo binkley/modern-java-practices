@@ -1644,10 +1644,9 @@ Current limitations:
 * You may find _mocking_ helpful for injection. The Java community is not of one
   mind on mocking, so use your judgment:
     * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
-      dependency for the sample projects. For "modern" versions of Mockito, you
-      should use the `mockito-inline` dependency rather than `mockito-core`
-      if relevant for your project: it supports
-      [mocking of static methods](https://frontbackend.com/java/how-to-mock-static-methods-with-mockito).
+      dependency for the sample projects.
+      For modern versions of Mockito, please use the `mockito-core` dependency
+      rather than `mockito-inline`.
       See `TheFooTest.shouldRedAlertAsStaticMock` for an example.
       Note that this project has updated to Mockito 5.
       See [_v5.0.0_ release

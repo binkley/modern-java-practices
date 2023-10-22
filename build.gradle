@@ -40,7 +40,7 @@ dependencies {
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
-    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
 
     // Quiet build -- build works without this, but JUnit complains
