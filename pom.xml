@@ -56,8 +56,6 @@
     <properties>
         <!-- @formatter:off -->
         <assertj.version>3.24.2</assertj.version>
-        <!-- TODO: Update spotbugs for CVE-2022-42920 -->
-        <bcel.version>6.7.0</bcel.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
         <checkstyle.version>10.12.4</checkstyle.version>
         <dependency-check-maven.version>8.4.2</dependency-check-maven.version>
@@ -370,12 +368,6 @@
                     </plugins>
                 </configuration>
                 <dependencies>
-                    <dependency>
-                        <groupId>org.apache.bcel</groupId>
-                        <artifactId>bcel</artifactId>
-                        <!-- TODO: Update spotbugs for CVE-2022-42920 -->
-                        <version>${bcel.version}</version>
-                    </dependency>
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
