@@ -35,4 +35,13 @@
         ]]></notes>
         <cve>CVE-2022-4245</cve>
     </suppress>
+    <suppress>
+        <notes><![CDATA[
+        This CVE is in process of being withdrawn.
+        See https://github.com/advisories/GHSA-fgq9-fc3q-vqmw and
+        https://github.com/spotbugs/spotbugs/issues/2670.
+        Spotbugs is the plugin where this came up.
+        ]]></notes>
+      <cve>CVE-2023-45960</cve>
+    </suppress>
 </suppressions>
