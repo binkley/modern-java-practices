@@ -12,9 +12,17 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Does your code need to check against several JVM versions?
   build:
     name: Builds and tests for Gradle
     runs-on: ubuntu-latest
+    # First run in GitHub actions - verify this
+    # Afterwards, change to a comment
+    strategy:
+      matrix:
+        include:
+          - java: 17
+          - java: 21
 
     steps:
       - name: Clone repository

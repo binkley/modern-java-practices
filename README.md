@@ -446,6 +446,10 @@ choice for the JDK.
   mismatching or confusing build paths, project configuration, and Gradle
   sorting it out. This is an issue for local-only builds; local builds using a
   container (such as via [_Batect_](#setup-local-ci)) lower these concerns
+* In GitHub Actions, building supports cross-checking multiple JVM versions,
+  use
+  [the `matrix` feature](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs).
+  See [the example GitHub actions](./.github/workflows/ci-batect-maven.yml)
 
 ### Managing your Java environment
 
