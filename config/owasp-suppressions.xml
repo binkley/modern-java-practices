@@ -44,4 +44,12 @@
         ]]></notes>
       <cve>CVE-2023-45960</cve>
     </suppress>
+    <suppress>
+        <notes><![CDATA[
+        Another false positive. This project does not use the referenced
+        software.
+        See https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0897.
+        ]]></notes>
+        <cve>CVE-2015-0897</cve>
+    </suppress>
 </suppressions>
