@@ -83,7 +83,7 @@
         <maven-site-plugin.version>4.0.0-M11</maven-site-plugin.version>
         <maven-testing-plugins.version>3.2.2</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.2.0</maven-wrapper-plugin.version>
-        <maven.version>3.9.5</maven.version>
+        <maven.version>3.9.6</maven.version>
         <mockito.version>5.6.0</mockito.version>
         <modernizer.version>2.7.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
