@@ -63,7 +63,7 @@ jobs:
         run: ./batect -o quiet run-with-gradle
 
       - name: Save artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jars
           path: build/libs/modern-java-practices*.jar
