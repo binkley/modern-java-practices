@@ -136,7 +136,7 @@ align="right" width="20%" height="auto"/>
 align="right" width="20%" height="auto"/>
 </a>
 
-## TOC
+## Table Of Contents
 
 * [Try it](#try-it)
 * [Recent significant changes](#recent-significant-changes)
