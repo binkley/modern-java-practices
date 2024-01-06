@@ -1,16 +1,16 @@
 VERSION 0.7
-FROM eclipse-temurin:17-jdk-focal
+FROM eclipse-temurin:21.0.1_12-jdk-jammy
 WORKDIR /code
 
 build-with-gradle:
     COPY gradlew .
     COPY gradle gradle
     COPY gradle.properties .
-    COPY settings.gradle .
+    COPY settings.gradle.kts .
     COPY build.gradle .
     COPY config config
     COPY src src
-    RUN ./gradlew clean build
+    RUN ./gradlew clean build --no-configuration-cache
 
 run-with-gradle:
     FROM +build-with-gradle

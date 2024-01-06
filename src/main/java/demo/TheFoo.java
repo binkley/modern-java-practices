@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.util.regex.Pattern;
 
 import static java.util.regex.Pattern.CASE_INSENSITIVE;

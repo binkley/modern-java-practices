@@ -1,6 +1,6 @@
 containers:
   build-env:
-    image: eclipse-temurin:17-jdk-focal
+    image: eclipse-temurin:21.0.1_12-jdk-jammy
     environment:
       # Needed for Gradle: Maven handles this via `.mvn/jvm.config`
       JAVA_OPTS: --add-opens java.base/java.lang=ALL-UNNAMED
@@ -29,7 +29,7 @@ tasks:
       container: build-env
       # One time only when updating to DependencyCheck plugin 7.0.0:
       # command: ./gradlew --no-daemon --warning-mode=all dependencyCheckPurge clean build
-      command: ./gradlew --no-daemon --warning-mode=all clean build
+      command: ./gradlew --no-configuration-cache --no-daemon --warning-mode=all clean build
   run-with-gradle:
     description: Runs the demo program assuming a Gradle build
     run:

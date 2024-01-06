@@ -19,6 +19,7 @@ jobs:
     # First run in GitHub actions - verify this
     # Afterwards, change to a comment
     strategy:
+      fail-fast: false
       matrix:
         include:
           - java: 17

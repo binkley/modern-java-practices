@@ -1,3 +1,5 @@
 * text=auto
 *.bat text eol=crlf
 *.cmd text eol=crlf
+*.gradle linguist-detectable language=Gradle
+*.gradle.kts linguist-detectable language=Kotlin
