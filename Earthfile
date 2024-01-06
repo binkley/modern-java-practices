@@ -13,12 +13,12 @@ gradle-commons:
     COPY src src
     RUN --mount type=cache,target=.gradle
     RUN --mount type=cache,target=~/.gradle
-    RUN --secret BUILDLESS_APIKEY ./gradlew dependencies
+    RUN --secret BUILDLESS_APIKEY ./gradlew dependencies --no-configuration-cache --no-daemon
     SAVE IMAGE --push "$builder"
 
 build-with-gradle:
     FROM +gradle-commons
-    RUN --secret BUILDLESS_APIKEY ./gradlew clean build --no-configuration-cache
+    RUN --secret BUILDLESS_APIKEY ./gradlew build test integrationTest --no-configuration-cache --no-daemon
 
 run-with-gradle:
     FROM +build-with-gradle
