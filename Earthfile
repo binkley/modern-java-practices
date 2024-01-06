@@ -32,10 +32,10 @@ build-with-maven:
     COPY pom.xml .
     COPY config config
     COPY src src
-    RUN ./mvnw clean verify
+    RUN --secret BUILDLESS_APIKEY ./mvnw clean verify
     SAVE IMAGE --push "$builder"
 
 run-with-maven:
     FROM +build-with-maven
     COPY run-with-maven.sh .
-    RUN ./run-with-maven.sh
+    RUN --secret BUILDLESS_APIKEY ./run-with-maven.sh
