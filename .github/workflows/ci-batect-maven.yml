@@ -24,14 +24,19 @@ jobs:
           - java: 21
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Clone repository
-        uses: actions/checkout@master
+        uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089 # master
 
       - name: Validate Batect wrapper scripts
-        uses: batect/batect-wrapper-validation-action@v0.4.0
+        uses: batect/batect-wrapper-validation-action@db5c00345a3b15b7e6b6761dda3bef59aa02c23b # v0.4.0
 
       - name: Restore Batect caches
-        uses: actions/cache@master
+        uses: actions/cache@0769f2e44373d687c841be56f618397100943c5e # master
         env:
           cache-name: batect-cache
         with:
@@ -43,7 +48,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Restore Maven caches
-        uses: actions/cache@master
+        uses: actions/cache@0769f2e44373d687c841be56f618397100943c5e # master
         env:
           cache-name: maven-cache
         with:
@@ -61,13 +66,13 @@ jobs:
         run: ./batect -o quiet run-with-maven
 
       - name: Save artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         with:
           name: jars
           path: target/modern-java-practices*.jar
 
       - name: Save site
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
         with:
           name: site
           path: target/site/

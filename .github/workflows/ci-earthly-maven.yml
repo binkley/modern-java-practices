@@ -24,16 +24,21 @@ jobs:
           - java: 21
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Use Earthly
-        uses: earthly/actions-setup@v1
+        uses: earthly/actions-setup@3fb2fb8cf3dbf088aeb9723916455c4cf48f81fc # v1
         with:
           version: "latest"
 
       - name: Clone repository
-        uses: actions/checkout@master
+        uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089 # master
 
       - name: Restore Maven caches
-        uses: actions/cache@master
+        uses: actions/cache@0769f2e44373d687c841be56f618397100943c5e # master
         env:
           cache-name: maven-cache
         with:
