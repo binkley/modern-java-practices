@@ -1,0 +1,37 @@
+name: "Pull Request"
+
+"on":
+  pull_request:
+    paths-ignore:
+      - '*.md'
+      - 'images/**'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  ## Gradle: Earthly
+  build-earthly-gradle:
+    name: "Build (Earthly)"
+    uses: ./.github/workflows/gradle.earthly.yml
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    secrets: inherit
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+
+  ## Gradle: Earthly
+  build-earthly-maven:
+    uses: ./.github/workflows/maven.earthly.yml
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    secrets: inherit
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
