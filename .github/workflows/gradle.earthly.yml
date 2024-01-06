@@ -128,8 +128,7 @@ jobs:
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
-            ${{ inputs.build }} \
-            ${{ inputs.builder && format('--builder={0}', inputs.builder) || '' }}
+            ${{ inputs.build }}
       - name: "Build: Execute Run"
         run: |
           earthly \
@@ -139,5 +138,4 @@ jobs:
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
-            ${{ inputs.run }} \
-            ${{ inputs.builder && format('--builder={0}', inputs.builder) || '' }}
+            ${{ inputs.run }}
