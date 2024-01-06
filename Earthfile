@@ -10,8 +10,8 @@ gradle-commons:
     COPY build.gradle .
     COPY config config
     COPY src src
-    RUN --mount type=cache,target=.gradle
-    RUN --mount type=cache,target=~/.gradle
+    CACHE --sharing=shared --id gradle-common ~/.gradle
+    CACHE --sharing=shared --id gradle-cache ./.gradle
     RUN --secret BUILDLESS_APIKEY ./gradlew dependencies --no-configuration-cache --no-daemon
     SAVE IMAGE --cache-hint
 
@@ -30,6 +30,7 @@ maven-commons:
     COPY pom.xml .
     COPY config config
     COPY src src
+    CACHE --sharing=shared --id maven-common ~/.m2
     RUN --secret BUILDLESS_APIKEY ./mvnw clean dependency:copy-dependencies
     SAVE IMAGE --cache-hint
 
