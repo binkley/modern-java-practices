@@ -55,7 +55,8 @@
 
     <properties>
         <!-- @formatter:off -->
-        <assertj.version>3.24.2</assertj.version>
+        <assertj.version>3.25.1</assertj.version>
+        <annotation.version>2.1.1</annotation.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
         <checkstyle.version>10.12.4</checkstyle.version>
         <dependency-check-maven.version>8.4.2</dependency-check-maven.version>
@@ -120,6 +121,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>${annotation.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
