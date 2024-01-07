@@ -10,7 +10,6 @@ permissions:
   contents: read
 
 jobs:
-
   #
   # --- Builds: Direct ---
   #
@@ -26,12 +25,25 @@ jobs:
         java: [17, 21]
     permissions:
       contents: write
-      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: gradle-direct-jvm${{ matrix.java }}
       push: true  # push dependency graph up so it can be used for review
+
+  ## Maven: Direct
+  maven-direct-gradle:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/maven.direct.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: maven-direct-jvm${{ matrix.java }}
 
   #
   # --- Builds: Earthly ---

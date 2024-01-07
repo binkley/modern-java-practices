@@ -16,7 +16,7 @@ name: "Gradle (Direct)"
         type: string
         description: "Java version"
       args:
-        default: "--no-daemon --scan --no-configuration-cache --dependency-verification=lenient"
+        default: "--no-daemon --scan --no-configuration-cache --dependency-verification=lenient --warning-mode=none"
         type: string
         description: "Gradle arguments"
       build:
@@ -53,7 +53,7 @@ name: "Gradle (Direct)"
         default: "21"
         description: "Java version"
       args:
-        default: "--no-daemon"
+        default: "--no-daemon --scan --no-configuration-cache --dependency-verification=lenient --warning-mode=none"
         type: string
         description: "Gradle arguments"
       build:
