@@ -77,7 +77,7 @@
         <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
-        <maven-jxr-plugin.version>3.3.1</maven-jxr-plugin.version>
+        <maven-jxr-plugin.version>3.3.2</maven-jxr-plugin.version>
         <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.4.5</maven-project-info-reports-plugin.version>
