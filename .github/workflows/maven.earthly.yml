@@ -94,10 +94,10 @@ jobs:
       - name: "Setup: Caches"
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         env:
-          cache-name: earthly-caches-maven
+          cache-name: caches-maven
         with:
           path: |
-            ~/.m2
+            ~/.m2/repository
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}-jvm${{ inputs.java }}
           # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
           restore-keys: |
@@ -127,8 +127,7 @@ jobs:
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
-            ${{ inputs.build }} \
-            ${{ inputs.builder && format('--builder={0}', inputs.builder) || '' }}
+            ${{ inputs.build }}
       - name: "Build: Execute Run"
         run: |
           earthly \
@@ -137,5 +136,4 @@ jobs:
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
-            ${{ inputs.run }} \
-            ${{ inputs.builder && format('--builder={0}', inputs.builder) || '' }}
+            ${{ inputs.run }} ${{ inputs.run_args }}

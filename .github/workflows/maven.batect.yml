@@ -1,4 +1,4 @@
-name: "Gradle (Earthly)"
+name: "Maven (Batect)"
 
 "on":
   workflow_call:
@@ -12,23 +12,15 @@ name: "Gradle (Earthly)"
         type: string
         description: "Java version"
       args:
-        default: "--ci"
+        default: ""
         type: string
-        description: "Earthly arguments"
-      builder:
-        default: "ghcr.io/sgammon/modern-java-practices/builder/gradle:latest"
-        type: string
-        description: "Builder container"
-      registry:
-        default: "ghcr.io"
-        type: string
-        description: "Registry"
+        description: "Batect arguments"
       build:
-        default: "+build-with-gradle"
+        default: "build-with-maven"
         type: string
         description: "Build target"
       run:
-        default: "+run-with-gradle"
+        default: "run-with-maven"
         type: string
         description: "Run target"
       run_args:
@@ -53,19 +45,15 @@ name: "Gradle (Earthly)"
         default: "21"
         description: "Java version"
       args:
-        default: "--ci"
+        default: ""
         type: string
-        description: "Earthly arguments"
-      builder:
-        default: "ghcr.io/sgammon/modern-java-practices/builder/gradle:latest"
-        type: string
-        description: "Builder container"
+        description: "Batect arguments"
       build:
-        default: "+build-with-gradle"
+        default: "build-with-maven"
         type: string
         description: "Build target"
       run:
-        default: "+run-with-gradle"
+        default: "run-with-maven"
         type: string
         description: "Run target"
       push:
@@ -82,7 +70,7 @@ env:
 
 jobs:
   build:
-    name: "Earthly + Gradle"
+    name: "Batect + Maven"
     runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
     permissions:
       packages: write
@@ -95,14 +83,26 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           persist-credentials: false
-      - name: "Setup: Caches"
+      - name: "Setup: Validate Batect Scripts"
+        uses: batect/batect-wrapper-validation-action@db5c00345a3b15b7e6b6761dda3bef59aa02c23b # v0.4.0
+      - name: "Setup: Caches (Batect)"
+        uses: actions/cache@0769f2e44373d687c841be56f618397100943c5e # master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: "Setup: Caches (Maven)"
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         env:
-          cache-name: caches-gradle
+          cache-name: caches-maven
         with:
           path: |
-            ~/.gradle
-            ./.gradle
+            ~/.m2/repository
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}-jvm${{ inputs.java }}
           # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
           restore-keys: |
@@ -111,34 +111,12 @@ jobs:
             ${{ runner.os }}-
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
-      - name: "Setup: Use Earthly"
-        uses: earthly/actions-setup@be3fe0c1f84e9776b5a184d21bf7a4a779ea2e6b # v1
-        with:
-          version: "latest"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: "Setup: Docker QEMU"
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3
-      - name: "Setup: Docker Login"
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
       - name: "Build: Assemble and Test"
-        run: |
-          earthly \
-            ${{ inputs.args }} \
-            --secret BUILDLESS_APIKEY \
-            ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
-            ${{ inputs.push && '--push' || '' }} \
-            ${{ inputs.args }} \
-            ${{ inputs.build }}
+        run: ./batect ${{ inputs.args }} ${{ inputs.build }}
       - name: "Build: Execute Run"
-        run: |
-          earthly \
-            ${{ inputs.args }} \
-            --secret BUILDLESS_APIKEY \
-            ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
-            ${{ inputs.push && '--push' || '' }} \
-            ${{ inputs.args }} \
-            ${{ inputs.run }} ${{ inputs.run_args }}
+        run: ./batect ${{ inputs.args }} ${{ inputs.run_args }} ${{ inputs.run }}
+      - name: "Artifact: JARs"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: jars
+          path: build/libs/modern-java-practices*.jar
