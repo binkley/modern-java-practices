@@ -1,4 +1,4 @@
-VERSION 0.7
+VERSION --global-cache 0.7
 FROM eclipse-temurin:21.0.1_12-jdk-jammy
 WORKDIR /code
 
@@ -35,7 +35,7 @@ maven-commons:
     COPY .mvn .mvn
     COPY .mvn/settings.xml /root/.m2/settings.xml
     COPY config config
-    CACHE --sharing=shared --id maven-common /root/.m2
+    CACHE --sharing=shared --id maven-common /root/.m2/repository
     SAVE IMAGE --cache-hint
 
 maven-dependencies:
