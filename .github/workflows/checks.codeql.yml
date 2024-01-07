@@ -64,12 +64,12 @@ jobs:
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
       - name: "Setup: Initialize CodeQL"
-        uses: github/codeql-action/init@1500a131381b66de0c52ac28abb13cd79f4b7ecc # v2.22.12
+        uses: github/codeql-action/init@012739e5082ff0c22ca6d6ab32e07c36df03c4a4 # v3.22.12
         with:
           languages: java
       - name: "CodeQL: Autobuild"
-        uses: github/codeql-action/autobuild@1500a131381b66de0c52ac28abb13cd79f4b7ecc # v2.22.12
+        uses: github/codeql-action/autobuild@012739e5082ff0c22ca6d6ab32e07c36df03c4a4 # v3.22.12
       - name: "CodeQL: Analysis"
-        uses: github/codeql-action/analyze@1500a131381b66de0c52ac28abb13cd79f4b7ecc # v2.22.12
+        uses: github/codeql-action/analyze@012739e5082ff0c22ca6d6ab32e07c36df03c4a4 # v3.22.12
         with:
           category: "/language:java"
