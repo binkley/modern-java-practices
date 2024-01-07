@@ -71,7 +71,7 @@ jobs:
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
       - name: "Setup: Download Artifact"
         uses: actions/download-artifact@f44cd7b40bfd40b6aa1cc1b9b5b7bf03d3c67110 # v4.1.0
-        if: inputs.artifact != ""
+        if: inputs.artifact != ''
         continue-on-error: true
         with:
           name: ${{ inputs.artifact }}
