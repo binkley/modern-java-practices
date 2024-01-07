@@ -3,6 +3,9 @@
    <configuration>
       <verify-metadata>true</verify-metadata>
       <verify-signatures>true</verify-signatures>
+      <trusted-artifacts>
+         <trust group="com.gradle.enterprise" reason="Release by Gradle team" />
+      </trusted-artifacts>
       <ignored-keys>
          <ignored-key id="119DF80E6BF8DBC3" reason="Key couldn't be downloaded from any key server"/>
          <ignored-key id="20F85E1C160E0716" reason="Key couldn't be downloaded from any key server"/>
