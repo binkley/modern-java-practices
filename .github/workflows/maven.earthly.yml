@@ -121,7 +121,7 @@ jobs:
         run: |
           earthly \
             ${{ inputs.args }} \
-            --secret BUILDLESS_API_KEY \
+            --secret BUILDLESS_APIKEY \
             --secret GITHUB_TOKEN \
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
@@ -132,7 +132,7 @@ jobs:
         run: |
           earthly \
             ${{ inputs.args }} \
-            --secret BUILDLESS_API_KEY \
+            --secret BUILDLESS_APIKEY \
             --secret GITHUB_TOKEN \
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
