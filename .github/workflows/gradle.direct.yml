@@ -35,6 +35,10 @@ name: "Gradle (Direct)"
         default: false
         type: boolean
         description: "Report coverage"
+      sonar:
+        default: false
+        type: boolean
+        description: "Run Sonar"
       push:
         default: true
         type: boolean
@@ -79,9 +83,13 @@ name: "Gradle (Direct)"
         type: string
         description: "Runtime arguments"
       coverage:
-        default: true
+        default: false
         type: boolean
         description: "Report coverage"
+      sonar:
+        default: false
+        type: boolean
+        description: "Run Sonar"
       push:
         default: true
         type: boolean
@@ -154,7 +162,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: "Report: Sonar"
-        if: secrets.SONAR_TOKEN
+        if: inputs.sonar
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
