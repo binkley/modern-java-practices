@@ -114,7 +114,8 @@ java {
     modularity.inferModulePath = true
 
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
+        languageVersion = JavaLanguageVersion.of("$jdkVersion")
+        vendor = JvmVendorSpec.ADOPTIUM
     }
 }
 
