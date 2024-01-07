@@ -1,9 +1,9 @@
 license-check: true
 vulnerability-check: true
 allow-dependencies-licenses:
-  - jakarta.annotation:jakarta.annotation-api
-  - batect/batect-wrapper-validation-action
-  - earthly/actions-setup
+  - maven:jakarta.annotation:jakarta.annotation-api
+  - github:batect/batect-wrapper-validation-action
+  - github:earthly/actions-setup
 
 allow-ghsas:
   # These match the list in `owasp-suppressions.xml`.
