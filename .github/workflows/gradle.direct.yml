@@ -57,11 +57,11 @@ name: "Gradle (Direct)"
         type: string
         description: "Gradle arguments"
       build:
-        default: "build"
+        default: "test integrationTest"
         type: string
         description: "Build target"
       run:
-        default: "run"
+        default: "./run-with-gradle.sh"
         type: string
         description: "Run target"
       run_args:
@@ -82,7 +82,7 @@ env:
 
 jobs:
   build:
-    name: "Gradle Native"
+    name: "Gradle"
     runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
     permissions:
       contents: write
@@ -113,6 +113,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: temurin
+          cache: gradle
           java-version: ${{ inputs.java }}
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
@@ -121,7 +122,6 @@ jobs:
         with:
           gradle-version: release-candidate
           gradle-home-cache-cleanup: true
-          cache: gradle
           dependency-graph: ${{ inputs.push && 'generate-and-submit' || 'generate' }}
       - name: "Build: Assemble and Test"
         run: |

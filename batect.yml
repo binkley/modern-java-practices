@@ -12,11 +12,13 @@ containers:
       - local: .
         container: /code
         options: cached
-      - local: ~/.gradle
+      - local: ~/.gradle-batect
         container: /home/container-user/.gradle
         options: cached
-      - local: ~/.m2
-        container: /home/container-user/.m2
+      - local: ./.mvn/settings.xml
+        container: /home/container-user/.m2/settings.xml
+      - local: ~/.m2/repository
+        container: /home/container-user/.m2/repository
         options: cached
     working_directory: /code
 
