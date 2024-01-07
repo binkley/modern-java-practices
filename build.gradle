@@ -240,6 +240,10 @@ jacoco {
 
 jacocoTestReport {
     dependsOn test
+
+    reports {
+        xml.required = System.getenv("CI") == "true"
+    }
 }
 
 jacocoTestCoverageVerification {
