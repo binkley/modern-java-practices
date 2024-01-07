@@ -16,6 +16,8 @@ pitest-junit5 = "1.2.1"
 pitest-plugin = "1.15.0"
 pitest-tool = "1.15.3"
 pmd = "6.55.0"
+sigstore-core = "0.6.0"
+sigstore-plugin = "0.5.0"
 spdx-sbom = "0.5.0"
 spotbugs-core = "4.8.0"
 spotbugs-plugin = "5.0.14"
@@ -31,6 +33,7 @@ findsecbugs = { group = "com.h3xstream.findsecbugs", name = "findsecbugs-plugin"
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
 mockito = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
 modernizer = { group = "org.gaul", name = "modernizer-maven-annotations", version.ref = "modernizer-core" }
+sigstore = { group = "dev.sigstore", name = "sigstore-java", version.ref = "sigstore-core" }
 spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version.ref = "spotbugs-core" }
 systemlambda = { group = "com.github.stefanbirkner", name = "system-lambda", version.ref = "systemlambda" }
 jakarta-annotation = { group = "jakarta.annotation", name = "jakarta.annotation-api", version.ref = "jakarta-annotation" }
@@ -43,6 +46,7 @@ jdeps = { id = "org.kordamp.gradle.jdeps", version.ref = "jdeps" }
 modernizer = { id = "com.github.andygoossens.gradle-modernizer-plugin", version.ref = "modernizer-plugin" }
 pitest = { id = "info.solidsoft.pitest", version.ref = "pitest-plugin" }
 sbom = { id = "org.spdx.sbom", version.ref = "spdx-sbom" }
+sigstore = { id = "dev.sigstore.sign", version.ref = "sigstore-plugin" }
 spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs-plugin" }
 tasktree = { id = "com.dorongold.task-tree", version.ref = "tasktree-plugin" }
 testlogger = { id = "com.adarshr.test-logger", version.ref = "testlogger" }

@@ -17,6 +17,7 @@ plugins {
     alias libs.plugins.modernizer
     alias libs.plugins.pitest  // To run mutation testing
     alias libs.plugins.sbom  // Embeds SPDX Software Bill Of Materials (SBOMs) files in JARs
+    alias libs.plugins.sigstore  // Signing via Sigstore for library releases (sigstore.dev)
     alias libs.plugins.spotbugs  // Static analysis based on compiled code (does not check source)
     alias libs.plugins.tasktree
     alias libs.plugins.testlogger
@@ -27,6 +28,8 @@ version = "0-SNAPSHOT"
 group = "demo"
 
 dependencies {
+    sigstoreClient libs.sigstore
+
     implementation libs.jakarta.annotation
     compileOnly libs.lombok
     annotationProcessor libs.lombok
@@ -80,6 +83,18 @@ sourceSets {
         compileClasspath += sourceSets.test.output
         runtimeClasspath += sourceSets.main.output
         runtimeClasspath += sourceSets.test.output
+    }
+}
+
+sigstoreSign {
+    oidcClient {
+        gitHub {
+            audience.set("sigstore")
+        }
+        web {
+            clientId.set("sigstore")
+            issuer.set("https://oauth2.sigstore.dev/auth")
+        }
     }
 }
 
