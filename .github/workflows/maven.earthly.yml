@@ -12,7 +12,7 @@ name: "Maven (Earthly)"
         type: string
         description: "Java version"
       args:
-        default: "--ci --auto-skip"
+        default: "--ci"
         type: string
         description: "Earthly arguments"
       builder:
@@ -49,7 +49,7 @@ name: "Maven (Earthly)"
         default: "21"
         description: "Java version"
       args:
-        default: "--ci --push --auto-skip"
+        default: "--ci"
         type: string
         description: "Earthly arguments"
       builder:

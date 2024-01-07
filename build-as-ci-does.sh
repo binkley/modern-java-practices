@@ -31,7 +31,6 @@ earthly \
   --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/gradle:latest \
   --push \
   --ci \
-  --auto-skip \
   +build-with-gradle
 
 echo "${pbold}RUN WITH GRADLE UNDER EARTHLY${preset}"
@@ -40,7 +39,6 @@ earthly \
   --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/gradle:latest \
   --push \
   --ci \
-  --auto-skip \
   +run-with-gradle
 
 echo 
@@ -50,7 +48,6 @@ earthly \
   --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/maven:latest \
   --push \
   --ci \
-  --auto-skip \
   +build-with-maven
 
 echo "${pbold}RUN WITH MAVEN UNDER EARTHLY${preset}" 
@@ -59,5 +56,4 @@ earthly \
   --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/maven:latest \
   --push \
   --ci \
-  --auto-skip \
   +run-with-maven
