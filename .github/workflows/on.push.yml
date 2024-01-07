@@ -10,7 +10,6 @@ name: "Push"
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
   #
@@ -29,6 +28,7 @@ jobs:
     permissions:
       contents: write
       packages: write
+      id-token: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
@@ -102,7 +102,6 @@ jobs:
         java: [17, 21]
     permissions:
       contents: read
-      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
@@ -120,7 +119,6 @@ jobs:
         java: [17, 21]
     permissions:
       contents: read
-      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}

@@ -115,7 +115,7 @@ jobs:
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
       - name: "Setup: Activate Maven Settings"
-        run:
+        run: |
           mkdir -p ~/.m2
           cp -fv ./.mvn/settings.xml ~/.m2/settings.xml
       - name: "Build: Assemble and Test"

@@ -86,6 +86,7 @@ jobs:
     runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
     permissions:
       contents: write
+      id-token: write
     steps:
       - name: "Setup: Harden Runner"
         uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
