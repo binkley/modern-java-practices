@@ -66,7 +66,7 @@ jobs:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: gradle-earthly-jvm${{ matrix.java }}
-      push: false
+      push: true  # allow updating cached container
 
   ## Maven: Earthly
   build-earthly-maven:
@@ -84,7 +84,7 @@ jobs:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: maven-earthly-jvm${{ matrix.java }}
-      push: false
+      push: true  # allow updating cached container
 
   #
   # --- Builds: Batect ---
