@@ -135,10 +135,13 @@ jobs:
   checks-codeql:
     name: "Checks"
     uses: ./.github/workflows/checks.codeql.yml
+    needs: [build-direct-gradle]
     permissions:
       contents: read
       actions: read
       security-events: write
+    with:
+      artifact: gradle-direct-jvm${{ matrix.java }}-jars
 
   ## Scan dependencies for vulnerabilities.
   checks-deps-review:

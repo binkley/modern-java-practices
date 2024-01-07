@@ -19,6 +19,11 @@ name: "CodeQL"
     - cron: "0 0 * * 1"
   workflow_dispatch: {}
   workflow_call:
+    inputs:
+      artifact:
+        type: string
+        description: "Artifact to fetch"
+        required: false
     secrets:
       BUILDLESS_APIKEY:
         description: "Build cache API key"
@@ -51,10 +56,11 @@ jobs:
       - name: "Setup: Caches"
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         env:
-          cache-name: earthly-caches-maven
+          cache-name: caches-maven
         with:
           path: |
-            ~/.m2
+            ~/.m2/repository
+            ~/.m2/wrapper
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}-jvm${{ inputs.java }}
           # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
           restore-keys: |
@@ -63,6 +69,12 @@ jobs:
             ${{ runner.os }}-
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
+      - name: "Setup: Download Artifact"
+        uses: actions/download-artifact@f44cd7b40bfd40b6aa1cc1b9b5b7bf03d3c67110 # v4.1.0
+        if: inputs.artifact != ""
+        continue-on-error: true
+        with:
+          name: ${{ inputs.artifact }}
       - name: "Setup: Initialize CodeQL"
         uses: github/codeql-action/init@012739e5082ff0c22ca6d6ab32e07c36df03c4a4 # v3.22.12
         with:
