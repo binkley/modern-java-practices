@@ -123,7 +123,6 @@ jobs:
           earthly \
             ${{ inputs.args }} \
             --secret BUILDLESS_APIKEY \
-            --secret GITHUB_TOKEN \
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
@@ -133,7 +132,6 @@ jobs:
           earthly \
             ${{ inputs.args }} \
             --secret BUILDLESS_APIKEY \
-            --secret GITHUB_TOKEN \
             ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
