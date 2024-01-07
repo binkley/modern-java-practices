@@ -124,26 +124,3 @@ jobs:
       java: ${{ matrix.java }}
       artifact: maven-batect-jvm${{ matrix.java }}
       push: true
-
-  #
-  # --- Checks ---
-  #
-
-  ## Scan code with CodeQL.
-  checks-codeql:
-    name: "Checks"
-    uses: ./.github/workflows/checks.codeql.yml
-    permissions:
-      contents: read
-      actions: read
-      security-events: write
-
-  ## Scan dependencies for vulnerabilities.
-  checks-scorecards:
-    name: "Checks"
-    uses: ./.github/workflows/checks.scorecards.yml
-    permissions:
-      security-events: write
-      id-token: write
-      contents: read
-      actions: read
