@@ -11,9 +11,13 @@ permissions:
   packages: write
 
 jobs:
+  #
+  # --- Builds: Earthly ---
+  #
+
   ## Gradle: Earthly
   build-earthly-gradle:
-    name: "Build (Earthly)"
+    name: "Build (Gradle)"
     uses: ./.github/workflows/gradle.earthly.yml
     strategy:
       fail-fast: false
@@ -26,6 +30,7 @@ jobs:
 
   ## Gradle: Earthly
   build-earthly-maven:
+    name: "Build (Maven)"
     uses: ./.github/workflows/maven.earthly.yml
     strategy:
       fail-fast: false
@@ -35,3 +40,23 @@ jobs:
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
+
+  #
+  # --- Builds: Batect ---
+  #
+
+  # coming soon.
+
+  #
+  # --- Checks ---
+  #
+
+  ## Scan code with CodeQL.
+  checks-codeql:
+    name: "Checks"
+    uses: ./.github/workflows/checks.codeql.yml
+
+  ## Scan dependencies for vulnerabilities.
+  checks-deps-review:
+    name: "Checks"
+    uses: ./.github/workflows/checks.dependency-review.yml
