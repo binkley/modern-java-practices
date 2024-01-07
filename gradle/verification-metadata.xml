@@ -6,6 +6,7 @@
       <trusted-artifacts>
          <trust group="com.gradle.enterprise" reason="Release by Gradle team"/>
          <trust file="gradle-enterprise-gradle-plugin-.*" regex="true" reason="Release by Gradle team"/>
+         <trust file="github-dependency-graph-gradle-plugin-.*" regex="true" reason="Injected by Github Actions" />
       </trusted-artifacts>
       <ignored-keys>
          <ignored-key id="119DF80E6BF8DBC3" reason="Key couldn't be downloaded from any key server"/>
