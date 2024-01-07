@@ -78,6 +78,7 @@ permissions:
 
 env:
   BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+  DEPENDENCY_GRAPH_INCLUDE_CONFIGURATIONS: runtimeClasspath
 
 jobs:
   build:

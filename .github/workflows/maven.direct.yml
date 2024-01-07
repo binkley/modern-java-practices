@@ -20,7 +20,7 @@ name: "Maven (Direct)"
         type: string
         description: "Maven arguments"
       build:
-        default: "test integrationTest"
+        default: "verify"
         type: string
         description: "Build target"
       run:
@@ -99,6 +99,7 @@ jobs:
         with:
           path: |
             ~/.m2/repository
+            ~/.m2/wrapper
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}-jvm${{ inputs.java }}
           # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
           restore-keys: |
@@ -113,6 +114,10 @@ jobs:
           java-version: ${{ inputs.java }}
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
+      - name: "Setup: Activate Maven Settings"
+        run:
+          mkdir -p ~/.m2
+          cp -fv ./.mvn/settings.xml ~/.m2/settings.xml
       - name: "Build: Assemble and Test"
         run: |
           ./mvnw \

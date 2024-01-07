@@ -20,6 +20,9 @@ containers:
       - local: ~/.m2/repository
         container: /home/container-user/.m2/repository
         options: cached
+      - local: ~/.m2/wrapper
+        container: /home/container-user/.m2/wrapper
+        options: cached
     working_directory: /code
 
 tasks:
