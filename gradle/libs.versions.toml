@@ -24,7 +24,7 @@ spotbugs-plugin = "5.0.14"
 systemlambda = "1.2.1"
 tasktree-plugin = "2.1.1"
 testlogger = "4.0.0"
-versions-plugin = "0.46.0"
+versions-plugin = "0.50.0"
 
 [libraries]
 assertj = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
