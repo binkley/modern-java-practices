@@ -3,6 +3,10 @@ name: "Gradle (Batect)"
 "on":
   workflow_call:
     inputs:
+      artifact:
+        type: string
+        default: "gradle-batect"
+        description: "Artifact prefix"
       runner:
         default: "ubuntu-latest"
         type: string
@@ -38,6 +42,10 @@ name: "Gradle (Batect)"
 
   workflow_dispatch:
     inputs:
+      artifact:
+        type: string
+        default: "gradle-batect"
+        description: "Artifact prefix"
       runner:
         default: "ubuntu-latest"
         description: "Runner"
@@ -119,5 +127,12 @@ jobs:
       - name: "Artifact: JARs"
         uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
         with:
-          name: jars
+          name: ${{ inputs.artifact }}-jars
           path: build/libs/modern-java-practices*.jar
+      - name: "Artifact: Reports"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: ${{ inputs.artifact }}-reports
+          path: |
+            build/reports/*
+            build/test-results/*

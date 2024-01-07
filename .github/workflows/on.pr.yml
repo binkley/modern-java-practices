@@ -29,6 +29,7 @@ jobs:
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
+      artifact: gradle-earthly-jvm${{ matrix.java }}
 
   ## Maven: Earthly
   build-earthly-maven:
@@ -45,6 +46,7 @@ jobs:
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
+      artifact: maven-earthly-jvm${{ matrix.java }}
 
   #
   # --- Builds: Batect ---
@@ -65,6 +67,7 @@ jobs:
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
+      artifact: gradle-batect-jvm${{ matrix.java }}
 
   ## Maven: Batect
   build-batect-maven:
@@ -81,6 +84,7 @@ jobs:
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
+      artifact: maven-batect-jvm${{ matrix.java }}
 
   #
   # --- Checks ---

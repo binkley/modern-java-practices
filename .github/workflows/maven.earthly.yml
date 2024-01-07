@@ -3,6 +3,10 @@ name: "Maven (Earthly)"
 "on":
   workflow_call:
     inputs:
+      artifact:
+        type: string
+        default: "maven-earthly"
+        description: "Artifact prefix"
       runner:
         default: "ubuntu-latest"
         type: string
@@ -42,6 +46,10 @@ name: "Maven (Earthly)"
 
   workflow_dispatch:
     inputs:
+      artifact:
+        type: string
+        default: "maven-earthly"
+        description: "Artifact prefix"
       runner:
         default: "ubuntu-latest"
         description: "Runner"
@@ -137,3 +145,13 @@ jobs:
             ${{ inputs.push && '--push' || '' }} \
             ${{ inputs.args }} \
             ${{ inputs.run }} ${{ inputs.run_args }}
+      - name: "Artifact: JARs"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: ${{ inputs.artifact }}-jars
+          path: target/modern-java-practices*.jar
+      - name: "Artifact: Reports"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: ${{ inputs.artifact }}-reports
+          path: target/*reports*
