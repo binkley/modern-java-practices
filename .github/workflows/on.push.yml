@@ -34,6 +34,7 @@ jobs:
       java: ${{ matrix.java }}
       artifact: gradle-direct-jvm${{ matrix.java }}
       push: true  # push dependency graph up so it can be used for review
+      coverage: true
 
   ## Maven: Direct
   maven-direct-gradle:
