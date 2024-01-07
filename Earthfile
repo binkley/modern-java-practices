@@ -17,7 +17,7 @@ gradle-commons:
 
 build-with-gradle:
     FROM +gradle-commons
-    RUN --secret BUILDLESS_APIKEY ./gradlew build test integrationTest --no-configuration-cache --no-daemon
+    RUN --secret BUILDLESS_APIKEY ./gradlew build test integrationTest --no-configuration-cache --no-daemon --scan
 
 run-with-gradle:
     FROM +build-with-gradle
@@ -27,6 +27,7 @@ run-with-gradle:
 maven-commons:
     COPY mvnw .
     COPY .mvn .mvn
+    COPY .mvn/settings.xml ~/.m2/settings.xml
     COPY pom.xml .
     COPY config config
     COPY src src
@@ -36,11 +37,6 @@ maven-commons:
 
 build-with-maven:
     FROM +maven-commons
-    COPY mvnw .
-    COPY .mvn .mvn
-    COPY pom.xml .
-    COPY config config
-    COPY src src
     RUN --secret BUILDLESS_APIKEY ./mvnw clean verify
 
 run-with-maven:

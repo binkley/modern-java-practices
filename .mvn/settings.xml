@@ -6,7 +6,7 @@
             <configuration>
                 <httpHeaders>
                     <property>
-                        <name>X-API-Key</name>
+                        <name>x-api-key</name>
                         <value>${env.BUILDLESS_API_KEY}</value>
                     </property>
                 </httpHeaders>
