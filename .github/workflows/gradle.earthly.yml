@@ -163,10 +163,14 @@ jobs:
         with:
           name: ${{ inputs.artifact }}-jars
           path: build/libs/modern-java-practices*.jar
+          compression-level: "1"
+          if-no-files-found: ignore
       - name: "Artifact: Reports"
         uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        if: always()
         with:
           name: ${{ inputs.artifact }}-reports
+          if-no-files-found: ignore
           path: |
             build/reports/*
             build/test-results/*
