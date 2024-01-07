@@ -40,7 +40,7 @@ name: "Gradle (Direct)"
         type: boolean
         description: "Run Sonar"
       provenance:
-        default: true
+        default: false
         type: boolean
         description: "Enable provenance"
       push:
