@@ -4,6 +4,7 @@ containers:
     environment:
       # Needed for Gradle: Maven handles this via `.mvn/jvm.config`
       JAVA_OPTS: --add-opens java.base/java.lang=ALL-UNNAMED
+      BUILDLESS_APIKEY: ${BUILDLESS_APIKEY:-}
     run_as_current_user:
       enabled: true
       home_directory: /home/container-user
