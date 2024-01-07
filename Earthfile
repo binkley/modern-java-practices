@@ -42,12 +42,12 @@ maven-dependencies:
     FROM +maven-commons
     COPY pom.xml .
     COPY src src
-    RUN --secret BUILDLESS_APIKEY ./mvnw clean dependency:copy-dependencies
+    RUN --secret BUILDLESS_APIKEY ./mvnw clean dependency:collect
     SAVE IMAGE --cache-hint
 
 build-with-maven:
     FROM +maven-dependencies
-    RUN --secret BUILDLESS_APIKEY ./mvnw clean verify
+    RUN --secret BUILDLESS_APIKEY ./mvnw verify
 
 run-with-maven:
     FROM +build-with-maven
