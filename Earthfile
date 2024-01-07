@@ -9,7 +9,7 @@ gradle-commons:
     COPY settings.gradle.kts .
     COPY build.gradle .
     COPY config config
-    CACHE --sharing=shared --id gradle-common ~/.gradle
+    CACHE --sharing=shared --id gradle-common /root/.gradle
     CACHE --sharing=shared --id gradle-cache ./.gradle
     SAVE IMAGE --cache-hint
 
@@ -33,9 +33,9 @@ run-with-gradle:
 maven-commons:
     COPY mvnw .
     COPY .mvn .mvn
-    COPY .mvn/settings.xml ~/.m2/settings.xml
+    COPY .mvn/settings.xml /root/.m2/settings.xml
     COPY config config
-    CACHE --sharing=shared --id maven-common ~/.m2
+    CACHE --sharing=shared --id maven-common /root/.m2
     SAVE IMAGE --cache-hint
 
 maven-dependencies:
