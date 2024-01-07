@@ -74,12 +74,6 @@ function build-config-outdated-maven() {
     outdated-to-jar pom.xml
 }
 
-function rebuild-if-needed() {
-    if jar-outdated || build-config-outdated-maven; then
-        ./mvnw -Dmaven.test.skip=true package
-    fi
-}
-
 alt_class=''
 debug=false
 while getopts :C:J:j:dh-: opt; do
@@ -108,6 +102,19 @@ if [[ ! -x "./mvnw" ]]; then
 fi
 readonly jar=target/$artifactId-$version-jar-with-dependencies.jar
 
+# Restore artifacts or rebuild
+./mvnw \
+  -Dmaven.test.skip=true \
+  -DskipTest \
+  -Dpmd.skip=true \
+  -DskipPitest \
+  -Ddependency-check.skip=true \
+  package \
+  assembly:single
+
+# Remove modularity for running directly
+zip -d "$jar" module-info.class || echo "No module class file to remove"
+
 case "$alt_class" in
 '') jvm_flags=("${jvm_flags[@]}" -jar "$jar") ;;
 *)
@@ -115,7 +122,5 @@ case "$alt_class" in
     jvm_flags=("${jvm_flags[@]}" -cp "$jar" "$runtime_classname")
     ;;
 esac
-
-rebuild-if-needed
 
 exec java "${jvm_flags[@]}" "$@"

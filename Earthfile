@@ -1,6 +1,11 @@
 VERSION --global-cache 0.7
 FROM eclipse-temurin:21.0.1_12-jdk-jammy
 WORKDIR /code
+RUN apt-get update \
+    && apt-get install -y zip unzip \
+    && apt-get autoremove \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 gradle-commons:
     COPY gradlew .
@@ -23,6 +28,7 @@ gradle-dependencies:
 build-with-gradle:
     FROM +gradle-dependencies
     COPY src src
+    CACHE --sharing=shared --id gradle-target ./build
     RUN --secret BUILDLESS_APIKEY ./gradlew build test integrationTest --no-configuration-cache --no-daemon --scan
 
 run-with-gradle:
@@ -36,17 +42,17 @@ maven-commons:
     COPY .mvn/settings.xml /root/.m2/settings.xml
     COPY config config
     CACHE --sharing=shared --id maven-common /root/.m2/repository
-    SAVE IMAGE --cache-hint
 
 maven-dependencies:
     FROM +maven-commons
     COPY pom.xml .
     COPY src src
-    RUN --secret BUILDLESS_APIKEY ./mvnw clean dependency:collect
+    RUN --secret BUILDLESS_APIKEY ./mvnw -DskipTest -Dmaven.test.skip=true clean package dependency:collect
     SAVE IMAGE --cache-hint
 
 build-with-maven:
     FROM +maven-dependencies
+    CACHE --sharing=shared --id maven-target ./target
     RUN --secret BUILDLESS_APIKEY ./mvnw verify
 
 run-with-maven:
