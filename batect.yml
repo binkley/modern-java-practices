@@ -23,6 +23,9 @@ containers:
       - local: ~/.m2/wrapper
         container: /home/container-user/.m2/wrapper
         options: cached
+      - local: ~/.m2/build-cache
+        container: /home/container-user/.m2/build-cache
+        options: cached
     working_directory: /code
 
 tasks:
