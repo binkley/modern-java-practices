@@ -224,6 +224,20 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
+
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>resolve</goal>
+                            <goal>collect</goal>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -243,6 +257,7 @@
                         <arg>-parameters</arg>
                         <arg>-Xlint:-requires-automatic</arg>
                         <arg>-Xlint:-requires-transitive-automatic</arg>
+                        <arg>-XX:+EnableDynamicAgentLoading</arg>
                     </compilerArgs>
                     <failOnWarning>true</failOnWarning>
                     <parameters>true</parameters>
