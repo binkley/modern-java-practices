@@ -240,6 +240,9 @@
                     <compilerArgs>
                         <arg>-XDcompilePolicy=simple</arg>
                         <arg>-Xlint:all,-processing</arg>
+                        <arg>-parameters</arg>
+                        <arg>-Xlint:-requires-automatic</arg>
+                        <arg>-Xlint:-requires-transitive-automatic</arg>
                     </compilerArgs>
                     <failOnWarning>true</failOnWarning>
                     <parameters>true</parameters>
