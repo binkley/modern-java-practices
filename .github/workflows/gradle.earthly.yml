@@ -78,8 +78,10 @@ env:
 
 jobs:
   build:
-    name: Build/Test (Earthly, Java ${{ inputs.java }})
+    name: "Earthly + Gradle"
     runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
+    permissions:
+      packages: write
     steps:
       - name: "Setup: Harden Runner"
         uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1

@@ -19,7 +19,7 @@ jobs:
 
   ## Gradle: Earthly
   build-earthly-gradle:
-    name: "Gradle (Earthly, Java ${{ matrix.java }})"
+    name: "Build (Java ${{ matrix.java }})"
     uses: ./.github/workflows/gradle.earthly.yml
     secrets: inherit
     strategy:
@@ -34,7 +34,7 @@ jobs:
 
   ## Gradle: Earthly
   build-earthly-maven:
-    name: "Maven (Earthly, Java ${{ matrix.java }})"
+    name: "Build (Java ${{ matrix.java }})"
     uses: ./.github/workflows/maven.earthly.yml
     secrets: inherit
     strategy:
