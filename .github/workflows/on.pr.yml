@@ -25,7 +25,9 @@ jobs:
         java: [17, 21]
     permissions:
       contents: write
+      packages: write
       id-token: write
+      actions: read
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
