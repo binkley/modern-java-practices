@@ -68,6 +68,10 @@ name: "Gradle (Earthly)"
         default: "ghcr.io/sgammon/modern-java-practices/builder/gradle:latest"
         type: string
         description: "Builder container"
+      registry:
+        default: "ghcr.io"
+        type: string
+        description: "Registry"
       build:
         default: "+build-with-gradle"
         type: string
@@ -76,6 +80,10 @@ name: "Gradle (Earthly)"
         default: "+run-with-gradle"
         type: string
         description: "Run target"
+      run_args:
+        default: ""
+        type: string
+        description: "Runtime arguments"
       push:
         default: true
         type: boolean

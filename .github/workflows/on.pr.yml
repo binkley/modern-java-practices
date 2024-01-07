@@ -10,6 +10,29 @@ permissions:
   contents: read
 
 jobs:
+
+  #
+  # --- Builds: Direct ---
+  #
+
+  ## Gradle: Direct
+  build-direct-gradle:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/gradle.direct.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    permissions:
+      contents: write
+      packages: write
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: gradle-direct-jvm${{ matrix.java }}
+      push: true  # push dependency graph up so it can be used for review
+
   #
   # --- Builds: Earthly ---
   #
@@ -30,6 +53,7 @@ jobs:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: gradle-earthly-jvm${{ matrix.java }}
+      push: false
 
   ## Maven: Earthly
   build-earthly-maven:
@@ -47,6 +71,7 @@ jobs:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: maven-earthly-jvm${{ matrix.java }}
+      push: false
 
   #
   # --- Builds: Batect ---
@@ -68,6 +93,7 @@ jobs:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: gradle-batect-jvm${{ matrix.java }}
+      push: false
 
   ## Maven: Batect
   build-batect-maven:
@@ -85,6 +111,7 @@ jobs:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
       artifact: maven-batect-jvm${{ matrix.java }}
+      push: false
 
   #
   # --- Checks ---
@@ -103,6 +130,7 @@ jobs:
   checks-deps-review:
     name: "Checks"
     uses: ./.github/workflows/checks.dependency-review.yml
+    needs: [build-direct-gradle]
     permissions:
       contents: read
       pull-requests: write

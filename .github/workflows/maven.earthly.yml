@@ -64,6 +64,10 @@ name: "Maven (Earthly)"
         default: "ghcr.io/sgammon/modern-java-practices/builder/maven:latest"
         type: string
         description: "Builder container"
+      registry:
+        default: "ghcr.io"
+        type: string
+        description: "Registry"
       build:
         default: "+build-with-maven"
         type: string

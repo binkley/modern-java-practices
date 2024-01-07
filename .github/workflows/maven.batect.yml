@@ -64,6 +64,10 @@ name: "Maven (Batect)"
         default: "run-with-maven"
         type: string
         description: "Run target"
+      run_args:
+        default: "-o quiet"
+        type: string
+        description: "Runtime arguments"
       push:
         default: true
         type: boolean
