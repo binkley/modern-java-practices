@@ -122,7 +122,7 @@ jobs:
       - name: "Setup: Buildless"
         uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
       - name: "Setup: Java"
-        uses: actions/setup-java@v3
+        uses: buildless/setup-java@3232623d9c428cc5f228a01a2ae8d2d70f79775e  # v4
         with:
           distribution: temurin
           cache: gradle
