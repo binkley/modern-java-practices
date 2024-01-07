@@ -81,7 +81,7 @@
         <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}/site</maven-profiler-report-directory>
         <maven-project-info-reports-plugin.version>3.4.5</maven-project-info-reports-plugin.version>
-        <maven-site-plugin.version>4.0.0-M11</maven-site-plugin.version>
+        <maven-site-plugin.version>4.0.0-M13</maven-site-plugin.version>
         <maven-testing-plugins.version>3.2.2</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.2.0</maven-wrapper-plugin.version>
         <maven.version>3.9.6</maven.version>
