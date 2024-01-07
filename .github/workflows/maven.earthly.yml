@@ -35,10 +35,9 @@ name: "Maven (Earthly)"
         default: true
         type: boolean
         description: "Cache push"
-
     secrets:
       BUILDLESS_APIKEY:
-        required: false
+        required: true
         description: "API key for build caching"
 
   workflow_dispatch:
@@ -79,7 +78,7 @@ env:
 
 jobs:
   build:
-    name: Build and Test (Java ${{ inputs.java }})
+    name: Build/Test (Earthly, Java ${{ inputs.java }})
     runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
     steps:
       - name: "Setup: Harden Runner"

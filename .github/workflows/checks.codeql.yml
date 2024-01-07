@@ -32,17 +32,12 @@ env:
 
 jobs:
   analyze:
-    name: Analyze
+    name: "CodeQL"
     runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
       security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ["java"]
 
     steps:
       - name: "Setup: Harden Runner"
@@ -71,10 +66,10 @@ jobs:
       - name: "Setup: Initialize CodeQL"
         uses: github/codeql-action/init@1500a131381b66de0c52ac28abb13cd79f4b7ecc # v2.22.12
         with:
-          languages: ${{ matrix.language }}
+          languages: java
       - name: "CodeQL: Autobuild"
         uses: github/codeql-action/autobuild@1500a131381b66de0c52ac28abb13cd79f4b7ecc # v2.22.12
       - name: "CodeQL: Analysis"
         uses: github/codeql-action/analyze@1500a131381b66de0c52ac28abb13cd79f4b7ecc # v2.22.12
         with:
-          category: "/language:${{matrix.language}}"
+          category: "/language:java"

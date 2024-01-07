@@ -19,23 +19,30 @@ jobs:
 
   ## Gradle: Earthly
   build-earthly-gradle:
-    name: "Build (Earthly)"
+    name: "Gradle (Earthly, Java ${{ matrix.java }})"
     uses: ./.github/workflows/gradle.earthly.yml
+    secrets: inherit
     strategy:
       matrix:
         java: [17, 21]
-    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
 
   ## Gradle: Earthly
   build-earthly-maven:
+    name: "Maven (Earthly, Java ${{ matrix.java }})"
     uses: ./.github/workflows/maven.earthly.yml
+    secrets: inherit
     strategy:
       matrix:
         java: [17, 21]
-    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
