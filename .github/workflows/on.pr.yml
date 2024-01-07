@@ -142,8 +142,6 @@ jobs:
       contents: read
       actions: read
       security-events: write
-    with:
-      artifact: gradle-direct-jvm${{ matrix.java }}-jars
 
   ## Scan dependencies for vulnerabilities.
   checks-deps-review:
