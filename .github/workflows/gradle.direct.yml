@@ -39,6 +39,10 @@ name: "Gradle (Direct)"
         default: false
         type: boolean
         description: "Run Sonar"
+      provenance:
+        default: true
+        type: boolean
+        description: "Enable provenance"
       push:
         default: true
         type: boolean
@@ -170,3 +174,15 @@ jobs:
           path: |
             build/reports/*
             build/test-results/*
+
+  provenance:
+    name: "Provenance"
+    if: inputs.provenance
+    needs: [build]
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
+    uses: slsa-framework/slsa-github-generator/.github/workflows/builder_gradle_slsa3.yml@v1.9.0
+    with:
+      artifact-list: ./build/libs/modern-java-practices*.jar
