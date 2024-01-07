@@ -8,7 +8,6 @@ name: "Pull Request"
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
   #
@@ -19,11 +18,14 @@ jobs:
   build-earthly-gradle:
     name: "Build (Gradle)"
     uses: ./.github/workflows/gradle.earthly.yml
+    secrets: inherit
     strategy:
       fail-fast: false
       matrix:
         java: [17, 21]
-    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
@@ -32,11 +34,14 @@ jobs:
   build-earthly-maven:
     name: "Build (Maven)"
     uses: ./.github/workflows/maven.earthly.yml
+    secrets: inherit
     strategy:
       fail-fast: false
       matrix:
         java: [17, 21]
-    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
     with:
       runner: ubuntu-latest
       java: ${{ matrix.java }}
@@ -55,8 +60,16 @@ jobs:
   checks-codeql:
     name: "Checks"
     uses: ./.github/workflows/checks.codeql.yml
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
 
   ## Scan dependencies for vulnerabilities.
   checks-deps-review:
     name: "Checks"
     uses: ./.github/workflows/checks.dependency-review.yml
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write
