@@ -4,6 +4,5 @@ module modern {
     requires java.base;
     requires java.desktop;
     requires jakarta.annotation;
-
     requires lombok;
 }

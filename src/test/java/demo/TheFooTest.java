@@ -13,7 +13,10 @@ import static org.mockito.Mockito.mockStatic;
 /**
  * An example of test class.
  */
-@SuppressFBWarnings("NP_NONNULL_PARAM_VIOLATION")
+@SuppressFBWarnings({
+        "NP_NONNULL_PARAM_VIOLATION",
+        "NP_NULL_PARAM_DEREF_NONVIRTUAL"
+})
 @SuppressWarnings({
         "PMD.TooManyStaticImports",
         "PMD.AtLeastOneConstructor"
