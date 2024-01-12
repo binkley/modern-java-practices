@@ -96,7 +96,7 @@
         <spotbugs.version>4.8.0</spotbugs.version>
         <system-lambda.version>1.2.1</system-lambda.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
-        <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
         <!-- @formatter:on -->
     </properties>
 
