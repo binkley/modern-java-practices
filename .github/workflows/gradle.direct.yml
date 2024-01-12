@@ -1,0 +1,188 @@
+name: "Gradle (Direct)"
+
+"on":
+  workflow_call:
+    inputs:
+      artifact:
+        type: string
+        default: "gradle-direct"
+        description: "Artifact prefix"
+      runner:
+        default: "ubuntu-latest"
+        type: string
+        description: "Runner"
+      java:
+        default: "21"
+        type: string
+        description: "Java version"
+      args:
+        default: "--no-daemon --scan --no-configuration-cache --dependency-verification=lenient --warning-mode=none"
+        type: string
+        description: "Gradle arguments"
+      build:
+        default: "test integrationTest"
+        type: string
+        description: "Build target"
+      run:
+        default: "./run-with-gradle.sh"
+        type: string
+        description: "Run target"
+      run_args:
+        default: ""
+        type: string
+        description: "Runtime arguments"
+      coverage:
+        default: false
+        type: boolean
+        description: "Report coverage"
+      sonar:
+        default: false
+        type: boolean
+        description: "Run Sonar"
+      provenance:
+        default: false
+        type: boolean
+        description: "Enable provenance"
+      push:
+        default: true
+        type: boolean
+        description: "Cache push"
+    secrets:
+      BUILDLESS_APIKEY:
+        required: true
+        description: "API key for build caching"
+      CODECOV_TOKEN:
+        required: false
+        description: "Coverage token"
+      SONAR_TOKEN:
+        required: false
+        description: "Sonar token"
+
+  workflow_dispatch:
+    inputs:
+      artifact:
+        type: string
+        default: "gradle-direct"
+        description: "Artifact prefix"
+      runner:
+        default: "ubuntu-latest"
+        description: "Runner"
+      java:
+        default: "21"
+        description: "Java version"
+      args:
+        default: "--no-daemon --scan --no-configuration-cache --dependency-verification=lenient --warning-mode=none"
+        type: string
+        description: "Gradle arguments"
+      build:
+        default: "test integrationTest"
+        type: string
+        description: "Build target"
+      run:
+        default: "./run-with-gradle.sh"
+        type: string
+        description: "Run target"
+      run_args:
+        default: ""
+        type: string
+        description: "Runtime arguments"
+      coverage:
+        default: false
+        type: boolean
+        description: "Report coverage"
+      sonar:
+        default: false
+        type: boolean
+        description: "Run Sonar"
+      push:
+        default: true
+        type: boolean
+        description: "Cache push"
+
+permissions:
+  contents: write
+
+env:
+  CI: 'true'
+  BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+  DEPENDENCY_GRAPH_INCLUDE_CONFIGURATIONS: runtimeClasspath
+
+jobs:
+  build:
+    name: "Gradle"
+    runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: "Setup: Harden Runner"
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+      - name: "Setup: Checkout"
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          persist-credentials: false
+      - name: "Setup: Buildless"
+        uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
+      - name: "Setup: Java"
+        uses: buildless/setup-java@3232623d9c428cc5f228a01a2ae8d2d70f79775e  # v4
+        with:
+          distribution: temurin
+          cache: gradle
+          java-version: ${{ inputs.java }}
+      - name: "Setup: Gradle"
+        uses: gradle/gradle-build-action@982da8e78c05368c70dac0351bb82647a9e9a5d2 # v2.11.1
+        with:
+          gradle-version: wrapper
+          gradle-home-cache-cleanup: true
+          cache-read-only: ${{ inputs.push && 'false' || 'true' }}
+          dependency-graph: ${{ inputs.push && 'generate-and-submit' || 'generate' }}
+      - name: "Build: Assemble and Test"
+        run: |
+          ./gradlew \
+            ${{ inputs.args }} \
+            ${{ inputs.build }}
+      - name: "Build: Execute Run"
+        env:
+          GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+        run: ${{ inputs.run }} ${{ inputs.run_args }}
+      - name: "Report: Coverage"
+        if: inputs.coverage
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: "Report: Sonar"
+        if: inputs.sonar
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: "Artifact: JARs"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: ${{ inputs.artifact }}-jars
+          path: build/libs/modern-java-practices*.jar
+          if-no-files-found: ignore
+          compression-level: "1"
+      - name: "Artifact: Reports"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        if: always()
+        with:
+          name: ${{ inputs.artifact }}-reports
+          if-no-files-found: ignore
+          path: |
+            build/reports/*
+            build/test-results/*
+
+  provenance:
+    name: "Provenance"
+    if: inputs.provenance
+    needs: [build]
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
+    uses: slsa-framework/slsa-github-generator/.github/workflows/builder_gradle_slsa3.yml@v1.9.0
+    with:
+      artifact-list: ./build/libs/modern-java-practices*.jar

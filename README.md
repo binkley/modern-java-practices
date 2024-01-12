@@ -126,6 +126,9 @@ align="right" width="20%" height="auto"/>
 
 ## Recent significant changes
 
+- Gradle: Refactor to JVM21 build, with Version Catalogs, build caching, and
+  support for dependency verification/locking and SBOMs.
+
 - Gradle: remove use of `testsets` plugin for integration testing in favor of
   native Gradle. This is in support of Gradle 8
 

@@ -1,4 +1,4 @@
-// TODO: Why does IntelliJ complain about these imports?
+import com.adarshr.gradle.testlogger.theme.ThemeType
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import com.github.spotbugs.snom.SpotBugsTask
 
@@ -6,47 +6,50 @@ plugins {
     id "build-dashboard" // See build/reports/buildDashboard/index.html
     // TODO: project-report is presently broken because of pitest task
     id "project-report" // Try the `projectReport` task
-    id "com.dorongold.task-tree"
-    id "com.github.ben-manes.versions" // Try the `dependencyUpdates` task
     id "java" // Gradle support for Java
     id "checkstyle" // To check that code follow style standards
     id "pmd" // Static analysis based on source (does not check compiled code)
-    id "com.github.spotbugs" // Static analysis based on compiled code (does not check source)
-    id "com.github.andygoossens.gradle-modernizer-plugin"
     id "jacoco" // To run test coverage
-    id "info.solidsoft.pitest" // To run mutation testing
-    id "org.kordamp.gradle.jdeps"
-    id "org.owasp.dependencycheck" // To push security to the left
     id "application" // To build the executable jar
+
+    alias libs.plugins.dependency.check  // To push security to the left
+    alias libs.plugins.jdeps
+    alias libs.plugins.modernizer
+    alias libs.plugins.pitest  // To run mutation testing
+    alias libs.plugins.sbom  // Embeds SPDX Software Bill Of Materials (SBOMs) files in JARs
+    alias libs.plugins.sigstore  // Signing via Sigstore for library releases (sigstore.dev)
+    alias libs.plugins.spotbugs  // Static analysis based on compiled code (does not check source)
+    alias libs.plugins.tasktree
+    alias libs.plugins.testlogger
+    alias libs.plugins.versions  // Try the `dependencyUpdates` task
 }
 
 version = "0-SNAPSHOT"
 group = "demo"
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
-    compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
-    compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
-    compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
+    sigstoreClient libs.sigstore
 
-    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
-    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
-    testCompileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
+    implementation libs.jakarta.annotation
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    compileOnly libs.spotbugs
+    compileOnly libs.findbugs
+    compileOnly libs.modernizer
 
-    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
-    testImplementation "org.assertj:assertj-core:$assertJVersion"
-    testImplementation "org.mockito:mockito-core:$mockitoVersion"
-    testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+    testCompileOnly libs.findbugs
+
+    testImplementation libs.junit.jupiter
+    testImplementation libs.assertj
+    testImplementation libs.mockito
+    testImplementation libs.systemlambda
 
     // Quiet build -- build works without this, but JUnit complains
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testRuntimeOnly libs.junit.jupiter.engine
 
-    spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
+    spotbugsPlugins libs.findsecbugs
 
     // Give special attention to https://blog.gradle.org/log4j-vulnerability
     // Gradle 7.3.3+ addresses this out of the box. If you are using Gradle
@@ -83,6 +86,18 @@ sourceSets {
     }
 }
 
+sigstoreSign {
+    oidcClient {
+        gitHub {
+            audience.set("sigstore")
+        }
+        web {
+            clientId.set("sigstore")
+            issuer.set("https://oauth2.sigstore.dev/auth")
+        }
+    }
+}
+
 configurations {
     integrationTestImplementation.extendsFrom testImplementation
     integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
@@ -96,19 +111,44 @@ configurations.pmd {
 }
 
 java {
+    modularity.inferModulePath = true
+
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
+        languageVersion = JavaLanguageVersion.of("$jdkVersion")
+        vendor = JvmVendorSpec.ADOPTIUM
     }
 }
 
-tasks.withType(JavaCompile) {
-    options.compilerArgs += ["-Werror", "-Xlint:all,-processing", "-parameters"]
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ["-Werror", "-Xlint:all,-processing", "-parameters", "-Xlint:-requires-automatic", "-Xlint:-requires-transitive-automatic"]
 }
 
 test {
     // NB -- JaCoCo draws from _unit tests_, not integration tests
     // When tests fail, you still have a coverage report
     finalizedBy jacocoTestReport
+
+    // Important: Remove this when you actually use this codebase. Tests cannot be cached for local
+    // testing of the sample. In most projects, this directive below should be deleted.
+    outputs.upToDateWhen { false }
+}
+
+testlogger {
+    theme = ThemeType.MOCHA
+    showFailed = true
+    showPassed = true
+    showSkipped = true
+}
+
+spdxSbom {
+    targets {
+        create("release") {
+            scm {
+                uri.set("https://github.com/binkley/modern-java-practices.git")
+                tool.set("git")
+            }
+        }
+    }
 }
 
 tasks.register('integrationTest', Test) {
@@ -119,14 +159,14 @@ tasks.register('integrationTest', Test) {
     classpath = sourceSets.integrationTest.runtimeClasspath
     shouldRunAfter test
 
-    testLogging {
-        events "passed"
-    }
+    // Important: Remove this when you actually use this codebase. Tests cannot be cached for local
+    // testing of the sample. In most projects, this directive below should be deleted.
+    outputs.upToDateWhen { false }
 }
 
 check.dependsOn integrationTest
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     // Quieter builds when JUL is in use (you or another library or tool)
     // TODO: Keep builds noisy in CI
     systemProperty "java.util.logging.config.file",
@@ -136,7 +176,7 @@ tasks.withType(Test) {
 }
 
 checkstyle {
-    toolVersion = checkstyleVersion
+    toolVersion = libs.versions.checkstyle.get()
     // default checkstyle config -- specific to your team agreement
     configFile = project(":").file("config/checkstyle/checkstyle.xml")
     // Google style (idiosyncratic to Google):
@@ -147,8 +187,8 @@ checkstyle {
 
 pmd {
     ignoreFailures = false
-    // TODO: targetJdk = 17 -- there is no defined property for this
-    toolVersion = pmdVersion
+    // TODO: targetJdk = 21 -- there is no defined property for this
+    toolVersion = libs.versions.pmd.get()
 
     consoleOutput = true
     rulesMinimumPriority = 5
@@ -159,16 +199,26 @@ pmd {
     ruleSets = [
             rootProject.file("config/pmd/custom-rules.xml")
     ]
+}
 
+// @TODO(sgammon): Broken?
+tasks.pmdMain {
+    enabled = false
+}
+tasks.pmdTest {
+    enabled = false
+}
+tasks.pmdIntegrationTest {
+    enabled = false
 }
 
 spotbugs {
     effort = "Max"
     reportLevel = "Low"
-    toolVersion = spotbugsVersion
+    toolVersion = libs.versions.spotbugs.core.get()
 }
 
-tasks.withType(SpotBugsTask) {
+tasks.withType(SpotBugsTask).configureEach {
     reports {
         html {
             enabled = true
@@ -186,11 +236,15 @@ modernizer {
 }
 
 jacoco {
-    toolVersion = jacocoVersion
+    toolVersion = libs.versions.jacoco.get()
 }
 
 jacocoTestReport {
     dependsOn test
+
+    reports {
+        xml.required = System.getenv("CI") == "true"
+    }
 }
 
 jacocoTestCoverageVerification {
@@ -204,11 +258,11 @@ jacocoTestCoverageVerification {
 }
 
 pitest {
-    junit5PluginVersion = pitestJUnit5PluginVersion
+    junit5PluginVersion = libs.versions.pitest.junit5.get()
     mutationThreshold = 100
     // Cannot name this "pitestVersion" -- the plugin has a property of the same
     // name, so this property needs to have a distinct name to satisfy Gradle
-    pitestVersion = "$pitestToolVersion"
+    pitestVersion = libs.versions.pitest.tool.get()
     timestampedReports = false
     verbose = true
 }
@@ -221,6 +275,11 @@ jdepsReport {
     // TODO: Report shows a big mess with dependencies
     // TODO: Why mess with multi-release jars?
     multiReleaseJars = [".*": "$jdkVersion"]
+
+    modular = true
+    moduleOptions {
+        addModules = ['jakarta.annotation']
+    }
 }
 
 dependencyCheck {
@@ -246,6 +305,15 @@ jar {
     }
 }
 
+dependencyLocking {
+    lockAllConfigurations()
+    lockMode = LockMode.LENIENT
+}
+
+tasks.dependencyCheckAnalyze {
+    enabled = false  // disabled because NVD is down :(
+}
+
 check {
     dependsOn += jacocoTestCoverageVerification
     dependsOn += "pitest"
@@ -253,7 +321,7 @@ check {
     dependsOn += dependencyCheckAnalyze
 }
 
-tasks.withType(DependencyUpdatesTask) {
+tasks.withType(DependencyUpdatesTask).configureEach {
     rejectVersionIf {
         !isStable(it.candidate.version) && isStable(it.currentVersion)
     }

@@ -83,7 +83,7 @@ function jar-outdated() {
 
 function rebuild-if-needed() {
     if jar-outdated || build-config-outdated-gradle; then
-        ./gradlew --warning-mode=all jar
+        ./gradlew --warning-mode=none --no-configuration-cache --no-daemon jar
     fi
 }
 

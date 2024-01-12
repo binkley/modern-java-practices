@@ -44,4 +44,10 @@
         ]]></notes>
       <cve>CVE-2023-45960</cve>
     </suppress>
+    <suppress>
+      <notes><![CDATA[
+      Unrelated CVE describing an issue in the LINE app for Android. False-positive.
+      ]]></notes>
+      <cve>CVE-2015-0897</cve>
+    </suppress>
 </suppressions>

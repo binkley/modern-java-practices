@@ -14,24 +14,46 @@ printf -v pbold "\e[1m"
 
 echo "${preset}"
 echo "${pbold}BUILD WITH GRADLE UNDER BATECT${preset}"
-./batect -o quiet build-with-gradle 
-echo "${pbold}RUN WITH GRADLE UNDER BATECT${preset}" 
-./batect -o quiet run-with-gradle 
+./batect -o quiet build-with-gradle
+echo "${pbold}RUN WITH GRADLE UNDER BATECT${preset}"
+./batect -o quiet run-with-gradle
 
 echo 
-echo "${pbold}BUILD WITH MAVEN UNDER BATECT${preset}" 
-./batect -o quiet build-with-maven 
-echo "${pbold}RUN WITH MAVEN UNDER BATECT${preset}" 
-./batect -o quiet run-with-maven 
+echo "${pbold}BUILD WITH MAVEN UNDER BATECT${preset}"
+./batect -o quiet build-with-maven
+echo "${pbold}RUN WITH MAVEN UNDER BATECT${preset}"
+./batect -o quiet run-with-maven
 
 echo 
 echo "${pbold}BUILD WITH GRADLE UNDER EARTHLY${preset}" 
-earthly +build-with-gradle 
-echo "${pbold}RUN WITH GRADLE UNDER EARTHLY${preset}" 
-earthly +run-with-gradle 
+earthly \
+  --secret BUILDLESS_APIKEY \
+  --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/gradle:latest \
+  --push \
+  --ci \
+  +build-with-gradle
+
+echo "${pbold}RUN WITH GRADLE UNDER EARTHLY${preset}"
+earthly \
+  --secret BUILDLESS_APIKEY \
+  --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/gradle:latest \
+  --push \
+  --ci \
+  +run-with-gradle
 
 echo 
 echo "${pbold}BUILD WITH MAVEN UNDER EARTHLY${preset}" 
-earthly +build-with-maven 
+earthly \
+  --secret BUILDLESS_APIKEY \
+  --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/maven:latest \
+  --push \
+  --ci \
+  +build-with-maven
+
 echo "${pbold}RUN WITH MAVEN UNDER EARTHLY${preset}" 
-earthly +run-with-maven
+earthly \
+  --secret BUILDLESS_APIKEY \
+  --remote-cache=ghcr.io/sgammon/modern-java-practices/builder/maven:latest \
+  --push \
+  --ci \
+  +run-with-maven

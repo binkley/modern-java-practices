@@ -1,0 +1,56 @@
+[versions]
+assertj = "3.25.1"
+checkstyle = "10.12.4"
+dependency-check = "8.4.2"
+findbugs = "3.0.1"
+findsecbugs = "1.12.0"
+jacoco = "0.8.11"
+jakarta-annotation = "2.1.1"
+jdeps = "0.20.0"
+junit = "5.10.1"
+lombok = "1.18.30"
+mockito = "5.8.0"
+modernizer-core = "2.7.0"
+modernizer-plugin = "1.9.0"
+pitest-junit5 = "1.2.1"
+pitest-plugin = "1.15.0"
+pitest-tool = "1.15.3"
+pmd = "6.55.0"
+sigstore-core = "0.6.0"
+sigstore-plugin = "0.5.0"
+spdx-sbom = "0.5.0"
+spotbugs-core = "4.8.0"
+spotbugs-plugin = "5.0.14"
+systemlambda = "1.2.1"
+tasktree-plugin = "2.1.1"
+testlogger = "4.0.0"
+versions-plugin = "0.50.0"
+
+[libraries]
+assertj = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+findbugs = { group = "com.google.code.findbugs", name = "findbugs-annotations", version.ref = "findbugs" }
+findsecbugs = { group = "com.h3xstream.findsecbugs", name = "findsecbugs-plugin", version.ref = "findsecbugs" }
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+mockito = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+modernizer = { group = "org.gaul", name = "modernizer-maven-annotations", version.ref = "modernizer-core" }
+sigstore = { group = "dev.sigstore", name = "sigstore-java", version.ref = "sigstore-core" }
+spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version.ref = "spotbugs-core" }
+systemlambda = { group = "com.github.stefanbirkner", name = "system-lambda", version.ref = "systemlambda" }
+jakarta-annotation = { group = "jakarta.annotation", name = "jakarta.annotation-api", version.ref = "jakarta-annotation" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+
+[plugins]
+dependency-check = { id = "org.owasp.dependencycheck", version.ref = "dependency-check" }
+jdeps = { id = "org.kordamp.gradle.jdeps", version.ref = "jdeps" }
+modernizer = { id = "com.github.andygoossens.gradle-modernizer-plugin", version.ref = "modernizer-plugin" }
+pitest = { id = "info.solidsoft.pitest", version.ref = "pitest-plugin" }
+sbom = { id = "org.spdx.sbom", version.ref = "spdx-sbom" }
+sigstore = { id = "dev.sigstore.sign", version.ref = "sigstore-plugin" }
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs-plugin" }
+tasktree = { id = "com.dorongold.task-tree", version.ref = "tasktree-plugin" }
+testlogger = { id = "com.adarshr.test-logger", version.ref = "testlogger" }
+versions = { id = "com.github.ben-manes.versions", version.ref = "versions-plugin" }
+
+[bundles]
+# Add bundles with multiple libraries here.

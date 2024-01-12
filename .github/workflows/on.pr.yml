@@ -1,0 +1,154 @@
+name: "Pull Request"
+
+"on":
+  pull_request:
+    paths-ignore:
+      - '*.md'
+      - 'images/**'
+
+permissions:
+  contents: read
+
+jobs:
+  #
+  # --- Builds: Direct ---
+  #
+
+  ## Gradle: Direct
+  build-direct-gradle:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/gradle.direct.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+      actions: read
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: gradle-direct-jvm${{ matrix.java }}
+      push: true  # push dependency graph up so it can be used for review
+      coverage: true
+
+  ## Maven: Direct
+  maven-direct-gradle:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/maven.direct.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: maven-direct-jvm${{ matrix.java }}
+
+  #
+  # --- Builds: Earthly ---
+  #
+
+  ## Gradle: Earthly
+  build-earthly-gradle:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/gradle.earthly.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    permissions:
+      contents: read
+      packages: write
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: gradle-earthly-jvm${{ matrix.java }}
+      push: true  # allow updating cached container
+
+  ## Maven: Earthly
+  build-earthly-maven:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/maven.earthly.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    permissions:
+      contents: read
+      packages: write
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: maven-earthly-jvm${{ matrix.java }}
+      push: true  # allow updating cached container
+
+  #
+  # --- Builds: Batect ---
+  #
+
+  ## Gradle: Batect
+  build-batect-gradle:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/gradle.batect.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    permissions:
+      contents: read
+      packages: write
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: gradle-batect-jvm${{ matrix.java }}
+      push: false
+
+  ## Maven: Batect
+  build-batect-maven:
+    name: "Build (Java ${{ matrix.java }})"
+    uses: ./.github/workflows/maven.batect.yml
+    secrets: inherit
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+    permissions:
+      contents: read
+      packages: write
+    with:
+      runner: ubuntu-latest
+      java: ${{ matrix.java }}
+      artifact: maven-batect-jvm${{ matrix.java }}
+      push: false
+
+  #
+  # --- Checks ---
+  #
+
+  ## Scan code with CodeQL.
+  checks-codeql:
+    name: "Checks"
+    uses: ./.github/workflows/checks.codeql.yml
+    needs: [build-direct-gradle]
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+
+  ## Scan dependencies for vulnerabilities.
+  checks-deps-review:
+    name: "Checks"
+    uses: ./.github/workflows/checks.dependency-review.yml
+    needs: [build-direct-gradle]
+    permissions:
+      contents: read
+      pull-requests: write
+      security-events: write

@@ -1,0 +1,166 @@
+name: "Maven (Earthly)"
+
+"on":
+  workflow_call:
+    inputs:
+      artifact:
+        type: string
+        default: "maven-earthly"
+        description: "Artifact prefix"
+      runner:
+        default: "ubuntu-latest"
+        type: string
+        description: "Runner"
+      java:
+        default: "21"
+        type: string
+        description: "Java version"
+      args:
+        default: "--ci"
+        type: string
+        description: "Earthly arguments"
+      builder:
+        default: "ghcr.io/sgammon/modern-java-practices/builder/maven:latest"
+        type: string
+        description: "Builder container"
+      registry:
+        default: "ghcr.io"
+        type: string
+        description: "Registry"
+      build:
+        default: "+build-with-maven"
+        type: string
+        description: "Build target"
+      run:
+        default: "+run-with-maven"
+        type: string
+        description: "Run target"
+      push:
+        default: true
+        type: boolean
+        description: "Cache push"
+    secrets:
+      BUILDLESS_APIKEY:
+        required: true
+        description: "API key for build caching"
+
+  workflow_dispatch:
+    inputs:
+      artifact:
+        type: string
+        default: "maven-earthly"
+        description: "Artifact prefix"
+      runner:
+        default: "ubuntu-latest"
+        description: "Runner"
+      java:
+        default: "21"
+        description: "Java version"
+      args:
+        default: "--ci"
+        type: string
+        description: "Earthly arguments"
+      builder:
+        default: "ghcr.io/sgammon/modern-java-practices/builder/maven:latest"
+        type: string
+        description: "Builder container"
+      registry:
+        default: "ghcr.io"
+        type: string
+        description: "Registry"
+      build:
+        default: "+build-with-maven"
+        type: string
+        description: "Build target"
+      run:
+        default: "+run-with-maven"
+        type: string
+        description: "Run target"
+      push:
+        default: true
+        type: boolean
+        description: "Cache push"
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+
+jobs:
+  build:
+    name: "Maven + Earthly"
+    runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
+    permissions:
+      packages: write
+    steps:
+      - name: "Setup: Harden Runner"
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+      - name: "Setup: Checkout"
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          persist-credentials: false
+      - name: "Setup: Caches"
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
+        env:
+          cache-name: caches-maven
+        with:
+          path: |
+            ~/.m2/repository
+            ~/.m2/wrapper
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}-jvm${{ inputs.java }}
+          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-jvm${{ inputs.java }}
+            ${{ runner.os }}-${{ env.cache-name }}-
+            ${{ runner.os }}-
+      - name: "Setup: Buildless"
+        uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
+      - name: "Setup: Use Earthly"
+        uses: earthly/actions-setup@be3fe0c1f84e9776b5a184d21bf7a4a779ea2e6b # v1
+        with:
+          version: "latest"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Setup: Docker QEMU"
+        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3
+      - name: "Setup: Docker Login"
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Build: Assemble and Test"
+        run: |
+          earthly \
+            ${{ inputs.args }} \
+            --secret BUILDLESS_APIKEY \
+            ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
+            ${{ inputs.push && '--push' || '' }} \
+            ${{ inputs.args }} \
+            ${{ inputs.build }}
+      - name: "Build: Execute Run"
+        run: |
+          earthly \
+            ${{ inputs.args }} \
+            --secret BUILDLESS_APIKEY \
+            ${{ inputs.builder && format('--remote-cache={0}', inputs.builder) || '' }} \
+            ${{ inputs.push && '--push' || '' }} \
+            ${{ inputs.args }} \
+            ${{ inputs.run }} ${{ inputs.run_args }}
+      - name: "Artifact: JARs"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: ${{ inputs.artifact }}-jars
+          path: target/modern-java-practices*.jar
+          if-no-files-found: ignore
+          compression-level: "1"
+      - name: "Artifact: Reports"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        if: always()
+        with:
+          name: ${{ inputs.artifact }}-reports
+          if-no-files-found: ignore
+          path: target/*reports*

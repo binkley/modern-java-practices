@@ -1,0 +1,14 @@
+license-check: true
+vulnerability-check: true
+allow-dependencies-licenses:
+  - pkg:maven/jakarta.annotation:jakarta.annotation-api
+  - pkg:github/batect/batect-wrapper-validation-action
+  - pkg:github/earthly/actions-setup
+
+allow-ghsas:
+  # These match the list in `owasp-suppressions.xml`.
+  - "GHSA-5mg8-w23w-74h3"
+  - "GHSA-7g45-4rm6-3mm3"
+  - "GHSA-g6ph-x5wf-g337"
+  - "GHSA-jcwr-x25h-x5fh"
+  - "GHSA-fgq9-fc3q-vqmw"

@@ -1,0 +1,146 @@
+name: "Gradle (Batect)"
+
+"on":
+  workflow_call:
+    inputs:
+      artifact:
+        type: string
+        default: "gradle-batect"
+        description: "Artifact prefix"
+      runner:
+        default: "ubuntu-latest"
+        type: string
+        description: "Runner"
+      java:
+        default: "21"
+        type: string
+        description: "Java version"
+      args:
+        default: ""
+        type: string
+        description: "Batect arguments"
+      build:
+        default: "build-with-gradle"
+        type: string
+        description: "Build target"
+      run:
+        default: "run-with-gradle"
+        type: string
+        description: "Run target"
+      run_args:
+        default: "-o quiet"
+        type: string
+        description: "Runtime arguments"
+      push:
+        default: true
+        type: boolean
+        description: "Cache push"
+    secrets:
+      BUILDLESS_APIKEY:
+        required: true
+        description: "API key for build caching"
+
+  workflow_dispatch:
+    inputs:
+      artifact:
+        type: string
+        default: "gradle-batect"
+        description: "Artifact prefix"
+      runner:
+        default: "ubuntu-latest"
+        description: "Runner"
+      java:
+        default: "21"
+        description: "Java version"
+      args:
+        default: ""
+        type: string
+        description: "Batect arguments"
+      build:
+        default: "build-with-gradle"
+        type: string
+        description: "Build target"
+      run:
+        default: "run-with-gradle"
+        type: string
+        description: "Run target"
+      run_args:
+        default: ""
+        type: string
+        description: "Runtime arguments"
+      push:
+        default: true
+        type: boolean
+        description: "Cache push"
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+
+jobs:
+  build:
+    name: "Gradle + Batect"
+    runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
+    permissions:
+      packages: write
+    steps:
+      - name: "Setup: Harden Runner"
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+      - name: "Setup: Checkout"
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          persist-credentials: false
+      - name: "Setup: Validate Batect Scripts"
+        uses: batect/batect-wrapper-validation-action@db5c00345a3b15b7e6b6761dda3bef59aa02c23b # v0.4.0
+      - name: "Setup: Caches (Batect)"
+        uses: actions/cache@0769f2e44373d687c841be56f618397100943c5e # master
+        env:
+          cache-name: batect-cache
+        with:
+          path: ~/.batect
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/batect.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: "Setup: Caches (Gradle)"
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
+        env:
+          cache-name: caches-gradle
+        with:
+          path: |
+            ~/.gradle
+            ./.gradle
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}-jvm${{ inputs.java }}
+          # TODO: See discussion: https://github.com/jeremylong/DependencyCheck/issues/2560#issuecomment-702098748
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-jvm${{ inputs.java }}
+            ${{ runner.os }}-${{ env.cache-name }}-
+            ${{ runner.os }}-
+      - name: "Setup: Buildless"
+        uses: buildless/setup@30e82389418c7f17046606183bc4c78b2c8913e0 # v1.0.2
+      - name: "Build: Assemble and Test"
+        run: ./batect ${{ inputs.args }} ${{ inputs.build }}
+      - name: "Build: Execute Run"
+        run: ./batect ${{ inputs.args }} ${{ inputs.run_args }} ${{ inputs.run }}
+      - name: "Artifact: JARs"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        with:
+          name: ${{ inputs.artifact }}-jars
+          path: build/libs/modern-java-practices*.jar
+          if-no-files-found: ignore
+          compression-level: "1"
+      - name: "Artifact: Reports"
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4.0.0
+        if: always()
+        with:
+          name: ${{ inputs.artifact }}-reports
+          if-no-files-found: ignore
+          path: |
+            build/reports/*
+            build/test-results/*
