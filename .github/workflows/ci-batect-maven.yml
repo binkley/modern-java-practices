@@ -61,13 +61,13 @@ jobs:
         run: ./batect -o quiet run-with-maven
 
       - name: Save artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jars
           path: target/modern-java-practices*.jar
 
       - name: Save site
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: site
           path: target/site/
