@@ -17,6 +17,15 @@ Java/JVM projects using
 [Maven](https://maven.apache.org/what-is-maven.html), and a _starter project_
 in Java.
 
+The best documentation headline on how to approach your build and pipeline:
+[**Builds are
+programs**](https://www.clojure.org/guides/tools_build#_builds_are_programs).
+This is true regardless of what language or build tool you choose, and you
+should treat your build and your pipeline as worthy of your attention the same
+as you would your project source code.
+I'm showing you practices and tools that help you make these as _first-class_
+alongside your program or library.
+
 The focus is _best build practices_ and _project hygiene_.
 This document is _agnostic_ between Gradle and Maven: discussion in each section
 covers both tools (alphabetical order, Gradle before Maven).
@@ -534,7 +543,8 @@ ecosystem, and your project needs. In summary:
   team). If interested in custom plugins,
   [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
 
-For Modern Java/JVM projects, **use Gradle or Maven**. The article doesn't cover
+For Modern Java/JVM projects, **use Gradle or Maven** unless your language
+provides you a native build tool (Clojure, Scala). The article doesn't cover
 alternative build tools:
 [industry data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
 shows Gradle or Maven are the build tools for most folks. Unless you find
