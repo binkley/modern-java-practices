@@ -337,6 +337,10 @@ noted:
 
 ---
 
+<img src="./images/Wikibooks-contribute-icon.svg" alt="Contributing"
+align="right" width="20%" height="auto"/>
+</a>
+
 ## Contributing
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
