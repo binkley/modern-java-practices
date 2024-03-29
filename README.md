@@ -164,6 +164,7 @@ align="right" width="20%" height="auto"/>
 * [Reusing this project](#reusing-this-project)
 * [Contributing](#contributing)
 * [You and your project](#you-and-your-project)
+* [Commits](#commits)
 * [Getting your project started](#getting-your-project-started)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
@@ -348,6 +349,30 @@ Please [file issues](https://github.com/binkley/modern-java-practices/issues),
 or contribute [pull
 requests](https://github.com/binkley/modern-java-practices/pulls)!
 I'd love a conversation with you.
+
+---
+
+## Commits
+
+Have you looked at a PR on a project that long, complex, and touched many
+files?
+I'm not a fan of reviewing these, and I suspect you aren't either.
+
+For projects I'm on, I want commits like this:
+- **Small** &mdash; I can carry context in my head, and understand the change
+- A good commit message &mdash; should:
+   - Follow standard Git recommendations.
+     One of many examples is from [Toni Cardina
+     Bardos](https://gist.github.com/tonibardina/9290fbc7d605b4f86919426e614fe692)
+     who summarizes common advice.
+     See the [official Git
+     documentation](https://git-scm.com/docs/git-commit#_discussion).
+     This is a good discussion with contributors to your project
+   - Be sensible for others
+     <a href="https://xkcd.com/1296/">
+     <img src="./images/git_commit.svg" alt="Git Commit" align="center" width="20%" height="auto"/>
+     </a>
+- Be able to easily check the build pipeline for _every_ commit
 
 ---
 
