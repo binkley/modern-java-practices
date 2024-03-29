@@ -1325,11 +1325,11 @@ See the section [_Checkstyle_](#checkstyle) for more details on enforcement.
 * If you use Google Java coding conventions, consider
   [Spotless](https://github.com/diffplug/spotless) which can autoformat your
   code
-* Consider use of [EditorConfig](https://editorconfig.org/) for teams in which
-  editor choice is up to each developer. EditorConfig is a cross-IDE standard
-  means of specifying code formatting, respected by
-  [IntelliJ](https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig),
-  and other major editors
+* Consider use of [EditorConfig](https://editorconfig.org/) for teams when
+  editor choice is up to each developer.
+  EditorConfig is a cross-IDE standard means of specifying code formatting
+  respected by common code editors (either directly, or through popular
+  plugins)
 * To open the report for Checkstyle, build locally and use the
   `<project root>/build/reports/checkstyle/` path.
   The path shown in a Docker build is relative to the interior of the container
