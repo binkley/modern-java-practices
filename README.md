@@ -1,4 +1,4 @@
-<a href="./LICENSE.md">
+<a href="./LICENSE">
 <img src="./images/public-domain.svg" alt="Public Domain"
 align="right" width="20%" height="auto"/>
 </a>
@@ -15,7 +15,11 @@ align="right" width="20%" height="auto"/>
 Java/JVM projects using
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
 [Maven](https://maven.apache.org/what-is-maven.html), and a _starter project_
-for Java.
+in Java.
+Note that _Scala_ and _Clojure_ have their own prefered build tools not
+covered here;
+however, the advice and examples for your **build pipeline** are intended to
+be just as helpful for those JVM languages.
 
 The focus is _best build practices_ and _project hygiene_.
 This document is _agnostic_ between Gradle and Maven: discussion in each section
