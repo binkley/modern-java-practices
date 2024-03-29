@@ -1485,7 +1485,8 @@ repositories](https://github.blog/2023-02-28-secret-scanning-alerts-are-now-avai
   `<project root>/build/reports/` (Gradle) or
   `<project root/target/` (Maven) path.
   The path shown in a Docker build is relative to the interior of the container
-* Sometimes you may want to refresh your local cache of the NVD files:
+* Sometimes you may want to refresh your local cache of the NVD files
+  (DependencyCheck may suggest this):
   - Gradle: `./gradlew dependencyCheckPurge depenedencyCheckUpdate`
   - Maven: `./mvnw dependency-check:purge dependency-check:update-only`
 * Note that this project has updated to DependencyCheck 8.
