@@ -374,6 +374,11 @@ For projects I'm on, I want commits like this:
      </a>
 - Be able to easily check the build pipeline for _every_ commit
 
+### Tips
+
+* For command-line commits, out-of-the-box `vim` does very well, and colorizes
+  for you when you break recommendations.
+
 ---
 
 <!-- TODO: Should this section be moved or removed? It is awkward here -->
