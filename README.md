@@ -491,6 +491,15 @@ recommend in production.
 In general, you will find that [Adoptium](https://adoptium.net) is a go-to
 choice for the JDK.
 
+> [!NOTE]
+> This is [the last clean
+> commit](https://github.com/binkley/modern-java-practices/commit/039f6f45fade51da0c548bf5d61b8013423ab8b9)
+> to use JDK 17.
+> If you are on JDK 21, please look at the current commits on this project.
+> There are still some concerns in 3rd-party tooling in JDK 21, but you should
+> keep your project up to date, and pickup key improvements and security
+> fixes.
+
 ### Tips
 
 * In Maven, use a property to _fix_ the version of Java in place. But note
