@@ -12,18 +12,6 @@ set -e
 printf -v preset "\e[0m"
 printf -v pbold "\e[1m"
 
-echo "${preset}"
-echo "${pbold}BUILD WITH GRADLE UNDER BATECT${preset}"
-./batect -o quiet build-with-gradle 
-echo "${pbold}RUN WITH GRADLE UNDER BATECT${preset}" 
-./batect -o quiet run-with-gradle 
-
-echo 
-echo "${pbold}BUILD WITH MAVEN UNDER BATECT${preset}" 
-./batect -o quiet build-with-maven 
-echo "${pbold}RUN WITH MAVEN UNDER BATECT${preset}" 
-./batect -o quiet run-with-maven 
-
 echo 
 echo "${pbold}BUILD WITH GRADLE UNDER EARTHLY${preset}" 
 earthly +build-with-gradle 

@@ -117,10 +117,8 @@ combination that makes sense for you:
 
 ```shell
 $ ./gradlew build  # Local-only build
-$ ./batect build-with-gradle  # CI build with Batect
 $ earthly +build-with-gradle  # CI build with Earthly
 $ ./mvnw verify  # Local-only build
-$ ./batect build-with-maven  # CI build with Batect
 $ earthly +build-with-maven  # CI build with Earthly
 ```
 
@@ -146,8 +144,15 @@ align="right" width="20%" height="auto"/>
 
 ## Recent significant changes
 
+- Batect: Remove support for Batect as the author has archived that project.
+  Please use _Earthly_ for local containerized builds.
+  Advice remains the same: Run your local build in a container for
+  reproducibility, and have CI do the same to exactly repeat your local
+  builds.
+- Gradle: build with Gradle 8.x.
 - Gradle: remove use of `testsets` plugin for integration testing in favor of
-  native Gradle. This is in support of Gradle 8
+  native Gradle.
+  This is in support of Gradle 8.
 
 ---
 
@@ -510,7 +515,7 @@ choice for the JDK.
 * In Gradle, use the `javaToolchains` task to investigate issues with
   mismatching or confusing build paths, project configuration, and Gradle
   sorting it out. This is an issue for local-only builds; local builds using a
-  container (such as via [_Batect_](#setup-local-ci)) lower these concerns
+  container (such as via [_Earthly_](#setup-local-ci)) lower these concerns
 * In GitHub Actions, building supports cross-checking multiple JVM versions,
   use
   [the `matrix` feature](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs).
@@ -821,19 +826,8 @@ development process before commits are shared.
 Reflecting the principle that local builds should be like CI builds, some
 tools that greatly help:
 
-* [Batect](https://batect.dev/) is a solid tool from Charles Korn.
-  It runs your build in a "CI-like" local environment via Docker.
-  This is one of your first lines of defence against "it runs on my box".
-  ([Compare Batect](https://batect.dev/Comparison.html) with other tools in this
-  space)
-
-* [Earthly](https://earthly.dev/) shares philosophy with Batect and with a
-  different approach to implementation.
-  **Feedback on Earthly** is
-  [appreciated](https://github.com/binkley/modern-java-practices/issues/new/choose).
-  _Earthly is experimental_ for the template project in this repository
-
-They are _both good choices_, but not the only ones.
+* [Earthly](https://earthly.dev/) ensures your build is in a container, and
+  reproducible for everyone
 
 _This is an important step_!
 It is closer to your CI builds locally.
@@ -843,26 +837,14 @@ You may decide not to use CI-like tooling for local builds. However, consider
 that use of them raises your confidence that CI will succeed. Local CI-like
 tooling is part of the theme of _shifting left_ for problems.
 
-See [_Working with CI systems_](https://batect.dev/tools/GitHubActions.html)
-for documentation on using Batect from within a dockerized CI environment.
-
 **NB** &mdash; to be as consistent as possible, the sample
-[`ci.yml` for GitHub](./.github/workflows/ci-maven.yml) uses Batect for the
-Gradle and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls 
-an image for [AdoptOpenJDK](https://hub.docker.com/_/adoptopenjdk).
-So `ci.yml` does not [setup JDK 21](https://github.com/actions/setup-java)
-directly, but relies on Batect.
+Gradle and Maven builds, and CI Github actions, and use JDK 21, and for builds
+with Earthly both locally and in the pipeline.
 
-Configure your local CI in [`batect.yml`](./batect.yml) or in
-[`Earthfile`](./Earthfile) with suitable tasks.
+Configure your local CI in [`Earthfile`](./Earthfile) with suitable tasks.
 For this project, there are example tasks/targets:
 
 ```shell
-$ ./batect -T
-Available tasks:
-- build-with-gradle: Build and test with Gradle
-- build-with-maven: Build and test with Maven
-
 $ earthly ls
 +base
 +build-with-gradle
@@ -875,11 +857,6 @@ It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
 
 * There is no point in spinning up a daemon for a Docker ephemeral container;
   but it is harmless either way
-* With a daemon, the Docker container's Gradle may be confused by
-  `~/.gradle/daemon` and `/.gradle/workers` directories mounted by Batect from
-  your home directory, as these refer to processes in the host, not the
-  container (`batect.yml` mounts your `~/.gradle` to include caches of
-  already-downloaded dependencies, _et al_)
 * If you encounter troubles, run locally `./gradlew --stop` to kill any local
   daemons: This indicates a _bug_, and "stop" is a workaround.
   See [a suggestion of a better approach](https://github.com/batect/batect/issues/680#issuecomment-719821099)
@@ -890,28 +867,6 @@ Earthly has its own caching strategies that apply to your build (such as
 Gradle or Maven dependency downloads) based around Docker layers. See
 [_Advanced local
 caching_](https://docs.earthly.dev/docs/guides/advanced-local-caching) for more information.
-
-### Tips
-
-* If you encounter issues with Gradle and Batect, try stopping the local Gradle
-  daemons before running Batect:
-  ```shell
-  $ ./gradlew --stop
-  $ ./batect <your Batect arguments>
-  ```
-* The Batect builds _assume_ you've run local builds first. Plesae run
-  `./gradlew build` or `./mvnw verify` at least once before running
-  `./batect ...` to ensure cached/shared downloads are present
-
-* In CI, use the `--permanently-enable-telemetry` flag to avoid CI asking a
-  "Y/N" question. This **must** be _separate step_ from running the build
-  itself. See [`ci.yml`](.github/workflows/ci-maven.yml) for Gradle and Maven examples
-
-* Run your local Gradle or Maven build before you run with Batect if you have
-  updated dependencies.  This is helpful when fetching the dependencies, and
-  sometimes avoids awkwardness (sometimes you may have different access rights
-  for the build tool caches when run as yourself directly _vs_ running in a
-  container)
 
 ---
 
@@ -1486,26 +1441,7 @@ An alternative is to declare _each_ repository in your user `settings.xml` and
 [set the checksum policy to
 "fail"](https://dzone.com/articles/maven-artifact-checksums-what).
 
-However, in CI this is easy; another example of why local builds should repeat
-what CI builds do. The [Batect configuration](./batect.yml)
-for the demonstration project says:
-
-  ```yaml
-  build-maven:
-    description: Build and test with Maven
-    run:
-      container: build-env
-      command: ./mvnw --strict-checksums clean verify
-  ```
-
-and the GitHub action says:
-
-  ```yaml
-  - name: Build and test with Maven
-    run: ./mvnw --strict-checksums verify
-  ```
-
-([Batect](#keep-local-consistent-with-ci)
+([Earthly](#keep-local-consistent-with-ci)
 and [GitHub Actions](#setup-your-ci) are discussed both above.)
 
 ### Dependency check
@@ -1929,18 +1865,9 @@ align="right" width="20%" height="auto"/>
 
 ## Debugging
 
-For direct debugging without a container follow your IDE's instructions.
-For debugging within the local Batect container, examples are in the Batect 
-tasks `debug-with-gradle` and `debug-with-maven`.
-Update `run-with-gradle.sh` or `run-with-maven.sh`, or write your own 
-similar script to run your program with the right JVM flags for _remote 
-debugging_ (the container is a remote process on "localhost" from the 
-perspective of your IDE).
-
-These Batect example tasks assume a command-line program that exits when
-completed.
-See [the Spring Boot](#spring-boot) sample for the same approach with 
-long-running services.
+> [!NOTE]
+> This section is in progress, and needs instructions and examples for using
+> "debug" from container builds using Earthly.
 
 ---
 
