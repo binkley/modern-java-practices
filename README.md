@@ -833,7 +833,13 @@ Reflecting the principle that local builds should be like CI builds, some
 tools that greatly help:
 
 * [Earthly](https://earthly.dev/) ensures your build is in a container, and
-  reproducible for everyone
+  reproducible for everyone.
+  Earthly assumes a local install:
+  there is no automated install from a script.
+  You can install Earthly locally from [_Get
+  Earthly_](https://earthly.dev/get-earthly) page.
+* [Batect](https://batect.dev/) is an excellent open-source option, however
+  you may have concerns on the maintainance status for the project.
 
 _This is an important step_!
 It is closer to your CI builds locally.
