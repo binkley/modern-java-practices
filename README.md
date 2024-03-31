@@ -144,15 +144,21 @@ align="right" width="20%" height="auto"/>
 
 ## Recent significant changes
 
+- **IN PROGRESS**: Move sections from `README.md` to the GitHub wiki.
+  This is for breaking up an overlong (11k words) README into digestible
+  sections
 - Batect: Remove support for Batect as the author has archived that project.
   Please use _Earthly_ for local containerized builds.
   Advice remains the same: Run your local build in a container for
   reproducibility, and have CI do the same to exactly repeat your local
   builds.
+- This project uses JDK 21.
+  Here is [the previous commit using JDK 17](https://github.com/binkley/modern-java-practices/commit/039f6f45fade51da0c548bf5d61b8013423ab8b9)
 - Gradle: build with Gradle 8.x.
 - Gradle: remove use of `testsets` plugin for integration testing in favor of
   native Gradle.
-  This is in support of Gradle 8.
+  This is in support of Gradle 8 and may be helpful in seeing changes you need
+  for Gradle 8 support
 
 ---
 
