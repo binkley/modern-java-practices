@@ -1412,7 +1412,9 @@ suitable for any JVM language, not just Java.
 
 ## Shift security left
 
-See [_Shift security left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left).
+See [_Shift security
+left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
+in the wiki.
 
 ---
 
