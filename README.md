@@ -474,7 +474,7 @@ align="right" width="20%" height="auto"/>
 For any Modern Java/JVM project, the first decision is _which version of Java
 (the JDK)_ to use? Some guidelines:
 
-* Java 17 is the most current LTS ("long-term support") version
+* Java 21 is the most current LTS ("long-term support") version
 * There are more recent versions with continuing improvements and additional 
   features to try out
 * If your personal or open-source project does not require a paid support
@@ -485,7 +485,7 @@ For any Modern Java/JVM project, the first decision is _which version of Java
   list of recommendations at [_Which Version of JDK Should I
   Use?_](https://whichjdk.com)
 
-In this project, you'll see the choice of Java 17 as this is the version to
+In this project, you'll see the choice of Java 21 as this is the version to
 recommend in production.
 
 In general, you will find that [Adoptium](https://adoptium.net) is a go-to
@@ -529,7 +529,7 @@ For those on Windows, you may need to use Cygwin, Git for Windows, or WSL2 to
 use these.
 
 (Reminder: in general, when setting up your project environment, prefer the 
-latest LTS version of Java, which is 17.)
+latest LTS version of Java, which is 21.)
 
 #### Jenv
 
@@ -850,7 +850,7 @@ for documentation on using Batect from within a dockerized CI environment.
 [`ci.yml` for GitHub](./.github/workflows/ci-maven.yml) uses Batect for the
 Gradle and Maven builds, and [`batect.yml` for Batect](./batect.yml) pulls 
 an image for [AdoptOpenJDK](https://hub.docker.com/_/adoptopenjdk).
-So `ci.yml` does not [setup JDK 17](https://github.com/actions/setup-java)
+So `ci.yml` does not [setup JDK 21](https://github.com/actions/setup-java)
 directly, but relies on Batect.
 
 Configure your local CI in [`batect.yml`](./batect.yml) or in
@@ -940,7 +940,7 @@ Each of these have many options and features, and are worth exploring.
 
 Let tools tell you when you have dodgy dependencies, or an inconsistent setup.
 For example, leverage `jdeps` which
-[comes with the JDK](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdeps.html).
+[comes with the JDK](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jdeps.html).
 Jdeps spots, for example, if you have a multi-version jar as a dependency that
 does not include _your_ JDK version (an example of this may be is JUnit), or if
 your code depends on _internal_ (non-public) classes of the JDK
@@ -968,7 +968,7 @@ build (say a production with "ERROR" output during a test), but:
    telltale signs of trouble
 
 There are many approaches to this problem. This project uses JDK logging as [an
-example](https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/FileHandler.html),
+example](https://docs.oracle.com/en/java/javase/21/docs/api/java.logging/java/util/logging/FileHandler.html),
 and keeps the build quiet in
 [`config/logging.properties`](config/logging.properties).
 
@@ -1230,7 +1230,7 @@ Do note that Lombok reflects on internal features of the JDK.
 If you have issues, for _Maven_: use in your project the
 `--add-opens java.base/java.lang=ALL-UNNAMED`
 example from `.mvn/jvm.config`, and look to address these.
-The solutions in the project are a "workaround" assuming Java 17.
+The solutions in the project are a "workaround" assuming Java 21.
 This is a two-edged sword: as the JVM improves access controls, you may find,
 especially dependencies, that there are times you want deep reflection.
 
@@ -1400,7 +1400,7 @@ ranging among other things:
   may aid you in this, _eg_, Kotlin or Scala)
 * Insecure code (see [Shift security left](#shift-security-left))
 * Use of outdated code patterns (_eg_, Java 5 patterns might be better expressed
-  with Java 17 improvements)
+  with Java 21 improvements)
 * [Fail your 
   build](https://spotbugs.github.io/spotbugs-maven-plugin/examples/violationChecking.html)
   if issues are detected

@@ -13,6 +13,8 @@
     <rule ref="category/java/bestpractices.xml"/>
     <rule ref="category/java/codestyle.xml">
         <exclude name="CommentDefaultAccessModifier"/>
+        <!-- The var keyword has been in Java since version 10 -->
+        <exclude name="UseExplicitTypes"/>
     </rule>
     <rule ref="category/java/design.xml">
         <!-- The rule requires manual configuration -->

@@ -57,13 +57,13 @@
         <!-- @formatter:off -->
         <assertj.version>3.25.1</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
-        <checkstyle.version>10.12.7</checkstyle.version>
-        <dependency-check-maven.version>9.0.8</dependency-check-maven.version>
+        <checkstyle.version>10.13.0</checkstyle.version>
+        <dependency-check-maven.version>9.0.9</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
-        <jdk.version>17</jdk.version>
+        <jdk.version>21</jdk.version>
         <junit.version>5.10.1</junit.version>
         <lombok.version>1.18.30</lombok.version>
         <main.class>demo.Application</main.class>
@@ -89,7 +89,7 @@
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
         <pitest-maven.version>1.15.3</pitest-maven.version>
-        <pmd.version>6.55.0</pmd.version>
+        <pmd.version>7.0.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.8.2.0</spotbugs-maven-plugin.version>
@@ -536,6 +536,12 @@
                     <artifactId>maven-pmd-plugin</artifactId>
                     <version>${maven-pmd-plugin.version}</version>
                     <dependencies>
+                        <!-- TODO: Remove once a newer PMD plugin -->
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-compat6</artifactId>
+                            <version>${pmd.version}</version>
+                        </dependency>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
                             <artifactId>pmd-core</artifactId>

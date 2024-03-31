@@ -1,5 +1,5 @@
 VERSION 0.7
-FROM eclipse-temurin:17-jdk-focal
+FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /code
 
 build-with-gradle:

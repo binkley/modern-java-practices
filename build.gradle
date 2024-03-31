@@ -88,13 +88,6 @@ configurations {
     integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
 }
 
-// TODO: Work around GitHub issue #54
-configurations.pmd {
-    resolutionStrategy {
-        forcedModules = ["commons-io:commons-io:2.11.0"]
-    }
-}
-
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
@@ -147,17 +140,16 @@ checkstyle {
 
 pmd {
     ignoreFailures = false
-    // TODO: targetJdk = 17 -- there is no defined property for this
+    // TODO: targetJdk = 21 -- there is no defined property for this
     toolVersion = pmdVersion
 
     consoleOutput = true
     rulesMinimumPriority = 5
 
-
     // custom-rules.xml contains editable rule set
     // you can use it to adjust rules for your own project
     ruleSets = [
-            rootProject.file("config/pmd/custom-rules.xml")
+        "config/pmd/custom-rules.xml"
     ]
 
 }
