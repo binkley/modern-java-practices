@@ -181,7 +181,7 @@ align="right" width="20%" height="auto"/>
 * [Leverage the compiler](#leverage-the-compiler)
 * [Use linting](#use-linting)
 * [Use static code analysis](#use-static-code-analysis)
-* [Shift security left](#shift-security-left)
+* [Shift security left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](#use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
@@ -1353,7 +1353,8 @@ ranging among other things:
 * Idioms that your team finds poor or hard to read
 * Dangerous anti-patterns (_eg_, missing `null` checks in Java; your language
   may aid you in this, _eg_, Kotlin or Scala)
-* Insecure code (see [Shift security left](#shift-security-left))
+* Insecure code (see [Shift security
+  left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left))
 * Use of outdated code patterns (_eg_, Java 5 patterns might be better expressed
   with Java 21 improvements)
 * [Fail your 
@@ -1411,162 +1412,7 @@ suitable for any JVM language, not just Java.
 
 ## Shift security left
 
-* [Find known code security issues](https://find-sec-bugs.github.io/) &mdash; a
-  plugin for SpotBugs
-* [DependencyCheck](https://owasp.org/www-project-dependency-check/) &mdash;
-  verify your project dependencies against know security issues
-
-### Checking dependencies
-
-Use checksums and signatures: verify what your build and project downloads!
-When publishing for consumption by others, provide MD5 (checksum) files in your
-upload: be a good netizen, and help others trust code downloaded from you
-
-#### Gradle
-
-Read more at [_Verifying
-dependencies_](https://docs.gradle.org/current/userguide/dependency_verification.html)
-, an incubating feature.
-
-#### Maven
-
-_Always_ run with the `--strict-checksums` (or `-C`) flag. See
-[_Maven Artifact Checksums -
-What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j) for more
-information. This is easy to forget about at the local command line. The
-[`.mvn/maven.config`](https://maven.apache.org/configure.htm) file helps this be
-automatic, and can be checked into your project repository.
-
-An alternative is to declare _each_ repository in your user `settings.xml` and
-[set the checksum policy to
-"fail"](https://dzone.com/articles/maven-artifact-checksums-what).
-
-([Earthly](#keep-local-consistent-with-ci)
-and [GitHub Actions](#setup-your-ci) are discussed both above.)
-
-### Dependency check
-
-**This is CRITICAL if you have any direct, indirect, or through-plugin
-dependencies on Log4j. Beyond your project, you may be impacted by services you
-call, so check with your organization or external services**
-
-[DependencyCheck](https://owasp.org/www-project-dependency-check/) is the
-current _best tool_ for JVM projects to verify that your project does not rely
-on external code with known security vulnerabilities ([CVEs](https://cve.mitre.
-org/)) from the NVD.
-That said, DependencyCheck does impact build times.
-It is smart about caching, but will once a day may take time to download 
-data on any new NVD CVEs, and occasionally the site is down for maintenance.
-You may consider leaving this check in CI-only if you find local build times 
-overly impacted.
-Leaving these checks to CI-only is a tradeoff between "shifting security left", 
-and speed for local builds.
-I lean towards _security first_; however, you know your circumstances
-best.
-
-**This project fails the build if finding any CVEs for the current version of
-any dependency.**
-
-Your build should fail, too. It is a _red flag_ to you to consider the CVE, what
-impact the vulnerable dependency has, and if you are comfortable with a
-vulnerable dependency. It is rarely (if ever) the case you keep a vulnerable
-version of a dependency.
-
-### Automate scanning for secrets
-
-One key to shifting security left is avoiding secrets (passwords, private
-identifiers, etc.) in your source code, commit history, and so on.
-
-GitHub and other repository services offer secrets scanning out of the box:
-[Secret scanning alerts are now available (and free) for all public
-repositories](https://github.blog/2023-02-28-secret-scanning-alerts-are-now-available-and-free-for-all-public-repositories/).
-
-#### Tips
-
-* To open the report for DependencyCheck, build locally and use the
-  `<project root>/build/reports/` (Gradle) or
-  `<project root/target/` (Maven) path.
-  The path shown in a Docker build is relative to the interior of the container
-* Sometimes you may want to refresh your local cache of the NVD files
-  (DependencyCheck may suggest this):
-  - Gradle: `./gradlew dependencyCheckPurge depenedencyCheckUpdate`
-  - Maven: `./mvnw dependency-check:purge dependency-check:update-only`
-* Note that this project has updated to DependencyCheck 8.
-  As is the project worked without changes after updating.
-  See [_v8.0.0_ release
-  notes](https://github.com/jeremylong/DependencyCheck/releases/tag/v8.0.0)
-  when updating from DependencyCheck 8
-
-#### Notes
-
-DependencyCheck may be your slowest quality check in local builds (competing
-with mutation testing for that ignominious title). Sometimes it may fail when
-the upstream source for CVEs is offline. If this is a recurring problem for you,
-consider moving this check into CI. The downside that local work might use an
-insecure dependency for a while. Checking daily for updated dependencies can
-lessen this risk:
-
-- Gradle: `./gradlew dependencyUpdates`
-- Maven: `./mvnw versions:update-properties`
-
-For non-Windows platforms, you may see this warning when `DependencyCheck` runs:
-
-```
-.NET Assembly Analyzer could not be initialized and at least one 'exe' or 'dll' was scanned. The 'dotnet' executable could not be found on the path; either disable the Assembly Analyzer or add the path to dotnet core in the configuration.
-```
-
-In most situations, you are running in a Linux-based Docker container, or using
-local Linux or Mac command line.  **In a Windows project, this is an issue to
-address, and may be a serious security concern** indicating you are missing
-critical Windows components. For other platforms, this is a nuisance message.
-
-On Gradle when updating to version 7.x.x of DependencyCheck from 6.x.x or 
-earlier, first run `./gradlew dependencyCheckPurge` to clear out the local 
-cache schema of CVEs.
-DependencyCheck moved to schema v2 in 7.x.x from v1 in 6.x.x and earlier, 
-and the 7.0.0 Gradle plugin fails with the older schema version.
-
-### Dependabot
-
-GitHub provides
-[Dependabot](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/keeping-your-dependencies-updated-automatically)
-(other systems than GitHub may have similar robot tools) which, among other
-things, can automatically issue PRs to your repository when security issues are
-discovered. This project uses Dependabot for Gradle and Maven.
-
-*NB* &mdash; Dependabot is more reliable than either the Gradle or Maven plugins
-for dependencies.
-
-### Tips
-
-* See the "Tips" section of [Gradle or Maven](#use-gradle-or-maven)
-* With GitHub actions, consider adding a tool such as
-  [Dependabot](https://dependabot.com/), which automatically files GitHub issues
-  for known dependency vulnerabilities. See
-  [earlier in this document](#dependabot) for an example
-* You can _temporarily_ disable OWASP dependency checking via
-  `-Dowasp.skip=true` for either Gradle or Maven, for example if the OWASP site
-  is down for maintenance, and you cannot update the local CVE cache
-* The *log4shell security vulnerabilities*
-  ([CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228),
-  [CVE-2021-45046]((https://nvd.nist.gov/vuln/detail/CVE-2021-45046)),
-  [CVE-2021-45105]((https://nvd.nist.gov/vuln/detail/CVE-2021-45105))
-  are extremely severe. They are so severe, this should be a top priority for
-  you to address regardless of other priorities. Although this project does not
-  use `log4j`, local testing shows that the `DependencyCheck` plugin for either
-  Gradle or Maven fails build when you use an older, insecure version
-  of `log4j-core` indirectly. Note that Gradle 7.3.3+ itself fails your build if
-  it detect a dependency on a vulnerable version of `log4j-core`
-* The *BCEL security vulnerability*
-  ([CVE-2022-42920](https://www.opencve.io/cve/CVE-2022-42920)) is critical,
-  and should be a top priority to address. In this project, BCEL is used by
-  Spotbugs.
-
-### TODOs
-
-* How to automate the `-C` (checksum) flag in Maven? See
-  [_Maven Artifact Checksums -
-  What?_](https://dev.to/khmarbaise/maven-artifact-checksums---what-396j)
+See [_Shift security left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left).
 
 ---
 
