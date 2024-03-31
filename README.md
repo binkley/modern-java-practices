@@ -189,7 +189,7 @@ align="right" width="20%" height="auto"/>
 * [Use static code analysis](#use-static-code-analysis)
 * [Shift security left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
-* [Use mutation testing](#use-mutation-testing)
+* [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
 * [Use integration testing](#use-integration-testing)
 * [Debugging](#debugging)
 * [Samples](#samples)
@@ -208,7 +208,7 @@ align="right" width="20%" height="auto"/>
 
 Hi! I want you to have _awesome builds_ 🟢. If you're on a *Java* project,
 or a project on any
-*[JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages)*
+[JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages)
 (Clojure, Groovy, JRuby, Java, Jython, Kotlin, Scala, _et al_), this article is
 for you.
 This article assumes you are using Gradle or Maven for your build locally, and
@@ -1519,55 +1519,9 @@ Current limitations:
 
 ## Use mutation testing
 
-Unit testing is great for testing your production code. But have you thought
-about testing your unit tests? What that means is, how are you sure your tests
-really check what you meant them to? Fortunately, there is an automated way to
-do just that, no code from you required, only some build configuration.
-
-Mutation testing is a simple concept: Go "break" some production code, and see
-if any unit tests fail. Production bytecode is changed during the build&mdash;
-for example, an `if (x)` is changed to `if (!x)`&mdash;, and the unit tests run.
-With good code coverage, there should now be a failing unit test.
-
-The best option for Modern Java/JVM mutation testing is
-[PITest](http://pitest.org/). It is under active development, does rather clever
-things with compiled bytecode, and has Gradle and Maven plugins. The main
-drawback for your _local build_ is that PITest is _noisy_, so there might be
-more build output than you might expect.
-
-Mutation testing is one of the slowest parts of a local build. You might
-consider moving mutation testing to CI-only to speed up local 
-_red-green-refactor_ cycle
-([_Red, Green, Refactor!](https://medium.com/@tunkhine126/red-green-refactor-42b5b643b506),
-[_The Cycles of
-TDD_](https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html)).
-Use your judgment on the value of the CI build never or rarely failing (modulo 
-external resources) when local build passes _vs_ the speed of pushing good code.
-
-After running a build using PITest, to see the mutation report (on passed or
-failed mutation coverage), open:
-
-* For Gradle, open `build/reports/pitest/index.html`
-* For Maven, open `target/pit-reports/index.html`
-
-This project provides the PIT report as part of Maven's project report.
-
-### Tips
-
-* Without further configuration, PITest defaults to mutating classes using
-  your _project group_ as the package base. Example: Set the _project group_
-  to "demo" for either Gradle or Maven if your classes are underneath the
-  "demo.*" package namespace, otherwise PITest may complain that there are no
-  classes to mutate, or no unit tests to run
-* If you need to open modules (_eg_, `--add-opens` flags), you need to include
-  these flags in "jvm args" configuration for the plugin
-* Read more about [_Mutation
-  Testing_](https://testing.googleblog.com/2021/04/mutation-testing.html) from
-  Google
-* To open the report for PITest, build locally and use the
-  `<project root>/build/reports/pitest/` (Gradle) or
-  `<project root>/target/pit-reports/` (Maven) path.
-  The path shown in a Docker build is relative to the interior of the container
+See [_Use mutation
+testing_](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
+in the wiki.
 
 ---
 
