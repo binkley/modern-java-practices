@@ -136,12 +136,10 @@ $ ./run-with-maven.sh
 
 ---
 
-<!-- TODO: sort out alignment for images in adjacent sections
 <a title="Changes">
 <img src="./images/changes.png" alt="Changes"
 align="right" width="20%" height="auto"/>
 </a>
--->
 
 ## Recent significant changes
 
