@@ -396,60 +396,9 @@ Hopefully this article and the sample build scripts help you!
 
 ## Getting your project started
 
-To get a project off to a good start, consider these items. Even for existing
-projects, you should address these as you go along or while refurbishing an
-existing project:
-
-* **Team agreement comes first**. Make sure everyone is onboard and clear on
-  what build standards are, and understands&mdash;at least as an
-  outline&mdash;what the build does for them
-* Provide a *good* `README.md`. This saves you a ton of time in the long run.
-  This is your _most important_ step. A good resource is Yegor's
-  [_Elegant READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html)
-    * [Intelligent laziness is a virtue](https://thethreevirtues.com/). Time
-      invested in good documentation pays off
-    * A good [`README.md`](./README.md) answers visitors questions, so you don't
-      spend time answering trivial questions, and explains/justifies your
-      project to others.
-    * Fight [Conway's Law](https://en.wikipedia.org/wiki/Conway%27s_law) with
-      communication!
-* Pick a version of Java, and stick to it throughout your local build, CI
-  pipeline, and environment deployments. _Do not mix versions._
-* Pick **Gradle** or **Maven**, and use only one. This project provides both to
-  demonstrate equivalent builds for each. See
-  [Use Gradle or Maven](#use-gradle-or-maven) for more discussion
-* Use build wrappers committed into your project root. These run Gradle or
-  Maven, and coders should always invoke `./gradlew` or `./mvnw` (use shell
-  _aliases_ if these grow tiresome to type)
-    * Build wrappers are shell scripts to run Gradle or Maven. The wrapper takes
-      care of downloading needed tools without getting in the way. New
-      contributors and developers can start right away; they do not need to
-      install more software
-    * For Gradle, use
-      [`./gradlew`](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
-      (part of Gradle)
-    * For Maven, use [`./mvnw`](https://maven.apache.org/wrapper/) (a plugin)
-* Always run CI on push to a shared repository. It's a sad panda when someone is
-  excited about their commit, and then the commit breaks the other developers
-    * In CI, use caches for dependency downloads; this speeds up the feedback
-      cycle from CI (see [below](#setup-your-ci))
-    * When sensible, move code quality and security checks into local builds
-      before changes hit CI (see [below](#setup-local-ci))
-* Pick a common code style, and stay consistent; update tooling to complain on
-  style violations
-    * The team should agree on a common code style, _eg_, SUN, Google, _et al_
-    * See [Use linting](#use-linting)
-
-### Tips
-
-* Consider using client-side Git hooks for `pre-push` to run a full, clean,
-  local build. This helps ensure "oopsies" from going to CI where they impact
-  everyone. The options are broad. Try web searches on:
-    * "gradle install git hooks"
-    * "maven install git hooks"
-
-  This article presently has no specific recommendations on choices of plugin or
-  approach for Git hooks.
+See [_Getting your project
+started_](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
+in the wiki.
 
 ---
 
