@@ -150,6 +150,7 @@ align="right" width="20%" height="auto"/>
   sections
 - Batect: Remove support for Batect as the author has archived that project.
   Please use _Earthly_ for local containerized builds.
+  I'll be researching other options, and updating to show those and examples.
   Advice remains the same: Run your local build in a container for
   reproducibility, and have CI do the same to exactly repeat your local
   builds.
