@@ -103,12 +103,17 @@ contributors can focus on the code, not on setting up the build.
 - _Make it work, make it right, make it fast_
   &mdash; [C2 Wiki](http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast)
 
-**NB** &mdash; This is a _living document_.
-The project is frequently updated to pick up new dependency or plugin 
-versions, and improved practices; this README updates recommendations.
-This is part of what _great habits_ look like.
-See [_Reusing this project_](#reusing-this-project) for tips on pulling in
-updates.
+> [!NOTE]
+> **NB** &mdash; This is a _living document_.
+> The project is frequently updated to pick up new dependency or plugin 
+> versions, and improved practices; the `README.md` and
+> [wiki](https://github.com/binkley/modern-java-practices/wiki) update
+> recommendations.
+> This is part of what _great habits_ looks like: you do not just show love
+> for your developers and users, but enable them to feed back into projects
+> and help others.
+> See [_Reusing this project_](#reusing-this-project) for tips on pulling in
+> updates.
 
 (Credit to Yegor Bugayenko for [_Elegant
 READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
