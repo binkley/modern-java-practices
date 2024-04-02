@@ -80,7 +80,10 @@ As a _guide_, this project focuses on:
 ### What is a _Starter_?
 
 A project starter has several goals:
-- Help a new project get up and running with minimal fuss
+- Help a new project get up and running with minimal fuss.
+- Show examples of _best practices_.
+- Explain the _why_ for choices, and help you pick what makes most sense for
+  your project.
 
 This starter project is focused on _build_:
 - Easy on-ramp for new folks to try out your project for themselves
