@@ -818,8 +818,11 @@ tools that greatly help:
   there is no automated install from a script.
   You can install Earthly locally from [_Get
   Earthly_](https://earthly.dev/get-earthly) page.
-* [Batect](https://batect.dev/) is an excellent open-source option, however
-  you may have concerns on the maintainance status for the project.
+
+> [!NOTE]
+> For a long while, this project relied on [Batect](https://batect.dev/).
+> However, the excellent author of that project has take a break, and the
+> repository is marked as _archived_.
 
 _This is an important step_!
 It is closer to your CI builds locally.
