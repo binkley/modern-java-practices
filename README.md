@@ -812,6 +812,11 @@ development process before commits are shared.
 Reflecting the principle that local builds should be like CI builds, some
 tools that greatly help:
 
+* [Dagger](https://dagger.io/) ensures your build is in a container, and
+  reproducible for everyone.
+  If you like programming your build with Gradle, you may appreciate
+  programming your pipeline in Dagger.<br>
+  **TODO** Provide an example script for Dagger.
 * [Earthly](https://earthly.dev/) ensures your build is in a container, and
   reproducible for everyone.
   Earthly assumes a local install:
