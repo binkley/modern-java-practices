@@ -151,7 +151,7 @@ align="right" width="20%" height="auto"/>
 
 - **IN PROGRESS**: Move sections from `README.md` to the GitHub wiki.
   This is for breaking up an overlong (11k words) README into digestible
-  sections
+  sections.
 - Batect: Remove support for Batect as the author has archived that project.
   Please use _Earthly_ for local containerized builds.
   I'll be researching other options, and updating to show those and examples.
@@ -164,7 +164,7 @@ align="right" width="20%" height="auto"/>
 - Gradle: remove use of `testsets` plugin for integration testing in favor of
   native Gradle.
   This is in support of Gradle 8 and may be helpful in seeing changes you need
-  for Gradle 8 support
+  for Gradle 8 support.
 
 ---
 
