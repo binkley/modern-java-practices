@@ -176,7 +176,8 @@ align="right" width="20%" height="auto"/>
 * [Contributing](#contributing)
 * [You and your project](#you-and-your-project)
 * [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits)
-* [Getting your project started](#getting-your-project-started)
+* [Getting your project
+  started](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Setup your CI](#setup-your-ci)
