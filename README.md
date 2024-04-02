@@ -18,6 +18,12 @@ Java/JVM projects using
 [Maven](https://maven.apache.org/what-is-maven.html), and a _starter project_
 in Java.
 
+> [!NOTE]
+> I am in progress of moving sections of the `README.md` to individual pages
+> in [the wiki](https://github.com/binkley/modern-java-practices/wiki), and
+> make it easier for bringing advice up to date, and adding new approaches.
+> Please forgiven the shambles while this is in progress.
+
 The best documentation headline on how to approach your build and pipeline:
 [**Builds are
 programs**](https://www.clojure.org/guides/tools_build#_builds_are_programs).
