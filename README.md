@@ -320,75 +320,11 @@ align="right" width="20%" height="auto"/>
 
 ## Setup your CI
 
-Your CI is your "source of truth" for successful builds. Your goal:
-_Everyone trusts a "green" CI build is solid_.
-
-When using GitHub, a simple starting point is
-[`ci-gradle.yml`](./.github/workflows/ci-gradle.yml) or
-[`ci-maven.yml`](./.github/workflows/ci-maven.yml).
-(GitLab is similar, but as this project is hosted in GitHub, there is not a 
-simple means to demonstrate CI at GitLab).
-This project includes a workflow for Gradle and a workflow for Maven as
-examples.
-
-If you use GitLab, read about the equivalent in
-[_GitLab CI/CD_](https://docs.gitlab.com/ee/ci/), or for Jenkins in
-[_Pipeline_](https://www.jenkins.io/doc/book/pipeline/).
-
-When publishing your project, consider
-[_Publishing Java packages with
-Maven_](https://docs.github.com/en/actions/guides/publishing-java-packages-with-maven)
-for GitHub, or equivalent for other CI systems.  **Do not publish from local
-builds.**  For GitHub, note the limitations of
-[_Download from Github Package Registry without
-authentication_.](https://github.community/t/download-from-github-package-registry-without-authentication/14407)
-
-### Save your CI artifacts
-
-It is helpful to preserve your build artifacts from CI, for example, to 
-download built jars from different CI runs for comparing their behavior 
-between commits without needing to rebuild locally, and also to confirm that 
-your local build makes the same jars as CI does.
-
-The "Build with Gradle" and "Build with Maven" CI workflows each provide a 
-download named "jars", and the Maven build a "site" download.
-
-There are services to provide links to the most recent build artifacts.
-One example is [nightly.link](https://nightly.link/) (this is not an 
-endorsement).
-You can use these links in your `README.md` or share as makes sense.
-An example is
-[downloading the Maven-built jar](https://nightly.link/binkley/modern-java-practices/workflows/ci-maven/master/jars.zip)
-from this project.
-
-### Tips
-
-* To disable ASCII colorizing printing as control sequences in CI, or
-  Gradle trying to overwrite lines (control sequences make for hard-to-read 
-  CI logs), a simple approach is to use an environment setting:
-  ```shell
-  TERM=dumb
-  ```
-  This does not make sense for local builds, and your CI system (_eg_, GitHub)
-  may manage this problem already
-* With Gradle, use the `--warning-mode=all` flag for CI: this shows _all_
-  warnings Gradle generates, not just a summary. See
-  [_Showing or hiding
-  warnings_](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_warnings)
-  for details
-* With Maven, use the `--no-transfer-progress` flag for CI: this avoids spamming
-  CI logs with download progress messages
-* For GitHub Actions, you may find a tool like
-  [`act`](https://github.com/nektos/act) useful for running CI actions locally
-  (it may not work for all projects, however, depending on your actions)
+See [_Setup your
+CI_](https://github.com/binkley/modern-java-practices/wiki/Setup-your-ci)
+in the wiki.
 
 ---
-
-<a href="https://github.com/binkley/html/blob/master/blog/on-pipelines.html"
-title="On Pipelines">
-<img src="./images/pipeline.png" alt="Production vs Dev pipeline"
-align="right" width="30%" height="auto"/>
-</a>
 
 ## Keep local consistent with CI
 
