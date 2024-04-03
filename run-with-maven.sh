@@ -27,6 +27,10 @@ set -o pipefail
 
 readonly progname="${0##*/}"
 
+printf -v pbold "\e[1m"
+printf -v pred "\e[31m"
+printf -v preset "\e[0m"
+
 function print-help() {
     cat <<EOH
 Usage: $progname [OPTIONS] [-- ARGUMENTS]
@@ -118,4 +122,12 @@ esac
 
 rebuild-if-needed
 
-exec java "${jvm_flags[@]}" "$@"
+expected='TheFoo(label=I AM FOOCUTUS OF BORG)'
+captured_output=$(exec java "${jvm_flags[@]}" "$@")
+case $captured_output in
+    $expected ) echo "$captured_output" ;;
+    * )
+        echo "$pbold$pred$0: ERROR: expected: $expected, actual: $captured_output$preset"
+        false
+        ;;
+esac
