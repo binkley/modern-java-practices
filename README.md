@@ -161,11 +161,11 @@ tests"](https://en.wikipedia.org/wiki/Smoke_testing_(software)), meaning,
 the minimal things _just work_, and when you check other things, maybe smoke
 drifts from your computer as circuits burn out\[\*\].
 
-\[\*\] No, I'm just kidding.
+\* I'm just kidding.
 Amazon or Microsoft or Google cloud would have quite different problems than
 "white smoke" from computers \[\*\*\].
 
-\[\*\*\] Actually, this really happened me in a data center before the cloud.
+\*\* Actually, this really happened me in a data center before the cloud.
 
 ---
 
