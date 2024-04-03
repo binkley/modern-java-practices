@@ -186,30 +186,35 @@ align="right" width="20%" height="auto"/>
 
 * [Try it](#try-it)
 * [Recent significant changes](#recent-significant-changes)
-* [Introduction](#introduction)
-* [Reusing this project](#reusing-this-project)
+* [Introduction](https://github.com/binkley/modern-java-practices/wiki/Introduction)
+* [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
 * [Contributing](#contributing)
-* [You and your project](#you-and-your-project)
+* [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
 * [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits)
 * [Getting your project
   started](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
-* [The JDK](#the-jdk)
+* [The JDK](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
-* [Setup your CI](#setup-your-ci)
+* [Setup your
+  CI](https://github.com/binkley/modern-java-practices/wiki/Setup-your-ci)
 * [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
-* [Maintain your build](#maintain-your-build)
-* [Choose your code style](#choose-your-code-style)
-* [Generate code](#generate-code)
-* [Leverage the compiler](#leverage-the-compiler)
-* [Use linting](#use-linting)
-* [Use static code analysis](#use-static-code-analysis)
+* [Maintain your
+  build](https://github.com/binkley/modern-java-practices/wiki/Maintain-your-build)
+* [Choose your code style](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style)
+* [Generate
+  code](https://github.com/binkley/modern-java-practices/wiki/Generate-code)
+* [Leverage the compiler](https://github.com/binkley/modern-java-practices/wiki/Leverage-the-compiler)
+* [Use
+  linting](https://github.com/binkley/modern-java-practices/wiki/Use-linting)
+* [Use static code analysis](https://github.com/binkley/modern-java-practices/wiki/Use-static-code-analysis)
 * [Shift security left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 * [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
 * [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
-* [Use integration testing](#use-integration-testing)
-* [Debugging](#debugging)
+* [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
+* [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
 * [Samples](#samples)
-* [Going further](#going-further)
+* [Going
+  further](https://github.com/binkley/modern-java-practices/wiki/Going-further)
 * [Problems](#problems)
 * [Credits](#credits)
 
@@ -236,7 +241,7 @@ align="right" width="20%" height="auto"/>
 ## Reusing this project
 
 See
-[_Introduction_](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
+[_Reusing this project_](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
 in the wiki.
 
 ---
@@ -286,95 +291,8 @@ align="right" width="20%" height="auto"/>
 
 ## The JDK
 
-For any Modern Java/JVM project, the first decision is _which version of Java
-(the JDK)_ to use? Some guidelines:
-
-* Java 21 is the most current LTS ("long-term support") version
-* There are more recent versions with continuing improvements and additional 
-  features to try out
-* If your personal or open-source project does not require a paid support
-  contract, newer Java versions are a good choice
-* For a full breakdown of the current JDK landscape (as of Jul 2022), see
-  [_Which JDK Version and Vendor Should You Use on Your
-  Project?_](https://tomgregory.com/which-jdk-version-and-vendor/), and a short
-  list of recommendations at [_Which Version of JDK Should I
-  Use?_](https://whichjdk.com)
-
-In this project, you'll see the choice of Java 21 as this is the version to
-recommend in production.
-
-In general, you will find that [Adoptium](https://adoptium.net) is a go-to
-choice for the JDK.
-
-> [!NOTE]
-> This is [the last clean
-> commit](https://github.com/binkley/modern-java-practices/commit/039f6f45fade51da0c548bf5d61b8013423ab8b9)
-> to use JDK 17.
-> If you are on JDK 21, please look at the current commits on this project.
-> There are still some concerns in 3rd-party tooling in JDK 21, but you should
-> keep your project up to date, and pickup key improvements and security
-> fixes.
-
-### Tips
-
-* In Maven, use a property to _fix_ the version of Java in place. But note
-  naming for that property: `java.version` is defined by the JVM, and Maven
-  creates a matching property. Recommended is to define your Java version with
-  the `jdk.version` property, which has no collision with pre-defined
-  properties
-* In Gradle, use the `javaToolchains` task to investigate issues with
-  mismatching or confusing build paths, project configuration, and Gradle
-  sorting it out. This is an issue for local-only builds; local builds using a
-  container (such as via [_Earthly_](#setup-local-ci)) lower these concerns
-* In GitHub Actions, building supports cross-checking multiple JVM versions,
-  use
-  [the `matrix` feature](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs).
-  See [the example GitHub actions](./.github/workflows/ci-batect-maven.yml)
-
-### Managing your Java environment
-
-Two best-of-class tools come to mind to manage your JDK environment in projects:
-
-* [jEnv](#jenv)
-* [Direnv](#direnv)
-
-Both assume UNIX-type shells (Bash, Zsh, etc).
-
-For those on Windows, you may need to use Cygwin, Git for Windows, or WSL2 to
-use these.
-
-(Reminder: in general, when setting up your project environment, prefer the 
-latest LTS version of Java, which is 21.)
-
-#### Jenv
-
-[jEnv](https://www.jenv.be/) supports both "global" (meaning you, the user)
-and "project" choices of JDK (particular to a directory and its children) in
-which JDK installation to use. You may notice the
-[`.java-version`](./.java-version) file: this is a per-project file for jEnv to
-pick your project Java version.
-
-Do use `jenv enable-plugins export` and restart your shell. This ensures
-`JAVA_HOME` is exported to match your jEnv settings. Several tools use
-`JAVA_HOME` rather than the `java` or `javac` found in your `PATH`.
-
-You may also find the `gradle` and `maven` plugins for jEnv useful.
-
-There are many ways to install the JDK, most are platform-dependent. In general,
-your team will be better off using a "managed" approach, rather than with each
-person using binary installers. Popular choices include:
-
-* [Apt and friends](https://adoptium.net/installation.html#linux-pkg) for Linux
-  or WSL
-* [Homebrew](https://brew.sh/) for Mac
-* [SDKMAN](https://sdkman.io/jdks) for multiple platforms
-
-#### Direnv
-
-[direnv](https://direnv.net/) is more general. Rather than specifying a Java
-version, you edit a `.envrc` file and add JDK-specific environment settings
-(and another other environment settings) just as you would on the command-line.
-Typically set are `PATH` to find `java` and `javac` programs, and `JAVA_HOME`.
+See [_The JDK_](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
+in the wiki.
 
 ---
 
