@@ -25,15 +25,19 @@ change).
 > make it easier for bringing advice up to date, and adding new approaches.
 > Please forgive the shambles while this is in progress.
 
-Regardless of what language or build tool you choose, and you
-should treat your build and your pipeline as worthy of your attention the same
-as you would your project source code.
-I'm showing you practices and tools that help you make these as _first-class_
-alongside your program or library.
+Regardless of what language(s) or build tool(s) you choose, and you
+should treat your build and your pipeline as worthy of your attention just as
+you would your project source code:
+_If it doesn't build right for customers as it does for developers, you have
+something to think about._
+
+I'm showing you practices and tools that help you make your build and pipeline
+to production as _first-class_ the same as your own source code.
 An example of this philosophy for a non-Java language is [Clojure](https://www.clojure.org/guides/tools_build#_builds_are_programs).
 
 Your focus, and the focus of this article, is _best build practices_ and
-_project hygiene_.
+_project hygiene_, and helping you have local work that is identical in
+production.
 This project is _agnostic_ between Gradle and Maven: discussion in each section
 covers both tools (alphabetical order, Gradle before Maven).
 See [_My Final Take on Gradle (vs.
