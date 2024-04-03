@@ -32,11 +32,13 @@ I'm showing you practices and tools that help you make these as _first-class_
 alongside your program or library.
 An example of this philosophy for a non-Java language is [Clojure](https://www.clojure.org/guides/tools_build#_builds_are_programs).
 
-The focus is _best build practices_ and _project hygiene_.
-This document is _agnostic_ between Gradle and Maven: discussion in each section
+Your focus, and the focus of this article, is _best build practices_ and
+_project hygiene_.
+This project is _agnostic_ between Gradle and Maven: discussion in each section
 covers both tools (alphabetical order, Gradle before Maven).
 See [_My Final Take on Gradle (vs.
-Maven)_](https://blog.frankel.ch/final-take-gradle/) for an opinionated view.
+Maven)_](https://blog.frankel.ch/final-take-gradle/) for an opinionated view
+(not my own).
 
 This is not a JVM starter for only Java:
 I use it for starting my Kotlin projects, and substitute complilation and code
