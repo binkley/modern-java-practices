@@ -112,8 +112,9 @@ contributors can focus on the code, not on setting up the build.
 > This is part of what _great habits_ looks like: you do not just show love
 > for your developers and users, but enable them to feed back into projects
 > and help others.
-> See [_Reusing this project_](#reusing-this-project) for tips on pulling in
-> updates.
+> See [_Reusing this
+> project_](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
+> for tips on pulling in updates.
 
 (Credit to Yegor Bugayenko for [_Elegant
 READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
@@ -234,75 +235,9 @@ align="right" width="20%" height="auto"/>
 
 ## Reusing this project
 
-Don't forget to [_fork
-me_](https://github.com/binkley/modern-java-practices/fork) or _clone_ me! This
-is [_Public Domain_](http://unlicense.org/) software: it is meant to be reused
-by you however is sensible.
-If you fork, I take care that upstream pulls work, but I'd like to [hear from
-you](https://github.com/binkley/modern-java-practices/issues) if you have
-trouble.
-See also: [_Cleaning
-up_](https://github.com/binkley/modern-java-practices#cleaning-up).
-
-Sensible approaches:
-
-- Fork this project, and work from there, pulling down improvements (usually 
-  version bumps on tools and dependencies)
-- Clone this project to a new repository, and work from there. Manually pull 
-  over improvements (there is [tooling to
-  help](https://github.com/binkley/modern-java-practices#keep-plugins-and-dependencies-up-to-date))
-- Read through this repository's code and changes, and update your own 
-  repository by hand, useful for existing repositories
-
-If you cloned this project as a starter, you may want to stay updated on
-improvements:
-
-```
-git remote add upstream https://github.com/binkley/modern-java-practices.git
-git fetch upstream
-git merge master/upstream
-```
-
-Once you are happy with your project, you should think about removing the
-upstream remote, and reviewing changes in this repository by hand.
-Your decision might depend on what merge conflicts you encounter.
-
-### Tips
-
-* Consider [_Clone git repository without
-  history?_](https://stackoverflow.com/questions/30001304/clone-git-repository-without-history)
-  to start at the current tip of this project. For example, some images in
-  `README.md` started overlarge in earlier versions, something you may not want
-  in a clone
-* _Caution_: Not all the images used in [`README.md`](./README.md) may be in the
-  Public Domain (this is challenging to research). Use due diligence before
-  sharing your clone, and other licenses may apply for these images in a
-  global context
-
-### Irrelevant files
-
-This project includes files which are helpful for maintaining itself, but may 
-be irrelevant to you. Some, however, may prove helpful in specific contexts as 
-noted:
-- [`build-as-ci-does.sh`](./build-as-ci-does.sh)
-  Helpful when CI has steps that local developers do not, and you want to 
-  reproduce or explore locally a CI problem. The script should match the 
-  actions your CI takes on pushes (this project uses GitHub actions)
-- [`compare-tooling-versions-sh`](./compare-tooling-versions.sh)
-  If your project supports _both_ Gradle and Maven builds (unlikely), a 
-  quick way to look at dependency and plugin versions between the two.
-  Note that the ouput needs _human_ reading: the same tool version may appear
-  as different lines when comparing
-- [`coverage`](./coverage.sh)
-  Checks if the local code passes at given levels of code coverage.
-  The script is focused on Maven, but with edits would do the same for Gradle.
-  This supports the ["ratchet" pattern](#leverage-unit-testing-and-coverage)
-- [`run-with-gradle.sh`](./run-with-gradle.sh)
-  If you are a Gradle project, you will likely rename this to just `run` or 
-  similar
-- [`run-with-maven.sh`](./run-with-maven.sh)
-  If you are a Maven project, you will likely rename this to just `run` or
-  similar
+See
+[_Introduction_](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
+in the wiki.
 
 ---
 
