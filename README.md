@@ -186,7 +186,7 @@ align="right" width="20%" height="auto"/>
 
 * [Try it](#try-it)
 * [Recent significant changes](#recent-significant-changes)
-* [Introduction](https://github.com/binkley/modern-java-practices/wiki/Introduction)
+* [Introduction](https://github.com/binkley/modern-java-practices/wiki#introduction)
 * [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
 * [Contributing](#contributing)
 * [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
@@ -229,7 +229,7 @@ align="right" width="20%" height="auto"/>
 ## Introduction
 
 See
-[_Introduction_](https://github.com/binkley/modern-java-practices/wiki/Introduction)
+[_Introduction_](https://github.com/binkley/modern-java-practices/wiki#introduction)
 in the wiki.
 
 ---
