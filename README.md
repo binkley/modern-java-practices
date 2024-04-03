@@ -16,7 +16,8 @@ align="right" width="20%" height="auto"/>
 Java/JVM projects using
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
 [Maven](https://maven.apache.org/what-is-maven.html), and a _starter project_
-in Java.
+in Java (the advice works for non-Java languages on the JVM though details may
+change).
 
 > [!NOTE]
 > I am in progress of moving sections of the `README.md` to individual pages
