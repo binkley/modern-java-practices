@@ -25,14 +25,12 @@ change).
 > make it easier for bringing advice up to date, and adding new approaches.
 > Please forgive the shambles while this is in progress.
 
-The best documentation headline on how to approach your build and pipeline:
-[**Builds are
-programs**](https://www.clojure.org/guides/tools_build#_builds_are_programs).
-This is true regardless of what language or build tool you choose, and you
+Regardless of what language or build tool you choose, and you
 should treat your build and your pipeline as worthy of your attention the same
 as you would your project source code.
 I'm showing you practices and tools that help you make these as _first-class_
 alongside your program or library.
+An example of this philosophy for a non-Java language is [Clojure](https://www.clojure.org/guides/tools_build#_builds_are_programs).
 
 The focus is _best build practices_ and _project hygiene_.
 This document is _agnostic_ between Gradle and Maven: discussion in each section
