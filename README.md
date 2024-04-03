@@ -221,67 +221,9 @@ align="right" width="20%" height="auto"/>
 
 ## Introduction
 
-Hi! I want you to have _awesome builds_ 🟢. If you're on a *Java* project,
-or a project on any
-[JVM language](https://en.wikipedia.org/wiki/List_of_JVM_languages)
-(Clojure, Groovy, JRuby, Java, Jython, Kotlin, Scala, _et al_), this article is
-for you.
-This article assumes you are using Gradle or Maven for your build locally, and
-in CI.
-Some of you are using other build systems native to your source language.
-Please follow along!
-
-**What is the goal of this article?** I want to highlight modern practies in
-building Java/JVM projects with Gradle or Maven, and provide guidance, or at
-least food for thought.
-The sample Gradle and Maven projects use Java, but most recommendations apply to
-builds for _any_ JVM language.
-I'll never be as clever or as talented as [_why the lucky stiff_](http://poignant.guide/book/), but I
-hope writing this makes you, developers, and others happy.
-
-See the wheel to the right?
-_No, you do not need to be agile!_
-(But I encourage you to explore the benefits of Agile.)
-This article is for you regardless of how your team approaches software.
-The point is to _"make people awesome"_ for any project, possibly the most key
-value of the Agile approach to software.
-
-### Principles in designing these builds
-
-1. _Make it work_
-    - Can I as a Day 1 developer build the project locally?
-    - Can I hand the project off to someone else to try?
-2. _Make it right_
-    - Can I reproduce issues in the CI build, and fix it locally?
-    - Can I find code and security issues from running the build?
-    - Is the code clean? Am I happy to explore the project?
-3. _Make it fast_
-    - Can I run the local build as frequently as I like, and be productive?
-    - Can I have a fast cycle of code &amp; test? What about red-green-refactor?
-    - Can I update my dependencies and plugins quickly and easily?
-
-### Goals for this project
-
-* Starter build scripts for Modern Java/JVM builds in Gradle and Maven, helpful
-  for new projects, or refurbishing existing projects
-* Quick solutions for raising project quality and security in your local build
-* Shift _problems to the left_ ("to the left" meaning earlier in the development
-  cycle). You'll get earlier feedback while still having a fast local build.
-  Time spent fixing issues locally is better than waiting on CI to fail, or
-  worse, for production to fail
-* The article focuses on Gradle and Maven: these are the most used build tools
-  for Modern Java/JVM projects. However, if you use a different build tool, the
-  principals still apply
-
-I want to help with the question: _I am in Day 1 on my project_: How do I begin
-with a local build that supports my team through the project lifetime?
-And when I have an existing project, how to I catch up?
-
-### Goal of this article
-
-[_Make people awesome_](https://modernagile.org/) (that means _you_). This
-project is based on the experiences of many, and experiments with Modern 
-Java/JVM builds, and shares lessons learned with you.
+See
+[_Introduction_](https://github.com/binkley/modern-java-practices/wiki/Introduction)
+in the wiki.
 
 ---
 
