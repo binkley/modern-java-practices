@@ -194,7 +194,8 @@ align="right" width="20%" height="auto"/>
 * [Getting your project
   started](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
 * [The JDK](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
-* [Use Gradle or Maven](#use-gradle-or-maven)
+* [Use Gradle or
+  Maven](https://github.com/binkley/modern-java-practices/wiki/Use-gradle-or-maven)
 * [Setup your
   CI](https://github.com/binkley/modern-java-practices/wiki/Setup-your-ci)
 * [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
@@ -306,156 +307,8 @@ align="right" width="15%" height="auto"/></a>
 
 ## Use Gradle or Maven
 
-The choice between Gradle and Maven depends on your team, your broader
-ecosystem, and your project needs. In summary:
-
-* Gradle &mdash; your build script is written in Groovy or Kotlin; dynamic,
-  imperative, and mutable; requires debugging your build on occasion, but less
-  verbose than Maven's XML. Use of "parent" (umbrella) projects is possible but
-  challenging. You can locally extend your build script either _inline_
-  with build code, with project plugins, or with plugins from a separate
-  project (perhaps shared across project for your team). If interested in custom
-  plugins,
-  [read more here](https://docs.gradle.org/current/userguide/custom_plugins.html)
-
-* Maven &mdash; your build scripts is written in XML; declarative and immutable;
-  verbose but specific; it either works or not. Use of "parent" (umbrella)
-  projects is simple with built-in support. You can locally extend your build
-  with plugins from a separate project (perhaps shared across project for your
-  team). If interested in custom plugins,
-  [read more here](https://maven.apache.org/guides/plugin/guide-java-plugin-development.html)
-
-For Modern Java/JVM projects, **use Gradle or Maven** unless your language
-provides you a native build tool (Clojure, Scala). The article doesn't cover
-alternative build tools:
-[industry data](https://www.jrebel.com/blog/2020-java-technology-report#build-tool)
-shows Gradle or Maven are the build tools for most folks. Unless you find
-yourself in a complex monorepo culture (Google, _etc._), or there are mandates
-from above, you need to select one of Gradle or Maven. However, for projects not
-using Gradle or Maven, you will still find improvements for your build herein
-(though details will differ).
-
-For new projects, you may find [Spring Initializr](https://start.spring.io),
-[`mn` from Micronaut](https://micronaut.io/), or
-[JHipster](https://www.jhipster.tech/), among many other project excellent 
-starters, more to your liking: they provide you with starter Gradle or Maven 
-scripts specific for those frameworks. _That's great!_ This article should 
-still help you improve your build beyond "getting started". You should pick 
-and choose build features as makes sense to you and your circumstances.
-
-This article offers **no preference between Gradle or Maven**. You need to
-decide with your team and circumstances. After picking your build tool, you 
-might rename [run-with-gradle.sh](./run-with-gradle.sh) or
-[runs-with-maven.sh](./run-with-maven.sh) to just `run.sh` or similar.
-
-Projects using Ant **should migrate**. It is true that Ant is well-maintained
-(the latest version dates from 2021). However, you will spend much effort in 
-providing modern build tooling, and effort in migrating from Ant is repaid in 
-smaller work for integrating modern tools. Data point: consider the number of
-[Stackoverflow](https://stackoverflow.com/) posts providing Gradle or 
-Maven answers to those for Ant.  *Consider Ant builds to be no longer 
-well-supported, and a form of
-[Tech Debt](https://www.martinfowler.com/bliki/TechnicalDebt.html).*
-
-Throughout, when covering both Gradle and Maven, Gradle will be discussed first,
-then Maven. This is no expressing a preference!  It is neutral alphabetical
-ordering.
-
-**NB** &mdash; Gradle Enterprise provides additional features for Maven as
-well such as [build
-caching](https://docs.gradle.com/enterprise/maven-build-cache/) and [build
-scans](#keep-your-build-fast).
-
-### Cleaning up
-
-Once you pick between Gradle or Maven, it is a good time to clean up.
-If you have cloned the project, some renames/deletions to consider:
-
-* [run-with-gradle.sh](./run-with-gradle.sh) or
-  [runs-with-maven.sh](./run-with-maven.sh) → just `run.sh` or `build.sh` or 
-  anything you like. Remember to document in `README.md` for others
-* [batect.yml](./batect.yml) &mdash; update the task names, and remove those not
-  relevant. Again, don't forget about `README.md` instructions
-* [ci.yml](./.github/workflows/ci-maven.yml) &mdash; update the jobs, and remove those
-  not relevant. Did I mention `README.md`?
-
-You are ready to make great software.
-
-### Keeping Gradle or Maven up to date
-
-#### Gradle
-
-To update Gradle:
-
-```shell
-$ $EDITOR gradle.properties  # Update gradleWrapperVersion property
-$ ./gradlew wrapper  # Update scripts and supporting files
-$ ./gradlew wrapper  # Confirm, and download files if needed
-```
-
-#### Maven
-
-To update Maven:
-
-```shell
-$ $EDITOR pom.xml  # Update maven.version property
-$ ./mvnw wrapper:wrapper  # Update scripts and supporting files
-$ ./mvnw wrapper:wra  # Confirm, and download files if needed
-```
-
-Note that Maven wrapper is developing, and will be bundled with an upcoming
-Maven release.
-For now it is a separate plugin in your `pom.xml`.
-
-### Tips
-
-* Take advantage of your shell's tab completion:
-  - [Gradle completion](https://github.com/gradle/gradle-completion)
-  - [Maven completion](https://github.com/juven/maven-bash-completion)
-* The sample Gradle and Maven build scripts often specify specific versions of
-  the tooling, separate from the plugin versions. This is intentional. You
-  should be able to update the latest tool version even when the plugin has not
-  yet caught up
-* Gradle itself does not provide support for "profiles", a key Maven feature.
-  This is _different_ from _profiling_ build performance!  Maven profiles
-  can be used in many ways. The most common are to enabling/disabling build
-  features on the command line, tailoring the build to a particular deployment
-  environment, or using different credentials for other systems. If this 
-  feature is important for your team, you can code `if/else` blocks directly 
-  in `build.gradle`, or use a plugin such as
-  [Kordamp Profiles Gradle plugin](https://kordamp.org/kordamp-gradle-plugins/#_org_kordamp_gradle_profiles)
-  (Kordamp has a suite of interesting Gradle plugins beyond this one; read more
-  on that page)
-* Gradle uses advanced terminal control, so you cannot always see what is
-  happening. To view Gradle steps plainly when debugging your build, use:
-  ```shell
-  $ ./gradlew <your tasks> | cat
-  ```
-  or save the output to a file:
-  ```shell
-  $ ./gradlew <your tasks> | tee -o some-file
-  ```
-* If your source code is in Kotlin, so should be your build. Gradle provides
-  [a Kotlin DSL for build scripts](https://kotlinlang.org/docs/reference/using-gradle.html)
-  as a first-class counterpart to the traditional Groovy DSL
-* Maven colorizes output, but does not use terminal control to overwrite output
-* See [Setup your CI](#setup-your-ci) for another approach to getting plain text
-  console output
-* [The Maven Notifier](https://github.com/jcgay/maven-notifier) may be to your
-  liking
-* If you like Maven, but XML isn't your thing, you might explore the
-  [_Polyglot for Maven_](https://github.com/takari/polyglot-maven) extension
-  which provides the POM in multiple languages/formats (_eg_, Ruby, YAML, many
-  others)
-* If you have a multi-module Maven build, you might consider
-  [_Takari Smart
-  Builder_](http://takari.io/book/30-team-maven.html#takari-smart-builder)
-  to speed it up
-* Maven best practice is to specify the version for each plugin, _even default
-  plugins_ that come with your version of Maven. This enforces
-  **reproducible builds**. See also the
-  [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
-  to exactly specify the version of Maven for your build
+See [_Use Gradle or Maven_](https://github.com/binkley/modern-java-practices/wiki/Use-gradle-or-maven)
+in the wiki.
 
 ---
 
