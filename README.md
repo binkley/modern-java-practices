@@ -196,7 +196,7 @@ align="right" width="20%" height="auto"/>
 * [The JDK](#the-jdk)
 * [Use Gradle or Maven](#use-gradle-or-maven)
 * [Setup your CI](#setup-your-ci)
-* [Keep local consistent with CI](#keep-local-consistent-with-ci)
+* [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
 * [Maintain your build](#maintain-your-build)
 * [Choose your code style](#choose-your-code-style)
 * [Generate code](#generate-code)
@@ -616,81 +616,14 @@ from this project.
 <a href="https://github.com/binkley/html/blob/master/blog/on-pipelines.html"
 title="On Pipelines">
 <img src="./images/pipeline.png" alt="Production vs Dev pipeline"
-align="right" width="20%" height="auto"/>
+align="right" width="30%" height="auto"/>
 </a>
 
 ## Keep local consistent with CI
 
-What is "local CI"?
-That sounds like a contradition.
-Tooling helps you reproduce locally the same build that CI uses, so that you
-suffer less from version drift and other type problems, and minimize
-related environment issues.
-A common example is building on different JVM/JDK versions.
-Ideally, excepting truly environment-specific, your local build should fail
-when CI would also fail so that you can catch problems earlier in your
-development process before commits are shared.
-
-### Setup local CI
-
-Reflecting the principle that local builds should be like CI builds, some
-tools that greatly help:
-
-* [Dagger](https://dagger.io/) ensures your build is in a container, and
-  reproducible for everyone.
-  If you like programming your build with Gradle, you may appreciate
-  programming your pipeline in Dagger.<br>
-  **TODO** Provide an example script for Dagger.
-* [Earthly](https://earthly.dev/) ensures your build is in a container, and
-  reproducible for everyone.
-  Earthly assumes a local install:
-  there is no automated install from a script.
-  You can install Earthly locally from [_Get
-  Earthly_](https://earthly.dev/get-earthly) page.
-
-> [!NOTE]
-> For a long while, this project relied on [Batect](https://batect.dev/).
-> However, the excellent author of that project has take a break, and the
-> repository is marked as _archived_.
-
-_This is an important step_!
-It is closer to your CI builds locally.
-You should strive to keep local as faithful as possible to CI and Production.
-
-You may decide not to use CI-like tooling for local builds. However, consider
-that use of them raises your confidence that CI will succeed. Local CI-like
-tooling is part of the theme of _shifting left_ for problems.
-
-**NB** &mdash; to be as consistent as possible, the sample
-Gradle and Maven builds, and CI Github actions, and use JDK 21, and for builds
-with Earthly both locally and in the pipeline.
-
-Configure your local CI in [`Earthfile`](./Earthfile) with suitable tasks.
-For this project, there are example tasks/targets:
-
-```shell
-$ earthly ls
-+base
-+build-with-gradle
-+build-with-maven
-```
-
-#### Gradle
-
-It is helpful that your `batect.yml` calls Gradle with the `--no-daemon` flag:
-
-* There is no point in spinning up a daemon for a Docker ephemeral container;
-  but it is harmless either way
-* If you encounter troubles, run locally `./gradlew --stop` to kill any local
-  daemons: This indicates a _bug_, and "stop" is a workaround.
-  See [a suggestion of a better approach](https://github.com/batect/batect/issues/680#issuecomment-719821099)
-
-#### Earthly
-
-Earthly has its own caching strategies that apply to your build (such as
-Gradle or Maven dependency downloads) based around Docker layers. See
-[_Advanced local
-caching_](https://docs.earthly.dev/docs/guides/advanced-local-caching) for more information.
+See [_Keep local consistent with
+CI_](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
+in the wiki.
 
 ---
 
