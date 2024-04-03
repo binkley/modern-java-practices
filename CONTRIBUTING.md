@@ -1,3 +1,15 @@
+# Maintainance
+
+Notes for maintaining this repository:
+
+- Check [`CONTRIBUTING.md`] and ensure it is current and makes sense.
+- Use the helper scripts, and see that they:
+  1. Work.
+     Working scripts is the #1 thing to help others.
+  2. Make sense for the project.
+     An example is moving from Batect to Earthly.
+     Scripts should migrate from (the archived) Batect.
+
 # Contributing
 
 Several scripts in the project root are to aid in contributing.
