@@ -265,24 +265,9 @@ in the wiki.
 <!-- TODO: Should this section be moved or removed? It is awkward here -->
 ## You and your project
 
-There are simple ways to make your project great. Some goals to strive for:
-
-* Visitors and new developers get off to a quick start, and can understand what
-  the build does (if they are interested)
-* Users of your project trust it&mdash;the build does what it says on the
-  tin&mdash;, and they feel safe relying on your project
-* You don't get peppered with questions that are answered "in the source"
-  &mdash;because not everyone wants to read the source, and you'd rather be
-  coding than answering questions ☺
-* Coding should feel easy. You solve _real_ problems, and do not spend overmuch
-  much time on build details: your build supports you
-* Your code passes "smell tests": no simple complaints, and you are proud of
-  what others see. _Hey!_ You're a professional, and it shows. (This is one of
-  my personal fears as a programmer)
-* Your project is "standard", meaning, the build is easily grasped by those
-  familiar with standard techniques and tooling
-
-Hopefully this article and the sample build scripts help you!
+See [_You and your
+project_](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
+in the wiki.
 
 ---
 
