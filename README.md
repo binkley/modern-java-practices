@@ -159,13 +159,13 @@ $ ./run-with-maven.sh
 A "starter" program is the simplest of all possible ["smoke
 tests"](https://en.wikipedia.org/wiki/Smoke_testing_(software)), meaning,
 the minimal things _just work_, and when you check other things, maybe smoke
-drifts from your computer as circuits burn out\[\*\].
+drifts from your computer as circuits burn out[^1].
 
-\* I'm just kidding.
+[^1]: No, I'm just kidding.
 Amazon or Microsoft or Google cloud would have quite different problems than
-"white smoke" from computers \[\*\*\].
+"white smoke" from computers[^2].
 
-\*\* Actually, this really happened me in a data center before the cloud.
+[^2]: Actually, this really happened me in a data center before the cloud.
 
 ---
 
