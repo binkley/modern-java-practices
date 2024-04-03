@@ -119,17 +119,22 @@ contributors can focus on the code, not on setting up the build.
 (Credit to Yegor Bugayenko for [_Elegant
 READMEs_](https://www.yegor256.com/2019/04/23/elegant-readme.html).)
 
+---
+
 <a title="Try it">
-<img src="./images/try.png" alt="Try..."
+<img src="./images/try.png" alt="Run from a local script"
 align="right" width="20%" height="auto"/>
 </a>
 
----
-
 ## Try it
 
-After cloning or forking this project to your machine, try out the build
-combination that makes sense for you:
+You should "kick the tires" and get a feel for what parts of this project
+you'd like to pull into your own projects and builds.
+You run across lots of projects:
+Let's make this one helpful for you.
+
+After cloning or forking this project to your machine, try out the local build
+that makes sense for you:
 
 ```shell
 $ ./gradlew build  # Local-only build
@@ -138,16 +143,29 @@ $ ./mvnw verify  # Local-only build
 $ earthly +build-with-maven  # CI build with Earthly
 ```
 
-(You may find that the "CI" build works great for you locally as part of your
-regular command line.
-Most IDEs would use the "local-only" build.)
+Notice that you can run the build purely localy, or _in a container_?
 
-See what the starter program does:
+I want to convince you that running your builds in a container fixes the "it
+worked on my machine" problem, and show you how to pick up improvements for
+your build that helps you and others be _awesome_.
+
+See what the starter "run" program does:
 
 ```shell
 $ ./run-with-gradle.sh
 $ ./run-with-maven.sh
 ```
+
+A "starter" program is the simplest of all possible ["smoke
+tests"](https://en.wikipedia.org/wiki/Smoke_testing_(software)), meaning,
+the minimal things _just work_, and when you check other things, maybe smoke
+drifts from your computer as circuits burn out\[\*\].
+
+\[\*\] No, I'm just kidding.
+Amazon or Microsoft or Google cloud would have quite different problems than
+"white smoke" from computers \[\*\*\].
+
+\[\*\*\] Actually, this really happened me in a data center before the cloud.
 
 ---
 
