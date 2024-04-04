@@ -400,42 +400,9 @@ in the wiki.
 
 ## Use linting
 
-"Linting" is static code analysis with an eye towards style and dodgy code
-constructs. The term
-[derives from early UNIX](https://en.wikipedia.org/wiki/Lint_(software)).
-
-Linting for modern languages is simple: the compiler complains on your behalf.
-This is the case, for example, Golang. Having common team agreements on style
-and formatting is a boon for avoiding
-[bikeshedding](https://en.wikipedia.org/wiki/Law_of_triviality), and aids in:
-
-* Reading a code base, relying on a similar style throughout
-* Code reviews, focusing on substantive over superficial changes
-* Merging code, avoiding trivial or irrelevant conflicts
-
-Code style and formatting are _entirely_ a matter of team discussion and
-agreement.
-In Java, there is no recommended style, and `javac` is good at parsing almost
-anything thrown at it.
-However, humans reading code are not as well-equipped.
-
-**Pick a team style, stick to it, and _enforce_ it with tooling.**
-
-See the section [_Checkstyle_](#checkstyle) for more details on enforcement.
-
-### Tips
-
-* If you use Google Java coding conventions, consider
-  [Spotless](https://github.com/diffplug/spotless) which can autoformat your
-  code
-* Consider use of [EditorConfig](https://editorconfig.org/) for teams when
-  editor choice is up to each developer.
-  EditorConfig is a cross-IDE standard means of specifying code formatting
-  respected by common code editors (either directly, or through popular
-  plugins)
-* To open the report for Checkstyle, build locally and use the
-  `<project root>/build/reports/checkstyle/` path.
-  The path shown in a Docker build is relative to the interior of the container
+See [_Use
+linting_](https://github.com/binkley/modern-java-practices/wiki/Use-linting)
+in the wiki.
 
 ---
 
