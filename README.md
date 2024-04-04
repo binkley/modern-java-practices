@@ -370,21 +370,9 @@ in the wiki.
 
 ## Choose your code style
 
-Style is an often overlooked but very critical attribute of writing. The style
-of writing directly impacts the readability and understandability of the end
-product
-
-There are 2 main java code styles
-
-- [Sun code style](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
-- [Google code style](https://google.github.io/styleguide/javaguide.html)
-
-It is up to you which one you should choose. But the style should be chosen and
-the style should be the same for everyone.
-
-To maintain the same standard `config/ide/eclipse-java-google-style.xml`
-or `intellij-java-google-style.xml` should be imported to your IDE. Checkstyle
-should be configured based on the chosen standard
+See [_Choose your code
+style_](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style)
+in the wiki.
 
 ---
 
