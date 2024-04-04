@@ -381,6 +381,10 @@ width="20%" height="auto"/>
 
 ## Generate code
 
+See [_Generate
+code_](https://github.com/binkley/modern-java-practices/wiki/Generate-code)
+in the wiki.
+
 ---
 
 <img src="./images/gear.png" alt="Gear"
@@ -388,33 +392,9 @@ align="right" width="20%" height="auto"/>
 
 ## Leverage the compiler
 
-Compilers targeting the JVM generally provide warning flags for dodgy code, and
-a flag to turn warnings into errors: Use them.
-The compiler is your first line of defense against code issues.
-
-For example, add these flags with `javac`:
-
-* `-Werror` -- turn warnings into errors, and fails the build
-* `-Xlint:all,-processing` -- enable all warnings excluding annotation
-  processing
-
-Be judicious in disabling compiler warnings: they usually warn you for good
-reasons.
-For `javac`, disabled warnings might include `serial` or `deprecation`.
-
-JVM compilers support `-Werror` (_eg_, `javac`, `kotlinc`, `scalac`, _et al_);
-enabling/disabling specific warnings may be compiler-specific.
-
-### Tips
-
-* Consider using [_Error Prone_](https://errorprone.info/).
-  _Error Prone_ is an excellent compiler plugin to fail problems earlier: fail 
-  at compile-time rather than a runtime, however it can be overly strict
-* Lombok annotation processing fails `-Xlint:all`.
-  Use `-Xlint:all,-processing` to bypass warnings about annotation processing.
-  In addition, using Lombok's configuration to add suppression annotations on
-  generated code (so other tools will ignore generated code) needs the older
-  Spotbugs annotations provided as a dependency
+See [_Leverage the
+compiler_](https://github.com/binkley/modern-java-practices/wiki/Leverage-the-compiler)
+in the wiki.
 
 ---
 
