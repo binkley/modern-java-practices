@@ -3,6 +3,8 @@
 align="right" width="20%" height="auto"/>
 </a>
 
+[**GO SEE THE WIKI!**](https://github.com/binkley/modern-java-practices/wiki)
+
 # Modern Java/JVM Build Practices
 
 [![Gradle build](https://github.com/binkley/modern-java-practices/actions/workflows/ci-earthly-gradle.yml/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
