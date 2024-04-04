@@ -257,11 +257,6 @@ in the wiki.
 
 ---
 
-<a href="https://github.com/binkley/modern-java-practices/fork" title="Reuse">
-<img src="./images/reuse.png" alt="Reuse"
-align="right" width="20%" height="auto"/>
-</a>
-
 ## Reusing this project
 
 See
@@ -269,10 +264,6 @@ See
 in the wiki.
 
 ---
-
-<img src="./images/Wikibooks-contribute-icon.svg" alt="Contributing"
-align="right" width="20%" height="auto"/>
-</a>
 
 ## Contributing
 
@@ -308,11 +299,6 @@ in the wiki.
 
 ---
 
-<a href="https://adoptium.net/" title="Adoptium">
-<img src="./images/adoptium.png" alt="Adoptium"
-align="right" width="20%" height="auto"/>
-</a>
-
 ## The JDK
 
 See [_The JDK_](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
@@ -320,26 +306,12 @@ in the wiki.
 
 ---
 
-<!--- TODO: better formating for images vs text -->
-<a href="https://maven.apache.org/" title="Maven">
-<img src="./images/maven.png" alt="Maven"
-align="right" width="15%" height="auto"/></a>
-<a href="https://gradle.org/" title="Gradle">
-<img src="./images/gradle.png" alt="Gradle"
-align="right" width="15%" height="auto"/></a> 
-
 ## Use Gradle or Maven
 
 See [_Use Gradle or Maven_](https://github.com/binkley/modern-java-practices/wiki/Use-gradle-or-maven)
 in the wiki.
 
 ---
-
-<a href="http://www.ambysoft.com/essays/whyAgileWorksFeedback.html"
-title="Why Agile Software Development Techniques Work: Improved Feedback">
-<img src="./images/bug-costs.jpg" alt="Length of Feedback Cycle"
-align="right" width="20%" height="auto"/>
-</a>
 
 ## Setup your CI
 
@@ -357,9 +329,6 @@ in the wiki.
 
 ---
 
-<img src="./images/maintain-build.jpg" alt="Maintain build"
-align="right" width="20%" height="auto"/>
-
 ## Maintain your build
 
 See [_Maintain your
@@ -376,9 +345,6 @@ in the wiki.
 
 ---
 
-<img src="./images/coffee-grinder.png" alt="Coffee grinder" align="right"
-width="20%" height="auto"/>
-
 ## Generate code
 
 See [_Generate
@@ -386,9 +352,6 @@ code_](https://github.com/binkley/modern-java-practices/wiki/Generate-code)
 in the wiki.
 
 ---
-
-<img src="./images/gear.png" alt="Gear"
-align="right" width="20%" height="auto"/>
 
 ## Leverage the compiler
 
@@ -555,10 +518,10 @@ An example is testing `STDOUT` and `STDERR` for a command-line application.
 services.)
 
 Unlike `src/main/java` and `src/test/java`, there is no generally agreed
-convention for where to put integration tests. This project keeps all tests
-regardless of type in `src/test/java` for simplicity of presentation, naming
-integration tests with "*IT.java". A more sophisticated approach may make sense
-for your project.
+convention for where to put integration tests.
+This project keeps all tests regardless of type in `src/test/java` for
+simplicity of presentation, naming integration tests with "\*IT.java".
+A more sophisticated approach may make sense for your project.
 
 If you'd like to keep your integration tests in a separate source root from unit
 tests, consider these plugins:
@@ -665,9 +628,6 @@ Another dimension to consider for local testing: _User Journey_ tests.
   journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
 
 ---
-
-<img src="./images/debugging.png" alt="Debugging in the container"
-align="right" width="20%" height="auto"/>
 
 ## Debugging
 
