@@ -452,6 +452,8 @@ are frequently updated (espcially for dependency versions).
   (Maven) looks at Spring Boot features for Open API (Swagger), REST APIs, 
   HATEOAS, GraphQL, Prometheus, _et al_
 
+---
+
 ## Problems
 
 <a href="https://xkcd.com/303/" title="Compiling">
@@ -536,13 +538,15 @@ happen for reasons of environment. Examples can include:
 - Dependencies break in CI: If CI uses an internal dependency repository, check
   in with the maintainers of the repository
 
+---
+
 ## Credits
 
 Many thanks to:
 
-* [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche) &mdash; 
-  _Proofreading_
-* [Sergei Bukharov](https://github.com/Bukharovsi) &mdash; _PMD enhancements_
+* [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche)
+* [Sam Gammon](https://github.com/sgammon)
+* [Sergei Bukharov](https://github.com/Bukharovsi)
 
 All suggestions and ideas welcome!
 Please [file an
