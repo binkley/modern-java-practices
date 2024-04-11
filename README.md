@@ -264,6 +264,9 @@ align="right" width="20%" height="auto"/>
 
 ## Contributing
 
+(This section is repeated in [the
+wiki](https://github.com/binkley/modern-java-practices/wiki/Contributing).)
+
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 Please [file issues](https://github.com/binkley/modern-java-practices/issues),
 or contribute [pull
