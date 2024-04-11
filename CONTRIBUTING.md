@@ -3,12 +3,12 @@
 Notes for maintaining this repository:
 
 Use the helper scripts, and see that they:
-1. Work.
+1. **Work.**<br>
    Working scripts is the #1 thing to help others.
-2. Work and make sense for CI.
+2. **Work in CI and make sense there.**<br>
    A top goal for you: your local build should mirror the build in CI.
    Check the GitHub actions.
-3. Make sense for the project.
+3. **Make sense for the project.**<br>
    An example is moving from Batect to Earthly.
    Scripts should migrate from (the archived) Batect.
 
