@@ -405,50 +405,9 @@ in the wiki.
 
 ## Use integration testing
 
-Here the project says "integration testing". Your team may call it by another
-name. This means bringing up your application, possibly with
-[fakes, stubs, mocks, spies, dummies, or doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html)
-for external dependencies (databases, other services, _etc_), and running tests
-against high-level functionality, but _not_ starting up external dependencies
-themselves (_ie_, Docker, or manual command-line steps). Think of CI: what are
-called here "integration tests" are those which do
-_not_ need your CI to provide other services.
-
-An example is testing `STDOUT` and `STDERR` for a command-line application.
-(If you are in Spring Framework/Boot-land, use controller tests for your REST
-services.)
-
-Unlike `src/main/java` and `src/test/java`, there is no generally agreed
-convention for where to put integration tests.
-This project keeps all tests regardless of type in `src/test/java` for
-simplicity of presentation, naming integration tests with "\*IT.java".
-A more sophisticated approach may make sense for your project.
-
-If you'd like to keep your integration tests in a separate source root from unit
-tests, consider these plugins:
-
-* For Gradle, use [native Gradle to add new test
-  sets](https://docs.gradle.org/current/userguide/java_testing.html#sec:configuring_java_integration_tests).
-  (Previous versions of this project used the excellent
-  [`testsets` plugin](https://github.com/unbroken-dome/gradle-testsets-plugin),
-  however, it does not support Gradle 8)
-* For Maven, use
-  the [Maven Failsafe Plugin](https://maven.apache.org/failsafe/maven-failsafe-plugin/)
-
-**Caution**: This project _duplicates_
-[`ApplicationIT.java`](./src/test/java/demo/ApplicationIT.java) and
-[`ApplicationTest.java`](./src/integrationTest/java/demo/ApplicationTest.java)
-reflecting the split in philosophy between Gradle and Maven for integration
-tests. Clearly in a production project, you would have only one of these.
-
-### Tips
-
-* For Maven projects, Apache maintains Failsafe and Surefire plugins as a pair,
-  and share the same version numbers.
-  This project uses a shared `maven-testing-plugins.version` property
-* Baeldung
-  has [a good introduction article](https://www.baeldung.com/maven-failsafe-plugin)
-  on Maven Failsafe
+See [_Use integration
+testing_](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
+in the wiki.
 
 ---
 
