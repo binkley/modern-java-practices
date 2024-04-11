@@ -426,9 +426,9 @@ in the wiki.
 
 ## Debugging
 
-> [!NOTE]
-> This section is in progress, and needs instructions and examples for using
-> "debug" from container builds using Earthly.
+See
+[_Debugging_](https://github.com/binkley/modern-java-practices/wiki/Debugging)
+in the wiki.
 
 ---
 
