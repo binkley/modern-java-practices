@@ -243,7 +243,7 @@ align="right" width="20%" height="auto"/>
 * [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
 * [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
 * [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
-* [Samples](#samples)
+* [Samples](https://github.com/binkley/modern-java-practices/wiki/Samples)
 * [Problems](https://github.com/binkley/modern-java-practices/wiki/Problems)
 * [Going
   further](https://github.com/binkley/modern-java-practices/wiki/Going-further)
@@ -432,30 +432,13 @@ in the wiki.
 
 ---
 
-<img src="./images/sample.svg" alt="Sample"
-align="right" width="20%" height="auto"/>
-
 ## Samples
 
+See [_Going
+further_](https://github.com/binkley/modern-java-practices/wiki/Going-further)
+in the wiki.
 These samples are external projects, are at varying states of maturity, and
 are frequently updated (espcially for dependency versions).
-
-### Kotlin
-
-- [KUnits](https://github.com/binkley/kunits) (Maven) is a pleasure project to 
-  represent units of measurement in Kotlin
-- [Kotlin Rational](https://github.com/binkley/kotlin-rational) (Maven) 
-  explores a math library for rationals (fractions) akin to `BigDecimal`
-- [Magic Bus](https://github.com/binkley/kotlin-magic-bus) (Gradle) is a 
-  library for using messaging patterns within a single application (it talks 
-  to itself)
-
-### Spring Boot
-
-- [Spring Boot HATEOAS
-  Database](https://github.com/binkley/kotlin-spring-boot-hateoas-database)
-  (Maven) looks at Spring Boot features for Open API (Swagger), REST APIs, 
-  HATEOAS, GraphQL, Prometheus, _et al_
 
 ---
 
