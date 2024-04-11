@@ -7,6 +7,11 @@ align="right" width="20%" height="auto"/>
 
 # Modern Java/JVM Build Practices
 
+<a href="https://modernagile.org/" title="Modern Agile">
+<img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
+align="right" width="20%" height="auto"/>
+</a>
+
 [![Gradle build](https://github.com/binkley/modern-java-practices/actions/workflows/ci-earthly-gradle.yml/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
 [![Maven build](https://github.com/binkley/modern-java-practices/actions/workflows/ci-earthly-maven.yml/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
 [![pull requests](https://img.shields.io/github/issues-pr/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/pulls)
@@ -251,27 +256,6 @@ align="right" width="20%" height="auto"/>
 
 ---
 
-<a href="https://modernagile.org/" title="Modern Agile">
-<img src="./images/modern-agile-wheel-english.png" alt="Modern Agile"
-align="right" width="20%" height="auto"/>
-</a>
-
-## Introduction
-
-See
-[_Introduction_](https://github.com/binkley/modern-java-practices/wiki#introduction)
-in the wiki.
-
----
-
-## Reusing this project
-
-See
-[_Reusing this project_](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
-in the wiki.
-
----
-
 ## Contributing
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
@@ -279,174 +263,6 @@ Please [file issues](https://github.com/binkley/modern-java-practices/issues),
 or contribute [pull
 requests](https://github.com/binkley/modern-java-practices/pulls)!
 I'd love a conversation with you.
-
----
-
-## Commits
-
-See [_Commits_](https://github.com/binkley/modern-java-practices/wiki/Commits)
-in the wiki.
-
----
-
-<!-- TODO: Should this section be moved or removed? It is awkward here -->
-## You and your project
-
-See [_You and your
-project_](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
-in the wiki.
-
----
-
-## Getting your project started
-
-See [_Getting your project
-started_](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
-in the wiki.
-
----
-
-## The JDK
-
-See [_The JDK_](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
-in the wiki.
-
----
-
-## Use Gradle or Maven
-
-See [_Use Gradle or Maven_](https://github.com/binkley/modern-java-practices/wiki/Use-gradle-or-maven)
-in the wiki.
-
----
-
-## Setup your CI
-
-See [_Setup your
-CI_](https://github.com/binkley/modern-java-practices/wiki/Setup-your-ci)
-in the wiki.
-
----
-
-## Keep local consistent with CI
-
-See [_Keep local consistent with
-CI_](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
-in the wiki.
-
----
-
-## Maintain your build
-
-See [_Maintain your
-build_](https://github.com/binkley/modern-java-practices/wiki/Maintain-your-build)
-in the wiki.
-
----
-
-## Choose your code style
-
-See [_Choose your code
-style_](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style)
-in the wiki.
-
----
-
-## Generate code
-
-See [_Generate
-code_](https://github.com/binkley/modern-java-practices/wiki/Generate-code)
-in the wiki.
-
----
-
-## Leverage the compiler
-
-See [_Leverage the
-compiler_](https://github.com/binkley/modern-java-practices/wiki/Leverage-the-compiler)
-in the wiki.
-
----
-
-## Use linting
-
-See [_Use
-linting_](https://github.com/binkley/modern-java-practices/wiki/Use-linting)
-in the wiki.
-
----
-
-## Use static code analysis
-
-See [_Use static code
-analysis_](https://github.com/binkley/modern-java-practices/wiki/Use-static-code-analysis)
-in the wiki.
-
----
-
-## Shift security left
-
-See [_Shift security
-left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
-in the wiki.
-
----
-
-## Leverage unit testing and coverage
-
-See [_Leverage unit testing and
-coverage_](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage)
-in the wiki.
-
----
-
-## Use mutation testing
-
-See [_Use mutation
-testing_](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
-in the wiki.
-
----
-
-## Use integration testing
-
-See [_Use integration
-testing_](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
-in the wiki.
-
----
-
-## Going further
-
-See [_Going
-further_](https://github.com/binkley/modern-java-practices/wiki/Going-further)
-in the wiki.
-
----
-
-## Debugging
-
-See
-[_Debugging_](https://github.com/binkley/modern-java-practices/wiki/Debugging)
-in the wiki.
-
----
-
-## Samples
-
-See [_Going
-further_](https://github.com/binkley/modern-java-practices/wiki/Going-further)
-in the wiki.
-These samples are external projects, are at varying states of maturity, and
-are frequently updated (espcially for dependency versions).
-
----
-
-## Problems
-
-See
-[_Problems_](https://github.com/binkley/modern-java-practices/wiki/Problems)
-in the wiki.
 
 ---
 
