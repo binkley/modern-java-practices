@@ -55,23 +55,23 @@
 
     <properties>
         <!-- @formatter:off -->
-        <assertj.version>3.25.1</assertj.version>
+        <assertj.version>3.25.3</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
-        <checkstyle.version>10.13.0</checkstyle.version>
-        <dependency-check-maven.version>9.0.9</dependency-check-maven.version>
+        <checkstyle.version>10.15.0</checkstyle.version>
+        <dependency-check-maven.version>9.1.0</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
-        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>21</jdk.version>
         <junit.version>5.10.2</junit.version>
-        <lombok.version>1.18.30</lombok.version>
+        <lombok.version>1.18.32</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
         <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
@@ -84,16 +84,16 @@
         <maven-testing-plugins.version>3.2.5</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.2.0</maven-wrapper-plugin.version>
         <maven.version>3.9.6</maven.version>
-        <mockito.version>5.10.0</mockito.version>
-        <modernizer.version>2.7.0</modernizer.version>
+        <mockito.version>5.11.0</mockito.version>
+        <modernizer.version>2.8.0</modernizer.version>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.15.3</pitest-maven.version>
+        <pitest-maven.version>1.16.0</pitest-maven.version>
         <pmd.version>7.0.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.8.2.0</spotbugs-maven-plugin.version>
-        <spotbugs.version>4.8.3</spotbugs.version>
+        <spotbugs-maven-plugin.version>4.8.4.0</spotbugs-maven-plugin.version>
+        <spotbugs.version>4.8.4</spotbugs.version>
         <system-lambda.version>1.2.1</system-lambda.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
         <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
