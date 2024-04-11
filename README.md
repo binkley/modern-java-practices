@@ -234,7 +234,7 @@ align="right" width="20%" height="auto"/>
   linting](https://github.com/binkley/modern-java-practices/wiki/Use-linting)
 * [Use static code analysis](https://github.com/binkley/modern-java-practices/wiki/Use-static-code-analysis)
 * [Shift security left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
-* [Leverage unit testing and coverage](#leverage-unit-testing-and-coverage)
+* [Leverage unit testing and coverage](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage)
 * [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
 * [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
 * [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
@@ -389,110 +389,9 @@ in the wiki.
 
 ## Leverage unit testing and coverage
 
-* [JaCoCo](https://www.jacoco.org/jacoco/)
-* Use the "ratchet" pattern to fail the build when coverage drops.
-  Robert Greiner talks more on this in [_Continuous Code Improvement Using 
-  Ratcheting_](https://robertgreiner.com/continuous-code-improvement-using-ratcheting/)
-  This follows the agile ["Boy Scout"
-  principle](https://dzone.com/articles/the-boy-scout-software-development-principle)
-* Fluent assertions &mdash; lots of options in this area
-    * [AssertJ](https://assertj.github.io/doc/) &mdash; solid choice
-    * Built assertions from Junit makes is difficult for developers to
-      distinguish "actual" values from "expected" values. This is a limitation
-      from Java as it lacks named parameters.
-      Other frameworks compatible with JUnit provide more fluent assertions such
-      as AssertJ.
-      Different choices make sense depending on your source language
-
-Unit testing and code coverage are foundations for code quality.
-Your build should help you with these as much as possible. 100% coverage may
-seem absurd;
-however, levels of coverage like this come with unexpected benefits such as
-finding dead code in your project or helping refactoring to be simple.
-An example: with high coverage (say 95%+, your experience will vary)
-simplifying your covered code may lower your coverage as uncovered code becomes
-more prominent in the total ratio.
-
-Setup for needed plugins:
-
-* For Gradle use the `java` plugin
-* For Maven, use more recent versions of the
-  [Maven Surefire Plugin](https://maven.apache.org/surefire/maven-surefire-plugin/)
-
-(See [_suggestion : Ignore the generated
-code_](https://github.com/hcoles/pitest/issues/347) for a Lombok/PITest issue.)
-
-To see the coverage report (on passed or failed coverage), open:
-
-* For Gradle, `build/reports/jacoco/test/html/index.html`
-* For Maven, `target/site/jacoco/index.html`
-
-This project also provides the coverage report as part of Maven's project
-report.
-
-The [`coverage`](./coverage.sh) script is helpful for checking your current
-coverage state: try `./coverage -f all`.
-Current limitations:
-- Maven builds only
-- Single module builds only
-
-### Tips
-
-* With Maven, _do use_ the available BOM (bill of materials) for JUnit.
-  An example `pom.xml` block is:
-  ```xml
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    ```
-  This helps avoid dependency conflicts from other dependencies or plugins
-* See [discussion on Lombok](#leverage-lombok-to-tweak-code-coverage) how to
-  _sparingly_ leverage the `@Generated` annotation for marking code that JaCoCo
-  should ignore
-* Discuss with your team the concept of a "coverage ratchet". This means, once a
-  baseline coverage percentage is agreed to, the build configuration will only
-  raise this value, not lower it. This is fairly simple to do by periodically
-  examining the JaCoCo report, and raising the build coverage percentage over
-  time to match improvements in the report
-* Unfortunately neither Gradle's nor Maven's JaCoCo plugin will fail your build
-  when coverage _rises_!  This would be helpful for supporting the coverage
-  ratchet
-* You may find _mocking_ helpful for injection. The Java community is not of one
-  mind on mocking, so use your judgment:
-    * [Mockito](https://site.mockito.org/) is the "standard" choice, and is a
-      dependency for the sample projects.
-      For modern versions of Mockito, please use the `mockito-core` dependency
-      rather than `mockito-inline`.
-      See `TheFooTest.shouldRedAlertAsStaticMock` for an example.
-      Note that this project has updated to Mockito 5.
-      See [_v5.0.0_ release
-      notes](https://github.com/mockito/mockito/releases/tag/v5.0.0) when
-      updating from Mockito 4
-    * [PowerMock](https://powermock.github.io/) provides additional features;
-      however, Mockito normally covers use cases
-    * Other Modern JVM languages &mdash; these languages may prefer different
-      mocking libraries, _eg_, [MockK](https://mockk.io/) for Kotlin
-    * You might consider complementary libraries to Mockito for specific
-      circumstances, _eg_,
-      [System Lambda](https://github.com/stefanbirkner/system-lambda)
-      for checking STDOUT and STDERR, program exits, and use of system
-      properties (_eg_, validate logging), also a dependency for the sample
-      projects.  (*NB* &mdash; these are generally not parallelizable tests as
-      they alter the state of the JVM. Another is the
-      [JUnit Pioneer](https://junit-pioneer.org/) extension pack. If you need
-      these, be cautious about using parallel testing features, and avoiding
-      [Flaky Tests](https://hackernoon.com/flaky-tests-a-war-that-never-ends-9aa32fdef359))
-* To open the report for JaCoCo, build locally and use the
-  `<project root>/build/reports/jacoco/test/html/` path.
-  The path shown in a Docker build is relative to the interior of the container
+See [_Leverage unit testing and
+coverage_](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage)
+in the wiki.
 
 ---
 
