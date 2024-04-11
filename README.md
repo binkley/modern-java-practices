@@ -173,6 +173,11 @@ $ ./run-with-gradle.sh
 $ ./run-with-maven.sh
 ```
 
+Both (after building if needed) should print:
+```
+TheFoo(label=I AM FOOCUTUS OF BORG)
+```
+
 A "starter" program is the simplest of all possible ["smoke
 tests"](https://en.wikipedia.org/wiki/Smoke_testing_(software)), meaning,
 the minimal things _just work_, and when you check other things, maybe smoke
