@@ -91,7 +91,7 @@ As a _guide_, this project focuses on:
 
 But ... you **must** judge and measure the advice here against your own
 systems and processes.
-Some thing (many or most things) work for you:
+Some things (many or most things) may work for you:
 keep an eye for things that do not work for you.
 
 ### What is a _Starter_?
