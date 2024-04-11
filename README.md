@@ -413,8 +413,8 @@ in the wiki.
 
 ## Going further
 
-See [_Use integration
-testing_](https://github.com/binkley/modern-java-practices/wiki/Going-further)
+See [_Going
+further_](https://github.com/binkley/modern-java-practices/wiki/Going-further)
 in the wiki.
 
 ---
