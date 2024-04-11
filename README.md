@@ -84,6 +84,11 @@ As a _guide_, this project focuses on:
   hand: get your build to complain (_fail_) locally before sharing with your
   team, or fail in CI before deployment
 
+But ... you **must** judge and measure the advice here against your own
+systems and processes.
+Some thing (many or most things) work for you:
+keep an eye for things that do not work for you.
+
 ### What is a _Starter_?
 
 A project starter has several goals:
@@ -239,9 +244,9 @@ align="right" width="20%" height="auto"/>
 * [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
 * [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
 * [Samples](#samples)
+* [Problems](https://github.com/binkley/modern-java-practices/wiki/Problems)
 * [Going
   further](https://github.com/binkley/modern-java-practices/wiki/Going-further)
-* [Problems](#problems)
 * [Credits](#credits)
 
 ---
