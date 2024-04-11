@@ -23,7 +23,7 @@ build-with-maven:
     COPY pom.xml .
     COPY config config
     COPY src src
-    RUN ./mvnw clean verify
+    RUN ./mvnw --no-transfer-progress clean verify
 
 run-with-maven:
     FROM +build-with-maven
