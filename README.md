@@ -413,79 +413,9 @@ in the wiki.
 
 ## Going further
 
-Can you do more to improve your build, and shift problems left (before they hit
-CI or production)?
-Of course!
-Below are some topics to discuss with your team about making them part of the
-local build.
-
-### The Test Pyramid
-
-<a href="https://martinfowler.com/bliki/TestPyramid.html"
-title="TestPyramid">
-<img src="./images/test-pyramid.png" alt="The test pyramid"
-align="right" width="20%" height="auto"/>
-</a>
-
-What is the "Test Pyramid"? This is an important conceptual framework for
-validating your project at multiple levels of interaction. Canonical resources
-describing the test pyramid include:
-
-* [_TestPyramid_](https://martinfowler.com/bliki/TestPyramid.html)
-* [_The Practical Test
-  Pyramid_](https://martinfowler.com/articles/practical-test-pyramid.html)
-
-As you move your testing "to the left" (helping local builds cover more
-concerns), you'll want to enhance your build with more testing at different
-levels of interaction. These are not covered in this article, so research is
-needed.
-
-There are alternatives to the "test pyramid" perspective. Consider
-[swiss cheese](https://blog.korny.info/2020/01/20/the-swiss-cheese-model-and-acceptance-tests.html)
-if it makes more sense for your project.
-The build techniques still apply.
-
-**NB** &mdash; What this article calls
-["integration tests"](#use-integration-testing) may have a different name for
-your team.
-You may have "system tests" for example.
-
-### Use automated live testing when appropriate
-
-"Live testing" here means spinning up a database or other remote service for
-local tests, and not
-using [fakes, stubs, mocks, spies, dummies, or
-doubles](http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html).
-In these tests, your project calls on _real_ external dependencies, albeit
-dependencies spun up locally rather than in production or another environment.
-These might be call "out of process" tests.
-
-This is a complex topic, and this document is no guide on these. Some
-potentially useful resources to pull into your build:
-
-* [Flyway](https://flywaydb.org/) &mdash; Version your schema in production, and
-  version your test data
-* [LocalStack](https://github.com/localstack/localstack) &mdash; Local testing
-  for AWS services
-* [TestContainers](https://www.testcontainers.org/) &mdash; Local Docker for
-  real database instances, or any Docker-provided service
-
-### Use contract testing when appropriate
-
-Depending on your program, you may want additional testing specific to
-circumstances. For example, with REST services and Spring Cloud, consider:
-
-* [_Consumer Driven Contracts_](https://spring.io/guides/gs/contract-rest/)
-
-There are many options in this area. Find the choices which work best for you
-and your project.
-
-### Provide User Journey tests when applicable
-
-Another dimension to consider for local testing: _User Journey_ tests.
-
-* [_Why test the user
-  journey?_](https://www.thoughtworks.com/insights/blog/why-test-user-journey)
+See [_Use integration
+testing_](https://github.com/binkley/modern-java-practices/wiki/Going-further)
+in the wiki.
 
 ---
 
