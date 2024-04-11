@@ -184,7 +184,7 @@ the minimal things _just work_, and when you check other things, maybe smoke
 drifts from your computer as circuits burn out[^1].
 
 [^1]: No, I'm just kidding.
-Amazon or Microsoft or Google cloud would have quite different problems than
+Amazon or Google or Microsoft cloud would have quite different problems than
 "white smoke" from computers[^2].
 
 [^2]: Actually, this really happened me in a data center before the cloud.
