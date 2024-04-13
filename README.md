@@ -3,7 +3,10 @@
 align="right" width="20%" height="auto"/>
 </a>
 
-[**GO SEE THE WIKI!**](https://github.com/binkley/modern-java-practices/wiki)
+_Jump to [the Wiki](https://github.com/binkley/modern-java-practices/wiki)
+for latest documentation._<br>
+_Jump to [the project card wall](https://github.com/users/binkley/projects/1)
+to see upcoming changes._
 
 # Modern Java/JVM Build Practices
 
