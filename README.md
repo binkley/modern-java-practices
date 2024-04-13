@@ -256,6 +256,7 @@ align="right" width="20%" height="auto"/>
 * [Leverage unit testing and coverage](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage)
 * [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
 * [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
+* [Performance](https://github.com/binkley/modern-java-practices/wiki/Performance)
 * [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
 * [Samples](https://github.com/binkley/modern-java-practices/wiki/Samples)
 * [Problems](https://github.com/binkley/modern-java-practices/wiki/Problems)
