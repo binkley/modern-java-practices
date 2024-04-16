@@ -235,6 +235,8 @@ align="right" width="20%" height="auto"/>
 * [Contributing](#contributing)
 * [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
 * [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits)
+* [Cycle
+  time](https://github.com/binkley/modern-java-practices/wiki/Cycle-time)
 * [Getting your project
   started](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started)
 * [The JDK](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
