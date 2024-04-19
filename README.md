@@ -282,6 +282,7 @@ I'd love a conversation with you.
 
 Many thanks to:
 
+* Dan Wallach for discussions on security
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche)
 * [Sam Gammon](https://github.com/sgammon)
 * [Sergei Bukharov](https://github.com/Bukharovsi)
