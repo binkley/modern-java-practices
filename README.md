@@ -232,8 +232,8 @@ align="right" width="20%" height="auto"/>
 * [Introduction](https://github.com/binkley/modern-java-practices/wiki#introduction)
 * Using this project
    * [Try it](#try-it)
-   * [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
    * [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
+   * [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
    * [Contributing](#contributing)
 * [What is a build pipeline?](https://github.com/binkley/modern-java-practices/wiki/What-is-a-build-pipeline)
 * [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits)
