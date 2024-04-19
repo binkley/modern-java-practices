@@ -228,12 +228,13 @@ align="right" width="20%" height="auto"/>
 
 ## Table Of Contents
 
-* [Try it](#try-it)
 * [Recent significant changes](#recent-significant-changes)
 * [Introduction](https://github.com/binkley/modern-java-practices/wiki#introduction)
-* [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
-* [Contributing](#contributing)
-* [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
+* Using this project
+   * [Try it](#try-it)
+   * [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
+   * [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
+   * [Contributing](#contributing)
 * [What is a build pipeline?](https://github.com/binkley/modern-java-practices/wiki/What-is-a-build-pipeline)
 * [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits)
 * [Cycle
