@@ -30,10 +30,9 @@ in Java (the advice works for non-Java languages on the JVM though details may
 change).
 
 > [!NOTE]
-> I am in progress of moving sections of the `README.md` to individual pages
-> in [the wiki](https://github.com/binkley/modern-java-practices/wiki), and
-> make it easier for bringing advice up to date, and adding new approaches.
-> Please forgive the shambles while this is in progress.
+> See [the wiki](https://github.com/binkley/modern-java-practices/wiki) for
+> all pages and sections.
+> This README is only introduction, motivation, and project status.
 
 Regardless of what language(s) or build tool(s) you choose, and you
 should treat your build and your pipeline as worthy of your attention just as
