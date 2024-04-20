@@ -233,10 +233,13 @@ align="right" width="20%" height="auto"/>
 * [Introduction](https://github.com/binkley/modern-java-practices/wiki#introduction)
 * Using this project
    * [Try it](#try-it)
-   * [You and your project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
-   * [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
+   * [You and your
+     project](https://github.com/binkley/modern-java-practices/wiki/You-and-your-project)
+   * [Reusing this
+     project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project)
    * [Contributing](#contributing)
-* [What is a build pipeline?](https://github.com/binkley/modern-java-practices/wiki/What-is-a-build-pipeline)
+* [What is a build
+  pipeline?](https://github.com/binkley/modern-java-practices/wiki/What-is-a-build-pipeline)
 * [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits)
 * [Cycle
   time](https://github.com/binkley/modern-java-practices/wiki/Cycle-time)
@@ -250,21 +253,30 @@ align="right" width="20%" height="auto"/>
 * [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
 * [Maintain your
   build](https://github.com/binkley/modern-java-practices/wiki/Maintain-your-build)
-* [Choose your code style](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style)
+* [Choose your code
+  style](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style)
 * [Generate
   code](https://github.com/binkley/modern-java-practices/wiki/Generate-code)
-* [Leverage the compiler](https://github.com/binkley/modern-java-practices/wiki/Leverage-the-compiler)
+* [Leverage the
+  compiler](https://github.com/binkley/modern-java-practices/wiki/Leverage-the-compiler)
 * [Use
   linting](https://github.com/binkley/modern-java-practices/wiki/Use-linting)
-* [Use static code analysis](https://github.com/binkley/modern-java-practices/wiki/Use-static-code-analysis)
-* [Shift security left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
-* [Leverage unit testing and coverage](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage)
-* [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
-* [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
-* [Performance](https://github.com/binkley/modern-java-practices/wiki/Performance)
+* [Use static code
+  analysis](https://github.com/binkley/modern-java-practices/wiki/Use-static-code-analysis)
+* [Shift security
+  left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
+* [Leverage unit testing and
+  coverage](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage)
+* [Use mutation
+  testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
+* [Use integration
+  testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
+* [Performance
+  problems](https://github.com/binkley/modern-java-practices/wiki/Performance-problems)
+* [Other
+  problems](https://github.com/binkley/modern-java-practices/wiki/Other-problems)
 * [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
 * [Samples](https://github.com/binkley/modern-java-practices/wiki/Samples)
-* [Problems](https://github.com/binkley/modern-java-practices/wiki/Problems)
 * [Going
   further](https://github.com/binkley/modern-java-practices/wiki/Going-further)
 * [Credits](#credits)
