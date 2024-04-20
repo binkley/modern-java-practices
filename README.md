@@ -271,11 +271,11 @@ align="right" width="20%" height="auto"/>
   testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing)
 * [Use integration
   testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing)
+* [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
 * [Performance
   problems](https://github.com/binkley/modern-java-practices/wiki/Performance-problems)
 * [Other
   problems](https://github.com/binkley/modern-java-practices/wiki/Other-problems)
-* [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging)
 * [Samples](https://github.com/binkley/modern-java-practices/wiki/Samples)
 * [Going
   further](https://github.com/binkley/modern-java-practices/wiki/Going-further)
