@@ -29,10 +29,12 @@ Java/JVM projects using
 in Java (the advice works for non-Java languages on the JVM though details may
 change).
 
-> [!NOTE]
+> [!IMPORTANT]
 > See [the wiki](https://github.com/binkley/modern-java-practices/wiki) for
 > all pages and sections.
 > This README is only introduction, motivation, and project status.
+> You can use the [table of contents](#table-of-contents) below to quickly
+> jump to bits that interest you.
 
 Regardless of what language(s) or build tool(s) you choose, and you
 should treat your build and your pipeline as worthy of your attention just as
