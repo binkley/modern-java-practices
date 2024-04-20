@@ -1,6 +1,6 @@
 <a href="./LICENSE">
 <img src="./images/public-domain.svg" alt="Public Domain"
-align="right" width="20%" height="auto"/>
+align="right" width="10%" height="auto"/>
 </a>
 
 _Jump to [the Wiki](https://github.com/binkley/modern-java-practices/wiki)
