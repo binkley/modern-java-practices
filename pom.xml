@@ -82,7 +82,7 @@
         <maven-project-info-reports-plugin.version>3.5.0</maven-project-info-reports-plugin.version>
         <maven-site-plugin.version>4.0.0-M13</maven-site-plugin.version>
         <maven-testing-plugins.version>3.2.5</maven-testing-plugins.version>
-        <maven-wrapper-plugin.version>3.2.0</maven-wrapper-plugin.version>
+        <maven-wrapper-plugin.version>3.3.1</maven-wrapper-plugin.version>
         <maven.version>3.9.6</maven.version>
         <mockito.version>5.11.0</mockito.version>
         <modernizer.version>2.8.0</modernizer.version>
