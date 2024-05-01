@@ -57,7 +57,7 @@
         <!-- @formatter:off -->
         <assertj.version>3.25.3</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
-        <checkstyle.version>10.15.0</checkstyle.version>
+        <checkstyle.version>10.16.0</checkstyle.version>
         <coverage.branches>100</coverage.branches>
         <coverage.instructions>100</coverage.instructions>
         <coverage.lines>100</coverage.lines>
