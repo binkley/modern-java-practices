@@ -58,6 +58,9 @@
         <assertj.version>3.25.3</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
         <checkstyle.version>10.15.0</checkstyle.version>
+        <coverage.branches>100</coverage.branches>
+        <coverage.instructions>100</coverage.instructions>
+        <coverage.lines>100</coverage.lines>
         <dependency-check-maven.version>9.1.0</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.13.0</findsecbugs-plugin.version>
@@ -319,12 +322,17 @@
                                 <limit>
                                     <counter>LINE</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>100%</minimum>
+                                    <minimum>${coverage.lines}%</minimum>
                                 </limit>
                                 <limit>
                                     <counter>BRANCH</counter>
                                     <value>COVEREDRATIO</value>
-                                    <minimum>100%</minimum>
+                                    <minimum>${coverage.branches}%</minimum>
+                                </limit>
+                                <limit>
+                                    <counter>INSTRUCTION</counter>
+                                    <value>COVEREDRATIO</value>
+                                    <minimum>${coverage.instructions}%</minimum>
                                 </limit>
                             </limits>
                         </rule>
