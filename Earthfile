@@ -24,6 +24,7 @@ build-with-maven:
     COPY config config
     COPY src src
     RUN ./mvnw --no-transfer-progress clean verify
+    SAVE ARTIFACT --keep-ts target/site/jacoco/jacoco.csv AS LOCAL target/site/jacoco/jacoco.csv
 
 run-with-maven:
     FROM +build-with-maven
