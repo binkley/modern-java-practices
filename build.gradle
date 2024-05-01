@@ -183,12 +183,31 @@ jacoco {
 
 jacocoTestReport {
     dependsOn test
+
+    reports {
+        csv.required = true
+        html.required = true
+        xml.required = true
+    }
 }
 
 jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
+                counter = 'LINE'
+                minimum = 1.00
+            }
+        }
+        rule {
+            limit {
+                counter = 'BRANCH'
+                minimum = 1.00
+            }
+        }
+        rule {
+            limit {
+                counter = 'INSTRUCTION'
                 minimum = 1.00
             }
         }
