@@ -196,19 +196,22 @@ jacocoTestCoverageVerification {
         rule {
             limit {
                 counter = 'LINE'
-                minimum = 1.00
+                value = 'COVEREDRATIO'
+                minimum = coverageLines.toBigDecimal()
             }
         }
         rule {
             limit {
                 counter = 'BRANCH'
-                minimum = 1.00
+                value = 'COVEREDRATIO'
+                minimum = coverageBranches.toBigDecimal()
             }
         }
         rule {
             limit {
                 counter = 'INSTRUCTION'
-                minimum = 1.00
+                value = 'COVEREDRATIO'
+                minimum = coverageInstructions.toBigDecimal()
             }
         }
     }
