@@ -1,6 +1,8 @@
 // TODO: Why does IntelliJ complain about these imports?
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import com.github.spotbugs.snom.SpotBugsTask
+import com.github.spotbugs.snom.Confidence
+import com.github.spotbugs.snom.Effort
 
 plugins {
     id "build-dashboard" // See build/reports/buildDashboard/index.html
@@ -155,8 +157,8 @@ pmd {
 }
 
 spotbugs {
-    effort = "Max"
-    reportLevel = "Low"
+    effort = Effort.MAX
+    reportLevel = Confidence.valueOf("LOW")
     toolVersion = spotbugsVersion
 }
 
