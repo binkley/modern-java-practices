@@ -244,6 +244,10 @@ dependencyCheck {
     skip = Boolean.getBoolean("owasp.skip") // DEFAULT is false
     suppressionFile = rootProject.file("config/owasp-suppressions.xml")
 
+    nvd {
+        apiKey = findProperty("owasp.nvdApiKey") ?: System.getenv("OWASP_NVD_API_KEY")
+    }
+
     // Use this block when mirroring the NIST CVE data -- the data may suffer
     // timeouts for downloading. GitHub, for example, maintains caches of the
     // data, and you might see your local build fail for access, but pass in CI
