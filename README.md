@@ -207,8 +207,15 @@ align="right" width="20%" height="auto"/>
 - Move sections from `README.md` to the GitHub wiki.
   This is for breaking up an overlong (14k+ words) README into digestible
   sections.
-- Batect: Remove support for Batect as the author has archived that project.
+- Earthly and Batect: Remove support for Batect as the author has archived
+  that project.
   Please use _Earthly_ for local containerized builds.
+  So your local command line is:
+  ```bash
+  $ earthly +build-with-gradle
+  # OR
+  $ earthly +build-with-maven
+  ```
   I'll be researching other options, and updating to show those and examples.
   Advice remains the same: Run your local build in a container for
   reproducibility, and have CI do the same to exactly repeat your local
