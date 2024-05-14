@@ -204,8 +204,8 @@ align="right" width="20%" height="auto"/>
 
 ## Recent significant changes
 
-- **IN PROGRESS**: Move sections from `README.md` to the GitHub wiki.
-  This is for breaking up an overlong (11k words) README into digestible
+- Move sections from `README.md` to the GitHub wiki.
+  This is for breaking up an overlong (14k+ words) README into digestible
   sections.
 - Batect: Remove support for Batect as the author has archived that project.
   Please use _Earthly_ for local containerized builds.
