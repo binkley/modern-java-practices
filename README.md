@@ -214,7 +214,10 @@ align="right" width="20%" height="auto"/>
   reproducibility, and have CI do the same to exactly repeat your local
   builds.
 - This project uses JDK 21.
-  Here is [the previous commit using JDK 17](https://github.com/binkley/modern-java-practices/commit/039f6f45fade51da0c548bf5d61b8013423ab8b9)
+  This project has no sample code relying on recent/modern versions of Java or
+  the JVM; however, moving between versions _does_ need changes to build
+  scripts and supporting files.
+  Here is [the last commit using JDK 17](https://github.com/binkley/modern-java-practices/commit/039f6f45fade51da0c548bf5d61b8013423ab8b9)
 - Gradle: build with Gradle 8.x.
 - Gradle: remove use of `testsets` plugin for integration testing in favor of
   native Gradle.
