@@ -140,6 +140,14 @@ checkstyle {
     // configFile = project(":").file("config/checkstyle/sun_checks.xml")
 }
 
+tasks.withType(Checkstyle) {
+    reports {
+        html.required = true
+        sarif.required = true
+        xml.required = true
+    }
+}
+
 pmd {
     ignoreFailures = false
     // TODO: targetJdk = 21 -- there is no defined property for this
