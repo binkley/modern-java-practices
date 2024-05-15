@@ -32,9 +32,9 @@ run-with-maven:
     RUN ./run-with-maven.sh
 
 build:
-    FROM +build-with-gradle
-    FROM +build-with-maven
+    BUILD +build-with-gradle
+    BUILD +build-with-maven
 
 run:
-    FROM +run-with-gradle
-    FROM +run-with-maven
+    BUILD +run-with-gradle
+    BUILD +run-with-maven
