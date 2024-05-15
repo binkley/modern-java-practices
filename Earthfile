@@ -30,3 +30,11 @@ run-with-maven:
     FROM +build-with-maven
     COPY run-with-maven.sh .
     RUN ./run-with-maven.sh
+
+build:
+    FROM +build-with-gradle
+    FROM +build-with-maven
+
+run:
+    FROM +run-with-gradle
+    FROM +run-with-maven
