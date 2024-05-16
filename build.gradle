@@ -175,6 +175,9 @@ tasks.withType(SpotBugsTask) {
         html {
             enabled = true
         }
+        sarif {
+            enabled = true
+        }
         xml {
             enabled = true
         }

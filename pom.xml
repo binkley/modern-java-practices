@@ -368,6 +368,7 @@
                 <configuration>
                     <effort>Max</effort>
                     <includeTests>true</includeTests>
+                    <sarifOutput>true</sarifOutput>
                     <threshold>Low</threshold>
                     <plugins>
                         <plugin>
@@ -376,6 +377,7 @@
                             <version>${findsecbugs-plugin.version}</version>
                         </plugin>
                     </plugins>
+                    <xmlOutput>true</xmlOutput>
                 </configuration>
                 <dependencies>
                     <dependency>
