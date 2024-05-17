@@ -165,20 +165,29 @@ $ ./mvnw verify  # Local-only build
 $ earthly +build-with-maven  # CI build with Earthly
 ```
 
-Notice that you can run the build purely localy, or _in a container_?
+Notice that you can run the build purely locally, or _in a container_?
 
 I want to convince you that running your builds in a container fixes the "it
 worked on my machine" problem, and show you how to pick up improvements for
 your build that helps you and others be _awesome_.
 
+> [!NOTE]
+> This project uses NVD to check for CVEs with your dependencies which can
+> take a long time to download.
+> You can speed up your build time by [requesting an NVD API
+> key](https://nvd.nist.gov/developers/request-an-api-key) (it can take quite
+> a while to fetch the CVEs list or update it, and may fail with 403 or 404
+> without a key).
+>
+> When you request a key, NVD sends you an email to confirm your identity, and
+> then share an API key web page.
+> See [_Shift security
+> left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
+> for more details.
+
 See what the starter "run" program does:
 
-```shell
-$ ./run-with-gradle.sh
-$ ./run-with-maven.sh
-```
-
-Both (after building if needed) should print:
+Both Gradle and Maven (after building if needed) should print:
 ```
 TheFoo(label=I AM FOOCUTUS OF BORG)
 ```
