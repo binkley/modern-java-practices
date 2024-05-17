@@ -171,22 +171,23 @@ I want to convince you that running your builds in a container fixes the "it
 worked on my machine" problem, and show you how to pick up improvements for
 your build that helps you and others be _awesome_.
 
+> [!NOTE]
+> This project uses NVD to check for CVEs with your dependencies which can
+> take a long time to download.
+> You can speed up your build time by [requesting an NVD API
+> key](https://nvd.nist.gov/developers/request-an-api-key) (it can take quite
+> a while to fetch the CVEs list or update it, and may fail with 403 or 404
+> without a key).
+>
+> When you request a key, NVD sends you an email to confirm your identity, and
+> then share an API key web page.
+> See [_Shift security
+> left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
+> for more details.
+
 See what the starter "run" program does:
 
-*Note: this project uses dependencies from NVD, which can take a long time to
-download.  It is strongly suggested to use an NVD API key as this will greatly
-speed up build time.  To setup the key, go [here](https://nvd.nist.gov/developers/request-an-api-key)
-and request an API key.  They process will confirm your identity by sending you
-an email with a link provided to confirm.  The link will then send you to a page
-which displays your api key.  Copy this and add the following line at the end of
-your .bashrc file: ```shell export OWASP_NVD_API_KEY=${your-api-key-that-you-copied}```*
-
-```shell
-$ ./run-with-gradle.sh
-$ ./run-with-maven.sh
-```
-
-Both (after building if needed) should print:
+Both Gradle and Maven (after building if needed) should print:
 ```
 TheFoo(label=I AM FOOCUTUS OF BORG)
 ```
