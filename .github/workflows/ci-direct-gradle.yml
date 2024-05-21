@@ -1,5 +1,8 @@
 name: Build with Gradle directly
 
+env:
+  OWASP_NVD_API_KEY: ${{ secrets.OWASP_NVD_API_KEY }}
+
 on:
   push:
     paths-ignore:
