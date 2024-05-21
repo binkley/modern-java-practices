@@ -15,14 +15,15 @@ jobs:
   build:
     name: Builds and tests
     runs-on: ubuntu-latest
-    # First run in GitHub actions - verify this
-    # Afterwards, change to a comment
-    strategy:
-      matrix:
-        include:
-          - java: 21
 
     steps:
+      - name: Setup JVM
+        uses: actions/setup-java@4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          architecture: x64
+
       - name: Clone repository
         uses: actions/checkout@master
 
