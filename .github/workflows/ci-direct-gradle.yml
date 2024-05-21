@@ -17,15 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
       - name: Setup JVM
         uses: actions/setup-java@4
         with:
           java-version: '21'
           distribution: 'temurin'
-          architecture: x64
-
-      - name: Clone repository
-        uses: actions/checkout@master
 
       - name: Restore Gradle caches
         uses: actions/cache@master
@@ -41,7 +40,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Build and test
-        run: ./gradlew clean build
+        run: ./gradlew build
 
       - name: Execute run script
         run: ./run-with-gradle.sh

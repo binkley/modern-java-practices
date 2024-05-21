@@ -17,30 +17,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup JVM
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
         uses: actions/setup-java@4
         with:
           java-version: '21'
           distribution: 'temurin'
-          architecture: x64
-
-      - name: Clone repository
-        uses: actions/checkout@master
-
-      - name: Restore Maven caches
-        uses: actions/cache@master
-        env:
-          cache-name: maven-cache
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          cache: maven
 
       - name: Build and test
-        run: ./mvnw clean verify
+        run: ./mvnw --batch-mode --update-snapshots verify
 
       - name: Execute run script
         run: ./run-with-maven.sh
