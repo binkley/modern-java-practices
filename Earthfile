@@ -10,7 +10,7 @@ build-with-gradle:
     COPY build.gradle .
     COPY config config
     COPY src src
-    RUN ./gradlew clean build
+    RUN --secret OWASP_NVD_API_KEY ./gradlew clean build
 
 run-with-gradle:
     FROM +build-with-gradle
@@ -23,7 +23,7 @@ build-with-maven:
     COPY pom.xml .
     COPY config config
     COPY src src
-    RUN ./mvnw --no-transfer-progress clean verify
+    RUN --secret OWASP_NVD_API_KEY ./mvnw --no-transfer-progress clean verify
     SAVE ARTIFACT --keep-ts target/site/jacoco/jacoco.csv AS LOCAL target/site/jacoco/jacoco.csv
 
 run-with-maven:

@@ -32,7 +32,7 @@ jobs:
           version: "latest"
 
       - name: Clone repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
 
       - name: Restore Gradle caches
         uses: actions/cache@master
@@ -48,7 +48,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Build and test
-        run: earthly +build-with-gradle
+        run: earthly --secret OWASP_NVD_API_KEY +build-with-gradle
 
       - name: Execute run script
-        run: earthly +run-with-gradle
+        run: earthly --secret OWASP_NVD_API_KEY +run-with-gradle
