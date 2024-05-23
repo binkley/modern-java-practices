@@ -29,7 +29,7 @@ jobs:
       - name: Use Earthly
         uses: earthly/actions-setup@v1
         with:
-          version: "latest"
+          version: v0.8.0
 
       - name: Clone repository
         uses: actions/checkout@v4
