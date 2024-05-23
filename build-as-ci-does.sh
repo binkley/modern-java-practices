@@ -15,23 +15,27 @@ printf -v pbold "\e[1m"
 echo 
 echo "${pbold}BUILD WITH GRADLE UNDER EARTHLY${preset}" 
 earthly --secret OWASP_NVD_API_KEY +build-with-gradle 
+echo
 echo "${pbold}RUN WITH GRADLE UNDER EARTHLY${preset}" 
 earthly --secret OWASP_NVD_API_KEY +run-with-gradle 
 
 echo 
 echo "${pbold}BUILD WITH GRADLE DIRECTLY${preset}" 
 ./gradlew clean build
+echo
 echo "${pbold}RUN WITH GRADLE DIRECTLY${preset}" 
 ./run-with-gradle.sh
 
 echo 
 echo "${pbold}BUILD WITH MAVEN UNDER EARTHLY${preset}" 
 earthly --secret OWASP_NVD_API_KEY +build-with-maven 
+echo
 echo "${pbold}RUN WITH MAVEN UNDER EARTHLY${preset}" 
 earthly --secret OWASP_NVD_API_KEY +run-with-maven
 
 echo 
 echo "${pbold}BUILD WITH MAVEN DIRECTLY${preset}" 
 ./mvnw clean verify
+echo
 echo "${pbold}RUN WITH MAVEN DIRECTLY${preset}" 
 ./run-with-maven.sh
