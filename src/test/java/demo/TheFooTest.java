@@ -27,6 +27,24 @@ class TheFooTest {
         assertThat(didTheFoo.getLabel()).isEqualTo(theFoo);
     }
 
+    @Test
+    void shouldBeSameFooAnObject() {
+        final var theFoo = "I am the Foo!";
+        final var didTheFoo = new TheFoo(theFoo);
+        final var anotherFoo = new TheFoo(theFoo);
+
+        assertThat(didTheFoo).isEqualTo(anotherFoo);
+    }
+
+    @Test
+    void shouldBeSameFooAsAKey() {
+        final var theFoo = "I am the Foo!";
+        final var didTheFoo = new TheFoo(theFoo);
+        final var anotherFoo = new TheFoo(theFoo);
+
+        assertThat(didTheFoo.hashCode()).isEqualTo(anotherFoo.hashCode());
+    }
+
     @SuppressWarnings("ConstantConditions")
     @Test
     void shouldComplainWhenInvalid() {
