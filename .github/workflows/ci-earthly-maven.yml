@@ -29,7 +29,9 @@ jobs:
       - name: Use Earthly
         uses: earthly/actions-setup@v1
         with:
-          version: v0.8.0
+          # TODO: A specific Earthly version, and manually connect to the
+          # local version
+          version: v0.8
 
       - name: Clone repository
         uses: actions/checkout@v4
