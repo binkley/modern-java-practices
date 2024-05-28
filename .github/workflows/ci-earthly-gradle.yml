@@ -52,10 +52,5 @@ jobs:
       - name: Build and test
         run: earthly --secret OWASP_NVD_API_KEY +build-with-gradle
 
-      - name: Generate JaCoCo Badge
-        uses: cicirello/jacoco-badge-generator@v2
-        with:
-          jacoco-csv-file: ./target/site/jacoco/jacoco.csv
-
       - name: Execute run script
         run: earthly --secret OWASP_NVD_API_KEY +run-with-gradle
