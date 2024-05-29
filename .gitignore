@@ -15,3 +15,4 @@
 # Remember to use shell syntax: for example, with Bash, it means
 #    export OWASP_NVD_API_KEY=xxx
 /.envrc
+/.tool-versions
