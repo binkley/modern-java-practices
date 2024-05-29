@@ -9,8 +9,5 @@
 # Maven -- pick this or Gradle
 /target/
 
-# DO NOT commit, push, or share. The env vars hold secrets.
-# Remember to use shell syntax: for example, with Bash, it means
-#    export OWASP_NVD_API_KEY=xxx
+# DO NOT commit, push, or share. The env vars may hold secrets.
 /.envrc
-/.tool-versions
