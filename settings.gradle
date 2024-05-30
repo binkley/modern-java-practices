@@ -7,7 +7,6 @@ pluginManagement {
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
         id "org.kordamp.gradle.jdeps" version "$jdepsPluginVersion"
-        id "org.owasp.dependencycheck" version "$dependencyCheckPluginVersion"
     }
 }
 

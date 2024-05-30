@@ -19,7 +19,7 @@ plugins {
     id "jacoco" // To run test coverage
     id "info.solidsoft.pitest" // To run mutation testing
     id "org.kordamp.gradle.jdeps"
-    id "org.owasp.dependencycheck" // To push security to the left
+    alias libs.plugins.org.owasp.dependencycheck.plugin
     id "application" // To build the executable jar
 }
 
