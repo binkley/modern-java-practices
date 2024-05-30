@@ -33,7 +33,7 @@ repositories {
 dependencies {
     compileOnly "org.projectlombok:lombok:$lombokVersion"
     annotationProcessor "org.projectlombok:lombok:$lombokVersion"
-    compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsVersion"
+    compileOnly libs.com.github.spotbugs.spotbugs.annotations
     compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
     compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
 
@@ -168,7 +168,7 @@ pmd {
 spotbugs {
     effort = Effort.MAX
     reportLevel = Confidence.valueOf("LOW")
-    toolVersion = spotbugsVersion
+    toolVersion = libs.versions.com.github.spotbugs
 }
 
 tasks.withType(SpotBugsTask) {
