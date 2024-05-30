@@ -31,23 +31,23 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    compileOnly libs.org.projectlombok.lombok
+    annotationProcessor libs.org.projectlombok.lombok
     compileOnly libs.com.github.spotbugs.spotbugs.annotations
-    compileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
-    compileOnly "org.gaul:modernizer-maven-annotations:$modernizerVersion"
+    compileOnly libs.com.google.code.findbugs.findbugs.annotations
+    compileOnly libs.org.gaul.modernizer.maven.annotations
 
-    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
-    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
-    testCompileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
+    testCompileOnly libs.org.projectlombok.lombok
+    testAnnotationProcessor libs.org.projectlombok.lombok
+    testCompileOnly libs.com.google.code.findbugs.findbugs.annotations
 
-    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testImplementation libs.org.junit.jupiter.junit.jupiter
     testImplementation libs.org.assertj.assertj.core
-    testImplementation "org.mockito:mockito-core:$mockitoVersion"
-    testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
+    testImplementation libs.org.mockito.mockito.core
+    testImplementation libs.com.github.stefanbirkner.system.lambda
 
     // Quiet build -- build works without this, but JUnit complains
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testRuntimeOnly libs.org.junit.jupiter.junit.jupiter.engine
 
     spotbugsPlugins "com.h3xstream.findsecbugs:findsecbugs-plugin:$findsecbugsPluginVersion"
 
