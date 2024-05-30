@@ -1,5 +1,6 @@
 [versions]
 net-sourceforge-pmd = "7.1.0"
+org-assertj = "3.25.3"
 org-gaul = "2.7.0"
 org-jacoco = "0.8.12"
 org-junit-jupiter = "5.10.2"
@@ -13,7 +14,7 @@ com-puppycrawl-tools-checkstyle = "com.puppycrawl.tools:checkstyle:10.17.0"
 net-sourceforge-pmd-pmd-ant = { module = "net.sourceforge.pmd:pmd-ant", version.ref = "net-sourceforge-pmd" }
 net-sourceforge-pmd-pmd-java = { module = "net.sourceforge.pmd:pmd-java", version.ref = "net-sourceforge-pmd" }
 org-apache-bcel = "org.apache.bcel:bcel:[6.7.0, 7["
-org-assertj-assertj-core = "org.assertj:assertj-core:3.25.3"
+org-assertj-assertj-core = { module = "org.assertj:assertj-core", version.ref = "org-assertj" }
 org-gaul-modernizer-maven-annotations = { module = "org.gaul:modernizer-maven-annotations", version.ref = "org-gaul" }
 org-gaul-modernizer-maven-plugin = { module = "org.gaul:modernizer-maven-plugin", version.ref = "org-gaul" }
 org-jacoco-org-jacoco-agent = { module = "org.jacoco:org.jacoco.agent", version.ref = "org-jacoco" }
