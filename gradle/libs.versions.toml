@@ -1,0 +1,27 @@
+[versions]
+net-sourceforge-pmd = "7.1.0"
+org-gaul = "2.7.0"
+org-jacoco = "0.8.12"
+org-junit-jupiter = "5.10.2"
+
+[libraries]
+com-github-spotbugs-spotbugs-annotations = "com.github.spotbugs:spotbugs-annotations:4.8.5"
+com-github-stefanbirkner-system-lambda = "com.github.stefanbirkner:system-lambda:1.2.1"
+com-google-code-findbugs-findbugs-annotations = "com.google.code.findbugs:findbugs-annotations:3.0.1"
+com-h3xstream-findsecbugs-findsecbugs-plugin = "com.h3xstream.findsecbugs:findsecbugs-plugin:1.13.0"
+com-puppycrawl-tools-checkstyle = "com.puppycrawl.tools:checkstyle:10.17.0"
+net-sourceforge-pmd-pmd-ant = { module = "net.sourceforge.pmd:pmd-ant", version.ref = "net-sourceforge-pmd" }
+net-sourceforge-pmd-pmd-java = { module = "net.sourceforge.pmd:pmd-java", version.ref = "net-sourceforge-pmd" }
+org-apache-bcel = "org.apache.bcel:bcel:[6.7.0, 7["
+org-assertj-assertj-core = "org.assertj:assertj-core:3.25.3"
+org-gaul-modernizer-maven-annotations = { module = "org.gaul:modernizer-maven-annotations", version.ref = "org-gaul" }
+org-gaul-modernizer-maven-plugin = { module = "org.gaul:modernizer-maven-plugin", version.ref = "org-gaul" }
+org-jacoco-org-jacoco-agent = { module = "org.jacoco:org.jacoco.agent", version.ref = "org-jacoco" }
+org-jacoco-org-jacoco-ant = { module = "org.jacoco:org.jacoco.ant", version.ref = "org-jacoco" }
+org-junit-jupiter-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "org-junit-jupiter" }
+org-junit-jupiter-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "org-junit-jupiter" }
+org-mockito-mockito-core = "org.mockito:mockito-core:5.12.0"
+org-pitest-pitest-command-line = "org.pitest:pitest-command-line:1.16.1"
+org-pitest-pitest-junit5-plugin = "org.pitest:pitest-junit5-plugin:1.2.1"
+org-projectlombok-lombok = "org.projectlombok:lombok:1.18.32"
+org-slf4j-slf4j-simple = "org.slf4j:slf4j-simple:2.0.0"

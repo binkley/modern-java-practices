@@ -10,6 +10,7 @@ plugins {
     id "project-report" // Try the `projectReport` task
     id "com.dorongold.task-tree"
     id "com.github.ben-manes.versions" // Try the `dependencyUpdates` task
+    id "nl.littlerobots.version-catalog-update"
     id "java" // Gradle support for Java
     id "checkstyle" // To check that code follow style standards
     id "pmd" // Static analysis based on source (does not check compiled code)
@@ -41,7 +42,7 @@ dependencies {
     testCompileOnly "com.google.code.findbugs:findbugs-annotations:$findbugsAnnotationsVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
-    testImplementation "org.assertj:assertj-core:$assertJVersion"
+    testImplementation libs.org.assertj.assertj.core
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "com.github.stefanbirkner:system-lambda:$systemLambdaVersion"
 
