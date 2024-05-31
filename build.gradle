@@ -285,17 +285,20 @@ check {
     dependsOn += dependencyCheckAnalyze
 }
 
+/*
 tasks.withType(DependencyUpdatesTask) {
     rejectVersionIf {
         !isStable(it.candidate.version) && isStable(it.currentVersion)
     }
 }
+*/
 
 wrapper {
     gradleVersion = gradleWrapperVersion
     distributionType = "ALL"
 }
 
+/*
 static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {
         version.uppercase().contains(it)
@@ -304,3 +307,4 @@ static def isStable(version) {
 
     return stableKeyword || otherReleasePattern
 }
+*/
