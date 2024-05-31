@@ -13,7 +13,7 @@ org-mockito = "5.12.0"
 org-pitest-pitest-command-line = "1.16.1"
 org-pitest-pitest-junit5-plugin = "1.2.1"
 org-projectlombok = "1.18.32"
-org-slf4j-slf4j-simple = "2.0.0"
+org-slf4j-slf4j-simple = "2.0.13"
 
 [libraries]
 com-github-spotbugs-spotbugs-annotations = { module = "com.github.spotbugs:spotbugs-annotations", version.ref = "com-github-spotbugs" }
