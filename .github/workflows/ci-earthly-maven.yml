@@ -63,7 +63,7 @@ jobs:
           generate-summary: false
 
       - name: Save coverage report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: target/site/jacoco
