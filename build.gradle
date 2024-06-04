@@ -257,6 +257,10 @@ dependencyCheck {
     suppressionFile = rootProject.file("config/owasp-suppressions.xml")
 
     nvd {
+        // This is intended to come from a local command-line setting, or from
+        // an environment variable. CI uses the environment variable.
+        // Using a command-line setting is poor practice without strong care
+        // so that the key is not leaked.
         apiKey = findProperty("owasp.nvdApiKey") ?: System.getenv("OWASP_NVD_API_KEY")
     }
 
