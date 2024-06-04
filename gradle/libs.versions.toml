@@ -4,17 +4,15 @@ com-google-code-findbugs = "3.0.1"
 com-h3xstream-findsecbugs-findsecbugs-plugin = "1.13.0"
 com-puppycrawl-tools-checkstyle = "10.17.0"
 com-stefanbirkner-system-lambda = "1.2.1"
-net-sourceforge-pmd = "7.2.0"
 org-assertj = "3.26.0"
 org-gaul-modernizer = "2.9.0"
 org-jacoco = "0.8.12"
-org-junit-jupiter = "5.10.2"
+org-junit-jupiter = "5.11.0-M2"
 org-mockito = "5.12.0"
-org-owasp-dependencycheck = "9.1.0"
+org-owasp-dependencycheck = "9.2.0"
 org-pitest-pitest-command-line = "1.16.1"
 org-pitest-pitest-junit5-plugin = "1.2.1"
 org-projectlombok = "1.18.32"
-org-slf4j-slf4j-simple = "2.0.13"
 
 [libraries]
 com-github-spotbugs-spotbugs-annotations = { module = "com.github.spotbugs:spotbugs-annotations", version.ref = "com-github-spotbugs" }
@@ -22,9 +20,7 @@ com-github-stefanbirkner-system-lambda = { module = "com.github.stefanbirkner:sy
 com-google-code-findbugs-findbugs-annotations = { module = "com.google.code.findbugs:findbugs-annotations", version.ref = "com-google-code-findbugs" }
 com-h3xstream-findsecbugs-findsecbugs-plugin = { module = "com.h3xstream.findsecbugs:findsecbugs-plugin", version.ref = "com-h3xstream-findsecbugs-findsecbugs-plugin" }
 com-puppycrawl-tools-checkstyle = { module = "com.puppycrawl.tools:checkstyle", version.ref = "com-puppycrawl-tools-checkstyle" }
-net-sourceforge-pmd-pmd-ant = { module = "net.sourceforge.pmd:pmd-ant", version.ref = "net-sourceforge-pmd" }
-net-sourceforge-pmd-pmd-java = { module = "net.sourceforge.pmd:pmd-java", version.ref = "net-sourceforge-pmd" }
-org-apache-bcel = "org.apache.bcel:bcel:[6.7.0, 7["
+org-apache-bcel = "org.apache.bcel:bcel:6.9.0"
 org-assertj-assertj-core = { module = "org.assertj:assertj-core", version.ref = "org-assertj" }
 org-gaul-modernizer-maven-annotations = { module = "org.gaul:modernizer-maven-annotations", version.ref = "org-gaul-modernizer" }
 org-jacoco-org-jacoco-agent = { module = "org.jacoco:org.jacoco.agent", version.ref = "org-jacoco" }
@@ -35,7 +31,6 @@ org-mockito-mockito-core = { module = "org.mockito:mockito-core", version.ref = 
 org-pitest-pitest-command-line = { module = "org.pitest:pitest-command-line", version.ref = "org-pitest-pitest-command-line" }
 org-pitest-pitest-junit5-plugin = { module = "org.pitest:pitest-junit5-plugin", version.ref = "org-pitest-pitest-junit5-plugin" }
 org-projectlombok-lombok = { module = "org.projectlombok:lombok", version.ref = "org-projectlombok" }
-org-slf4j-slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "org-slf4j-slf4j-simple" }
 
 [plugins]
 org-owasp-dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "org-owasp-dependencycheck" }
