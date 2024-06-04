@@ -18,7 +18,7 @@ plugins {
     id "com.github.andygoossens.gradle-modernizer-plugin"
     id "jacoco" // To run test coverage
     id "info.solidsoft.pitest" // To run mutation testing
-    id "org.kordamp.gradle.jdeps"
+    alias libs.plugins.org.kordamp.gradle.jdeps
     alias libs.plugins.org.owasp.dependencycheck
     id "application" // To build the executable jar
 }

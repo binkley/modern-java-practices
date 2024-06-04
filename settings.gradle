@@ -6,7 +6,6 @@ pluginManagement {
         id "nl.littlerobots.version-catalog-update" version "$versionCatalogUpdatePluginVersion"
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
-        id "org.kordamp.gradle.jdeps" version "$jdepsPluginVersion"
     }
 }
 

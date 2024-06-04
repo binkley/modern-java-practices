@@ -8,6 +8,7 @@ org-assertj = "3.26.0"
 org-gaul-modernizer = "2.9.0"
 org-jacoco = "0.8.12"
 org-junit-jupiter = "5.11.0-M2"
+org-kordamp-gradle-jdeps = "0.20.0"
 org-mockito = "5.12.0"
 org-owasp-dependencycheck = "9.2.0"
 org-pitest-pitest-command-line = "1.16.1"
@@ -33,4 +34,5 @@ org-pitest-pitest-junit5-plugin = { module = "org.pitest:pitest-junit5-plugin", 
 org-projectlombok-lombok = { module = "org.projectlombok:lombok", version.ref = "org-projectlombok" }
 
 [plugins]
+org-kordamp-gradle-jdeps = { id = "org.kordamp.gradle.jdeps", version.ref = "org.kordamp.gradle.jdeps" }
 org-owasp-dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "org-owasp-dependencycheck" }
