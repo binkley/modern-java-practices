@@ -10,6 +10,7 @@ org-gaul-modernizer = "2.9.0"
 org-jacoco = "0.8.12"
 org-junit-jupiter = "5.10.2"
 org-mockito = "5.12.0"
+org-owasp-dependencycheck = "9.1.0"
 org-pitest-pitest-command-line = "1.16.1"
 org-pitest-pitest-junit5-plugin = "1.2.1"
 org-projectlombok = "1.18.32"
@@ -37,3 +38,4 @@ org-projectlombok-lombok = { module = "org.projectlombok:lombok", version.ref = 
 org-slf4j-slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "org-slf4j-slf4j-simple" }
 
 [plugins]
+org-owasp-dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "org-owasp-dependencycheck" }
