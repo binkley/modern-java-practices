@@ -265,7 +265,6 @@ align="right" width="20%" height="auto"/>
    * [Use Gradle or Maven](https://github.com/binkley/modern-java-practices/wiki/Use-gradle-or-maven)
    * [The JDK](https://github.com/binkley/modern-java-practices/wiki/The-jdk)
 * The pipeline
-   * [Cycle time](https://github.com/binkley/modern-java-practices/wiki/Cycle-time)
    * [Setup your CI](https://github.com/binkley/modern-java-practices/wiki/Setup-your-ci)
    * [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
    * [Maintain your build](https://github.com/binkley/modern-java-practices/wiki/Maintain-your-build)
