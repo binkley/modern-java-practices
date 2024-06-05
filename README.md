@@ -234,16 +234,16 @@ log](https://github.com/binkley/modern-java-practices/commits/master/).)
   Advice remains the same: Run your local build in a container for
   reproducibility, and have CI do the same to exactly repeat your local
   builds.
-- JVM: move to JDK 21.
+- JVM: Move to JDK 21.
   This project has no sample code relying on recent/modern versions of Java or
   the JVM; however, moving between versions _does_ need changes to build
   scripts and supporting files.
   Here is [the last commit using JDK 17](https://github.com/binkley/modern-java-practices/commit/039f6f45fade51da0c548bf5d61b8013423ab8b9)
-- Gradle: build with Gradle 8.x.
-- Gradle: remove use of `testsets` plugin for integration testing in favor of
-  native Gradle.
-  This is in support of Gradle 8 and may be helpful in seeing changes you need
-  for Gradle 8 support.
+- Gradle: Build with Gradle 8.x.
+- Gradle: Bemove use of `testsets` plugin for integration testing in favor of
+  [native Gradle
+  support](https://docs.gradle.org/current/userguide/java_testing.html#sec:configuring_java_integration_tests).
+  This supports Gradle 8.
 
 ---
 
