@@ -213,6 +213,9 @@ align="right" width="20%" height="auto"/>
 
 ## Recent significant changes
 
+For detailed changes in the example code, browse the [commit
+log](https://github.com/binkley/modern-java-practices/commits/master/).
+
 - Gradle: Bump to Gradle 8.8.
 - Migrate most of the `README.md` to the [GitHub project
   wiki](https://github.com/binkley/modern-java-practices/wiki).
