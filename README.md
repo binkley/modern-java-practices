@@ -213,9 +213,11 @@ align="right" width="20%" height="auto"/>
 
 ## Recent significant changes
 
-- Move sections from `README.md` to the GitHub wiki.
-  This is for breaking up an overlong (14k+ words) README into digestible
-  sections.
+- Gradle: Bump to Gradle 8.8.
+- Migrate most of the `README.md` to the [GitHub project
+  wiki](https://github.com/binkley/modern-java-practices/wiki).
+  This is breaks up an overlong (14k+ words and growing) README into
+  digestible sections.
 - Earthly and Batect: Remove support for Batect as the author has archived
   that project.
   Please use _Earthly_ for local containerized builds.
@@ -229,7 +231,7 @@ align="right" width="20%" height="auto"/>
   Advice remains the same: Run your local build in a container for
   reproducibility, and have CI do the same to exactly repeat your local
   builds.
-- This project uses JDK 21.
+- JVM: move to JDK 21.
   This project has no sample code relying on recent/modern versions of Java or
   the JVM; however, moving between versions _does_ need changes to build
   scripts and supporting files.
