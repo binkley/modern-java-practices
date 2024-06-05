@@ -1,5 +1,5 @@
-// TODO: Why does IntelliJ complain about these imports?
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+// TODO: Why does IntelliJ complain about these imports? my intellij isn't complaining about them
+//import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask - this line is not needed, remove in master
 import com.github.spotbugs.snom.SpotBugsTask
 import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
@@ -21,6 +21,7 @@ plugins {
     alias libs.plugins.org.kordamp.gradle.jdeps
     alias libs.plugins.org.owasp.dependencycheck
     id "application" // To build the executable jar
+    id("com.diffplug.spotless") version "7.0.0.BETA1"
 }
 
 version = "0-SNAPSHOT"
@@ -302,6 +303,7 @@ wrapper {
     distributionType = "ALL"
 }
 
+// why do we have commented out code?
 /*
 static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {
@@ -312,3 +314,30 @@ static def isStable(version) {
     return stableKeyword || otherReleasePattern
 }
 */
+
+spotless {
+    // optional: limit format enforcement to just the files changed by this feature branch
+    ratchetFrom 'spotless-spike'
+
+    format 'misc', {
+        // define the files to apply `misc` to
+        target '*.gradle', '.gitattributes', '.gitignore'
+
+        // define the steps to apply to those files
+        trimTrailingWhitespace()
+        indentWithTabs() // or spaces. Takes an integer argument if you don't like 4
+        endWithNewline()
+    }
+    java {
+        // don't need to set target, it is inferred from java
+
+        // apply a specific flavor of google-java-format
+        googleJavaFormat('1.8').aosp().reflowLongStrings().skipJavadocFormatting()
+        // fix formatting of type annotations
+        formatAnnotations()
+        // make sure every file has the following copyright header.
+        // optionally, Spotless can set copyright years by digging
+        // through git history (see "license" section below)
+        licenseHeader '/* (C)$YEAR */'
+    }
+}
