@@ -267,6 +267,7 @@ align="right" width="20%" height="auto"/>
 * The pipeline
    * [Setup your CI](https://github.com/binkley/modern-java-practices/wiki/Setup-your-ci)
    * [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
+   * [Dependency management](https://github.com/binkley/modern-java-practices/wiki/Dependency-management)
    * [Maintain your build](https://github.com/binkley/modern-java-practices/wiki/Maintain-your-build)
    * [Choose your code style](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style)
    * [Generate code](https://github.com/binkley/modern-java-practices/wiki/Generate-code)
