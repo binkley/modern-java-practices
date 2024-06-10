@@ -6,7 +6,8 @@ align="right" width="10%" height="auto"/>
 **[Read the book!](https://github.com/binkley/modern-java-practices/wiki)**
 _(this jumps to the wiki)_<br>
 _Jump to [the project card wall](https://github.com/users/binkley/projects/1)
-to see upcoming book and code changes._
+to see upcoming book and code changes (the card wall tracks Issues for the
+project)._
 
 # Modern Java/JVM Build Practices
 
