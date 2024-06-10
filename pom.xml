@@ -255,7 +255,6 @@
                     <failsOnError>true</failsOnError>
                     <includeTestSourceDirectory>true
                     </includeTestSourceDirectory>
-                    <linkXRef>false</linkXRef>
                 </configuration>
                 <executions>
                     <execution>
