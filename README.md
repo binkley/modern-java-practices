@@ -3,8 +3,8 @@
 align="right" width="10%" height="auto"/>
 </a>
 
-_[Read the book!](https://github.com/binkley/modern-java-practices/wiki) (this
-jumps to the wiki)_<br>
+**[Read the book!](https://github.com/binkley/modern-java-practices/wiki)**
+_(this jumps to the wiki)_<br>
 _Jump to [the project card wall](https://github.com/users/binkley/projects/1)
 to see upcoming book and code changes._
 
