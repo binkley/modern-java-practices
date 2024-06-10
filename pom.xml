@@ -163,8 +163,50 @@
             <version>${system-lambda.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>com.diffplug.spotless</groupId>
+            <artifactId>spotless-maven-plugin</artifactId>
+            <version>2.43.0</version>
+<!-- 2.27.0 is best so far, only 1 dependency convergence -->
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-stdlib-jdk8</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-resources</artifactId>
+            <version>1.2.0</version>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.sonatype.plexus</groupId>
+            <artifactId>plexus-build-api</artifactId>
+            <version>0.0.7</version>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.plexus</groupId>
+                    <artifactId>plexus-utils</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -562,6 +604,58 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>com.diffplug.spotless</groupId>-->
+<!--                    <artifactId>spotless-maven-plugin</artifactId>-->
+<!--                    <version>${spotless.version}</version>-->
+<!--                    <configuration>-->
+<!--                        &lt;!&ndash; optional: limit format enforcement to just the files changed by this feature branch &ndash;&gt;-->
+<!--                        <ratchetFrom>origin/main</ratchetFrom>-->
+<!--                        <formats>-->
+<!--                            &lt;!&ndash; you can define as many formats as you want, each is independent &ndash;&gt;-->
+<!--                            <format>-->
+<!--                                &lt;!&ndash; define the files to apply to &ndash;&gt;-->
+<!--                                <includes>-->
+<!--                                    <include>.gitattributes</include>-->
+<!--                                    <include>.gitignore</include>-->
+<!--                                </includes>-->
+<!--                                &lt;!&ndash; define the steps to apply to those files &ndash;&gt;-->
+<!--                                <trimTrailingWhitespace/>-->
+<!--                                <endWithNewline/>-->
+<!--                                <indent>-->
+<!--                                    <tabs>true</tabs>-->
+<!--                                    <spacesPerTab>4</spacesPerTab>-->
+<!--                                </indent>-->
+<!--                            </format>-->
+<!--                        </formats>-->
+<!--                        &lt;!&ndash; define a language-specific format &ndash;&gt;-->
+<!--                        <java>-->
+<!--                            &lt;!&ndash; no need to specify files, inferred automatically, but you can if you want &ndash;&gt;-->
+
+<!--                            &lt;!&ndash; apply a specific flavor of google-java-format and reflow long strings &ndash;&gt;-->
+<!--                            <googleJavaFormat>-->
+<!--                                <version>1.8</version>-->
+<!--                                <style>AOSP</style>-->
+<!--                                <reflowLongStrings>true</reflowLongStrings>-->
+<!--                                <formatJavadoc>false</formatJavadoc>-->
+<!--                            </googleJavaFormat>-->
+
+<!--                            &lt;!&ndash; make sure every file has the following copyright header.-->
+<!--                              optionally, Spotless can set copyright years by digging-->
+<!--                              through git history (see "license" section below) &ndash;&gt;-->
+<!--                            <licenseHeader>-->
+<!--                                <content>/* (C)$YEAR */</content>  &lt;!&ndash; or <file>${project.basedir}/license-header</file> &ndash;&gt;-->
+<!--                            </licenseHeader>-->
+<!--                        </java>-->
+<!--                    </configuration>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <goals>-->
+<!--                                <goal>check</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
             </plugins>
         </pluginManagement>
     </build>
