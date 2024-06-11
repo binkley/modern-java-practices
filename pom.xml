@@ -72,7 +72,7 @@
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
-        <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.4.0</maven-checkstyle-plugin.version>
         <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
@@ -88,6 +88,9 @@
         <modernizer.version>2.9.0</modernizer.version>
         <owasp.nvdApiKey>${env.OWASP_NVD_API_KEY}</owasp.nvdApiKey>
         <owasp.skip>false</owasp.skip>
+        <!-- Only needed for the Palantir style of Java code
+        <palantir-java-format.version>2.39.0</palantir-java-format.version>
+        -->
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
         <pitest-maven.version>1.16.1</pitest-maven.version>
         <pmd.version>7.2.0</pmd.version>
@@ -95,28 +98,12 @@
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.8.5.0</spotbugs-maven-plugin.version>
         <spotbugs.version>4.8.5</spotbugs.version>
-        <spotless.version>2.43.0</spotless.version>
+        <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
         <system-lambda.version>1.2.1</system-lambda.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
         <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
         <!-- @formatter:on -->
     </properties>
-
-    <!--
-        Below is the default for repositories: Maven Central without
-        snapshots. Add/adjust repositories as needed for your project.
-    -->
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>Maven Central</name>
-            <layout>default</layout>
-            <url>https://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>
@@ -180,50 +167,8 @@
             <version>${system-lambda.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.diffplug.spotless</groupId>
-            <artifactId>spotless-maven-plugin</artifactId>
-            <version>2.43.0</version>
-<!-- 2.27.0 is best so far, only 1 dependency convergence -->
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>4.12.0</version>
-            <scope>runtime</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jetbrains.kotlin</groupId>
-                    <artifactId>kotlin-stdlib-jdk8</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.plexus</groupId>
-            <artifactId>plexus-resources</artifactId>
-            <version>1.2.0</version>
-            <scope>runtime</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.sonatype.plexus</groupId>
-            <artifactId>plexus-build-api</artifactId>
-            <version>0.0.7</version>
-            <scope>runtime</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.codehaus.plexus</groupId>
-                    <artifactId>plexus-utils</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -300,12 +245,25 @@
                     <release>${jdk.version}</release>
                 </configuration>
             </plugin>
+            <!-- TODO: Enable after:
+                * Removing Checkstyle, OR updating checkstyle standard to
+                  align with Spotless format options
+                * Use spotless:apply, human verify the changes
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
-                <version>${spotless.version}</version>
+                <version>${spotless-maven-plugin.version}</version>
                 <configuration>
-                    <cleanthat/>
+                    <java>
+                        <cleanthat/>
+                        TODO: PICK a default example format
+                        <googleJavaFormat>
+                            <style>AOSP</style>
+                        </googleJavaFormat>
+                        <palantirJavaFormat>
+                            <version>${palantir-java-format.version}</version>
+                        </palantirJavaFormat>
+                    </java>
                 </configuration>
                 <executions>
                     <execution>
@@ -315,7 +273,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -323,12 +281,13 @@
                 <configuration>
                     <configLocation>
                         config/checkstyle/checkstyle.xml
+                        <!-- config/checkstyle/google_checks.xml    -->
+                        <!-- config/checkstyle/sun_checks.xml    -->
                     </configLocation>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <includeTestSourceDirectory>true
                     </includeTestSourceDirectory>
-                    <linkXRef>false</linkXRef>
                 </configuration>
                 <executions>
                     <execution>
@@ -347,7 +306,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -636,58 +594,6 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-<!--                <plugin>-->
-<!--                    <groupId>com.diffplug.spotless</groupId>-->
-<!--                    <artifactId>spotless-maven-plugin</artifactId>-->
-<!--                    <version>${spotless.version}</version>-->
-<!--                    <configuration>-->
-<!--                        &lt;!&ndash; optional: limit format enforcement to just the files changed by this feature branch &ndash;&gt;-->
-<!--                        <ratchetFrom>origin/main</ratchetFrom>-->
-<!--                        <formats>-->
-<!--                            &lt;!&ndash; you can define as many formats as you want, each is independent &ndash;&gt;-->
-<!--                            <format>-->
-<!--                                &lt;!&ndash; define the files to apply to &ndash;&gt;-->
-<!--                                <includes>-->
-<!--                                    <include>.gitattributes</include>-->
-<!--                                    <include>.gitignore</include>-->
-<!--                                </includes>-->
-<!--                                &lt;!&ndash; define the steps to apply to those files &ndash;&gt;-->
-<!--                                <trimTrailingWhitespace/>-->
-<!--                                <endWithNewline/>-->
-<!--                                <indent>-->
-<!--                                    <tabs>true</tabs>-->
-<!--                                    <spacesPerTab>4</spacesPerTab>-->
-<!--                                </indent>-->
-<!--                            </format>-->
-<!--                        </formats>-->
-<!--                        &lt;!&ndash; define a language-specific format &ndash;&gt;-->
-<!--                        <java>-->
-<!--                            &lt;!&ndash; no need to specify files, inferred automatically, but you can if you want &ndash;&gt;-->
-
-<!--                            &lt;!&ndash; apply a specific flavor of google-java-format and reflow long strings &ndash;&gt;-->
-<!--                            <googleJavaFormat>-->
-<!--                                <version>1.8</version>-->
-<!--                                <style>AOSP</style>-->
-<!--                                <reflowLongStrings>true</reflowLongStrings>-->
-<!--                                <formatJavadoc>false</formatJavadoc>-->
-<!--                            </googleJavaFormat>-->
-
-<!--                            &lt;!&ndash; make sure every file has the following copyright header.-->
-<!--                              optionally, Spotless can set copyright years by digging-->
-<!--                              through git history (see "license" section below) &ndash;&gt;-->
-<!--                            <licenseHeader>-->
-<!--                                <content>/* (C)$YEAR */</content>  &lt;!&ndash; or <file>${project.basedir}/license-header</file> &ndash;&gt;-->
-<!--                            </licenseHeader>-->
-<!--                        </java>-->
-<!--                    </configuration>-->
-<!--                    <executions>-->
-<!--                        <execution>-->
-<!--                            <goals>-->
-<!--                                <goal>check</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
-<!--                    </executions>-->
-<!--                </plugin>-->
             </plugins>
         </pluginManagement>
     </build>
