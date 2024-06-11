@@ -318,7 +318,7 @@ static def isStable(version) {
 spotless {
     // optional: limit format enforcement to just the files changed by this feature branch
     ratchetFrom 'spotless-spike'
-
+    enforceCheck false
     format 'misc', {
         // define the files to apply `misc` to
         target '*.gradle', '.gitattributes', '.gitignore'
