@@ -17,5 +17,7 @@ public final class Application {
     }
 
     // This is a "utility" class, ie, no instances, only static methods
-    private Application() { }
+    // TODO: Remove changes after Spotless works.
+    // Add random whitespace problems.
+  private  Application( ) {  }  
 }
