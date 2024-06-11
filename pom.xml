@@ -102,6 +102,7 @@
         <system-lambda.version>1.2.1</system-lambda.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
         <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
+        <spotless.check.skip>true</spotless.check.skip>
         <!-- @formatter:on -->
     </properties>
 
@@ -245,35 +246,11 @@
                     <release>${jdk.version}</release>
                 </configuration>
             </plugin>
-            <!-- TODO: Enable after:
-                * Removing Checkstyle, OR updating checkstyle standard to
-                  align with Spotless format options
-                * Use spotless:apply, human verify the changes
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
                 <version>${spotless-maven-plugin.version}</version>
-                <configuration>
-                    <java>
-                        <cleanthat/>
-                        TODO: PICK a default example format
-                        <googleJavaFormat>
-                            <style>AOSP</style>
-                        </googleJavaFormat>
-                        <palantirJavaFormat>
-                            <version>${palantir-java-format.version}</version>
-                        </palantirJavaFormat>
-                    </java>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
