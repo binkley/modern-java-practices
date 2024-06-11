@@ -26,12 +26,6 @@ Several scripts in the project root are to aid in contributing.
   Helpful when CI has steps that local developers do not, and you want to 
   reproduce or explore locally a CI problem. The script should match the 
   actions your CI takes on pushes (this project uses GitHub actions).
-- [`compare-tooling-versions.sh`](./compare-tooling-versions.sh`) &mdash;
-  If your project supports _both_ Gradle and Maven builds (unlikely), a 
-  quick way to look at dependency and plugin versions between the two.
-  Output is _awkward_ and could be improved.
-  For example, you need to distinguish between plugin versions between Gradle
-  and Maven, and tooling (the dependencies) version differences.
 - [`coverage`](./coverage)
   Checks if the local code passes at given levels of code coverage.
   The script is focused on Maven, but with edits would do the same for Gradle.
@@ -43,3 +37,7 @@ Several scripts in the project root are to aid in contributing.
 - [`run-with-maven.sh`](./run-with-maven.sh)
   If you are a Maven project, you will likely rename this to just `run` or
   similar.
+- Use the
+  [`wiki-outline.py`](https://raw.githubusercontent.com/wiki/binkley/modern-java-practices/etc/wiki-outline.py)
+  script in the wiki repo to get a Table-of-Contents view from the command
+  line.

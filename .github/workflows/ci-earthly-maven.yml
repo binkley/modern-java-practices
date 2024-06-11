@@ -1,4 +1,4 @@
-name: Build with Maven using Earthly
+name: Maven CI build
 
 env:
   OWASP_NVD_API_KEY: ${{ secrets.OWASP_NVD_API_KEY }}
