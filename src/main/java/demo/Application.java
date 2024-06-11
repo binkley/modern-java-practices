@@ -17,5 +17,5 @@ public final class Application {
     }
 
     // This is a "utility" class, ie, no instances, only static methods
-    private Application() { }
+    private Application() {  }
 }
