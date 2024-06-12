@@ -16,7 +16,7 @@ org-owasp-dependencycheck-plugin = "9.2.0"
 org-pitest-pitest-command-line = "1.16.1"
 org-pitest-pitest-junit5-plugin = "1.2.1"
 org-projectlombok = "1.18.32"
-com-dorongold-task-tree-plugin = "3.0.0"
+com-dorongold-task-tree-plugin = "4.0.0"
 com-github-andygoossens-gradle-modernizer-plugin = "1.9.2"
 
 [libraries]
