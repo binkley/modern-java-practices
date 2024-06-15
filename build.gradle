@@ -26,6 +26,16 @@ plugins {
 version = "0-SNAPSHOT"
 group = "demo"
 
+// Do read the documentation on Enforcer to pick what makes sense to you:
+// https://kordamp.org/enforcer-gradle-plugin/#_rule_dsl
+// TODO: Follow-up with plugin GitHub: https://github.com/kordamp/enforcer-gradle-plugin/issues/17#issuecomment-2169301864
+/*
+enforce {
+     configure()
+     rule()
+}
+*/
+
 repositories {
     mavenCentral()
 }
