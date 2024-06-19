@@ -1,6 +1,6 @@
 [versions]
 com-github-ben-manes-versions-plugin = "0.51.0"
-com-github-spotbugs = "4.8.5"
+com-github-spotbugs = "4.8.6"
 com-google-code-findbugs = "3.0.1"
 com-h3xstream-findsecbugs-findsecbugs-plugin = "1.13.0"
 com-puppycrawl-tools-checkstyle = "10.17.0"
