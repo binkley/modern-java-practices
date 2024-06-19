@@ -325,5 +325,8 @@ static def isStable(version) {
 */
 
 spotless {
-    enforceCheck false
+    // enforceCheck false
+    // NOTE: If you'd like to hold off these checks, you can uncomment this
+    // line. The default is "true".
+    // The example project passes cleanly when enforcing checks.
 }
