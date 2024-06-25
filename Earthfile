@@ -1,4 +1,4 @@
-VERSION 0.7
+VERSION 0.8
 FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /code
 
