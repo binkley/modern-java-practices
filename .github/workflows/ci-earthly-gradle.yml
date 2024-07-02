@@ -18,7 +18,6 @@ on:
       - 'mvnw*'
       # These ignores are specific to this project
       - 'run-with-maven.sh'
-/bin/bash: line 1: s: command not found
 
 jobs:
   build:
