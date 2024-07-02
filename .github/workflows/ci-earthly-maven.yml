@@ -12,6 +12,12 @@ on:
     paths-ignore:
       - '*.md'
       - 'images/**'
+      # These ignores are specific to a cross-build against Gradle
+      - 'build.gradle'
+      - '.gradle'
+      - 'gradle*'
+      # These ignores are specific to this project
+      - 'run-with-gradle.sh'
   workflow_dispatch:
 
 jobs:

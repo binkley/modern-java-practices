@@ -8,6 +8,12 @@ on:
     paths-ignore:
       - '*.md'
       - 'images/**'
+      # These ignores are specific to a cross-build against Maven
+      - 'pom.xml'
+      - '.mvn'
+      - 'mvnw*'
+      # These ignores are specific to this project
+      - 'run-with-maven.sh'
   pull_request:
     paths-ignore:
       - '*.md'
