@@ -9,8 +9,7 @@
     <artifactId>modern-java-practices</artifactId>
     <version>0-SNAPSHOT</version>
 
-    <!-- Comment to force Maven rebuild, checking that Gradle does not rebuild
-    for #560. -->
+    <!-- ONLY change Maven: check that Gradle does not rebuild in CI for #560. -->
 
     <name>Modern Java/JVM build practices</name>
     <description>
