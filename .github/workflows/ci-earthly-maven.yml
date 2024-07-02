@@ -14,10 +14,11 @@ on:
       - 'images/**'
       # These ignores are specific to a cross-build against Gradle
       - 'build.gradle'
-      - '.gradle'
       - 'gradle*'
+      - '.gradle'
       # These ignores are specific to this project
       - 'run-with-gradle.sh'
+      - '.github/workflows/*gradle*'
   workflow_dispatch:
 
 jobs:
