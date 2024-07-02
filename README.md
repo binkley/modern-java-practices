@@ -36,6 +36,8 @@ align="right" width="20%" height="auto"/>
 > And during the first week or so after this change, you may see multiple
 > connection failures as OWASP NVD is overloaded with projects all catching up
 > at the same time.
+> The Maven plugin shows progress as CVE records are pulled: to see progress
+> with the Gradle plugin, use the `--info` command-line flag.
 
 **Modern Java/JVM Build Practices** is an article-as-repo on building modern
 Java/JVM projects using
