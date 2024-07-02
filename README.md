@@ -24,6 +24,19 @@ align="right" width="20%" height="auto"/>
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
 [![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
+> [!WARNING]
+> For those using the DependencyCheck plugins for Gradle or Maven, over the
+> July 1st weekend the upstream API for fetching security CVEs changed a major
+> version, and stopped supporting older versions of the data.
+> To get up to date, update to at least version 10.0.0 of either the Gradle or
+> Maven plugin.
+>
+> After the update, the first build will take a _very long time_, but should
+> perform normally afterwards.
+> And during the first week or so after this change, you may see multiple
+> connection failures as OWASP NVD is overloaded with projects all catching up
+> at the same time.
+
 **Modern Java/JVM Build Practices** is an article-as-repo on building modern
 Java/JVM projects using
 [Gradle](https://docs.gradle.org/current/userguide/userguide.html) and
