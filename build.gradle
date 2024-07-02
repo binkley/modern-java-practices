@@ -2,8 +2,7 @@ import com.github.spotbugs.snom.SpotBugsTask
 import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
 
-// Comment to force Gradle rebuild, checking that Maven does not rebuild
-// for #560.
+// ONLY change Gradle: check that Maven does not rebuild in CI for #560.
 
 plugins {
     alias libs.plugins.org.kordamp.gradle.project.enforcer
