@@ -63,7 +63,7 @@
         <coverage.branches>100</coverage.branches>
         <coverage.instructions>100</coverage.instructions>
         <coverage.lines>100</coverage.lines>
-        <dependency-check-maven.version>10.0.0</dependency-check-maven.version>
+        <dependency-check-maven.version>10.0.1</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <findsecbugs-plugin.version>1.13.0</findsecbugs-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
