@@ -2,8 +2,6 @@ import com.github.spotbugs.snom.SpotBugsTask
 import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
 
-// Comment for #560. Only Gradle runs in CI
-
 plugins {
     alias libs.plugins.org.kordamp.gradle.project.enforcer
     id "build-dashboard" // See build/reports/buildDashboard/index.html
