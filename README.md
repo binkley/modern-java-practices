@@ -28,7 +28,7 @@ align="right" width="20%" height="auto"/>
 > For those using the DependencyCheck plugins for Gradle or Maven, over the
 > July 1st weekend the upstream API for fetching security CVEs changed a major
 > version, and stopped supporting older versions of the data.
-> To get up to date, update to at least version 10.0.0 of either the Gradle or
+> To get up to date, update to at least version 10.0.2 of either the Gradle or
 > Maven plugin.
 >
 > After the update, the first build will take a _very long time_, but should
