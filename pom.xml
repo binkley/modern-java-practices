@@ -268,7 +268,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>validate</id>
+                        <id>validate-checkstyle</id>
                         <phase>validate</phase>
                         <goals>
                             <goal>check</goal>
