@@ -18,7 +18,7 @@ org-pitest-pitest-command-line = "1.16.1"
 org-pitest-pitest-junit5-plugin = "1.2.1"
 org-projectlombok = "1.18.34"
 com-dorongold-task-tree-plugin = "4.0.0"
-com-github-andygoossens-gradle-modernizer-plugin = "1.9.2"
+com-github-andygoossens-gradle-modernizer-plugin = "1.9.3"
 
 [libraries]
 com-github-spotbugs-spotbugs-annotations = { module = "com.github.spotbugs:spotbugs-annotations", version.ref = "com-github-spotbugs" }
