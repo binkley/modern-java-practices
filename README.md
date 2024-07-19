@@ -270,38 +270,10 @@ align="right" width="20%" height="auto"/>
 
 ## Table of Contents
 
-- Introduction
-  - [Acknowledgements](https://github.com/binkley/modern-java-practices/wiki/Acknowledgements.md)
-  - [Introduction](https://github.com/binkley/modern-java-practices/wiki/Introduction.md)
-  - [What is a build pipeline?](https://github.com/binkley/modern-java-practices/wiki/What-is-a-build-pipeline.md)
-- Getting started
-  - [Reusing this project](https://github.com/binkley/modern-java-practices/wiki/Reusing-this-project.md)
-  - [Getting your project started](https://github.com/binkley/modern-java-practices/wiki/Getting-your-project-started.md)
-  - [Use Gradle or Maven](https://github.com/binkley/modern-java-practices/wiki/Use-Gradle-or-Maven.md)
-  - [The JDK](https://github.com/binkley/modern-java-practices/wiki/The-JDK.md)
-- The pipeline
-  - [Setup your CI](https://github.com/binkley/modern-java-practices/wiki/Setup-your-CI.md)
-  - [Keep local consistent with CI](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI.md)
-  - [Dependency management](https://github.com/binkley/modern-java-practices/wiki/Dependency-management.md)
-  - [Maintain your build](https://github.com/binkley/modern-java-practices/wiki/Maintain-your-build.md)
-  - [Choose your code style](https://github.com/binkley/modern-java-practices/wiki/Choose-your-code-style.md)
-  - [Generate code](https://github.com/binkley/modern-java-practices/wiki/Generate-code.md)
-  - [Leverage the compiler](https://github.com/binkley/modern-java-practices/wiki/Leverage-the-compiler.md)
-  - [Use static analysis](https://github.com/binkley/modern-java-practices/wiki/Use-static-analysis.md)
-  - [Shift security left](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left.md)
-  - [Leverage unit testing and coverage](https://github.com/binkley/modern-java-practices/wiki/Leverage-unit-testing-and-coverage.md)
-  - [Use mutation testing](https://github.com/binkley/modern-java-practices/wiki/Use-mutation-testing.md)
-  - [Use integration testing](https://github.com/binkley/modern-java-practices/wiki/Use-integration-testing.md)
-- Other topics
-  - [Commits](https://github.com/binkley/modern-java-practices/wiki/Commits.md)
-  - [Monitoring and reporting your build](https://github.com/binkley/modern-java-practices/wiki/Monitoring-and-reporting-your-build.md)
-  - [Debugging](https://github.com/binkley/modern-java-practices/wiki/Debugging.md)
-  - [Performance problems](https://github.com/binkley/modern-java-practices/wiki/Performance-problems.md)
-  - [Other problems](https://github.com/binkley/modern-java-practices/wiki/Other-problems.md)
-  - [Example projects](https://github.com/binkley/modern-java-practices/wiki/Example-projects.md)
-  - [Going further](https://github.com/binkley/modern-java-practices/wiki/Going-further.md)
-- Thank you!
-  - [Contributing](https://github.com/binkley/modern-java-practices/wiki/Contributing.md)
+The writing for this project is fully moved to the [wiki
+pages](https://github.com/binkley/modern-java-practices/wiki/).
+Use the sidebar navigation in the wiki to browse or jump to topics, or to
+follow in a reading order.
 
 ---
 
@@ -319,7 +291,7 @@ I'd love a conversation with you.
 
 Many thanks to:
 
-* Dan Wallach for discussions on security
+* Dan Wallach for multiple email discussions on security
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche)
 * [Sam Gammon](https://github.com/sgammon)
 * [Sergei Bukharov](https://github.com/Bukharovsi)
