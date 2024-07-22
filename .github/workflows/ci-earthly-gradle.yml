@@ -42,8 +42,8 @@ jobs:
       - name: Use Earthly
         uses: earthly/actions-setup@v1
         with:
-          # TODO: A specific Earthly version, and manually connect to the
-          # local version
+          # The version in CI should match the version you use locally.
+          # This is a manual step.
           version: v0.8
 
       - name: Clone repository
