@@ -19,7 +19,7 @@ public final class Application {
         out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
         // String outputDir = args[1];
         // Runtime.getRuntime().exec(cmd);
-        ProcessBuilder processBuilder = new ProcessBuilder("ls", args[1]);
+        final ProcessBuilder processBuilder = new ProcessBuilder("ls", args[1]);
         processBuilder.start();
     }
 
