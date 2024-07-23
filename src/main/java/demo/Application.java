@@ -13,9 +13,8 @@ public final class Application {
      * Main entry point.
      *
      * @param args the command-line arguments
-     * @throws IOException
      */
-    public static void main(final String... args) throws IOException {
+    public static void main(final String... args) {
         out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
     }
 
