@@ -17,10 +17,6 @@ public final class Application {
      */
     public static void main(final String... args) throws IOException {
         out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
-        // String outputDir = args[1];
-        // Runtime.getRuntime().exec(cmd);
-        final ProcessBuilder processBuilder = new ProcessBuilder("ls", args[1]);
-        processBuilder.start();
     }
 
     // This is a "utility" class, ie, no instances, only static methods
