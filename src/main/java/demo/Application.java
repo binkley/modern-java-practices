@@ -4,8 +4,6 @@ import lombok.Generated;
 
 import static java.lang.System.out;
 
-import java.io.IOException;
-
 /** Production class for integration test demonstration. */
 @Generated // Lie to JaCoCo and PIT
 public final class Application {
