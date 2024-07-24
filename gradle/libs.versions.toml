@@ -26,7 +26,7 @@ com-github-stefanbirkner-system-lambda = { module = "com.github.stefanbirkner:sy
 com-google-code-findbugs-findbugs-annotations = { module = "com.google.code.findbugs:findbugs-annotations", version.ref = "com-google-code-findbugs" }
 com-h3xstream-findsecbugs-findsecbugs-plugin = { module = "com.h3xstream.findsecbugs:findsecbugs-plugin", version.ref = "com-h3xstream-findsecbugs-findsecbugs-plugin" }
 com-puppycrawl-tools-checkstyle = { module = "com.puppycrawl.tools:checkstyle", version.ref = "com-puppycrawl-tools-checkstyle" }
-org-apache-bcel = "org.apache.bcel:bcel:6.9.0"
+org-apache-bcel = "org.apache.bcel:bcel:6.10.0"
 org-assertj-assertj-core = { module = "org.assertj:assertj-core", version.ref = "org-assertj" }
 org-gaul-modernizer-maven-annotations = { module = "org.gaul:modernizer-maven-annotations", version.ref = "org-gaul-modernizer" }
 org-jacoco-org-jacoco-agent = { module = "org.jacoco:org.jacoco.agent", version.ref = "org-jacoco" }
