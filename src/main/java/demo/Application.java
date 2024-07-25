@@ -16,7 +16,7 @@ public final class Application {
      */
     public static void main(final String... args) throws IOException {
         final ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command(args);
+        processBuilder.command(args); // fun times
         out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
     }
 
