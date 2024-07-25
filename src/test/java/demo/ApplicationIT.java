@@ -16,7 +16,8 @@ class ApplicationIT {
     /** <strong>Use case</strong>: the application runs normally. */
     @Test
     void shouldRun() throws Exception {
-        final var out = tapSystemOutNormalized(Application::main);
+        final var out = tapSystemOutNormalized(
+                () -> Application.main("pwd"));
 
         assertThat(out).isEqualTo("TheFoo(label=I AM FOOCUTUS OF BORG)\n");
     }

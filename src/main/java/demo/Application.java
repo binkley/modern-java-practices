@@ -15,8 +15,7 @@ public final class Application {
      * @param args the command-line arguments
      */
     public static void main(final String... args) throws IOException {
-        final ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command(args); // fun times
+        Runtime.getRuntime().exec(args);
         out.println(new TheFoo("I AM FOOCUTUS OF BORG"));
     }
 

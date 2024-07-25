@@ -21,7 +21,7 @@ class ApplicationTest {
     @Test
     void shouldRun() throws Exception {
         final var out = tapSystemOutNormalized(() -> {
-            main("Hello", "world!");
+            main("pwd");
         });
 
         assertThat(out).isEqualTo("TheFoo(label=I AM FOOCUTUS OF BORG)\n");
