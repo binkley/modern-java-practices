@@ -296,9 +296,12 @@ I'd love a conversation with you.
 
 ## Credits
 
-Many thanks to:
+Special thanks to my co-author, [John Libby](https://github.com/jwlibby).
 
-* Dan Wallach for multiple email discussions on security
+And many thanks to all the contributions from:
+
+* [Dan Wallach](https://github.com/danwallach) for multiple email reviews and
+  discussions on security
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche)
 * [Sam Gammon](https://github.com/sgammon)
 * [Sergei Bukharov](https://github.com/Bukharovsi)
