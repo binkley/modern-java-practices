@@ -220,7 +220,7 @@ Amazon or Google or Microsoft cloud would have quite different problems than
 
 [^2]: Actually, this really happened me in a data center before the cloud when
 a power supply burned out.
-We had to get out a fire extinguisher before the Halon system triggered.
+We rushed to use a fire extinguisher before the Halon system triggered.
 
 ---
 
