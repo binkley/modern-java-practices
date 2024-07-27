@@ -218,8 +218,9 @@ drifts from your computer as circuits burn out[^1].
 Amazon or Google or Microsoft cloud would have quite different problems than
 "white smoke" from computers[^2].
 
-[^2]: Actually, this really happened me in a data center before the cloud.
-We had to get out a fire extinguisher.
+[^2]: Actually, this really happened me in a data center before the cloud when
+a power supply burned out.
+We had to get out a fire extinguisher before the Halon system triggered.
 
 ---
 
