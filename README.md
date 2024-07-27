@@ -278,6 +278,10 @@ follow in a reading order.
 You can also use the droplist control next to "Pages" for an alphabetical
 listing (including subheaders within pages), and for a search box.
 
+Lastly, the wiki pages are themselves a repo, and you can clone it using 
+`git@github.com:binkley/modern-java-practices.wiki.git` as you can for any
+GitHub wiki.
+
 ---
 
 ## Contributing
