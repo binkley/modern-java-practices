@@ -8,10 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration test for the application.
  */
-@SuppressWarnings({
-        "PMD.AtLeastOneConstructor",
-        "PMD.SignatureDeclareThrowsException"
-})
+@SuppressWarnings("PMD.AtLeastOneConstructor")
 class ApplicationIT {
     /** <strong>Use case</strong>: the application runs normally. */
     @Test
