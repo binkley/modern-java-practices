@@ -275,6 +275,8 @@ The writing for this project is fully moved to the [wiki
 pages](https://github.com/binkley/modern-java-practices/wiki/).
 Use the sidebar navigation in the wiki to browse or jump to topics, or to
 follow in a reading order.
+You can also use the droplist control next to "Pages" for an alphabetical
+listing (including subheaders within pages), and for a search box.
 
 ---
 
