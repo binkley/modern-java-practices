@@ -60,8 +60,10 @@ class ApplicationIT {
      * is a challenge for examples.
      */
     @SuppressWarnings({
+            // We follow JVM statics for out and err which confuses PMD
             "PMD.FinalFieldCouldBeStatic",
-            "PMD.CloseResource", // The code is too complex for PMD to follow
+            // The code is too complex for PMD to follow because of JVM statics
+            "PMD.CloseResource",
     })
     private static class ContextForTerminal implements AutoCloseable {
         /**
