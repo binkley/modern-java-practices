@@ -21,24 +21,31 @@ class ApplicationIT {
      */
     @Test
     void shouldRun() {
-        try (var context = captureTerminal()) {
-            // We could write ContextForTerminal for lambdas, but:
-            // 1. More explicit/natural calls for capture of the console.
-            // 2. Skipping the richer API of system-lambda, the point of this.
-            Application.main();
+        final var out = captureTerminal(Application::main);
 
-            assertThat(context.toString())
-                    .isEqualTo("TheFoo(label=I AM FOOCUTUS OF BORG)\n");
-        }
-    }
-
-    private static ContextForTerminal captureTerminal() {
-        return new ContextForTerminal();
+        assertThat(out).isEqualTo("TheFoo(label=I AM FOOCUTUS OF BORG)\n");
     }
 
     /**
-     * Replace stdout/stderr to a terminal with capture to an array of bytes
+     * Wrapper method for a cleaner API.
+     * <p>
+     * If {@code ContextForTerminal} is used for other tests, this method
+     * should be moved into that class as a public static for tests to call.
+     *
+     * @param call typically a method reference or a lambda
+     * @return the captured STDOUT and STDERR
+     */
+    private static String captureTerminal(final Runnable call) {
+        try (var context = new ContextForTerminal()) {
+            call.run();
+            return context.toString();
+        }
+    }
+
+    /**
+     * Replaces STDOUT/STDERR to a terminal with capture to an array of bytes
      * for testing.
+     * <p>
      * Messing with UTF-8 and character encodings is (sensibly) required even
      * though our tests are all ASCII, and users wanting a richer API can
      * turn to {@code system-lambda} or other solutions.
@@ -54,8 +61,8 @@ class ApplicationIT {
      * <p>
      * <b>Note</b>: Pay no attention to the multi-threading issues for
      * parallel tests.
-     * This is a concern always and anytime we use stdout and stderr, and
-     * also with libraries.
+     * This is a concern always and anytime we use STDOUT/STDERR, and also
+     * with libraries.
      * Support for older applications on older JVMs that do not assume UTF-8
      * is a challenge for examples.
      */
@@ -67,18 +74,19 @@ class ApplicationIT {
     })
     private static class ContextForTerminal implements AutoCloseable {
         /**
-         * Combine "stdout" and "stderr" into a single buffer usable in tests.
+         * Combine STDOUT/STDERR into a single buffer usable in tests.
+         * <p>
          * Note that this does not address UTF-8 concerns, so needs wrapping,
          * and additional state.
          */
         private final ByteArrayOutputStream captureOutAndErr =
                 new ByteArrayOutputStream();
         /**
-         * Remember the original stdout so we can restore after the test.
+         * Remember the original STDOUT so we can restore after the test.
          */
         private final PrintStream originalOut = System.out;
         /**
-         * Remember the original stderr so we can restore after the test.
+         * Remember the original STDERR so we can restore after the test.
          */
         private final PrintStream originalErr = System.err;
 
