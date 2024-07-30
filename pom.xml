@@ -427,6 +427,7 @@
                     <mutationThreshold>100</mutationThreshold>
                     <withHistory>true</withHistory>
                     <timestampedReports>false</timestampedReports>
+                    <verbose>false</verbose> <!-- Set to true for noisy output -->
                 </configuration>
                 <executions>
                     <execution>
