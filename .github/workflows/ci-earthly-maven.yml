@@ -2,6 +2,8 @@ name: Maven CI build
 
 env:
   OWASP_NVD_API_KEY: ${{ secrets.OWASP_NVD_API_KEY }}
+  # Workaround for: https://github.com/earthly/earthly/issues/4220
+  EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY: true
 
 on:
   push:
