@@ -93,7 +93,7 @@
         -->
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
         <pitest-maven.version>1.16.1</pitest-maven.version>
-        <pmd.version>7.3.0</pmd.version>
+        <pmd.version>7.4.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.8.6.2</spotbugs-maven-plugin.version>
@@ -427,6 +427,7 @@
                     <mutationThreshold>100</mutationThreshold>
                     <withHistory>true</withHistory>
                     <timestampedReports>false</timestampedReports>
+                    <verbose>false</verbose> <!-- Set to true for noisy output -->
                 </configuration>
                 <executions>
                     <execution>
