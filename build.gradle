@@ -169,9 +169,10 @@ pmd {
 
     // custom-rules.xml contains editable rule set
     // you can use it to adjust rules for your own project
-    ruleSets = [
+    // See https://docs.gradle.org/current/dsl/org.gradle.api.plugins.quality.PmdExtension.html#org.gradle.api.plugins.quality.PmdExtension:ruleSetFiles
+    ruleSetFiles = files(
         "config/pmd/custom-rules.xml"
-    ]
+    )
 
 }
 
