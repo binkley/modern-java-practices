@@ -11,7 +11,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * <p>
  * Messing with UTF-8 and character encodings is (sensibly) required even
  * though our tests are all ASCII, and users wanting a richer API can
- * turn to {@code system-lambda} or other solutions.
+ * turn to {@code system-lambda} or similar libraries.
  * <p>
  * <b>Note</b>: This is an example of comments in the code that should be
  * pushed up to Javadoc.
@@ -28,6 +28,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * with libraries.
  * Support for older applications on older JVMs that do not assume UTF-8
  * is a challenge for examples.
+ *
+ * @see <a
+ * href="https://github.com/stefanbirkner/system-lambda">system-lambda</a>
  */
 @SuppressWarnings({
         // We follow JVM statics for out and err which confuses PMD
