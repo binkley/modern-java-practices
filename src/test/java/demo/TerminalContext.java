@@ -20,21 +20,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * though our tests are all ASCII, and users wanting a richer API can
  * turn to {@code system-lambda} or similar libraries.
  * <p>
- * <b>Note</b>: This is an example of comments in the code that should be
- * pushed up to Javadoc.
- * Generally, if you need to comment something in the code, then push it
- * in the Javadoc and help users read your remarks,
- * or else refactor the code to make the comment irrelevant.
- * The general pattern is "shift problems left", meaning sooner to
- * developers: browsing code advice is much to the left of fixing a
- * problem in production.
- * <p>
- * <b>Note</b>: Pay no attention to the multi-threading issues for
- * parallel tests.
- * This is a concern always and anytime we use STDOUT/STDERR, and also
- * with libraries.
- * Support for older applications on older JVMs that do not assume UTF-8
- * is a challenge for examples.
+ * <b>Note</b>: Use of this test helper means: do <b>not</b> run integration
+ * tests in parallel: their output to the terminal will become interleaved.
+ * This is a concern always and anytime we use STDOUT/STDERR.
  *
  * @see <a
  * href="https://github.com/stefanbirkner/system-lambda">system-lambda</a>
@@ -65,10 +53,9 @@ final class TerminalContext implements AutoCloseable {
     private final PrintStream originalErr = System.err;
 
     private TerminalContext() {
-        final var outAndErr =
-                new PrintStream(captureOutAndErr, true, UTF_8);
-        System.setOut(outAndErr);
-        System.setErr(outAndErr);
+        final var outAndErr = new PrintStream(captureOutAndErr, true, UTF_8);
+        System.setOut(outAndErr); // NOT thread-safe
+        System.setErr(outAndErr); // NOT thread-safe
     }
 
     /**
