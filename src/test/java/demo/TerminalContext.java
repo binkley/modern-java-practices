@@ -32,7 +32,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
         "PMD.FinalFieldCouldBeStatic",
         // The code is too complex for PMD to follow because of JVM statics
         "PMD.CloseResource",
-        "PMD.CommentSize" // Complain to PMD, and suppress in config
+        // File issue with PMD, and suppress in config.
+        // Why is long Javadoc triggering this?
+        "PMD.CommentSize"
 })
 final class TerminalContext implements AutoCloseable {
     /**
