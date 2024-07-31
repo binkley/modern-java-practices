@@ -9,6 +9,13 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * Replaces STDOUT/STDERR to a terminal with capture to an array of bytes
  * for testing.
  * <p>
+ * One does not usually test STDOUT/STDERR output unless working on a terminal
+ * program.
+ * This example project does so to demonstrate <em>integration testing</em> as
+ * there are no complex interactions to otherwise test in the project, but it
+ * is important to demonstrate constrasting tests between <em>unit tests</em>
+ * and <em>integration tests</em>.
+ * <p>
  * Messing with UTF-8 and character encodings is (sensibly) required even
  * though our tests are all ASCII, and users wanting a richer API can
  * turn to {@code system-lambda} or similar libraries.
