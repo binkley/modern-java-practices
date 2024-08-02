@@ -24,8 +24,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * tests in parallel: their output to the terminal will become interleaved.
  * This is a concern always and anytime we use STDOUT/STDERR.
  *
+ * @see TerminalContext#captureTerminal() the main entry point for this class
  * @see <a
- * href="https://github.com/stefanbirkner/system-lambda">system-lambda</a>
+ * href="https://github.com/stefanbirkner/system-lambda"><code>system-lambda
+ * </code> for more sophisticated handling of STDOUT/STDERR</a>
  */
 @SuppressWarnings({
         // We follow JVM statics for out and err which confuses PMD
@@ -34,8 +36,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
         "PMD.CloseResource",
         // File issue with PMD, and suppress in config.
         // Why is long Javadoc triggering this?
-        "PMD.CommentSize"
-})
+        "PMD.CommentSize"})
 final class TerminalContext implements AutoCloseable {
     /**
      * Combine STDOUT/STDERR into a single buffer usable in tests.
@@ -43,8 +44,8 @@ final class TerminalContext implements AutoCloseable {
      * Note that this does not address UTF-8 concerns, so needs wrapping,
      * and additional state.
      */
-    private final ByteArrayOutputStream captureOutAndErr =
-            new ByteArrayOutputStream();
+    private final ByteArrayOutputStream captureOutAndErr
+            = new ByteArrayOutputStream();
     /**
      * Remember the original STDOUT so we can restore after the test.
      */
@@ -61,10 +62,9 @@ final class TerminalContext implements AutoCloseable {
     }
 
     /**
-     * Wrapper method for a cleaner API.
-     * <p>
-     * If {@code TerminalContext} is used for other tests, this method
-     * should be moved into that class as a public static for tests to call.
+     * Main entry point for using {@code TerminalCapture}. Use this call in
+     * tests to capture STDOUT/STDERR, and restore them after the test
+     * completes.
      *
      * @param call typically a method reference or a lambda
      * @return the captured STDOUT and STDERR
