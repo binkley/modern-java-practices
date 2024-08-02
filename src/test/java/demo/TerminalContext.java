@@ -6,23 +6,25 @@ import java.io.PrintStream;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- * Replaces STDOUT/STDERR to a terminal with capture to an array of bytes
- * for testing.
+ * Replaces writing to STDOUT/STDERR with capture to an array of bytes all for
+ * testing.
  * <p>
  * One does not usually test STDOUT/STDERR output unless working on a terminal
  * program.
- * This example project does so to demonstrate <em>integration testing</em> as
- * there are no complex interactions to otherwise test in the project, but it
- * is important to demonstrate constrasting tests between <em>unit tests</em>
- * and <em>integration tests</em>.
+ * This example project does so to demonstrate <em>integration testing</em>.
+ * We do not want to focus on complex alternatives (databases, dependency
+ * injection, remote REST calls, et al) but it is important to demonstrate
+ * contrast between <em>unit tests</em> and <em>integration tests</em> in the
+ * build.
  * <p>
- * Messing with UTF-8 and character encodings is (sensibly) required even
- * though our tests are all ASCII, and users wanting a richer API can
- * turn to {@code system-lambda} or similar libraries.
+ * <b>Note</b>: Mucking with UTF-8/character encodings is required in this
+ * code even though our tests are all ASCII, and users wanting a richer API
+ * can turn to {@code system-lambda} or similar libraries. Anytime you work
+ * with text for humans, keep UTF and encodings in mind.
  * <p>
  * <b>Note</b>: Use of this test helper means: do <b>not</b> run integration
  * tests in parallel: their output to the terminal will become interleaved.
- * This is a concern always and anytime we use STDOUT/STDERR.
+ * This is a concern always and anytime you access STDOUT/STDERR.
  *
  * @see TerminalContext#captureTerminal() the main entry point for this class
  * @see <a
