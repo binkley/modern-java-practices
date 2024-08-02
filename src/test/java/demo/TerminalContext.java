@@ -25,8 +25,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * <b>Note</b>: Use of this test helper means: do <b>not</b> run integration
  * tests in parallel: their output to the terminal will become interleaved.
  * This is a concern always and anytime you access STDOUT/STDERR.
+ * <b>Note</b>: A recommended pattern is that a class initializes as much as
+ * possible in the fields so that the constructor has minimal work.
  *
- * @see TerminalContext#captureTerminal() the main entry point for this class
+ * @see TerminalContext#captureTerminal(Runnable) the main entry point for this
+ * class
  * @see <a
  * href="https://github.com/stefanbirkner/system-lambda"><code>system-lambda
  * </code> for more sophisticated handling of STDOUT/STDERR</a>
@@ -39,7 +42,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
         // File issue with PMD, and suppress in config.
         // Why is long Javadoc triggering this?
         "PMD.CommentSize"})
-final class TerminalContext implements AutoCloseable {
+public final class TerminalContext implements AutoCloseable {
     /**
      * Combine STDOUT/STDERR into a single buffer usable in tests.
      * <p>
@@ -64,14 +67,16 @@ final class TerminalContext implements AutoCloseable {
     }
 
     /**
-     * Main entry point for using {@code TerminalCapture}. Use this call in
-     * tests to capture STDOUT/STDERR, and restore them after the test
-     * completes.
+     * Runs the call provided to capture STDOUT/STDERR such as {@code main}.
+     * Use this in tests to check STDOUT/STDERR, and restore those after the
+     * test completes. Note that outut is captured as UTF-8.
      *
-     * @param call typically a method reference or a lambda
-     * @return the captured STDOUT and STDERR
+     * @param call the method reference or lambda to execute and capture
+     * STDOUT/STDERR from
+     * @return the captured STDOUT and STDERR as a UTF-8 string, including
+     * possibly interleaved output
      */
-    static String captureTerminal(final Runnable call) {
+    public static String captureTerminal(final Runnable call) {
         try (var context = new TerminalContext()) {
             call.run();
             return context.toString();
