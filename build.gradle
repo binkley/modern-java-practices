@@ -54,7 +54,6 @@ dependencies {
     testImplementation libs.org.junit.jupiter.junit.jupiter
     testImplementation libs.org.assertj.assertj.core
     testImplementation libs.org.mockito.mockito.core
-    testImplementation libs.com.github.stefanbirkner.system.lambda
 
     // Quiet build -- build works without this, but JUnit complains
     testRuntimeOnly libs.org.junit.jupiter.junit.jupiter.engine
