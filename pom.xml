@@ -47,9 +47,16 @@
                 <role>developer</role>
             </roles>
             <timezone>America/Chicago</timezone>
-            <properties>
-                <picUrl>https://avatars.githubusercontent.com/u/186421?s=60&amp;v=4</picUrl>
-            </properties>
+        </developer>
+        <developer>
+            <id>jwlibby</id>
+            <name>John Libby</name>
+            <email>jwlibby@gmail.com</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>America/Los_Angeles</timezone>
         </developer>
     </developers>
 
