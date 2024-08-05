@@ -24,6 +24,13 @@ build-with-maven:
     COPY config config
     COPY src src
     RUN --secret OWASP_NVD_API_KEY ./mvnw --no-transfer-progress clean verify
+    # For CI so that GitHub can copy artifacts
+# Javadocs and jars
+    SAVE ARTIFACT --keep-ts target/apidocs/ AS LOCAL target/apidocs/
+    SAVE ARTIFACT --keep-ts target/modern-java-practices-0-SNAPSHOT-javadoc.jar AS LOCAL target/modern-java-practices-0-SNAPSHOT-javadoc.jar
+    SAVE ARTIFACT --keep-ts target/testapidocs/ AS LOCAL target/testapidocs/
+    SAVE ARTIFACT --keep-ts target/modern-java-practices-0-SNAPSHOT-test-javadoc.jar AS LOCAL target/modern-java-practices-0-SNAPSHOT-test-javadoc.jar
+# Test coverage and badge
     SAVE ARTIFACT --keep-ts target/site/jacoco/jacoco.csv AS LOCAL target/site/jacoco/jacoco.csv
 
 run-with-maven:
