@@ -458,8 +458,9 @@
                         <id>javadoc-jars</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>jar</goal>
-                            <goal>test-jar</goal>
+                            <goal>jar</goal> <!-- Javadoc for "main" source code -->
+                            <goal>test-jar</goal> <!-- Javadoc for "test" source code -->
+                            <!-- More configuration needed for "integrationTest" source code -->
                         </goals>
                     </execution>
                 </executions>

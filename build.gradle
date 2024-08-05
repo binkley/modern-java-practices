@@ -105,7 +105,8 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
     }
-    withJavadocJar()
+    withJavadocJar() // Javadoc for "main" source code
+    // More configuration needed for "test" or "integrationTest" source code
 }
 
 tasks.withType(JavaCompile) {
