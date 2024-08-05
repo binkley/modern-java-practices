@@ -34,12 +34,6 @@ jobs:
   build:
     name: Builds and tests
     runs-on: ubuntu-latest
-    # First run in GitHub actions - verify this
-    # Afterwards, change to a comment
-    strategy:
-      matrix:
-        include:
-          - java: 21
 
     steps:
       - name: Use Earthly
