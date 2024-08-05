@@ -450,23 +450,10 @@
                 </dependencies>
             </plugin>
             <plugin>
-                <!-- TODO: When best to generate Javadoc? -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin.version}</version>
                 <executions>
-                    <!-- Separate executions:
-                        1. Build local HTML javadocs
-                        2. Package a JAR to share javadocs
-                    -->
-                    <execution>
-                        <id>javadoc</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>javadoc</goal>
-                            <goal>test-javadoc</goal>
-                        </goals>
-                    </execution>
                     <execution>
                         <id>javadoc-jars</id>
                         <phase>package</phase>
