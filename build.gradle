@@ -54,7 +54,6 @@ dependencies {
     testImplementation libs.org.junit.jupiter.junit.jupiter
     testImplementation libs.org.assertj.assertj.core
     testImplementation libs.org.mockito.mockito.core
-    testImplementation libs.com.github.stefanbirkner.system.lambda
 
     // Quiet build -- build works without this, but JUnit complains
     testRuntimeOnly libs.org.junit.jupiter.junit.jupiter.engine
@@ -97,6 +96,7 @@ sourceSets {
 }
 
 configurations {
+    integratrationTestAnnotationProcessor.extendsFrom testAnnotationProcessor
     integrationTestImplementation.extendsFrom testImplementation
     integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
 }
@@ -105,6 +105,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
     }
+    withJavadocJar()
 }
 
 tasks.withType(JavaCompile) {
@@ -169,9 +170,10 @@ pmd {
 
     // custom-rules.xml contains editable rule set
     // you can use it to adjust rules for your own project
-    ruleSets = [
+    // See https://docs.gradle.org/current/dsl/org.gradle.api.plugins.quality.PmdExtension.html#org.gradle.api.plugins.quality.PmdExtension:ruleSetFiles
+    ruleSetFiles = files(
         "config/pmd/custom-rules.xml"
-    ]
+    )
 
 }
 
@@ -248,7 +250,7 @@ pitest {
     // name, so this property needs to have a distinct name to satisfy Gradle
     pitestVersion = "$pitestToolVersion"
     timestampedReports = false
-    verbose = true
+    verbose = false // Set to true for noisy output
 }
 
 tasks.named("pitest") { // PITest plugin does not expose task as expected
@@ -312,7 +314,7 @@ wrapper {
     distributionType = "ALL"
 }
 
-// why do we have commented out code?
+// TODO: Decide if we should only check dependencies that are released
 /*
 static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {

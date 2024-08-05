@@ -12,6 +12,7 @@ function print-help() {
     cat <<EOH
 Usage: $progname [OPTIONS] [-- ARGUMENTS]
 Checks code coverage and optionally opens the report.
+Use Maven for finding coverage. Gradle should be the same.
 
 OPTIONS:
   -f, --full-coverage=TYPE

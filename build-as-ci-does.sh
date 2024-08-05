@@ -7,6 +7,9 @@ fi
 
 set -e  # Fail on first failed command
 
+# Workaround for: https://github.com/earthly/earthly/issues/4220
+export EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY=true
+
 # Provide nicer console output via formatting and color
 # See https://github.com/binkley/shell/blob/master/color/color.sh
 printf -v preset "\e[0m"

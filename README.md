@@ -18,6 +18,7 @@ align="right" width="20%" height="auto"/>
 
 [![Gradle build](https://github.com/binkley/modern-java-practices/actions/workflows/ci-earthly-gradle.yml/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
 [![Maven build](https://github.com/binkley/modern-java-practices/actions/workflows/ci-earthly-maven.yml/badge.svg)](https://github.com/binkley/modern-java-practices/actions)
+[![CodeQL](https://github.com/binkley/modern-java-practices/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/binkley/modern-java-practices/actions/workflows/github-code-scanning/codeql)
 [![vulnerabilities](https://snyk.io/test/github/binkley/modern-java-practices/badge.svg)](https://snyk.io/test/github/binkley/modern-java-practices)
 [![CodeQL](https://github.com/binkley/modern-java-practices/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/binkley/modern-java-practices/actions/workflows/github-code-scanning/codeql)
 [![coverage](https://github.com/binkley/modern-java-practices/raw/master/images/jacoco.svg)](https://github.com/binkley/modern-java-practices/actions/workflows/ci.yml)
@@ -218,8 +219,9 @@ drifts from your computer as circuits burn out[^1].
 Amazon or Google or Microsoft cloud would have quite different problems than
 "white smoke" from computers[^2].
 
-[^2]: Actually, this really happened me in a data center before the cloud.
-We had to get out a fire extinguisher.
+[^2]: Actually, this really happened me in a data center before the cloud when
+a power supply burned out.
+We rushed to use a fire extinguisher before the Halon system triggered.
 
 ---
 
@@ -275,6 +277,12 @@ The writing for this project is fully moved to the [wiki
 pages](https://github.com/binkley/modern-java-practices/wiki/).
 Use the sidebar navigation in the wiki to browse or jump to topics, or to
 follow in a reading order.
+You can also use the droplist control next to "Pages" for an alphabetical
+listing (including subheaders within pages), and for a search box.
+
+Lastly, the wiki pages are themselves a repo, and you can clone it using 
+`git@github.com:binkley/modern-java-practices.wiki.git` as you can for any
+GitHub wiki.
 
 ---
 
@@ -290,9 +298,12 @@ I'd love a conversation with you.
 
 ## Credits
 
-Many thanks to:
+Special thanks to my co-author, [John Libby](https://github.com/jwlibby).
 
-* Dan Wallach for multiple email discussions on security
+And many thanks to all the contributions from:
+
+* [Dan Wallach](https://github.com/danwallach) for multiple email reviews and
+  discussions on security
 * [Kristoffer Haugsbakk](https://github.com/LemmingAvalanche)
 * [Sam Gammon](https://github.com/sgammon)
 * [Sergei Bukharov](https://github.com/Bukharovsi)
