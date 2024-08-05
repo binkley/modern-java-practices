@@ -85,10 +85,10 @@ public final class TerminalContext implements AutoCloseable {
 
     @Override
     public void close() {
-        System.out.close(); // Points to the test-only output stream
-        System.err.close(); // Points to the test-only output stream
+        final PrintStream wrapper = System.out; // Shared with System.err
         System.setOut(originalOut);
         System.setErr(originalErr);
+        wrapper.close();
     }
 
     @Override
