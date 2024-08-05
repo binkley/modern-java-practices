@@ -2,8 +2,7 @@ package demo;
 
 import org.junit.jupiter.api.Test;
 
-import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
-import static demo.Application.main;
+import static demo.TerminalContext.captureTerminal;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -20,8 +19,8 @@ class ApplicationTest {
      **/
     @Test
     void shouldRun() throws Exception {
-        final var out = tapSystemOutNormalized(() -> {
-            main("Hello", "world!");
+        final var out = captureTerminal(() -> {
+            Application.main("Hello", "world!");
         });
 
         assertThat(out).isEqualTo("TheFoo(label=I AM FOOCUTUS OF BORG)\n");

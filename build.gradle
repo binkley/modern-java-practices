@@ -54,7 +54,6 @@ dependencies {
     testImplementation libs.org.junit.jupiter.junit.jupiter
     testImplementation libs.org.assertj.assertj.core
     testImplementation libs.org.mockito.mockito.core
-    testImplementation libs.com.github.stefanbirkner.system.lambda
 
     // Quiet build -- build works without this, but JUnit complains
     testRuntimeOnly libs.org.junit.jupiter.junit.jupiter.engine
@@ -97,6 +96,7 @@ sourceSets {
 }
 
 configurations {
+    integratrationTestAnnotationProcessor.extendsFrom testAnnotationProcessor
     integrationTestImplementation.extendsFrom testImplementation
     integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
 }
@@ -105,6 +105,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
     }
+    withJavadocJar()
 }
 
 tasks.withType(JavaCompile) {
@@ -313,7 +314,7 @@ wrapper {
     distributionType = "ALL"
 }
 
-// why do we have commented out code?
+// TODO: Decide if we should only check dependencies that are released
 /*
 static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {

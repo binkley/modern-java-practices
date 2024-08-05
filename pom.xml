@@ -36,6 +36,8 @@
         <url>https://github.com/binkley/modern-java-practices</url>
     </scm>
 
+    <packaging>jar</packaging>
+
     <developers>
         <developer>
             <id>binkley</id>
@@ -85,6 +87,7 @@
         <maven-dependency-plugin.version>3.7.1</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
         <maven-pmd-plugin.version>3.24.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}</maven-profiler-report-directory>
@@ -106,7 +109,6 @@
         <spotbugs-maven-plugin.version>4.8.6.2</spotbugs-maven-plugin.version>
         <spotbugs.version>4.8.6</spotbugs.version>
         <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
-        <system-lambda.version>1.2.1</system-lambda.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
         <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
         <spotless.check.skip>true</spotless.check.skip>
@@ -167,12 +169,6 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.stefanbirkner</groupId>
-            <artifactId>system-lambda</artifactId>
-            <version>${system-lambda.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -452,6 +448,34 @@
                         <version>${pitest-junit5-plugin.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <!-- TODO: When best to generate Javadoc? -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <executions>
+                    <!-- Separate executions:
+                        1. Build local HTML javadocs
+                        2. Package a JAR to share javadocs
+                    -->
+                    <execution>
+                        <id>javadoc</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>javadoc</goal>
+                            <goal>test-javadoc</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>javadoc-jars</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
