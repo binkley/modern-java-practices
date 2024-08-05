@@ -105,6 +105,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of("$jdkVersion"))
     }
+    withJavadocJar()
 }
 
 tasks.withType(JavaCompile) {
@@ -298,10 +299,6 @@ check {
     dependsOn += "pitest"
     dependsOn += integrationTest
     dependsOn += dependencyCheckAnalyze
-}
-
-javadoc {
-    destinationDir = file("${buildDir}/docs/javadocs")
 }
 
 /*
