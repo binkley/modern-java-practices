@@ -78,6 +78,36 @@ jobs:
           generate-branches-badge: false
           generate-summary: false
 
+      - name: Save Javadoc HTML for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-html-main
+          path: target/apidocs
+
+      - name: Save Javadoc HTML Jar for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-unittests-main
+          path: target/modern-java-practices-0-SNAPSHOT-javadoc.jar
+
+      - name: Save Javadoc HTML for unit tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-html-unittests
+          path: target/testapidocs
+
+      - name: Save Javadoc HTML Jar for unit tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-jar-unittests
+          path: target/modern-java-practices-0-SNAPSHOT-test-javadoc.jar
+
+      - name: Save coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: target/site/jacoco
+
       - name: Save coverage report
         uses: actions/upload-artifact@v4
         with:
