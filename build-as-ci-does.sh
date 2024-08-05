@@ -35,6 +35,13 @@ earthly --secret OWASP_NVD_API_KEY +build-with-maven
 echo
 echo "${pbold}RUN WITH MAVEN UNDER EARTHLY${preset}" 
 earthly --secret OWASP_NVD_API_KEY +run-with-maven
+echo
+echo "${pbold}SIMULATE UPLOAD${preset}"
+ls -d target/apidocs/
+ls target/modern-java-practices-0-SNAPSHOT-javadoc.jar
+ls -d target/testapidocs/
+ls target/modern-java-practices-0-SNAPSHOT-test-javadoc.jar
+ls -d target/site/jacoco/
 
 echo 
 echo "${pbold}BUILD WITH MAVEN DIRECTLY${preset}" 
