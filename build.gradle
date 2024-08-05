@@ -96,6 +96,7 @@ sourceSets {
 }
 
 configurations {
+    integratrationTestAnnotationProcessor.extendsFrom testAnnotationProcessor
     integrationTestImplementation.extendsFrom testImplementation
     integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
 }
@@ -299,6 +300,10 @@ check {
     dependsOn += dependencyCheckAnalyze
 }
 
+javadoc {
+    destinationDir = file("${buildDir}/docs/javadocs")
+}
+
 /*
 tasks.withType(DependencyUpdatesTask) {
     rejectVersionIf {
@@ -312,7 +317,7 @@ wrapper {
     distributionType = "ALL"
 }
 
-// why do we have commented out code?
+// TODO: Decide if we should only check dependencies that are released
 /*
 static def isStable(version) {
     def stableKeyword = ["RELEASE", "FINAL", "GA"].any {
