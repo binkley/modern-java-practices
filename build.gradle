@@ -3,7 +3,6 @@ import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
 
 plugins {
-    alias libs.plugins.org.kordamp.gradle.project.enforcer
     id "build-dashboard" // See build/reports/buildDashboard/index.html
     // TODO: project-report is presently broken because of pitest task
     id "project-report" // Try the `projectReport` task
@@ -25,16 +24,6 @@ plugins {
 
 version = "0-SNAPSHOT"
 group = "demo"
-
-// Do read the documentation on Enforcer to pick what makes sense to you:
-// https://kordamp.org/enforcer-gradle-plugin/#_rule_dsl
-// TODO: Follow-up with plugin GitHub: https://github.com/kordamp/enforcer-gradle-plugin/issues/17#issuecomment-2169301864
-/*
-enforce {
-     configure()
-     rule()
-}
-*/
 
 repositories {
     mavenCentral()

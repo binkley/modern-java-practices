@@ -10,7 +10,6 @@ org-gaul-modernizer = "2.9.0"
 org-jacoco = "0.8.12"
 org-junit-jupiter = "5.11.0-RC1"
 org-kordamp-gradle-jdeps-plugin = "0.20.0"
-org-kordamp-gradle-project-enforcer-plugin = "0.13.0"
 org-mockito = "5.12.0"
 org-owasp-dependencycheck-plugin = "10.0.3"
 org-pitest-pitest-command-line = "1.16.1"
@@ -41,6 +40,5 @@ com-dorongold-task-tree = { id = "com.dorongold.task-tree", version.ref = "com-d
 com-github-andygoossens-gradle-modernizer-plugin = { id = "com.github.andygoossens.gradle-modernizer-plugin", version.ref = "com-github-andygoossens-gradle-modernizer-plugin" }
 com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version.ref = "com-github-ben-manes-versions-plugin" }
 org-kordamp-gradle-jdeps = { id = "org.kordamp.gradle.jdeps", version.ref = "org-kordamp-gradle-jdeps-plugin" }
-org-kordamp-gradle-project-enforcer = { id = "org.kordamp.gradle.project-enforcer", version.ref = "org-kordamp-gradle-project-enforcer-plugin" }
 org-owasp-dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "org-owasp-dependencycheck-plugin" }
 nl-littlerobots-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "nl-littlerobots-version-catalog-update-plugin" }

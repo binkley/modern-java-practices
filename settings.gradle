@@ -1,7 +1,38 @@
+// Note:
+// When you see "$fooVersion", those are versions pulled from
+// "gradle.properties".
+
+// TODO: Migrate these to use the version catalog (like other plugins in
+// "build.gradle").
 pluginManagement {
     plugins {
         id "com.github.spotbugs" version "$spotbugsPluginVersion"
         id "info.solidsoft.pitest" version "$pitestPluginVersion"
+    }
+}
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+
+    dependencies {
+        // Enforcer plugin uses an older version of commons-lang3 that breaks
+        // DependencyCheck. Force a current version.
+        // TODO: Look for an updated Enforcer plugin that does not clash.
+        classpath "org.apache.commons:commons-lang3:3.15.0"
+        classpath "org.kordamp.gradle:enforcer-gradle-plugin:$enforcerPluginVersion"
+    }
+}
+
+apply plugin: "org.kordamp.gradle.enforcer"
+
+// See https://kordamp.org/enforcer-gradle-plugin/#_rules for the kinds of
+// rules you can set up.
+enforce {
+    rule(enforcer.rules.RequireGradleVersion) { r ->
+        r.version = "$gradleWrapperVersion"
     }
 }
 
