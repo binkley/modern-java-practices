@@ -377,8 +377,12 @@
                 <configuration>
                     <effort>Max</effort>
                     <includeTests>true</includeTests>
-                    <sarifOutput>true</sarifOutput>
                     <threshold>Low</threshold>
+
+                    <htmlOutput>true</htmlOutput>
+                    <sarifOutput>true</sarifOutput>
+                    <xmlOutput>true</xmlOutput>
+
                     <plugins>
                         <plugin>
                             <groupId>com.h3xstream.findsecbugs</groupId>
@@ -386,7 +390,6 @@
                             <version>${findsecbugs-plugin.version}</version>
                         </plugin>
                     </plugins>
-                    <xmlOutput>true</xmlOutput>
                 </configuration>
                 <dependencies>
                     <dependency>
