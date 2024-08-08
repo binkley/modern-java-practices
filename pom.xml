@@ -75,7 +75,7 @@
         <findsecbugs-plugin.version>1.13.0</findsecbugs-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
-        <jdk.version>11</jdk.version>
+        <jdk.version>21</jdk.version>
         <junit.version>5.10.3</junit.version>
         <lombok.version>1.18.34</lombok.version>
         <main.class>demo.Application</main.class>
