@@ -17,9 +17,13 @@ run-with-gradle:
     COPY run-with-gradle.sh .
     RUN ./run-with-gradle.sh
 
-# For CI so that GitHub can copy artifacts
-
+    # For CI so that GitHub can copy artifacts
 # Coverage reports
+    SAVE ARTIFACT --keep-ts build/reports/jacoco/test/ AS LOCAL build/reports/jacoco/test/
+# Javadocs and jars
+    SAVE ARTIFACT --keep-ts build/libs/modern-java-practices-0-javadoc.jar
+    SAVE ARTIFACT --keep-ts build/docs/javadoc/ AS LOCAL build/docs/javadoc/
+
 # Test coverage and badge for Gradle:
 # You need to PICK ONE from Gradle or Maven for your build.
 # This project uses Maven (see below) to create the code coverage badge to
@@ -28,12 +32,7 @@ run-with-gradle:
 # Gradle.
 # After this enabling this, you still need to update the GitHub action steps
 # to generate the badge using a custom path to the CVS report.
-    SAVE ARTIFACT --keep-ts build/reports/jacoco/test/ AS LOCAL build/reports/jacoco/test/
-    SAVE ARTIFACT --keep-ts build/reports/jacoco/test/jacocoTestReport.csv AS LOCAL build/reports/jacoco/test/jacocoTestReport.csv
-
-# Javadocs and jars
-    SAVE ARTIFACT --keep-ts build/libs/modern-java-practices-0-javadoc.jar
-    SAVE ARTIFACT --keep-ts build/docs/javadoc/ AS LOCAL build/docs/javadoc/
+    # SAVE ARTIFACT --save-ts build/reports/jacoco/test/jacocoTestReport.csv AS LOCAL build/reports/jacoco/test/jacocoTestReport.csv
 
 build-with-maven:
     COPY mvnw .
@@ -56,9 +55,6 @@ build-with-maven:
 # See above comments on enabling for Gradle.
 # Note that ONLY the Maven containerized build updates the README frontpage
 # badge for coverage. This is to avoid multiple updating.
-#
-# ALSO NOTE: This seems to enable GitHub action to show coverage directly in
-# an action build run.
     SAVE ARTIFACT --keep-ts target/site/jacoco/jacoco.csv AS LOCAL target/site/jacoco/jacoco.csv
 
 run-with-maven:
