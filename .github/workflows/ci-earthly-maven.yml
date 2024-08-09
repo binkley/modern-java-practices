@@ -79,7 +79,7 @@ jobs:
       - name: Save Javadoc HTML Jar for main
         uses: actions/upload-artifact@v4
         with:
-          name: javadoc-unittests-main
+          name: javadoc-jar-main
           if-no-files-found: error
           path: target/modern-java-practices-0-SNAPSHOT-javadoc.jar
 
