@@ -3,6 +3,7 @@ import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
 
 plugins {
+    id "net.ltgt.errorprone" version "4.0.1"
     id "build-dashboard" // See build/reports/buildDashboard/index.html
     // TODO: project-report is presently broken because of pitest task
     id "project-report" // Try the `projectReport` task
@@ -30,6 +31,8 @@ repositories {
 }
 
 dependencies {
+    errorprone("com.google.errorprone:error_prone_core:2.20.0")
+
     compileOnly libs.org.projectlombok.lombok
     annotationProcessor libs.org.projectlombok.lombok
     compileOnly libs.com.github.spotbugs.spotbugs.annotations
@@ -99,6 +102,8 @@ java {
 }
 
 tasks.withType(JavaCompile) {
+    options.errorprone.disableWarningsInGeneratedCode.set(true) // e_p only
+
     options.compilerArgs += ["-Werror", "-Xlint:all,-processing", "-parameters"]
 }
 
