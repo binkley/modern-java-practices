@@ -29,7 +29,7 @@ run-with-gradle:
 # After this enabling this, you still need to update the GitHub action steps
 # to generate the badge using a custom path to the CVS report.
     SAVE ARTIFACT --keep-ts build/reports/jacoco/test/ AS LOCAL build/reports/jacoco/test/
-    SAVE ARTIFACT --save-ts build/reports/jacoco/test/jacocoTestReport.csv AS LOCAL build/reports/jacoco/test/jacocoTestReport.csv
+    SAVE ARTIFACT --keep-ts build/reports/jacoco/test/jacocoTestReport.csv AS LOCAL build/reports/jacoco/test/jacocoTestReport.csv
 
 # Javadocs and jars
     SAVE ARTIFACT --keep-ts build/libs/modern-java-practices-0-javadoc.jar
