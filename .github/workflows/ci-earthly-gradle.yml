@@ -69,4 +69,4 @@ jobs:
         with:
           name: coverage-report
           if-no-files-found: error
-          path: build/reports/jacoco/test
+          path: build/reports/jacoco/test/
