@@ -33,7 +33,7 @@ run-with-gradle:
 
 # Javadocs and jars
     SAVE ARTIFACT --keep-ts build/libs/modern-java-practices-0-javadoc.jar
-    SAVE ARTIFACT --keep-ts build/docs/javadoc/test/ AS LOCAL build/docs/javadoc/test/
+    SAVE ARTIFACT --keep-ts build/docs/javadoc/ AS LOCAL build/docs/javadoc/
 
 build-with-maven:
     COPY mvnw .

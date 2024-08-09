@@ -64,6 +64,25 @@ jobs:
       - name: Execute run script
         run: earthly --secret OWASP_NVD_API_KEY +run-with-gradle
 
+# Save artifacts for build 
+# See Earthfile that copies these from container to local
+
+# Javadoc HTML and jars
+
+      - name: Save Javadoc HTML for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-html-main
+          if-no-files-found: error
+          path: build/docs/javadoc/
+
+      - name: Save Javadoc HTML Jar for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-jar-main
+          if-no-files-found: error
+          path: build/libs/modern-java-practices-0-SNAPSHOT-javadoc.jar
+
       - name: Save coverage report
         uses: actions/upload-artifact@v4
         with:
