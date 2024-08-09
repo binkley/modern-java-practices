@@ -19,7 +19,7 @@ run-with-gradle:
 
     # For CI so that GitHub can copy artifacts
 # Coverage reports
-    SAVE ARTIFACT --keep-ts build/reports/jacoco/test AS LOCAL build/reports/jacoco/test
+    SAVE ARTIFACT --keep-ts build/reports/jacoco/test/ AS LOCAL build/reports/jacoco/test/
 # Javadocs and jars
     SAVE ARTIFACT --keep-ts build/libs/modern-java-practices-0-javadoc.jar
     SAVE ARTIFACT --keep-ts build/docs/javadoc/ AS LOCAL build/docs/javadoc/
