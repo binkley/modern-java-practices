@@ -72,14 +72,14 @@ jobs:
       - name: Save Javadoc HTML for main
         uses: actions/upload-artifact@v4
         with:
-          name: javadoc-html-main
+          name: javadoc-html
           if-no-files-found: error
           path: build/docs/javadoc/
 
       - name: Save Javadoc HTML Jar for main
         uses: actions/upload-artifact@v4
         with:
-          name: javadoc-jar-main
+          name: javadoc-jar
           if-no-files-found: error
           path: build/libs/modern-java-practices-0-SNAPSHOT-javadoc.jar
 
