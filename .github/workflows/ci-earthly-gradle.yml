@@ -74,7 +74,7 @@ jobs:
         with:
           name: javadoc-html-main
           if-no-files-found: error
-          path: build/reports/javadoc/test/
+          path: build/docs/javadoc/
 
       - name: Save Javadoc HTML Jar for main
         uses: actions/upload-artifact@v4
