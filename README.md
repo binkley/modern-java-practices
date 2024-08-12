@@ -9,6 +9,12 @@ _Jump to [the project card wall](https://github.com/users/binkley/projects/1)
 to see upcoming book and code changes (the card wall tracks Issues for the
 project)._
 
+Some highlighted documentation pages:
+- [_Keep local consistent with
+  CI_](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
+- [_Shift security
+  left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
+
 # Modern Java/JVM Build Practices
 
 <a href="https://modernagile.org/" title="Modern Agile">
