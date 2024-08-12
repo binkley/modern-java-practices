@@ -1,5 +1,5 @@
 <a href="./LICENSE">
-<img src="./images/public-domain.svg" alt="Public Domain"
+<img src="./images/cc0.svg" alt="Creative Commons 0"
 align="right" width="10%" height="auto"/>
 </a>
 
@@ -14,6 +14,12 @@ Some highlighted documentation pages:
   CI_](https://github.com/binkley/modern-java-practices/wiki/Keep-local-consistent-with-CI)
 - [_Shift security
   left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
+
+> [!NOTE] The license changed from earlier project commits to
+> [CC0](https://creativecommons.org/public-domain/cc0/) from [Public
+> Domain](https://unlicense.org/).
+> This change accomodates countries/juristictions where Public Domain is
+> restricted.
 
 # Modern Java/JVM Build Practices
 
