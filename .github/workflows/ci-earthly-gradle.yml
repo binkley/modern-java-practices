@@ -97,6 +97,9 @@ jobs:
         with:
           badges-directory: images
           jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+          # To avoid conflicts with the Maven build, only generate the badge
+          # there. For Gradle only projects: REMOVE THIS LINE.
+          generate-coverage-badge: false
           generate-branches-badge: false
           generate-summary: false
 
