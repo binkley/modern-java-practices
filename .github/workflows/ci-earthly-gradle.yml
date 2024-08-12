@@ -91,3 +91,12 @@ jobs:
           name: coverage-report
           if-no-files-found: error
           path: build/reports/jacoco/test/
+
+      - name: Generate coverage badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          badges-directory: images
+          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+          generate-branches-badge: false
+          generate-summary: false
+
