@@ -16,11 +16,11 @@ Some highlighted documentation pages:
   left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 
 > [!NOTE]
-> The license changed from earlier project commits to
-> [CC0](https://creativecommons.org/public-domain/cc0/) from [Public
-> Domain](https://unlicense.org/).
-> This change accomodates countries/juristictions where Public Domain is
-> restricted.
+> The license has changed to
+> [CC0](https://creativecommons.org/public-domain/cc0/) from earlier commits
+> with [Public Domain](https://unlicense.org/) licensing.
+> This change accomodates countries/juristictions where _Public Domain_ is
+> restricted, and _CC0_ seems the most open choice available.
 
 # Modern Java/JVM Build Practices
 
