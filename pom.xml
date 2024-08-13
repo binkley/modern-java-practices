@@ -11,7 +11,10 @@
 
     <name>Modern Java/JVM build practices</name>
     <description>
-        Advice on Modern Java/JVM Gradle and Maven builds
+        Advice on Modern Java/JVM Gradle and Maven builds.
+        The advice is language-agnostic, but options are often specific for
+        Java (such as plugins that review Java code quality).
+        The goal: Make you build AWESOME, and help you with solid CI builds.
     </description>
     <url>https://github.com/binkley/modern-java-practices</url>
     <licenses>
