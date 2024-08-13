@@ -15,7 +15,8 @@ Some highlighted documentation pages:
 - [_Shift security
   left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 
-> [!NOTE] The license changed from earlier project commits to
+> [!NOTE]
+> The license changed from earlier project commits to
 > [CC0](https://creativecommons.org/public-domain/cc0/) from [Public
 > Domain](https://unlicense.org/).
 > This change accomodates countries/juristictions where Public Domain is
