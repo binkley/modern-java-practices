@@ -3,13 +3,16 @@ import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
 
 plugins {
+    // TODO: Since Gradle is not static description but live code, does the
+    // ordering of plugins have impact?
+    id "java" // Gradle support for Java
+    // TODO: #607. How to leverage the Gradle dashboard?
     id "build-dashboard" // See build/reports/buildDashboard/index.html
-    // TODO: project-report is presently broken because of pitest task
+    // TODO: Leverage the projectReport task for showing in CI
     id "project-report" // Try the `projectReport` task
     alias libs.plugins.com.dorongold.task.tree.plugin
     alias libs.plugins.com.github.ben.manes.versions.plugin
     alias libs.plugins.nl.littlerobots.version.catalog.update.plugin
-    id "java" // Gradle support for Java
     id "checkstyle" // To check that code follow style standards
     id "jacoco" // To run test coverage
     id "pmd" // Static analysis based on source (does not check compiled code)

@@ -15,7 +15,7 @@ on:
       # These ignores are specific to a cross-build against Maven
       - 'pom.xml'
       - 'mvnw*' # Wraper scripts
-      - '.mvn'
+      - '.mvn/**'
       - '.github/workflows/*maven*'
       # These ignores are specific to this project
       - 'run-with-maven.sh'
@@ -27,7 +27,7 @@ on:
       # These ignores are specific to a cross-build against Maven
       - 'pom.xml'
       - 'mvnw*' # Wrapper scripts
-      - '.mvn'
+      - '.mvn/**'
       - '.github/workflows/*maven*'
       # These ignores are specific to this project
       - 'run-with-maven.sh'

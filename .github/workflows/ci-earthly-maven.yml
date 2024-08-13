@@ -14,7 +14,7 @@ on:
       - 'images/**'
       # These ignores are specific to a cross-build against Gradle
       - 'build.gradle'
-      - 'gradle' # Directory is distinct from files in GitHub ignores
+      - 'gradle/**' # Directory is distinct from files in GitHub ignores
       - 'gradle*' # Wrapper scripts and properties
       - '.gradle'
       - '.github/workflows/*gradle*'
@@ -27,7 +27,7 @@ on:
       - 'images/**'
       # These ignores are specific to a cross-build against Gradle
       - 'build.gradle'
-      - 'gradle' # Directory is distinct from files in GitHub ignores
+      - 'gradle/**' # Directory is distinct from files in GitHub ignores
       - 'gradle*' # Wrapper scripts and properties
       - '.gradle'
       - '.github/workflows/*gradle*'
