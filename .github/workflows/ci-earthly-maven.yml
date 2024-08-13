@@ -5,29 +5,34 @@ env:
   # Workaround for: https://github.com/earthly/earthly/issues/4220
   EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY: true
 
+# Ignore cross-build files with Gradle
 on:
   push:
     paths-ignore:
+      # Generic files to ignore for building
       - '*.md'
       - 'images/**'
       # These ignores are specific to a cross-build against Gradle
       - 'build.gradle'
-      - 'gradle*'
+      - 'gradle' # Directory is distinct from files in GitHub ignores
+      - 'gradle*' # Wrapper scripts and properties
       - '.gradle'
+      - '.github/workflows/*gradle*'
       # These ignores are specific to this project
       - 'run-with-gradle.sh'
-      - '.github/workflows/*gradle*'
   pull_request:
     paths-ignore:
+      # Generic files to ignore for building
       - '*.md'
       - 'images/**'
       # These ignores are specific to a cross-build against Gradle
       - 'build.gradle'
-      - 'gradle*'
+      - 'gradle' # Directory is distinct from files in GitHub ignores
+      - 'gradle*' # Wrapper scripts and properties
       - '.gradle'
+      - '.github/workflows/*gradle*'
       # These ignores are specific to this project
       - 'run-with-gradle.sh'
-      - '.github/workflows/*gradle*'
   workflow_dispatch:
 
 jobs:
