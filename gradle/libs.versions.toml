@@ -1,4 +1,5 @@
 [versions]
+com-diffplug-spotless-plugin = "6.25.0"
 com-dorongold-task-tree-plugin = "4.0.0"
 com-github-andygoossens-gradle-modernizer-plugin = "1.9.3"
 com-github-ben-manes-versions-plugin = "0.51.0"
@@ -36,9 +37,10 @@ org-pitest-pitest-junit5-plugin = { module = "org.pitest:pitest-junit5-plugin", 
 org-projectlombok-lombok = { module = "org.projectlombok:lombok", version.ref = "org-projectlombok" }
 
 [plugins]
-com-dorongold-task-tree = { id = "com.dorongold.task-tree", version.ref = "com-dorongold-task-tree-plugin" }
+com-diffplug-spotless-plugin = { id = "com.diffplug.spotless", version.ref = "com-diffplug-spotless-plugin" }
+com-dorongold-task-tree-plugin = { id = "com.dorongold.task-tree", version.ref = "com-dorongold-task-tree-plugin" }
 com-github-andygoossens-gradle-modernizer-plugin = { id = "com.github.andygoossens.gradle-modernizer-plugin", version.ref = "com-github-andygoossens-gradle-modernizer-plugin" }
-com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version.ref = "com-github-ben-manes-versions-plugin" }
-nl-littlerobots-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "nl-littlerobots-version-catalog-update-plugin" }
-org-kordamp-gradle-jdeps = { id = "org.kordamp.gradle.jdeps", version.ref = "org-kordamp-gradle-jdeps-plugin" }
-org-owasp-dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "org-owasp-dependencycheck-plugin" }
+com-github-ben-manes-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "com-github-ben-manes-versions-plugin" }
+nl-littlerobots-version-catalog-update-plugin = { id = "nl.littlerobots.version-catalog-update", version.ref = "nl-littlerobots-version-catalog-update-plugin" }
+org-kordamp-gradle-jdeps-plugin = { id = "org.kordamp.gradle.jdeps", version.ref = "org-kordamp-gradle-jdeps-plugin" }
+org-owasp-dependencycheck-plugin = { id = "org.owasp.dependencycheck", version.ref = "org-owasp-dependencycheck-plugin" }

@@ -6,19 +6,19 @@ plugins {
     id "build-dashboard" // See build/reports/buildDashboard/index.html
     // TODO: project-report is presently broken because of pitest task
     id "project-report" // Try the `projectReport` task
-    alias libs.plugins.com.dorongold.task.tree
-    alias libs.plugins.com.github.ben.manes.versions
-    alias libs.plugins.nl.littlerobots.version.catalog.update
+    alias libs.plugins.com.dorongold.task.tree.plugin
+    alias libs.plugins.com.github.ben.manes.versions.plugin
+    alias libs.plugins.nl.littlerobots.version.catalog.update.plugin
     id "java" // Gradle support for Java
     id "checkstyle" // To check that code follow style standards
     id "jacoco" // To run test coverage
     id "pmd" // Static analysis based on source (does not check compiled code)
     id "com.github.spotbugs" // Static analysis based on compiled code (does not check source)
-    id "com.diffplug.spotless" version "7.0.0.BETA1"
+    alias libs.plugins.com.diffplug.spotless.plugin
     alias libs.plugins.com.github.andygoossens.gradle.modernizer.plugin
     id "info.solidsoft.pitest" // To run mutation testing
-    alias libs.plugins.org.kordamp.gradle.jdeps
-    alias libs.plugins.org.owasp.dependencycheck
+    alias libs.plugins.org.kordamp.gradle.jdeps.plugin
+    alias libs.plugins.org.owasp.dependencycheck.plugin
     id "application" // To build the executable jar
 }
 
