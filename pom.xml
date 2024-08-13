@@ -16,9 +16,13 @@
     <url>https://github.com/binkley/modern-java-practices</url>
     <licenses>
         <license>
-            <name>Public Domain</name>
-            <url>https://unlicense.org/</url>
+            <name>CC0</name>
+            <url>https://creativecommons.org/public-domain/cc0/</url>
             <distribution>repo</distribution>
+            <comments>
+                A "No Rights Reserved" license suitable in most jurisdictions
+                without waiting for expiration of rights under Public Domain.
+            </comments>
         </license>
     </licenses>
     <issueManagement>
