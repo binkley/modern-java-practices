@@ -20,7 +20,8 @@ Some highlighted documentation pages:
 > [CC0](https://creativecommons.org/public-domain/cc0/) from earlier commits
 > with [Public Domain](https://unlicense.org/) licensing.
 > This change accomodates countries/juristictions where _Public Domain_ is
-> restricted, and _CC0_ seems the most open choice available.
+> restricted, and _CC0_ seems the most open choice available.<br>
+> See [`LICENSE.md`](./LICENSE.md) for legal details.
 
 # Modern Java/JVM Build Practices
 
