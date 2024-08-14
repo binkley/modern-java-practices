@@ -248,7 +248,8 @@ align="right" width="20%" height="auto"/>
 (For detailed changes in the example code, browse the [commit
 log](https://github.com/binkley/modern-java-practices/commits/master/).)
 
-- Gradle: Bump to Gradle 8.8.
+- Move to a CC0 license from Public Domain.
+- Gradle: Bump to Gradle 8.9.
 - Migrate most of the `README.md` to the [GitHub project
   wiki](https://github.com/binkley/modern-java-practices/wiki).
   This is breaks up an overlong (14k+ words and growing) README into
