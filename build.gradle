@@ -21,6 +21,7 @@ plugins {
     alias libs.plugins.org.owasp.dependencycheck
     id "application" // To build the executable jar
     id("com.diffplug.spotless") version "7.0.0.BETA1"
+    id("net.ltgt.errorprone") version "4.0.1"
 }
 
 version = "0-SNAPSHOT"
@@ -46,7 +47,7 @@ dependencies {
     testImplementation libs.org.junit.jupiter.junit.jupiter
     testImplementation libs.org.assertj.assertj.core
     testImplementation libs.org.mockito.mockito.core
-
+    errorprone "com.google.errorprone:error_prone_core:2.29.2"
     // Quiet build -- build works without this, but JUnit complains
     testRuntimeOnly libs.org.junit.jupiter.junit.jupiter.engine
 
