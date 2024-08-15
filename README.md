@@ -125,6 +125,10 @@ As a _guide_, this project focuses on:
   hand: get your build to complain (_fail_) locally before sharing with your
   team, or fail in CI before deployment
 
+These can be summed up as a _Software supply chain_: ensuring reliable,
+trusted software from local development through ready-to-deploy:
+**Build with confidence**.
+
 But ... you **must** judge and measure the advice here against your own
 systems and processes.
 Some things (many or most things) may work for you:
@@ -190,10 +194,10 @@ After cloning or forking this project to your machine, try out the local build
 that makes sense for you:
 
 ```shell
-$ ./gradlew build  # Local-only build
 $ earthly +build-with-gradle  # CI build with Earthly
-$ ./mvnw verify  # Local-only build
 $ earthly +build-with-maven  # CI build with Earthly
+$ ./gradlew build  # Local-only build
+$ ./mvnw verify  # Local-only build
 ```
 
 Notice that you can run the build purely locally, or _in a container_?
