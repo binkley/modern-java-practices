@@ -3,7 +3,6 @@ import com.github.spotbugs.snom.Confidence
 import com.github.spotbugs.snom.Effort
 
 plugins {
-    id "net.ltgt.errorprone" version "4.0.1"
     id "build-dashboard" // See build/reports/buildDashboard/index.html
     // TODO: project-report is presently broken because of pitest task
     id "project-report" // Try the `projectReport` task
