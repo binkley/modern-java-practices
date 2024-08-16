@@ -17,7 +17,8 @@ Some highlighted documentation pages:
 
 > [!NOTE]
 > The license has changed to
-> [CC0](https://creativecommons.org/public-domain/cc0/) from earlier commits
+> [Creative Commons 0 Public Domain Dedication
+> (CC0)](https://creativecommons.org/public-domain/cc0/) from earlier commits
 > with [Public Domain](https://unlicense.org/) licensing.
 > This change accomodates countries/juristictions where _Public Domain_ is
 > restricted, and _CC0_ seems the most open choice available.<br>
@@ -37,7 +38,7 @@ align="right" width="20%" height="auto"/>
 [![coverage](https://github.com/binkley/modern-java-practices/raw/master/images/jacoco.svg)](https://github.com/binkley/modern-java-practices/actions/workflows/ci.yml)
 [![pull requests](https://img.shields.io/github/issues-pr/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/pulls)
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
-[![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
+[![license](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 > [!WARNING]
 > For those using the DependencyCheck plugins for Gradle or Maven, over the
@@ -105,7 +106,8 @@ As a _guide_, this project focuses on:
   [Fork](https://github.com/binkley/modern-java-practices/fork) me,
   [clone](https://github.com/binkley/modern-java-practices.git) me, copy/paste
   freely!
-  I am [_Public Domain_](http://unlicense.org/)
+  I am [Creative Commons Public Domain Dedication
+  (CC0)](https://creativecommons.org/public-domain/cc0/).
 * Discuss&mdash;and illustrate (through code)&mdash;sensible default practices;
   highlight good build tools and plugins
 * Document pitfalls that turned up.
