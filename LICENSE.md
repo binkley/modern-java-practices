@@ -128,7 +128,8 @@ express Statement of Purpose.
     this CC0 or use of the Work.
 
 For more information, please refer to
-<https://creativecommons.org/publicdomain/zero/1.0/>.
+<https://creativecommons.org/publicdomain/zero/1.0/> and to
+<https://creativecommons.org/public-domain/cc0/>.
 
 # Former Public Domain license
 
