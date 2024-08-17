@@ -43,7 +43,8 @@ jobs:
         with:
           # The version in CI should match the version you use locally.
           # This is a manual step.
-          version: v0.8
+          # Using "latest" to force CI warnings if Earthfile is outdated
+          version: "latest"
 
       - name: Clone repository
         uses: actions/checkout@v4
