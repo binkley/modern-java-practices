@@ -1,4 +1,4 @@
-name: Gradle CI build
+name: Earthly/Gradle CI
 
 env:
   OWASP_NVD_API_KEY: ${{ secrets.OWASP_NVD_API_KEY }}
