@@ -68,9 +68,42 @@ jobs:
       - name: Execute run script
         run: earthly --secret OWASP_NVD_API_KEY +run-with-gradle
 
+      # Save artifacts for build
+      # See Earthfile that copies these from container to local
+
+# Javadoc HTML and jars
+
+      - name: Save Javadoc HTML for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-html
+          if-no-files-found: error
+          path: build/docs/javadoc/
+
+      - name: Save Javadoc HTML Jar for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc-jar
+          if-no-files-found: error
+          path: build/libs/modern-java-practices-0-SNAPSHOT-javadoc.jar
+
+# Generate coverage report
+
       - name: Save coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           if-no-files-found: error
           path: build/reports/jacoco/test/
+
+      - name: Generate coverage badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          badges-directory: images
+          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
+          # To avoid conflicts with the Maven build, only generate the badge
+          # there. For Gradle only projects: REMOVE THIS LINE.
+          generate-coverage-badge: false
+          generate-branches-badge: false
+          generate-summary: false
+

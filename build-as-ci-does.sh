@@ -9,6 +9,10 @@ set -e  # Fail on first failed command
 
 # Workaround for: https://github.com/earthly/earthly/issues/4220
 export EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY=true
+# TODO: CI does not implement Earthly caching (for now)
+# This **significantly** slows the development cycle.
+# Best use _this script_ only before pushing changes, else make coffee or tea.
+export EARTHLY_NO_CACHE=true
 
 # Provide nicer console output via formatting and color
 # See https://github.com/binkley/shell/blob/master/color/color.sh

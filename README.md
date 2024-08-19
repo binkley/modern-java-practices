@@ -15,15 +15,6 @@ Some highlighted documentation pages:
 - [_Shift security
   left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 
-> [!NOTE]
-> The license has changed to
-> [Creative Commons 0 Public Domain Dedication
-> (CC0)](https://creativecommons.org/public-domain/cc0/) from earlier commits
-> with [Public Domain](https://unlicense.org/) licensing.
-> This change accomodates countries/juristictions where _Public Domain_ is
-> restricted, and _CC0_ seems the most open choice available.<br>
-> See [`LICENSE.md`](./LICENSE.md) for legal details.
-
 # Modern Java/JVM Build Practices
 
 <a href="https://modernagile.org/" title="Modern Agile">
