@@ -1,33 +1,36 @@
-name: Gradle CI build
+name: Earthly/Gradle CI
 
 env:
   OWASP_NVD_API_KEY: ${{ secrets.OWASP_NVD_API_KEY }}
   # Workaround for: https://github.com/earthly/earthly/issues/4220
   EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY: true
 
+# Ignore cross-build files with Maven
 on:
   push:
     paths-ignore:
+      # Generic files to ignore for building
       - '*.md'
       - 'images/**'
       # These ignores are specific to a cross-build against Maven
       - 'pom.xml'
-      - 'mvnw*'
-      - '.mvn'
+      - 'mvnw*' # Wraper scripts
+      - '.mvn/**'
+      - '.github/workflows/*maven*'
       # These ignores are specific to this project
       - 'run-with-maven.sh'
-      - '.github/workflows/*maven*'
   pull_request:
     paths-ignore:
+      # Generic files to ignore for building
       - '*.md'
       - 'images/**'
       # These ignores are specific to a cross-build against Maven
       - 'pom.xml'
-      - 'mvnw*'
-      - '.mvn'
+      - 'mvnw*' # Wrapper scripts
+      - '.mvn/**'
+      - '.github/workflows/*maven*'
       # These ignores are specific to this project
       - 'run-with-maven.sh'
-      - '.github/workflows/*maven*'
 
 jobs:
   build:
@@ -40,7 +43,8 @@ jobs:
         with:
           # The version in CI should match the version you use locally.
           # This is a manual step.
-          version: v0.8
+          # Using "latest" to force CI warnings if Earthfile is outdated
+          version: "latest"
 
       - name: Clone repository
         uses: actions/checkout@v4

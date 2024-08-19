@@ -11,14 +11,21 @@
 
     <name>Modern Java/JVM build practices</name>
     <description>
-        Advice on Modern Java/JVM Gradle and Maven builds
+        Advice on Modern Java/JVM Gradle and Maven builds.
+        The advice is language-agnostic, but options are often specific for
+        Java (such as plugins that review Java code quality).
+        The goal: Make you build AWESOME, and help you with solid CI builds.
     </description>
     <url>https://github.com/binkley/modern-java-practices</url>
     <licenses>
         <license>
-            <name>Public Domain</name>
-            <url>https://unlicense.org/</url>
+            <name>CC0</name>
+            <url>https://creativecommons.org/public-domain/cc0/</url>
             <distribution>repo</distribution>
+            <comments>
+                A "No Rights Reserved" license suitable in most jurisdictions
+                without waiting for expiration of rights under Public Domain.
+            </comments>
         </license>
     </licenses>
     <issueManagement>
@@ -76,7 +83,7 @@
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>21</jdk.version>
-        <junit.version>5.10.3</junit.version>
+        <junit.version>5.11.0</junit.version>
         <lombok.version>1.18.34</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
@@ -91,7 +98,7 @@
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
         <maven-pmd-plugin.version>3.24.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}</maven-profiler-report-directory>
-        <maven-testing-plugins.version>3.3.1</maven-testing-plugins.version>
+        <maven-testing-plugins.version>3.4.0</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.3.1</maven-wrapper-plugin.version>
         <maven.version>3.9.6</maven.version>
         <mockito.version>5.12.0</mockito.version>

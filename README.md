@@ -1,5 +1,5 @@
-<a href="./LICENSE">
-<img src="./images/public-domain.svg" alt="Public Domain"
+<a href="./LICENSE.md">
+<img src="./images/cc0.svg" alt="Creative Commons 0"
 align="right" width="10%" height="auto"/>
 </a>
 
@@ -29,7 +29,7 @@ align="right" width="20%" height="auto"/>
 [![coverage](https://github.com/binkley/modern-java-practices/raw/master/images/jacoco.svg)](https://github.com/binkley/modern-java-practices/actions/workflows/ci.yml)
 [![pull requests](https://img.shields.io/github/issues-pr/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/pulls)
 [![issues](https://img.shields.io/github/issues/binkley/modern-java-practices.svg)](https://github.com/binkley/modern-java-practices/issues/)
-[![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
+[![license](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 > [!WARNING]
 > For those using the DependencyCheck plugins for Gradle or Maven, over the
@@ -97,7 +97,8 @@ As a _guide_, this project focuses on:
   [Fork](https://github.com/binkley/modern-java-practices/fork) me,
   [clone](https://github.com/binkley/modern-java-practices.git) me, copy/paste
   freely!
-  I am [_Public Domain_](http://unlicense.org/)
+  I am [Creative Commons Public Domain Dedication
+  (CC0)](https://creativecommons.org/public-domain/cc0/).
 * Discuss&mdash;and illustrate (through code)&mdash;sensible default practices;
   highlight good build tools and plugins
 * Document pitfalls that turned up.
@@ -116,6 +117,10 @@ As a _guide_, this project focuses on:
 * _Make developer life easier_ &mdash; Automate build tasks often done by
   hand: get your build to complain (_fail_) locally before sharing with your
   team, or fail in CI before deployment
+
+These can be summed up as a _Software supply chain_: ensuring reliable,
+trusted software from local development through ready-to-deploy:
+**Build with confidence**.
 
 But ... you **must** judge and measure the advice here against your own
 systems and processes.
@@ -182,10 +187,10 @@ After cloning or forking this project to your machine, try out the local build
 that makes sense for you:
 
 ```shell
-$ ./gradlew build  # Local-only build
 $ earthly +build-with-gradle  # CI build with Earthly
-$ ./mvnw verify  # Local-only build
 $ earthly +build-with-maven  # CI build with Earthly
+$ ./gradlew build  # Local-only build
+$ ./mvnw verify  # Local-only build
 ```
 
 Notice that you can run the build purely locally, or _in a container_?
@@ -240,7 +245,8 @@ align="right" width="20%" height="auto"/>
 (For detailed changes in the example code, browse the [commit
 log](https://github.com/binkley/modern-java-practices/commits/master/).)
 
-- Gradle: Bump to Gradle 8.8.
+- Move to a CC0 license from Public Domain.
+- Gradle: Bump to Gradle 8.9.
 - Migrate most of the `README.md` to the [GitHub project
   wiki](https://github.com/binkley/modern-java-practices/wiki).
   This is breaks up an overlong (14k+ words and growing) README into
