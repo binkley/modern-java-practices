@@ -1,5 +1,5 @@
 [versions]
-com-diffplug-spotless-plugin = "7.0.0.BETA1"
+com-diffplug-spotless-plugin = "7.0.0.BETA2"
 com-dorongold-task-tree-plugin = "4.0.0"
 com-github-andygoossens-gradle-modernizer-plugin = "1.9.3"
 com-github-ben-manes-versions-plugin = "0.51.0"
