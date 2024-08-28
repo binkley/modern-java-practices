@@ -98,7 +98,7 @@
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
         <maven-pmd-plugin.version>3.24.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}</maven-profiler-report-directory>
-        <maven-testing-plugins.version>3.4.0</maven-testing-plugins.version>
+        <maven-testing-plugins.version>3.5.0</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.3.1</maven-wrapper-plugin.version>
         <maven.version>3.9.6</maven.version>
         <mockito.version>5.12.0</mockito.version>
