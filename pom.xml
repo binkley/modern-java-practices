@@ -109,7 +109,7 @@
         <palantir-java-format.version>2.39.0</palantir-java-format.version>
         -->
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.16.1</pitest-maven.version>
+        <pitest-maven.version>1.16.2</pitest-maven.version>
         <pmd.version>7.4.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
