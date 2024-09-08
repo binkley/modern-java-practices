@@ -73,6 +73,13 @@ jobs:
 # Save artifacts for build
 # See Earthfile that copies these from container to local
 
+      - name: Save Jar for main
+        uses: actions/upload-artifact@v4
+        with:
+          name: jar-main
+          if-no-files-found: error
+          path: target/modern-java-practices-0-SNAPSHOT.jar
+
 # Javadoc HTML and jars
 
       - name: Save Javadoc HTML for main
