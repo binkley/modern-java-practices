@@ -110,6 +110,7 @@
         -->
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
         <pitest-maven.version>1.16.3</pitest-maven.version>
+        <pitest.skip>false</pitest.skip>
         <pmd.version>7.5.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
@@ -438,9 +439,10 @@
                         <jvmArg>-XX:TieredStopAtLevel=1</jvmArg>
                     </jvmArgs>
                     <mutationThreshold>100</mutationThreshold>
-                    <withHistory>true</withHistory>
+                    <skip>${pitest.skip}</skip>
                     <timestampedReports>false</timestampedReports>
                     <verbose>false</verbose> <!-- Set to true for noisy output -->
+                    <withHistory>true</withHistory>
                 </configuration>
                 <executions>
                     <execution>
