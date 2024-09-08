@@ -41,6 +41,7 @@ jobs:
       - name: Use Earthly
         uses: earthly/actions-setup@v1
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           # The version in CI should match the version you use locally.
           # This is a manual step.
           # Using "latest" to force CI warnings if Earthfile is outdated
