@@ -80,7 +80,7 @@ jobs:
         with:
           name: javadoc-html-main
           if-no-files-found: error
-          path: target/apidocs/
+          path: target/reports/apidocs/
 
       - name: Save Javadoc HTML Jar for main
         uses: actions/upload-artifact@v4
@@ -94,7 +94,7 @@ jobs:
         with:
           name: javadoc-html-unittests
           if-no-files-found: error
-          path: target/testapidocs/
+          path: target/reports/testapidocs/
 
       - name: Save Javadoc HTML Jar for unit tests
         uses: actions/upload-artifact@v4
