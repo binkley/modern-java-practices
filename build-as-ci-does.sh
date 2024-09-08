@@ -1,11 +1,21 @@
 #/usr/bin/env bash
 
+set -e  # Fail on first failed command
+
 if ! command -v earthly >/dev/null; then
-    echo "$0: No Earthly found in PATH"
+    echo "$0: No Earthly found in PATH" >&2
     exit 2
 fi
 
-set -e  # Fail on first failed command
+# Optionally check if gh and the act extension are installed
+if gh act --help >/dev/null 2>&1; then
+    gh act --artifact-server-path $PWD/workflow-artifacts
+    exit $?
+elif ! gh --help >/dev/null 2>&1; then
+    echo "$0: No gh found in PATH; falling back to earthly" >&2
+else
+    echo "$0: No nektos/gh-act extension installed; falling back to earthly" >&2
+fi
 
 # Workaround for: https://github.com/earthly/earthly/issues/4220
 export EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY=true
