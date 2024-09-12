@@ -442,6 +442,7 @@
                     <skip>${pitest.skip}</skip>
                     <timestampedReports>false</timestampedReports>
                     <verbose>false</verbose> <!-- Set to true for noisy output -->
+                    <verbosity>NO_SPINNER</verbosity> <!-- For CI -->
                     <withHistory>true</withHistory>
                 </configuration>
                 <executions>
