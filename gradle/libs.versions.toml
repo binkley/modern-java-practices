@@ -15,7 +15,7 @@ org-junit-jupiter = "5.11.0"
 org-kordamp-gradle-jdeps-plugin = "0.20.0"
 org-mockito = "5.13.0"
 org-owasp-dependencycheck-plugin = "10.0.4"
-org-pitest-pitest-command-line = "1.16.3"
+org-pitest-pitest-command-line = "1.17.0"
 org-pitest-pitest-junit5-plugin = "1.2.1"
 org-projectlombok = "1.18.34"
 
