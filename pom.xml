@@ -99,8 +99,8 @@
         <maven-pmd-plugin.version>3.25.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}</maven-profiler-report-directory>
         <maven-testing-plugins.version>3.5.0</maven-testing-plugins.version>
-        <maven-wrapper-plugin.version>3.3.1</maven-wrapper-plugin.version>
-        <maven.version>3.9.6</maven.version>
+        <maven-wrapper-plugin.version>3.3.2</maven-wrapper-plugin.version>
+        <maven.version>3.9.9</maven.version>
         <mockito.version>5.13.0</mockito.version>
         <modernizer.version>2.9.0</modernizer.version>
         <owasp.nvdApiKey>${env.OWASP_NVD_API_KEY}</owasp.nvdApiKey>
