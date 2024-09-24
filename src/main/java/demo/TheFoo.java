@@ -27,7 +27,7 @@ public final class TheFoo {
     /**
      * Is there danger?
      *
-     * @return if the ship should go onto red alert
+     * @return if the ship should go to red alert
      */
     public boolean isRedAlert() {
         return checkRedAlert(label);
