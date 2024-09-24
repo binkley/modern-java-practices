@@ -9,5 +9,8 @@
 # Maven -- pick this or Gradle
 /target/
 
+# When running GitHub actions locally
+/workflow-artifacts/
+
 # DO NOT commit, push, or share. The env vars may hold secrets.
 /.envrc
