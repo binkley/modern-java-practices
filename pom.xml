@@ -114,7 +114,7 @@
         <pmd.version>7.5.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.8.6.3</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.8.6.4</spotbugs-maven-plugin.version>
         <spotbugs.version>4.8.6</spotbugs.version>
         <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
