@@ -9,7 +9,7 @@ fi
 
 # Optionally check if gh and the act extension are installed
 if gh act --help >/dev/null 2>&1; then
-    gh act --artifact-server-path $PWD/workflow-artifacts
+    gh act --artifact-server-path "$PWD/workflow-artifacts"
     exit $?
 elif ! gh --help >/dev/null 2>&1; then
     echo "$0: No gh found in PATH; falling back to earthly" >&2
