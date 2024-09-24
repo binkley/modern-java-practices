@@ -219,6 +219,7 @@
                 <version>${versions-maven-plugin.version}</version>
                 <configuration>
                     <generateBackupPoms>false</generateBackupPoms>
+                    <ignoredVersions>.*[-.](BETA|beta).*</ignoredVersions>
                 </configuration>
             </plugin>
             <plugin>
