@@ -83,7 +83,7 @@
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>21</jdk.version>
-        <junit.version>5.11.0</junit.version>
+        <junit.version>5.11.1</junit.version>
         <lombok.version>1.18.34</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
