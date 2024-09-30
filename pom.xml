@@ -111,7 +111,7 @@
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
         <pitest-maven.version>1.17.0</pitest-maven.version>
         <pitest.skip>false</pitest.skip>
-        <pmd.version>7.5.0</pmd.version>
+        <pmd.version>7.6.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
         <spotbugs-maven-plugin.version>4.8.6.4</spotbugs-maven-plugin.version>
