@@ -101,7 +101,7 @@
         <maven-testing-plugins.version>3.5.0</maven-testing-plugins.version>
         <maven-wrapper-plugin.version>3.3.2</maven-wrapper-plugin.version>
         <maven.version>3.9.9</maven.version>
-        <mockito.version>5.13.0</mockito.version>
+        <mockito.version>5.14.0</mockito.version>
         <modernizer.version>2.9.0</modernizer.version>
         <owasp.nvdApiKey>${env.OWASP_NVD_API_KEY}</owasp.nvdApiKey>
         <owasp.skip>false</owasp.skip>
