@@ -1,7 +1,7 @@
 [versions]
 com-diffplug-spotless-plugin = "7.0.0.BETA4"
 com-dorongold-task-tree-plugin = "4.0.0"
-com-github-andygoossens-gradle-modernizer-plugin = "1.9.3"
+com-github-andygoossens-gradle-modernizer-plugin = "1.10.0"
 com-github-ben-manes-versions-plugin = "0.51.0"
 com-github-spotbugs = "4.8.6"
 com-google-code-findbugs = "3.0.1"
