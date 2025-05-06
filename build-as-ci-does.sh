@@ -43,7 +43,7 @@ earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +run-with-gradle
 
 echo
 echo "${pbold}BUILD WITH MAVEN UNDER EARTHLY${preset}"
-earthly --secret OWASP_NVD_API_KEY +build-with-maven
+earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +build-with-maven
 echo
 echo "${pbold}RUN WITH MAVEN UNDER EARTHLY${preset}"
-earthly --secret OWASP_NVD_API_KEY +run-with-maven
+earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +run-with-maven
