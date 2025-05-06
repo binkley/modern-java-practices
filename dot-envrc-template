@@ -1,0 +1,6 @@
+# For Earthly workaround
+export EARTHLY_DISABLE_REMOTE_REGISTRY_PROXY=true
+# For OWASP
+export OWASP_NVD_API_KEY='XXX'
+# To make Maven happier
+export JAVA_HOME="$(jenv javahome)"
