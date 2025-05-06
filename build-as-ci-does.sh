@@ -7,6 +7,11 @@ if ! command -v earthly >/dev/null; then
     exit 2
 fi
 
+if [[ -z "$OWASP_NVD_API_KEY" ]]; then
+    echo "$0: No OWASP_NVD_API_KEY environment variable" >&2
+    exit 2
+fi
+
 # Optionally check if gh and the act extension are installed
 if gh act --help >/dev/null 2>&1; then
     gh act --artifact-server-path "$PWD/workflow-artifacts"
@@ -31,10 +36,10 @@ printf -v pbold "\e[1m"
 
 echo
 echo "${pbold}BUILD WITH GRADLE UNDER EARTHLY${preset}"
-earthly --secret OWASP_NVD_API_KEY +build-with-gradle
+earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +build-with-gradle
 echo
 echo "${pbold}RUN WITH GRADLE UNDER EARTHLY${preset}"
-earthly --secret OWASP_NVD_API_KEY +run-with-gradle
+earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +run-with-gradle
 
 echo
 echo "${pbold}BUILD WITH MAVEN UNDER EARTHLY${preset}"
