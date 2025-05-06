@@ -15,6 +15,10 @@ Some highlighted documentation pages:
 - [_Shift security
   left_](https://github.com/binkley/modern-java-practices/wiki/Shift-security-left)
 
+# If you clone this project
+
+Make sure you update the `OWASP_API_NVD_KEY` in your GitHub secrets.
+
 # Modern Java/JVM Build Practices
 
 <a href="https://modernagile.org/" title="Modern Agile">
