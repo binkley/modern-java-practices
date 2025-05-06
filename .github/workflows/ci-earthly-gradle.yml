@@ -64,10 +64,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Build and test
-        run: earthly --secret OWASP_NVD_API_KEY +build-with-gradle
+        run: earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +build-with-gradle
 
       - name: Execute run script
-        run: earthly --secret OWASP_NVD_API_KEY +run-with-gradle
+        run: earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +run-with-gradle
 
 # Save artifacts for build
 # See Earthfile that copies these from container to local

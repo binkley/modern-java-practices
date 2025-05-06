@@ -66,10 +66,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Build and test
-        run: earthly --secret OWASP_NVD_API_KEY +build-with-maven
+        run: earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +build-with-maven
 
       - name: Execute run script
-        run: earthly --secret OWASP_NVD_API_KEY +run-with-maven
+        run: earthly --secret OWASP_NVD_API_KEY=$OWASP_NVD_API_KEY +run-with-maven
 
 # Save artifacts for build
 # See Earthfile that copies these from container to local
