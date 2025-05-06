@@ -10,7 +10,7 @@ on:
   push:
     paths-ignore:
       # Generic files to ignore for building
-      - '*.md'
+      - '**.md'
       - 'images/**'
       # These ignores are specific to a cross-build against Maven
       - 'pom.xml'
@@ -22,7 +22,7 @@ on:
   pull_request:
     paths-ignore:
       # Generic files to ignore for building
-      - '*.md'
+      - '**.md'
       - 'images/**'
       # These ignores are specific to a cross-build against Maven
       - 'pom.xml'
