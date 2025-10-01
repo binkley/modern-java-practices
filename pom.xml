@@ -71,7 +71,7 @@
 
     <properties>
         <!-- @formatter:off -->
-        <assertj.version>3.27.3</assertj.version>
+        <assertj.version>3.27.6</assertj.version>
         <buildplan-maven-plugin.version>1.5</buildplan-maven-plugin.version>
         <checkstyle.version>10.20.0</checkstyle.version>
         <coverage.branches>100</coverage.branches>
@@ -79,46 +79,46 @@
         <coverage.lines>100</coverage.lines>
         <dependency-check-maven.version>11.1.1</dependency-check-maven.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
-        <findsecbugs-plugin.version>1.13.0</findsecbugs-plugin.version>
-        <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+        <findsecbugs-plugin.version>1.14.0</findsecbugs-plugin.version>
+        <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <java.charset>UTF-8</java.charset>
         <jdk.version>21</jdk.version>
         <junit.version>5.11.1</junit.version>
-        <lombok.version>1.18.34</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <main.class>demo.Application</main.class>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-        <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.8.0</maven-dependency-plugin.version>
-        <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+        <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+        <maven-enforcer-plugin.version>3.6.1</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-jdeps-plugin.version>3.1.2</maven-jdeps-plugin.version>
-        <maven-pmd-plugin.version>3.25.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.27.0</maven-pmd-plugin.version>
         <maven-profiler-report-directory>${project.build.directory}</maven-profiler-report-directory>
-        <maven-testing-plugins.version>3.5.2</maven-testing-plugins.version>
-        <maven-wrapper-plugin.version>3.3.2</maven-wrapper-plugin.version>
+        <maven-testing-plugins.version>3.5.4</maven-testing-plugins.version>
+        <maven-wrapper-plugin.version>3.3.4</maven-wrapper-plugin.version>
         <maven.version>3.9.9</maven.version>
-        <mockito.version>5.14.2</mockito.version>
+        <mockito.version>5.20.0</mockito.version>
         <modernizer.version>2.9.0</modernizer.version>
         <owasp.nvdApiKey>${env.OWASP_NVD_API_KEY}</owasp.nvdApiKey>
         <owasp.skip>false</owasp.skip>
         <!-- Only needed for the Palantir style of Java code
         <palantir-java-format.version>2.39.0</palantir-java-format.version>
         -->
-        <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.17.3</pitest-maven.version>
+        <pitest-junit5-plugin.version>1.2.3</pitest-junit5-plugin.version>
+        <pitest-maven.version>1.20.3</pitest-maven.version>
         <pitest.skip>false</pitest.skip>
-        <pmd.version>7.10.0</pmd.version>
+        <pmd.version>7.17.0</pmd.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${java.charset}</project.reporting.outputEncoding>
-        <spotbugs-maven-plugin.version>4.8.6.4</spotbugs-maven-plugin.version>
-        <spotbugs.version>4.9.0</spotbugs.version>
+        <spotbugs-maven-plugin.version>4.9.6.0</spotbugs-maven-plugin.version>
+        <spotbugs.version>4.9.6</spotbugs.version>
         <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
-        <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.19.1</versions-maven-plugin.version>
         <spotless.check.skip>true</spotless.check.skip>
         <!-- @formatter:on -->
     </properties>
