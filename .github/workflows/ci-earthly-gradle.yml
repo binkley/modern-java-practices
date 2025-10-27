@@ -73,7 +73,7 @@ jobs:
 # See Earthfile that copies these from container to local
 
       - name: Save Jar for main
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: jar-main
           if-no-files-found: error
@@ -82,14 +82,14 @@ jobs:
 # Javadoc HTML and jars
 
       - name: Save Javadoc HTML for main
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: javadoc-html-main
           if-no-files-found: error
           path: build/docs/javadoc/
 
       - name: Save Javadoc HTML Jar for main
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: javadoc-jar-main
           if-no-files-found: error
@@ -98,7 +98,7 @@ jobs:
 # Generate coverage report
 
       - name: Save coverage report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: coverage-report
           if-no-files-found: error
