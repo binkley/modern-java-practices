@@ -48,7 +48,7 @@ jobs:
           version: "latest"
 
       - name: Clone repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Restore Gradle caches
         uses: actions/cache@master
